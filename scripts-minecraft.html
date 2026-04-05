@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイクラ×異世界アニメ 台本集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#111;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(17,17,17,.92);backdrop-filter:blur(12px);border-bottom:1px solid #333;padding:12px 24px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+nav a{color:#999;font-size:14px;font-weight:700;padding:6px 14px;border-radius:8px;transition:.15s}
+nav a:hover{color:#fff;background:#222}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:64px 24px 40px}
+.hero h1{font-size:clamp(24px,5vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px}
+.hero p{color:#999;font-size:16px;max-width:600px;margin:0 auto}
+h2{font-size:22px;font-weight:800;margin:48px 0 12px;padding-bottom:12px;border-bottom:2px solid #333}
+h3{font-size:18px;font-weight:700;margin:32px 0 8px;color:#ccc}
+h4{font-size:16px;font-weight:700;margin-bottom:6px;color:#eee}
+p,li{color:#bbb;font-size:15.5px;line-height:1.9}
+hr{border:none;height:1px;background:#333;margin:48px 0}
+
+/* SCRIPT CARD */
+.sc{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;padding:28px;margin:20px 0}
+.sc-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.sc-head h3{margin:0;font-size:17px;color:#fff}
+.sc-meta{display:flex;gap:6px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:700}
+.t-hy{background:rgba(234,179,8,.12);color:#facc15}
+.t-mc{background:rgba(34,197,94,.15);color:#4ade80}
+.t-hot{background:rgba(239,68,68,.15);color:#f87171}
+.t-new{background:rgba(56,189,248,.15);color:#38bdf8}
+.t-loop{background:rgba(168,85,247,.15);color:#c084fc}
+.t-long{background:rgba(251,146,60,.15);color:#fb923c}
+.t-time{background:rgba(148,163,184,.12);color:#94a3b8}
+
+/* HOOK */
+.hook{background:#1a1a2e;border-left:4px solid #f87171;border-radius:0 10px 10px 0;padding:14px 20px;margin-bottom:16px;font-size:15px}
+.hook strong{color:#fca5a5}
+
+/* SCENE */
+.scene{counter-reset:scene}
+.scene li{counter-increment:scene;list-style:none;padding:10px 0 10px 48px;position:relative;border-left:2px solid #333;margin-left:12px;color:#ccc;font-size:15px}
+.scene li::before{content:counter(scene);position:absolute;left:-14px;top:10px;width:28px;height:28px;background:#8b5cf6;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff}
+.scene li:last-child{border-left:2px solid transparent}
+
+/* DIRECTION */
+.dir{color:#666;font-style:italic;font-size:14px}
+
+/* TIP */
+.tip{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:16px 20px;margin:12px 0;font-size:14px;color:#86efac}
+
+/* NOTE */
+.note{background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:10px;padding:16px 20px;margin:16px 0;font-size:14px;color:#93c5fd}
+
+.footer{text-align:center;padding:48px 0;color:#666;font-size:14px;border-top:1px solid #222}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top">TOP</a>
+  <a href="#trend">トレンド</a>
+  <a href="#s-tensei">転生初日</a>
+  <a href="#s-baby">ベビーモブ</a>
+  <a href="#s-chaos">硫黄洞窟</a>
+  <a href="#s-real">リアル化</a>
+  <a href="#s-craft">クラフト魔法</a>
+  <a href="#s-nether">ネザー編</a>
+  <a href="#s-pvp">バトル</a>
+  <a href="#s-comedy">コメディ</a>
+  <a href="#s-long">横長</a>
+</nav>
+
+<div class="hero" id="top">
+  <h1>マイクラアニメ 台本30本</h1>
+  <p>2026年3月の最新トレンド反映済み。ショート27本 + 横長3本。冒頭3秒フック・ループ構造・クリフハンガー設計。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="trend">反映したトレンド</h2>
+
+<div class="sc">
+<h4>マイクラ最新トレンド（2026年3月）</h4>
+<ul>
+<li><span class="tag t-new">NEW</span> <strong>Tiny Takeover（3/24リリース）</strong> — ベビーモブ39種が全面リニューアル。金のタンポポで永遠に子どものまま。投稿直後が最もバズりやすい</li>
+<li><span class="tag t-new">NEW</span> <strong>Chaos Cubed（Q2予定）</strong> — 硫黄洞窟バイオーム＆サルファーキューブ。ブロックを吸収して性質が変わる史上初のモブ</li>
+<li><span class="tag t-new">NEW</span> <strong>Minecraft Dungeons II（秋予定）</strong> — ダンジョンRPG続編。アクション系のアニメネタに</li>
+<li><strong>マイクラ映画のヒット</strong> — 実写映画で新規層が流入中</li>
+<li><strong>Brainrot / ミーム文化</strong> — 不条理ギャグ系がYouTube全体でバズ中</li>
+<li><strong>ハードコア100日チャレンジ</strong> — 定番フォーマット、アニメ版は未開拓</li>
+</ul>
+</div>
+
+<div class="sc">
+<h4>ショートのバズ構成ルール</h4>
+<ul>
+<li><span class="tag t-hot">必須</span> <strong>冒頭3秒フック</strong> — 衝撃映像 or 結論先出し or 問いかけ。ここで勝負が決まる</li>
+<li><span class="tag t-loop">重要</span> <strong>ループ構造</strong> — 終わりが始まりに繋がる設計。アルゴリズムが「再生回数」を倍にカウント</li>
+<li><strong>情報ギャップ</strong> — 「知ってるようで知らない」の隙間を見せてから埋める</li>
+<li><strong>テンポ</strong> — 2秒以上の沈黙は離脱。常に画面に変化を</li>
+<li><strong>クリフハンガー</strong> — 「続きは…」で次の動画へ誘導。シリーズ化の起点</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-tensei">シリーズ① : 転生初日（異世界×マイクラ）</h2>
+<p style="color:#999;margin-bottom:8px">マイクラ世界に転生した現代ゲーマーが、ゲーム知識で無双する。両タグで最大リーチ。</p>
+
+<!-- Script 1 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#01「目覚めたら世界が四角かった」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-hot">初動◎</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック（冒頭3秒）:</strong>「俺が死んだ次の瞬間――世界が、四角くなってた」+ 目を見開くアップ → ブロック世界のパノラマ</div>
+<ol class="scene">
+<li>草原にうつ伏せで倒れている主人公。目を開ける。空が四角い雲。<span class="dir">（カメラ：顔アップ → 引きでブロック世界）</span></li>
+<li>「は？……え、これマイクラじゃん」立ち上がる。手を見る → ブロックじゃない。「体はリアルなのに世界だけマイクラ…？」</li>
+<li>目の前の木に試しにパンチ。ヒビが入り → 丸太がポンッとドロップ。<span class="dir">（SE：マイクラの採掘音）</span></li>
+<li>「マジで素材出た！！」→ 興奮する主人公。背後で視線を感じ振り返ると――</li>
+<li>村人が3人、口をあんぐり開けて見ている。「あ、あなた……素手で、木を……？」<span class="dir">（引き、夕暮れの光）</span></li>
+</ol>
+<div class="tip">ループポイント：最後の村人の驚愕顔 → 冒頭の「俺が死んだ次の瞬間」に繋がる構造。「なぜこの世界に来たのか？」の謎が次回への引き。</div>
+</div>
+
+<!-- Script 2 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#02「最初の夜を舐めてた」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この世界の夜は――"死"が歩いてくる」+ 暗闘の中で光る複数の赤い目</div>
+<ol class="scene">
+<li>村人に英雄扱いされてご機嫌の主人公。「まぁ俺マイクラ歴10年だし？余裕っしょ」</li>
+<li>太陽が沈む。急に村人たちが家に走り出す。「お、おい何だよ急に――」</li>
+<li>暗闘。唸り声。森の木々の間から、ゾンビが1体、2体、5体……。<span class="dir">（SE：ゾンビの唸り声、重低音BGM）</span></li>
+<li>「やべ、武器作ってない！！」→ 手持ちの丸太を握りしめる主人公</li>
+<li>背後から「シュー……」の音。振り返るとクリーパーが膨張開始。「あ」<span class="dir">（画面ホワイトアウト → 爆発SE）</span></li>
+</ol>
+<div class="tip">爆発でブラックアウト → 次回「ハート半分で朝を迎えた男」へ。クリーパー爆発は全マイクラ民の共通トラウマ。共感コメントが稼げる。</div>
+</div>
+
+<!-- Script 3 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#03「作業台が魔法陣に見える世界」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>主人公が作業台を置く → 村人が腰を抜かす「そ、それは失われし錬成の祭壇……！」</div>
+<ol class="scene">
+<li>丸太から板材を作る主人公。村人「板材を……手だけで……？ 道具も使わず？」</li>
+<li>板材4つで作業台をクラフト。設置すると光のエフェクト。<span class="dir">（アニメ演出：魔法陣が浮かび上がる）</span></li>
+<li>村の長老が震えながら「それは……千年前に失われた"万物錬成の祭壇"……！！」</li>
+<li>主人公（心の声）「え、これただの作業台なんだけど……」</li>
+<li>木の剣をクラフト → 村人全員が跪く「勇者様ァァァ！！」<br>主人公「いやこれ木の剣だから！！ 一番弱いやつだから！！」</li>
+</ol>
+<div class="tip">「マイクラの常識 vs 異世界のリアクション」のギャップがこのシリーズの核。同じフォーマットで「かまど=聖なる炉」「松明=永遠の灯火」と無限に横展開。</div>
+</div>
+
+<!-- Script 4 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#04「水とマグマで最強素材を作った」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-hot">知識無双</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「こいつ……水と溶岩を混ぜて"黒曜石"を……！？ そんな錬金術、聞いたことがない……！」</div>
+<ol class="scene">
+<li>村の鍛冶屋「勇者様、この溶岩流を止める方法はありません。村は終わりです……」</li>
+<li>主人公、バケツで水を持ってくる。「まぁ見てなって」</li>
+<li>溶岩に水をかける → ジュウウウ → 黒曜石が生成。<span class="dir">（壮大なSE、神々しい光）</span></li>
+<li>鍛冶屋「なっ……！ 溶岩が……石に！？ これは伝説の鉱石"オブシディアン"……！！」</li>
+<li>主人公（ドヤ顔）「これでネザーポータルも作れるけど……まだ早いか」<br>長老「ネ、ネザー……？ 魔界への門を開く気か……！？」</li>
+</ol>
+<div class="tip">「知識チート」の快感構造。コメント欄で「次は○○やってほしい」とリクエストが来る → ネタ供給の自走化。</div>
+</div>
+
+<!-- Script 5 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#05「無限水源を作ったら神になった」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この世界では"水"は最も貴重な資源だった。それを……無限に生み出した男の話」</div>
+<ol class="scene">
+<li>砂漠の村。井戸が枯れて住民が苦しんでいる。「もう3日も水が……」</li>
+<li>主人公「穴を2マス掘ってくれ。あとバケツ2杯の水」</li>
+<li>L字に水を流す → 無限水源完成。水がこんこんと湧き出す。<span class="dir">（奇跡の演出、住民の涙）</span></li>
+<li>村人たち泣きながら「水の神……水の神が現れた……！！」</li>
+<li>主人公「いやこれマイクラの基本テクなんだけど……」<span class="dir">（背後に神殿が建ち始めている）</span></li>
+</ol>
+<div class="tip">25秒のコンパクト設計。「砂漠の村」設定は映像的にも美しく、感動系のコメントが付きやすい。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-baby">シリーズ② : ベビーモブ編 <span class="tag t-new">Tiny Takeover対応</span></h2>
+<p style="color:#999;margin-bottom:8px">3/24リリースの新アプデ直撃。ベビーモブ39種リニューアル＆金のタンポポをアニメ化。投稿タイミング命。</p>
+
+<!-- Script 6 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#06「永遠に大人にならない子犬」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この花を食べた動物は……永遠に子どものままになる」+ 金色に光るタンポポのアップ</div>
+<ol class="scene">
+<li>冒険者の主人公が子犬を拾う。「お前、はぐれたのか？」<span class="dir">（新デザインの可愛いベビー犬）</span></li>
+<li>旅の途中で子犬と絆が深まるモンタージュ。一緒に走る、一緒に寝る</li>
+<li>村に到着。村人「その子犬、もうすぐ成犬になりますね」。主人公の表情が曇る</li>
+<li>野原で金色のタンポポを発見。主人公「……これを使えば」</li>
+<li>子犬に金のタンポポを与える。金色の光に包まれる子犬。「お前はずっと……このままでいろ」<span class="dir">（子犬が嬉しそうに尻尾を振る。夕焼け）</span></li>
+</ol>
+<div class="tip">エモ系。新アイテム「金のタンポポ」の機能をストーリーに昇華。動物系×感動は女性層にもリーチ。リリース日〜3日以内に投稿で最大効果。</div>
+</div>
+
+<!-- Script 7 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#07「ベビーゾンビが異世界で最強だった件」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この世界で一番恐ろしいモンスターは、ドラゴンでも魔王でもない。――身長50cmの、こいつだ」</div>
+<ol class="scene">
+<li>冒険者パーティが余裕綽々で森を進む。「この辺のモンスターなんて雑魚だろ」</li>
+<li>茂みからベビーゾンビ登場。「なんだ、子供のゾンビか。可愛いもん――」</li>
+<li>ベビーゾンビ、超高速で突進。剣士の股の間をすり抜け背後から噛みつく。<span class="dir">（スピード線＆残像演出）</span></li>
+<li>「速ッ！！」「当たらない！！」「ちょ、鎧の隙間に入ってくんな！！」</li>
+<li>パーティ壊滅。ベビーゾンビ、ニワトリに乗って去っていく。<span class="dir">（夕日バック、勝利のBGM）</span></li>
+</ol>
+<div class="tip">マイクラ民の共感ネタ「ベビーゾンビ速すぎ問題」をアニメの文法で。リニューアルされたベビーゾンビの新デザインを活かす。</div>
+</div>
+
+<!-- Script 8 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#08「39種のベビーモブ図鑑」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「マイクラの赤ちゃんモブ、全部アニメにしてみた」+ ベビーモブ集合の一枚絵</div>
+<ol class="scene">
+<li>テンポよく次々とベビーモブを紹介。1体3〜4秒。<span class="dir">（図鑑ページをめくる演出）</span></li>
+<li><strong>可愛い枠：</strong>子猫（毛玉になって転がる）→ 子犬（尻尾ぶんぶん）→ 子羊（もこもこ）</li>
+<li><strong>やばい枠：</strong>ベビーゾンビ（高速ダッシュ）→ ベビーホグリン（突進）→ ベビーピグリン（金塊を奪う）</li>
+<li><strong>レア枠：</strong>ベビーアクソロトル（水中ダンス）→ ベビーイルカ（ジャンプ）</li>
+<li>最後に全員集合。「推しは誰？コメントで教えて」<span class="dir">（投票風テロップ）</span></li>
+</ol>
+<div class="tip">「コメントで推し投票」でエンゲージメント爆上げ。図鑑フォーマットは分割投稿もできる（前半/後半）。</div>
+</div>
+
+<!-- Script 9 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#09「金のタンポポの本当の使い方」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「"永遠の幼さ"を与える花。それを――自分自身に使った男がいた」</div>
+<ol class="scene">
+<li>異世界の錬金術師が金のタンポポを研究している。「この花の効果を人間に使えば……」</li>
+<li>「不老不死に近い存在になれるのでは？」→ 自分に使用</li>
+<li>光に包まれる → 煙が晴れると……5歳児の姿に。「え」</li>
+<li>「声も体も子供に！？ 戻し方がわからない！！」</li>
+<li>主人公（通りかかる）「あ、迷子の子供だ。大丈夫？」<br>錬金術師「私は300歳の大錬金術師だァァァ！！」</li>
+</ol>
+<div class="tip">新アイテムをネタに使ったコメディ。「〇〇に使ったらどうなる？」のIFネタは横展開しやすい。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-chaos">シリーズ③ : 硫黄洞窟 / サルファーキューブ <span class="tag t-new">Chaos Cubed先取り</span></h2>
+<p style="color:#999;margin-bottom:8px">Q2リリース予定。先取り投稿で「このチャンネル最新情報早い」のポジションを取る。</p>
+
+<!-- Script 10 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#10「ブロックを食べるモンスター」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-new">Chaos Cubed</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「こいつは……食べたブロックの性質を、自分のものにする」+ サルファーキューブが木を吸収してバウンドする映像</div>
+<ol class="scene">
+<li>洞窟探索中の主人公。黄色い壁、硫黄の匂い。「この洞窟……見たことない」</li>
+<li>足元に黄色いスライムのような生物。「なにこれ可愛い……」</li>
+<li>サルファーキューブが近くの木ブロックを吸収 → 体が茶色に変わり、ボヨンボヨン跳ね出す</li>
+<li>氷ブロックを吸収 → ツルツル滑りだす。TNTに近づき……「おい待てやめろ！！」</li>
+<li>大爆発。主人公「こいつ……可愛い顔して最凶じゃねぇか……！！」</li>
+</ol>
+<div class="tip">新モブ「サルファーキューブ」の能力紹介をストーリーで。実装前に投稿すれば検索流入を独占できる。</div>
+</div>
+
+<!-- Script 11 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#11「硫黄洞窟には絶対に潜るな」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-new">Chaos Cubed</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この先に進んだ冒険者は――誰一人、帰ってこなかった」+ 黄色く輝く洞窟の入り口</div>
+<ol class="scene">
+<li>ギルドの掲示板。「硫黄洞窟調査 報酬：ダイヤ100個 ※危険度SSS」</li>
+<li>主人公「金に目がくらんだ」→ 洞窟に突入。黄色い壁、硫黄の池が泡立つ</li>
+<li>硫黄池から立ち上るガス → 主人公の視界がグニャリと歪む（毒ガスの吐き気エフェクト）</li>
+<li>足元を掘ると地面からガスが噴出。「掘ったらダメなタイプ！？」</li>
+<li>奥から巨大なサルファーキューブが転がってくる。「やべ、逃げ――」<span class="dir">（TO BE CONTINUED）</span></li>
+</ol>
+<div class="tip">ホラー×ダンジョン探索。新バイオームの危険さを強調する構成。クリフハンガーでPart2へ。</div>
+</div>
+
+<!-- Script 12 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#12「サルファーキューブを異世界で召喚したら」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-new">Chaos Cubed</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「最弱の召喚獣と笑われた。――あらゆる属性を吸収する、最強の生物だとも知らずに」</div>
+<ol class="scene">
+<li>召喚魔法の試験。主人公が召喚したのは小さな黄色いスライム。会場爆笑</li>
+<li>「ハズレ召喚獣だ！」「スライム以下じゃん！」</li>
+<li>隣の召喚士の炎の竜が暴走、火炎放射 → サルファーキューブが炎を吸収</li>
+<li>真っ赤に変化したサルファーキューブ、超火力の炎を放射。竜が消し飛ぶ</li>
+<li>会場沈黙。主人公「……あ、こいつ"食べた属性を使える"んだ」<span class="dir">（ニヤリ）</span></li>
+</ol>
+<div class="tip">「ハズレスキル→実は最強」テンプレ × 新モブ。異世界側の設定にサルファーキューブの能力がピッタリハマる。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-real">シリーズ④ : 「マイクラが○○だったら」リアル化</h2>
+<p style="color:#999;margin-bottom:8px">鉄板フォーマット。中身を変えるだけで無限量産。ビジュアルギャップがフックになる。</p>
+
+<!-- Script 13 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#13「クリーパーがリアルだったら」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-hot">鉄板</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>背後で「シュウウウ……」の音。振り返ると――（爆発の瞬間で一時停止）</div>
+<ol class="scene">
+<li>美しい森の中、主人公が鼻歌で木を伐採。平和な空気</li>
+<li>背後の木の影に緑色の影。足音なし。じわじわ近づく</li>
+<li>「シュー……」主人公の瞳孔が開く。スローモーション：振り返る → 白く膨張するクリーパー</li>
+<li>大爆発。衝撃波で木が吹っ飛ぶ。煙の中から這い出す主人公「ハート半分……」</li>
+<li>落ちてきた火薬を見つめる。「……お前の犠牲は無駄にしない」<span class="dir">（TNT製造フラグ）</span></li>
+</ol>
+<div class="tip">30秒以内。爆発シーンの映像美が再生維持率のカギ。ループ：爆発の煙 → 冒頭の平和な森に戻る構造に。</div>
+</div>
+
+<!-- Script 14 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#14「エンダーマンと目が合ったら」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この世界には一つだけルールがある。"あいつ"とは……絶対に目を合わせるな」</div>
+<ol class="scene">
+<li>夜道を歩く主人公。遠くに黒い長身のシルエット。ブロックを持って立っている</li>
+<li>「エンダーマン……視線を逸らせ……視線を……」必死に地面を見る</li>
+<li>好奇心に負けてチラッと見てしまう。目が合った瞬間 → エンダーマンの口がカッと開く</li>
+<li>テレポートの紫エフェクト。一瞬で目の前に。「ギャアアアア！！」</li>
+<li>殴られて吹っ飛ぶ主人公。遠くでエンダーマンがまた静かにブロックを持っている</li>
+</ol>
+<div class="tip">ホラー演出。「目を合わせたらアウト」の緊張感がショート向き。暗い映像＋紫のテレポートエフェクトで映像映え◎。</div>
+</div>
+
+<!-- Script 15 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#15「ベッドで寝たらネザーで爆発した」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">20秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「ネザーで絶対にやってはいけないこと――寝ることだ」（ベッドに手を伸ばす手のアップ）</div>
+<ol class="scene">
+<li>ネザーを冒険中の主人公。「疲れた……ちょっと寝るか」</li>
+<li>ベッドを置く。仲間「おい待て！ここはネザーだぞ！！」</li>
+<li>ベッドをクリック → 0.5秒の静寂 → 超大爆発<span class="dir">（画面真っ白 → 赤 → 黒）</span></li>
+<li>リスポーン。オーバーワールドの草原で目覚める。「……装備全ロスした」</li>
+<li>遠くの空を見つめて「あのベッド……爆弾だったのかよ……」</li>
+</ol>
+<div class="tip">20秒のショートショート。マイクラあるある＋爆発映像。最短最速でオチまで行く。リスポーン→冒頭に繋がるループ構造。</div>
+</div>
+
+<!-- Script 16 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#16「スケルトンの精度がバグってる」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>ヒュンッ！ 矢が頬をかすめる。「こいつ……200m先から当ててきやがった」</div>
+<ol class="scene">
+<li>主人公が平原を走っている。「安全だな……」</li>
+<li>ヒュンッ！ 矢が足元に刺さる。「え？」→ もう1本が頬をかすめる</li>
+<li>遥か遠くにスケルトンのシルエット。主人公「距離200m……嘘だろ……？」</li>
+<li>走って逃げる → 矢が連射で追いかけてくる。柱に隠れる → 矢が柱を貫通しそうな勢い</li>
+<li>主人公「こいつスナイパーかよ！！ ハードモードのスケルトン強すぎだろ！！」</li>
+</ol>
+<div class="tip">「スケルトンの弓が正確すぎ問題」はマイクラ民の共感ネタ。FPS風演出でアクション映え。</div>
+</div>
+
+<!-- Script 17 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#17「落下ダメージ、ガチだった」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">20秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>高さ30ブロックから落ちていく主人公のスローモーション。「あ、水ない」</div>
+<ol class="scene">
+<li>山の頂上で絶景を楽しむ主人公。「いい眺め……おっと」→ 足を滑らせる</li>
+<li>落下開始。スローモーション。地面が近づく。必死に水バケツを探す</li>
+<li>「水バケツ！水バケツどこ！？」→ インベントリを漁る → 丸石しかない</li>
+<li>着地。全身に衝撃。ハートが一気にゼロ近くまで減る</li>
+<li>這いつくばりながら「水バケツ……常に持ち歩けって……先人の教え……」</li>
+</ol>
+<div class="tip">MLG水バケツネタ。失敗パターンで共感。次回で「成功版MLG」を出してギャップを作る。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-craft">シリーズ⑤ : クラフト = 魔法詠唱</h2>
+<p style="color:#999;margin-bottom:8px">作業台でのクラフト → 伝説の錬成シーンとして描く。地味な作業がド派手に。</p>
+
+<!-- Script 18 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#18「ダイヤの剣を錬成した日」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「伝説の鉱石"ダイヤモンド"……それを剣に鍛えた男がいる」+ ダイヤ剣が光を放つカット</div>
+<ol class="scene">
+<li>地下深く。ツルハシでブロックを砕く主人公。溶岩の近くでダイヤ鉱石を発見</li>
+<li>「やっと見つけた……！」慎重に採掘。キラキラ光るダイヤモンド2個</li>
+<li>作業台で錬成開始。<span class="dir">（異世界演出：魔法陣展開、光の柱、風が巻き起こる）</span></li>
+<li>棒とダイヤを配置 → 閃光 → ダイヤの剣が完成。刀身が青く輝く</li>
+<li>試し斬り。岩を一刀両断。主人公「……今日から、攻めに転じる」<span class="dir">（目に炎が宿る）</span></li>
+</ol>
+<div class="tip">王道のパワーアップ演出。「鉄→ダイヤ→ネザライト」と段階的にスケールアップする構造。</div>
+</div>
+
+<!-- Script 19 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#19「エンチャントは禁忌の術」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「この文字……誰にも読めないはずの"銀河語"を、こいつは読んでいる……！」</div>
+<ol class="scene">
+<li>エンチャントテーブルを発見。謎の文字が浮かんでいる。村の魔術師「これは解読不能の古代語……」</li>
+<li>主人公「いや、これ銀河標準語でしょ。"シャープネスV"って書いてある」<span class="dir">（マイクラのエンチャント言語のネタ）</span></li>
+<li>魔術師「読める……だと……！？ お前は何者だ！！」</li>
+<li>本棚を15個並べて最大エンチャント。紫の稲妻が走る壮大な演出</li>
+<li>「シャープネスV＋耐久力III＋火属性II」→ 剣が紫に輝く。「これで魔王にも勝てるか」</li>
+</ol>
+<div class="tip">エンチャントの銀河標準語は実在するネタ。知識系のコメントが付きやすく、エンゲージメント◎。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-nether">シリーズ⑥ : ネザー = 魔界突入</h2>
+<p style="color:#999;margin-bottom:8px">ネザー突入は最大の転換点。炎と溶岩の映像美でショートの視聴維持率を稼ぐ。</p>
+
+<!-- Script 20 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#20「ネザーゲートを開いた瞬間」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-hot">転換点</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「魔界への門を……本当に、開く気か……？」+ 紫に輝くポータルのアップ</div>
+<ol class="scene">
+<li>黒曜石を組み上げる主人公。村人たちが遠巻きに見守る。恐怖の表情</li>
+<li>火打石と打ち金でポータルに着火 → 紫色の渦が出現。重低音。地面が震える</li>
+<li>長老「やめろ！その門の先は"魔界"だ！ 千年前に封印された世界だぞ！」</li>
+<li>主人公「ブレイズロッドがないとエンドに行けない。……行くしかない」</li>
+<li>紫の渦に一歩踏み出す。振り返って「――行ってくる」<span class="dir">（ポータルに吸い込まれる。暗転）</span></li>
+</ol>
+<div class="tip">異世界サーガの大転換点。ここから「ネザー編」として5〜10本のシリーズに展開。クリフハンガーで「ネザーで何を見た？」の引きを作る。</div>
+</div>
+
+<!-- Script 21 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#21「ガストの泣き声の理由」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「ネザーで泣いている巨大な白い怪物。あいつが泣く理由を、知ってるか」</div>
+<ol class="scene">
+<li>ネザーの空中。白い巨大なクラゲのような生物 → ガスト。涙を流しながら浮遊</li>
+<li>主人公に気づく → 悲しそうに口を開ける → 火球発射。「うわっ！！」</li>
+<li>避けながら主人公「待って、お前……泣いてるのか？」</li>
+<li>ガストの過去映像。昔はオーバーワールドの空を飛んでいた。ネザーに閉じ込められた</li>
+<li>主人公「お前……帰りたかったのか」<span class="dir">（ガストの涙のアップ。美しい悲しみの演出）</span></li>
+</ol>
+<div class="tip">エモ×考察系。マイクラの公式設定（ガストは帰りたがっている説）をアニメで映像化。考察コメントが伸びる。</div>
+</div>
+
+<!-- Script 22 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#22「ウィザスケの頭を3つ集めろ」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「ウィザーを召喚するには……こいつらの首が3つ必要だ」+ 暗いネザー要塞、黒い剣を持つシルエット</div>
+<ol class="scene">
+<li>ネザー要塞の暗い通路。奥からカツン、カツンと足音</li>
+<li>ウィザースケルトン出現。身長3m、黒い骨、石の剣。<span class="dir">（威圧感マシマシ演出）</span></li>
+<li>主人公「頭が必要なんだ……悪いな」→ 剣を構える → 激闘開始</li>
+<li>斬撃の応酬。衰弱のエフェクトが主人公を蝕む。「くっ……毒か……！」</li>
+<li>渾身の一撃で撃破 → 頭がドロップ。「あと2つ……」<span class="dir">（1/3のカウンター表示）</span></li>
+</ol>
+<div class="tip">収集クエスト構造。3話で1セット → ウィザー召喚戦へ。「あと○つ」のカウンターが登録を促す。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-pvp">シリーズ⑦ : バトルアニメ</h2>
+<p style="color:#999;margin-bottom:8px">PvP＆ボス戦を少年漫画レベルのアクションで。マイクラアニメの最大差別化ポイント。</p>
+
+<!-- Script 23 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#23「ウォーデン vs フル装備勇者」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-hot">バトル最強</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「マイクラ最強の生物――音で狩る、闇の番人」+ ウォーデンの胸が光る暗闇のカット</div>
+<ol class="scene">
+<li>Deep Dark。主人公はネザライトフル装備。「ここに……いるのか」</li>
+<li>足音。スカルクセンサーが反応 → 地面からウォーデンが出現。胸のソウルが脈動</li>
+<li>主人公が斬りかかる → ウォーデンが片手で弾く。「硬っ……！ ネザライト剣が通らない！？」</li>
+<li>ウォーデンの咆哮 → ソニックブーム発射。主人公吹っ飛ぶ。壁に激突</li>
+<li>立ち上がる主人公。「……力じゃ勝てない。なら――"音"で騙す」<span class="dir">（雪玉を取り出す。TO BE CONTINUED）</span></li>
+</ol>
+<div class="tip">ウォーデン＝マイクラ最強の敵。「正面から勝てない→知恵で攻略」の構造は異世界モノの王道。Part2で雪玉＆弓の音デコイ戦法へ。</div>
+</div>
+
+<!-- Script 24 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#24「エンダードラゴン最終決戦」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-hot">シーズンフィナーレ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「全ての旅の終着点――"果ての世界"の王と、決着をつける」+ エンドの黒い空にドラゴンのシルエット</div>
+<ol class="scene">
+<li>エンドポータルから飛び出す主人公。黒い大地、エンダーマンの群れ、中央の噴水</li>
+<li>咆哮と共にエンダードラゴン降臨。翼で風が吹き荒れる</li>
+<li>黒曜石の塔のエンドクリスタルを弓で破壊 → 爆発 → ドラゴンが弱体化</li>
+<li>ドラゴンが急降下 → 主人公がジャンプ → 空中で剣を突き刺す。<span class="dir">（全画面の覚醒エフェクト）</span></li>
+<li>ドラゴン消滅。経験値の雨。帰還ポータル出現。「……帰るか」<span class="dir">（仲間たちの笑顔のフラッシュバック）</span></li>
+</ol>
+<div class="tip">シリーズの集大成。50秒でも映像美で視聴維持できる。エンド→帰還→冒頭の転生シーンに繋がるループ。シーズン2「ハードコア編」への引きも入れる。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-comedy">シリーズ⑧ : コメディ / あるある</h2>
+<p style="color:#999;margin-bottom:8px">シリアスの合間に挟むギャグ回。共感＋笑いでシェアを狙う。</p>
+
+<!-- Script 25 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#25「村人の取引がぼったくりすぎる」</h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span><span class="tag t-loop">ループ</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「エメラルド64個で……パン1個？」（主人公の怒りの表情アップ）</div>
+<ol class="scene">
+<li>村の商店。主人公「剣が欲しいんだけど」</li>
+<li>村人「エメラルド48個になります」→ 主人公「高っ！ じゃあパンは？」</li>
+<li>村人「エメラルド12個です」→ 主人公「パンが！？」</li>
+<li>主人公「お前ら……この世界の物価どうなってんだ！！」</li>
+<li>別の村人「砂利10個とエメラルド1個で矢を売りますよ」→ 主人公「お前だけまともだな……」<span class="dir">（矢師だけ正気ネタ）</span></li>
+</ol>
+<div class="tip">村人取引のぼったくりはマイクラ最大の共感ネタ。コメント欄で「分かる」の嵐。ループ：最後の矢師→冒頭の怒り顔に繋がる。</div>
+</div>
+
+<!-- Script 26 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#26「松明を置く間隔にこだわる男」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-time">20秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「湧き潰しとは……光で闇を支配する"技術"だ」（真顔で松明を等間隔に置く男）</div>
+<ol class="scene">
+<li>洞窟探索中。仲間「適当に松明置いてけばいいっしょ」→ バラバラに配置</li>
+<li>主人公（ブチギレ）「ダメだ！！ 松明は7マス間隔だ！！ 光レベル計算しろ！！」</li>
+<li>定規のように正確に松明を配置し始める。仲間「こわ……」</li>
+<li>1本ずれた松明を見つけて「……ここ。1マスずれてる」→ 置き直す</li>
+<li>完璧に湧き潰しされた洞窟。主人公「美しい……」<span class="dir">（変態的な満足顔）</span></li>
+</ol>
+<div class="tip">マイクラガチ勢あるある。「分かる勢」と「そこまでやる？勢」で二極化 → コメント活性化。</div>
+</div>
+
+<!-- Script 27 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#27「ダイヤを持ってマグマに落ちた」</h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-loop">ループ</span><span class="tag t-time">20秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>「64個のダイヤを抱えて……マグマに、落ちた」（手からダイヤがこぼれ落ちる）</div>
+<ol class="scene">
+<li>主人公、ダイヤ大量採掘に成功。「今日は神引きだ！64個！」</li>
+<li>意気揚々と帰宅中。足元のブロックを掘る → 下がマグマ</li>
+<li>落下開始。スローモーション。インベントリのダイヤが散る。「嘘だろ……」</li>
+<li>マグマに沈む。ダイヤが溶ける演出。「俺の3時間がァァァァ！！」</li>
+<li>リスポーン。無言でベッドに座る主人公。<span class="dir">（虚無の表情。雨の音）</span></li>
+</ol>
+<div class="tip">「溶岩ロスト」は全マイクラ民最大のトラウマ。悲しみ共感でコメント＆シェアが稼げる。ループ：虚無の顔 → 冒頭の「64個」の歓喜に繋がる。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="s-long">横長動画（5〜10分）</h2>
+<p style="color:#999;margin-bottom:8px">ショートで集客し、横長で「深い世界観」を見せて登録に繋げる。広告収益のメイン。</p>
+
+<!-- Script 28 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#28「転生1日目：ブロック世界の勇者」<span style="margin-left:8px" class="tag t-long">横長 8分</span></h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span></div>
+</div>
+
+<h4>構成</h4>
+<ol class="scene">
+<li><strong>アバン（0:00-0:30）</strong> — 現代日本。ゲーマーの主人公がマイクラを遊びながら寝落ち → 目覚めたらブロック世界。衝撃のオープニング</li>
+<li><strong>探索（0:30-2:00）</strong> — 木を殴る→丸太ドロップ。草を刈る→種ドロップ。「本当にマイクラのシステムだ……」一つずつ検証。インベントリUIが空中に浮かぶ演出</li>
+<li><strong>村の発見（2:00-3:30）</strong> — 丘の向こうに村。村人と初対面。言葉が通じる。しかし主人公の能力に驚愕。「素手で木を……！？」英雄視の始まり</li>
+<li><strong>最初のクラフト（3:30-5:00）</strong> — 作業台を作成 → 村人が腰を抜かす「錬成の祭壇！」。木の剣、木のツルハシを次々制作。村人の驚愕がエスカレート。コミカルに</li>
+<li><strong>最初の夜（5:00-7:00）</strong> — 日没。ゾンビ＆スケルトン襲来。主人公が木の剣で応戦。苦戦するが何とか撃退。村人を守り切る。信頼獲得</li>
+<li><strong>エンディング（7:00-8:00）</strong> — 朝日。主人公「この世界で……やっていけるかもしれない」。遠くの山の向こうにネザーの赤い光が見えるカット → 次回予告「地下の宝石 ダイヤモンドを求めて」</li>
+</ol>
+<div class="tip">Episode 1。全ショートの世界観の「原点」になる話。ここを見ると全ショートの解像度が上がる設計。ショートのコメ欄に「フル版はこちら」でリンク。</div>
+</div>
+
+<!-- Script 29 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#29「ネザー突入編：魔界の門」<span style="margin-left:8px" class="tag t-long">横長 10分</span></h3>
+<div class="sc-meta"><span class="tag t-hy">MC×異世界</span></div>
+</div>
+
+<h4>構成</h4>
+<ol class="scene">
+<li><strong>アバン（0:00-0:30）</strong> — ネザーの炎の中で戦う主人公のフラッシュフォワード。「あの日、門を開かなければ――」</li>
+<li><strong>準備編（0:30-3:00）</strong> — ダイヤ装備の完成。黒曜石の採掘。村人との別れ。「必ず帰ってくる」。ポーション醸造の錬金術シーン</li>
+<li><strong>ポータル起動（3:00-4:30）</strong> — 黒曜石の門を組み上げ、着火。紫の渦が出現。重低音。地面が揺れる。村人の恐怖。主人公の覚悟</li>
+<li><strong>ネザー到着（4:30-6:00）</strong> — 赤い世界。溶岩の海。ソウルサンドの谷。空気が熱い描写。ゾンビピグリンの群れ。「攻撃しなければ……無害のはず」</li>
+<li><strong>ブレイズ戦（6:00-8:30）</strong> — ネザー要塞発見。ブレイズスポナーの部屋。炎を纏うブレイズとの激戦。雪玉で応戦 → 炎と氷の攻防。ブレイズロッド獲得</li>
+<li><strong>帰還＆引き（8:30-10:00）</strong> — ポータルで帰還。村人の歓声。しかし主人公は暗い顔。「ネザーで……"あいつ"を見た。3つの頭を持つ、黒い影を」→ ウィザー編へ</li>
+</ol>
+<div class="tip">シリーズの中核エピソード。ブレイズ戦のアクションが見どころ。「ウィザーの影」を匂わせて次回への強力な引きを作る。</div>
+</div>
+
+<!-- Script 30 -->
+<div class="sc">
+<div class="sc-head">
+<h3>#30「ハードコア100日 アニメ版 ダイジェスト」<span style="margin-left:8px" class="tag t-long">横長 8分</span></h3>
+<div class="sc-meta"><span class="tag t-mc">MC特化</span><span class="tag t-hot">定番×新</span></div>
+</div>
+
+<h4>構成</h4>
+<ol class="scene">
+<li><strong>Day 1-10（0:00-1:30）</strong> — 何もない平原。素手スタート。初日の夜を土ハウスで凌ぐ。食料探しに奔走。「死んだら終わり」の緊張感</li>
+<li><strong>Day 11-30（1:30-3:00）</strong> — 拠点建設。農業開始。鉄装備完成。洞窟探索でダイヤ発見。ここで一度クリーパーに殺されかけてハート1。<span class="dir">（心臓の鼓動SE）</span></li>
+<li><strong>Day 31-50（3:00-4:30）</strong> — ネザー突入。ブレイズ戦。衰弱エフェクトで瀕死。ポーションで辛うじて生存。ブレイズロッド＆エンダーパール確保</li>
+<li><strong>Day 51-70（4:30-6:00）</strong> — 拠点が城レベルに成長。自動農場、牧場、エンチャントルーム完備。平和な日常パート（ベビーモブとの交流）</li>
+<li><strong>Day 71-90（6:00-7:00）</strong> — ウォーデンとの遭遇。死の淵。ウィザー召喚＆撃破。ネザースター獲得。ビーコン起動</li>
+<li><strong>Day 91-100（7:00-8:00）</strong> — エンダードラゴン最終決戦。全装備、全ポーション、全知識を投入。撃破 → エンドポエム → 100日目の朝日</li>
+</ol>
+<div class="tip">「100日ハードコア」はYouTubeマイクラの定番フォーマット。それをアニメでやるのは未開拓。既存フォーマット × 新表現 = 強い。サムネに「100日」のデカ文字。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<div class="note">
+<strong>投稿優先順:</strong><br>
+1. <strong>#06〜09（ベビーモブ編）</strong> — Tiny Takeover リリース直後の今週中に投稿。トレンド乗りが最優先<br>
+2. <strong>#01〜05（転生初日）</strong> — チャンネルの世界観を確立する基盤。並行して制作<br>
+3. <strong>#10〜12（硫黄洞窟）</strong> — Chaos Cubed リリース前の先行投稿で検索を独占<br>
+4. <strong>#13〜17（リアル化）</strong> — 安定して回るフォーマット。週2本ペースで量産<br>
+5. <strong>#28（横長Ep.1）</strong> — ショートが1万再生を超えたら投入<br><br>
+<strong>トレンド情報源:</strong>
+<a href="https://packapop.com/blogs/youtube-success-blog/minecraft-youtube-video-ideas">Packapop - Minecraft Video Ideas</a> /
+<a href="https://www.epidemicsound.com/blog/youtube-trends-2026/">Epidemic Sound - YouTube Trends 2026</a> /
+<a href="https://www.nexlev.io/youtube-shorts-niches">NexLev - Shorts Niches</a> /
+<a href="https://www.minecraft.net/en-us/article/mclive_march2026_recap">Minecraft LIVE 2026 Recap</a>
+</div>
+
+<div class="footer">マイクラアニメ台本集 v1 — 30本 — 2026.03.25</div>
+</div>
+
+</body>
+</html>

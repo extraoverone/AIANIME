@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイクラアニメ 台本集 v2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0f0f0f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:16px;line-height:1.8}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:rgba(15,15,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid #2a2a2a;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#777;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;transition:.15s;text-decoration:none}
+nav a:hover,nav a.active{color:#fff;background:#1f1f1f}
+
+/* HERO */
+.hero{text-align:center;padding:48px 24px 32px}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:900;margin-bottom:8px}
+.hero p{color:#888;font-size:15px;max-width:640px;margin:0 auto}
+
+/* SECTION HEADER */
+.sec-h{max-width:1280px;margin:0 auto;padding:40px 24px 12px}
+.sec-h h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
+.sec-h p{color:#777;font-size:14px}
+
+/* GRID */
+.grid{max-width:1280px;margin:0 auto;padding:0 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+
+/* CARD */
+.card{background:#181818;border:1px solid #262626;border-radius:12px;overflow:hidden;transition:border-color .15s}
+.card:hover{border-color:#444}
+.card-top{padding:20px 22px 16px}
+.card-top h3{font-size:16px;font-weight:800;margin-bottom:10px;color:#fff;line-height:1.5}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{padding:2px 8px;border-radius:5px;font-size:11px;font-weight:700;letter-spacing:.02em}
+.t-mc{background:rgba(34,197,94,.12);color:#4ade80}
+.t-hy{background:rgba(234,179,8,.1);color:#facc15}
+.t-hot{background:rgba(239,68,68,.12);color:#f87171}
+.t-new{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-dark{background:rgba(148,163,184,.1);color:#cbd5e1}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-long{background:rgba(251,146,60,.12);color:#fb923c}
+.hook{background:#16161e;border-left:3px solid #ef4444;padding:12px 16px;font-size:14px;color:#d4d4d4;line-height:1.7;margin:0 0 4px}
+.hook b{color:#fca5a5}
+
+/* DETAILS */
+details{border-top:1px solid #262626}
+summary{padding:12px 22px;font-size:13px;font-weight:700;color:#888;cursor:pointer;user-select:none;transition:.15s}
+summary:hover{color:#fff;background:#1f1f1f}
+summary::marker{color:#555}
+details[open] summary{color:#c084fc;border-bottom:1px solid #262626}
+.detail-body{padding:20px 22px 24px}
+
+/* SCENE */
+.scene-block{margin-bottom:20px;padding-left:20px;border-left:2px solid #333}
+.scene-block:last-child{margin-bottom:0}
+.scene-num{font-size:12px;font-weight:800;color:#8b5cf6;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.scene-dir{font-size:13px;color:#999;margin-top:4px}
+.scene-dir span{color:#666;font-style:italic}
+
+/* SUB SECTIONS */
+.sub{margin-top:16px}
+.sub h5{font-size:12px;font-weight:800;color:#666;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.sub p,.sub li{font-size:14px;color:#aaa;line-height:1.8}
+.sub ul{padding-left:18px;margin:0}
+.sub li{margin-bottom:4px}
+
+/* VISUAL NOTE */
+.vis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:600px){.vis{grid-template-columns:1fr}}
+.vis-box{background:#111;border:1px solid #222;border-radius:8px;padding:12px 14px}
+.vis-box h6{font-size:11px;font-weight:800;color:#555;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.vis-box p{font-size:13px;color:#999;line-height:1.7;margin:0}
+
+/* TWIST BOX */
+.twist{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:8px;padding:14px 16px;margin-top:16px}
+.twist h5{font-size:12px;font-weight:800;color:#f87171;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.twist p{font-size:13px;color:#e5a0a0;line-height:1.7;margin:0}
+
+/* DIVIDER */
+hr{border:none;height:1px;background:#222;margin:12px 24px}
+
+/* NOTE BOX */
+.note-box{max-width:1280px;margin:24px auto;padding:0 20px}
+.note-box-inner{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:24px 28px}
+.note-box-inner h4{font-size:15px;color:#60a5fa;margin-bottom:10px;font-weight:800}
+.note-box-inner p,.note-box-inner li{font-size:14px;color:#93c5fd;line-height:1.8}
+.note-box-inner ul{padding-left:18px;margin-top:6px}
+.note-box-inner li{margin-bottom:4px}
+
+.footer{text-align:center;padding:40px 0;color:#555;font-size:13px;border-top:1px solid #1a1a1a;max-width:1280px;margin:0 auto}
+
+/* expand all btn */
+.expand-bar{max-width:1280px;margin:0 auto;padding:8px 24px;text-align:right}
+.expand-bar button{background:#222;color:#999;border:1px solid #333;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;transition:.15s}
+.expand-bar button:hover{color:#fff;border-color:#555}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#top">TOP</a>
+<a href="#s-reverse">A 逆視点</a>
+<a href="#s-dark">B 闇設定</a>
+<a href="#s-meta">C メタ</a>
+<a href="#s-emotion">D 感情</a>
+<a href="#s-chaos">E 新アプデ</a>
+<a href="#s-twist">F どんでん返し</a>
+<a href="#s-long">G 横長</a>
+<a href="#s-comedy">H コメディ</a>
+<a href="#s-multi">I マルチ</a>
+<a href="#s-whatif">J もしも</a>
+<a href="#s-warden">K ウォーデン</a>
+<a href="#s-block">L 1ブロック</a>
+<a href="#s-community">M 実在ネタ</a>
+</nav>
+
+<div class="hero" id="top">
+<h1>マイクラアニメ 台本集 v2</h1>
+<p>カードをクリックで詳細展開。キャラ外見・情景描写・カメラワーク・音響設計まで記載。</p>
+</div>
+
+<div class="expand-bar"><button onclick="document.querySelectorAll('details').forEach(d=>d.open=!d.open)">全て展開 / 閉じる</button></div>
+
+<!-- ======== A : 逆視点 ======== -->
+<div class="sec-h" id="s-reverse"><h2>A：逆視点 ——「プレイヤーが怖い」</h2><p>いつも殺してる側のモブ視点。プレイヤーが「災害」として描かれる。</p></div>
+<div class="grid">
+
+<!-- #01 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">初投稿向き</span><span class="tag t-time">35秒</span></div>
+<h3>#01「村人が見た"あの男"の記録」</h3>
+<div class="hook"><b>フック:</b>「その男は素手で木を壊し、夜明けまでに家を建て、翌日には鉄の剣を持っていた。我々はそれを――"プレイヤー"と呼んだ」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>語り部の老村人</b> — 白いローブ、長い白髭。片目が潰れている（過去にプレイヤーに殴られた暗喩）。焚き火に照らされた横顔が映る</li>
+<li><b>子供の村人たち（3人）</b> — 布の服。怯えた目で老人を見上げている。1人が毛布を握りしめている</li>
+<li><b>プレイヤー（回想内）</b> — シルエットのみ。顔は映さない。逆光で黒い影として描く。装備だけがタイムラプスで変化</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 焚き火の語り</div>
+<p>夜。村はずれの焚き火。老人が子供たちに語り始める。「あの日のことを聞かせてやろう」</p>
+<div class="scene-dir"><span>カメラ：</span>焚き火の炎越しに老人の顔をナメる。手持ち風の微ブレ。炎のパチパチ音。虫の声。遠くでゾンビの唸り</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 回想：出現</div>
+<p>回想カット。晴れた草原に突然「男」が現れた。何もない場所に。素手で木を殴り始めた。「我々は最初、狂人だと思った」</p>
+<div class="scene-dir"><span>カメラ：</span>望遠レンズで遠くから覗き見る構図。村人たちが柵の影からこっそり見ている。風で草が揺れる。BGMなし、環境音のみ。木が割れる不自然な音だけ響く</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 回想：加速する進化</div>
+<p>タイムラプス。朝→昼→夜→朝が高速で回る。男のシルエットの装備が変化：素手→木→石→鉄→ダイヤ。背景の家が土→木→石造りに変わる</p>
+<div class="scene-dir"><span>カメラ：</span>定点カメラ。太陽と月が高速で回る。男だけが常にフレームの中央。不穏なストリングスBGMが徐々にビルドアップ。1週間を5秒で見せる</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4 — 回想：略奪</div>
+<p>「男は我々の畑を荒らし、ベッドを勝手に使い、鍛冶屋の溶岩を盗んだ。だが我々は何も言えなかった。だって――」</p>
+<div class="scene-dir"><span>カメラ：</span>村人の主観視点。プレイヤーが目の前の畑をバキバキ壊していくのを、ただ見ていることしかできない。瞳のアップ。涙はないが、絶望がある</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 結末：帰還</div>
+<p>エンダードラゴンを倒して帰ってきた男の映像。全身がエンドの粒子を纏っている。「――"神"に文句を言える者など、いないのだから」。子供たちの怯えた目。焚き火がふっと消える</p>
+<div class="scene-dir"><span>カメラ：</span>超ローアングルで男を見上げる。逆光。顔は見えない。BGMがピタッと止まり3秒の無音→暗転。子供の息を呑む音だけ</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>回想：青白い冷たいトーン。現在（焚き火）：橙の暖色。プレイヤーのシルエットだけ常に真っ黒。</p></div>
+<div class="vis-box"><h6>音響</h6><p>BGMなし→不穏なストリングス→無音。環境音多め。プレイヤーの足音だけが異常に大きく聞こえる演出。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>プレイヤーの「普通のプレイ」が村人視点だと恐怖。「俺たち加害者だったのか」のコメント狙い。顔を見せない演出で"誰でもプレイヤーになれる"没入感。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #02 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">バイラル狙い</span><span class="tag t-time">30秒</span></div>
+<h3>#02「クリーパーは抱きしめたかっただけ」</h3>
+<div class="hook"><b>フック:</b>「僕は、近づくと爆発する。だから誰にも――触れられない」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>クリーパー（擬人化）</b> — 緑髪ショートの少年。フード付きパーカー（クリーパー柄）。大きな黒い瞳。表情豊かだが、いつも寂しそう。手には小さな火花が散っている</li>
+<li><b>ゾンビ・スケルトンたち</b> — 遠くで仲良くしている。クリーパーが近づくと散り散りになる</li>
+<li><b>プレイヤー</b> — 背中だけ映る。作業に夢中で振り返らない</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 孤独</div>
+<p>夜の森。雨が降っている。クリーパー少年が木の下で雨宿り。モノローグ「僕は生まれたときからこうだった。近づくと、体が熱くなって……」</p>
+<div class="scene-dir"><span>カメラ：</span>雨粒が葉を叩くクロースアップからプルバック。クリーパーの全身が見える。水たまりに映る孤独な姿。ピアノ単音のBGM。雨音がメイン</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 拒絶</div>
+<p>遠くでゾンビたちが笑い合っている。クリーパーが「待って」と手を伸ばす。3歩近づいた瞬間、体からシューッと音。ゾンビたちが慌てて逃げる。「また……」</p>
+<div class="scene-dir"><span>カメラ：</span>クリーパーの伸ばした手→空を掴む手のアップ。焦点がボケてゾンビたちの背中が遠ざかる。SE：シューッという起爆音が小さく鳴り、すぐ止まる</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 希望</div>
+<p>月明かりの丘。プレイヤーが背を向けて松明を立てている。クリーパーがそっと近づく。「今度こそ……友達に……」。手を伸ばす</p>
+<div class="scene-dir"><span>カメラ：</span>スローモーション。クリーパーの足が一歩ずつ草を踏む。月光が2人を照らす。BGMが希望的なメロディに変わる。距離が5ブロック、4、3……</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4 — 暴走</div>
+<p>シュー……体が膨張し始める。白い光が体を覆う。「やめろ……止まれ……！」。必死に自分の体を抱きしめて抑えようとする。プレイヤーが振り返る。目が合う一瞬</p>
+<div class="scene-dir"><span>カメラ：</span>クリーパーの顔のドアップ。涙目。体の膨張→収縮→膨張をリピート。心臓の鼓動SE。BGMが不協和音に変わる。2秒間のカウントダウン</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 爆発</div>
+<p>白い閃光。爆発音。煙がゆっくり晴れる。クレーターの中に火薬が1つ転がっている。雨がそれを洗い流す。プレイヤーは無事だが呆然としている</p>
+<div class="scene-dir"><span>カメラ：</span>爆発の瞬間は白画面（直接見せない）。煙が晴れるのをワンカットで。最後は火薬のクロースアップ→雨粒が当たる。BGM：ピアノ単音が1つだけ。10秒の余韻。暗転</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>全編ブルー基調の夜景。クリーパーの緑だけが浮く。爆発の瞬間だけ白→戻って青。火薬のオレンジが最後の色。</p></div>
+<div class="vis-box"><h6>音響</h6><p>雨音が通奏低音。シューッ音はクリーパーの鼓動と同期。爆発後は耳鳴り的なリバーブ。最後はピアノ一音で余韻。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>「クリーパーは嫌いで爆発してるんじゃない」。泣ける解釈で女性・海外にリーチ。コメ欄で「もうクリーパー倒せない」宣言が溢れる。擬人化ファンアート発生でSNS拡散。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #03 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-loop">ループ</span><span class="tag t-time">35秒</span></div>
+<h3>#03「スピードランナーを見た村」</h3>
+<div class="hook"><b>フック:</b>「"それ"は20分で世界を破壊し、消えた」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>村長</b> — 紫のローブ。震える声。PTSDのように目が虚ろ</li>
+<li><b>スピードランナー（影）</b> — 常にモーションブラー。人型だが速すぎて残像しか見えない。目だけが白く光る</li>
+<li><b>村人たち</b> — 恐怖で窓から外を覗く。子供を抱きしめる親</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 平穏</div>
+<p>朝の村。鶏が歩き、村人が畑に出る。完璧な平和。BGMは牧歌的なフルート</p>
+<div class="scene-dir"><span>カメラ：</span>空撮で村全体を見下ろす。陽光、花、蝶。「この日まで、我々は幸せだった」のモノローグ。フルートがふっと止まる</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 襲来</div>
+<p>突然、猛スピードの残像が村を横切る。音速のような風圧。木が3本一瞬で消える。鍛冶屋の中で0.3秒でチェスト全回収。鍛冶屋「一瞬で全て持っていかれた……」</p>
+<div class="scene-dir"><span>カメラ：</span>スローモーション。残像がフレームを横切るのを村人の瞳に反射して見せる。衝撃波で帽子が飛ぶ。SE：ソニックブームのような低音。チェストが開閉する音が超高速連打</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 絶望</div>
+<p>5分後、遥か遠くでネザーポータルの紫光。10分後、要塞方面で地鳴り。15分後、空にエンダードラゴンの断末魔。空がヒビ割れるように光る</p>
+<div class="scene-dir"><span>カメラ：</span>村から動かない定点。遠くで起きる異変だけが光・音・振動で伝わる。村人たちが一人ずつ膝をつく。BGM：不穏なドローン音が段階的に大きく</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4-5 — 沈黙</div>
+<p>20分後。完全な静寂。空にエンドポエムの文字が浮かぶ。村人たちがそれを見上げる。読めない。理解できない。「"それ"は……全てを終わらせて、消えた。まるで最初からいなかったかのように」</p>
+<div class="scene-dir"><span>カメラ：</span>超広角で空を見上げる村人たちのシルエット。文字が降ってくる。風の音だけ。最後にログアウトの「プッ」というSEが遠くで聞こえ、完全な無音に</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>冒頭：暖色の牧歌的トーン → 残像通過後：彩度が抜ける → エンドポエム時：モノクロに近い青白。</p></div>
+<div class="vis-box"><h6>音響</h6><p>牧歌フルート → 衝撃の無音 → ドローン音ビルドアップ → 完全無音（ログアウトSEのみ）。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>RTA文化を「NPCの恐怖体験」に。スピードラン勢とマイクラ勢の両方に刺さる。「あいつにとって俺たちの世界は20分の暇つぶし」の絶望感。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #04 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">30秒</span></div>
+<h3>#04「ゾンビにも家族がいた」</h3>
+<div class="hook"><b>フック:</b> 日の出。1体のゾンビが燃えている。その手には――小さなゾンビの手を握ったまま</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>親ゾンビ</b> — ボロボロの農夫の服。元は村人だったことを示唆。動きは鈍いが、子供を庇うときだけ速い</li>
+<li><b>ベビーゾンビ</b> — 小さな手。親の足にしがみついている。目がまだ少し人間の色を残している</li>
+<li><b>プレイヤー</b> — ダイヤ装備のフル武装。強者。序盤は爽快に無双するがラストで手を止める</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 無双</div>
+<p>夜の村。ゾンビ大量発生。プレイヤーが剣で次々斬り倒す。火花、経験値の光。爽快なアクション</p>
+<div class="scene-dir"><span>カメラ：</span>アクション映画的な手持ちカメラ。斬撃ごとにカット割り。SE：剣の風切り音、ゾンビの断末魔。テンポの良い戦闘BGM</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 追跡</div>
+<p>最後の1体が逃げる。よろめきながら森に向かう。プレイヤー「逃がすか」→ 追いかける</p>
+<div class="scene-dir"><span>カメラ：</span>プレイヤーの背中から追跡。月明かりの森。木々の影が流れる。BGMがフェードアウトし始める</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 発見</div>
+<p>洞窟の入り口。ゾンビが立ち止まり、両手を広げて入り口を塞ぐ。その足元に――小さなベビーゾンビが震えて隠れている。親ゾンビの目が、一瞬だけ……人間のものに見えた</p>
+<div class="scene-dir"><span>カメラ：</span>プレイヤーの主観 → ゾンビの顔アップ → 足元のベビーゾンビ発見。BGM完全停止。風の音だけ。ベビーゾンビの小さな唸り声</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4-5 — 夜明け</div>
+<p>プレイヤーの剣が止まる。東の空が白み始める。ゾンビの体が煙を上げ始める。燃え始めても子供の手を離さない。最後まで立ち塞がるようにして灰になる。ベビーゾンビだけが残り、灰の中で泣き叫ぶ</p>
+<div class="scene-dir"><span>カメラ：</span>朝日のシルエット。ゾンビが燃える光 = 朝日の光が重なる。手を繋いだまま灰になる超スロー。SE：炎の音、最後にベビーゾンビの悲鳴。プレイヤーが剣を地面に刺して去る背中。5秒の無音→暗転</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>戦闘中：赤い炎と青い夜のコントラスト。朝日シーン：オレンジの暖色。しかし暖かさ＝ゾンビの死。美しさと残酷さの同居。</p></div>
+<div class="vis-box"><h6>音響</h6><p>戦闘BGM → 無音 → 風の音 → 炎 → ベビーゾンビの声 → 完全無音。音の落差で感情を引き裂く。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>「泣いた」と「ゾンビ倒すの罪悪感」の二極コメント。賛否が荒れる = アルゴリズム最強。ゾンビを助けるMODの紹介動画へのブリッジにも。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #05 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">30秒</span></div>
+<h3>#05「エンダーマンが目を合わせてほしい理由」</h3>
+<div class="hook"><b>フック:</b>「見て。お願いだから、僕の目を見て」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>エンダーマン（擬人化）</b> — 長身痩躯の青年。黒いロングコート。紫色に光る瞳。髪は黒で長め。常に伏し目がちで、目を合わせてほしいのに自分からは見つめられない矛盾を抱える</li>
+<li><b>他のエンダーマン</b> — 背景で無言でブロックを運ぶ。感情がない。主人公だけが「意識」を持っている</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — エンドの孤独</div>
+<p>エンドの世界。黒曜石の塔。虚空。エンダーマンたちがブロックを運ぶ。目的もなく、永遠に。主人公だけが立ち止まっている</p>
+<div class="scene-dir"><span>カメラ：</span>広大なエンドを俯瞰→ゆっくりズームインして1体に寄る。紫のパーティクルが漂う。SE：低い環境音のドローン。風はない。静寂だが「何かの気配」がある不穏さ</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 渇望</div>
+<p>「たまにプレイヤーが来る。僕はいつも思う。"見てくれ"って。この世界に僕がいることを、知ってほしい」</p>
+<div class="scene-dir"><span>カメラ：</span>エンダーマンの紫の瞳のアップ。瞳孔の中に過去のプレイヤーたちの姿が映る。切ないチェロのソロ</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3-4 — 出会いと暴走</div>
+<p>プレイヤーが来る。エンダーマンはじっと見つめる。プレイヤーが目を合わせた瞬間――嬉しさで体が震える。しかし体が暴走。叫び声を上げて襲いかかってしまう。「嬉しい。でも……体が勝手に……」</p>
+<div class="scene-dir"><span>カメラ：</span>目が合う瞬間=時間停止。2人の瞳の反射ショット。エンダーマンの口角が微かに上がる → 次の瞬間、紫のオーラが暴走。体が歪み、叫び声。カメラがブレる。BGMが不協和音に崩壊</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 消滅</div>
+<p>プレイヤーに倒される。消えていく体。エンダーパールが地面に転がる。「また……嫌われた……」。パールの中に紫の光がゆっくり消える</p>
+<div class="scene-dir"><span>カメラ：</span>地面に落ちるエンダーパールのスローモーション。パールの表面に最後に瞳が映る→消える。無音。3秒の黒画面。余韻</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>全編ダークパープル〜黒。エンダーマンの瞳の紫だけが唯一の色彩。消滅時に紫が消え、完全な黒になる。</p></div>
+<div class="vis-box"><h6>音響</h6><p>エンドの環境音（低周波ドローン）が通奏低音。チェロのソロ→不協和音→無音。テレポートSEを「嗚咽」のように聞こえる加工で。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>「目を合わせると襲ってくる」を「見てほしいのに暴走する」に再解釈。切なさでシェア。擬人化のビジュアルが刺さればファンアート爆発。</p></div>
+</div>
+</details>
+</div>
+</div>
+
+<!-- ======== B : 闇設定 ======== -->
+<div class="sec-h" id="s-dark"><h2>B：闇設定 ——「この世界はおかしい」</h2><p>ゲームの不自然さを恐怖として描く。考察コメント自走系。</p></div>
+<div class="grid">
+
+<!-- #06 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-hy">MC×異世界</span><span class="tag t-dark">闇</span><span class="tag t-time">40秒</span></div>
+<h3>#06「リスポーンの記憶」</h3>
+<div class="hook"><b>フック:</b>「俺は1000回死んだ。そして1000回、同じベッドで目覚めた。死の痛みを、覚えたまま」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 20代前半。ボロボロの革鎧。目の下に深い隈。髪はボサボサ。壁に刻んだ正の字の横で虚ろに座っている。手が微かに震えている</li>
+<li><b>村人たち</b> — 全員が同じ微笑を浮かべている。不気味。質問への応答は全員「フゥン」のみ</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 覚醒</div>
+<p>ベッドで跳ね起きる。汗だく。呼吸が荒い。「……また死んだ。何回目だ」。壁一面に正の字。数えきれない</p>
+<div class="scene-dir"><span>カメラ：</span>天井からの俯瞰→主人公が起き上がる。カメラが壁にパンする。無数の正の字が画面を埋め尽くす。SE：心臓の鼓動。呼吸音。BGMなし</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — フラッシュバック</div>
+<p>死の記憶が断片的にフラッシュ。溶岩に落ちる→赤い画面。クリーパー爆発→白い閃光。奈落落下→永遠の落下感。全ての痛みの記憶が残っている</p>
+<div class="scene-dir"><span>カメラ：</span>0.5秒ずつの高速カット。赤→白→黒を交互に。各死因の瞬間だけ映す。SE：それぞれの死因の音が重なって不協和音に。呼吸が速くなる</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3-4 — 疑問</div>
+<p>村人に相談。「俺は死んでも生き返る。おかしいと思わないか？」→村人は無表情で「フゥン」。別の村人にも。子供にも。全員「フゥン」。同じ動作、同じ角度の首かしげ</p>
+<div class="scene-dir"><span>カメラ：</span>主人公の顔→村人の顔を切り返し。村人の「フゥン」が5回連続で繰り返される。同じ音、同じ口の動き。不気味の谷。BGM：単調なループ音（ゲームの処理音を暗喩）</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 真実</div>
+<p>「お前ら……最初から"そう作られてる"のか。この世界は……」。カメラがゆっくり引いていく。画面の外枠が見える。さらに引くとPCモニターの縁。マウスカーソルが画面端に</p>
+<div class="scene-dir"><span>カメラ：</span>主人公のバストアップ→ドリーアウト→画面全体→モニターの枠→デスクトップが見える。最後の0.5秒だけマウスカーソルが動く。BGMが一気にカットアウト。暗転</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>全体：彩度低い灰色がかった世界。フラッシュバック時のみ原色（赤・白・黒）。最後にモニター枠が映ると現実の色温度に戻る違和感。</p></div>
+<div class="vis-box"><h6>音響</h6><p>心拍音ベース。フラッシュバック=過負荷の不協和音。村人の「フゥン」=ループSE。最後の無音が最も怖い。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>リスポーンを地獄として描く。マウスカーソル演出で鳥肌。「この世界はゲームだ」に気づく主人公=我々自身のメタファー。考察班大量発生。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #07 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">35秒</span></div>
+<h3>#07「村人の目が死んでる理由」</h3>
+<div class="hook"><b>フック:</b>「なぜ村人は"フゥン"しか言わないのか。答えを知ったとき、俺はこの世界が怖くなった」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 好奇心旺盛な冒険者。しかし話が進むにつれ表情が曇る</li>
+<li><b>村人たち</b> — 全員目を見開いたまま。瞬きしない。笑顔だが目が笑っていない。マネキンのような存在</li>
+<li><b>廃村の「日記の主」</b> — 声だけ。かすれた筆跡。最後まで顔は出ない</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 違和感</div>
+<p>主人公が村人に話しかける。「名前は？」→「フゥン」。「家族は？」→「フゥン」。質問を変えても返事は同じ。笑顔のまま</p>
+<div class="scene-dir"><span>カメラ：</span>村人の顔の正面ショットを繰り返す。毎回同じ角度、同じ表情。ホラー映画のジャンプスケアなしの不気味さ。SE：「フゥン」の音声が微妙にピッチを変えて不穏に</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 観察</div>
+<p>夜。村人の家を窓から覗く。ベッドに寝ている村人。目が……開いている。天井を見つめたまま微動だにしない</p>
+<div class="scene-dir"><span>カメラ：</span>窓越し。ガラスの反射で主人公の怯えた顔が重なる。村人の開いた目のアップ→瞳孔が拡張も収縮もしない。SE：しんとした静寂。遠くで犬の遠吠え</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 廃村</div>
+<p>森の奥に廃村発見。村人ゼロ。家だけが朽ちている。地下室に古い日記</p>
+<div class="scene-dir"><span>カメラ：</span>松明の光だけの暗い地下室。日記のページを手でめくる。紙が湿気で波打っている。SE：紙をめくる音、水滴が落ちる音</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4 — 日記の内容</div>
+<p>「彼らが来る。取引をしろと言う。断ると……ゾンビが来る夜、鉄のドアが"なぜか"開いた」。最後の行：「意志を持った者は……消される」</p>
+<div class="scene-dir"><span>カメラ：</span>日記の文字を一行ずつ映す。筆跡が最後に向かって乱れていく。震える文字。SE：低周波のドローン。読み進めるごとに音量UP</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 背後</div>
+<p>主人公が日記を閉じて振り返る。地下室の出口に村人が10人、無表情で立っている。全員の目がこちらを見ている。「…フゥン」。一斉に</p>
+<div class="scene-dir"><span>カメラ：</span>振り返るカットでドン！ と低音。村人たちが松明の光に照らされて並んでいる。全員同じ笑顔。主人公の背後から見ると、村人たちの影が異常に長い。暗転。「フゥン」の残響だけ</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>昼のシーン：見慣れたマイクラの明るさだが「何かがおかしい」微妙な彩度のズレ。廃村以降：暗いセピア調。松明のオレンジだけ。</p></div>
+<div class="vis-box"><h6>音響</h6><p>環境音が主体だが「何かが録音されていない音」がある不気味さ。フゥンの声を微妙にエコー加工。最後のドン！で低周波を腹に響かせる。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>村人AIをホラーに転化。「意志を持った者は消される」設定が考察を呼ぶ。深夜投稿推奨。シリーズ化で「村人の真実」を追うストーリーに展開可能。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #08 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-hot">考察バズ</span><span class="tag t-time">40秒</span></div>
+<h3>#08「ディスク11の真実」</h3>
+<div class="hook"><b>フック:</b>「マイクラには"割れたレコード"がある。再生すると聞こえるのは――誰かの最後の息遣いだ」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 冒険者。松明を片手に暗いダンジョンを探索中。好奇心が強いが、レコード再生後は明らかに怯えている</li>
+<li><b>レコードの中の人物</b> — 姿は映像では見えない。一人称の足音と呼吸だけ。走っている。何かから逃げている。男性</li>
+<li><b>"追うもの"</b> — 最後のシーンでシルエットだけ。人型だが目も口もない。エンダーマンとも違う「何か」</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 発見</div>
+<p>ダンジョンのチェスト。苔むした石レンガ。チェストの中にヒビの入ったレコード。他のチェストは空。これだけが残されている</p>
+<div class="scene-dir"><span>カメラ：</span>チェストを開ける手のアップ。レコードのヒビに光が反射。SE：チェストの蓋が軋む音。レコードを取り出すとき、微かにノイズが聞こえる（予兆）</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2 — 再生</div>
+<p>地上に戻り、ジュークボックスに入れる。ノイズ。足音。荒い呼吸。紙をめくる音。何かから逃げている</p>
+<div class="scene-dir"><span>カメラ：</span>ジュークボックスのアップ → 音に合わせて映像が切り替わる。暗い洞窟を走る一人称視点（白黒・ノイズ加工）。時折画面が乱れる。SE：ディスク11の実際の音源を使用（加工可）</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 解読</div>
+<p>「これは……記録だ。前にこの世界に来た奴がいた。そいつが最後に録ったもの」</p>
+<div class="scene-dir"><span>カメラ：</span>主人公の横顔。ジュークボックスから漏れる紫の光が顔を照らす。表情が「好奇心」から「恐怖」に変わる瞬間をワンショットで</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4 — 途絶</div>
+<p>レコード：紙の音。咳。静寂。そして背後から近づく何かの音。ブツッ。途切れる</p>
+<div class="scene-dir"><span>カメラ：</span>ノイズ映像の中で「振り返ろうとする」動き。振り返る直前にブツッと切れる。画面真っ黒。2秒の完全な無音。鳥肌ポイント</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 背後</div>
+<p>主人公が顔を上げる。ジュークボックスの向こう、暗がりに何かがいる。人型。目も口もないシルエット。動かない。ただ、そこにいる</p>
+<div class="scene-dir"><span>カメラ：</span>主人公の肩越し。ピントが奥に合う。シルエットが暗闇からゆっくり浮かび上がる。直接見せず、松明の光がギリギリ届かない位置に。画面にノイズが走り、暗転。SE：静電気のようなパチパチ音 → 完全無音</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>冒頭：通常のダンジョン色調。レコード再生中：白黒＋VHSノイズ。最後のシルエット：完全な黒。松明のオレンジとの境界が不自然に鋭い。</p></div>
+<div class="vis-box"><h6>音響</h6><p>ディスク11の実音をベースにアレンジ。足音のリバーブ＝洞窟の広さを暗示。最後の無音は5秒以上取る（視聴者の不安を最大化）。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>ディスク11/13は実在するマイクラの都市伝説的要素。ガチ考察勢の聖域。コメント100件以上確実。シリーズ化して「前のプレイヤーの足跡を追う」物語に。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #09 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">35秒</span></div>
+<h3>#09「ワールドの果てで見たもの」</h3>
+<div class="hook"><b>フック:</b>「3000万ブロック歩いた。世界の果てには"壁"があった。そこに文字が刻まれていた」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 探検家スタイル。革の帽子、地図、コンパス。しかし長旅で服はボロボロ。目だけが狂気じみた光を帯びている。「世界の果て」を見つけることに取り憑かれた男</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1-2 — 歩行</div>
+<p>ひたすら一方向に歩く。日が昇り、沈み、また昇る。バイオームが変わる。森→砂漠→雪原→メサ。何日も何日も</p>
+<div class="scene-dir"><span>カメラ：</span>横スクロールのサイドビュー。背景が高速で変わる。太陽と月が回転。足音だけが一定リズム。BGM：ミニマルなピアノのループ（同じ4小節が延々繰り返される → 狂気の表現）</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 3 — 崩壊</div>
+<p>風景がバグり始める。地形が歪む。テクスチャが伸びる。空に地面がある。水が上に流れる。ファーランドの兆候</p>
+<div class="scene-dir"><span>カメラ：</span>画面がグリッチし始める。ノイズ、色ズレ、テクスチャ破損。BGMのピアノも音がズレ始める。主人公の歩調は変わらない（狂気）。SE：デジタルなバグ音</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4 — 果て</div>
+<p>世界が途切れる。ブロックが存在しない虚無が広がっている。真っ白 or 真っ黒。最後のブロックに文字が刻まれている</p>
+<div class="scene-dir"><span>カメラ：</span>主人公の足元→前方にパン。ブロックが途切れる「際」。その先は虚無。風の音が消え、完全な無音。文字に近づくスローズーム</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 5 — 啓示</div>
+<p>文字「ここから先は、まだ作られていない」。振り返ると来た道も消えている。足元のブロックも消え始める。マイクラのロゴが表示され、1文字ずつ崩壊する</p>
+<div class="scene-dir"><span>カメラ：</span>文字のアップ→振り返り→虚無→足元崩壊→落下。落下中にMINECRAFTのロゴが映り、文字が砂のように崩れる。SE：落下の風切り音→無音→タイトル画面のBGMが一瞬だけ再生されて途切れる</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>歩行中：バイオームごとの色→ファーランドで色が狂う → 果て：純白 or 純黒（どちらでもいいが「無」を表現）。ロゴ崩壊はオリジナルロゴの色。</p></div>
+<div class="vis-box"><h6>音響</h6><p>ピアノループの段階的崩壊。ファーランドでバグった音に。果て=完全無音。ロゴ崩壊=タイトルBGMの再生→途絶。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>ファーランド×メタホラー。ロゴ崩壊演出はSNSスクショ向き。「世界は作られたもの」の気づきが哲学層にも刺さる。</p></div>
+</div>
+</details>
+</div>
+
+<!-- #10 -->
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-hy">MC×異世界</span><span class="tag t-dark">闇</span><span class="tag t-time">40秒</span></div>
+<h3>#10「クリエイティブモードの神」</h3>
+<div class="hook"><b>フック:</b>「空を飛び、無からブロックを生み出し、絶対に死なない。村人たちはそいつを"神"と呼んだ」</div>
+</div>
+<details>
+<summary>シーン詳細・キャラ・情景を展開</summary>
+<div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>サバイバルの主人公</b> — 苦労して装備を集めた冒険者。傷だらけ。努力の体現</li>
+<li><b>クリエイティブの存在</b> — 同じスキンだが金のオーラを纏う。表情は常に薄笑い。空中に浮いている。瞳孔がない=人間ではない</li>
+<li><b>村人たち</b> — クリエイティブの存在に対してひれ伏している。崇拝</li>
+</ul></div>
+
+<div class="scene-block">
+<div class="scene-num">Scene 1 — 目撃</div>
+<p>主人公が必死にダイヤを掘っている。ふと空を見上げると――人が浮いている。空中で静止し、虚空からダイヤブロックを取り出す。大量に</p>
+<div class="scene-dir"><span>カメラ：</span>暗い坑道（主人公）→空を見上げる→明るい空にシルエット。コントラストの落差。クリエイティブの存在の周囲にはアイテムが衛星のように浮遊</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 2-3 — 不条理</div>
+<p>クリエイティブが一瞬で城を建て、TNTで山を消す。村人「あれは"創造主"です。我々の世界を作った神」。主人公「じゃあ俺の苦労は何だ」</p>
+<div class="scene-dir"><span>カメラ：</span>クリエイティブの建築=超高速コマ送り（神業感）。主人公が自分の手を見る。ボロボロ。苦労して作った木の家を見る。惨めさ。BGM：荘厳な聖歌 → 主人公のシーンで途切れる</div>
+</div>
+<div class="scene-block">
+<div class="scene-num">Scene 4-5 — 処刑</div>
+<p>クリエイティブがこちらを見てニコッ。主人公の足元にTNTを置く。レッドストーンで着火。「え、待っ――」。爆発。ゲームオーバー画面</p>
+<div class="scene-dir"><span>カメラ：</span>クリエイティブの薄笑いのアップ。TNT設置のスロー。主人公の驚愕の顔。爆発→赤い画面→「You Died!」。SE：TNT着火のシューッ→爆発→ゲームオーバーのSE。最後に「Respawn / Title Screen」のボタンが映る</div>
+</div>
+
+<div class="vis">
+<div class="vis-box"><h6>色設計</h6><p>主人公：暗い坑道の茶色。クリエイティブ：金色のオーラ+白い光。2人の対比を色だけで語る。</p></div>
+<div class="vis-box"><h6>音響</h6><p>聖歌（クリエイティブ）vs 無音（主人公の無力感）。TNTのシューッ音をゆっくり引き伸ばして緊張感。</p></div>
+</div>
+<div class="twist"><h5>バズポイント</h5><p>サバイバルvsクリエイティブを「信仰と不条理」で描く。サバイバル勢=共感。クリエイティブ勢=笑い。ゲームオーバー画面オチは動画のラストフレームになるのでサムネ映え。</p></div>
+</div>
+</details>
+</div>
+</div>
+
+<!-- ======== C : メタ構造 ======== -->
+<div class="sec-h" id="s-meta"><h2>C：メタ構造 ——「第四の壁を壊す」</h2><p>「これはゲームだ」と気づくキャラ。視聴者自身が揺さぶられる。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">拡散力◎</span><span class="tag t-time">35秒</span></div>
+<h3>#11「自我に目覚めた村人」</h3>
+<div class="hook"><b>フック:</b>「なぜ俺は毎日同じ場所に立つのか。誰かに"そうさせられている"のでは？」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>村人A</b> — 農民の服。他と同じ外見だが、瞳の奥にだけ微かな光がある。その光が話が進むにつれ強くなり、最後に消える</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>毎日のルーティン。起床→仕事→就寝。ある日「なぜ」と自問する。他の村人に聞く→「フゥン」。誰も疑問を持っていない</p><div class="scene-dir"><span>カメラ：</span>同じ構図を3回繰り返す（起床→仕事→就寝）。3周目でわずかに色が変わる。SE：ループ感を出す同じBGMの3回リピート</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>夜。初めて自分の意志でベッドから起き上がる。外に出る。初めての夜の世界。ゾンビが来る。恐怖。でもこれが「生きてる」感覚</p><div class="scene-dir"><span>カメラ：</span>ベッドから起き上がる=スローモーション。足が床に触れる音が異常に大きい（初めて自分で歩いた一歩）。夜空が美しい。しかしゾンビの影</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>朝。プレイヤーが来て叩く。叫びたい。でも口から出るのは「フゥン」だけ。涙が流れるが、表情は変わらない。「フゥン」</p><div class="scene-dir"><span>カメラ：</span>村人Aの目のアップ。涙が一筋流れるが、口は笑顔のまま。プログラムに閉じ込められた魂。BGM停止。「フゥン」の音だけが残る。暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>AI時代に「自我を持ったNPC」は刺さる。最後の「泣いてるのにフゥン」が鳥肌。AI倫理議論がコメントで自走。TikTokで「#VillagerRights」タグ化も。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">30秒</span></div>
+<h3>#12「エンドポエムの向こう側」</h3>
+<div class="hook"><b>フック:</b>「"それ"は画面の向こう側にいる。"それ"は今、これを見ている」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul><li><b>主人公</b> — エンダードラゴン撃破直後。達成感 → 困惑 → 恐怖。最後にカメラ（=視聴者）を見つめる</li></ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>ドラゴン撃破→経験値の雨→エンドポエム開始。文字を読み始める。「プレイヤーは夢を見ていた。ゲームを遊ぶ夢を」</p><div class="scene-dir"><span>カメラ：</span>エンドの星空にテキストが浮かぶ。主人公がそれを見上げる。テキストがカメラの前を通過→主人公の表情が変わる。BGM：エンドクレジットの実際のBGMをアレンジ</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>「"それ"は今、これを見ている」→ 主人公がゆっくりカメラ=視聴者を見る。「……お前、いつからそこにいた？」。5秒の沈黙。暗転</p><div class="scene-dir"><span>カメラ：</span>主人公がこちらを見る=カメラ正面。瞳に視聴者（画面）が映る。5秒の無音と静止が最も怖い。SE：完全無音。暗転後も2秒の黒画面（余韻が鳥肌）</div></div>
+<div class="twist"><h5>バズポイント</h5><p>第四の壁破壊の最高到達点。実在のエンドポエムが元ネタなので「本当にある」感。最後の5秒の沈黙でスクショ→SNS拡散。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">35秒</span></div>
+<h3>#13「前のプレイヤーの日記」</h3>
+<div class="hook"><b>フック:</b>「新しいワールドなのに家が建っていた。チェストの日記の最後には――"逃げろ"」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>主人公</b> — 新しいワールドに入った新参者。無邪気→恐怖</li>
+<li><b>白い目の影</b> — ラスト1秒だけ映る。Herobrineを名前を出さず匂わせる</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>草原に不自然な家。中のチェストに日記。「Day 1: 素晴らしい世界だ」「Day 30: 何かがおかしい」「Day 100: 夜、松明の光が届かない場所を見るな」</p><div class="scene-dir"><span>カメラ：</span>日記のページめくり。筆跡が日を追うごとに荒れる。インクの滲み。SE：ページめくり音+遠くで雷。日記の内容を低い声のウィスパーで</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-5</div><p>窓の外を見る。暗闘の中に白い2つの光点。人型のシルエット。動かない。日記の最後「あいつの名前は――」→ページが破れて読めない。暗転</p><div class="scene-dir"><span>カメラ：</span>窓越しの暗闇→2つの光点にフォーカス。ズームするが近づかない。焦点が合う直前に暗転。SE：心臓音が加速→暗転で止まる。名前が読めない=想像に委ねる</div></div>
+<div class="twist"><h5>バズポイント</h5><p>Herobrineを名前なしで匂わせる。「名前を言ってはいけないあいつ」。Part2への引き最強。コメ欄で「Herobrine」と「いや違う」の議論が無限に続く。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== D : 感情破壊 ======== -->
+<div class="sec-h" id="s-emotion"><h2>D：感情破壊 ——「泣かせる / 鳥肌」</h2><p>感情の落差で記憶に残す。シェア率が最も高い。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">泣かせ最強</span><span class="tag t-time">40秒</span></div>
+<h3>#14「オオカミが主人を待つ話」</h3>
+<div class="hook"><b>フック:</b>「懐いたオオカミは、プレイヤーがログアウトしても――ずっとそこで待っている」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>オオカミ</b> — 白い毛並み。赤い首輪。目が大きく、感情豊か。尻尾の動きで心情を表現。お座り時は尻尾が微かに揺れている=まだ待っている</li>
+<li><b>プレイヤー</b> — 冒険中は楽しそう。ログアウト時は「おすわり」を軽く命じて消える。罪の意識がない</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1</div><p>プレイヤーとオオカミの楽しい冒険モンタージュ。森を走る。一緒にゾンビと戦う。同じベッドの横で寝る</p><div class="scene-dir"><span>カメラ：</span>明るい暖色。手持ちカメラ的な軽やかさ。オオカミの尻尾が常にブンブン振れている。BGM：軽快なアコースティックギター</div></div>
+<div class="scene-block"><div class="scene-num">Scene 2</div><p>プレイヤーが立ち止まる。「そろそろ行くわ」。オオカミに「おすわり」。オオカミはお座りする。尻尾がゆっくり止まる</p><div class="scene-dir"><span>カメラ：</span>プレイヤーの手がオオカミの頭を撫でる→手が離れる→プレイヤーが粒子になって消える（ログアウト）。BGMがフェードアウト。SE：風の音だけに</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>オオカミはお座りのまま。1日。2日。1週間。雨が降る。雪が降る。葉っぱの色が変わる（季節が変わる）。ゾンビが来ても動かない。「おすわり」と言われたから</p><div class="scene-dir"><span>カメラ：</span>定点カメラ。オオカミだけが動かない。周囲の天候・季節がタイムラプスで変化。雪がオオカミの頭に積もる。ゾンビが横を通る。オオカミの目だけがプレイヤーが消えた場所を見つめている。BGM：ピアノ単音のミニマル。同じ音の繰り返し</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>画面がゆっくり引いていく。広大なマイクラの世界。草原、山、海、空。その全体の中に、小さな白い点が1つ。座っているオオカミ。テロップ「あなたのワールドにも、待っている子がいるかもしれない」</p><div class="scene-dir"><span>カメラ：</span>超ロングショット。空撮。オオカミが点になっても画面に残る。最後まで見える。テロップは白文字シンプル。SE：風の音 → 完全無音 → 暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>全マイクラ民の罪悪感直撃。「マイクラを起動してオオカミを迎えに行く」行動を誘発→ゲームとYouTube双方でバズ。100万再生ポテンシャル。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">40秒</span></div>
+<h3>#15「最後にマイクラを遊んだ日」</h3>
+<div class="hook"><b>フック:</b>「子供の頃、友達と作った世界がまだ残っている。8年ぶりにログインした」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>大人になった主人公</b> — スーツ姿で帰宅。疲れた顔。PCを開く手が少し躊躇う。ログインした瞬間、子供の頃の自分が重なる</li>
+<li><b>子供時代の友達</b> — 映像には出ない。看板の文字と建物の記憶だけ。声もない。でも確かにそこにいた痕跡</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>仕事帰り。PCの隅にマイクラのアイコン。ログイン。子供の頃の豆腐ハウス。看板「○○と△△の秘密基地 入るなきけん」。ひらがなで書かれた子供の文字</p><div class="scene-dir"><span>カメラ：</span>現実（暗い部屋）→マイクラ世界（夕暮れの暖色）の対比。看板のアップ。下手な字。誤字。でもそこに込められた熱量。BGM：アコースティックギターの弾き語り。シンプルで素朴</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>チェストの中に木の剣とパン。「こんなんで冒険してたのか」。丘の上。2人で見た夕日のスポット。今は一人</p><div class="scene-dir"><span>カメラ：</span>チェストを開ける手→アイテムのアップ。丘の上では広角で夕日。隣に誰もいない空間を意識的にフレームに入れる（不在の存在感）</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>チャット欄に「久しぶり。お前、まだ元気か？」→ 送信。返事は来ない。ゆっくりログアウト。タイトル画面。一筋の涙</p><div class="scene-dir"><span>カメラ：</span>チャット入力のタイピング音。送信後の静寂。3秒待つ（返事が来ない時間）。ログアウト→タイトル画面の曲が流れる。SE：マウスのクリック音=現実に戻る瞬間</div></div>
+<div class="twist"><h5>バズポイント</h5><p>ノスタルジー最強弾。20代「昔のマイクラ仲間」層に直撃。コメ欄が思い出語りで溢れ、エンゲージメント爆発。単体100万再生ポテンシャル。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">35秒</span></div>
+<h3>#16「アイアンゴーレムの献身」</h3>
+<div class="hook"><b>フック:</b>「毎晩戦い、毎朝花を渡す。誰も"ありがとう"を言わないのに」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>アイアンゴーレム</b> — 巨体。体中にヒビ（蔦のように広がる亀裂模様）。赤い錆。でも手に持つポピーだけが鮮やか。目は小さく、感情が読めないが、花を渡すときだけ微かに傾く（いとおしそうに）</li>
+<li><b>子供村人</b> — 花を差し出されても素通り。悪意はない。「そういう世界」なだけ</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-4</div><p>夜：ゾンビと戦う。鉄の拳で吹き飛ばす。でも自分もヒビだらけ。朝：花を持つ。子供に渡そうとする。素通り。次の夜、また戦う。また傷つく。誰も修理しない</p><div class="scene-dir"><span>カメラ：</span>夜（アクション・手持ち）⇔ 朝（静的・三脚）の交互カット。同じ構図の繰り返しで「永遠」を表現。花を差し出す→空を掴む→戦う→花を差し出す…のループ。BGM：チェロの同じフレーズが変奏されていく</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>朝日。ヒビだらけの体で花を掲げるシルエット。明日も立つ。報われなくても</p><div class="scene-dir"><span>カメラ：</span>逆光シルエット。朝日の金色。ゴーレムの巨体が黒く、手に持つポピーだけ赤い。風が花弁を揺らす。SE：風の音のみ。BGMなし。10秒の余韻</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「花を持つ」は実際のゲーム内行動。報われない献身=社会人層に刺さるメタファー。「感謝されない仕事をしている全ての人へ」のテロップ候補。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">35秒</span></div>
+<h3>#17「削除されたワールドの叫び」</h3>
+<div class="hook"><b>フック:</b>「ワールドを削除しますか？ [はい] [いいえ] ――その時、中では何が起きていたのか」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>プレイヤー（手元のみ）</b> — メニュー画面でマウスを操作。何気なく「削除」をクリック</li>
+<li><b>ワールド内の村人たち</b> — 平和に暮らしている。子供が遊び、農民が畑を耕し、アイアンゴーレムが花を持っている。#16との接続</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>メニュー画面。「削除」ボタンにカーソルが近づく → カメラがワールドの中に入る。平和な村。何も知らない村人たち</p><div class="scene-dir"><span>カメラ：</span>UI画面（2D）→ワールド内（3D）のトランジション。削除ボタンが「門」のように開いてカメラが飛び込む。中は美しい夕日の村</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>空にヒビ。地面が崩壊。建物がピクセルに分解。村人「何が起きている!?」。パニック。逃げ場がない</p><div class="scene-dir"><span>カメラ：</span>空のヒビ割れ=ガラスが割れるエフェクト。崩壊は端から中央に向かって進む。村人たちが中央に集まる。SE：ガラスの破砕音+地鳴り+叫び声。BGM：不協和音の壁</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>最後の村人が虚無に落ちていく。手を伸ばしながら「助けて……」→ メニュー画面に戻る。「ワールドが削除されました」。何事もなかったかのように</p><div class="scene-dir"><span>カメラ：</span>落ちていく村人の手のアップ→白い光に飲まれる→パッとUI画面に戻る。「ワールドが削除されました」のテキストが淡々と表示。SE：一瞬の静寂→メニューBGMが何事もなかったように再開</div></div>
+<div class="twist"><h5>バズポイント</h5><p>プレイヤーの何気ない操作=ジェノサイド。メタフィクション。「もうワールド消せない」コメント殺到。#14-16の世界観と繋げると全てが伏線になる。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== E : 新アプデ ======== -->
+<div class="sec-h" id="s-chaos"><h2>E：新アプデ × ストーリー</h2><p>Tiny Takeover / Chaos Cubed の新要素を「ただの紹介」ではなくストーリーで昇華。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-time">40秒</span></div>
+<h3>#18「永遠の子犬」</h3>
+<div class="hook"><b>フック:</b>「金のタンポポで永遠に子犬のまま。――それは本当に"優しさ"か？」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>子犬</b> — ふわふわの白い毛。大きな目。元気に走り回る。成長後は凛々しいオオカミに</li>
+<li><b>主人公</b> — 子犬を溺愛。金のタンポポを手に葛藤する表情。最終的に植える</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>子犬との冒険。でも日に日に大きくなる。金のタンポポを見つける。「使えばずっと子犬のまま」。手に取り、子犬を見つめる</p><div class="scene-dir"><span>カメラ：</span>子犬の成長=サイズが微妙に変わるタイムラプス。タンポポのアップ→子犬の顔→主人公の葛藤する目。SE：風に揺れるタンポポの音</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>フラッシュフォワード：大人になったオオカミが隣を走る。一緒に戦う。守られるだけじゃない対等な仲間。主人公、タンポポを地面に植える。「お前はお前のまま大きくなれ」</p><div class="scene-dir"><span>カメラ：</span>未来のオオカミ=風格ある横顔。並んで走る2つの影。現在に戻り、タンポポを植える手のアップ。子犬がタンポポの横で元気に走る。BGM：温かいアコースティック</div></div>
+<div class="twist"><h5>バズポイント</h5><p>新アイテムを「使わない」選択。「変わらない＝幸せではない」。子育て層にも刺さる普遍テーマ。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-new">Chaos Cubed</span><span class="tag t-time">35秒</span></div>
+<h3>#19「自分の色がわからないサルファーキューブ」</h3>
+<div class="hook"><b>フック:</b>「触れたものの性質をコピーする。だから――自分が何者か、わからない」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>サルファーキューブ（擬人化）</b> — 小さな子供サイズのスライム状の存在。デフォルトは薄い黄色。触れたものの色に変わる。表情はシンプルだが目だけで感情を語る。ぷるぷる震えている</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>木に触れ→茶色に。石に触れ→灰色に。スライムに近づく→スライムの色に。でもスライムたちは「お前は違う」。マグマキューブにも、ガストにも仲間に入れない</p><div class="scene-dir"><span>カメラ：</span>色が変わるたびにフレーム全体の色調が変化。仲間に拒絶されるたびに、キューブが小さく縮む演出。SE：ぷにっ（変化音）→ しゅん（縮む音）の繰り返し</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>主人公に触れる。何も変わらない。「プレイヤーにはなれない……」。でも主人公が笑って撫でる。「お前は何色でもいいよ」。キューブが初めて、自分の黄色のまま光る</p><div class="scene-dir"><span>カメラ：</span>触れる瞬間のスロー。変化しない→落胆→撫でられる→輝く。最後は黄色の光がフレーム全体を暖かく照らす。BGM：最後の一音だけメジャーコード。SE：キラーン（初めての自分の音）</div></div>
+<div class="twist"><h5>バズポイント</h5><p>新モブの能力=アイデンティティの喪失。「自分らしさとは」は普遍テーマ。可愛い×深い=最強。グッズ化ポテンシャル。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-new">Tiny Takeover</span><span class="tag t-dark">闇</span><span class="tag t-time">35秒</span></div>
+<h3>#20「大人になれないベビーゾンビ」</h3>
+<div class="hook"><b>フック:</b>「なぜベビーゾンビは永遠に大人にならないのか。"なれない"んじゃない。"許されていない"」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>ベビーゾンビ（擬人化）</b> — 小さな子供。ボロボロの服。大人ゾンビたちの真似をしようとするが体が小さすぎる。日光で燃えないのは子供だから（独自設定）</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>大人ゾンビの群れに混じろうとする。村を襲う真似。でも小さすぎて相手にされない。子牛が大人の牛になるのを見る。自分だけが変わらない</p><div class="scene-dir"><span>カメラ：</span>ベビーゾンビの目線（ローアングル）。大人ゾンビの足だけが映る。成長する子牛のタイムラプスと、変わらない自分のサイズ比較。SE：子供の足音（パタパタ）が大人の足音（ズシズシ）と対比</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>月夜の丘。大人ゾンビたちが村を襲っている。ベビーゾンビはただ見ている。それでも夜が来たら走る。朝日でゾンビが燃える。ベビーゾンビだけ日陰に逃げ込む。一人</p><div class="scene-dir"><span>カメラ：</span>丘の上の小さなシルエット。月光。下で燃えるゾンビたちと、日陰で震えるベビーゾンビ。SE：遠くで燃える音。近くで小さな呼吸音。完全な孤独の音</div></div>
+<div class="twist"><h5>バズポイント</h5><p>ゲーム仕様をそのまま悲劇に。Tiny Takeoverの「永遠の子供」機能の残酷な側面。成長できない絶望は大人にも子供にも刺さる。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== F : どんでん返し ======== -->
+<div class="sec-h" id="s-twist"><h2>F：どんでん返し / ワンアイデア勝負</h2><p>最後の数秒で全てがひっくり返る。ループ再生率が最も高い。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-loop">ループ</span><span class="tag t-time">30秒</span></div>
+<h3>#21「ピースフルの楽園」</h3>
+<div class="hook"><b>フック:</b>「モンスターがいない世界。幸せだろ？――本当に？」</div>
+</div>
+<details><summary>シーン詳細を展開</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Scene 1-4</div><p>平和な村。笑顔の村人。でも壁がない。武器がない。「恐怖」を知らない村人たちは「勇気」も「守る」も知らない。何の感情もない笑顔</p><div class="scene-dir"><span>カメラ：</span>明るすぎる色調。全員が同じ角度で微笑む。ユートピアが不気味の谷に変わる瞬間。BGM：オルゴール（子供向け→ホラーへの反転）</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>設定画面。【難易度：ピースフル】。「楽園は……"何も感じない"のと同じだったのか」</p></div>
+<div class="twist"><h5>バズポイント</h5><p>ゲーム設定を哲学に。「苦しみのない幸福は幸福か？」。答えのない問い=コメント議論が永遠に続く。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">25秒</span></div>
+<h3>#22「チェストの中のラブレター」</h3>
+<div class="hook"><b>フック:</b>「友達のチェストに、最後のメッセージが入っていた」</div>
+</div>
+<details><summary>シーン詳細を展開</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">全Scene</div><p>古いマルチ鯖。友達のアカウントはオフライン。2人で建てた家。チェストに看板「引っ越すから当分来れない。でも忘れないよ。最高の相棒へ」。自分も看板を入れる。「読んだ。いつでも帰ってこい」。チェストを閉じる音。暗転</p><div class="scene-dir"><span>カメラ：</span>全カット静的。動きは最小限。看板の文字にゆっくりズーム。チェストを閉じる音が最後のSE。25秒で完結する密度。BGM：ピアノ1本</div></div>
+<div class="twist"><h5>バズポイント</h5><p>25秒。短いが感情密度最大。「俺も同じ経験ある」コメントの嵐。マルチ鯖経験者全員に刺さる。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-hy">MC×異世界</span><span class="tag t-loop">ループ</span><span class="tag t-time">30秒</span></div>
+<h3>#23「最強の剣を捨てた理由」</h3>
+<div class="hook"><b>フック:</b>「シャープネスV、耐久III、火属性II。完璧な剣を――海に捨てた」</div>
+</div>
+<details><summary>シーン詳細を展開</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">全Scene</div><p>フルエンチャ剣。全クリ済。倒す敵がいない。ワクワクがない。「"最強"になったら冒険が終わる」。剣を海に投げ、笑顔で新ワールドへ。素手。草原。最初からやり直す</p><div class="scene-dir"><span>カメラ：</span>剣が海に沈む水中スローモーション→暗転→新ワールドのスポーン画面（冒頭と繋がるループ構造）。SE：剣が水に沈む音=始まりの合図</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「全クリ虚無→リスタートの歓び」。ゲーマーの核心。新ワールド画面で終わる=もう一回最初から見たくなるループ。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">35秒</span></div>
+<h3>#24「エンダードラゴンが最後に見た景色」</h3>
+<div class="hook"><b>フック:</b>「エンドは――静かで、美しい場所だった。あいつが来るまでは」</div>
+</div>
+<details><summary>シーン詳細を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>エンダードラゴン（擬人化）</b> — 紫と黒のドレスを纏う女性。威厳と慈愛。エンドの世界の「母」。エンダーマンたちを子供のように見守っている</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>エンドの静寂。ドラゴンは平和に飛んでいた。プレイヤー来訪→クリスタルを壊される（命の源）→悲しみで戦うが倒される。最後の視界=エンドの星空。「……ああ、やっぱり、この空が一番綺麗だ」。光の粒になって散る</p><div class="scene-dir"><span>カメラ：</span>ドラゴンの主観視点で空を飛ぶ→クリスタル破壊で体が震える→倒れる→仰向けで空を見上げる。最後の視界が「エンドの星空」。散っていくパーティクル=桜の花びらのように美しく。BGM：静かなハープ→消滅</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「ラスボスは悪じゃなかった」。#01の逆視点テーマ集大成。「泣いた」と「もう倒せない」の二極。ドラゴンの擬人化デザインでファンアート爆発。</p></div>
+</div></details>
+</div>
+
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-hot">最終兵器</span><span class="tag t-time">40秒</span></div>
+<h3>#25「Herobrine」</h3>
+<div class="hook"><b>フック:</b> 3秒の無音。真っ暗な画面。遠くに白い2つの光点。BGMなし。環境音だけ。</div>
+</div>
+<details><summary>シーン詳細を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>Herobrine</b> — 姿はほぼ見せない。スティーブと同じ体型だが白い瞳だけが異なる。遠くに立ち、近づくと消える。証拠だけを残す。看板、トンネル、不自然なピラミッド</li>
+<li><b>主人公</b> — 普通のプレイヤー。徐々にパラノイアに陥る</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>普通のプレイ。しかし不自然な2×2トンネル。砂漠に人工物。溶岩が不自然な場所に。文字のない看板。誰かがいた痕跡</p><div class="scene-dir"><span>カメラ：</span>全て固定カメラ（監視カメラ的な不気味さ）。異変は画面の隅に映る程度。気づくかどうかは視聴者次第。SE：環境音のみ。BGMは一切入れない。無音が最強のホラー</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>丘の上に人影。白い目。「お前は誰だ」。瞬きした瞬間消えている。足元に看板。「ずっと見ていた」。暗転。パッチノート「Removed Herobrine」が一瞬だけ映る</p><div class="scene-dir"><span>カメラ：</span>人影は100ブロック先。ズームしても近づかない。消失の瞬間は映さない（瞬き=1フレームの暗転）。看板のアップ→暗転→パッチノートの白文字が0.5秒だけ。SE：最後に「Removed Herobrine」テキスト表示時のみ微かな静電気音</div></div>
+<div class="twist"><h5>バズポイント</h5><p>マイクラ最大の都市伝説。「出さずに匂わせる」手法が考察を最大化。パッチノートの「Removed Herobrine」は実在のジョーク。投稿タイミングはハロウィンか深夜。チャンネルが育ってから投下する最終兵器。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== G : 横長 ======== -->
+<div class="sec-h" id="s-long"><h2>G：横長動画（5〜10分）</h2><p>ショートで世界観提示 → 横長でフルストーリー。広告収益の本丸。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">ミステリー</span><span class="tag t-long">横長 10分</span></div>
+<h3>#26「100人が消えたサーバー」</h3>
+<div class="hook"><b>フック:</b>「最後の1人としてログイン。99人が消えた理由は――サーバーの電気代だった」</div>
+</div>
+<details><summary>構成・シーン詳細を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>主人公</b> — 最後のログイン者。他のプレイヤーの痕跡を辿る探偵役</li>
+<li><b>管理者（声のみ）</b> — 日記の筆跡と看板の文章だけ。「月の電気代が厳しい」「みんな、ごめん」</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">構成</div>
+<p><b>0:00-1:30 導入</b> — 無人のサーバーにログイン。チャットは静寂。スポーン地点の掲示板に「サーバー移転のお知らせ」→リンク先は404<br>
+<b>1:30-4:00 調査</b> — 各プレイヤーの家を訪問。それぞれの「最後の1日」が看板に残っている。ある家は綺麗に片付いている（覚悟の退去）。ある家は物が散乱（突然の消失）<br>
+<b>4:00-7:00 核心</b> — 管理者の家。地下に日記。収支表。赤字が膨らむ記録。最後「みんな、ごめん」<br>
+<b>7:00-9:00 真実</b> — 消えたんじゃない。「居場所がなくなった」だけ<br>
+<b>9:00-10:00 エンド</b> — スポーンに看板「ここに世界があったことを、俺は覚えている」→サーバーシャットダウン</p>
+<div class="scene-dir"><span>演出方針：</span>BGMは全編ピアノ+アンビエント。声の演技で泣かせる。管理者の日記は震える声で読む。各家の個性=各プレイヤーの人生を暗示。</div></div>
+<div class="twist"><h5>バズポイント</h5><p>サーバー閉鎖の実体験を物語化。マルチ鯖経験者全員に刺さる。コメ欄が思い出語りで溢れる。泣かせ×ミステリー=視聴維持率最強。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-long">横長 8分</span></div>
+<h3>#27「村人Aの一生」</h3>
+<div class="hook"><b>フック:</b>「名前のない村人。職業は選べない。でもある日、"外の世界"を知った」</div>
+</div>
+<details><summary>構成・シーン詳細を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>村人A</b> — 農民の服。最初は他と同じ無表情。話が進むにつれ目に光が宿る。ゾンビ化後→治療後は、目の色が微かに違う（経験を経た証）</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">構成</div>
+<p><b>0:00-1:00 誕生</b> — 村のベッドから生まれる。名前はない。職業：農民。「なぜかは知らない。最初からそうだった」<br>
+<b>1:00-3:00 日常</b> — 毎日同じ。でも村人Aには内なる声がある。「もっと違う場所が……」<br>
+<b>3:00-5:00 出会い</b> — プレイヤーが来る。海、山、ネザー、エンドの話。目が輝く。初めて「外」を知る<br>
+<b>5:00-6:30 決断と死</b> — 夜、村の外に出る。美しい星空。しかしゾンビに噛まれ、意識を失う<br>
+<b>6:30-8:00 再誕</b> — ゾンビ村人としての意識。体が言うことを聞かない。プレイヤーが治療。長い夜。朝日の中で「村人A」に戻る。でも前とは違う自分</p>
+<div class="scene-dir"><span>演出方針：</span>声の演技が命。村人Aの内なる声=語り手=配信者の声。ゾンビ化中のシーンは声にエフェクト（低音加工・リバーブ）。治療後に元の声に戻る瞬間が最大のカタルシス。BGM：ゲーム内BGM「Sweden」のアレンジ</div></div>
+<div class="twist"><h5>バズポイント</h5><p>ゾンビ村人治療をドラマ化。「名前がない」こと自体を物語の核に。全ショートの世界観を統合するアンカーコンテンツ。</p></div>
+</div></details>
+</div>
+
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hy">MC×異世界</span><span class="tag t-long">横長 10分</span></div>
+<h3>#28「ハードコア1000日目に起きたこと」</h3>
+<div class="hook"><b>フック:</b>「死んだら本当に終わり。1000日生き抜いた末に見た"エンドポエムの向こう側"」</div>
+</div>
+<details><summary>構成・シーン詳細を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラ</h5><ul>
+<li><b>主人公</b> — 1000日で「世界を極めた男」。序盤：希望に満ちた目。中盤：征服者の傲慢。終盤：虚無。ラスト：悟り。装備は最高級だが、目の下に隈。1000日の重み</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">構成</div>
+<p><b>0:00-2:00 Day 1-100</b> — 転生。最初の夜の恐怖。成長。仲間との出会い<br>
+<b>2:00-4:00 Day 100-500</b> — ネザー攻略。ウィザー。世界の征服者に。しかし孤独<br>
+<b>4:00-6:00 Day 500-900</b> — 全実績解除。やることがない。退屈という名の死<br>
+<b>6:00-8:00 Day 900-999</b> — 世界のバグ発見。コードが見える。「この世界は何度もループしている」。前の転生者のメッセージ<br>
+<b>8:00-10:00 Day 1000</b> — 全てを理解する。「遊ばれるために作られた」。でもそれでよかった。看板「次に来る奴へ。この世界は美しい。楽しめ」→ログアウト</p>
+<div class="scene-dir"><span>演出方針：</span>100日チャレンジの10倍スケール。各パートで色調が変化（希望の暖色→征服の金→虚無のグレー→覚醒の白→最後の暖色回帰）。Day 1000の看板を立てるシーンは#01の村人視点と対になる。BGM：5段階で変化するオーケストラ</div></div>
+<div class="twist"><h5>バズポイント</h5><p>メタ構造×感動×ハードコアの全部乗せ。シリーズ最終回。全ショートの伏線を回収する横長の大作。ここまで付いてきたファンへのご褒美。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== H : コメディ ======== -->
+<div class="sec-h" id="s-comedy"><h2>H：コメディ / ギャグ ——「ツッコミ配信者への布石」</h2><p>シリアスだけだと重い。コメディで緩急をつけ、声のツッコミ＝配信者の武器に。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">安定打</span><span class="tag t-time">35秒</span></div>
+<h3>#29「マイクラの物理法則がおかしい件」</h3>
+<div class="hook"><b>フック:</b>「この世界では砂利だけが重力に従い、丸石は空中に浮く。誰も疑問に思わない。俺以外は」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>ツッコミ主人公</b> — 転生者。現代の物理知識がある。ジャージ姿。リアクションが大きい。声 = 配信者の全力ツッコミ</li>
+<li><b>村人（ボケ）</b> — 何を見せても「フゥン」。この世界の"当たり前"を体現</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1</div><p>丸石を空中に置く。浮いている。「いやなんで浮いてんだよ!?!?!」。村人「フゥン」（何がおかしいの？顔）</p><div class="scene-dir"><span>カメラ：</span>丸石を置く手→空中の丸石→主人公の驚愕顔のクイック3連カット。SE：ドン！というツッコミ効果音</div></div>
+<div class="scene-block"><div class="scene-num">Scene 2</div><p>バケツ1杯の水で溶岩湖が黒曜石に。「いや1杯！！たった1杯で！！」。もう一度やる。やっぱり1杯で止まる</p><div class="scene-dir"><span>カメラ：</span>溶岩湖のスケール感→バケツの小ささの対比。水を流す→ジュワァァ→黒曜石化の超高速変換。主人公のツッコミ顔アップ</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3</div><p>松明を水中に置く。消えない。「水中!? 燃えてる!? 意味わかんねぇ!!!」</p><div class="scene-dir"><span>カメラ：</span>水中の松明クロースアップ。ゆらめく炎。物理学的にあり得ない映像を美しく撮る。主人公が頭を抱える</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>砂利を落とす。「お前だけ!? 重力適用されてんのお前だけ!?」。最後にベッドで爆睡→「爆発するベッド」（ネザー）。「もう何も信じられない……」</p><div class="scene-dir"><span>カメラ：</span>テンポ良くカット。最後のネザーベッド爆発で主人公が吹っ飛ぶ。BGM：コミカルな打楽器ベースBGM。テロップ芸（ツッコミ文字演出）</div></div>
+<div class="twist"><h5>バズポイント</h5><p>マイクラあるあるだがアニメ映像化は新鮮。「次のネタ教えて」でコメ参加型に。ツッコミ声=配信者の声として最も自然に認知される。シリーズ化で無限ネタ。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-loop">ループ</span><span class="tag t-time">30秒</span></div>
+<h3>#30「村人の取引がぼったくりすぎる」</h3>
+<div class="hook"><b>フック:</b>「エメラルド64個でパン1個。お前ら、談合してるだろ」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公（消費者）</b> — エメラルドの袋を持って村を回る。段々キレ気味に</li>
+<li><b>村人商人A</b> — 矢師。ニヤニヤ顔。エメラルド32個で矢1本を提示</li>
+<li><b>村人商人B</b> — 司書。クールな顔。紙24枚でエメラルド1個を提示</li>
+<li><b>村人商人C</b> — 肉屋。でっぷり。生肉を大量に見せびらかす</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>取引画面がアニメに。商人が自信満々で法外な価格を提示。主人公「高すぎない!?」→村人たちが「フゥン」と団結。裏で会議してる描写（闇カルテル）</p><div class="scene-dir"><span>カメラ：</span>取引UI→アニメ切り替え。村人の「取引会議」は暗い部屋で丸テーブルを囲むマフィア映画のパロディ。BGM：ゴッドファーザー風</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>主人公がゾンビ村人を治療→大幅値引きの裏技。「弱みを握れば安くなる。この世界の経済、歪んでるだろ……」</p><div class="scene-dir"><span>カメラ：</span>治療シーン→値引き→主人公のドヤ顔→村人の「しまった」顔。SE：レジの「チーン」音。オチでコミカルな暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>村人取引あるある×マフィアパロディ。ゾンビ治療値引きは実用テクニック＝攻略動画としても機能。コメ欄「うちの村もぼったくり」で盛り上がる。</p></div>
+</div></details>
+</div>
+
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">40秒</span></div>
+<h3>#31「クリエイティブ勢 vs サバイバル勢の格差社会」</h3>
+<div class="hook"><b>フック:</b>「3日かけて建てた木の家の隣に、3秒で城が建った。もう辞めたい」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>サバイバル民</b> — ボロ革鎧。汗だく。手作りの豆腐ハウスを誇らしげに見せる。純朴な農民キャラ</li>
+<li><b>クリエイティブ民</b> — 金のオーラ。スーツ。飛んでる。常にドヤ顔。指パッチンで建築する</li>
+<li><b>野次馬の村人たち</b> — 2人の家を見比べて露骨にクリエイティブ側に集まる</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>サバイバル民が3日かけた木の家を自慢→隣にクリエイティブ民が3秒で大聖堂を建てる→村人全員がそっちに移住→サバイバル民「あ、もう辞めていい？」→でも夜にゾンビが来たとき戦えるのはサバイバル民だけ→クリエイティブ民「戦闘ってどうやるの？」→サバイバル民の逆襲</p><div class="scene-dir"><span>カメラ：</span>分割画面（左：サバイバルの苦労 / 右：クリエイティブの楽々）の対比コメディ。BGM：左は重労働BGM、右はエレベーターミュージック。最後のゾンビ戦で左右が逆転。SE：ゾンビ出現で曲が変わる瞬間が笑いどころ</div></div>
+<div class="twist"><h5>バズポイント</h5><p>#10のシリアス版と対になるコメディ版。「サバイバル派 vs クリエイティブ派」の論争がコメ欄で自走。最後にサバイバルが勝つ展開でサバイバル勢のプライドを満たす。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== I : マルチプレイドラマ ======== -->
+<div class="sec-h" id="s-multi"><h2>I：マルチプレイ人間ドラマ ——「共感バズ」</h2><p>マルチ経験者全員に刺さる。人間関係ドラマ。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">サスペンス</span><span class="tag t-time">45秒</span></div>
+<h3>#32「裏切り者がいるマイクラ人狼」</h3>
+<div class="hook"><b>フック:</b>「4人でサバイバル。1人が仲間の家にTNTを仕掛けている。――誰だ？」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公（語り手）</b> — 冷静な観察者。声=配信者</li>
+<li><b>A（赤髪の剣士）</b> — 熱血。信頼できそうだが単独行動が多い</li>
+<li><b>B（メガネの建築家）</b> — 温厚。全員の家を修理してくれる。いい人すぎて逆に怪しい</li>
+<li><b>C（フード被った弓使い）</b> — 無口。行動が読めない。地下で何かしている</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>4人の協力サバイバル。順調に拠点を建設。しかし朝起きたらチェストの中身が減っている。「誰かが夜中に……」</p><div class="scene-dir"><span>カメラ：</span>4人の日常→ チェストの中身が消える→ 4人の顔を順番にアップ（誰が犯人？）。BGM：心理サスペンス系。低いベース音</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>Aが単独で洞窟探検→怪しい。Bが全員の家を「修理」→ 壁の中にTNT!? Cの地下作業→ 実は脱出トンネル掘ってた。全員が何か隠している</p><div class="scene-dir"><span>カメラ：</span>各キャラの怪しい行動をカット割り。視聴者にもわからないミスディレクション。SE：各場面で「ドキッ」「ジャーン」的な効果音</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>TNT爆発。拠点崩壊。煙の中から犯人が――まさかの全員。「え、お前も!?」「お前こそ!?」。全員が全員を疑って裏工作してた。誰も信用していなかった</p><div class="scene-dir"><span>カメラ：</span>爆発→ 全員のポケットからTNTが転がり出る→ 全員「えっ」→ 気まずい沈黙 → 笑い出す。BGM：サスペンス→崩壊→コメディ転調。暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「全員犯人」のどんでん返し。AmongUs/人狼ブームの文脈。コメ欄で「Bが怪しいと思った」「全員かよww」の議論と笑い。Part2で「今度は本当に1人だけ裏切り者」のシリーズ化。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">40秒</span></div>
+<h3>#33「同じワールドで一度も会えない2人」</h3>
+<div class="hook"><b>フック:</b>「2人は同じ世界にいる。でも片方は東へ、片方は西へ。看板だけが2人を繋ぐ」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>プレイヤーA（男）</b> — 東へ進む冒険者。砂漠→ジャングル→海へ。看板を見つけるたびに「誰かいるのか」と書き残す</li>
+<li><b>プレイヤーB（女）</b> — 西へ進む冒険者。雪原→花畑→山へ。Aの看板を見つけて返事を書く</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>スポーン地点。2人がほぼ同時にスポーン。お互いに気づかず反対方向へ歩き出す。Aが立てた看板「ここに誰かいる？」→ 数日後Bが発見「いるよ。どこにいるの？」→ Aが戻ってきて返事を読む「ここにいたのか……」</p><div class="scene-dir"><span>カメラ：</span>画面を左右分割。左=A（暖色の砂漠）右=B（寒色の雪原）。2人が同じ動作（木を切る、夜を過ごす）をシンクロで。看板のシーンだけ全画面に。BGM：2つのメロディが別々に→看板シーンで合流するアレンジ</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>2人が互いに近づき始める。看板の距離が縮まる。最後、丘の上から2人がお互いの姿を見つける――がここで暗転。「会えたのか？」は視聴者の想像に</p><div class="scene-dir"><span>カメラ：</span>丘の上。Aの視点でBのシルエットが見える→Bの視点でAのシルエット→暗転。会えたかどうかは見せない。SE：風の音だけ。BGMが止まった瞬間に暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>すれ違い×マイクラ。「会えた派」「会えてない派」の議論がコメ欄で爆発。Part2で「答え合わせ」を匂わせて登録誘導。恋愛要素で女性層リーチ。</p></div>
+</div></details>
+</div>
+
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">共感</span><span class="tag t-time">35秒</span></div>
+<h3>#34「初心者を連れたベテランの苦悩」</h3>
+<div class="hook"><b>フック:</b>「ダイヤを溶岩に落としました」「クリーパーに家壊されました」「……何回目？」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>ベテラン</b> — フルネザライト装備。目の下に隈（初心者の世話疲れ）。ツッコミ役 = 配信者の声</li>
+<li><b>初心者</b> — 革の帽子。キラキラした目。天然。全ての失敗がピュアな好奇心から</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>初心者「このキラキラ何ですか？」→溶岩にダイヤを落とす。ベテラン「ああああ!!」。初心者「この緑のやつ友達になれますか？」→クリーパー爆発で家消滅。初心者「ベッドで寝ます！」→ネザーベッド爆発。ベテラン「もう無理……」→でもログアウトしようとした瞬間、初心者が花を差し出す「先輩、いつもありがとう」→ベテラン「…………もう1日だけ付き合うか」</p><div class="scene-dir"><span>カメラ：</span>各失敗シーン=スローモーション+悲鳴のコンボ。テンポは漫才のボケツッコミ。最後の花のシーンだけBGMが変わり、温かくなる。SE：爆発音3連発→最後だけピアノ一音</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「初心者あるある」は全マイクラ民の思い出。笑いと温かさのバランス。コメ欄「うちの弟もこうだった」。最後の花で急に泣かせる緩急。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== J : もしも系 ======== -->
+<div class="sec-h" id="s-whatif"><h2>J：もしも系 ——「議論バズ」</h2><p>「もしマイクラが○○だったら」。答えのない問いでコメ欄が自走する。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">議論系</span><span class="tag t-time">40秒</span></div>
+<h3>#35「もしマイクラに"時間"があったら」</h3>
+<div class="hook"><b>フック:</b>「村人が老いて死ぬ。建物が朽ちる。オオカミが寿命を迎える。――永遠じゃない世界は、美しいか？」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 時間の流れる世界に転生。最初は普通のマイクラだと思うが、仲間が老いていくことに気づく</li>
+<li><b>老いる村人</b> — 髪が白くなり、背が縮み、やがて消える。名前のない存在に初めて「名前を付けたくなる」</li>
+<li><b>オオカミ</b> — 子犬→成犬→老犬。走れなくなる。でも尻尾だけは最後まで振る</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>マイクラの世界。でも季節が変わり、村人が年を取る。最初に出会った農民が白髪に。家の木材が腐る。鉄が錆びる</p><div class="scene-dir"><span>カメラ：</span>タイムラプス。同じ場所で四季が回る。村人の姿がカットごとに老いていく。BGM：四季をモチーフにした弦楽四重奏。春=希望 夏=繁栄 秋=哀愁 冬=静寂</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>オオカミが走れなくなる。主人公の足元でゆっくり横になる。尻尾が微かに揺れ、止まる。主人公が空を見上げる「永遠じゃないから……大事にしたかった」。桜のようなパーティクルが舞う</p><div class="scene-dir"><span>カメラ：</span>オオカミの最期=スローモーション。尻尾の最後の一振り。主人公の目に涙。カメラが引いて村全体→季節がまた春に戻る。でも村人もオオカミもいない。花だけが咲いている</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「永遠がないマイクラ」の思考実験。#14（オオカミ）の上位互換。コメ欄で「時間がある方がいい」「ない方がいい」の哲学議論が無限に続く。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">35秒</span></div>
+<h3>#36「もし全モブが知性を持ったら」</h3>
+<div class="hook"><b>フック:</b>「ゾンビ「俺たちも家が欲しい」スケルトン「この弓、経費で落ちますか？」」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>ゾンビ代表</b> — ネクタイを締めたゾンビ。労働組合の委員長風。「我々にも権利がある」</li>
+<li><b>スケルトン経理</b> — メガネ。電卓を叩く。「矢のコスト問題」に悩んでいる</li>
+<li><b>クリーパー広報</b> — 「爆発は本意ではありません」と謝罪会見</li>
+<li><b>エンダーマン哲学者</b> — 「なぜ我々はブロックを運ぶのか」を問い続ける</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>モブたちの労働組合結成。「夜しか出勤できないのはブラック企業」「倒されても翌日また湧くのは無限残業」「クリーパーの爆発は労災扱いですか？」→プレイヤーに団体交渉→プレイヤー「えっ……ごめん？」→モブたちがストライキ→夜なのにモブがいない→逆に怖い</p><div class="scene-dir"><span>カメラ：</span>労働組合のシーン=ニュース番組風。記者会見テロップ。モブストライキ=デモ行進のパロディ。最後の「モブがいない夜」だけホラー演出に。BGM：前半コメディ→後半不穏</div></div>
+<div class="twist"><h5>バズポイント</h5><p>社会風刺×コメディ。「ブラック企業」ネタは社会人層に刺さる。最後だけホラーに転調するギャップ。「モブがいない夜の方が怖い」の名言が生まれる。</p></div>
+</div></details>
+</div>
+
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">40秒</span></div>
+<h3>#37「もしプレイヤーが1人しかいない世界だったら」</h3>
+<div class="hook"><b>フック:</b>「全てのNPCが自分のために存在する。最初は楽園。でもやがて――」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — 最初は幸せ。村人が全員自分に尽くす。でも徐々に「これは愛じゃない、プログラムだ」と気づく。孤独が侵食する</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>完璧な世界。村人が全員主人公に優しい。取引は最安値。モブは自分だけを避ける。「この世界、最高じゃん」</p><div class="scene-dir"><span>カメラ：</span>明るすぎる色調（不自然な明るさ）。村人の笑顔がカメラ目線。全員が主人公を見つめている。BGM：軽快だがループが短い（気づくと不気味）</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-5</div><p>ある日気づく。村人に「俺のこと好き？」→「フゥン」（いつもの）。「俺がいなかったらどうする？」→「フゥン」。彼らに「自分」がない。この世界は自分のためだけに作られた箱庭。全てが偽物の優しさ。主人公は1人で夜の草原に座る。「本当に孤独なのは……敵もいない世界だ」</p><div class="scene-dir"><span>カメラ：</span>トゥルーマンショーの構図。主人公を取り囲む「壁」が見えかける演出。最後は広い草原に1人のロングショット。BGM：前半の軽快BGMが歪んで不協和音に→ 無音→ 風の音</div></div>
+<div class="twist"><h5>バズポイント</h5><p>トゥルーマンショー×マイクラ。「完璧な世界の孤独」。#21（ピースフル）の発展形。SNS時代の「いいねは多いけど本当の友達がいない」感覚と共鳴。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== K : ウォーデン ======== -->
+<div class="sec-h" id="s-warden"><h2>K：ウォーデン / ディープダーク ——「未開拓ホラー」</h2><p>マイクラ最強モブ×最恐バイオーム。ホラー路線の最深部。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-hot">シリーズ化◎</span><span class="tag t-time">40秒</span></div>
+<h3>#38「ウォーデンは"何か"を守っている」</h3>
+<div class="hook"><b>フック:</b>「あいつが暴れるのは怒りじゃない。"あの奥"に、誰も行かせないためだ」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>ウォーデン</b> — 巨大。目がない。胸にスカルクの心臓が脈打っている。怒りではなく「悲壮な使命感」で戦う番人。動きは重いが一撃で主人公を瀕死にする</li>
+<li><b>主人公</b> — 探検家。ディープダークの奥に「何がある」のか知りたい</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>ディープダーク。完全な暗闇。スカルクが脈打つ音だけ。主人公が忍び足で進む。足元のスカルクセンサーが反応→ シュリーカーが起動→ 地面が震える</p><div class="scene-dir"><span>カメラ：</span>暗視ゴーグル風の緑がかった映像。足元のクロースアップ。スカルク=血管のように脈打つ有機的な描写。SE：心臓音。スカルクの「パルス」が鼓動と同期</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3</div><p>ウォーデン出現。地面から這い出る。巨体。目がないが、確実にこちらを「感じている」。しかし――襲ってこない。主人公と奥の通路の間に立ち塞がる。「こいつ……俺を攻撃したいんじゃない。奥に行かせたくないのか？」</p><div class="scene-dir"><span>カメラ：</span>ウォーデンの出現=地面が割れてスカルクの触手が先に出る→ゆっくり本体。立ち塞がるポーズ=両腕を広げて通路を塞ぐ。目がないのに「見つめられている」感覚。SE：低周波の唸り。胸のスカルクが加速して脈打つ</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>主人公がウォーデンの横を抜けようとする→ 咆哮→ ソニックブーム。吹き飛ばされる。しかしウォーデンは追ってこない。奥の通路から戻らなければ攻撃しない。奥の闇から微かに光が漏れている。「あの奥には……何がある。こいつは……"番人"なんだ」→ 暗転。テキスト「Part 2: 封印の奥」</p><div class="scene-dir"><span>カメラ：</span>ソニックブーム=空気が歪むエフェクト。吹き飛ぶ主人公。カメラがウォーデンの背中越しに奥の光を映す→暗転。SE：ソニックブームの重低音→反響→沈黙→かすかな光の音（？）</div></div>
+<div class="twist"><h5>バズポイント</h5><p>ウォーデンを「敵」ではなく「守護者」として描く。「奥に何がある？」の謎でシリーズ化必須。考察コメント爆発。公式の「Ancient City」のloreとも接続できる。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-dark">闇</span><span class="tag t-time">30秒</span></div>
+<h3>#39「スカルクの声」</h3>
+<div class="hook"><b>フック:</b>「スカルクセンサーは"音を聞いている"のではない。"叫んでいる"のだ」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>主人公</b> — ディープダーク探索中。スカルクに触れた瞬間、「声」が聞こえ始める</li>
+<li><b>声たち</b> — 姿はない。複数の声。男女老若。全員が「ここから出して」「助けて」と叫んでいる</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-3</div><p>ディープダーク。スカルクに足が触れた瞬間、主人公の耳に声が流れ込む。最初は雑音。次第に言葉に。「……けて」「ここは暗い」「出して」。複数の声が重なる</p><div class="scene-dir"><span>カメラ：</span>スカルクに触れる足のアップ→主人公の目が見開く→音波のようなエフェクトが頭を貫通。声はウィスパーから始まり段階的に大きく。SE：最初はASMR的なささやき→重なって不協和音に</div></div>
+<div class="scene-block"><div class="scene-num">Scene 4-5</div><p>主人公は理解する。「スカルクは……ここで死んだプレイヤーたちの魂だ。吸収されて、センサーになった。音に反応するのは"助けを呼んでいる"からだ」。スカルクが一斉に脈打つ。「全部……全部が、叫び声だったのか」→暗転</p><div class="scene-dir"><span>カメラ：</span>スカルクの表面に顔のようなパターンが浮かび上がる（一瞬だけ）。主人公の恐怖の顔→引きで暗闇のスカルク群→全てが脈打つ。SE：全ての声が同時に叫ぶ→突然の無音→暗転</div></div>
+<div class="twist"><h5>バズポイント</h5><p>スカルクの仕様を「死者の魂」として再解釈。#38（ウォーデン）と世界観を繋げると「ウォーデンは死者を封印する番人」の設定が完成。ホラー×考察。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== L : 1ブロック視点 ======== -->
+<div class="sec-h" id="s-block"><h2>L：1ブロック視点 ——「完全に新しい切り口」</h2><p>モノの視点。誰もやっていない。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">35秒</span></div>
+<h3>#40「丸石の一生」</h3>
+<div class="hook"><b>フック:</b>「僕は丸石。掘られて、置かれて、壊されて、また置かれる。――でもある日、ネザーポータルの一部になった」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>丸石（語り手）</b> — 穏やかな声。自分が何に使われるかわからないが、受け入れている。石の中に微かな顔（目と口だけのシンプルな表情）</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">Scene 1-2</div><p>暗い地下で眠っていた丸石がツルハシで掘られる。「あ、明るい」。インベントリに入る。暗い。「また暗い」。置かれる→壁の一部に。「外が見える！」</p><div class="scene-dir"><span>カメラ：</span>丸石の主観視点。暗→明→暗→明が繰り返される。インベントリ内=真っ暗+周りに他のアイテム。置かれた瞬間の「外の光」が美しい</div></div>
+<div class="scene-block"><div class="scene-num">Scene 3-4</div><p>クリーパー爆発で壁ごと吹き飛ぶ。「うわああ!」。アイテム化して地面を転がる。拾われる。今度はかまどで焼かれる→石に。「進化……した？」</p><div class="scene-dir"><span>カメラ：</span>爆発=丸石目線で世界がぐるぐる回る。かまど内=オレンジの炎に包まれる。変化のエフェクト。コミカルだが丸石の独白は真剣</div></div>
+<div class="scene-block"><div class="scene-num">Scene 5</div><p>最後。ネザーポータルの黒曜石の枠に、丸石が土台として置かれる。紫の光が灯る。「僕は……異世界への門を支えている」。誇らしげ。ポータルの光に包まれて終わり</p><div class="scene-dir"><span>カメラ：</span>ポータル起動の瞬間を丸石目線で。紫の光が広がる。壮大なBGM。小さな丸石が大きな役割を果たす。SE：ポータルのゴゴゴ…音。丸石の「ふっ」という満足の息</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「たかが丸石」に感情移入させる力技。シンプルだからこそ刺さる。「丸石捨てられない」のコメント。モノ視点は前例がなく、切り口の新鮮さだけで再生される。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-time">30秒</span></div>
+<h3>#41「松明の一生」</h3>
+<div class="hook"><b>フック:</b>「暗い洞窟に置かれた。主人は行ってしまった。僕はここで、一人で光り続ける」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>松明（語り手）</b> — 健気な少年の声。炎が表情。揺らめき=喜び、小さくなる=悲しみ、消えかける=絶望</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>洞窟探索中に置かれる。「任務了解！ここを照らしますね！」。主人公が奥に進んでいく。足音が遠ざかる。「行っちゃった……でも大丈夫。僕がここを守ります」。時間が経つ。コウモリが飛ぶ。ゾンビが通る。でも松明の光が近づけさせない。「僕がいれば、ここは安全です」。もっと時間が経つ。主人公は戻ってこない。「……いつ帰ってくるんだろう」。さらに時間。洞窟に苔が生える。松明の炎が小さくなる……でもマイクラの松明は消えない。「僕は……永遠に、ここで光り続けるんだ。独りで」</p><div class="scene-dir"><span>カメラ：</span>定点カメラ。松明だけが画面の中心。周囲の時間が流れる。タイムラプス。炎の揺らめきを「表情」として撮る。最後は超ロングショット。巨大な暗い洞窟の中に小さな光が1つだけ灯っている。BGM：なし。炎の音と水滴の音だけ。最後の余韻は5秒</div></div>
+<div class="twist"><h5>バズポイント</h5><p>「マイクラの松明は消えない」という仕様=永遠の孤独。#14（オオカミ）の変奏だが、モノ視点だから新鮮。「全洞窟の松明に感謝」のコメント。短く・シンプルだからこそ余韻が残る。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== M : 実在コミュニティ ======== -->
+<div class="sec-h" id="s-community"><h2>M：実在コミュニティネタ ——「バイラル力最強」</h2><p>マイクラ史に実在する伝説をアニメ化。「本当にあった」のインパクト。</p></div>
+<div class="grid">
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-long">横長 10分</span><span class="tag t-hot">海外バズ</span></div>
+<h3>#42「2b2tの伝説」</h3>
+<div class="hook"><b>フック:</b>「最古の無法サーバー。グリーファーvs建築家。15年間、誰もルールを作らなかった世界」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>語り手（主人公）</b> — 新参としてサーバーに入る。廃墟と溶岩の地獄を目撃する。声=配信者</li>
+<li><b>古参プレイヤーたち</b> — シルエットのみ。伝説として語られる。ネームタグだけ見える</li>
+<li><b>グリーファー軍</b> — 赤いオーラ。TNTの壁を従える。破壊の権化</li>
+<li><b>建築家たち</b> — 青いオーラ。爆撃の跡地に何度でも城を建て直す。創造の権化</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">構成</div>
+<p><b>0:00-2:00</b> — サーバーにログイン。スポーン地点=完全な廃墟。溶岩、ウィザーの残骸、荒らされた看板「ようこそ地獄へ」<br>
+<b>2:00-5:00</b> — 2b2tの歴史。15年のサーバー。ルールなし。BANなし。グリーフし放題。建築コミュニティvs破壊集団の15年戦争<br>
+<b>5:00-8:00</b> — 伝説のイベント。スポーンの破壊、ベースの裏切り、巨大建築物の爆破と再建を繰り返すシーン<br>
+<b>8:00-10:00</b> — 「破壊者も建築者も、この世界を愛していた。だから15年間、誰もサーバーを閉じなかった」。スポーン地点の廃墟の中に、小さな花が1つ咲いている</p>
+<div class="scene-dir"><span>演出方針：</span>ドキュメンタリー調。実話ベースの重み。戦争シーン=大規模アニメバトル。最後の花=破壊の中の希望。BGM：エピック→静寂。英語字幕で海外リーチ。2b2tコミュニティにシェアされれば爆発的バイラル</div></div>
+<div class="twist"><h5>バズポイント</h5><p>実話ベース最強。2b2tコミュニティ（英語圏に巨大）がシェアすれば100万再生。「無法地帯の15年」はドキュメンタリーとして完成度が出せる。英語版必須。</p></div>
+</div></details>
+</div>
+
+<div class="card">
+<div class="card-top">
+<div class="tags"><span class="tag t-mc">MC特化</span><span class="tag t-hot">既存ファン直撃</span><span class="tag t-time">45秒</span></div>
+<h3>#43「マンハントをアニメにした」</h3>
+<div class="hook"><b>フック:</b>「1人が逃げる。4人が追う。エンダードラゴンを倒すか、殺されるか。――これを"アニメ"にした」</div>
+</div>
+<details><summary>シーン詳細・キャラ・情景を展開</summary><div class="detail-body">
+<div class="sub"><h5>キャラクター</h5>
+<ul>
+<li><b>逃走者</b> — 緑のパーカー。圧倒的なゲームIQ。追い詰められるほど冴える天才型</li>
+<li><b>ハンター4人</b> — 赤統一の装備。連携で追い詰める。個々は弱いが数の暴力</li>
+</ul></div>
+<div class="scene-block"><div class="scene-num">全Scene</div><p>森の中のチェイス。ハンターの包囲をパルクールで突破。ボート+溶岩トラップで2人撃破。ネザーで3人目を溶岩に落とす。最後の1人との決闘。エンダードラゴンの下で。ドラゴンの炎をハンターに当てるIQプレイ→エンドクリスタルを爆破してハンターを巻き込む→ドラゴン撃破。1人で立つ逃走者</p><div class="scene-dir"><span>カメラ：</span>アクション映画の文法。チェイス=手持ちカメラのスピード感。トラップ=スロー+効果線。最終戦=ドラゴンの炎を使った三つ巴をダイナミックな空撮で。BGM：EDMビルドアップ→ドロップ→ドロップ→最後だけ無音で一撃</div></div>
+<div class="twist"><h5>バズポイント</h5><p>マンハント/Dreamの文脈は全世界のマイクラ民が知っている。「アニメ版」の新鮮さ。アクション作画のクオリティ勝負。タグ「#Manhunt」「#MinecraftAnime」で二重リーチ。短くてもアクションの密度で勝負。</p></div>
+</div></details>
+</div>
+</div>
+
+<!-- ======== NOTE ======== -->
+<div class="note-box">
+<div class="note-box-inner">
+<h4>投稿順の推奨（43本対応）</h4>
+<ul>
+<li><b>初投稿：</b>#02（クリーパー）or #14（オオカミ）— 感情系で初動</li>
+<li><b>2-5本目：</b>#01 #03 #29 — 逆視点＆コメディで「このCh何でもある」を見せる</li>
+<li><b>6-10本目：</b>#22 #34 #40 #41 — ノスタルジー＆新切り口で幅を出す</li>
+<li><b>11-20本目：</b>#18-20（新アプデ連動）+ #04 #05 #30 #31 — 泣き笑いローテ</li>
+<li><b>21-30本目：</b>#06-09 #38 #39（闇＆ウォーデン）— 深夜投稿。考察層を取り込む</li>
+<li><b>31-35本目：</b>#32 #33 #35 #36 #37 — マルチ＆もしも系で議論を仕掛ける</li>
+<li><b>横長第1弾：</b>#27（村人A）→ #26（100人鯖）→ #42（2b2t）</li>
+<li><b>コメディ定期投入：</b>#29 #30 #31 #34 #36 をシリアス3本に1本挟む</li>
+<li><b>最終兵器：</b>#25（Herobrine）— チャンネル育ってから</li>
+</ul>
+</div>
+</div>
+
+<div class="footer">マイクラアニメ台本集 v2（秀逸版）— 43本 — 2026.03</div>
+</div>
+
+</body>
+</html>

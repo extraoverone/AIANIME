@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！ラテラル台本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#c084fc,#22d3ee,#fbbf24,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(192,132,252,.15);color:#c084fc;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-lat{background:rgba(192,132,252,.15);color:#c084fc}
+.t-exp{background:rgba(34,211,153,.12);color:#34d399}
+.t-feel{background:rgba(251,146,60,.12);color:#fb923c}
+.t-meta{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-dark{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-chaos{background:rgba(251,146,60,.12);color:#fb923c}
+
+.hook{background:#12121e;border-left:4px solid #c084fc;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#d8b4fe}
+
+.dial{padding:0 24px 20px}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:48px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#s-shift">視点ズラし</a>
+<a href="#s-invert">逆転構造</a>
+<a href="#s-sense">五感・共感覚</a>
+<a href="#s-exist">実存系</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">LATERAL THINKING</div>
+<h1>よふかしくらぶ！ラテラル台本</h1>
+<p>「その発想はなかった」で止まる指。ありきたりの逆を行く。切り口で勝つ12本。<br>設計思想：マイクラ動画を見てる人が「同じゲームなのにこんな見方あるんだ」と思う瞬間。</p>
+</div>
+
+<div class="wrap">
+
+<div class="note">
+<h4>ラテラル台本の設計原則</h4>
+<ul>
+<li><strong>切り口が企画：</strong>面白い中身を作るのではなく、面白い「見方」を提示する。同じマイクラが全く違って見える。</li>
+<li><strong>1行で説明できない：</strong>「ランキング」「あるある」とは違い、見ないと伝わらない → 最後まで見る理由になる</li>
+<li><strong>コメント欄が作品の一部：</strong>視聴者が自分の体験を語りたくなる設計。「俺も同じことあった」ではなく「考えたことなかった」</li>
+<li><strong>リピートの理由が違う：</strong>中毒性ではなく「もう1回見て確認したい」「友達に見せたい」</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-shift">視点ズラし系</h2>
+<p class="sec-desc">いつものマイクラが「え、そう見るの？」になる。カメラの位置を変えるだけで世界が変わる。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="L01">
+<div class="sc-head">
+<h3>L01「マイクラのBGM消したら、世界こんなに怖かった」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-dark">ホラー</span><span class="tag t-feel">五感</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 画面：普通のマイクラの昼（BGMあり）→ 突然BGMがプツッと切れる → 残るのは足音、風、遠くのゾンビの声。テロップ「マイクラ、音楽消すと怖すぎる」</div>
+<div class="visual"><strong>映像演出：</strong>前半15秒はBGMありの安心感ある映像。カットでBGMオフに切り替え。同じ場所なのに空気が一変。4人のリアクションをワイプで見せる。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">草原を歩く。C418のBGMが流れている。平和。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">今日は検証をする。——マイクラのBGMを切ってプレイする。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えー？ BGMなんて気にしたことないけど？</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">プツッ。BGMが消える。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……同じ草原。風の音。自分の足音だけが響く。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………え、なにこれ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うわ、足音こんなにデカかったんだ……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ、待って待って、これめっちゃASMRじゃん。好き。これ配信で流したい。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">好きなの!? え、洞窟行ってみ？ 洞窟やばいって絶対。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">洞窟に入る。水滴の音。遠くで何かが動く音。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">いや待って、後ろから何か聞こえない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……我々はずっと、音楽に守られていたのかもしれない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">BGM戻してBGM戻してBGM戻して——！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">試してみて。設定→音楽→0%。世界が変わる。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>最後のテロップの後、冒頭のBGMありシーンに戻る → 「あ、こんなに音楽に包まれてたんだ」と再認識</div>
+<div class="why">切り口：「BGMを消す」というだけで全く新しい体験。やったことない人は「そんな発想なかった」。やった人は「わかる、あれ怖い」。どちらもコメントしたくなる。視聴者が自分でも試せる→再生後の行動を生む動画。</div>
+</div>
+
+<div class="sc" id="L02">
+<div class="sc-head">
+<h3>L02「4人の持ち物検査したら性格が出すぎてた」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-com">コメディ</span><span class="tag t-meta">メタ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「インベントリ見るだけで性格わかる説」→ 4分割画面で各キャラのインベントリをバッと表示</div>
+<div class="visual"><strong>映像演出：</strong>4分割 → 1人ずつズームイン → 他の3人のリアクション。インベントリをスクショのように静止させて「ここに注目」テロップ。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">抜き打ち持ち物検査をする。全員、動くな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ今！？ ちょっ待っ——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">遅い。まず俺から見せよう。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらのインベントリ：完璧に整理。剣・ツルハシ・食料が左から順番。空きスロット3つ。名前付きの地図。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">きれいすぎて逆に怖い。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめのインベントリ：土64個×3スタック、花束6種類、ケーキ、ランダムな羊毛、名前の付いたニワトリのスポーンエッグ「ぴよすけ」。剣がない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……武器は？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、要る？ ぴよすけがいるし！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるのインベントリ：全スロット埋まっている。レッドストーン系パーツ、火薬、ポーション素材、TNT×3スタック、「使途不明」のコマンドブロック。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前なんで普段からTNT192個持ち歩いてんの。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">備えあれば憂いなし、って言うじゃん？ ……いつ使うかはノーコメントで。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">何に備えてるの！？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれのインベントリ：木の剣、石のツルハシ、生の豚肉（精錬してない）、丸石89個、ベッド。以上。半分以上が空。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え、俺少ない？ だってこれで足りてるし。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……お前まだ木の剣なのか。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">石の剣の作り方がわかんなくて！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたは誰タイプ？ コメント欄で教えて。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>最後→冒頭の4分割に戻る。2周目は先に見た情報があるから「確かにあさめっぽい」と答え合わせになる</div>
+<div class="why">切り口：インベントリ＝性格診断。「マイクラのプレイスタイル見せて」は既存だが、「持ち物検査」というフレームにすることで学校感が出て親しみやすい。「自分は誰タイプ？」→ 4択のコメント誘導。4人のキャラが「見せなくても持ち物で伝わる」のがポイント。</div>
+</div>
+
+<div class="sc" id="L03">
+<div class="sc-head">
+<h3>L03「言葉だけでマイクラ建築を指示した結果」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">55秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「画面を見ないで建築。指示は言葉だけ。」→ ひぐれが目隠し状態（画面黒塗り）で立っている</div>
+<div class="visual"><strong>映像演出：</strong>2画面分割。左＝ひぐれの黒い画面（音だけ）。右＝実際に何が起きてるかの俯瞰。ズレていく様子がリアルタイムで見える。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ルール。ひぐれは画面を見てはいけない。我々の言葉だけで「家」を建てろ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">おお、なんか面白そうじゃん！ やるやる！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあまず前に5歩進んで！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（トコトコ）……これ5歩？</span></div>
+<div class="line"><span class="who who-n">（映像・右）</span><span class="txt">12歩進んで崖の端にいる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あーーーストップストップ！！ 崖！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">よし。今立っている場所から、右を向いて3ブロック置け。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">右ってどっちの右？ 俺から見た右？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">右は右だよ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ブロック置く）……こう？</span></div>
+<div class="line"><span class="who who-n">（映像・右）</span><span class="txt">上に向かって3ブロック積んでいる。壁ではなく柱。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……横だ。横に並べろ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">だから横ってどっちの横！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっとね、太陽がある方に——あ、ごめん、それ余計わかんないよね。うん。私も方向音痴だからアドバイスできない。ごめん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">見えないんだって！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっ、ひぐれ穴に落ちた。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ？ あ、死んだ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">完成品はこちら</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……崖の端にブロックが3つ積んであるだけ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……現代アートか。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>「完成品はこちら」→ 冒頭に戻る → 2周目は最初から「こいつ崖の端にいるんだよな」と思いながら見られる</div>
+<div class="why">切り口：「画面なし建築」＝普段当たり前に使ってる「視覚」を奪う。言語化の限界が笑いになる。「右ってどっちの右」は哲学。コメント欄で「自分もやってみたい」→ 真似しやすい企画。しかも初見でもルールが1秒でわかる。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-invert">逆転構造系</h2>
+<p class="sec-desc">「普通こう考えるよね」を裏返す。前提をひっくり返すから「やられた」と思う。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="L04">
+<div class="sc-head">
+<h3>L04「マイクラで"何もしない"をやってみた」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-emo">エモ</span><span class="tag t-feel">五感</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラで何もしない30秒。」→ 丘の上でキャラが4人座っている映像。BGMなし。環境音だけ。</div>
+<div class="visual"><strong>映像演出：</strong>夕暮れ→夜→星空の時間経過。カメラはゆっくりパン。4人はただ座っている。途中からセリフがぽつぽつ入る。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">夕焼けの丘。4人が座っている。5秒間、誰もしゃべらない。風と虫の音。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なんか、いいね。</span></div>
+<div class="line"><span class="who who-n">（3秒の沈黙）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……うん。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">夜に変わる。星が出る。松明の明かりだけ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あれ、なんか泣きそう。え、なんで？ マイクラで泣く？ 私メンヘラすぎない？</span></div>
+<div class="line"><span class="who who-n">（5秒の沈黙。遠くでゾンビの声。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——悪くない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ねぇ、なんか泣きそうなんだけど。なんで？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">わかる。俺も。なんでだろ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">たまには、何もしない夜も。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ後、夕焼けに戻る。ずっと流しておける。</div>
+<div class="why">切り口：マイクラ動画は「何かをする」のが当たり前。「何もしない」は逆張りだが、TikTokの高速コンテンツ疲れした層に刺さる。コメント欄が「なんか泣いた」「これ流しながら寝た」で埋まる設計。ショート動画の中でこれが来ると異質すぎて止まる。</div>
+</div>
+
+<div class="sc" id="L05">
+<div class="sc-head">
+<h3>L05「マイクラの"ロード画面のヒント"だけで推理ドラマ作った」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-com">コメディ</span><span class="tag t-meta">メタ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラのロード画面の文章、よく読むと怖い。」→ スプラッシュテキスト「Also try Terraria!」が映る</div>
+<div class="visual"><strong>映像演出：</strong>実際のマイクラのスプラッシュテキストを「証拠品」として提示。やとらが探偵風に推理。テキストが画面に大きく表示される。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">マイクラのタイトル画面には、毎回違う黄色い文字が出る。あれを読んだことがあるか？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あるけど、英語だし読み飛ばしてた。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あの中にな——意味がわかると怖い文章がある。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">テキスト表示：「You are valid!」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">「あなたは正しい」。——誰に言ってる？ なぜ「正しい」と言う必要がある？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、普通に励ましじゃない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ならばこれは？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">テキスト表示：「You can't breathe in walls!」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">「壁の中では呼吸できない」。……なぜこれを"ヒント"として表示する必要がある？ 誰かが壁の中に入ろうとしたのか？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">待って、それって「以前そこで死んだ人がいた」ってコト！？ ……あ、ごめん深読みしすぎた。ネットの考察癖が。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">やめろやめろやめろ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">テキスト表示：「Woo, /give!」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、これは？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……チートを称賛している。つまりこのゲームの作者は——ルール破壊を肯定している。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">深読みしすぎ！！！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">次のロード画面、ちゃんと読んでみて。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→タイトル画面のスプラッシュテキストが次々切り替わる映像→冒頭に戻る</div>
+<div class="why">切り口：全員が毎回見てるのに誰も読んでないスプラッシュテキスト。「あそこに何か書いてあったんだ」という発見。やとらの深読みキャラが活きる最高の企画。実在するテキストを使うのでファクト感もある。「次に見たとき読んじゃう」→ マイクラを開く理由になる。</div>
+</div>
+
+<div class="sc" id="L06">
+<div class="sc-head">
+<h3>L06「全員の"初日のワールド"を他の人がプレイしたら」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-com">コメディ</span><span class="tag t-emo">エモ</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「他人の"初めてのワールド"に入る。」→ ワールド選択画面に「あさめ_初めて」と書かれたワールドが映る</div>
+<div class="visual"><strong>映像演出：</strong>ワールドに入る瞬間のローディング画面を毎回見せる。中に入った瞬間のリアクションを顔アップ。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">全員の一番最初に作ったワールドのデータを集めた。他人のワールドを、本人以外がプレイする。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるが「あさめ_初めて」ワールドに入る。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……地面に花が植えてある。延々と。花、花、花。道が花。家の壁が花。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">わ……花畑じゃん。かわいい。あさめちゃんらしすぎて逆に泣ける。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">だってー！ 花きれいだったから！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめが「やとら_test01」ワールドに入る。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……巨大な城。完璧な左右対称。地下に整理された倉庫。初日のワールドとは思えない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">初日でこれ!? うそでしょ！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……設計図は事前に描いていた。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">それ初日じゃなくない？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが「ひぐれ_world1」ワールドに入る。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……スポーン地点に穴がある。穴の中でリスポーンしてまた落ちたらしい。周辺にアイテムが散乱。近くに半壊した土の小屋。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……苦労が見える。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">最初マジでわかんなかったんだよ！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが「mhr_」ワールドに入る。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">……地下。全部地下。地上に出た形跡がない。地下に部屋がある。壁にレッドストーン回路。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え、地上は？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">いや、地上眩しくない？ 私の目には刺激が強すぎて……。地下の方が落ち着くんだよね。え、変？ 変かな。変だよね。うん知ってる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ワールド名が暗号なのもまひるっぽい……。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">初めてのワールド、まだ残ってる？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→ワールド選択画面に戻る→「自分の初日のワールドも見返したくなる」</loop>
+<div class="why">切り口：「初日のワールド」は既出（V13）だが、「他人がプレイする」が新しい。自分のワールドを見せるのと、他人に入られるのは全然違う。「部屋を見られる恥ずかしさ」がある。しかもそのワールドに性格が出る。視聴者は自分の初日のワールドを思い出して「あー消しちゃったなぁ」とコメント。</div>
+</div>
+
+<div class="sc" id="L07">
+<div class="sc-head">
+<h3>L07「マイクラ、逆再生したら別ゲーだった」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-chaos">カオス</span><span class="tag t-feel">五感</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラを逆再生します。」→ 壊れた家が一瞬で組み上がる映像（逆再生）</div>
+<div class="visual"><strong>映像演出：</strong>全編逆再生。掘った穴が埋まる、壊した家が立ち上がる、殺したゾンビが復活する。4人のリアクションだけ通常再生のワイプ。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">30分間の通常プレイを逆再生する。見ていろ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">逆再生スタート。完成した家が解体されていく——のではなく、ブロックが「吸い込まれて」消えていく。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あはは！ 家が食べられてる！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">逆再生：倒されたゾンビが地面から立ち上がり、後ろ歩きで去っていく。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ゾンビが復活して帰っていった……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">成仏してるじゃん！ ゾンビくん成仏おめでとう！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">逆再生：クリーパーの爆発。散らばったブロックが中心に集まり、地面が元通りに → クリーパーが「生まれて」後ろに去る。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">クリーパーが……地面を直して帰った……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">逆再生のクリーパーは——修復者だったのか。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">逆再生：溶岩に落ちて死んだシーン → 溶岩から飛び出して地上に着地。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">かっこいい！！ 溶岩から生還してる！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え、待って。逆再生のマイクラ、全部ハッピーエンドじゃん。しんど。なんか人生もそうであってほしい。……あ、急にエモくなっちゃった。忘れて。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">逆再生のマイクラ、優しい世界だった。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→冒頭。「逆再生のクリーパーは修復者」がキーフレーズとして残る。</loop>
+<div class="why">切り口：逆再生は技術的には簡単だが「マイクラでやる」のは盲点。破壊が修復に、死が復活に、爆発が建設になる。「逆再生のマイクラは優しい世界」というオチに意外なエモがある。映像の面白さだけで成立するので初見に最強。まひるの「全部ハッピーエンド」が刺さる。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-sense">五感・共感覚系</h2>
+<p class="sec-desc">マイクラを「目」以外で体験する。聞く、感じる、想像する。五感を揺さぶる。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="L08">
+<div class="sc-head">
+<h3>L08「マイクラの"匂い"を考えたことある？」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-feel">五感</span><span class="tag t-com">コメディ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラ、匂いあったらどんな匂い？」→ 4人がネザーに立ってる映像</div>
+<div class="visual"><strong>映像演出：</strong>各バイオームの映像＋画面端に「匂い想像ゲージ」のようなジョーク演出。4人の反応顔ワイプ。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねーみんな、マイクラに匂いがあったらどんな匂いだと思う？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ、考えたことない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">草原！ これ絶対いい匂いだよね！ 草と花と——</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あー、でも牛いるじゃん。牛の匂いどうするの。畜産系YouTuber見たことあるけど結構キツいらしいよ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……牧場の匂いか。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">では——ネザー。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ネザーの映像。溶岩、ネザーラック、ガストの声。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うわ、これ絶対硫黄くさいでしょ。温泉街の——いや、もっとヤバい。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ソウルサンドは絶対いい匂い。魂の匂いって多分お線香みたいな——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">魂に匂いあるの！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">うん、線香。おばあちゃん家のあの感じ。……あ、なんかそう言うと急にエモくない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">仏壇！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——エンドはどうだ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ジ・エンドの映像。虚空、エンダーマン。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……あ、これ無臭じゃない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——正解だと思う。何もない場所には、匂いもない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">無の匂い。……いや、「無の匂い」って自分で言っといてなんだけど、かっこいいな今の。名言出ちゃった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんかちょっと怖いこと言ってるよこの人たち。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたのマイクラ、どんな匂い？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→草原に戻る。匂いを考えながら見ると映像が変わって見える。</loop>
+<div class="why">切り口：ゲームに「匂い」を持ち込む発想。誰もやってないのに、言われると全員考えちゃう。コメント欄が「村は絶対パンの匂い」「ウォーデンのとこは湿った地下の匂い」で盛り上がる。五感で語るマイクラという新ジャンルを開拓。</div>
+</div>
+
+<div class="sc" id="L09">
+<div class="sc-head">
+<h3>L09「マイクラ、音だけでプレイしたらどこまで行ける？」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-dark">チャレンジ</span><span class="tag t-com">コメディ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 画面が真っ黒。マイクラの音だけ聞こえる。テロップ「音だけマイクラ。画面なし。」</div>
+<div class="visual"><strong>映像演出：</strong>メイン画面は黒（ひぐれの視点）。小窓で他3人の画面（ひぐれが実際にどこにいるか）を見せる。視聴者は「音」と「答え合わせ」を同時に楽しむ。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ひぐれ。モニターの電源を切れ。音だけで家に帰れるか試す。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">は！？ ……マジ？ マジか。やるけど！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">メイン画面が真っ黒に。足音だけ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えーと……足音が……草？ 草原にいる？</span></div>
+<div class="line"><span class="who who-n">（小窓）</span><span class="txt">正解。草原にいる。だが家と逆方向に歩いている。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっ……（笑いをこらえてる）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんか水の音しない？ 川だ！ 川の方に行けば——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ばしゃん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">落ちた！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">水の音に向かったらそうなるに決まってるじゃん！！ なんで！！ ……あ、でもその発想は嫌いじゃない。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あ、なんか洞窟の音する。下に洞窟ある。やば、ゾンビの声聞こえる。</span></div>
+<div class="line"><span class="who who-n">（小窓）</span><span class="txt">ひぐれの背後3ブロックにクリーパーがいる。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">シューッ……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え、この音なに？ この「シュー」って——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーン。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あ"あ"あ"あ"！！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれーー！！ 笑</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……クリーパーの音は覚えておいた方がいい。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">到達距離：家から142ブロック遠ざかりました。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>「142ブロック遠ざかりました」→黒画面＋足音に戻る→2周目は音だけで「あ、草原だ」ってわかるようになってる</loop>
+<div class="why">切り口：L01（BGMオフ）の発展形。画面を完全に消す。音だけマイクラは「目が見える人が"音だけの世界"を疑似体験する」という構造。ゲーム実況で「画面を見せない」のは禁じ手だが、それが逆に映像としてめちゃくちゃ面白い。小窓で答え合わせできるから視聴者は「逆方向行ってるよ！」と叫びたくなる。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-exist">実存系</h2>
+<p class="sec-desc">マイクラという「世界」そのものに問いを投げる。ゲームなのに哲学になる瞬間。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="L10">
+<div class="sc-head">
+<h3>L10「ワールドの端まで歩いたら何がある？って話」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-emo">エモ</span><span class="tag t-dark">ロマン</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラの世界の"端"に行ったことある？」→ 夜空の下、4人がまっすぐ歩いている映像</div>
+<div class="dial">
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ねぇ、マイクラの世界ってどこまであるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">座標でいうと3000万ブロックだ。そこに"ワールドボーダー"がある。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">3000万！？ 歩いたらどれくらいかかるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">リアルタイムで——約820時間。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">34日間ずっと歩くってこと！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">でも実際に歩いた人いるんだよね。動画見たことある。800時間だよ？ 推し活よりすごい。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ああ。そして辿り着いた先にあるのは——見えない壁だ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ワールドボーダーの映像。青い壁。その先は——何もない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………え、なにもないの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">何もない。ただ「これ以上進めない」という事実だけがある。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なんかそれ、ちょっと寂しくない？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">でもさ、端に何もなくても、振り返ったら3000万ブロック分の世界があるわけじゃん。それってめちゃくちゃよくない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">——そっか。端に行くことより、途中にあったものの方が大事なんだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……まあ、我々はまだスポーン地点から200ブロックしか離れてないがな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まずは冒険しよう！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたのワールド、どこまで行った？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→夜空の映像→「端に何があるか」の問いに戻る</loop>
+<div class="why">切り口：マイクラの「世界の端」は知識としては知ってても、それを「旅の意味」にまで昇華する台本は少ない。ゲームの仕様を哲学に変換。あさめの「途中が大事」でエモく着地しつつ、やとらの「200ブロックしか離れてない」で笑いに戻す。コメント欄に座標を書く人が出る。</div>
+</div>
+
+<div class="sc" id="L11">
+<div class="sc-head">
+<h3>L11「マイクラのスティーブって、何歳なんだろう」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-meta">メタ</span><span class="tag t-emo">エモ</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「マイクラのスティーブ、何歳だと思う？」→ スティーブがまっすぐこっちを見てる映像</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねえ、スティーブって何歳なの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え——20代？ なんとなく。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">公式の設定はない。だが考えてみろ。奴は一人で木を素手で壊し、家を建て、鉱石を掘り、剣を作り、ドラゴンを倒す。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">しかもそれ全部ひとりだよ？ ぼっちの才能やばすぎない？ ……私のこと？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">言われてみると……すごくない？ 1日目に木を殴ってるんだよ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">しかも奴は——何も覚えていない。死んでリスポーンするたびに、記憶は曖昧になる。それでも毎回、木を殴ることから始める。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……待って、それって俺らじゃん。新しいワールド作るたびに同じことしてる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">待って待って。じゃあスティーブは私たちで、私たちがスティーブってこと？ それ怖くない？ ……いや、むしろエモい？ どっち？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ええええ！？ 怖い！ なんか怖い！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だからスティーブの年齢は——お前がマイクラを初めて遊んだ時の、お前の歳だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………8歳。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……10歳……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">12歳。……あの頃の私、まだ元気だったな。いや今も元気だけど。たぶん。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたのスティーブは、何歳ですか？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→スティーブの顔→冒頭の問いに戻る。自分の答えを持って2周目を見る。</loop>
+<div class="why">切り口：キャラクターの「年齢」を問うだけで、プレイヤーの人生の記憶が蘇る。「自分が始めた歳＝スティーブの歳」は論理的には無茶苦茶だが、感情的には完璧に正しい。コメント欄が年齢で埋まる。10年前に始めた人は「10歳のスティーブ」。マイクラへの愛を再確認する台本。</div>
+</div>
+
+<div class="sc" id="L12">
+<div class="sc-head">
+<h3>L12「マイクラで"遺書"を書いた」</h3>
+<div class="sc-meta"><span class="tag t-lat">ラテラル</span><span class="tag t-emo">エモ</span><span class="tag t-dark">ダーク</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> テロップ「エンダードラゴンに挑む前に、全員"遺書"を看板に書きました。」→ 看板が4枚並んでいる映像</div>
+<div class="visual"><strong>映像演出：</strong>エンドポータルの前。4人が看板を書いている後ろ姿。1枚ずつズームして内容を見せる。BGMは静かなピアノ。</strong></div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">エンダードラゴンに挑む。全員、看板に"遺書"を書け。死んだらここに残る。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ、遺書！？ 重くない！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">マイクラの看板には4行しか書けない。4行で、伝えたいことを書け。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">全員が看板に向かう。しばらく無言。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらの看板ズーム：「よふかしくらぶは / 永遠に不滅だ / 全員帰ってこい / ——団長」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前、遺書なのにかっこつけてんじゃん……。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめの看板ズーム：「みんなだいすき！ / ぴよすけの世話 / 誰かお願い！ / あさめより」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ぴよすけのこと忘れないでね……！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるの看板ズーム：「地下の部屋の / チェストは / 開けないで / 」（4行目が空白）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">何入ってるの！？！？ 逆に気になるんだけど！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">開けないでって言ったよね！？ 約束だからね！？ ……いや別に大したもの入ってないけど。でも開けないで。絶対。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれの看板ズーム：「まだ石の剣しか / 作れなかったけど / 楽しかった / ありがとう」</span></div>
+<div class="line"><span class="who who-n">（3秒の沈黙。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ひぐれの、泣くんだけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ああ。——行くぞ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">4人は、エンドポータルに飛び込んだ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→看板4枚の映像に戻る。「この後どうなった？」は——次の動画で。</loop>
+<div class="why">切り口：「遺書」というリアルでは重いテーマを、マイクラの看板（4行制限）というフィルターを通すことで軽やかにする。制限があるから本音が出る。ひぐれの「楽しかった、ありがとう」が初心者だからこそ刺さる。まひるの不穏さがコメントを生む。次の動画への最強の引き。</div>
+</div>
+
+<hr>
+
+<div class="note">
+<h4>ラテラル台本の使い方</h4>
+<ul>
+<li><strong>バイラル台本（V01-V20）と交互に投稿：</strong>あるある系→ラテラル系→あるある系のリズム。「いつもと違う」が来ると新鮮に感じる</li>
+<li><strong>シリーズ化しやすいもの：</strong>L01（BGMオフ）→ L09（音だけプレイ）→ 次は「色を消す（白黒マイクラ）」など五感シリーズに展開可能</li>
+<li><strong>特にバズ見込みが高い3本：</strong>L02（持ち物検査）、L07（逆再生）、L08（匂い）——「自分もやってみたい/考えてみたい」欲が強い</li>
+<li><strong>エモ着地の2本：</strong>L04（何もしない）、L12（遺書）——通常のマイクラ動画では絶対に出ない感情を引き出す。ファン化に最も効く</li>
+<li><strong>初見最強の1本：</strong>L07（逆再生）——キャラ知識ゼロ、マイクラ知識最低限で楽しめる。映像の力だけで勝てる</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>V01-V20とL01-L12の棲み分け</h4>
+<ul>
+<li><strong>V系（バイラル）：</strong>「わかるわかる」「俺もそう」の共感。拡散力が高い。再生数を伸ばす。</li>
+<li><strong>L系（ラテラル）：</strong>「考えたことなかった」「その発想はなかった」の驚き。ブランドを作る。他と被らない。</li>
+<li>V系で人を集めて、L系でファンにする。この2本立てが最強。</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">よふかしくらぶ！ラテラル台本 — 全12本 — 2026.04</div>
+
+</body>
+</html>

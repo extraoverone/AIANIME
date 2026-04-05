@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！台本集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(24px,5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(250,204,21,.12);color:#facc15;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+/* CHARA */
+.chara-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+@media(max-width:700px){.chara-grid{grid-template-columns:1fr 1fr}}
+.chara{border-radius:14px;padding:18px;text-align:center;border:1px solid #222}
+.chara h4{font-size:15px;font-weight:800;margin-bottom:4px}
+.chara p{font-size:12px;line-height:1.6}
+.c-asame{background:rgba(103,232,249,.06);border-color:rgba(103,232,249,.2)}
+.c-asame h4{color:#67e8f9}
+.c-mahiru{background:rgba(244,114,182,.06);border-color:rgba(244,114,182,.2)}
+.c-mahiru h4{color:#f472b6}
+.c-higure{background:rgba(251,191,36,.06);border-color:rgba(251,191,36,.2)}
+.c-higure h4{color:#fbbf24}
+.c-yatora{background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.2)}
+.c-yatora h4{color:#a78bfa}
+
+/* CARD */
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-chaos{background:rgba(239,68,68,.12);color:#f87171}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-hor{background:rgba(100,116,139,.12);color:#94a3b8}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-init{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-collab{background:rgba(251,146,60,.12);color:#fb923c}
+.t-meta{background:rgba(236,72,153,.12);color:#f472b6}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+
+/* HOOK */
+.hook{background:#12121e;border-left:4px solid #f87171;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fca5a5}
+
+/* DIALOGUE */
+.dial{padding:0 24px 20px}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:48px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.line .txt{color:#bbb}
+.dir{color:#555;font-style:italic;font-size:13px}
+
+/* LOOP */
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+
+/* WHY */
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+
+/* NOTE */
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#chara">キャラ</a>
+<a href="#s-intro">導入</a>
+<a href="#s-comedy">コメディ</a>
+<a href="#s-chaos">カオス</a>
+<a href="#s-emo">エモ</a>
+<a href="#s-collab">コラボ企画</a>
+<a href="#s-meta">メタ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">NEW IP PROJECT</div>
+<h1>よふかしくらぶ！台本集</h1>
+<p>マイクラ×高校生4人の共同生活。あさめ・まひる・ひぐれ・やとら。<br>ショートアニメ15本＋シリーズ構成案。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="chara">キャラクター</h2>
+
+<div class="chara-grid">
+<div class="chara c-asame">
+<h4>あさめ</h4>
+<p>水色 / 陽キャ女子<br>サメのチャーム付き<br>見た目クール→中身ギャル<br>衝動的カオスメーカー</p>
+</div>
+<div class="chara c-mahiru">
+<h4>まひる</h4>
+<p>ピンク / ネット女子<br>ツインテール / 地雷系<br>自虐と闇が深い<br>イマジナリー：伊達たそまる</p>
+</div>
+<div class="chara c-higure">
+<h4>ひぐれ</h4>
+<p>黄色 / 陽キャ男子<br>マイクラ初心者<br>常識人ツッコミ担当<br>巻き込まれ体質</p>
+</div>
+<div class="chara c-yatora">
+<h4>やとら</h4>
+<p>紫 / リーダー<br>厨二病 / クールぶる<br>実はクソ頭いい<br>mod制作できる天才</p>
+</div>
+</div>
+
+<div class="note">
+<h4>掛け合いの基本パターン</h4>
+<ul>
+<li><strong>黄金型：</strong>あさめ暴走 → ひぐれツッコミ → やとらドヤ解説 → 全員巻き込まれ</li>
+<li><strong>闇堕ち型：</strong>まひる自虐 → あさめポジティブ上書き → ひぐれ「怖い」 → やとら「……俺が導いてやる」</li>
+<li><strong>初心者型：</strong>ひぐれ初心者行動 → 3人のリアクション芸 → 結果オーライ or 大惨事</li>
+<li><strong>厨二崩壊型：</strong>やとらカッコつけ → まひる「推せる」 → あさめ「でた〜！」 → 本人照れる</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-intro">導入・自己紹介</h2>
+<p class="sec-desc">チャンネル初見向け。4人のキャラが1本で全員わかる構成。</p>
+
+<!-- #01 -->
+<div class="sc" id="y01">
+<div class="sc-head">
+<h3>#01「よふかしくらぶ、はじまります。」</h3>
+<div class="sc-meta"><span class="tag t-init">導入</span><span class="tag t-com">コメディ</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック（冒頭3秒）:</strong> あさめ「あ〜おなかすいた、なんか食べたい。ええ？！もう録ってるの？言ってよ〜！」</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あ〜おなかすいた、なんか食べたい。ええ？！もう録ってるの？言ってよ〜！……えっと、私の名前はあさめ！前髪についてるサメがチャームポイント！よくクールそうって言われるけど喋るとギャルらしい……って言われる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">いっけなーい！遅刻遅刻！私はまひる、16歳！どこにでもいる華の女子高生！……なんてね。今時ピンク髪でツインテで良い大人がインターネットで女子高生してるなんて流石に終わってるわ……。でも推しのたそまるがいるから生きていける。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あーなにやってんだこいつら。俺の名前はひぐれ、こいつらと違って普通の高校生。マイクラ？やったことないけど？バカどもに囲まれてこんなところに連れてこられたけど、俺は夜更かしくらぶなんてやる気ねえからな！じゃ——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フフ、全く困った奴らだ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……誰。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺が誰かって？　俺はよふかしクラブのリーダー、ヤトラだ。クソ頭いいからmodとかも作れる。俺が導いてやるよ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あー出た出た。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">かっこいー！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">バカかよ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なんで俺ここにいるんだっけ？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃ！今日から4人で夜更かししながらマイクラやります！よふかしくらぶ、はっじまっるよ〜！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">待て俺やるなんて一言も——</span></div>
+<div class="line"><span class="who who-n">（ナレ）</span><span class="txt">こうして、よふかしくらぶの夜は始まった。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> ナレーション「夜は始まった」→ 冒頭のあさめ「おなかすいた」に自然に戻る</div>
+<div class="why">4人全員の性格が60秒で把握できる。自己紹介のテンプレ感→やとら登場で空気が変わる→ひぐれの巻き込まれオチで笑いに。「推しは誰？」コメントが来やすい構造。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-comedy">コメディ</h2>
+<p class="sec-desc">4人の掛け合いで笑わせるショート。再生維持率と共感重視。</p>
+
+<!-- #02 -->
+<div class="sc" id="y02">
+<div class="sc-head">
+<h3>#02「ひぐれ、初めてのマイクラ」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-init">初心者</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> ひぐれ「え、木ってパンチで取れんの？」あさめ「そこからァ！？」</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">いいか、まずは木を集めるんだ。基本中の基本——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え、木ってパンチで取れんの？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">そこからァ！？ マジで何も知らないじゃん！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">だからやったことないって言っただろ！ ……おっ取れた。えっ丸太？丸ごと？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ひぐれくんの初めて、記録しとこ。これ後で編集して動画にするから。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">言い方。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ、木を手に入れたら次は作業台だ。4つの板材を——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あ、なんか穴あった。入ってみよ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">待て、人の話を——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うわなんかいる。緑のやつ。近づいてくる——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あーーーそれ逃げて！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">シュウウウ……ドカーン！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………俺もう帰りたい。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">マイクラの洗礼、おめでとう。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「帰りたい」→ 冒頭の「木ってパンチで取れんの？」に戻る。初心者の永遠ループ感。</div>
+<div class="why">マイクラ初心者あるあるの最大公約数「クリーパー初遭遇」。ひぐれの素朴なリアクション＋3人のリアクション芸でテンポが出る。初心者視聴者＝ひぐれに自分を重ねる。</div>
+</div>
+
+<!-- #03 -->
+<div class="sc" id="y03">
+<div class="sc-head">
+<h3>#03「まひるの家がヤバい」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-meta">闇</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> あさめ「まひるの家見に行こ〜！」まひる「あっ待って今は——」</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねーねー、まひるの家見に行こ〜！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ今！？ ちょっと待って今は片付けてないから——！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">なにこれ！地下3階まであるじゃん！すっご——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なんで壁一面に看板で「死」って書いてあるの？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">いやそれデコレーションだから！ オシャレだから！ ……オシャレだよね？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">額縁のポーション全部「毒」なんだけど。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">インテリアだって言ってるじゃん！ Pinterestで見たの！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっこの部屋、黒曜石で囲まれてて中にウィザー飼ってない？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ペット！ かわいいでしょ！ 名前はくろちゃん！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……なるほど。お前の精神状態がそのまま建築に出ているな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やめて分析しないで。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">つーかこれ家じゃなくてダンジョンだろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ちゃんと寝室あるし！ ベッドの横にソウルランタン置いてあるだけだし！ ……普通でしょ？ 普通だよね？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるの家、エモくて好き！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……え、ほんと？ ……えへへ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">いや「えへへ」じゃねえよ怖いわ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> まひるの「えへへ」→ 冒頭の「家見に行こ〜」に戻る。嬉しくなったまひるが「もっと見せたい」と次の部屋を案内し始める地獄ループ。</div>
+<div class="why">「建築にプレイヤーの性格が出る」共感ネタ × まひるの闇キャラが炸裂。ツッコミどころが多いので視聴者コメント「あの部屋気になる」が来る。シリーズ化で各キャラの家を巡回できる。</div>
+</div>
+
+<!-- #04 -->
+<div class="sc" id="y04">
+<div class="sc-head">
+<h3>#04「やとらのmod、バグってる」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとら「俺が作ったmodを入れてやった。感謝しろ」→ 空から牛が降ってくる</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ、お前らのために特別にmodを作ってやった。「ヤトラクラフト」——俺の叡智の結晶だ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">おお〜！なになに！何ができるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">剣を振ると雷が落ちる。かっこいいだろ——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ゴロゴロ……ドーン！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">雷落ちたけど……なんで空から牛が降ってきてるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……は？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">牛めっちゃ降ってくる！！ モーモーモーモーモー！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">肉……無限の肉……ありがたい……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ありがたくねえよ！潰されるわ！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ちっ……summonのIDを間違えたか……。だが想定の範囲内だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">絶対想定してないだろ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら〜、もう1回振って！もう1回！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……いいだろう。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドーン！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">今度クリーパー降ってきたんだけど！？！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……フッ。バグも、俺の才能の一部だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">かっこよく言うな！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「かっこよく言うな！」→ 冒頭の「modを作ってやった」に戻る。毎回違うバグが出る構造で無限にシリーズ化可能。</div>
+<div class="why">やとらの厨二ドヤ→即崩壊が気持ちいい。「modのバグ」はマイクラ民共感。あさめが楽しんでカオスを加速させ、ひぐれが全力ツッコミ。まひるの独自解釈が味。</div>
+</div>
+
+<!-- #05 -->
+<div class="sc" id="y05">
+<div class="sc-head">
+<h3>#05「深夜3時のテンション」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> ひぐれ「お前ら何時だと思って……」あさめ＆まひる「「3時ィ〜！」」</div>
+<div class="dial">
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前ら……いま何時だと思って——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">3時ィ〜！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">3時ィ〜！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">寝ろよ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やだ〜！だって今めっちゃいいとこなの！ひぐれ見て！私の家にプール作った！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">家のど真ん中が水浸しなだけだろそれ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえ、深夜3時って……全てが許される時間じゃない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">許されない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">深夜3時にマイクラしてると人生ってなんだろうってなるよね。でもそれがいいんだよ。この虚無が心地いい。……わかる人いる？ いない？ いないか。そっか。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">怖いこと言うな。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……やめろ、俺のレッドストーン回路が完成するまであと少しなんだ。寝るな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前が一番起きてるやつじゃねえか！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねーおなかすいた！深夜ラーメン食べたい！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">深夜ラーメン！ 背徳感最高じゃん！ カロリーは深夜だからゼロ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……もう俺も寝れないわ。ラーメン行くか。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やった〜！よふかし最高！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「よふかし最高！」→ 冒頭の「何時だと思って」に戻る。毎晩このループをしている感。</div>
+<div class="why">「よふかしくらぶ」の名前の由来回収。深夜テンションの共感は視聴者層（中高生の夜更かし勢）にドンピシャ。ひぐれが結局流される展開で「お前もかよ」のコメントが来る。</div>
+</div>
+
+<!-- #06 -->
+<div class="sc" id="y06">
+<div class="sc-head">
+<h3>#06「クッキー・ロシアンルーレット」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> あさめ「クッキーあるじゃん！いただきま——」頭にカウントダウンが出現</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ええ！こんなとこにクッキーあるじゃん！誰のかわからないけどいただきま〜す！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">待て。それは俺の——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">もぐもぐ……ん？ なんか頭の上に数字が……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">カウントダウンしてるんだけど。10、9、8……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あ〜あ。それTNTポーション入りクッキーだぞ。俺の実験用の。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ……えっ！？ 爆弾！？ 嘘でしょ！？ 誰か！助けて〜〜〜！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃん爆弾になっちゃった……尊い……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">尊くねえよ！！ 助けろよ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やだやだやだ！爆発したくない！！（走り回る）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">こっち来んな！！ 巻き込まれる！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">落ち着け。牛乳を飲めばエフェクトは消える。ほら。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">牛乳！牛乳ちょうだい！！（ゴクゴク）……あっ止まった！セーフ！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ちなみに私のクッキーは最初からポーション入りだから、食べると永遠に暗闇になるよ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前のクッキーのほうがヤバいだろ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……次はもっと強力なの作るか。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やめて！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> やとらの「次はもっと強力な」→ 冒頭の「クッキーあるじゃん！」に戻る。あさめはまた食べる。学習しない。</div>
+<div class="why">あさめの衝動性→やとらの発明品→ひぐれの巻き込まれの黄金パターン。マイクラの「牛乳でエフェクト解除」ネタを自然に組み込み。まひるのオチが闇で笑い。</div>
+</div>
+
+<!-- #07 -->
+<div class="sc" id="y07">
+<div class="sc-head">
+<h3>#07「4人で建築バトル」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-collab">企画</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとら「テーマは『家』。制限時間5分。——始め」</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">今日は建築バトルだ。テーマは「家」。制限時間5分。……始め。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">カチカチカチ（建築音）……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——時間だ。まずはあさめ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃーん！ 「さめハウス」！屋根がサメの形！かわいくない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんでサメ。……でも意外とちゃんとしてるな。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次、まひる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっと……「虚無の間」。外壁は全部黒曜石で、中は真っ暗で、入ると帰れない。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">だから家じゃなくてダンジョンだろそれ！前も言ったわ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">家は心の監獄だから……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">深いこと言うな。……俺はこれ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……豆腐だな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うるせえ！初心者なんだよ！四角い家の何が悪い！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">むしろ好き！味がある！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">フォローのしかた雑。で、やとらは？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……見ろ。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドーン！（壮大なBGM）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……城じゃん。テーマ「家」なのに城建ててるじゃん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">城は……俺の家だ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">5分で城建てるのバグでしょ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとらくん推せる……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺の豆腐だけ浮いてるんだけど。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「豆腐だけ浮いてる」→ 冒頭の建築バトル開始に戻る。テーマを変えて無限シリーズ。</div>
+<div class="why">「建築力の差」はマイクラコミュニティの永遠の共感ネタ。ひぐれ＝視聴者の自分。4人の作品が全員キャラを反映していてコメントで推し投票が起きる。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-chaos">カオス</h2>
+<p class="sec-desc">全員がカオスに巻き込まれる回。テンポ最優先。</p>
+
+<!-- #08 -->
+<div class="sc" id="y08">
+<div class="sc-head">
+<h3>#08「あさめが全部TNTに替えた」</h3>
+<div class="sc-meta"><span class="tag t-chaos">カオス</span><span class="tag t-com">コメディ</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとらの城の壁が全部TNTテクスチャに変わっている</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……おい。俺の城の壁、全部TNTになってるんだが。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あはは！面白くない？全部TNTに替えといた！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">面白くない。3日かけて作った城なんだが？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あさめお前マジか……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">大丈夫大丈夫！火つけなきゃ爆発しないって！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（カチッ）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まひる今火打ち石使っ——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドドドドドドドーーーーン！！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………あはは。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">笑い事じゃねえだろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……綺麗だった。花火みたいで。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……フッ。まぁいい。最初から作り直す。今度はTNT耐性つきでな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">強がるな。目が死んでるぞ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「作り直す」→ また冒頭で「壁が全部TNT」に戻る。あさめは学習しない。</div>
+<div class="why">あさめの暴走→まひるが致命的一手→やとらの城が消し飛ぶ。3段階のカオスエスカレーション。「苦労した建築が一瞬で消える」はマイクラ最大のトラウマあるある。</div>
+</div>
+
+<!-- #09 -->
+<div class="sc" id="y09">
+<div class="sc-head">
+<h3>#09「寝る前の通話が終わらない」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとら「じゃ、今日は解散——」あさめ「あっそういえばさ！」</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">よし、今日はここまでだ。解散——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっそういえばさ！明日のご飯なに食べる？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">それ今じゃなくていいだろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえ知ってる？人間って寝なくても72時間は生きられるんだって。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">知識のチョイスが怖い。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……まぁいい。あと5分だけだぞ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">——2時間後——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でさでさ！アイスって最強じゃない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">話題変わりすぎだろ。つーかもう4時じゃん。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">鳥鳴いてる……朝だ……でもまだ寝たくない……この時間が好き……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……フッ。まぁ……悪くない夜だった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前も結局ずっといたじゃん。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">よふかしくらぶだもんね！じゃ、おやすみ〜！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">おやすみ……また夜に……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ああ。……また夜に。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……くそ。俺も楽しかったわ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「また夜に」→ 冒頭の「解散——」に戻る。毎晩の日常。</div>
+<div class="why">「通話切れない」は中高生の最大共感ポイント。最後にひぐれが素直になるのがエモい。よふかしくらぶの核（深夜の繋がり）を1本で表現。ED的に使える。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-emo">エモ</h2>
+<p class="sec-desc">笑いの中にちょっとだけ泣ける回。キャラの深みを出す。</p>
+
+<!-- #10 -->
+<div class="sc" id="y10">
+<div class="sc-head">
+<h3>#10「まひるが学校を休んだ日」</h3>
+<div class="sc-meta"><span class="tag t-emo">エモ</span><span class="tag t-com">コメディ</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 夜のマイクラ。いつもの4人のはずが、まひるだけログインしていない。</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねー、まひるが今日来ないんだけど。学校も休んでたし……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あいつ最近元気なかったよな……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……放っておけ。来たい時に来る。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でもさ……。ねえ、まひるの家の前になんか作らない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんか？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">花！めっちゃ花植えよ！ログインしたら花畑がドーンって！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前にしてはいいこと言うな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">にしては、は余計！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……フッ。じゃあ俺は看板に何か書いてやるか。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんて書くんだよ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">「闇の戦士よ、光の世界が待っている」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">厨二で書くな。……俺はまあ、松明いっぱい置いとくわ。暗いの嫌いだろあいつ。本当は。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">——翌日——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ログイン音。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……え。なにこれ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">花畑……看板……松明いっぱい……。え、なにこれ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">なんで。え、なんで。私なんかのために。意味わかんない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるーー！来た！おかえり〜！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">…………ばか。泣くじゃん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">おかえり。……ま、たいしたことしてねえけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ。よふかしくらぶは4人だからな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……うん。ただいま。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「ただいま」→ 冒頭の夜のマイクラに戻る。いつもの4人が揃っている。</div>
+<div class="why">ギャグ路線の中に1本入れるエモ回。各キャラの「優しさの表現方法」が全員違う（花/看板/松明）のがキャラの深みを出す。「私なんかのために」がまひるの自己肯定感の低さを表現。コメント欄が「泣いた」で埋まるやつ。</div>
+</div>
+
+<!-- #11 -->
+<div class="sc" id="y11">
+<div class="sc-head">
+<h3>#11「ひぐれ、帰らなかった理由」</h3>
+<div class="sc-meta"><span class="tag t-emo">エモ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> まひる「ねえひぐれくん、なんでよふかしくらぶ辞めないの？」</div>
+<div class="dial">
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえひぐれくん。最初あんなに嫌がってたのに、なんでよふかしくらぶ辞めないの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">は？ 別に……なんとなくだけど。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">なんとなく？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……俺さ、学校だと普通なんだよ。普通に友達いて、普通に喋って、普通に帰る。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">うん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">でもここだと……なんか違うっつーか。あさめはバカだし、やとらは厨二だし、お前は闇深いし。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">褒めてる……？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">褒めてる。……たぶん。普通じゃないのが、ちょうどいいんだよ。ここは。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……そっか。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あーーーキモいこと言った。忘れろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">忘れない。スクショした。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">するな！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（遠くから）なに2人でイチャイチャしてんの〜！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">してねえよ！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……青春だな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前も黙ってろ！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> ひぐれの「黙ってろ！」→ 冒頭の質問に戻る。照れ隠しの永遠ループ。</div>
+<div class="why">ひぐれの「普通コンプレックス」が共感を呼ぶ。ここでしか出せない素の自分。「普通じゃないのがちょうどいい」は視聴者にも刺さるメッセージ。エモからギャグに戻すバランスが完璧。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-collab">コラボ・企画</h2>
+<p class="sec-desc">シリーズ化しやすい企画フォーマット。</p>
+
+<!-- #12 -->
+<div class="sc" id="y12">
+<div class="sc-head">
+<h3>#12「利きブロック選手権」</h3>
+<div class="sc-meta"><span class="tag t-collab">企画</span><span class="tag t-com">コメディ</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとら「目隠し状態でブロックを当てろ。マイクラ力が試される」</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">今日の企画は「利きブロック選手権」。目隠し状態でブロックを置かれて、音と感触で何か当てろ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">楽しそ〜！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺ブロックの名前すら知らないんだけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">第1問。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">カシャッ（設置音）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">これ石でしょ！わかるわかる！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……丸石だ。惜しい。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">同じじゃん！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">違う。焼く前と後だ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">第2問、はい来た。これは……匂いがする。硫黄っぽい。わかるわかる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">マイクラに匂いないだろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ソウルサンドでしょ。魂の叫びが聞こえるもん。……引かないでよ。聞こえるんだって。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……正解だ。なんで当たるんだ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">怖いわ。じゃ俺……えーと、これ……四角い？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">全部四角いよ！マイクラだよ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あっそうだった。……ダイヤ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">土だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">一番ハズレじゃん！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「一番ハズレ」→ 次の問題に続く。無限に問題を出せるフォーマット。</div>
+<div class="why">クイズ企画は視聴者参加型。「自分なら当てられる」と思わせる。各キャラの回答がキャラを反映（あさめ＝惜しい、まひる＝謎の正解、ひぐれ＝的外れ）。テーマを変えて「利きMOB」「利きバイオーム」も可能。</div>
+</div>
+
+<!-- #13 -->
+<div class="sc" id="y13">
+<div class="sc-head">
+<h3>#13「伊達たそまる、実体化」</h3>
+<div class="sc-meta"><span class="tag t-chaos">カオス</span><span class="tag t-meta">メタ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> まひる「たそまるが……マイクラの中にいる……！？」</div>
+<div class="dial">
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え……うそ。たそまるが……マイクラの中にいる……！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">たそまるって、お前のイマジナリーフレンドだろ？なんでゲーム内にいるんだよ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あー……俺がmod作ったんだ。まひるの妄想を3Dモデル化してやった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんでそんなことしたの？？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">技術的に面白かったから。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">たそまる！！！やっと会えた！！！リアルでは見えないけどマイクラの中なら触れる！！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるの目がヤバい。光ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ていうかこのたそまるってやつ……でかくない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……サイズの設定を間違えた。エンダードラゴンと同じスケールに——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ズシーーーーン！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">たそまるが村踏み潰してるんだけど！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">かっこいい！！ たそまるが暴れてる！！ 推しの暴走最高！！ スクショ！スクショ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">最高じゃねえよ避難しろ！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……次はサイズ調整をしよう。反省はしている。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まず消せ！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「まず消せ！」→ 冒頭の「たそまるがいる」に戻る。やとらのmod＝毎回カオスの法則。</div>
+<div class="why">まひるの設定「イマジナリーフレンド伊達たそまる」をマイクラ内で実体化させるメタ展開。やとらの技術力→バグ→カオスのパターン。たそまるをキャラIPとして成立させる布石にもなる。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-meta">メタ・特殊回</h2>
+<p class="sec-desc">フォーマットを崩す回。マンネリ防止。</p>
+
+<!-- #14 -->
+<div class="sc" id="y14">
+<div class="sc-head">
+<h3>#14「コメント読み上げ回」</h3>
+<div class="sc-meta"><span class="tag t-meta">メタ</span><span class="tag t-com">コメディ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> あさめ「今日はコメント読むよ〜！えっと……『あさめとまひるの関係性が好きです』」</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">今日はみんなのコメント読むよ〜！えっと……「あさめとまひるの関係性が好きです」。えへへ！嬉しい！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ……わたしたちの関係性……見られてる……照れる……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">次。「ひぐれがツッコミ疲れしてないか心配」……心配されてるわ俺。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">心配されてるじゃん！愛されてるね〜！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">嬉しいけど疲れてるのは事実。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……次。「やとらの厨二セリフ集作ってほしい」。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">作ろう作ろう！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">やめろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">「まひるのイマジナリーフレンド、本当にいるんですか？」……いるよ。今ここにいるよ。ね、たそまる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">見えない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっこれ好き！「4人の中で誰が一番強い？」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺だ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">たそまる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">メンバー外の回答やめろ。……でもガチで戦ったら俺が一番弱いんだよな。初心者だし。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">大丈夫！ひぐれは心が強い！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……まあ、ここにいる時点でメンタル強いわな。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「メンタル強い」→ 次のコメントを読む。実際のコメントを使えばリアル連動で無限。</div>
+<div class="why">視聴者参加型でエンゲージメント最大化。「コメントしたら読まれるかも」でコメント率UP。キャラの掛け合いでコメントにリアクションするだけなので制作コストも低い。</div>
+</div>
+
+<!-- #15 -->
+<div class="sc" id="y15">
+<div class="sc-head">
+<h3>#15「もしよふかしくらぶが解散したら」</h3>
+<div class="sc-meta"><span class="tag t-emo">エモ</span><span class="tag t-meta">メタ</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 静かなBGM。4人のサーバーに誰もログインしていない画面。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（ナレ）</span><span class="txt">もし……よふかしくらぶが、解散したら。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">静かなピアノBGM。誰もいないサーバー。風の音。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（モノローグ）たぶん私は……また一人でゲームしてると思う。でもきっと、4人で笑ってた夜のこと、思い出して寂しくなるんだろうなあ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（モノローグ）私は元の場所に戻るだけ。暗い部屋で一人。それは別にいいんだけど……前と違うのは「楽しかった記憶」があること。それがさ、余計つらいんだよね。楽しいを知らなければよかったって思う時と、知れてよかったって思う時が、交互に来るの。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（モノローグ）俺はまあ、普通に戻るだけだ。普通の毎日。……でもたぶん、夜中に目が覚めたとき、通話を開きそうになると思う。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）俺は……一人でも構わない。そう思っていた。だが今は——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ログイン音！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">——っていう妄想してたら寂しくなっちゃった！今日も夜更かししよ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんだよ急に。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃん感情が忙しすぎない？ ……まあ私もだけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ。解散なんてしない。俺が許さないからな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらがカッコいいこと言った！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">バカかよ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……まあ、もうちょっとだけ付き合ってやるよ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">うん。まだ続く。続けたい。……って言うの恥ずかしいんだけど、言っとく。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「まだ続く」→ 冒頭の静かなBGMに戻る。「もし」の妄想が永遠にループするが、現実では4人は一緒にいる。</div>
+<div class="why">シリーズの「核」を言語化する回。各キャラのモノローグで「この場所がないとどうなるか」を見せることで、視聴者が感情移入。最後にギャグに戻すことで重くなりすぎない。10話以降に置くとシリーズ全体の「意味」が深まる。</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2>シリーズ展開メモ</h2>
+
+<div class="note">
+<h4>投稿戦略</h4>
+<ul>
+<li><strong>第1週:</strong> #01（自己紹介）→ #02（ひぐれ初マイクラ）→ #05（深夜3時）— キャラ認知フェーズ</li>
+<li><strong>第2週:</strong> #03（まひるの家）→ #04（mod）→ #06（クッキー）— 掛け合いの面白さフェーズ</li>
+<li><strong>第3週:</strong> #07（建築バトル）→ #08（TNT）→ #12（利きブロック）— 企画フォーマット定着</li>
+<li><strong>第4週:</strong> #10（まひる休み）→ #11（ひぐれの理由）→ #15（解散IF）— エモ回で深みを</li>
+<li><strong>間に挟む:</strong> #09（通話）#13（たそまる）#14（コメント読み）— バラエティ</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>横展開アイデア</h4>
+<ul>
+<li>「各キャラの家紹介」シリーズ（#03の派生。あさめの家、やとらの城、ひぐれの豆腐ハウスも）</li>
+<li>「やとらのmod」シリーズ（毎回違うバグmod。天気mod→全部雷雨、動物mod→巨大化、etc）</li>
+<li>「ひぐれの初めてシリーズ」（初ネザー、初エンダードラゴン、初エンチャント……全部リアクション芸）</li>
+<li>「まひるの闇料理」（マイクラ内で変な食べ物を作る。腐肉ステーキ、クモの目ジュース）</li>
+<li>「よふかし相談室」（視聴者の悩みをキャラが回答。やとらが厨二で回答、まひるが闇で回答）</li>
+<li>「たそまる育成日記」（mod版たそまるを育てる。毎回予想外の進化をする）</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>キャラ関係性マップ</h4>
+<ul>
+<li><strong>あさめ ↔ まひる:</strong> 親友。あさめの陽がまひるの闇を照らす。まひるはあさめの前だと素直。</li>
+<li><strong>あさめ ↔ ひぐれ:</strong> 騒がしいやつ vs 巻き込まれるやつ。漫才コンビ的。</li>
+<li><strong>あさめ ↔ やとら:</strong> やとらのカッコつけを一番イジる。でも実は尊敬してる。</li>
+<li><strong>まひる ↔ ひぐれ:</strong> まひるの闇にひぐれがドン引き→でも心配してる。一番本音で話せる関係。</li>
+<li><strong>まひる ↔ やとら:</strong> 推しとオタクの関係。やとらは迷惑がりつつたそまるmod作ってあげる優しさ。</li>
+<li><strong>ひぐれ ↔ やとら:</strong> 一見合わないが、男同士の信頼。やとらはひぐれの「普通さ」を密かにリスペクト。</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">よふかしくらぶ！ 台本集 — 全15本 + シリーズ構成案 — 2026.04</div>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！バズ特化台本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#facc15,#34d399,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(239,68,68,.12);color:#f87171;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-viral{background:rgba(239,68,68,.15);color:#f87171}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-chaos{background:rgba(251,146,60,.12);color:#fb923c}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-asmr{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-pov{background:rgba(236,72,153,.12);color:#f472b6}
+.t-rank{background:rgba(250,204,21,.12);color:#facc15}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+
+.hook{background:#12121e;border-left:4px solid #f87171;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fca5a5}
+
+.dial{padding:0 24px 20px}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:48px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#s-hook">初見キラー</a>
+<a href="#s-aruaru">あるある</a>
+<a href="#s-format">フォーマット</a>
+<a href="#s-twist">どんでん返し</a>
+<a href="#s-addict">中毒系</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">VIRAL OPTIMIZATION</div>
+<h1>よふかしくらぶ！バズ特化台本</h1>
+<p>初見でも3秒で引き込む。キャラを知ってるとさらに面白い。全20本。<br>設計思想：「誰これ？」→「面白い」→「他のも見たい」→ チャンネル登録</p>
+</div>
+
+<div class="wrap">
+
+<div class="note">
+<h4>初見バズの鉄則</h4>
+<ul>
+<li><strong>3秒ルール：</strong>キャラ説明ゼロで状況がわかる映像。テキストでフック。</li>
+<li><strong>感情の名前をつける：</strong>「これ〇〇だよね」と視聴者が言語化できる → コメント → 拡散</li>
+<li><strong>キャラ知識不要：</strong>「ピンク髪の子が闇深い」「黄色の子がツッコミうまい」→ 見た目と行動で1秒で伝わる</li>
+<li><strong>最後にチャンネル誘導：</strong>「この4人の続きが気になったら」ではなく「次は〇〇やります」で次の動画に誘導</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-hook">初見キラー — 冒頭で殺す</h2>
+<p class="sec-desc">最初の1秒の映像だけで「何これ？」と思わせる。</p>
+
+<!-- V01 -->
+<div class="sc" id="v01">
+<div class="sc-head">
+<h3>V01「マイクラの死に方、痛い順に並べてみた」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-rank">ランキング</span><span class="tag t-com">コメディ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>画面テキスト「マイクラの死に方、痛い順に並べてみた」＋4人が審査員席に座ってる絵</div>
+<div class="visual"><strong>映像演出：</strong>左半分＝死に方の再現映像、右半分＝4人のリアクション窓（ワイプ）。ランキングが下から上がっていく。テンポは1死に方＝4秒。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">今日は「マイクラの死に方」を痛い順にランキングする。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第8位：溺死</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">これ普通にきつくない？息できないんだよ？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でも水の中ってなんか綺麗じゃん。まだマシ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第7位：サボテンに触れる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">これ一番メンタルにくるやつ。じわじわ痛いし自分が悪いし。自傷ダメージ。あ、自虐じゃん私じゃん。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第5位：マグマダイブ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">これ全ロスするのが一番痛い！ダイヤ装備がァァ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">物理的にも精神的にも痛い。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第3位：落下死（水バケツ失敗）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ水バケツって何？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">落ちる直前に水を置いて助かるやつ！失敗すると地面にベチャッと……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うわあ……。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第2位：クリーパー背後爆発</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">シュウウウ……ドカーン！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">これ心臓に悪い！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あの振り返った瞬間の絶望、めっちゃ好き。スクショ映えするよね。……え、共感されない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">好きって言うな。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第1位：</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………ネザーでベッド。</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">あ゛〜〜〜〜〜。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんでベッドが爆発するんだよこのゲーム！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……それがマイクラだ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 最後の「それがマイクラだ」→ 冒頭の「痛い順に並べてみた」に戻る。「お前のランキング教えて」でコメント誘導。</div>
+<div class="why">ランキング形式＝最後まで見たくなる。マイクラ未プレイでも「痛そう」で共感できる。ひぐれの初心者リアクションが一般視聴者の代弁。コメント「俺は〇位が一番痛い」で議論が起きる。</div>
+</div>
+
+<!-- V02 -->
+<div class="sc" id="v02">
+<div class="sc-head">
+<h3>V02「マイクラで絶対にやってはいけないこと5選」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-chaos">カオス</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラで絶対にやってはいけないこと」＋あさめが満面の笑みで全部やる映像</div>
+<div class="visual"><strong>映像演出：</strong>テロップで禁止事項が出る → あさめがそれを実行 → 結果 → 3人のリアクション。テンポよく5連発。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">マイクラで絶対にやってはいけないこと。第1条、ダイヤをマグマの近くで掘るな——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっダイヤ見つけた！掘る掘る！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ジュウウウ……（マグマに落ちるダイヤ）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">言った端からやるなよ！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">第2条、夜にベッドなしで冒険するな——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">夜の散歩って気持ちよくない？</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ゾンビの群れ。スケルトン狙撃。クリーパー接近。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">たすけてーーー！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃんが闇の中で叫んでるの、なんかエモくない？ 絵になるよ。……え、助けろ？ あ、うん。……でもまずスクショ撮っていい？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">エモくない。助けに行けよ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">第3条、他人のチェストを勝手に開けるな——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっやとらのチェストだ。何入ってるかな〜。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……おい。その中には俺の3ヶ月分のネザライトが——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっ全部捨てちゃった。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">やとらが初めて無言になった。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">第4条……友達を、信じるな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ちょ、やとら目が笑ってない！ごめんって！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえ第5条は？ 気になるんだけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">第5条。——あさめにアイテムを触らせるな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私限定！？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「私限定！？」→ 冒頭の「やってはいけないこと」に戻る。あさめは次も全部やる。</div>
+<div class="why">「やってはいけない」＝絶対最後まで見る構造。あさめが禁止事項を次々破るテンポ感が爽快。5選→最後が「あさめ限定」のオチで初見でもキャラが印象に残る。「うちのサーバーにもいる」コメントが来る。</div>
+</div>
+
+<!-- V03 -->
+<div class="sc" id="v03">
+<div class="sc-head">
+<h3>V03「3種類のマイクラプレイヤー」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-pov">タイプ分け</span><span class="tag t-com">コメディ</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「3種類のマイクラプレイヤー」＋画面3分割で3人が同時に別行動</div>
+<div class="visual"><strong>映像演出：</strong>画面を縦3分割。同じ状況で3人がまったく違う行動をする。各パターン10秒×3＋オチ。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">状況：初めて洞窟に入った</span></div>
+<div class="line"><span class="who who-n">（左画面）</span><span class="txt">タイプ1「ガチ勢」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">松明の間隔は7ブロック。湧き潰しは完璧にしろ。鉄を優先、ダイヤはY=-59だ。</span></div>
+<div class="line"><span class="who who-n">（中央画面）</span><span class="txt">タイプ2「雰囲気勢」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あー洞窟の音いい。静かで暗くて最高。ずっとここにいたい。……え、私だけ？ みんなは洞窟嫌い？ マジ？ 嘘でしょ。</span></div>
+<div class="line"><span class="who who-n">（右画面）</span><span class="txt">タイプ3「破壊神」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">全部掘る！！全部！！穴！！開ける！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">状況：クリーパーが近づいてきた</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（冷静に距離を取って弓で処理）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やだやだこっち来ないで来ないで来ないでーー！！ ……あっ。（死）……無理。今の無理。心臓痛い。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">突撃ーー！！（一緒に爆死）やっほー！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">状況：ダイヤを見つけた</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（周囲の安全確認→幸運IIIで採掘→チェストに即保管）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え、綺麗じゃんこれ。飾ろ。（額縁に入れる）……どうせ私のコレクションなんか誰も見ないけど。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ダイヤだ！！（マグマの近くで掘って落とす）あ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（画面外から）俺はどのタイプ？</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">タイプ4「何もわからない人」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ、ダイヤってなに？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「ダイヤってなに？」→ 冒頭の「3種類の」に戻る。視聴者は自分のタイプを考えてもう1周する。</div>
+<div class="why">「自分はどれ？」系は最強のコメント誘発。3分割画面の同時進行は映像として目を引く。最後にひぐれの4人目が出てくるパターンブレイクで笑い。全マイクラプレイヤーがどれかに当てはまる。</div>
+</div>
+
+<!-- V04 -->
+<div class="sc" id="v04">
+<div class="sc-head">
+<h3>V04「この中に1人、マイクラエアプがいます」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「この中に1人、マイクラやったことないやつがいます。誰でしょう？」</div>
+<div class="visual"><strong>映像演出：</strong>4人が一列に並ぶ。質問に答える形式。怪しい回答をした人を視聴者が当てる。最後にネタバラシ。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">この中に1人、マイクラ未プレイの人間がいます。</span></div>
+<div class="line"><span class="who who-n">（ナレ）</span><span class="txt">質問1。「ダイヤの見つけ方は？」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">Y座標-59付近をブランチマイニング。幸運IIIのツルハシ推奨だ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">とにかく掘る！勘！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ダイヤはね、呼ばれた気がする方に掘る。直感タイプ。……当たんないけど。当たんないんだけどね。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えーっと……地下深くを……掘るんだよね？たぶん。</span></div>
+<div class="line"><span class="who who-n">（ナレ）</span><span class="txt">質問2。「エンダードラゴンの倒し方は？」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">まずエンドクリスタルを弓で破壊してから——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ベッド爆破！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あー、エンダーマンとの共存わかる。目を合わせないように静かに見守るの。……人間関係もそうじゃん。え、違う？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ、ドラゴン……剣で……斬る……？</span></div>
+<div class="line"><span class="who who-n">（ナレ）</span><span class="txt">質問3。「クリーパーに近づかれた時の対処法は？」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ダッシュで距離を取り、爆発範囲外から——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">叫ぶ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えーっと、話し合い……？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">受け入れる。爆発も人生。……今のちょっとかっこよくなかった？ 私名言製造機かも。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">正解は……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺だよ！バレバレだろ！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれの「話し合い」で確信した。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">クリーパーと話し合いって発想、天才じゃん。……まあ通じないんだけどね。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だが……あさめの回答もだいぶ怪しかったぞ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私は経験者だから！勘と叫びでここまで来た！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">それでいいのかよマイクラって。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「それでいいのか」→ 冒頭に戻る。視聴者は答えを知った上でもう1回見てリアクションを楽しむ。</div>
+<div class="why">「当てて」系は最後まで見る＋コメント「秒でわかった」が来る。でもあさめの回答がツッコミどころ満載で「あさめも怪しい」論争が起きる。ひぐれの回答が全部優しいのも笑える。テーマを変えて無限にシリーズ化（「料理エアプ」「スポーツエアプ」）。</div>
+</div>
+
+<!-- V05 -->
+<div class="sc" id="v05">
+<div class="sc-head">
+<h3>V05「POV: あなたはクリーパーです」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-pov">POV</span><span class="tag t-emo">エモ</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>画面テキスト「POV: あなたはクリーパーです」＋クリーパー目線でプレイヤーが遠くに見える</div>
+<div class="visual"><strong>映像演出：</strong>クリーパー目線の一人称映像。ナレーション＝まひるの声（モブの悲哀を語るのにピッタリ）。静かなBGM。</div>
+<div class="dial">
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ナレーション）わたしは、クリーパー。生まれた時から、体の中に爆弾がある。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">暗い洞窟で生まれるクリーパー。目が光る。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">誰かに近づくと、体が勝手に膨らんでいく。止められない。止め方を知らない。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">遠くにプレイヤー（あさめ）が木を切っている。楽しそう。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あの子に近づきたい。ただ、近くにいたいだけ。……でも近づくと、こうなる。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">シュウウウ……</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひゃあ！！クリーパー！！逃げろーー！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーン……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ごめんね。本当は、ハグしたかっただけなの。……ああダメ、自分で泣きそう。なんで。なんで私クリーパーで泣いてるの。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">— fin —</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ED後）……まひるが脚本書くとこうなるのか。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">才能の無駄遣いだな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">無駄遣いじゃないし！ クリーパーの気持ちを代弁しただけだし！ ……誰にも頼まれてないけど。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でもなんか泣けた！！もう1回見る！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> あさめ「もう1回見る！」→ 冒頭のPOVに自然に戻る。泣けるループ。</div>
+<div class="why">既存台本「クリーパーは抱きしめたかっただけ」（scripts-v2 #02）をよふかしくらぶverに。POV形式＝初見でも入れる。まひるのナレーション＝キャラの闇がプラスに作用。ED後のメタツッコミで「このチャンネル何？」→ 他の動画へ誘導。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-aruaru">あるある系 — 共感で殴る</h2>
+<p class="sec-desc">「わかるw」でコメント欄が埋まるやつ。</p>
+
+<!-- V06 -->
+<div class="sc" id="v06">
+<div class="sc-head">
+<h3>V06「マイクラで全ロスした時の5段階」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-rank">段階</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「全ロスした時の人間の反応、5段階あります」</div>
+<div class="visual"><strong>映像演出：</strong>あさめがマグマに落ちる → 5段階のリアクションを他キャラも交えてテンポよく。テロップで段階名をバーンと出す。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめ、ネザーの橋から足を踏み外してマグマへ——</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第1段階：否認</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………え？ うそ。うそうそうそ。嘘でしょ？</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第2段階：怒り</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">はぁぁぁ！？ なんで！？ 道あったじゃん！あったじゃん！！バグでしょこれ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前が落ちただけだろ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第3段階：取引</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら！mod作って！巻き戻すmod！なんでもするから！お願い！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">無理だ。アイテムはもう消えた。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第4段階：抑鬱</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………。ネザライト一式……3日かけて作ったのに……もう何も信じられない……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃんが闇堕ちした！？ やったー仲間が増えた！！ ……あ、喜んじゃダメ？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">喜ぶな。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">第5段階：受容</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………よし！また集めよ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">立ち直り早っ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">だってしょうがないじゃん！マイクラだもん！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……それでこそだな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">闇堕ち短っ。もうちょっとこっち側にいてほしかったのに。……寂しい。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「マイクラだもん！」→ 冒頭のマグマダイブに戻る。あさめは学習しない。永遠に全ロスする。</div>
+<div class="why">既存台本「全ロスの5段階」（scripts-best20）をキャラ版に。キューブラー＝ロスの5段階ネタは元ネタ知ってる人もいて二重に楽しめる。あさめの感情ジェットコースターが見てて気持ちいい。まひるの「仲間が増えた」が最高。</div>
+</div>
+
+<!-- V07 -->
+<div class="sc" id="v07">
+<div class="sc-head">
+<h3>V07「マイクラの"気持ちいい"瞬間だけ集めた」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-asmr">ASMR</span><span class="tag t-loop">中毒</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラの"気持ちいい瞬間"だけ集めた」＋ダイヤ採掘のキラキラ映像</div>
+<div class="visual"><strong>映像演出：</strong>気持ちいい映像＋効果音の連続。4人の小さなリアクション音が重なる。ASMR的な心地よさ。テンポ＝3秒ごとに切り替え。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像1）</span><span class="txt">ツルハシでダイヤ鉱石を割る。キラキラ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小声）ああ〜……。</span></div>
+<div class="line"><span class="who who-n">（映像2）</span><span class="txt">溶岩に水をかける。ジュウウウ → 黒曜石生成。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声）いい……。あ、声出てた？ いや別にいいけど。うん。いい曲だなって。</span></div>
+<div class="line"><span class="who who-n">（映像3）</span><span class="txt">砂ブロックを壊す。上の砂が一気にサラサラ落ちる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小声）おお……。</span></div>
+<div class="line"><span class="who who-n">（映像4）</span><span class="txt">エンチャントテーブルの光が揺れる。本棚に囲まれた空間。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（小声）……悪くない。</span></div>
+<div class="line"><span class="who who-n">（映像5）</span><span class="txt">TNT100個同時爆破。ドドドドーン。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">気持ちいい！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">急にうるさいわ！！</span></div>
+<div class="line"><span class="who who-n">（映像6）</span><span class="txt">夕焼けの中、4人が丘の上に並んで景色を見てる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ、これが一番好き。これ永遠にループで聴いてたい。作業BGMにする。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたの"気持ちいい瞬間"は？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「あなたの？」→ 冒頭のダイヤ映像に戻る。ASMR系は無限ループで見る。</div>
+<div class="why">既存台本（scripts-bugs VIRAL #06）のキャラ版。ASMR＋満足映像＝再生数が出やすいフォーマット。4人の小声リアクションで個性が出る。最後のTNTでパターンブレイク→丘の夕焼けでエモ回収。コメント「私は砂が落ちるのが好き」で議論。</div>
+</div>
+
+<!-- V08 -->
+<div class="sc" id="v08">
+<div class="sc-head">
+<h3>V08「初心者が言いがちなこと」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-pov">あるある</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラ初心者が必ず言うセリフ」＋ひぐれのドアップ</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">マイクラ初心者が必ず言うセリフ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">木ってパンチで取れんの？</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">チーン。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ夜ってなんか出るの？</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">チーン。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">この緑のやつ可愛くね？近づいてみ——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーン。チーン。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ダイヤって何がすごいの？鉄でよくない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（画面外から）出たーーー！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんかこの赤い世界こわくない？帰りたいんだけど。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">チーン。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ベッドで寝ればリスポーン地点変わるんでしょ？ネザーでも。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（真顔で）やめろ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっなん——</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーーーーン！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………マイクラ怖い。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ひぐれくんの初心者語録、永久保存版なんだけど。データベースに入れていい？ むしろもう入れてる。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「マイクラ怖い」→ 冒頭の「初心者が言うセリフ」に戻る。「自分も言った」で共感コメント祭り。</div>
+<div class="why">テンポ×共感＝再生率最強フォーマット。チーンSEのリズムが癖になる。経験者は「全部通った道」、初心者は「俺じゃん」。ひぐれ1人で成立するので初見でもキャラ知識不要。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-format">バズフォーマット — テンプレで量産</h2>
+<p class="sec-desc">型が決まってて量産しやすい。視聴者が「次は何？」と期待する。</p>
+
+<!-- V09 -->
+<div class="sc" id="v09">
+<div class="sc-head">
+<h3>V09「マイクラを一言で説明して」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-time">25秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラを一言で説明して」＋4人のワイプ</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">マイクラを一言で説明してください。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">全部壊せて全部作れるゲーム！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">四角い世界で四角いやつに殺されるゲーム。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">孤独と向き合うゲーム。……あ、今のちょっとポエムっぽかった。恥ずかしい忘れて。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">重い。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">神が世界を創るシミュレーター。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">厨二。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたの一言は？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「あなたの一言は？」→ 冒頭に戻る。テーマ変えて無限量産（「学校を一言で」「推しを一言で」）。</div>
+<div class="why">25秒の超ショート。4人の回答が性格を完璧に表現→初見でもキャラがわかる。コメント「俺なら〇〇」で大量のコメント。テーマ変えるだけで量産可能。</div>
+</div>
+
+<!-- V10 -->
+<div class="sc" id="v10">
+<div class="sc-head">
+<h3>V10「4人でしりとりマイクラ建築」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「しりとりで出た言葉をマイクラで建てる」＋ 1人目が「りんご」を建ててる映像</div>
+<div class="visual"><strong>映像演出：</strong>しりとりのお題テロップ → 制限時間30秒の建築映像（早送り）→ 完成品ドーン → リアクション。テンポ命。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ルール。しりとりで出た言葉を30秒で建てろ。では最初——「りんご」。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">りんご！任せて！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">30秒早送り → 赤い丸っぽい何か</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……トマト？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">りんごだよ！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次。「ゴリラ」。ひぐれ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ゴリラ！？ 無理だろ！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">30秒早送り → 茶色い四角</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……箱？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ゴリラだよ！！ 横から見ろ！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">これどこから見てもゴリラじゃないよ。でもなんか……味がある。嫌いじゃない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次。「ラッパ」。まひる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">30秒早送り → 黒い何か。ソウルランタン付き。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">「魂を呼ぶラッパ」。死者を蘇らせる儀式の道具。……って言おうとしたのに先に言われた。やとらくんずるい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">設定が重い。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最後。「パンダ」。俺だ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">30秒早送り → 完璧なパンダの像</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うま。格差。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ずるくない！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ。これが実力の差だ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">でもひぐれくんのゴリラ、味があって好きだよ。……え、フォローになってない？ ごめん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">フォローのつもりだろうけど嬉しくない。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「嬉しくない」→ 次のしりとりが始まる。毎回違うお題で無限。</div>
+<div class="why">しりとり×建築＝企画として完成度高い。建築力の差が笑い。早送り映像がテンポを生む。まひるの建築に毎回闇設定がつくのがシリーズの味。視聴者も「お題出して」でコメント参加。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-twist">どんでん返し — 最後に裏切る</h2>
+<p class="sec-desc">「えっ！？」で最後まで見させて、もう1回見させる。</p>
+
+<!-- V11 -->
+<div class="sc" id="v11">
+<div class="sc-head">
+<h3>V11「マイクラで一番怖いのは夜じゃない」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-horror">ホラー</span><span class="tag t-com">コメディ</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラで一番怖いのは……夜じゃない」＋暗い洞窟の映像</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">いいか、マイクラで一番怖いのは夜じゃない。ゾンビでもない。クリーパーでもない。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え、じゃあ何？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……エンダーマンか？ 違う。ウォーデンか？ それも違う。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">じゃあ何だよ。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ログイン音。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やっほー！今日もマイクラするよ〜！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……こいつだ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねーねー、さっきTNT500個見つけたんだけど使っていい？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……な。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……たしかに一番怖い。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっなんでみんな逃げるの〜！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃんは天災。自覚ないのが一番怖い。……でも嫌いになれないのなんで。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「天災」→ 冒頭の「一番怖いのは」に戻る。答えを知った上でもう1回見ると笑える。</div>
+<div class="why">ホラー導入→コメディオチのギャップ。「一番怖いもの＝仲間」は共感力が高い。あさめが何も悪いことしてないのに怖がられてるのが面白い。「うちの鯖にもいる」コメント大量。</div>
+</div>
+
+<!-- V12 -->
+<div class="sc" id="v12">
+<div class="sc-head">
+<h3>V12「廃坑で見つけた看板の内容が怖い」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-horror">ホラー</span><span class="tag t-emo">エモ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>暗い廃坑。ひぐれの松明の光だけ。看板が1枚見える。</div>
+<div class="dial">
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんか看板ある。……「ここから先、進むな」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">怖！やめようやめよう！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">待て。もう少し奥を見ろ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">もう1枚ある。……「俺はここで全ロスした」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">死者のメッセージじゃんこれ。ホラーだ。ホラーは好き。……あ、でもリアルにちょっと怖い。どっち。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">死んでないだろ。ゲームだろ。……あっもう1枚。「ダイヤのツルハシもネザライトの鎧も全部消えた」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">うわ……かわいそう……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まだある。「もう二度とマイクラしない。さようなら」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">重っ。重すぎん？ なんでマイクラでこんな重い話聞かされてるの私たち。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">最後の1枚……。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">松明の光が看板を照らす——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">「……3日後に戻ってきた。やっぱマイクラ楽しい」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">わかるーーーー！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">結局やるんかい！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ……マイクラとはそういうものだ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">辞められない沼じゃんそれ。わかる。私たちと同じ。推し活と同じ構造。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「同じ」→ 冒頭の暗い廃坑に戻る。廃坑探索で別の看板を見つけるシリーズ化も可能。</div>
+<div class="why">ホラー演出→最後でほっこりオチ。「やめたけど戻ってきた」はゲーマー最大の共感。看板を1枚ずつ見せる構造で最後まで見る。コメント「3日で戻るの早い」「俺は1日で戻った」で盛り上がる。</div>
+</div>
+
+<!-- V13 -->
+<div class="sc" id="v13">
+<div class="sc-head">
+<h3>V13「全員の初日のワールドを公開する」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-emo">エモ</span><span class="tag t-com">コメディ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「4人のマイクラ初日のワールド、まだ残ってた」＋古いワールドのロード画面</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">今日は特別回だ。全員の「一番最初のワールド」を公開する。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えー！恥ずかしい！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">まずは俺だ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ロード → 完璧に整備された初期ワールド。すでに城がある。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……初日でこれ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最初から才能はあったからな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">次私！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ロード → TNTのクレーターだらけ。何もない荒野。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……初日で何があったの。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">TNT見つけてテンション上がって全部使った！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あさめは初日からあさめだったんだな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">はい次わたし！ ……あ、急にテンション高くてごめん。見せたいだけ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ロード → 地下深くに作られた真っ暗な部屋。看板「ここがわたしの世界」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……初日から地下に引きこもったの？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">いや地上眩しすぎたんだって！ ……って言うとリアルの私と同じじゃん。笑えないわ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひる……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">でも今は4人で地上にいるし！ 成長じゃん私！ 褒めて！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるーー！！（抱きつく）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……俺は初日のワールドないけどな。今日が初日だから。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ。なら今日のこのワールドが、お前の「初日」だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……ちょっとカッコよかった。悔しい。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「悔しい」→ 冒頭の「初日のワールド」に戻る。何年後かに「よふかしくらぶの初日のワールド」を見返す伏線。</div>
+<div class="why">「初日のワールド見せて」はマイクラ界の黄金企画。各キャラのワールドが性格を完璧に反映。まひるのエモ→あさめのフォローが光る。ひぐれの「今日が初日」がグッとくる。コメント「自分の初日のワールドも見返した」で波及。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-addict">中毒系 — ループで殺す</h2>
+<p class="sec-desc">1回見たら3回見る。音とテンポの暴力。</p>
+
+<!-- V14 -->
+<div class="sc" id="v14">
+<div class="sc-head">
+<h3>V14「マイクラの効果音だけで曲作った」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-asmr">音楽</span><span class="tag t-loop">中毒</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>やとらがノートブロックと効果音だけで曲を演奏し始める</div>
+<div class="visual"><strong>映像演出：</strong>画面＝マイクラ内のノートブロック装置。音が鳴るたびにブロックが光る。4人のリアクションがちょいちょい入る。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">マイクラの音だけで曲を作った。聴け。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">♪ ノートブロック × 採掘音 × 歩行音 × エンチャント音 → リズムが生まれる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっすご！ノリいい！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">♪ サビ部分。クリーパー爆発音がバスドラ。弓の発射音がハイハット。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……ちょっと待って。これ本当にマイクラの音だけ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">当然だ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ここに歌詞乗せたい。「深夜3時の世界で 四角い月を見ている」……って今即興で作ったんだけど、よくない？ ねえよくない？ 誰か曲つけて。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるの歌詞エモすぎ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">よふかしくらぶのテーマソングじゃん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……フッ。悪くないな。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 曲の終わり→冒頭のイントロに繋がる。音楽系は無限ループされる。</div>
+<div class="why">音楽×マイクラ＝中毒性最強。曲自体が良ければ再生回数が跳ねる。まひるの歌詞がよふかしくらぶのテーマ化する布石。「フルバージョン作って」コメントで次の動画に繋がる。</div>
+</div>
+
+<!-- V15 -->
+<div class="sc" id="v15">
+<div class="sc-head">
+<h3>V15「あさめの"あ"だけで30秒」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「あさめの30秒」＋あさめの顔アップ</div>
+<div class="visual"><strong>映像演出：</strong>あさめが30秒間マイクラしてる間に発する声だけを繋げる。映像はその状況。テンポ重視。</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっダイヤ！（掘る）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっマグマ！（避ける）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっクリーパー！（爆発）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あ゛ーーー全ロス！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっ復活した！（リスポーン）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっまたダイヤ！（掘る）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっまたマグマ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あ゛ーーーーー！！！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（画面外）「あ」しか言ってないんだけどこの人。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（画面外）あさめちゃんの語彙力が「あ」しかないんだけど。大丈夫？ ……いや面白いからいいけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（画面外）……これで30秒か。濃いな。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 最後の「あ゛ーー」→ 冒頭の「あっダイヤ！」に完全ループ。永遠にあさめが死に続ける。</div>
+<div class="why">「あ」のバリエーションだけで30秒成立する＝キャラの強さの証明。テンポが癖になってリピート再生される。誰でも3秒で笑える。「あさめの1分版作って」コメント。</div>
+</div>
+
+<!-- V16 -->
+<div class="sc" id="v16">
+<div class="sc-head">
+<h3>V16「左を選んだ自分と、右を選んだ自分」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-emo">エモ</span><span class="tag t-loop">中毒</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>洞窟の分岐点。左右に分かれる道。テキスト「あなたならどっち？」</div>
+<div class="visual"><strong>映像演出：</strong>画面2分割。左＝あさめ＆まひる、右＝ひぐれ＆やとら。同時進行で別の運命をたどる。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">分岐だ。2人ずつ分かれよう。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私左！まひる行こ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">じゃ俺とやとらで右か。</span></div>
+<div class="line"><span class="who who-n">（左）</span><span class="txt">広い空洞。ダイヤ鉱脈発見。金もラピスも大量。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">うわーーー！宝の山！！大当たり！！</span></div>
+<div class="line"><span class="who who-n">（右）</span><span class="txt">狭い通路。行き止まり。砂利が落ちてくる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……何もない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……戻るか。</span></div>
+<div class="line"><span class="who who-n">（左）</span><span class="txt">ダイヤを掘ったら下がマグマ。2人ともマグマダイブ。全ロス。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ぎゃーーー！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">天国から地獄じゃん。人生みたい。……あーまた自虐しちゃった。癖だから許して。</span></div>
+<div class="line"><span class="who who-n">（右）</span><span class="txt">行き止まりの壁を壊したら……スポナー部屋。チェストにエンチャ本。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あっなんか出た。これいいやつ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……修繕。最高のエンチャント本だ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたなら、左？右？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「左？右？」→ 冒頭の分岐に戻る。「自分ならどっち」で何度も見る。</div>
+<div class="why">既存台本「左を選んだ自分と右を選んだ自分」（scripts-best20）のキャラ版。2分割同時進行は映像として目を引く。「大当たり→全ロス」vs「ハズレ→お宝」の逆転が気持ちいい。コメント「右派」「左派」で論争。</div>
+</div>
+
+<!-- V17 -->
+<div class="sc" id="v17">
+<div class="sc-head">
+<h3>V17「マイクラあるある早口言葉」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「マイクラ早口言葉チャレンジ」＋4人が横一列</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">マイクラ早口言葉。——「隣のクリーパーはよく柿食うクリーパーだ」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">隣のクリーパーはよく柿食うクリーチャー……あれ？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">クリーチャーになってる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次。「スポーン地点で村人がスポーンスポーンスポーンする」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">スポーン地点で村人がスポーンスポーンスポーン……あれ、私これ言えてる？ 言えてるよね？ ……言えてなくない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">できてるけど何か怖い！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最後。「レッドストーンリピーターのレッドストーン・リピートをリピートするレッドストーンリピーター」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">無理だろ。レッドスト……レッド……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">レッスト……レスドン……もうだめ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">レッドストーンリピーターのレッドストーンリピートをリピートするレッドストーンリピーター。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんでできるの！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……まひるのスペック、たまにバグるな。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 早口言葉のリズムが癖になって何度も再生。お題を変えて量産可能。</div>
+<div class="why">早口言葉チャレンジ＝視聴者も一緒にやる。マイクラ用語の語感が面白い。まひるが謎のスペックを発揮するのがキャラ性格と合ってる。TikTok的な音のリズム中毒。</div>
+</div>
+
+<!-- V18 -->
+<div class="sc" id="v18">
+<div class="sc-head">
+<h3>V18「もしマイクラが現実だったら（学校編）」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「もしマイクラのルールで学校生活してたら」＋教室の映像だけどブロックでできてる</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">もしマイクラのルールで学校生活してたら</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">はい、朝のHR始めま——あさめ教室の壁壊すな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">窓から入りたくて！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ドアあるだろ。……まひるは机の下に何作ってるの？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">地下教室あるなら最高じゃん。授業は暗い場所で受けたい派。蛍光灯の下は無理。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">地上で受けて。……やとらは何やってんだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">教室の照明をレッドストーン回路で自動制御にした。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">授業聞け。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">— 昼休み —</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">お昼だ〜！かまどでステーキ焼く！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">教室にかまど持ち込むな！火事になるだろ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私のお弁当は蜘蛛の目の煮付け。……なんで引いてるの？ ポーション素材だよ？ 実用的じゃん？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">食えないだろそれ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">— 放課後 —</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……校庭にエンダードラゴンがいるな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">いるな、じゃないだろ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">倒そ倒そ！部活動！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ドラゴン討伐部の入部届書いてきた！ あとオカルト研究部と帰宅部も兼部で。……多い？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">用意がいいな！？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「用意がいい」→ 冒頭の「朝のHR」に戻る。テーマを変えて「遠足編」「体育祭編」「修学旅行編」と展開可能。</div>
+<div class="why">「もし○○が現実だったら」＝初見でも入れる万能フォーマット。学校という親しみやすい舞台×マイクラロジック＝ギャップが笑い。ひぐれの全力ツッコミがテンポを生む。高校生視聴者は「うちの学校でも」と妄想する。</div>
+</div>
+
+<!-- V19 -->
+<div class="sc" id="v19">
+<div class="sc-head">
+<h3>V19「言ってはいけないマイクラ — 笑ったら負け」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-com">コメディ</span><span class="tag t-loop">中毒</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「笑ったら負けマイクラ」＋4人が真顔で並んでる</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ルール。マイクラ中に笑ったやつが負け。負けたら家を1個破壊される。——始め。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">静かにマイクラする4人……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえ、村人って何考えてるんだろ。「フゥン」しか言わないじゃん。あれ絶対裏で悪口言ってるよ。私にはわかる。ネットと同じ構造。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ぷっ……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あさめ早い。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">だって村人の「フゥン」想像したら！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーン！（あさめの家が1つ消える）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私のさめハウス！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">再び静かにマイクラ……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれの画面。自分の豆腐ハウスの前にニワトリが20匹集まってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………ぶふっ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれ笑った！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">だってニワトリが集会してるんだもん！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーン！（豆腐ハウス消滅）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺の唯一の家が！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………フッ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">今笑った！やとらも笑った！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">笑ってない。これは息だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">「フッ」は笑いだろ！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「笑いだろ！」→ 冒頭の「笑ったら負け」に戻る。全員の城が消えるまで続く。</div>
+<div class="why">「笑ったら負け」＝視聴者も参加。マイクラの日常で自然に笑いが起きる→家が壊される緊張感。やとらの「フッ」が笑いかどうか論争がコメント欄で起きる。</div>
+</div>
+
+<!-- V20 -->
+<div class="sc" id="v20">
+<div class="sc-head">
+<h3>V20「よふかしくらぶに入りませんか？」</h3>
+<div class="sc-meta"><span class="tag t-viral">バズ狙い</span><span class="tag t-emo">エモ</span><span class="tag t-com">コメディ</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テキスト「もしこの4人に出会ったら、あなたはどうしますか？」＋4人がマイクラの丘に立ってる映像</div>
+<div class="visual"><strong>映像演出：</strong>視聴者目線（一人称）で4人に出会う形。最後にこちらに手を伸ばしてくる。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">マイクラの世界。一人で歩いている。夜が近い。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">丘の上に明かりが見える。近づくと——4人がたき火を囲んでいる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あっ！誰か来た！おーい！こっちこっち！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ、新しい人だ。いらっしゃい。……って私が言うの変？ 変じゃない？ 大丈夫？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">おっ一人？夜危ないぞ。こっち来いよ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">フッ。もう一人増えても構わない。席はある。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねーねー名前なんていうの？ マイクラやったことある？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">焦らなくていいよ、ゆっくりでいいから。私も最初そうだったし。……いや今もか。ははは。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺も最近入ったんだ。初心者同士、よろしくな。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">よふかしくらぶへようこそ。——今夜は長いぞ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">よふかしくらぶ、メンバー募集中。チャンネル登録で入部できます。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「今夜は長いぞ」→ 夜の丘に戻る。何度見ても「入りたい」と思わせる。</div>
+<div class="why">チャンネル登録＝入部という設計。視聴者を「5人目のメンバー」にする。各キャラの声かけが性格を反映（あさめ＝テンション、まひる＝安心感、ひぐれ＝対等、やとら＝迎え入れ）。単体で見てもエモいし、シリーズを追ってると「ここに自分も入りたい」の気持ちが最大化。導線動画として最強。</div>
+</div>
+
+<hr>
+
+<div class="note">
+<h4>バズ特化 投稿順の推奨</h4>
+<ul>
+<li><strong>最初に出す3本：</strong>V08（初心者セリフ）→ V01（死に方ランキング）→ V03（3種類のプレイヤー） — キャラ知識ゼロで楽しめる＋ランキング/あるある系で広くリーチ</li>
+<li><strong>ファン定着フェーズ：</strong>V02（やってはいけない）→ V06（全ロス5段階）→ V11（一番怖いもの）→ V04（エアプ当て） — キャラの掛け合いの面白さに気づく</li>
+<li><strong>中毒化フェーズ：</strong>V07（気持ちいい瞬間）→ V14（効果音曲）→ V15（あさめの「あ」）→ V17（早口言葉） — ループ再生で再生数を積む</li>
+<li><strong>エモ＆導線：</strong>V05（クリーパーPOV）→ V12（廃坑看板）→ V13（初日ワールド）→ V16（左右分岐） — 感情を動かしてファン化</li>
+<li><strong>最後に：</strong>V20（メンバー募集）→ チャンネル登録誘導 — 全動画の最後にリンクとして置く</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>既存台本からの流用・改変マップ</h4>
+<ul>
+<li>V01（死に方ランキング）← scripts-bugs VIRAL #02 の4人版</li>
+<li>V03（3種類のプレイヤー）← scripts-bugs VIRAL #04 の4人版</li>
+<li>V05（クリーパーPOV）← scripts-v2 #02「クリーパーは抱きしめたかっただけ」のまひるナレ版</li>
+<li>V06（全ロス5段階）← scripts-best20「全ロスの5段階」のあさめ版</li>
+<li>V07（気持ちいい瞬間）← scripts-bugs VIRAL #06 の4人リアクション版</li>
+<li>V13（初日ワールド）← scripts-bugs VIRAL #03「Day 1 vs Day 1000」の応用</li>
+<li>V16（左右分岐）← scripts-best20「左を選んだ自分と右を選んだ自分」のペア版</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">よふかしくらぶ！バズ特化台本 — 全20本 — 2026.04</div>
+
+</body>
+</html>

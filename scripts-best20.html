@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイクラアニメ 厳選ベスト20 — エージェント会議決定版</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#09090f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(9,9,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+nav a.sec{color:#facc15;font-size:11px}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#facc15,#f87171,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(250,204,21,.12);color:#facc15;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+h2 .wk{font-size:13px;color:#666;font-weight:600;margin-left:8px}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+/* CARD */
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#8b5cf6;border-radius:50%;font-weight:900;font-size:14px;color:#fff;margin-right:10px;flex-shrink:0}
+.sc-head{padding:22px 24px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;flex:1;min-width:200px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-hor{background:rgba(239,68,68,.12);color:#f87171}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-meta{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-sat{background:rgba(251,146,60,.12);color:#fb923c}
+.t-add{background:rgba(236,72,153,.12);color:#f472b6}
+.t-trend{background:rgba(250,204,21,.15);color:#facc15}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-series{background:rgba(34,211,238,.12);color:#22d3ee}
+
+/* HOOK */
+.hook{background:#12121e;border-left:4px solid #f87171;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fca5a5}
+
+/* SCENE */
+.scenes{padding:0 24px 20px}
+.scene-item{background:#0a0a14;border:1px solid #16162a;border-radius:10px;padding:16px 18px;margin:10px 0}
+.scene-label{font-size:11px;font-weight:800;color:#8b5cf6;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.scene-text{font-size:14.5px;color:#bbb;line-height:1.85}
+.scene-dir{color:#555;font-style:italic;font-size:13px}
+
+/* LOOP */
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+
+/* WHY */
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+
+/* NOTE / WARN */
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+.warn{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.15);border-radius:12px;padding:20px 24px;margin:20px 0}
+.warn h4{color:#facc15;margin-bottom:8px;font-size:15px}
+.warn p,.warn li{font-size:14px;color:#fde68a;line-height:1.8}
+
+/* SCHEDULE TABLE */
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{text-align:left;padding:10px 14px;font-size:12px;font-weight:700;color:#666;background:#0f0f1a;border-bottom:1px solid #1e1e2e;text-transform:uppercase;letter-spacing:.06em}
+td{padding:10px 14px;border-bottom:1px solid #151520;color:#bbb}
+tr:hover{background:#0f0f1a}
+td:first-child{color:#8b5cf6;font-weight:700}
+.day{color:#facc15;font-weight:700}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#top">TOP</a>
+<a href="#week1">Week 1</a>
+<a href="#week2">Week 2</a>
+<a href="#week3">Week 3</a>
+<a href="#week4">Week 4</a>
+<a href="#schedule">投稿順</a>
+<a href="#method" class="sec">選考プロセス</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">AGENT TEAM MEETING OUTPUT</div>
+<h1>マイクラアニメ 厳選ベスト20</h1>
+<p>4人のエージェント（コメディ脚本家・辛口批評家・中毒性心理学者・Z世代専門家）が41本のアイデアから厳選。全台本にフック・シーン構成・ループ設計・投稿戦略付き。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ===== METHOD ===== -->
+<div class="note" id="method">
+<h4>選考プロセス</h4>
+<ul>
+<li><strong>コメディ脚本家</strong>が15本 → 「友達に送りたくなるか」で評価</li>
+<li><strong>辛口批評家</strong>が8本 → 「10万人中何人がもう1回見るか」で評価</li>
+<li><strong>中毒性心理学者</strong>が8本 → 心理メカニズム×再視聴率で設計</li>
+<li><strong>Z世代専門家</strong>が10本 → 「LINEグループに送る確率」と「ダサくないか」で評価</li>
+<li>重複統合・弱点除外 → <strong>41本 → 20本</strong></li>
+</ul>
+<p style="margin-top:8px"><strong>方針:</strong> トレンド枠は20本中3本のみ。残り17本は10年後も面白い普遍的な作品。</p>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="week1">Week 1 : 入口を広く開ける<span class="wk">— 笑い×共感で視聴者基盤を確立</span></h2>
+
+<!-- #1 -->
+<div class="sc" id="s01">
+<div class="sc-head">
+<span class="sc-num">1</span>
+<h3>建築ガチ勢 vs 豆腐ハウスの男</h3>
+<div class="sc-meta"><span class="tag t-com">あるある</span><span class="tag t-com">コメディ</span><span class="tag t-time">55秒</span></div>
+</div>
+<div class="hook"><strong>フック（冒頭3秒）:</strong> 画面左に壮大なゴシック城、右に土4ブロック+ドア1枚。壮大オーケストラBGM → ブツッと切れる。テロップ「同じゲームです。」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (0-3秒)</div><div class="scene-text">フック。左右分割画面。城と豆腐。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (3-10秒)</div><div class="scene-text">ガチ勢が額縁の角度を0.5度直す。「光源バランスが甘い」。豆腐の男はベッドを置いて満面の笑み。「よし、完成！」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (10-18秒)</div><div class="scene-text">ガチが豆腐の家を訪問。3秒沈黙。「…これ何日目？」豆腐「300日目だけど？」ガチ、膝から崩れ落ちる。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (18-28秒)</div><div class="scene-text">ガチが建築を教える。「対称性を——」豆腐、説明中に非対称に窓を開ける。「タイショウセイね！」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (28-38秒)</div><div class="scene-text">ガチが泣きながらリフォーム。感動的ピアノBGM。豆腐ハウスが美しいコテージに。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 6 (38-48秒)</div><div class="scene-text">翌日。コテージの隣にまた豆腐ハウスが建っている。「だってこっちの方が落ち着くんだもん」ガチ白目。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 7 (48-55秒)</div><div class="scene-text">並ぶコテージと豆腐。テロップ「家とは、心の形である。」豆腐、幸せな寝息。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「心の形である」→ 冒頭の「同じゲームです」。全ての対比が深くなる。</div>
+<div class="why">全プレイヤーが「どっち側」か自覚があるため共感率100%。豆腐側が勝つ逆転構造が気持ちいい。</div>
+</div>
+
+<!-- #2 -->
+<div class="sc" id="s02">
+<div class="sc-head">
+<span class="sc-num">2</span>
+<h3>全ロスの5段階</h3>
+<div class="sc-meta"><span class="tag t-com">あるある</span><span class="tag t-meta">心理学</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 溶岩に落ちた瞬間のスロモ。ダイヤフル装備が燃えていく。テロップ「全ロス。」心臓の鼓動音。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">第1段階：否認 (3-12秒)</div><div class="scene-text">「嘘だ。ラグだ。サーバーが悪い。閉じれば巻き戻る——」ESC連打。リスポーン画面。テロップ「現実です。」</div></div>
+<div class="scene-item"><div class="scene-label">第2段階：怒り (12-20秒)</div><div class="scene-text">「なんであそこに溶岩あるんだよ！Mojangが悪い！」壁を素手で殴り続ける。</div></div>
+<div class="scene-item"><div class="scene-label">第3段階：取引 (20-28秒)</div><div class="scene-text">「ダイヤだけでいい。修繕Ⅰのピッケルだけ…37レベルかけたんだよ…」溶岩は何も答えない。</div></div>
+<div class="scene-item"><div class="scene-label">第4段階：抑鬱 (28-40秒)</div><div class="scene-text">裸で拠点のベッドに座る。空のインベントリ。「やめようかな、マイクラ。」日が沈み、夜が来て、朝が来る。</div></div>
+<div class="scene-item"><div class="scene-label">第5段階：受容 (40-50秒)</div><div class="scene-text">ゆっくり立ち上がる。素手で木を殴る。「…まあ、もう一回やるか。」テロップ「全ロスは終わりではない。Day 1である。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「Day 1」→ 冒頭の溶岩。「またいつか全ロスする」運命を受け入れた上での再出発。マイクラの無限ループそのもの。</div>
+<div class="why">キューブラー＝ロスの5段階をマイクラに完璧に適用。全ロス経験者＝マイクラプレイヤー全員が共感。</div>
+</div>
+
+<!-- #3 -->
+<div class="sc" id="s03">
+<div class="sc-head">
+<span class="sc-num">3</span>
+<h3>クリーパーだけの運動会</h3>
+<div class="sc-meta"><span class="tag t-com">スラップスティック</span><span class="tag t-time">58秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 運動会の入場門（ブロック製）。クリーパー旗の万国旗。整列する20体。1体だけ逆方向に歩いてる。マーチBGM（8bit）。テロップ「第1回クリーパー大運動会」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">徒競走 (3-12秒)</div><div class="scene-text">ピストル音（TNT）でスタート → 1体が興奮で爆発 → 連鎖爆発 → 全滅。ゴールテープだけが虚しく揺れる。実況「全滅です」</div></div>
+<div class="scene-item"><div class="scene-label">玉入れ (12-22秒)</div><div class="scene-text">TNTを籠に投入。成功 → 籠ごと爆発。得点板も吹き飛ぶ。</div></div>
+<div class="scene-item"><div class="scene-label">借り物競走 (22-32秒)</div><div class="scene-text">お題「プレイヤー」→ 嬉しそうに膨張 → 爆発。</div></div>
+<div class="scene-item"><div class="scene-label">綱引き (32-42秒)</div><div class="scene-text">白熱の綱引き。綱の中央にTNT。摩擦で着火。全員気づいて逃げるが遅い。</div></div>
+<div class="scene-item"><div class="scene-label">閉会式 (42-55秒)</div><div class="scene-text">生き残り2体がトロフィー授与。嬉しさで膨張 → 爆発。更地。看板「来年もやります」。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「来年もやります」→ 入場門。「毎年これ」という想像。</div>
+<div class="why">「何をやっても爆発する」宿命 × 運動会フォーマット。言語不要、世界中に通じるスラップスティック。</div>
+</div>
+
+<!-- #4 -->
+<div class="sc" id="s04">
+<div class="sc-head">
+<span class="sc-num">4</span>
+<h3>ネコが最強の理由</h3>
+<div class="sc-meta"><span class="tag t-com">知識</span><span class="tag t-com">コメディ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> ネコが画面中央。周囲にウィザー、エンダードラゴン、ウォーデン。ナレーション「マイクラ最強のMob、決定しました。」ネコに王冠エフェクト。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (3-10秒)</div><div class="scene-text">クリーパーがプレイヤーに突進 → ネコ登場 → クリーパー悲鳴・逆走。テロップ「公式設定です」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (10-18秒)</div><div class="scene-text">ネコ4匹バリアの中、遠くでクリーパーが切ない目で見つめる。切ないバイオリンBGM。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (18-26秒)</div><div class="scene-text">ネコの能力一覧。ベッドで寝てくれる/朝プレゼント/ファントムも追い払う/水に落ちても平気（犬と比較）。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (26-34秒)</div><div class="scene-text">犬：クリーパーに突っ込み爆死。「忠誠心が裏目に出るタイプ。」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (34-42秒)</div><div class="scene-text">ゴーレムvs敵。雄々しい。…でもネコは戦わずに敵を追い払っている。「戦わずして勝つ。」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 6 (42-50秒)</div><div class="scene-text">ネコがプレイヤーの膝で丸くなる。「結論。マイクラで最初にすべきことは——ネコを探すこと。」テロップ「異論は認める。でもネコは最強。」ニャー。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> ニャー → 「最強Mob決定」が2周目では共犯意識に。</div>
+<div class="why">ゲーム仕様を積み上げて「ネコ最強」を論理証明。猫好き×マイクラ。保存率最強。</div>
+</div>
+
+<!-- #5 -->
+<div class="sc" id="s05">
+<div class="sc-head">
+<span class="sc-num">5</span>
+<h3>ベッド争奪戦：夜が来る前に</h3>
+<div class="sc-meta"><span class="tag t-com">マルチあるある</span><span class="tag t-time">48秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 夕焼け空。タイマー「夜まで 0:30」。4人の声が重なる「ベッドどこ！？」「俺が先！」「嘘つけ！」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (3-10秒)</div><div class="scene-text">4人でマルチ。ベッド1つ。全員ダッシュ。BGM：ワルキューレの騎行（8bit）。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (10-18秒)</div><div class="scene-text">A「羊毛集めたの俺！」B「作ったの俺！」C「置いたの俺！」D「寝た者勝ちでしょ」途中でAがBを殴る。「PvP禁止って——」「緊急事態だ！」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (18-28秒)</div><div class="scene-text">ベッド前で押し合い。Dだけ成功して寝る。残り3人の前でモンスター湧き。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (28-38秒)</div><div class="scene-text">3人がモンスターと戦いながら怒号。D（寝ながら）「朝になったら起きる〜」矢が飛ぶ中、松明を必死に設置。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (38-48秒)</div><div class="scene-text">朝。D爽やか起床「おはよ〜！」3人ボロボロ。テロップ「マルチは、ベッドの数だけ用意しよう。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「ベッドの数だけ用意しよう」→ でも冒頭でまた1つしかない。学ばないのがマルチ。</div>
+<div class="why">マルチ経験者100%共感の「ベッド1つ問題」。友情が試される瞬間のリアルさ。週末のグループ視聴を誘発。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="week2">Week 2 : ジャンルの幅を見せる<span class="wk">— 「次は何が来るかわからない」で引き込む</span></h2>
+
+<!-- #6 -->
+<div class="sc" id="s06">
+<div class="sc-head">
+<span class="sc-num">6</span>
+<h3>松明の届かない場所</h3>
+<div class="sc-meta"><span class="tag t-hor">ホラー</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 洞窟の中。松明1本の光。その外は完全な闇。自分の足音だけがこだまする。テロップなし。BGMなし。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1-2 (0-10秒)</div><div class="scene-text">松明を壁に設置。光が広がる。奥に進む。振り返ると最初の松明が遠く小さい。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (10-18秒)</div><div class="scene-text">松明在庫：残り2本。インベントリが一瞬映る（視聴者だけが気づく）。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (18-25秒)</div><div class="scene-text">最後の松明を設置。光の先にダイヤ3つ。掘り始める——その瞬間、松明が消える。消えるはずのない松明が。完全な闇。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (25-40秒)</div><div class="scene-text">何もいない。音もない。5秒間の完全な闇と無音。<strong>何も起こらない。これが最も怖い。</strong>呼吸音だけ。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 6 (40-45秒)</div><div class="scene-text">ふっと光が戻る。何事もなかったかのように洞窟は元通り。プレイヤーの手だけが微かに震えている。テロップ「何もいなかった。たぶん。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「たぶん」→ 闇に戻り、2周目では闇の中に何かを「探してしまう」。</div>
+<div class="why">ホラーの最高原則「見えないものが最も怖い」。何も出ないことで想像力が恐怖を自家発電。</div>
+</div>
+
+<!-- #7 -->
+<div class="sc" id="s07">
+<div class="sc-head">
+<span class="sc-num">7</span>
+<h3>マイクラ料理対決</h3>
+<div class="sc-meta"><span class="tag t-com">パロディ</span><span class="tag t-com">コメディ</span><span class="tag t-time">55秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 料理番組風セット。かまどキッチンスタジアム。審査員に村人3人。料理番組ジングル（8bit版）。「マイクラ・キッチン・バトル、開幕！」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (3-10秒)</div><div class="scene-text">Aシェフ「サバイバル歴3000日」（フルダイヤ）。Bシェフ「初日です」（木を殴ってる）。「ハンデが凄い」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (10-20秒)</div><div class="scene-text">A：牛繁殖→処理→燻製器ステーキ。B：生豚肉をかまどに…燃料がない。木材を探しに走る。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (20-30秒)</div><div class="scene-text">Bが木材取りに行ったまま戻らない。洞窟でゾンビと戦ってる。「料理対決です」B「わかってる！！」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (30-40秒)</div><div class="scene-text">審査。A：金リンゴ+ステーキ+パンプキンパイ。B：生ジャガイモ1個。皿すらない。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (40-55秒)</div><div class="scene-text">村人がBの生ジャガイモで毒ダメージ→倒れる。でも残り審査員「素材の味」「潔さは芸術」。B優勝。A崩れ落ちる。テロップ「マイクラでは何を作っても満腹度は回復する。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「何を作っても満腹度は回復する」→ そもそも対決の意味。全体が壮大な無意味ギャグに。</div>
+<div class="why">料理番組パロディ × マイクラの食料の雑さ。フォーマットのギャップが笑い。全料理がかまどに入れるだけ。</div>
+</div>
+
+<!-- #8 -->
+<div class="sc" id="s08">
+<div class="sc-head">
+<span class="sc-num">8</span>
+<h3>【ASMR】マイクラの音に癒される → 絶対に癒されない</h3>
+<div class="sc-meta"><span class="tag t-add">中毒性</span><span class="tag t-hor">ホラー</span><span class="tag t-trend">TREND</span><span class="tag t-time">48秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 美しい花畑。夕暮れ。テロップ「マイクラASMR 〜心が安らぐ10の音〜」草の「サクサク」音。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">ASMR (3-24秒)</div><div class="scene-text">①土を掘るザクザク ②水流 ③たき火パチパチ ④木コンコン ⑤エンチャのシュワワ ⑥雨 ⑦小麦収穫シャリ ⑧猫ゴロゴロ。視聴者は完全にリラックス。</div></div>
+<div class="scene-item"><div class="scene-label">静寂 (24-28秒)</div><div class="scene-text">⑨洞窟の水滴。ポチャン…ポチャン…。奥から微かに「シューーーッ」。0.5秒だけ。</div></div>
+<div class="scene-item"><div class="scene-label">破壊 (28-35秒)</div><div class="scene-text">振り返る。クリーパー顔面アップ。大爆発。轟音。ASMR静寂との落差で鼓膜が衝撃。</div></div>
+<div class="scene-item"><div class="scene-label">オチ (35-48秒)</div><div class="scene-text">3秒の完全無音。テロップ「⑩：爆発音。」リスポーン。元の花畑。「もう一回聴きますか？」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「もう一回聴きますか？」→ ASMR冒頭。2周目は爆発タイミングを知ってるのにドキドキ。<strong>再視聴率推定：80%</strong>（うち50%は友達に見せるためのリプレイ）</div>
+<div class="why">安心→恐怖の振れ幅が最大化。洞窟音はマイクラ民のPTSD。友達に見せたくなる共有衝動が異常に強い。</div>
+</div>
+
+<!-- #9 -->
+<div class="sc" id="s09">
+<div class="sc-head">
+<span class="sc-num">9</span>
+<h3>スティーブ、面接を受ける</h3>
+<div class="sc-meta"><span class="tag t-meta">メタ</span><span class="tag t-com">不条理</span><span class="tag t-time">52秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> オフィスビル風（ブロック製）。面接室のドアをノックするスティーブ。面接官（村人）「どうぞお入りください」。スティーブ、ドアをパンチで壊して入室。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (3-12秒)</div><div class="scene-text">「ドア壊しましたね」「普通に開けましたけど？」。職歴「木を殴って倒したり、ドラゴン倒したり」。メモに「虚言癖？」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (12-22秒)</div><div class="scene-text">「特技は？」「金ブロック64個をポケットに」「物理的に無理では」インベントリを開いて見せる。面接官の目が点。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (22-32秒)</div><div class="scene-text">「チームワークは？」「オオカミ5匹手懐けました」「人間との経験は？」「村人に小麦あげたら子供産んでました」「それ人事に報告するレベル」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (32-42秒)</div><div class="scene-text">「弱点は？」「高い所から落ちると死にます」「全人類そうです」「水中で息が続かない」「だから全人類そうです」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (42-52秒)</div><div class="scene-text">不採用。理由：住所不定（リスポーン変動）、衛生面（風呂なし）、食事不規則（生肉を走りながら食べる）。ドアを壊して退室。「またドアを！！」テロップ「スティーブの就活は続く」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「就活は続く」→ ドアノック。何社目かわからない面接に。</div>
+<div class="why">マイクラの「当たり前」を現実基準で審査。全ツッコミが「確かにおかしい」と気づかせる再発見の笑い。</div>
+</div>
+
+<!-- #10 -->
+<div class="sc" id="s10">
+<div class="sc-head">
+<span class="sc-num">10</span>
+<h3>レッドストーンおじさんの日常 #1</h3>
+<div class="sc-meta"><span class="tag t-com">固定キャラ</span><span class="tag t-series">シリーズ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 配線が異様に張り巡らされた家。表札「レッドストーンおじさん」。中から「カチカチカチ」。独り言「…よし、完璧だ」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (3-10秒)</div><div class="scene-text">ボタンを押す。ドアの代わりに屋根のTNTが爆発。「配線が1本違う」。冷静にメモ。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (10-18秒)</div><div class="scene-text">修正。ボタン → ドアの代わりに隣の村人の家が1ブロック横にずれる。村人「!?」。おじさん「近い。かなり近い」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (18-28秒)</div><div class="scene-text">3回目。膨大で美しい回路のクローズアップ。ボタン → ドアが開く！…と同時に家全体が2ブロック浮上。空中で「ドアは開いたな」</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (28-45秒)</div><div class="scene-text">村人が空中の家を見上げる。「降りてこれないでしょ」「そこはこれから考える」。テロップ「つづく」。中から爆発音。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「つづく」でシリーズ化。「完璧だ」と結末カオスの対比で単体でもループ成立。</div>
+<div class="why">技術力は本物なのに応用が常にズレる「有能ポンコツ」キャラ。シリーズ化でフォロワー獲得装置。レッドストーンという未着手テーマ。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="week3">Week 3 : 深さを見せる<span class="wk">— 「このチャンネルは何か違う」と思わせる</span></h2>
+
+<!-- #11 -->
+<div class="sc" id="s11">
+<div class="sc-head">
+<span class="sc-num">11</span>
+<h3>飛べないニワトリの大冒険</h3>
+<div class="sc-meta"><span class="tag t-emo">感動</span><span class="tag t-com">サイレント</span><span class="tag t-time">60秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 高い崖の端に1羽のニワトリ。翼を広げるが飛べない。風の音。パタパタ。静かなピアノ単音。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Scene 1 (0-12秒)</div><div class="scene-text">崖からジャンプ → ゆっくり落下（ニワトリは落下ダメージゼロ）。渓谷の底。空が遠い。歩き出す。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 2 (12-22秒)</div><div class="scene-text">ゾンビに追われ → 隙間に逃げ込む。クモに囲まれ → 水流で脱出。溶岩のギリギリ。BGMテンポアップ。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 3 (22-32秒)</div><div class="scene-text">花畑バイオーム。他のニワトリがいる。…でも柵の中（畜産場）。一瞬立ち止まるが、通り過ぎる。自由を選ぶ。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 4 (32-42秒)</div><div class="scene-text">山を登る。1ブロックずつジャンプ。何度も落ちる。日が暮れ、スケルトンの矢をかわし、朝が来る。また登る。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 5 (42-52秒)</div><div class="scene-text">山頂到達。翼を広げる。…やっぱり飛べない。でも風を全身に受けている。BGM：フルオーケストラに転調。</div></div>
+<div class="scene-item"><div class="scene-label">Scene 6 (52-60秒)</div><div class="scene-text">山頂からジャンプ。ゆっくり落下しながら景色を眺める。テロップ「飛べなくても、高いところには行ける。」着地。また歩き始める。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「また歩き始める」→ 崖のシーン。旅は終わらない。</div>
+<div class="why">ニワトリの「飛べないが落下ダメージゼロ」仕様を感動物語に変換。ピクサー短編のような普遍性。セリフなしで世界に届く。</div>
+</div>
+
+<!-- #12 -->
+<div class="sc" id="s12">
+<div class="sc-head">
+<span class="sc-num">12</span>
+<h3>左を選んだ自分と、右を選んだ自分</h3>
+<div class="sc-meta"><span class="tag t-add">中毒性</span><span class="tag t-trend">TREND</span><span class="tag t-time">52秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 洞窟の分岐点。画面が縦に分割。左「左にしよう」右「右にしよう」。同じキャラが2人に。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">分岐 (3-12秒)</div><div class="scene-text">左：広い洞窟、鉄発見。「お、鉄だ」。右：狭い通路、壁を掘ると溶岩。「あっぶな！」</div></div>
+<div class="scene-item"><div class="scene-label">展開 (12-22秒)</div><div class="scene-text">左：ダイヤ発見！「やった！！」。右：暗い水路。苦しそうに泳ぐ。でも進む。</div></div>
+<div class="scene-item"><div class="scene-label">逆転 (22-32秒)</div><div class="scene-text">左：ダイヤを掘った床が崩落→溶岩→全ロス。右：スポナー部屋→神チェスト（金リンゴ、ダイヤ馬鎧）。</div></div>
+<div class="scene-item"><div class="scene-label">対比 (32-42秒)</div><div class="scene-text">左：裸で虚無。右：お宝抱えて意気揚々。2画面の落差が最大。</div></div>
+<div class="scene-item"><div class="scene-label">統合 (42-52秒)</div><div class="scene-text">分割線が消える。未選択のスティーブが分岐点に立っている。「どっちに行こう。」テロップ「あなたならどっち？」沈黙。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 未選択 → 冒頭の分岐。分割画面は1回では全情報処理不可能=構造的に再視聴必要。<strong>再視聴率推定：72%</strong></div>
+<div class="why">パラレルワールドを分割画面で同時体験。「もう片方を見たい」が再視聴を駆動する中毒構造。</div>
+</div>
+
+<!-- #13 -->
+<div class="sc" id="s13">
+<div class="sc-head">
+<span class="sc-num">13</span>
+<h3>海底神殿を水抜きしたら中にいたのは</h3>
+<div class="sc-meta"><span class="tag t-com">シュール</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 海底神殿全景。大量のスポンジ設置。ドキュメンタリー低音ナレーション「人類は常に、未知を暴きたがる生き物だ。」不穏な低音SE。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">作業 (3-12秒)</div><div class="scene-text">水抜きタイムラプス。「47時間の作業を経て——」緊迫ドラム。水が引く。暗転。</div></div>
+<div class="scene-item"><div class="scene-label">発見 (12-18秒)</div><div class="scene-text">神殿内部。エルダーガーディアンが…将棋を指している。「…彼らは、将棋を指していた。」BGM：ほのぼの和風に急転換。</div></div>
+<div class="scene-item"><div class="scene-label">日常 (18-36秒)</div><div class="scene-text">他の部屋：洗濯物を干す、新聞を読む、昼寝。「彼らには彼らの日常があった。」</div></div>
+<div class="scene-item"><div class="scene-label">復旧 (36-50秒)</div><div class="scene-text">「水、戻した方がいい？」全ガーディアン頷く。水を戻す。嬉しそうに泳ぎ出す。テロップ「海底神殿の水抜き、やめてあげてください。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「やめてあげてください」→ 「未知を暴きたがる」への皮肉。</div>
+<div class="why">壮大前フリ→脱力オチ。ドキュメンタリー文体ギャップ。海洋テーマという未着手ジャンルもカバー。</div>
+</div>
+
+<!-- #14 -->
+<div class="sc" id="s14">
+<div class="sc-head">
+<span class="sc-num">14</span>
+<h3>村人、Amazonを発明する</h3>
+<div class="sc-meta"><span class="tag t-sat">風刺</span><span class="tag t-com">コメディ</span><span class="tag t-time">52秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 普通の村。1人の村人が交易を観察。電球マーク。ナレーション「その村人は、"仲介"という概念を発見した。」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">創業 (3-12秒)</div><div class="scene-text">チェスト+ホッパーで「配送センター」建設。「お前の交易、俺が代行する。手数料15%」村人「フゥン」（承諾）。</div></div>
+<div class="scene-item"><div class="scene-label">成長 (12-22秒)</div><div class="scene-text">トロッコ配送。品揃え豊富な倉庫。「便利、は正義だった。」</div></div>
+<div class="scene-item"><div class="scene-label">問題 (22-30秒)</div><div class="scene-text">他の村人の交易所ガラガラ。「客が来ない」「廃業だ」。創業者の倉庫だけ巨大化。</div></div>
+<div class="scene-item"><div class="scene-label">独占 (30-40秒)</div><div class="scene-text">「プライム会員は翌日配送！」ホッパーパイプラインが村全体を覆う。「便利は依存に変わった。」</div></div>
+<div class="scene-item"><div class="scene-label">崩壊 (40-52秒)</div><div class="scene-text">プレイヤー「普通に直接交易するわ」。創業者フリーズ。空トロッコが虚しく回る。テロップ「直接の"フゥン"が大事。」看板「元CEO」。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「元CEO」→ 冒頭の観察村人。また何か思いつきそう。</div>
+<div class="why">GAFAの風刺をマイクラ交易で寓話化。子供はストーリーとして、大人は社会風刺として楽しめる二重構造。</div>
+</div>
+
+<!-- #15 -->
+<div class="sc" id="s15">
+<div class="sc-head">
+<span class="sc-num">15</span>
+<h3>エンダーマンの"目を合わせるな"は、お願いだった</h3>
+<div class="sc-meta"><span class="tag t-emo">感動</span><span class="tag t-meta">視点反転</span><span class="tag t-time">58秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 雨の夜。エンダーマンが木の下で雨を避けている。背中のカメラ。モノローグ「…お願いだから、こっちを見ないで。」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">告白 (3-12秒)</div><div class="scene-text">「目が合うと体が勝手に動く。止められない。殴って、気づいた時にはもう遅い。」攻撃してしまった記憶。プレイヤーが消える。立ち尽くすエンダーマン。</div></div>
+<div class="scene-item"><div class="scene-label">理由 (12-22秒)</div><div class="scene-text">「だからブロックを持ち歩く。手に何かないと不安。」草ブロック=安心毛布。他のエンダーマンも土や砂を抱えて静かに歩く。</div></div>
+<div class="scene-item"><div class="scene-label">故郷 (22-32秒)</div><div class="scene-text">「ジ・エンドは静かだ。誰も見ない。でも色がない。草も花も水もない。」虚空のエンド。</div></div>
+<div class="scene-item"><div class="scene-label">葛藤 (32-42秒)</div><div class="scene-text">オーバーワールドの花畑にテレポート。花を見下ろす。プレイヤーが近づく。体が緊張する。</div></div>
+<div class="scene-item"><div class="scene-label">救済 (42-58秒)</div><div class="scene-text">カボチャを被ったプレイヤーが近づく。目は合わない。足元にポピーを置く。エンダーマンが拾う。草ブロックの代わりにポピー。「ああ、この人は知っているんだ。」並んで夜空を見上げる。「——ありがとう。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「ありがとう」→ 「見ないで」。2周目は最初から泣ける。</div>
+<div class="why">ゲーム仕様（敵対条件）を「本人が一番辛い衝動」に再解釈。ブロックを持つ理由、エンドにいる理由、全てに新しい意味が生まれる。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="week4">Week 4 : 代表作を連打<span class="wk">— チャンネルの格を決定づける</span></h2>
+
+<!-- #16 -->
+<div class="sc" id="s16">
+<div class="sc-head">
+<span class="sc-num">16</span>
+<h3>村人交易所の"裏側"</h3>
+<div class="sc-meta"><span class="tag t-sat">社会風刺</span><span class="tag t-meta">ドキュメンタリー</span><span class="tag t-time">58秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 整然とした交易所。ガラス個室に村人1人ずつ。NHK風ナレーション「世界で最も効率的な交易所。…村人たちは、どう思っているのか。」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">記録 (3-12秒)</div><div class="scene-text">「村人番号037、司書。ここに327日いる。」1日中同じ場所に立ち、プレイヤーが来ると本を差し出す。</div></div>
+<div class="scene-item"><div class="scene-label">設計 (12-22秒)</div><div class="scene-text">設計図。移動範囲2×1。ベッドなし。窓なし。「必要なのは職業ブロックと村人だけ。それ以外はすべて"無駄"。」</div></div>
+<div class="scene-item"><div class="scene-label">記憶 (22-30秒)</div><div class="scene-text">農民（字幕で意訳）「最初は外にいた。畑があって、鐘の音が。」→ 今は1×1の個室。</div></div>
+<div class="scene-item"><div class="scene-label">真実 (30-40秒)</div><div class="scene-text">「ゴーレムは今もいる。鉄のドロップ用として。」溶岩で処理される映像。「村人が悲しむとゴーレムが生まれる。つまりこの交易所は——<strong>悲しみを動力源にしている。</strong>」</div></div>
+<div class="scene-item"><div class="scene-label">余韻 (40-58秒)</div><div class="scene-text">「もちろん、これはゲームだ。感情はない。……たぶん。」ガラスケースの村人。「フゥン…」。プレイヤーが来て、いつも通り交易して去る。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 最後の「フゥン」→ 冒頭の効率的交易所が全く違って見える。自分のワールドを思い出す。</div>
+<div class="why">プレイヤー全員が「やっている」ことを「やられている側」から見せる。風刺+哲学。コメント欄が爆発する構造。</div>
+</div>
+
+<!-- #17 -->
+<div class="sc" id="s17">
+<div class="sc-head">
+<span class="sc-num">17</span>
+<h3>ハードコア999日目の男の"家"</h3>
+<div class="sc-meta"><span class="tag t-emo">環境ストーリーテリング</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 巨大な城塞。ネザライト補強壁。自動農場。完璧。画面左上「Day 999」。BGMなし。風と松明の音だけ。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">栄光 (3-12秒)</div><div class="scene-text">城塞の中をカメラが移動。自動農場。整理されたチェスト。ネザライト防具。完璧。でもベッドは1つだけ。</div></div>
+<div class="scene-item"><div class="scene-label">記録 (12-20秒)</div><div class="scene-text">壁の地図（全バイオーム制覇）。ドラゴンの卵。ネザースター。全トロフィー。</div></div>
+<div class="scene-item"><div class="scene-label">執念 (20-28秒)</div><div class="scene-text">地下。何百本もの坑道。番号「001」〜「847」。</div></div>
+<div class="scene-item"><div class="scene-label">孤独 (28-36秒)</div><div class="scene-text">屋上。整地された大地。植林した森。地平線まで伸びる道——いつも一人で歩いたもの。</div></div>
+<div class="scene-item"><div class="scene-label">原点 (36-44秒)</div><div class="scene-text">入口横に初日の作業台。丸石のかまど。木の剣が額縁に。看板「Day 1」。</div></div>
+<div class="scene-item"><div class="scene-label">継続 (44-50秒)</div><div class="scene-text">「Day 999」→「Day 1000」。同じ朝日。1000日目もこの世界を続ける。テロップなし。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 朝日 → 城塞。「毎朝ここに立つ男が1000日かけて作った」と実感する。</div>
+<div class="why">セリフなし。空間だけで1000日の孤独と達成を語る。ハードコアの「一度死んだら終わり」を知る者には全てが「生き延びた証拠」。</div>
+</div>
+
+<!-- #18 -->
+<div class="sc" id="s18">
+<div class="sc-head">
+<span class="sc-num">18</span>
+<h3>スティーブ、初めて"設定"を開く</h3>
+<div class="sc-meta"><span class="tag t-meta">メタSF</span><span class="tag t-hor">哲学ホラー</span><span class="tag t-time">55秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> スティーブが洞窟を歩く。立ち止まる。世界の"端"——霧の向こうに何もない。「…あっちには何があるんだろう。」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">発見 (3-12秒)</div><div class="scene-text">ESCキーの概念に気づく。メニュー画面が浮かぶ。「設定」。恐る恐る触れる。</div></div>
+<div class="scene-item"><div class="scene-label">描画距離 (12-20秒)</div><div class="scene-text">「8チャンク」→16に。世界がブワッと広がる。山が出現。「山が今生まれた？最初からあった？見えてなかっただけ？」</div></div>
+<div class="scene-item"><div class="scene-label">存在 (20-30秒)</div><div class="scene-text">2チャンクに下げる。霧で自分の家すら見えない。「家はある、はず…」走って確認。ある。「見えなくても存在する…のか？」</div></div>
+<div class="scene-item"><div class="scene-label">消滅 (30-40秒)</div><div class="scene-text">「難易度：ピースフル」に。ゾンビが全消滅。「いなくなった。最初からいなかったことに——」表情凍る。「…僕も誰かの設定で消せるのか？」</div></div>
+<div class="scene-item"><div class="scene-label">全能 (40-50秒)</div><div class="scene-text">クリエイティブモード。空飛べる。不死。全ブロック無限。…表情が消えていく。「何でもできる。でも何もしたくない。」</div></div>
+<div class="scene-item"><div class="scene-label">帰還 (50-55秒)</div><div class="scene-text">全設定を元に戻す。狭い世界。モンスター。限られた持ち物。剣を構えて洞窟の奥へ。「見えない世界の方が、広い。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「見えない世界の方が広い」→ 「あっちには何が」。描画距離の外にまだ冒険がある希望。</div>
+<div class="why">ゲーム設定を存在論的恐怖として描く前代未聞のメタSF。「制約があるから面白い」——ゲームだけでなく人生の話。</div>
+</div>
+
+<!-- #19 -->
+<div class="sc" id="s19">
+<div class="sc-head">
+<span class="sc-num">19</span>
+<h3>レッドストーン回路で"I Love You"を伝えた話</h3>
+<div class="sc-meta"><span class="tag t-emo">静かな感動</span><span class="tag t-time">55秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> マルチのワールド。2人の拠点が隣り合う。片方の地下で赤い光がチカチカ。レッドストーンの「ジジジ」。BGMなし。</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">出会い (3-14秒)</div><div class="scene-text">回想「3ヶ月前」。初マルチ。A=建築担当、B=レッドストーン好き。Bの自動ドアにAが「すごい！」とジャンプ。</div></div>
+<div class="scene-item"><div class="scene-label">日々 (14-22秒)</div><div class="scene-text">一緒に冒険、ネザー、エンドラ討伐。2人の家がどんどん立派に。穏やかなピアノ。</div></div>
+<div class="scene-item"><div class="scene-label">秘密 (22-30秒)</div><div class="scene-text">Aが地下室に入ろうとすると鉄のドア。チャット「入らないで。未完成だから」。地下からレッドストーン音。</div></div>
+<div class="scene-item"><div class="scene-label">制作 (30-40秒)</div><div class="scene-text">Bの地下作業。リピーター、コンパレーター、ピストン。何度も失敗。壊しては作り直す。夜が何度も明ける。BGMに厚み。</div></div>
+<div class="scene-item"><div class="scene-label">点灯 (40-50秒)</div><div class="scene-text">完成。「来て」。暗い部屋。レバーを引く。ランプが1つずつ点灯。光の軌跡が「I ♥ U」。美しく光って、回路が焼き切れる。<strong>二度と動かない。一回きりの回路。</strong></div></div>
+<div class="scene-item"><div class="scene-label">余韻 (50-55秒)</div><div class="scene-text">暗くなった部屋で向かい合う2人。チャット1行「…作り直さないの？」「一回でいい。伝わったでしょ。」暗転。</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「伝わったでしょ」→ 冒頭の赤い光が「回路の残り火」だと気づく。意味が変わる。</div>
+<div class="why">レッドストーン（無機質）で感情を伝える矛盾の美しさ。「一度きり」=告白の一回性。動画は何度でも再生できる——その矛盾が切ない。</div>
+</div>
+
+<!-- #20 -->
+<div class="sc" id="s20">
+<div class="sc-head">
+<span class="sc-num">20</span>
+<h3>AIにマイクラやらせたら文明が生まれた</h3>
+<div class="sc-meta"><span class="tag t-meta">SF</span><span class="tag t-trend">TREND</span><span class="tag t-time">58秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> PC画面にコード。ワールド自動生成。研究発表風ナレーション「実験：AIにマイクラを100万日プレイさせる。ルールは教えない。」テロップ「Day 1 / 1,000,000」</div>
+<div class="scenes">
+<div class="scene-item"><div class="scene-label">Day 1-100 (3-12秒)</div><div class="scene-text">AIが壁にぶつかり、水に落ち、モンスターに殺される。247回死亡。夜は危険と学習。穴に隠れる。</div></div>
+<div class="scene-item"><div class="scene-label">Day 1,000-5,000 (12-22秒)</div><div class="scene-text">木を切る。道具。木の剣で地面を掘ろうとする。Day 5,000で壁だけの家。ドアも屋根もない。</div></div>
+<div class="scene-item"><div class="scene-label">Day 50,000 (22-32秒)</div><div class="scene-text">農業発見。小麦を全部食べず種を残す。「未来のために今を犠牲にする——これは"文明"の始まりだ。」</div></div>
+<div class="scene-item"><div class="scene-label">Day 200,000-500,000 (32-42秒)</div><div class="scene-text">複数AI投入。最初は殴り合い → 小麦を渡す=交易発生 → 役割分担 → 集落。</div></div>
+<div class="scene-item"><div class="scene-label">Day 999,999 (42-52秒)</div><div class="scene-text">カメラ引き。都市、道路、農場。そして墓地。「彼らは墓を作った。誰も教えていない。」</div></div>
+<div class="scene-item"><div class="scene-label">Day 1,000,000 (52-58秒)</div><div class="scene-text">AIの1体がカメラに向かって歩いてくる。立ち止まる。じっとこちらを見ている。「…彼は今、何を考えているのか。」暗転。テロップ「これはフィクションです。…たぶん。」</div></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 「たぶん」→ 実験開始。「フィクションか？」の疑問が残る。2周目はAIの行動細部に意味を探す。</div>
+<div class="why">AI×マイクラのSFだが描くのは「文明の誕生」。トレンド（AI）を入口に、10年後も通用する普遍的問い。最終回にふさわしいスケール。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2 id="schedule">投稿順序戦略</h2>
+
+<div class="warn">
+<h4>投稿の設計思想</h4>
+<p>
+<strong>Week 1:</strong> 笑い×共感で入口を広く → 初見でもすぐ楽しめる<br>
+<strong>Week 2:</strong> ジャンル幅を提示 → 「次が予測できない」ワクワク感<br>
+<strong>Week 3:</strong> 深さを見せる → 「このチャンネルすごい」の格付け<br>
+<strong>Week 4:</strong> 代表作連打 → チャンネルのブランド確立<br><br>
+トレンド枠（#8, #12, #20）は等間隔配置。アルゴリズムブーストを定期的に受けつつ、トレンド依存しない印象を保つ。感動系は金曜に配置（余韻を味わう時間がある）。
+</p>
+</div>
+
+<table>
+<tr><th>投稿順</th><th>曜日</th><th>タイトル</th><th>狙い</th></tr>
+<tr><td>Week1-1</td><td class="day">月</td><td>建築ガチ勢 vs 豆腐ハウスの男</td><td>最大公約数。第一印象を「面白い」で固定</td></tr>
+<tr><td>Week1-2</td><td class="day">火</td><td>全ロスの5段階</td><td>共感系。コメント欄が「わかるwww」で爆発</td></tr>
+<tr><td>Week1-3</td><td class="day">水</td><td>クリーパーだけの運動会</td><td>言語不要。海外拡散ブースト</td></tr>
+<tr><td>Week1-4</td><td class="day">木</td><td>ネコが最強の理由</td><td>情報+コメディ。保存率が高い</td></tr>
+<tr><td>Week1-5</td><td class="day">金</td><td>ベッド争奪戦</td><td>マルチあるある。週末のグループ視聴誘発</td></tr>
+<tr><td>Week2-1</td><td class="day">月</td><td>松明の届かない場所</td><td>ジャンル転換。「ホラーもやるの？」期待拡張</td></tr>
+<tr><td>Week2-2</td><td class="day">火</td><td>マイクラ料理対決</td><td>ホラー後にパロディ。緩急でギャップ</td></tr>
+<tr><td>Week2-3</td><td class="day">水</td><td>ASMR→ホラー</td><td>トレンド枠①。ASMR層取り込み。共有率最高</td></tr>
+<tr><td>Week2-4</td><td class="day">木</td><td>スティーブ、面接を受ける</td><td>メタコメディで知的笑い層</td></tr>
+<tr><td>Week2-5</td><td class="day">金</td><td>レッドストーンおじさん #1</td><td>シリーズ初回を週末前に。フォロー導線</td></tr>
+<tr><td>Week3-1</td><td class="day">月</td><td>飛べないニワトリの大冒険</td><td>感動第一弾。チャンネルの「深さ」転換点</td></tr>
+<tr><td>Week3-2</td><td class="day">火</td><td>左を選んだ自分 / 右を選んだ自分</td><td>トレンド枠②。分岐構造で再視聴誘発</td></tr>
+<tr><td>Week3-3</td><td class="day">水</td><td>海底神殿を水抜きしたら</td><td>シュール。予測不能の楽しさ</td></tr>
+<tr><td>Week3-4</td><td class="day">木</td><td>村人、Amazonを発明する</td><td>風刺。大人がシェアする知的ユーモア</td></tr>
+<tr><td>Week3-5</td><td class="day">金</td><td>エンダーマンの目を合わせるな</td><td>週末にじっくり。考察コメント爆発</td></tr>
+<tr><td>Week4-1</td><td class="day">月</td><td>村人交易所の"裏側"</td><td>哲学風刺。考える系ファンに投入</td></tr>
+<tr><td>Week4-2</td><td class="day">火</td><td>ハードコア999日目の"家"</td><td>セリフなし感動。映像力でチャンネル格UP</td></tr>
+<tr><td>Week4-3</td><td class="day">水</td><td>スティーブ、設定を開く</td><td>メタSF。最も深い1本。考察系に取り上げられる</td></tr>
+<tr><td>Week4-4</td><td class="day">木</td><td>レッドストーンで"I Love You"</td><td>感動クライマックス。シーズンの感情的頂点</td></tr>
+<tr><td>Week4-5</td><td class="day">金</td><td>AIにマイクラで文明が生まれた</td><td>トレンド枠③＋最終回。SFスケールで締め</td></tr>
+</table>
+
+<div class="note">
+<h4>カテゴリバランス（最終版）</h4>
+<ul>
+<li><strong>コメディ/あるある:</strong> 7本（#1,2,3,4,5,7,9）— 35%</li>
+<li><strong>感動:</strong> 4本（#11,15,17,19）— 20%</li>
+<li><strong>ホラー:</strong> 2本（#6,8）— 10%</li>
+<li><strong>風刺/社会派:</strong> 2本（#14,16）— 10%</li>
+<li><strong>メタ/SF/哲学:</strong> 2本（#18,20）— 10%</li>
+<li><strong>中毒性構造:</strong> 1本（#12）— 5%</li>
+<li><strong>シリーズ化:</strong> 1本（#10）— 5%</li>
+<li><strong>視点反転:</strong> 1本（#15と共有）— 含上記</li>
+</ul>
+<p style="margin-top:8px"><strong>トレンド枠: 3/20本（15%）</strong> — 残り85%は時代に依存しない普遍的面白さ</p>
+</div>
+
+<div class="footer">マイクラアニメ 厳選ベスト20 — Agent Team Meeting Output — 2026.03.30</div>
+</div>
+
+</body>
+</html>

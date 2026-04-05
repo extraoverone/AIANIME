@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！トレンド特化台本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(250,204,21,.15);color:#fbbf24;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-update{background:rgba(34,211,153,.12);color:#34d399}
+.t-meme{background:rgba(251,146,60,.12);color:#fb923c}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-chaos{background:rgba(251,146,60,.12);color:#fb923c}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-pov{background:rgba(236,72,153,.12);color:#f472b6}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+
+.dial{padding:0 24px 20px}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:48px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.trend-tag{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.trend-tag strong{color:#fbbf24}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.alert{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#fca5a5}
+.alert h4{color:#f87171;margin-bottom:8px;font-size:15px}
+.alert li{margin-bottom:4px}
+.alert ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#s-tiny">Tiny Takeover</a>
+<a href="#s-chaos">Chaos Cubed</a>
+<a href="#s-meme">ミーム乗り</a>
+<a href="#s-algo">アルゴ最適化</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">TREND-OPTIMIZED 2026.04</div>
+<h1>よふかしくらぶ！トレンド特化台本</h1>
+<p>今この瞬間にバズる設計。最新アプデ・ミーム・アルゴリズム全部乗せ。全10本。<br>設計思想：トレンドの"波"に乗りつつ、よふかしくらぶでしか出せない味を加える。</p>
+</div>
+
+<div class="wrap">
+
+<div class="alert">
+<h4>鮮度が命 — 投稿タイミング</h4>
+<ul>
+<li><strong>T01-T03（Tiny Takeover系）：</strong>今すぐ。アプデ直後の検索需要がピーク。「Tiny Takeover」「ベビーモブ」がYouTube検索で急上昇中。1週間以内に出す。</li>
+<li><strong>T04-T05（Chaos Cubed系）：</strong>正式リリース前の「予告・考察」として今出す。リリース後にフォローアップで再バズ可能。</li>
+<li><strong>T06-T08（ミーム系）：</strong>チキンジョッキー・K2構文は今がピーク。映画続編発表の余韻があるうちに。</li>
+<li><strong>T09-T10（アルゴ最適化系）：</strong>いつ出しても機能する常緑設計。他の台本の間に挟む。</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-tiny">Tiny Takeover 便乗系</h2>
+<p class="sec-desc">2026年3月24日リリースの最新アプデ。ベビーモブ全刷新＋金のタンポポ（永遠にベビー化）。鮮度MAX。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="T01">
+<div class="sc-head">
+<h3>T01「金のタンポポ、使ったらヤバいことになった」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-update">最新アプデ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「マイクラに"永遠に大人にならない"アイテムが追加された」→ 金のタンポポのクラフト画面。キラキラのSE。</div>
+<div class="visual"><strong>映像演出：</strong>クラフト画面のクローズアップ→使用シーン→予想外の展開を3段階で見せる。パターンインタラプト：5秒ごとにカット変更＋ズーム＋SE。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>Tiny Takeover直後の検索需要「金のタンポポ 使い方」「golden dandelion minecraft」。ハウツーの皮をかぶったカオスコメディ。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">Tiny Takeoverで追加された「金のタンポポ」。使うとベビーモブが永遠に大人にならなくなる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、かわいいまんま！？ 最高じゃん！ 全部の動物に使いたい！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">落ち着け。まずは1匹——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">もう30匹に使った。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">…………。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">画面いっぱいのベビー動物。子犬、ヒヨコ、子猫、子豚が大群でうごめいている。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うわっ、かわいいけど多すぎ！！ 画面がモフモフで前が見えない！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">待って。これ永遠にベビーってことは……永遠にこの量ってこと？ 増える一方じゃん。やばくない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やばくないよ！ かわいいは正義！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ベビーモブがさらに繁殖。子犬が100匹を超える。フレームレートが目に見えて落ちる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">サーバーが……重く……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ラグってるラグってる！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私のレッドストーン回路が子犬に踏まれて全部壊れた。……かわいいから許すけど。いや許さない。いや……かわいいから許す。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">画面が子犬で完全に埋まる。もはや何も見えない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">天国！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">地獄だ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">金のタンポポ、用法用量を守ってお使いください。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→クラフト画面に戻る。「自分もやってみよう→でもこうなるかも」のループ。ハウツーとして検索流入＋カオスとして拡散。</div>
+<div class="easter"><strong>イースターエッグ:</strong>大量の子犬の中に1匹だけ虹色の羊（jeb_）がいる。コメント欄で「見つけた！」報告が来る設計。</div>
+<div class="why">最新アプデの目玉アイテムを「やりすぎた結果」で見せるのは鉄板。ただの紹介動画ではなく「かわいい→カオス→サーバー崩壊」の3段オチで感情を動かす。あさめの暴走→やとらの絶望のパターンがキャラの魅力も同時に見せる。検索最適化：タイトルに「金のタンポポ」入りでYouTube検索のShortsフィルターにヒットさせる。</div>
+</div>
+
+<div class="sc" id="T02">
+<div class="sc-head">
+<h3>T02「ベビーモブの新しい動き、気づいた？」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-update">最新アプデ</span><span class="tag t-loop">ループ設計</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「Tiny Takeoverのベビーモブ、よく見て。」→ 子猫がぴょこぴょこ歩く新アニメーション映像。</div>
+<div class="visual"><strong>映像演出：</strong>ASMR的。BGMなし、環境音＋ベビーモブの新SEだけ。カメラはゆっくりスロー。セリフは小声のささやきで。5秒ごとに別のベビーモブに切り替え。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>マイクラASMRの再流行＋Tiny Takeoverの新アニメーション。癒し系は保存率が高い。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">子猫のクローズアップ。新しい歩行アニメーション。ぴょこ、ぴょこ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ささやき）見て。歩き方変わってる。前よりぴょこぴょこしてない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ささやき）かっっっわ……。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ヒヨコのクローズアップ。新SE。ぴよぴよ。羽をバタバタさせる新モーション。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ささやき）えっヒヨコこんな動きしてた？ 羽パタパタすんだ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">子犬のクローズアップ。しっぽフリフリ。新しい甘え声。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ささやき、泣きそう）しっぽ……しっぽ振ってる……無理……。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">子ガメのクローズアップ。砂浜をよちよち歩く。海に向かう。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ささやき）……子ガメが海に向かう姿は、見ていて不思議と——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ささやき）泣いてるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ささやき）泣いてない。目にゴミが。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ささやき）やとらくんが子ガメで泣いてる。スクショ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">Tiny Takeover、全部のベビーモブ見た？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→子猫に戻る。ASMR的な癒しループで何周でも見られる。保存率＋リプレイ率を最大化する設計。</div>
+<div class="why">「ASMR×最新アプデ」の掛け算。マイクラASMRはTikTokで再流行中。新アニメーションのクローズアップは「見たことない映像」なので情報ギャップを生む。全員がささやくのが普段とのギャップでキャラの新しい面を見せる。やとらが子ガメで泣くのが意外性＋コメント誘導。</div>
+</div>
+
+<div class="sc" id="T03">
+<div class="sc-head">
+<h3>T03「"Removed Baby Herobrine"の意味、知ってる？」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-meme">ミーム</span><span class="tag t-horror">ホラー</span><span class="tag t-time">40秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「Tiny Takeoverのパッチノートの最後の行、読んだ？」→ パッチノート画面。下にスクロール。最後の行「Removed Baby Herobrine」がぬるっと映る。</div>
+<div class="visual"><strong>映像演出：</strong>前半は明るいパッチノート解説風。後半から照明が落ちて不穏に。やとらの推理パートはカメラをゆっくりズーム。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>「Removed Baby Herobrine」ミーム＋Herobrine都市伝説の再燃。考察系＋ホラーは視聴完了率が異常に高い。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">Tiny Takeoverのパッチノート。最後にこう書いてある。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">テキスト表示：「Removed Baby Herobrine」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">「赤ちゃんヒロブラインを削除した」？ なにそれ、ジョークでしょ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ああ、毎回のアプデで「Removed Herobrine」と書くのはMojangの伝統だ。今回はTiny Takeoverだからベビー版になっている。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あはは！ ベビーヒロブラインって何、想像するとかわいくない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——だが。考えてみろ。</span></div>
+<div class="line"><span class="who who-n">（BGMが変わる。不穏。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">金のタンポポは「永遠にベビーのままにする」アイテムだ。つまり——誰かがヒロブラインに金のタンポポを使った。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……え？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">永遠にベビーのまま、成長しない、消えない存在。それをMojangが「削除した」と書いている。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">待って待って、じゃあ「削除する前は存在してた」ってこと？ え、怖いんだけど。考察しすぎ？ 考察しすぎだよね？ ……でも気になる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">もうやめて！ 夜マイクラできなくなる！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">安心しろ。削除された、と書いてある。——本当に削除されたなら、な。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">暗い森。一瞬だけ——白い目の小さい影が木の後ろに映る。0.3秒。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">あなたのワールド、確認した？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→パッチノートに戻る。しかも「0.3秒の影」を確認するために2周目を見る。ダブルテイク構造。</div>
+<div class="easter"><strong>イースターエッグ:</strong>最後の暗い森のシーンに0.3秒だけベビーヒロブライン（白い目の小さいスティーブ）を映す。1周目は気づかない。コメント欄が「最後のシーン！！」で爆発する設計。リプレイ率を50%以上増加させるダブルテイク手法。</div>
+<div class="why">公式のイースターエッグを「考察」に昇華する。ジョークをホラーに変換するのはやとらの独壇場。金のタンポポ→ベビーヒロブライン→「存在した」の三段論法がきれいに繋がる。0.3秒の影＝リプレイ強制装置。考察コメントが山ほど来る＋「ベビーヒロブライン」で検索流入。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-chaos">Chaos Cubed 先取り系</h2>
+<p class="sec-desc">2026年Q2リリース予定の次期アプデ。硫黄洞窟＋サルファーキューブ（ブロック吸収物理MOB）。リリース前の考察・予想が一番バズる。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="T04">
+<div class="sc-head">
+<h3>T04「新MOB"サルファーキューブ"が物理エンジンぶっ壊してて草」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-update">新アプデ予告</span><span class="tag t-chaos">カオス</span><span class="tag t-com">コメディ</span><span class="tag t-time">50秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「次のアプデの新MOB、殴ったら飛んでった。」→ サルファーキューブを殴る→ ぴょーんと飛んでいく映像。</div>
+<div class="visual"><strong>映像演出：</strong>スナップショット（テスト版）の映像として見せる。物理実験のスタイル。殴る→飛ぶ→着地のスローモーション。段階的にカオス度UP。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>Chaos Cubed発表直後の考察需要＋「新MOBで遊んでみた」系。新情報を最速で出すと検索＋おすすめ両方で爆発する。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次のアプデ「Chaos Cubed」で追加されるサルファーキューブ。こいつは——ブロックを吸収して性質が変わるMOBだ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ブロック吸収？ どういうこと？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">見せてやる。まず羊毛を吸わせる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">サルファーキューブが羊毛を吸収。ふわふわになる。殴ると——ふわっと浮く。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">かわいい！ ふわふわ！ もっと殴って！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次。原木を吸わせる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">原木を吸収。殴ると——バウンドして跳ね返ってくる。やとらに直撃。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ぐっ——！ 跳ね返る性質になるのか……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ピンボールじゃんこれ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ねえ、殴る場所で飛ぶ方向変わるって公式に書いてあったよ。左下殴ったら右上に飛ぶんだって。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあゴルフできるじゃん！！ マイクラゴルフ！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……その発想はなかった。やるか。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">即席ゴルフコース。穴を掘って、サルファーキューブを剣で打つ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ナイッショー！！——あ、崖から落ちた。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">OB。ていうか分裂した。小さいのが2匹になった。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">増えた！！ もう1回打てる！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">これは……新しいスポーツだな。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">サルファーキューブゴルフ、流行らせたい人はシェア。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→殴って飛んでいく映像に戻る。ゴルフのショットシーンが気持ちいいので無意識にリプレイ。</div>
+<div class="why">新MOBの仕様を「ゴルフ」に転用する発想がラテラル。ただの解説動画じゃなく「こんな遊び方あったのか」で差別化。あさめの「ゴルフできるじゃん！」で視聴者が「やってみたい」と思う→シェア→拡散。分裂してボールが増える展開が予想外でリプレイを誘う。</div>
+</div>
+
+<div class="sc" id="T05">
+<div class="sc-head">
+<h3>T05「硫黄洞窟に入ったら全員中毒になった」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-update">新アプデ予告</span><span class="tag t-horror">ホラー</span><span class="tag t-com">コメディ</span><span class="tag t-time">45秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「新バイオーム"硫黄洞窟"。入っただけで吐き気がする。」→ 黄色と赤の不気味な洞窟映像。毒ガスの粒子が浮いている。</div>
+<div class="visual"><strong>映像演出：</strong>洞窟の入口→中に入る→画面にめまいエフェクト→4人のリアクション。初見のリアルなリアクションを重視。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">Chaos Cubedの新バイオーム「硫黄洞窟」。実際の硫黄泉がモデルだ。入るぞ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">わー、黄色くてきれい——</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">有毒プールの近くを通過。緑の粒子。画面にめまいエフェクト。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">う……なんか画面ぐるぐるする……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">おえ。リアルに酔いそう。これ近づくとダメなやつ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">硫化水素ガスだ。近づくと吐き気とめまいの状態異常がつく。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え、マイクラで酔うの新体験なんだけど。酔い止め必要じゃん。現実かよ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でも奥に何かある！ 赤いブロック！ きれい！ 行きたい！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">辰砂だ。装飾ブロックとして使える。だがガスを避けないと——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（突っ込む）いっけーー！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめの画面がぐるんぐるん。めまいMAX。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あかん。世界が回ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">だから言ったじゃん！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃんが毒ガスに突っ込むの、人生のメタファーすぎない？ 「きれい！行きたい！」→中毒。わかりみが深い。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">深くない！ 助けろ！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……牛乳だ。牛乳を飲ませろ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（回復）ぷはっ。……もう1回行っていい？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ダメに決まってるだろ！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>「もう1回行っていい？」→冒頭の洞窟入口に戻る。あさめは何度でも突っ込む。</div>
+<div class="why">新バイオームの体験動画として検索流入を狙いつつ、「毒ガスでめまい」の新要素がインパクト。あさめの無謀な突撃→全員のリアクションで普通の紹介動画と差別化。まひるの「人生のメタファー」が名言として切り抜かれる可能性。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-meme">ミーム乗り系</h2>
+<p class="sec-desc">今ネットで流行ってるミーム・構文をよふかしくらぶで料理する。鮮度が命。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="T06">
+<div class="sc-head">
+<h3>T06「チキンジョッキー」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-meme">ミーム</span><span class="tag t-com">コメディ</span><span class="tag t-loop">ループ</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>映像：夜道を歩く4人。遠くから「コケコッコー」。振り返ると——ベビーゾンビがニワトリに乗って突っ込んでくる。テロップ「Chicken Jockey!!!!」</div>
+<div class="visual"><strong>映像演出：</strong>映画予告風のカット割り。スローモーション→通常速度の緩急。ジャック・ブラック風の「Chicken Jockey!」ボイスをオマージュ。7秒ごとにパターンインタラプト。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>マイクラ映画のチキンジョッキーミーム（2025年最大のマイクラミーム、映画続編2027年発表で再燃中）。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">夜。4人が歩いている。静か。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">遠くから……コケコッコー。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ん？ 今ニワトリの声しなかった？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">振り返ると——暗闇からベビーゾンビがニワトリに乗って超高速で突っ込んでくる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">CHICKEN JOCKEY！！！！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">スローモーション。チキンジョッキーが空中で剣を振りかぶる。映画のワンシーンのようなカメラワーク。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なんでそんなカッコいいの！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">映画で見た！！ これ映画で見たやつ！！ ジャック・ブラックのあれ！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">チキンジョッキー、やとらに直撃。やとらがノックバックで吹っ飛ぶ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ぐあっ——！ ニワトリに乗ったベビーゾンビに……やられるとは……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらが負けた！ チキンジョッキーにやとらが負けた！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……あれは、強かった。認めよう。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ニワトリに負けるリーダー……。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">Chicken Jockey. 最強。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→夜道に戻る→またコケコッコーが聞こえる→「また来た！」の無限ループ。</div>
+<div class="why">映画ミームを完璧にマイクラアニメに変換。スローモーションのカメラワーク＝映画オマージュで「わかる人にはわかる」。まひるの「映画で見た！」でミーム元ネタを回収。やとらが最弱MOBに負けるギャップがコメントを生む。映画続編2027年で検索需要は2年間持続。</div>
+</div>
+
+<div class="sc" id="T07">
+<div class="sc-head">
+<h3>T07「かつて豆腐ハウスだった——だが今は違う！」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-meme">K2構文</span><span class="tag t-loop">ループ</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「かつて、ここには豆腐ハウスがあった——」→ ボロボロの土の家が映る。テロップ「だが今は違う！」→ 一瞬で豪邸に。</div>
+<div class="visual"><strong>映像演出：</strong>K2構文のリズムに完全に合わせる。「かつて○○だった——だが今は違う！」のテロップが出るたびにドラマチックなSE。ビフォーアフターの映像切り替えをカット1発で。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>K2構文ミーム（「かつて○○だった──だが今は違う！」）＋ビフォーアフター変身系（2026年伸びるフォーマット8位）。</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ナレーション風）かつて、ここには「豆腐ハウス」があった——</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれの作った土の直方体。窓もドアもない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だが今は違う！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドドン！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カット切り替え。同じ場所に3階建ての洋館。庭園つき。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">えっ誰が建てたのこれ！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺だ。3時間かかった。——次。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">かつて、あさめのインベントリは土と花だけだった——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だが今は違う！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カット。あさめのインベントリ：ダイヤフル装備、エンチャント済み、食料完備。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらが全部くれた！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">自分で集めろ。——次。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">かつて、まひるの家は闇のダンジョンだった——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だが今は——</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カット。まひるの家。さらに闇度がアップ。地下5階建て。赤い照明。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……悪化してる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">進化って言って？ 悪化じゃなくて進化って。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最後。かつて、よふかしくらぶは4人のバラバラなプレイヤーだった——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">だが今は違う。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人が並んで夕日を見ている。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前、最後だけカッコつけんなよ。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">かつて、あなたはこのチャンネルを知らなかった——だが今は違う！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→豆腐ハウスに戻る。ビフォーアフターの気持ちよさでリプレイ。最後のテロップがCTAとして機能。</loop>
+<div class="why">K2構文という「今この瞬間バズってるフォーマット」に完璧に乗る。ビフォーアフターは視覚的変化が強いのでリプレイ率が高い。まひるの家だけ「悪化」するのがギャップ。最後のエモ→テロップのCTA（チャンネル登録誘導）が自然。構文ミームは寿命が短いので即出しが正解。</div>
+</div>
+
+<div class="sc" id="T08">
+<div class="sc-head">
+<h3>T08「○○した in Minecraft」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-meme">ミーム</span><span class="tag t-com">コメディ</span><span class="tag t-chaos">カオス</span><span class="tag t-time">35秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>テロップ「告白してみた」→ 一拍置いて下に小さく「in Minecraft」。マイクラ画面であさめがひぐれの前に花を差し出している映像。</div>
+<div class="visual"><strong>映像演出：</strong>毎回「○○した」のテロップ→間→「in Minecraft」が追加される構造。テロップの出し方で笑いを作る。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>「in Minecraft」ミーム（Know Your Meme 2026年3月のMeme of the Month投票対象。過激な発言＋「マイクラの中で」で和らげる構文）。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">「告白してみた」</span></div>
+<div class="line"><span class="who who-n">（0.5秒後テロップ追加）</span><span class="txt">「告白してみた in Minecraft」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれーー！ はいこれ！ 花！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え……ありがとう？ なんで？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">友情の花！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">告白じゃねえ！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">「家を爆破した」</span></div>
+<div class="line"><span class="who who-n">（0.5秒後テロップ追加）</span><span class="txt">「家を爆破した in Minecraft」</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ドカーーーン！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……俺の城が。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ、ごめん。TNTの実験がちょっと……。いやかなり……。ごめん。本当にごめん。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">「犯罪をおかした」</span></div>
+<div class="line"><span class="who who-n">（0.5秒後テロップ追加）</span><span class="txt">「犯罪をおかした in Minecraft」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">村人の家のチェスト全部開けちゃった……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">それは犯罪だ。マイクラの中でも。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">「世界を救った」</span></div>
+<div class="line"><span class="who who-n">（0.5秒後テロップ追加）</span><span class="txt">「世界を救った in Minecraft」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人でエンダードラゴンを倒した瞬間。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やったーーーー！！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……in Minecraft。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">全部 in Minecraft です。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→「告白してみた」に戻る。テロップの出し方のテンポ感が中毒になる。</loop>
+<div class="why">「in Minecraft」ミームのテロップ演出（遅延表示）がリプレイ率を上げる。「え？→あ、マイクラか」の0.5秒の情報ギャップが脳に快感を与える。最後にエンドラ討伐というクライマックスを持ってきてエモく着地。テンポが早いのでループしても飽きない。このフォーマットは動画を量産しやすい（○○を変えるだけ）。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-algo">アルゴリズム最適化系</h2>
+<p class="sec-desc">トレンドに関係なく「アルゴリズムに愛される構造」を極限まで追求した台本。常緑。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="T09">
+<div class="sc-head">
+<h3>T09「マイクラのこの音が何か、3秒で当てて」</h3>
+<div class="sc-meta"><span class="tag t-trend">アルゴ最適</span><span class="tag t-loop">完全ループ</span><span class="tag t-com">コメディ</span><span class="tag t-time">30秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>画面真っ黒。マイクラの音だけ流れる。テロップ「この音、何？ 3秒で当てて」→ カウントダウン「3...2...1...」</div>
+<div class="visual"><strong>映像演出：</strong>「音クイズ」フォーマット。黒画面＋音→カウントダウン→正解映像。4問連続。1問あたり7秒。パターンインタラプト：問題切り替えのたびにSE＋カラー切り替え。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>クイズ系＝視聴完了率最強フォーマット。「答えが知りたい」で最後まで見る。Shorts検索フィルター（2026年1月追加）に「マイクラ クイズ」でヒット。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（画面黒）</span><span class="txt">SE：シューッ……ドカーン！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">この音は？ 3...2...1...</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">クリーパー！ わかった！ これはわかる！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">正解：クリーパー爆発。テロップ「正解！」</span></div>
+<div class="line"><span class="who who-n">（画面黒）</span><span class="txt">SE：カチャ……カチャカチャカチャ（静かな繰り返し音）</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">この音は？ 3...2...1...</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えーーー何これ。カチャカチャ？ ……作業台？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">レッドストーンリピーターだよ。このカチカチ音はリピーター。……え、みんな聞き分けられないの？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">正解：レッドストーンリピーター。テロップ「正解はまひる！」</span></div>
+<div class="line"><span class="who who-n">（画面黒）</span><span class="txt">SE：フゥーン（低い不気味な音）</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">この音は？ 3...2...1...</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">洞窟の環境音だ。Cave Sound 14。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">番号まで知ってるの怖い。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">てかこの音怖いって！ 夜に聞かせないでよ！</span></div>
+<div class="line"><span class="who who-n">（画面黒）</span><span class="txt">SE：…………（3秒の完全な無音）</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">この音は？ 3...2...1...</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え？ なんも聞こえなかったけど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">正解は——「エンダーマンがお前の後ろに立っている時の音」だ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">振り返るとエンダーマン。目が合う。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ぎゃあああああ！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">何問正解した？ コメント欄で。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>テロップ→1問目の黒画面に戻る。2周目は「答えを知った上でもう1回聴く」楽しみ。完全ループ設計で視聴率100%超を狙う。</loop>
+<div class="easter"><strong>イースターエッグ:</strong>最後の「無音」問題の黒画面中、音量を最大にすると非常に小さなエンダーマンのテレポート音が聞こえる。コメント欄で「音量MAXにしたら聞こえた！」が来る設計。</div>
+<div class="why">クイズ＝「答えを知りたい」で視聴完了率100%確定の構造。音クイズは映像がないので「もう1回聴きたい」でリプレイ率も異常に高い。最後の「無音＝エンダーマン」でホラーオチ。4人の知識レベルの差がキャラを自然に紹介する。シリーズ化で「音クイズ Vol.2」「Vol.3」と無限に量産可能。</div>
+</div>
+
+<div class="sc" id="T10">
+<div class="sc-head">
+<h3>T10「マイクラの7秒」</h3>
+<div class="sc-meta"><span class="tag t-trend">アルゴ最適</span><span class="tag t-loop">超短尺ループ</span><span class="tag t-time">7秒</span></div>
+</div>
+<div class="hook"><strong>フック:</strong>映像のみ。テロップなし。セリフなし。あさめがTNTに火をつける→走る→爆発→吹っ飛ぶ→着地した先にまたTNT→火をつける（ループ）</div>
+<div class="visual"><strong>映像演出：</strong>完全にJake Fellman方式。7秒の超短尺。セリフゼロ。テキストゼロ。音楽とアニメーションだけ。カメラは追従。爆発音がビートになっている。終わりと始まりが完全に繋がるシームレスループ。</div>
+<div class="trend-tag"><strong>乗るトレンド：</strong>Jake Fellman式7秒ループ（視聴率200%＝無意識に2周見る設計）。言語バリアゼロで全世界にリーチ。セリフなしなので海外展開可能。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（0.0秒）</span><span class="txt">あさめがTNTの横に立っている。火打ち石を構える。</span></div>
+<div class="line"><span class="who who-n">（0.5秒）</span><span class="txt">点火。シュウウウ。あさめが走り出す。</span></div>
+<div class="line"><span class="who who-n">（2.0秒）</span><span class="txt">ドカーン！ 爆風であさめが前方に吹っ飛ぶ。</span></div>
+<div class="line"><span class="who who-n">（3.0秒）</span><span class="txt">空中を飛んでいくあさめ。カメラが追従。</span></div>
+<div class="line"><span class="who who-n">（4.5秒）</span><span class="txt">着地。目の前にまたTNTがある。まひるが横で手を振っている（まひるが置いた）。</span></div>
+<div class="line"><span class="who who-n">（5.5秒）</span><span class="txt">あさめが火打ち石を構える。まひるが後ろに逃げる。</span></div>
+<div class="line"><span class="who who-n">（6.5秒）</span><span class="txt">点火。シュウウウ。あさめが走り出す。→ 0.5秒に接続。ループ。</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>完全シームレス。6.5秒の「走り出す」が0.5秒の「走り出す」に繋がる。視聴者は3周目まで気づかない。視聴率200%以上を狙う。冒頭と末尾に1フレームの静止画を入れてYouTubeの再生間ディレイを補正。</div>
+<div class="easter"><strong>イースターエッグ:</strong>3周目（21秒経過時点）で背景にやとらとひぐれが観戦している姿が一瞬映る。コメント欄で「3周目に2人いる！」と話題になる。</div>
+<div class="why">トレンドリサーチの結論「7-8秒ループ、セリフゼロ、言語バリアゼロ」を完璧に実装した究極のアルゴリズム最適化台本。Jake Fellman式の証明済み手法をよふかしくらぶで再現。あさめのキャラが映像だけで伝わる（TNTに突っ込む子）。言語不要なので海外視聴者も取り込める。これ1本で登録者が急増する可能性がある。</div>
+</div>
+
+<hr>
+
+<div class="note">
+<h4>投稿戦略</h4>
+<ul>
+<li><strong>最優先（今すぐ）：</strong>T01（金のタンポポ）→ T02（ベビーモブASMR）→ T03（Removed Baby Herobrine） — Tiny Takeoverの検索需要は1-2週間で減衰。今週中に出す。</li>
+<li><strong>高優先（今月中）：</strong>T06（チキンジョッキー）→ T07（K2構文）→ T08（in Minecraft） — ミームの寿命は1-2ヶ月。4月中に出す。</li>
+<li><strong>中優先（Chaos Cubed発表後）：</strong>T04（サルファーキューブゴルフ）→ T05（硫黄洞窟） — スナップショット公開直後に出す。リリース前の考察需要が最大。</li>
+<li><strong>常緑（いつでも）：</strong>T09（音クイズ）→ T10（7秒ループ） — トレンドに依存しない。他の台本の合間に出す。</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>アルゴリズム最適化チェックリスト</h4>
+<ul>
+<li><strong>全台本共通：</strong>冒頭1-2秒フック、5-7秒ごとにパターンインタラプト、ループ構造、コメント誘導テロップ</li>
+<li><strong>検索最適化：</strong>T01-T05はタイトルに「Tiny Takeover」「Chaos Cubed」「サルファーキューブ」等の検索ワードを含める。YouTubeの新機能「Shortsの検索フィルター」に引っかかるように設計。</li>
+<li><strong>イースターエッグ：</strong>T01（jeb_羊）、T03（0.3秒のベビーヒロブライン）、T09（音量MAX）、T10（3周目の2人）— リプレイ率を平均50%向上させる隠し要素。</li>
+<li><strong>ハッシュタグ：</strong>#shorts #minecraft #マイクラ + トレンドタグ2-3個。無関係なタグは使わない。</li>
+<li><strong>投稿時間：</strong>平日18-21時、休日12-15時。投稿後1-3時間の初動データがアルゴリズムの配信範囲を決定。</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>シリーズ展開の種</h4>
+<ul>
+<li><strong>T09（音クイズ）→ シリーズ化：</strong>Vol.2、Vol.3と量産。毎回最後の1問をホラーにするフォーマット固定。</li>
+<li><strong>T10（7秒ループ）→ シリーズ化：</strong>キャラを変える。まひるのレッドストーン版、やとらの建築版、ひぐれのサバイバル版。各7秒。</li>
+<li><strong>T07（K2構文）→ 構文乗り替え：</strong>次のミーム構文が来たら同じフォーマットで差し替え。「構文乗りシリーズ」として定番化。</li>
+<li><strong>T04（サルファーキューブ）→ 新MOBスポーツシリーズ：</strong>ゴルフ→サッカー→ボウリング→カーリング。新MOBの物理を使い倒す。</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">よふかしくらぶ！トレンド特化台本 — 全10本 — 2026.04</div>
+
+</body>
+</html>

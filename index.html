@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI ANIME — 台本ポータル</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.7;overflow:hidden;height:100vh}
+
+/* layout */
+.shell{display:flex;height:100vh}
+.sidebar{width:280px;min-width:280px;background:#0c0c16;border-right:1px solid #1a1a2e;display:flex;flex-direction:column;overflow:hidden}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+/* sidebar header */
+.sb-head{padding:20px 18px 14px;border-bottom:1px solid #1a1a2e}
+.sb-head h1{font-size:18px;font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,#f87171,#facc15,#34d399,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sb-head p{color:#555;font-size:11px;margin-top:4px}
+.stats{display:flex;gap:8px;margin-top:10px}
+.stat{flex:1;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:8px 10px;text-align:center}
+.stat .num{font-size:20px;font-weight:900;color:#fff}
+.stat .lbl{font-size:10px;color:#555;margin-top:2px}
+
+/* search */
+.search{padding:12px 14px;border-bottom:1px solid #1a1a2e}
+.search input{width:100%;background:#10101c;border:1px solid #1e1e2e;border-radius:8px;padding:8px 12px;color:#eee;font-size:13px;outline:none;transition:.2s}
+.search input:focus{border-color:#60a5fa}
+.search input::placeholder{color:#444}
+
+/* nav groups */
+.sb-nav{flex:1;overflow-y:auto;padding:8px 0}
+.sb-nav::-webkit-scrollbar{width:4px}
+.sb-nav::-webkit-scrollbar-thumb{background:#222;border-radius:4px}
+.grp{margin-bottom:4px}
+.grp-head{display:flex;align-items:center;gap:8px;padding:8px 16px;cursor:pointer;user-select:none;transition:.15s}
+.grp-head:hover{background:#12121e}
+.grp-head .arrow{color:#444;font-size:10px;transition:.2s;width:12px}
+.grp-head.open .arrow{transform:rotate(90deg)}
+.grp-head .g-title{font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.04em}
+.grp-head .g-count{font-size:10px;color:#444;margin-left:auto}
+.grp-items{display:none;padding:0 8px 4px}
+.grp-head.open+.grp-items{display:block}
+
+/* nav items */
+.nav-item{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;cursor:pointer;transition:.12s;font-size:13px;color:#888}
+.nav-item:hover{background:#16162a;color:#ccc}
+.nav-item.active{background:rgba(96,165,250,.1);color:#60a5fa}
+.nav-item .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.nav-item .name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-item .cnt{font-size:10px;color:#444;flex-shrink:0}
+
+/* main toolbar */
+.toolbar{display:flex;align-items:center;gap:10px;padding:10px 20px;border-bottom:1px solid #1a1a2e;background:#0a0a14}
+.toolbar .title{font-size:14px;font-weight:700;color:#ccc;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toolbar .badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(96,165,250,.12);color:#60a5fa}
+.tb-btn{background:#12121e;border:1px solid #1e1e2e;color:#888;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;transition:.15s}
+.tb-btn:hover{background:#1a1a2e;color:#fff}
+
+/* iframe viewer */
+.viewer{flex:1;position:relative}
+.viewer iframe{width:100%;height:100%;border:none;background:#0a0a12}
+
+/* welcome screen */
+.welcome{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:#333}
+.welcome h2{font-size:28px;font-weight:900;background:linear-gradient(135deg,#f87171,#facc15,#34d399,#38bdf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.welcome p{font-size:13px;color:#444;max-width:400px;text-align:center}
+
+/* cards grid (all-view) */
+.all-view{flex:1;overflow-y:auto;padding:24px;display:none}
+.all-view::-webkit-scrollbar{width:6px}
+.all-view::-webkit-scrollbar-thumb{background:#222;border-radius:4px}
+.all-view h2{font-size:18px;font-weight:800;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e;color:#ccc}
+.all-view h2:first-child{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.card{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:10px;padding:14px 16px;cursor:pointer;transition:.2s}
+.card:hover{border-color:#333;transform:translateY(-1px)}
+.card .c-title{font-size:13px;font-weight:700;color:#ddd;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .c-meta{display:flex;gap:4px;flex-wrap:wrap}
+.card .c-tag{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600}
+
+/* color dots */
+.d-mc{background:#ef4444}.d-v2{background:#f59e0b}.d-bugs{background:#22c55e}.d-legends{background:#3b82f6}.d-best{background:#a855f7}
+.d-yof{background:#67e8f9}.d-viral{background:#f87171}.d-lat{background:#c084fc}
+
+/* responsive */
+@media(max-width:768px){
+  .sidebar{width:240px;min-width:240px}
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<div class="sb-head">
+<h1>AI ANIME 台本ポータル</h1>
+<p>全台本を一箇所で管理・閲覧</p>
+<div class="stats">
+<div class="stat"><div class="num" id="total-count">196</div><div class="lbl">台本</div></div>
+<div class="stat"><div class="num">10</div><div class="lbl">ファイル</div></div>
+</div>
+</div>
+
+<div class="search">
+<input type="text" id="search" placeholder="台本を検索...">
+</div>
+
+<nav class="sb-nav" id="nav">
+
+<!-- よふかしくらぶ -->
+<div class="grp">
+<div class="grp-head open" onclick="toggleGrp(this)">
+<span class="arrow">&#9654;</span>
+<span class="g-title">よふかしくらぶ！</span>
+<span class="g-count">57</span>
+</div>
+<div class="grp-items">
+<div class="nav-item" data-file="scripts-yofukashi.html" onclick="loadFile(this)">
+<span class="dot" style="background:#67e8f9"></span>
+<span class="name">本編</span>
+<span class="cnt">15</span>
+</div>
+<div class="nav-item" data-file="scripts-yofukashi-viral.html" onclick="loadFile(this)">
+<span class="dot" style="background:#f87171"></span>
+<span class="name">バイラル</span>
+<span class="cnt">20</span>
+</div>
+<div class="nav-item" data-file="scripts-yofukashi-lateral.html" onclick="loadFile(this)">
+<span class="dot" style="background:#c084fc"></span>
+<span class="name">ラテラル</span>
+<span class="cnt">12</span>
+</div>
+<div class="nav-item" data-file="scripts-yofukashi-trend.html" onclick="loadFile(this)">
+<span class="dot" style="background:#fbbf24"></span>
+<span class="name">トレンド特化</span>
+<span class="cnt">10</span>
+</div>
+</div>
+</div>
+
+<!-- 既存台本 -->
+<div class="grp">
+<div class="grp-head open" onclick="toggleGrp(this)">
+<span class="arrow">&#9654;</span>
+<span class="g-title">既存台本</span>
+<span class="g-count">139</span>
+</div>
+<div class="grp-items">
+<div class="nav-item" data-file="scripts-minecraft.html" onclick="loadFile(this)">
+<span class="dot" style="background:#ef4444"></span>
+<span class="name">Minecraft</span>
+<span class="cnt">30</span>
+</div>
+<div class="nav-item" data-file="scripts-v2.html" onclick="loadFile(this)">
+<span class="dot" style="background:#f59e0b"></span>
+<span class="name">V2</span>
+<span class="cnt">38</span>
+</div>
+<div class="nav-item" data-file="scripts-bugs.html" onclick="loadFile(this)">
+<span class="dot" style="background:#22c55e"></span>
+<span class="name">Bugs / Chaos / Viral / NPC</span>
+<span class="cnt">31</span>
+</div>
+<div class="nav-item" data-file="scripts-minecraft-legends.html" onclick="loadFile(this)">
+<span class="dot" style="background:#3b82f6"></span>
+<span class="name">Minecraft Legends</span>
+<span class="cnt">20</span>
+</div>
+<div class="nav-item" data-file="scripts-best20.html" onclick="loadFile(this)">
+<span class="dot" style="background:#a855f7"></span>
+<span class="name">Best 20</span>
+<span class="cnt">20</span>
+</div>
+</div>
+</div>
+
+<!-- ドキュメント -->
+<div class="grp">
+<div class="grp-head" onclick="toggleGrp(this)">
+<span class="arrow">&#9654;</span>
+<span class="g-title">ドキュメント</span>
+<span class="g-count">2</span>
+</div>
+<div class="grp-items">
+<div class="nav-item" data-file="plan.html" onclick="loadFile(this)">
+<span class="dot" style="background:#64748b"></span>
+<span class="name">企画書</span>
+<span class="cnt"></span>
+</div>
+<div class="nav-item" data-file="trend-research-2026-03.html" onclick="loadFile(this)">
+<span class="dot" style="background:#64748b"></span>
+<span class="name">トレンドリサーチ 2026.03</span>
+<span class="cnt"></span>
+</div>
+</div>
+</div>
+
+</nav>
+</div>
+
+<!-- MAIN AREA -->
+<div class="main">
+<div class="toolbar" id="toolbar">
+<span class="title" id="tb-title">ファイルを選択してください</span>
+<button class="tb-btn" id="btn-new-tab" onclick="openInNewTab()" style="display:none">新しいタブで開く &#8599;</button>
+</div>
+
+<!-- welcome -->
+<div class="welcome" id="welcome">
+<h2>186 Scripts</h2>
+<p>左のサイドバーからファイルを選んでください。<br>全台本をこの画面から閲覧できます。</p>
+</div>
+
+<!-- iframe viewer -->
+<div class="viewer" id="viewer" style="display:none">
+<iframe id="frame" sandbox="allow-same-origin allow-scripts"></iframe>
+</div>
+</div>
+
+</div>
+
+<script>
+// toggle sidebar groups
+function toggleGrp(el){
+  el.classList.toggle('open');
+}
+
+// load file into iframe
+let currentFile = null;
+function loadFile(el){
+  // update active state
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  el.classList.add('active');
+
+  const file = el.dataset.file;
+  currentFile = file;
+
+  // update toolbar
+  document.getElementById('tb-title').textContent = el.querySelector('.name').textContent + ' — ' + file;
+  document.getElementById('btn-new-tab').style.display = '';
+
+  // show viewer, hide welcome
+  document.getElementById('welcome').style.display = 'none';
+  document.getElementById('viewer').style.display = 'flex';
+
+  // load iframe
+  document.getElementById('frame').src = file;
+}
+
+// open in new tab
+function openInNewTab(){
+  if(currentFile) window.open(currentFile, '_blank');
+}
+
+// search
+document.getElementById('search').addEventListener('input', function(e){
+  const q = e.target.value.toLowerCase();
+  document.querySelectorAll('.nav-item').forEach(item=>{
+    const name = item.querySelector('.name').textContent.toLowerCase();
+    const file = item.dataset.file.toLowerCase();
+    const match = !q || name.includes(q) || file.includes(q);
+    item.style.display = match ? '' : 'none';
+  });
+  // auto-open groups with matches
+  if(q){
+    document.querySelectorAll('.grp-head').forEach(h=>{
+      const items = h.nextElementSibling;
+      const hasVisible = items && [...items.children].some(c=>c.style.display !== 'none');
+      if(hasVisible) h.classList.add('open');
+    });
+  }
+});
+
+// keyboard shortcut: Ctrl+K to focus search
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey||e.metaKey) && e.key==='k'){
+    e.preventDefault();
+    document.getElementById('search').focus();
+  }
+});
+</script>
+
+</body>
+</html>

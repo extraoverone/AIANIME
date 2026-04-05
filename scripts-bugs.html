@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイクラバグアニメ台本 — Seedance2用</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0f0f0f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:16px;line-height:1.8}
+nav{position:sticky;top:0;z-index:99;background:rgba(15,15,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid #2a2a2a;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#777;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;transition:.15s;text-decoration:none}
+nav a:hover{color:#fff;background:#1f1f1f}
+.hero{text-align:center;padding:48px 24px 24px}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:900;margin-bottom:8px}
+.hero p{color:#888;font-size:15px;max-width:700px;margin:0 auto}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+h2{font-size:20px;font-weight:800;margin:48px 0 12px;padding-bottom:12px;border-bottom:2px solid #333}
+h3{font-size:17px;font-weight:700;color:#fff;margin:0 0 8px}
+h4{font-size:14px;font-weight:700;margin:16px 0 6px;color:#999;text-transform:uppercase;letter-spacing:.08em}
+
+.sc{background:#181818;border:1px solid #262626;border-radius:12px;margin:20px 0;overflow:hidden}
+.sc-head{padding:20px 22px 14px;border-bottom:1px solid #222}
+.sc-head h3{margin-bottom:6px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.tag{padding:2px 8px;border-radius:5px;font-size:11px;font-weight:700}
+.t-bug{background:rgba(239,68,68,.12);color:#f87171}
+.t-hor{background:rgba(168,85,247,.12);color:#c084fc}
+.t-fun{background:rgba(34,197,94,.12);color:#4ade80}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-seed{background:rgba(56,189,248,.12);color:#38bdf8}
+
+.hook{background:#16161e;border-left:3px solid #ef4444;padding:10px 16px;font-size:14px;color:#d4d4d4;margin-bottom:4px}
+.hook b{color:#fca5a5}
+
+/* SCENE CARD */
+.scenes{padding:0 22px 22px}
+.s{background:#111;border:1px solid #222;border-radius:10px;padding:18px 20px;margin:12px 0}
+.s-label{font-size:11px;font-weight:800;color:#8b5cf6;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.s-desc{font-size:15px;color:#ccc;margin-bottom:10px;line-height:1.8}
+.s-prompt{background:#0a0a14;border:1px solid #1e1e3a;border-radius:8px;padding:14px 16px;margin-top:8px}
+.s-prompt h5{font-size:11px;font-weight:800;color:#38bdf8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.s-prompt p{font-size:13px;color:#7dd3fc;line-height:1.8;font-family:'Courier New',monospace}
+.s-cam{font-size:13px;color:#888;margin-top:8px;font-style:italic}
+
+.t-chaos{background:rgba(234,179,8,.15);color:#facc15}
+
+/* DUAL PROMPT */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media(max-width:700px){.dual{grid-template-columns:1fr}}
+.p-nb{background:#0a140a;border:1px solid #1a3a1a;border-radius:8px;padding:12px 14px}
+.p-nb h5{font-size:11px;font-weight:800;color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.p-nb h5::before{content:'🖼 '}
+.p-nb p{font-size:12px;color:#86efac;line-height:1.7;font-family:'Courier New',monospace;word-break:break-word}
+.p-sd{background:#0a0a14;border:1px solid #1e1e3a;border-radius:8px;padding:12px 14px}
+.p-sd h5{font-size:11px;font-weight:800;color:#c084fc;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.p-sd h5::before{content:'🎬 '}
+.p-sd p{font-size:12px;color:#d8b4fe;line-height:1.7;font-family:'Courier New',monospace;word-break:break-word}
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:18px 22px;margin:20px 0}
+.note h4{color:#60a5fa;margin-bottom:6px}
+.note p,.note li{font-size:14px;color:#93c5fd;line-height:1.8}
+.note ul{padding-left:18px;margin-top:4px}
+
+.footer{text-align:center;padding:40px 0;color:#555;font-size:13px;border-top:1px solid #1a1a1a}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#top">TOP</a>
+<a href="#b01">チャンク消失</a>
+<a href="#b02">X-ray</a>
+<a href="#b03">ボート飛行</a>
+<a href="#b04">エンティティ</a>
+<a href="#b05">奈落落下</a>
+<a href="#b06">TNT砲</a>
+<a href="#b07">ネザーベッド</a>
+<a href="#b08">ピストン増殖</a>
+<a href="#b09">チキンジョッキー</a>
+<a href="#b10">浮遊砂</a>
+<a href="#b11">ポータル座標</a>
+<a href="#b12">ウォーデン壁抜け</a>
+<a href="#s-chaos" style="color:#facc15">🌀 NOT SAFE系</a>
+<a href="#s-viral" style="color:#f87171">🔥 バズ型</a>
+<a href="#s-npc" style="color:#a78bfa">👁 NPC視点</a>
+</nav>
+
+<div class="hero" id="top">
+<h1>マイクラバグアニメ台本集</h1>
+<p>Not Safe系バグ演出。各シーンにSeedance2用プロンプト付き。<br>青いボックスの英語プロンプトをそのままSeedance2に投入可能。</p>
+</div>
+
+<div class="wrap">
+
+<div class="note">
+<h4>Seedance2への投入方法</h4>
+<ul>
+<li>各シーンの <span style="color:#38bdf8">SEEDANCE2 PROMPT</span> をコピーしてそのまま使う</li>
+<li>1シーン＝1クリップ（3〜5秒）として生成→繋げて1本に</li>
+<li>スタイル統一のため全クリップに「anime style, minecraft world, detailed lighting」を付加</li>
+<li>キャラの一貫性は同じseed値 or 参照画像で保つ</li>
+<li>生成後CapCut/DaVinciで繋ぎ、SE・BGM・ナレーションを追加</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b01">BUG #01：チャンク消失 — 世界に穴が開く</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-hor">ホラー</span><span class="tag t-time">40秒</span></div>
+<h3>「歩いていたら世界に穴が開いた」</h3>
+<div class="hook"><b>フック:</b> 美しい草原を歩く主人公。足元のブロックが突然消え、16×16の虚無が出現。奈落が見える</div>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 平和な歩行（3秒）</div>
+<div class="s-desc">晴天のマイクラ草原。主人公（青い鎧の冒険者、茶髪ショート、剣を背負っている）がのんびり歩いている。花が揺れ、蝶が飛ぶ。遠くに村が見える。表情は穏やか</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft blocky grass plains, bright sunny day, a young male adventurer with brown short hair and blue diamond armor walking calmly from left to right, flowers swaying in wind, butterflies, a village visible in far background, warm golden lighting, peaceful atmosphere, wide shot tracking the character, smooth camera follow</p>
+</div>
+<div class="s-cam">カメラ：横移動トラッキング。キャラの腰の高さ。歩く速度に合わせてゆっくり右にパン</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 違和感（2秒）</div>
+<div class="s-desc">主人公が立ち止まる。足元を見る。地面のテクスチャが一瞬チラつく（グリッチエフェクト）。「ん？」という表情。眉をひそめる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft grass ground close-up, a male adventurer in blue armor stopping and looking down at his feet with confused expression, ground texture glitching and flickering briefly, subtle digital distortion effect on the grass blocks, medium shot from front, slight camera tilt down</p>
+</div>
+<div class="s-cam">カメラ：正面バストアップ→足元に少しティルトダウン。グリッチは画面の下1/3だけ</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — チャンク消失（3秒）</div>
+<div class="s-desc">足元のブロックが16×16の正方形で一瞬にして消滅。地面がない。岩盤層まで見える垂直の穴。底に紫色の虚無（void）。主人公が腕をぐるぐる回してバランスを崩す</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, dramatic moment, minecraft world with a massive 16x16 square hole suddenly appearing in the ground, cross-section view showing dirt layers stone layers bedrock and purple void below, a male adventurer in blue armor at the edge flailing arms trying not to fall, shocked wide-eyed expression, camera looking down into the hole, dramatic lighting from above, dust particles rising from the edges</p>
+</div>
+<div class="s-cam">カメラ：俯瞰。穴を見下ろす構図。主人公はフレームの端で腕を回している。ダスト粒子が舞う</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 連鎖崩壊（4秒）</div>
+<div class="s-desc">穴の端から隣のチャンクも消え始める。ドミノ式に草原が消えていく。主人公が走って逃げる。後ろからどんどん消えていく。村の建物も半分消える</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft world collapsing in chunks, multiple 16x16 square sections of ground disappearing in sequence like dominos, a male adventurer sprinting desperately away from camera, ground vanishing behind him revealing void beneath, a village in background with buildings being cut in half by chunk borders, panic and chaos, dynamic camera chasing from behind, speed lines, dramatic red-orange sunset lighting</p>
+</div>
+<div class="s-cam">カメラ：背後から追いかけ。走る主人公の背中＋消えていく地面。スピード感。揺れあり</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — 孤立（3秒）</div>
+<div class="s-desc">主人公の周り以外すべて消えた。1チャンク分（16×16ブロック）だけが宙に浮いている。周囲は全て虚無。主人公が膝をつき、果てしない虚無を見下ろす。絶望の表情</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a single small minecraft grass island floating in infinite purple-black void, only 16x16 blocks remaining, a male adventurer in blue armor kneeling at the edge looking down into the abyss with despair, wind blowing his hair, dramatic lighting from above like a spotlight, vast emptiness surrounding him, cinematic wide shot, melancholic atmosphere</p>
+</div>
+<div class="s-cam">カメラ：超ワイド。小さな島と巨大な虚無の対比。真上からのスポットライト的な光</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 6 — 最後の1ブロック（3秒）</div>
+<div class="s-desc">足元の島も端から消え始める。主人公が立ち上がる。最後の1ブロックに立つ。下は虚無。カメラが引いていき、暗転</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, extreme wide shot, a single minecraft grass block floating in infinite dark void, a tiny figure of a male adventurer standing alone on it, the block starting to crack and glow purple from below, camera slowly zooming out making the figure smaller and smaller, darkness consuming the frame, fade to black</p>
+</div>
+<div class="s-cam">カメラ：ドリーアウト（引き）。どんどん小さくなるキャラと1ブロック。暗転</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b02">BUG #02：X-rayグリッチ — 地面が透けて見える</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">コメディ→ホラー</span><span class="tag t-time">35秒</span></div>
+<h3>「壁にめり込んだら全部見えた。見えてはいけないものまで」</h3>
+<div class="hook"><b>フック:</b> ピストンに押されて壁にめり込む→地下の全てが透視できる。ダイヤ、溶岩、そして……暗闇に何かがいる</div>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — ピストン事故（2秒）</div>
+<div class="s-desc">地下のレッドストーン回路を作業中の主人公。ピストンが誤作動して主人公を石壁にめり込ませる。体が壁に半分埋まる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, underground minecraft stone brick room, a male adventurer accidentally pushed by a piston mechanism into a stone wall, his upper body sticking out of the wall while lower half is embedded in stone, surprised comedic expression, redstone dust and pistons visible, torch lighting, dust cloud from impact, medium shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 透視発動（3秒）</div>
+<div class="s-desc">壁の中から見た世界。全てのブロックが半透明になり、X-ray状態。鉱石が光って見える。ダイヤ鉱石が青く、金が黄色く、レッドストーンが赤く光る。主人公の目が輝く「全部見える！」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, x-ray vision POV through transparent minecraft blocks, all stone blocks are semi-transparent glass-like, diamond ore glowing bright blue, gold ore glowing yellow, redstone ore glowing red, lava pools visible as orange glow, vast underground cave systems revealed, the adventurer's excited face reflected in the transparent blocks, neon wireframe aesthetic, first person perspective</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 宝の発見（2秒）</div>
+<div class="s-desc">ダイヤ鉱脈を発見。巨大な青い塊が地下に。主人公が興奮して「ここ掘る！」。目がエメラルドマークになる（ギャグ演出）</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, x-ray underground view, massive cluster of diamond ore blocks glowing brilliant blue through transparent stone, a male adventurer pressing his face against transparent wall with dollar signs in his eyes, comedic greedy expression, blue light illuminating his face, sparkling effects around diamonds, close-up shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 異変（3秒）</div>
+<div class="s-desc">もっと深く透視する。岩盤層の下。暗い。何もないはずの虚無に……何かがうごめいている。黒い影。人型。ゆっくり動いている。複数いる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, x-ray vision looking deep underground past bedrock layer into dark void below, through transparent blocks, dark shadowy humanoid figures slowly moving in the void beneath bedrock, multiple shadow entities, the adventurer's expression changing from excitement to horror, blue x-ray tint transitioning to dark purple, unsettling atmosphere, the shadows seem to be looking up at the viewer, medium shot of adventurer's terrified face</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — 目が合う（2秒）</div>
+<div class="s-desc">影の1つがこちらを向く。真っ白な目が2つ光る。X-ray越しに目が合った。主人公が叫ぶ。ピストンが逆に動いて壁から弾き出される。通常視界に戻る。でもさっき見たものが頭から離れない</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, extreme close-up of two glowing white eyes in pitch black void staring directly at camera through transparent minecraft blocks, x-ray vision shattering like glass, the male adventurer being ejected from the wall by a piston, tumbling onto the stone floor, terrified screaming expression, screen distortion and glitch effects as x-ray vision breaks, dramatic lighting shift from blue to normal warm torch light, impact dust cloud</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 6 — 余韻（2秒）</div>
+<div class="s-desc">主人公が床に座り込んでいる。壁は普通の石。何も見えない。でも壁に耳を当てると……微かに「ゴゴゴ」と何かが動く音。主人公の目が見開く。暗転</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a male adventurer sitting on stone floor in underground room pressing his ear against a stone wall, torch light flickering, his eyes wide with fear, subtle purple glow seeping through cracks in the stone wall, dust particles in torchlight, claustrophobic atmosphere, close-up shot of his terrified face against the wall, fade to black</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b03">BUG #03：ボート飛行バグ — 宇宙まで飛んだ</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">コメディ</span><span class="tag t-time">30秒</span></div>
+<h3>「ボートに乗ったら成層圏まで飛んだ」</h3>
+<div class="hook"><b>フック:</b> 普通にボートに乗ろうとしたら物理エンジンが暴走。ボートごと空に射出され、雲を突き抜け、ワールドの高さ限界を超える</div>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 乗船（2秒）</div>
+<div class="s-desc">湖のほとり。主人公がボートを水面に置く。普通に乗り込もうとする。足を一歩踏み入れた瞬間――</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft lake shore, a male adventurer in blue armor placing a wooden boat on calm water surface, stepping one foot into the boat, peaceful lake with lily pads, mountains in background, clear sky, medium shot, the boat starting to vibrate unnaturally, subtle glitch effect on the water surface</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 射出（2秒）</div>
+<div class="s-desc">ボートが爆発的に上昇。水柱が立つ。主人公が「うわあああ!!!」と叫びながらボートにしがみつく。地面が猛スピードで離れていく</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a wooden minecraft boat launching vertically into the sky like a rocket with massive water splash below, a male adventurer clinging to the boat screaming with mouth wide open, speed lines, ground rapidly shrinking below, trees and buildings becoming tiny, dynamic low angle shot looking up, motion blur on the edges, comedic exaggerated expression</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 雲突破（2秒）</div>
+<div class="s-desc">雲の層を突き破る。水蒸気が顔に当たる。雲の上は美しい夕焼け。でも主人公はパニック顔。ボートは回転し始める</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a wooden boat breaking through a layer of white minecraft clouds going upward, water vapor and cloud particles scattering, above the clouds is a beautiful orange sunset sky, the male adventurer holding onto spinning boat with terrified face, his hair and cape whipping in the wind, the world far below visible through cloud gaps, dramatic lighting from sunset, rotating camera</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 高度限界（3秒）</div>
+<div class="s-desc">空がだんだん暗くなる。星が見え始める。世界の端が見える（ブロック世界の球面ではなく平面の端）。ボートの速度が落ち始める。最高点。一瞬の無重力</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, extreme high altitude above minecraft world, sky transitioning from blue to dark space with stars appearing, the flat minecraft world visible far below like a map with biomes visible as colored patches, a wooden boat reaching the apex of its flight slowing down, the male adventurer floating slightly off the boat in zero gravity, hair floating upward, serene silent moment, wide cinematic shot, earth-like curve of the block world edge visible</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — 落下開始（2秒）</div>
+<div class="s-desc">重力が戻る。ボートが反転。真っ逆さまに落ち始める。主人公の顔アップ。「あ。」という表情。風で頬が歪む。地面が猛スピードで近づいてくる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a male adventurer falling headfirst from extreme height in minecraft sky, the boat flipping upside down, his face in extreme close-up with cheeks distorted by wind, eyes wide, mouth open in a small "ah", the ground rapidly approaching below, terminal velocity wind effects, speed lines converging toward the ground, dramatic foreshortening perspective</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 6 — 着水（2秒）</div>
+<div class="s-desc">奇跡的に元の湖に着水。巨大な水柱。ボートは粉砕。主人公は水面に浮かんでぼーっとしている。ハート半分。「……二度と乗らない」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, massive water splash impact in a minecraft lake, wooden boat shattering into pieces, the male adventurer floating face-up on the water surface with dazed spiral eyes, half a heart icon floating above his head, lily pads scattered by the impact, water droplets still falling, the same peaceful lake from scene 1, comedic contrast, wide shot, golden hour lighting</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b04">BUG #04：エンティティ詰め込み — 1ブロックに1000匹</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">カオス</span><span class="tag t-time">30秒</span></div>
+<h3>「1ブロックに鶏を1000匹詰めたら世界がバグった」</h3>
+<div class="hook"><b>フック:</b> 繁殖させすぎた鶏が1ブロックに圧縮。開けた瞬間、白い爆発。羽と卵の嵐。画面がフリーズ</div>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 養鶏場（2秒）</div>
+<div class="s-desc">1×1の穴に大量の鶏が詰まっている。白い塊にしか見えない。キメラのように鶏が融合。鳴き声が重なって不協和音</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft scene, a 1x1 hole in the ground packed impossibly full with hundreds of white chickens compressed together, feathers sticking out everywhere, chicken heads poking out at random angles, a mass of white feathers and orange beaks, the male adventurer looking down at it with nervous sweat drop, overhead shot looking into the hole, comedic horror</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 解放（2秒）</div>
+<div class="s-desc">主人公がブロックを1つ壊す。鶏が爆発的に噴出。白い津波。主人公が吹き飛ぶ。画面が白い羽毛で埋まる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, an explosion of hundreds of minecraft chickens erupting upward from a 1x1 hole like a white geyser, feathers and eggs flying everywhere filling the entire screen, the male adventurer being blown backward by the force of chickens, his arms flailing, chickens scattered across the sky like fireworks, comedic chaos, dynamic upward camera angle, white feathers filling the frame</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 鶏の海（3秒）</div>
+<div class="s-desc">地面が鶏で埋まる。草原が見えない。白い海。鶏の上に鶏が乗り、さらにその上に鶏。鳴き声の壁。主人公が鶏に埋もれて手だけ出ている</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a minecraft grass plains completely covered in a sea of white chickens stretching to the horizon, chickens stacked on top of each other three layers deep, only the adventurer's hand visible sticking out from the chicken pile waving for help, eggs rolling everywhere, feathers floating in the air like snow, absurd comedic scene, wide panoramic shot, warm sunset lighting making the white chickens glow</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — フリーズ（2秒）</div>
+<div class="s-desc">画面がカクつき始める。FPSカウンターが「3…2…1…」。画面が完全にフリーズ。ノイズが走る。「応答なし」のウィンドウが浮かぶ</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style breaking the fourth wall, the minecraft chicken scene freezing in place, digital lag artifacts and screen tearing effects, a "Not Responding" Windows dialog box appearing over the frozen anime scene, FPS counter showing "1 FPS" in corner, the entire image becoming pixelated and glitchy, static noise overlay, the frozen scene showing hundreds of chickens and a buried adventurer, meta-humor</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b05">BUG #05：奈落落下 — 岩盤の下に落ちた</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-hor">ホラー</span><span class="tag t-time">35秒</span></div>
+<h3>「岩盤をすり抜けた。底がない世界を、永遠に落ち続ける」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 岩盤到達（2秒）</div>
+<div class="s-desc">Y=0。岩盤層。主人公がエンダーパールを投げる。岩盤の隙間に吸い込まれる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, deep underground minecraft bedrock layer at Y level 0, dark gray-black textured bedrock blocks, a male adventurer throwing a glowing purple ender pearl at a small gap in the bedrock, the pearl phasing through the crack, dim torch lighting, claustrophobic tight space, medium shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — すり抜け（2秒）</div>
+<div class="s-desc">テレポート。体が岩盤をすり抜ける。グリッチエフェクト。紫のパーティクルが散る。気づいたら岩盤の下にいる</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer's body phasing through solid bedrock blocks with purple ender pearl teleportation particles, glitch distortion effect on his body as he passes through, half his body above bedrock half below, digital artifact visual effects, purple sparkles, the moment of transition between solid ground and void below, close-up shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 虚無の落下（4秒）</div>
+<div class="s-desc">岩盤の下。虚無。真っ暗な紫黒の空間を永遠に落下。上を見上げると岩盤の底面がどんどん離れていく。周囲に何もない。音がない。風もない。ただ落ちている</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a male adventurer falling through infinite dark purple-black void beneath minecraft bedrock, looking up at the receding bedrock ceiling above getting smaller, no ground below only endless darkness, his hair and cape floating upward from the fall, expression of existential dread, purple void fog, particles of light drifting past like stars, extremely wide shot making the figure small in vast emptiness, no sound visualization - silence</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — ダメージ開始（2秒）</div>
+<div class="s-desc">Y座標がマイナスに。画面の端が赤く明滅。ハートが1つずつ消える。でも落下は止まらない。死のカウントダウン</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the falling adventurer in void, red damage vignette flashing on screen edges, heart icons depleting one by one floating next to him, Y coordinate text showing negative numbers counting down rapidly, his body flickering red with damage, reaching upward desperately toward the distant bedrock ceiling, dramatic red and purple lighting, close-up of his agonized face</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — 死亡メッセージ（2秒）</div>
+<div class="s-desc">最後のハートが消える。主人公の体がパーティクルに分解。画面中央に「◯◯ fell out of the world」。赤い文字。暗転。無音</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the adventurer's body dissolving into white particles in the dark void, death message text "fell out of the world" appearing in red letters center screen, the particles dispersing into the darkness, the void consuming everything, slow fade to complete black, minimalist final frame, haunting atmosphere</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b06">BUG #06：TNT大砲 — 人間を月まで飛ばす</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">コメディ</span><span class="tag t-time">30秒</span></div>
+<h3>「TNT100個で人間大砲を作った結果」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 建設（2秒）</div>
+<div class="s-desc">巨大なTNT大砲。水流式。TNTが100個並んでいる。主人公がレッドストーン回路を最終調整。ドヤ顔で「準備完了」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a massive minecraft TNT cannon structure made of water channels and 100 TNT blocks arranged in a long barrel shape, redstone circuitry glowing red, the male adventurer standing next to it with a proud smug expression giving thumbs up, dramatic angle from below making the cannon look enormous, sunset lighting, epic engineering feel</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 発射台に立つ（2秒）</div>
+<div class="s-desc">大砲の先端（発射台）に立つ主人公。「3…2…1…」。レバーを引く。遠くでレッドストーンが赤く光り始める。連鎖</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer standing at the front of a massive TNT cannon barrel looking determined, pulling a lever, redstone signal traveling along the cannon like a lit fuse, red light propagating through the circuitry, his cape fluttering, dramatic low angle hero shot, countdown text "3...2...1..." appearing</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 爆発＆射出（3秒）</div>
+<div class="s-desc">100個のTNTが同時爆発。白い閃光。衝撃波で周囲の木が吹き飛ぶ。主人公が砲弾のように空に射出される。ソニックブーム的な衝撃波リング</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, massive explosion of 100 TNT blocks simultaneously, white flash and orange fireball, shockwave ring expanding outward blowing trees apart, the male adventurer launched like a human cannonball straight up into the sky as a tiny dot, sonic boom ring effect in the air, crater formed below, debris and blocks flying everywhere, ultra-dynamic camera from ground looking up, smoke trails</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 宇宙（3秒）</div>
+<div class="s-desc">主人公が宇宙まで到達。マイクラの月（四角い月）が目の前に。主人公がぶつかりそうになる。月に激突して月にクレーターが追加される</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a male adventurer flying through space toward a square minecraft moon, stars in background, the block world visible far below like a flat disc, the adventurer crashing into the moon creating a new square crater on its surface, impact explosion with block debris flying off the moon, comedic pose mid-impact with limbs spread, dramatic space lighting with earth-shine</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — 月面（2秒）</div>
+<div class="s-desc">月の表面。エンドストーン風の四角い地面。主人公がクレーターの中で星を見ている。ぼーっと。「……帰り方がわからない」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer lying in a crater on a square minecraft moon surface made of end-stone-like blocks, looking up at stars and the distant block world below, dazed expression, his armor cracked, a single speech bubble "...how do I get home", peaceful but absurd atmosphere, wide shot of the moon surface, soft starlight</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b07">BUG #07：ネザーベッド爆発 — 寝ようとしたら死んだ</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">仕様</span><span class="tag t-fun">コメディ</span><span class="tag t-time">25秒</span></div>
+<h3>「ネザーで寝ようとしたら核爆発した」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 疲労（2秒）</div>
+<div class="s-desc">ネザーを冒険中の主人公。溶岩の海、ガストの火球をかわしてきた。ボロボロ。「疲れた……寝よ」。ベッドを取り出す</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, minecraft nether dimension, crimson red landscape with lava ocean below, netherrack terrain, a tired and beaten-up male adventurer with damaged blue armor yawning and pulling a red bed from his inventory, exhausted expression with bags under eyes, ghast fireballs in the distant sky, hellish orange-red lighting, medium shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 設置（2秒）</div>
+<div class="s-desc">ベッドをネザーラックの上に置く。赤いベッド。主人公が嬉しそうに布団をめくる。「おやすみ〜」。ベッドに手を伸ばす</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a red minecraft bed placed on netherrack ground in the nether, the male adventurer happily reaching toward the bed with a sleepy smile, about to click on it, warm cozy expression contrasting with the hellish nether background, lava glow in the distance, close-up of his hand reaching for the bed, calm before the storm moment</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 爆発（2秒）</div>
+<div class="s-desc">ベッドに触れた瞬間。白い閃光。TNT10個分の爆発。主人公が吹き飛ぶ。ベッドの破片、羊毛、木材が散乱。クレーターが残る。即死</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, massive explosion from a minecraft bed in the nether, white flash expanding outward, the male adventurer blown away by the blast with ragdoll physics, bed fragments wool and wood planks scattered in the air, large crater in netherrack, fire and smoke, his shocked frozen expression mid-flight, dynamic action shot with radial blur from explosion center</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 死亡画面（2秒）</div>
+<div class="s-desc">赤い「You Died!」画面。死因「◯◯ was killed by [Intentional Game Design]」。主人公の魂が浮かんで「仕様!? バグじゃなくて仕様!?!?」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, red-tinted minecraft death screen with "You Died!" text, death message "[Intentional Game Design]" displayed below, a ghost version of the male adventurer floating above his death point looking outraged pointing at the death message, comedic anger expression with vein pop on forehead, the nether crater still smoking below, split between game UI and anime ghost reaction</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b08">BUG #08：ピストン増殖バグ — 無限ダイヤ</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">コメディ</span><span class="tag t-time">30秒</span></div>
+<h3>「ダイヤが無限に増えるバグを見つけた。――世界の経済が崩壊した」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 発見（2秒）</div>
+<div class="s-desc">レッドストーン回路を組んでいたら偶然ダイヤブロックが2つに分裂。「え？……もう1回やるか」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, underground minecraft redstone laboratory, a piston pushing a diamond block which duplicates into two diamond blocks with sparkle effect, the male adventurer staring in disbelief, then a sly grin forming on his face, redstone dust and repeaters on the floor, torch lighting, medium shot, the duplicated diamond glowing bright blue</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 量産（3秒）</div>
+<div class="s-desc">ピストン回路を巨大化。ダイヤが倍々に増えていく。1→2→4→8→16→32→64→128……部屋がダイヤで埋まる。主人公がダイヤの山の上で高笑い</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a massive underground room overflowing with thousands of duplicated diamond blocks, diamonds piled up to the ceiling, the male adventurer standing on top of a mountain of diamonds laughing maniacally with arms spread wide, blue diamond light reflecting everywhere like a crystal cave, piston machines churning in the background producing more diamonds, over-the-top wealthy villain pose, wide shot from below looking up at him</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 村に持ち込む（2秒）</div>
+<div class="s-desc">村に大量のダイヤを持ち込む。村人に取引を持ちかける。最初は喜ぶ村人たち。しかし……</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a minecraft village square, the male adventurer dumping mountains of diamonds from his inventory in front of stunned villagers, villagers initially excited with sparkling eyes looking at the diamonds, pile of blue diamonds growing larger than the houses, bright daylight, comedic scene of excessive wealth, medium wide shot</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — インフレ崩壊（3秒）</div>
+<div class="s-desc">ダイヤの価値が暴落。村人がパン1個にダイヤ64スタック要求。ダイヤで舗装された道。ダイヤのゴミ箱。ダイヤの便所。価値が石以下に</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a minecraft village in economic collapse, roads paved with diamond blocks, diamond blocks used as trash bins and toilet seats, a villager merchant demanding 64 stacks of diamonds for one bread loaf, the adventurer looking devastated at his worthless diamond fortune, diamonds scattered on the ground like garbage nobody wants, comedic despair, ironic lighting where diamonds look dull and worthless, wide shot of the absurd diamond-covered village</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b09">BUG #09：チキンジョッキー — 鶏に乗った最強ベビーゾンビ</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">仕様</span><span class="tag t-hor">バトル</span><span class="tag t-time">30秒</span></div>
+<h3>「最強の敵は鶏に乗った赤ちゃんだった」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 余裕（2秒）</div>
+<div class="s-desc">フルネザライト装備の主人公。ゾンビの群れを無双中。「雑魚ばっかだな」とドヤ顔</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a powerful male adventurer in full black netherite armor slashing through a horde of minecraft zombies effortlessly, confident smirk on his face, sword swing creating arc of light, zombie particles scattering, nighttime village battle, dynamic action shot, heroic pose</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 出現（2秒）</div>
+<div class="s-desc">遠くから高速で近づく小さな影。コッコッコッコッ……鶏の足音。その上にベビーゾンビが乗っている。異常な速度</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a tiny baby zombie riding on top of a chicken sprinting at incredible speed toward the camera, motion blur from the speed, the chicken's legs moving impossibly fast, the baby zombie holding a golden sword with fierce angry expression, dust trail behind them, dramatic entrance from the darkness, intimidating despite being tiny, low angle shot making them look threatening</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 攻撃（3秒）</div>
+<div class="s-desc">チキンジョッキーが超高速で主人公の足元をすり抜ける。剣が当たらない。小さすぎて攻撃が空振り。ベビーゾンビが足をチクチク攻撃。主人公のHPがゴリゴリ減る</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, intense battle scene, the full-armored adventurer swinging his sword downward but missing the tiny chicken jockey completely, the baby zombie on chicken darting between his legs at high speed slashing his ankles, red damage flash on the adventurer, his frustrated confused expression, speed lines showing the chicken jockey's zigzag movement pattern, heart icons depleting rapidly, comedic action scene, dynamic camera switching between high and low angles</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 敗北（2秒）</div>
+<div class="s-desc">主人公が倒れる。フルネザライト装備が散乱。チキンジョッキーが勝利のポーズ。鶏が卵を産む</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the defeated adventurer lying face-down on the ground, netherite armor pieces scattered around him, the tiny baby zombie on the chicken standing triumphantly on his back in a victory pose, the chicken laying an egg, comedic contrast between the powerful fallen warrior and tiny victorious enemy, spotlight on the chicken jockey, dramatic victory lighting, wide shot</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b10">BUG #10：浮遊する砂 — 重力を忘れた砂</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-fun">コメディ→ホラー</span><span class="tag t-time">25秒</span></div>
+<h3>「砂漠の砂が全部浮いていた。触った瞬間、全部落ちた」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 発見（2秒）</div>
+<div class="s-desc">砂漠。普通に見える。しかし主人公が松明を置いた瞬間、隣の砂ブロックが1個落ちる。「あれ？」</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a minecraft desert biome, the male adventurer placing a torch on sand, one sand block next to it suddenly falling and revealing a dark cave below, surprised expression, desert stretching to the horizon, bright harsh sunlight, medium shot, one small hole in the sand</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 連鎖（3秒）</div>
+<div class="s-desc">連鎖反応。1個の落下が隣を誘発。砂が次々と落ちていく。ドミノ式に砂漠全体が崩壊。下は巨大な空洞。主人公が全力で走る</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, massive chain reaction of sand blocks falling in a minecraft desert, domino effect spreading outward from one point, hundreds of sand blocks cascading into a massive underground cave system below, the adventurer sprinting desperately across collapsing sand, the ground disappearing behind him, dust clouds rising, dramatic wide aerial shot showing the expanding circle of collapse, action movie pacing</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 全崩壊（2秒）</div>
+<div class="s-desc">砂漠全体が落下。砂の雨。下の空洞が露出。そこにはスポナー部屋、廃坑、溶岩湖……全部つながっていた</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, entire minecraft desert collapsed revealing a massive underground world below, sand still falling like rain into the cavern, exposed dungeon spawners, abandoned mineshafts with wooden supports, lava lakes glowing orange at the bottom, the adventurer clinging to the last remaining sand block at the edge looking down at the revealed underground world, vertigo-inducing downward perspective, epic scale revelation</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b11">BUG #11：ネザーポータル座標ズレ — 帰ったら知らない場所</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-hor">ホラー</span><span class="tag t-time">30秒</span></div>
+<h3>「ネザーから帰ったら家がない。知らない場所。しかも深海の底」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 帰還（2秒）</div>
+<div class="s-desc">ネザーポータルをくぐる。紫の渦。いつもの帰還演出</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, a male adventurer stepping into a glowing purple nether portal, swirling purple vortex effect engulfing him, purple particles, obsidian frame, nether landscape behind him, transitional moment, close-up of him entering the portal with confident expression</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 異変（2秒）</div>
+<div class="s-desc">ポータルを出る。暗い。水の音。家じゃない。見回すと……水中。海底に新しいポータルが生成されている。水圧。泡。溺れ始める</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer emerging from a nether portal that has generated underwater on the ocean floor, dark deep ocean water surrounding him, bubbles rising from his mouth, panicked drowning expression, the purple portal glow illuminating dark water and ocean floor, kelp and fish swimming past, claustrophobic underwater darkness, his armor pulling him down, desperate reaching upward toward distant surface light</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 浮上（3秒）</div>
+<div class="s-desc">必死に泳いで水面へ。息を吸う。周囲を見渡す。海しかない。どこまでも海。陸が見えない。座標を確認「X: 48000 Z: -32000」。家からめちゃくちゃ遠い</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer breaking through ocean surface gasping for air, looking around frantically in all directions, nothing but endless dark ocean stretching to every horizon, no land visible anywhere, coordinate text floating "X: 48000 Z: -32000" in red warning color, his desperate hopeless expression treading water, sunset creating ominous orange reflection on the infinite ocean, wide aerial shot showing tiny figure in vast ocean</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 孤独（2秒）</div>
+<div class="s-desc">夜になる。海の上で1人。月明かりだけ。下から何かの影が近づいてくる。ガーディアンの目が光る。暗転</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, nighttime open ocean, the adventurer floating alone in dark water under moonlight, a large ominous shadow rising from deep below him, the single glowing orange eye of an elder guardian visible in the dark water beneath his feet, his legs dangling vulnerably, terrified looking down, bioluminescent particles in the water, moonlight creating a spotlight on the lone figure, horror atmosphere, fade to black</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="b12">BUG #12：ウォーデンの壁抜け — 逃げ場がない</h2>
+
+<div class="sc">
+<div class="sc-head">
+<div class="tags"><span class="tag t-bug">バグ</span><span class="tag t-hor">ホラー</span><span class="tag t-time">35秒</span></div>
+<h3>「壁の向こうは安全だと思った。ウォーデンが壁を抜けてきた」</h3>
+</div>
+<div class="scenes">
+
+<div class="s">
+<div class="s-label">Scene 1 — 逃走（2秒）</div>
+<div class="s-desc">ディープダーク。ウォーデンに追われる主人公。全力で走る。スカルクを踏みながら。咆哮が背後から</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, dark deep dark biome underground, the male adventurer sprinting through sculk-covered corridors in terror, a massive warden figure chasing behind him in the darkness, sculk sensors activating as he runs over them glowing blue, warden's chest glowing with soul heartbeat, horror chase scene, shaky camera from behind the runner, dark blue-black lighting with sculk bioluminescence</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 2 — 壁で遮断（2秒）</div>
+<div class="s-desc">丸石で壁を3重に建てる。バリケード。息を切らせて壁にもたれる。「ここまでは来れないだろ……」。壁の向こうでウォーデンの足音が止まる。安堵の笑み</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the male adventurer leaning against a thick triple-layer cobblestone wall he just built, panting heavily, relieved smile, sweat drops, torch light on his side, the dark corridor on the other side of the wall where the warden was, silence, his hand on his chest catching breath, medium close-up shot, warm torch light vs dark background</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 3 — 壁に亀裂（3秒）</div>
+<div class="s-desc">壁にヒビが入る。ドン。またヒビ。ドン。ウォーデンが壁を殴っている。ブロックが揺れる。しかしそれは破壊音ではなく……壁を"通過"する音</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, cracks appearing on the cobblestone wall from impacts, dust falling from ceiling, each impact creating a booming sound visualized as shockwave ripples, the adventurer's smile fading to horror as he sees the wall glitching, dark tendrils of the warden's arm starting to phase through the solid wall like a ghost, digital glitch effect where the warden's body intersects the blocks, the warden's eyeless face emerging through solid stone, extreme horror, close-up of the wall with the face pushing through</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 4 — 壁抜け（3秒）</div>
+<div class="s-desc">ウォーデンの巨体が壁をすり抜けて出現。ブロックを無視。物理法則が通用しない。主人公の目の前に立つ。胸のスカルクが脈打つ。壁は一切壊れていない――通過しただけ</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the massive warden fully emerged through the solid cobblestone wall which is still completely intact behind it, the warden standing directly in front of the terrified adventurer in a small room, warden's huge dark body towering over him, soul heartbeat glowing in its chest, the adventurer backed against the opposite wall with nowhere to run, extreme close-up of the warden's eyeless face inches from the adventurer, claustrophobic framing, dark teal and black lighting</p>
+</div>
+</div>
+
+<div class="s">
+<div class="s-label">Scene 5 — ソニックブーム（2秒）</div>
+<div class="s-desc">ウォーデンが咆哮。ソニックブーム。至近距離。主人公が壁ごと吹き飛ぶ。暗転</div>
+<div class="s-prompt">
+<h5>Seedance2 Prompt</h5>
+<p>anime style, the warden opening its massive mouth unleashing a sonic boom shockwave at point blank range, visible sound wave distortion warping the air, the adventurer and cobblestone wall behind him shattering and flying backward, extreme impact frame with radial blur, the warden's chest flare at maximum brightness, screen shake effect, instant cut to black after the impact frame</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<div class="note" style="margin-top:48px">
+<h4>Seedance2 運用Tips</h4>
+<ul>
+<li><b>スタイル統一：</b>全プロンプトの冒頭に「anime style, minecraft blocky world」を入れること</li>
+<li><b>キャラ統一：</b>参照画像（リファレンス）を1枚用意し、全クリップで同じ顔・装備に</li>
+<li><b>繋ぎ：</b>各クリップ3〜5秒で生成 → CapCut/DaVinciで繋ぐ。トランジションはカットorフェード</li>
+<li><b>SE追加：</b>爆発音、足音、環境音はフリー素材から。Seedance2は音なしなので別途必要</li>
+<li><b>ナレーション：</b>自分の声で収録。「やばいやばいやばい！」系のリアクションが映える</li>
+<li><b>テロップ：</b>CapCutのオートキャプションで自動生成→フォント調整</li>
+<li><b>投稿：</b>横長（16:9）とショート（9:16）の両方を同じ素材から切り出す</li>
+</ul>
+</div>
+
+<!-- ======== NOT SAFE CHAOS SECTION ======== -->
+<hr>
+<div class="sec-h" id="s-chaos"><h2>🌀 NOT SAFE系 — カオス・ランダム・意味不明</h2><p>法則無視。因果関係崩壊。村人が合体してロボになり、食べたら主人公が変形する。「なんで？」は禁句。</p></div>
+
+<div class="grid">
+
+<!-- ===== CHAOS TRIMMED — 5秒×6-8clip = 30-40秒 ===== -->
+<div class="note-box-inner" style="margin-bottom:20px"><h4>制作ワークフロー（2段階）</h4>
+<p><span style="color:#4ade80;font-weight:700">🖼 nano-banana</span> = 静止画生成（構図・キャラ・背景を固定）→ <span style="color:#c084fc;font-weight:700">🎬 Seedance2</span> = その画像を入力しモーション指示で5秒動画化<br><br>
+<b>連続性:</b> Clip Nの最終フレームをスクショ → Clip N+1の nano-banana 参照画像に<br>
+<b>キャラ統一:</b> 🖼に毎回 <code>anime style, male adventurer, brown short hair, blue diamond armor, minecraft blocky world</code> を入れる<br>
+<b>Seedance2のコツ:</b> 動きだけ書く。見た目は画像で渡してあるので描写不要。カメラの動きも指示</p>
+</div>
+
+<!-- CHAOS #01 DUAL -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #01「村人100体合体 → メカ村人 → 食べたら村人化 → 世界が村人に」</h3>
+<div class="hook"><b>フック:</b> 村人100体→合体メカ→食べたら自分が村人化→分裂増殖→世界が村人に</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>コマンド連打→村人100体噴出→重なって1箇所に収束→光り始める</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ワイド俯瞰ショット、コマンドブロックの前に立つ茶髪ショートの男性冒険者（青いダイヤ鎧）がボタンに手を伸ばしている瞬間、まだコマンドは実行されていない、コマンドブロックが赤く光っている、周囲は平和な草原と晴れた空、これから何かが起こる緊張感</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>villagers continuously spawning upward like a fountain from the center, the mass vibrating and pulsing, golden light intensifying, the adventurer stepping backward in surprise, camera slowly zooming in on the glowing villager mass</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>塊が15ブロックの「メカ村人」に変形。立ち上がる。口からエメラルドビームで家を消す</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ドラマチックなローアングル、100体の村人が1箇所に収束して金色に光る巨大な塊になっている、塊が人型に膨らみ始めている瞬間、まだメカの形にはなっていない、地面が振動してヒビが入っている、後退する冒険者（青いダイヤ鎧）が見上げている、村の家がまだ無傷</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the giant mecha villager slowly standing up from crouching position, turning its head, opening mouth and firing green beam that sweeps left to right destroying houses, iron golem launched spinning through frame, camera shaking from impacts</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>メカを殴る→「村人エキス」ドロップ→飲む→体がグリッチ→顔が村人に変形開始</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ミディアムクローズアップ、崩壊したメカ村人のそばで光る緑色の瓶「村人エキス」を手に取った茶髪ショートの男性冒険者（青いダイヤ鎧）、瓶を口元に持ち上げている瞬間、まだ飲んでいない、緑色の液体が不気味に光っている、好奇心と不安が混じった表情、地面にメカの残骸</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer drinks from the green bottle, screen glitches with digital noise, his nose rapidly grows larger, arms shorten, body morphs into villager proportions, he drops the bottle and grabs his face in horror, camera pushes in tight on transforming face</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>完全村人化した主人公が超高速で走る→走るたびに分裂→2→4→8→大群に</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ワイド俯瞰ショット、完全に村人化した冒険者（破れた青い鎧、村人の顔と体）が1人だけ草原に立っている、走り出す直前の構え、体から分裂エネルギーの火花が出ている、まだ1体だけ、広い草原に孤独な1体、明るい日差し</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>a single villager-hybrid sprinting left to right, splitting into 2 then 4 then 8 then filling the screen, exponential multiplication while running, dust trail growing massive, camera pulling up to overhead view showing the stampede spreading across the plains</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>村人軍団が合体→メカ村人2号→2体のメカが殴り合い開始</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、エピックワイドショット、分裂した大量の村人ハイブリッド（青い鎧の残骸）が渦を巻いて1箇所に収束し光り始めている、隣にオリジナルのメカ村人が立って睨みつけている、2体目のメカが誕生する直前、エネルギーが渦巻いている、ドラマチックな夕焼け</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the two mecha villagers throwing punches at each other, fists colliding with shockwave expanding outward, terrain flattening from impact, both firing emerald beams from mouths that collide and explode in the sky, camera circling around the battle, ground shaking</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>両メカ崩壊→村人が空から降る→全ブロックが村人顔テクスチャに変化</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ワイドパノラマショット、2体のメカ村人が崩壊し始めてヒビが全身に入っている瞬間、村人が空からバラバラ降ってきている、地面のブロックがまだ半分だけ村人顔テクスチャに変わり始めている、変化の波が広がる途中、まだ完全には変わっていない</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>both mecha villagers shattering into pieces, villagers raining down, blocks transforming one by one into villager face texture spreading like a wave across the landscape, camera slowly panning across the villager-face world</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>主人公だけ元に戻ってるが周り全部村人顔。太陽も村人。「フゥン」反響</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ワイドショット、全ブロックが村人顔テクスチャに変わった世界の中、元の姿に戻った茶髪ショートの男性冒険者（青いダイヤ鎧）が目を覚ましたばかりで立ち上がっている瞬間、まだ周囲を確認していない、地面も空も太陽も全て村人顔、これから360度見回す直前</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer slowly turning 360 degrees in disbelief, all villager faces on blocks slightly moving mouths in sync, the adventurer covering ears falling to knees, camera rotating around him</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>カメラ引く→モニター枠→デスクトップも村人顔→PCから「フゥン」→暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、村人顔の世界の中でカメラ目線の冒険者（青いダイヤ鎧）のクローズアップ、背後に村人顔の太陽と雲、画面の端にモニターの枠がうっすら見え始めている、第四の壁が崩れる直前、ゲーム画面が現実に繋がる予兆、暗い部屋の光がフレームの端に</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>camera rapidly pulling back revealing monitor frame around the game world, human hand on mouse trembling, desktop icons flickering to villager faces one by one, monitor flickering then fading to black, fourth wall break</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+<!-- CHAOS #02 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>CHAOS #02「クリーパー骨粉→巨大化→爆発→食べたら自分が爆弾→月破壊」</h3>
+<div class="hook"><b>フック:</b> 骨粉→50ブロッククリーパー→核爆発→肉食べて自分がクリーパー化→何に近づいても爆発→月も壊す</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>クリーパーに骨粉→2倍→10倍→50ブロックに巨大化。影が真っ暗に</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、花畑で普通サイズのクリーパーの前にしゃがんでいる茶髪ショートの男性冒険者（青いダイヤ鎧）、手に骨粉を持ってクリーパーにかけようとしている瞬間、まだ骨粉は触れていない、クリーパーは通常サイズで無表情、平和な花畑、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the creeper rapidly growing larger frame by frame, doubling tripling in size, bone meal particles swirling upward, the adventurer stumbling backward as shadow covers him, camera tilting up following the growth</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>メガクリーパーがシューッ→白く膨張→核爆発。キノコ雲。主人公は星に</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、超ローアングルで見上げる構図、50ブロックの超巨大クリーパーが白く光って膨張中、シューッという音が聞こえそうな表現、体表面にヒビが入り白い光が漏れている、爆発する直前の最後の瞬間、足元で逃げようとしている冒険者（青いダイヤ鎧）、絶望的なスケール差</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the giant creeper flashing white, blinding explosion expanding outward, mushroom cloud rising, camera rapidly pulling up to aerial view showing crater spreading, a tiny figure tumbling through the sky becoming a star twinkle</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>リスポーン→クレーターに緑の肉→食べる→体が緑に→クリーパー化</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、巨大クレーターの中心でリスポーンした冒険者（青いダイヤ鎧）、地面に光る緑色の肉アイテムを見つけて拾い上げている瞬間、まだ食べていない、好奇心で肉を見つめている、クレーターの荒野が広がる、緑色の不気味な光、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer biting the green meat, skin color spreading from green right side to left, nose flattening, body squaring, hissing sparks intensifying, he grabs his face in horror, camera circling around him during transformation</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>村人に近づく→爆発→リスポーン→近づく→爆発。3回ループ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、村の入口に立つクリーパーに変身した冒険者（緑の体に冒険者の顔が残っている）、遠くに背を向けた村人が1人、まだお互いに気づいていない、冒険者が恐る恐る一歩踏み出そうとしている、平和な村の風景、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>creeper-adventurer walking toward villager, starting to flash white, BOOM explosion, smash cut to respawn, walking toward villager again, BOOM, smash cut respawn, one more BOOM, three rapid loops, comedic timing</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>自分に骨粉→50ブロック化→制御不能→白く光る</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、クリーパー冒険者（緑の体に冒険者の顔）が自分自身に骨粉をかけている瞬間、体が膨張し始めて通常の3倍サイズ、まだ50ブロックには達していない、成長中のエネルギーが渦巻く、背景に小さな村、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the colossal creeper-adventurer body flashing white uncontrollably, pulsing brighter and brighter, villages below shaking, the creeper trying to hold itself together, camera pulling back revealing the massive scale, white light building to blinding</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>超爆発→宇宙→月に激突→エンダーマンが来る→月も爆発</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、宇宙空間、超爆発で吹き飛ばされて月面にめり込んだクリーパー冒険者（緑の体に冒険者の顔）、月面のクレーターに座り込んでホッとしている表情、まだ1人で周囲は静か、星空背景、マイクラの立方体の月、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer sitting relieved on moon surface, an enderman teleporting in with purple particles, the adventurer panicking, flashing white, the entire moon exploding into chunks, the adventurer launched into empty space, debris flying everywhere</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>宇宙に1人。月の残骸。半壊したマイクラ地球。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、宇宙空間、月が爆発した直後で破片がまだ近くに集まっている、爆発の光が残る中でクリーパー冒険者が吹き飛ばされている瞬間、月の大きな破片がまだ近くに浮遊、遠くにマイクラの立方体の地球、ミディアムワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer slowly rotating in zero gravity among moon debris, camera slowly pulling back making him smaller and smaller, silence, stars twinkling, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #03 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #03「かまどに村人→∞パワー→世界が取引画面→自分も村人に→売り物になる」</h3>
+<div class="hook"><b>フック:</b> 焼き村人食べる→神パワー→世界が取引UIに汚染→自分が商品化</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>かまどに村人押し込む→「フゥン!?」→チーン→「焼き村人」ドロップ→食べる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、巨大かまどの横に立つ茶髪ショートの男性冒険者（青いダイヤ鎧）、近くにキョトンとした顔の村人が1人立っている、冒険者が村人の背中に手を当ててかまどに向かって押そうとしている瞬間、まだ押し込んでいない、かまどの口が開いている、コミカルなダークユーモア、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer shoving the villager into furnace, furnace shaking and glowing, ding sound effect, cooked item popping out, the adventurer grabbing and eating it, screen glitching briefly, comedic timing</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>全ステ∞。虹オーラ。パンチでドラゴン消滅→ジャンプで宇宙→指パッチンで山が消える</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、焼き村人を食べ終わった直後の冒険者（青いダイヤ鎧）、体から虹色のオーラが噴き出し始めている、画面上部のステータスバーが∞に切り替わる瞬間、目が金色に光り始めている、まだ何も破壊していない、パワーが溢れる直前の覚醒、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer glowing rainbow, one-punching ender dragon which explodes, jumping to space, snapping fingers and mountain vanishing, running so fast the world stretches, rapid overpowered montage cuts, comedic god-mode</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>木を殴る→取引画面が開く。地面掘っても取引画面。空見ても取引画面。全操作が取引UIに</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、虹色のオーラを纏った冒険者（青いダイヤ鎧）が森の中で木に向かって拳を振り上げている瞬間、まだ殴っていない、周囲は普通の森、取引画面はまだ出ていない、パワーみなぎる構えポーズ、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>the adventurer punching tree, trade menu popping up, mining ground opens another, looking at sky opens another, overlapping UIs multiplying filling screen, panicking and flailing, every direction spawns another window, comedic UI nightmare</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>世界のテクスチャが取引UI化。空=取引画面。太陽=エメラルド。雲=「フゥン」の文字</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、大量の取引画面ウィンドウに囲まれてパニックの冒険者（青いダイヤ鎧）、ウィンドウを必死に閉じようとしている、世界のテクスチャがまだ正常だが端の方からグリッチして取引UIパターンに変わり始めている、変化の波が地平線から広がる直前、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>world textures morphing into trade UI, the sun spinning as giant emerald, clouds reshaping into Hmm text, ground tiles flipping to trade slots, the adventurer spinning around in disbelief, surreal transformation spreading outward, wide panoramic sweep</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>空からエメラルド大量降下→嬉しい→多すぎ→埋まる→溺れる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、取引UIテクスチャの空から最初のエメラルドがポツポツ降り始めている、冒険者（青いダイヤ鎧）が空を見上げて落ちてくるエメラルドに気づいた瞬間、両手を広げて喜んでいる、地面にはまだ数個しか落ちていない、エメラルドの太陽が輝く、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>emeralds raining from sky intensifying, adventurer catching them excitedly, pile rising waist-deep then neck-deep, arms flailing above emerald surface, drowning in green gems, overhead camera pulling up showing the flood spreading</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>エメラルド海から脱出→自分の鼻が巨大化してる→腕が短い→「フゥン」しか言えない→村人化進行</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、エメラルドの巨大な山から腕だけが突き出している冒険者（青いダイヤ鎧）、必死に這い出そうとしている瞬間、顔がエメラルドの海面からギリギリ出ている、まだ体の変化には気づいていない、エメラルドの海が広がる、俯瞰ショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer crawling out of emerald pile, touching face feeling nose growing larger, arms shortening, mouth moving but only Hmm sound, hands transforming, looking in mirror seeing half-villager reflection, comedic body horror transformation</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>自分と取引を試みる→左手が右手に「元の体」を売る→取引成立→逆に完全村人化</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、半分村人化した冒険者（右半身が村人、左半身が青い鎧の冒険者）が自分の両手を見つめている、左手にエメラルドを持っている、自分と取引しようと思いついた表情、まだ取引画面は開いていない、背景に村人たちがいる、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>half-villager opening trade menu with himself, left hand offering emeralds to right hand, trade completing with golden sparkle, body fully transforming into complete villager, standing up identical to surrounding villagers, dramatic ironic reveal</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>完全村人。農民として畑耕し。別プレイヤーが来て殴る→取引画面に自分が商品「冒険者の記憶 — ∞エメラルド」。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、村の小麦畑で完全に村人に変身した元冒険者が1人で黙々と畑を耕している、村人の姿だが目にだけ冒険者の意識が残っている、平和な農村風景、遠くの道に新しいプレイヤーの影がこちらに歩いてくる、まだ近づいていない、悲しい平和、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>villager-adventurer farming wheat peacefully, new player approaching and hitting him, trade menu opening showing one item memories of adventure price infinity, villager eyes flickering with trapped consciousness, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #04 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #04「エンダーマンTNT→鶏起爆→チキンキング→鶏vsエンダー軍→次元崩壊」</h3>
+<div class="hook"><b>フック:</b> TNTピラミッド→鶏が起爆→鶏の王国→エンダーマン軍と全面戦争→世界ごと消える</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>エンダーマン100体がTNTを超高速で積み上げ→村が50ブロックのTNTピラミッドに埋まる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、平和な村の上空に紫色のテレポートパーティクルが大量に出現し始めている、エンダーマンの影が100体ほどチラチラ現れ始めた瞬間、まだTNTは1つも置かれていない、村人たちが空を見上げている、冒険者（青いダイヤ鎧）が異変に気づいた顔、ワイド俯瞰ショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>hundred endermen teleporting simultaneously placing TNT blocks, pyramid growing at impossible speed, purple particles swirling like a storm, village disappearing under red blocks, the adventurer backing away, wide overhead shot</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>鶏1匹が感圧板を踏む→レッドストーン信号→全員フリーズ→史上最大の爆発。エンダーマン全員テレポート逃げ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、完成した50ブロックの巨大TNTピラミッドが村を完全に埋め尽くしている、ピラミッドの頂上に感圧板が1つ、その近くに1匹の鶏がトコトコ歩いて近づいている、まだ踏んでいない、エンダーマンたちが周囲に佇んでいる、冒険者（青いダイヤ鎧）が「やめろ」と手を伸ばしている、エピックワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>chicken walking onto pyramid top, tiny foot touching pressure plate, redstone signal running down, everyone freezing, then apocalyptic explosion expanding outward destroying three biomes, endermen teleporting to safety, chicken unharmed on floating block</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>クレーター中央に鶏→王冠出現→チキンキング誕生→鶏が大量増殖→卵ブロックの城を建設</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、爆発で生まれた巨大クレーターの中央に1匹の鶏がポツンと立っている、煙と破片がまだ漂う中で無傷、空から金色の光が鶏に差し込み始めている瞬間、まだ王冠は出現していない、荒廃したクレーター、ドラマチックなローアングル</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>golden crown materializing on surviving chicken, divine glow intensifying, thousands of chickens multiplying filling crater, egg-block castle rising, Chicken King ascending golden throne, organized chicken military forming ranks, dramatic low angle reveal</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>エンダーマン軍帰還→目が赤い→エンドの軍勢召喚→鶏軍vsエンダー軍の対峙</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、卵ブロックの城と鶏軍団が繁栄するクレーター、チキンキングが金の玉座に座っている平和な瞬間、しかし地平線に紫色のポータルが光り始めている、エンダーマンの影がポータルの向こうに見える、まだ出現していない、不穏な静けさ、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>endermen returning with red eyes, purple portals opening with End reinforcements pouring through, shulkers endermites appearing, two armies facing off across crater, purple and white energy crackling between them, dramatic standoff</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>全面戦争。卵vsエンダーパール。メガ卵爆弾。TNT反撃。ニワトリジョッキー。主人公は両方に挟まれる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、クレーターを挟んでエンド軍（赤い目のエンダーマン100体とシュルカー）と鶏軍（チキンキングと数千匹の鶏）が対峙している、両軍の間に紫と白のエネルギーがバチバチ火花を散らしている、戦闘開始の直前、冒険者（青いダイヤ鎧）が両軍の間に挟まれている、ドラマチックな睨み合い、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>eggs and ender pearls flying like artillery, Chicken King laying giant golden bomb egg, endermen countering with TNT, chickens jousting, the adventurer caught in crossfire hit by both sides, explosions and particles everywhere, dynamic action cuts</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>戦争の衝撃で空にヒビ→エンドの次元が漏れる→地面がエンドストーンに→全員吸い込まれ始める</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、卵とエンダーパールが砲弾のように飛び交う大戦争の真っ最中、巨大な爆発の衝撃波が空に向かって上がった瞬間、空に最初のヒビが入り始めている、まだ次元は漏れていない、戦場の全員がヒビに気づいて見上げている瞬間、エピックワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>reality cracks spreading across sky, End dimension leaking through, ground transforming to end stone, void opening beneath, chickens endermen adventurer being pulled toward rift, blocks spiraling into void, world ending from war damage</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>全員虚空に消える→最後に鶏1匹とエンダーマン1体だけ残る→見つめ合う→鶏が卵を産む→エンダーマンがそれを持ってテレポート</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ほぼ全て虚空に飲み込まれた世界、最後の浮遊ブロックが数個だけ残っている、1つのブロックに鶏1匹、別のブロックにエンダーマン1体、まだお互いに気づいていない、鶏もエンダーマンも周囲を見回している、溶けかけたブロック、詩的な静寂</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>void consuming everything, only chicken and enderman remaining on last block, staring at each other in silence, chicken laying an egg, enderman carefully picking it up and teleporting away with purple particles, chicken alone on dissolving block</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>虚空。何もない。ブロック1つに鶏1匹。暗転。「…なんだったんだ」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、虚空の中、エンダーマンがテレポートで消えた直後の紫パーティクルが残る、草ブロック1つだけが浮遊、その上に1匹の鶏がポツンと座っている、卵が1つ足元に、クローズアップ、まだカメラは近い距離</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>camera slowly zooming out from chicken on single grass block, revealing vast empty void, the chicken clucking once, absolute silence, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #05 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #05「ゾンビ王→文明構築→人間動物園→脱獄→握手でゾンビ化」</h3>
+<div class="hook"><b>フック:</b> 金リンゴ大量→ゾンビが知性体に→文明作る→主人公が家畜にされる</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>ゾンビに金リンゴ64個→金色の光暴走→ゾンビ王誕生。王冠・マント・知性的な赤い目</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、夜の平原で村人ゾンビの前に立つ茶髪ショートの男性冒険者（青いダイヤ鎧）、両手に大量の金リンゴ64個を抱えている、ゾンビに向かって投げようと腕を振りかぶっている瞬間、まだ投げていない、村人ゾンビはうめき声を上げている、ドラマチックなローアングル</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer dumping golden apples, golden energy vortex intensifying around zombie, zombie transforming with crown and cape materializing, red eyes glowing with intelligence, speaking instead of groaning, dramatic low angle reveal</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>ゾンビ王がゾンビ軍団にもリンゴ配布→全員知性体に進化→村を占拠→しかし破壊せず修理し始める</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、誕生したばかりのゾンビ王（金の王冠と紫のマント、知性的な赤い目）が堂々と立っている、背後に普通のゾンビ軍団がうめいている、ゾンビ王が手に金リンゴを持って軍団に向かって差し出そうとしている瞬間、遠くに荒れた村、まだ修理は始まっていない、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>Zombie King distributing apples, zombies transforming one by one into intelligent gold-tinted soldiers, marching to village, repairing buildings instead of destroying, constructing roads and lights, village growing into city, time-lapse overhead</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>ゾンビ文明完成。学校・市場・農場。ゾンビの子供が勉強。貨幣はゾンビの歯</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、知性を得たゾンビたちが村の建物を修理し道路を建設している途中、まだ建設中の学校と市場の骨組み、ゾンビ王が設計図を広げて指示している、遠くから困惑した顔でこの光景を見ている冒険者（青いダイヤ鎧）、発展途中の街、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>baby zombies sitting in school rows studying, marketplace bustling with rotten flesh trade, the adventurer walking through bewildered looking around, zombie tooth coins exchanging hands, functioning society in motion, detailed civilization wide shot</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>法律発布「人間は危険な野生動物」→主人公が捕獲される→檻に入れられて「人間動物園」へ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、繁栄するゾンビ文明の街中を観光客のように歩いている冒険者（青いダイヤ鎧）、周りの知性的なゾンビたちがジロジロ見ている、壁に「危険な野生動物」と書かれた冒険者の手配書がこっそり貼られている、冒険者はまだ気づいていない、ゾンビ兵士が背後に忍び寄っている、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>Zombie King reading proclamation scroll, zombie soldiers throwing net over adventurer, locking him in iron cage, carrying cage through zombie city streets, wanted posters appearing on walls, role reversal comedic indignity</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>動物園。檻の中。ゾンビの子供がパンを投げ入れる。隣の檻にアイアンゴーレム→花を差し出す→脱獄計画</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、動物園の鉄格子の檻に入れられたばかりの冒険者（青いダイヤ鎧）が鉄格子を掴んで外を見ている、「人間」と書かれた看板、ゾンビの子供たちが好奇心いっぱいに近づいてくる、隣の檻にアイアンゴーレムがうなだれている、まだ花は差し出していない、暖かい照明</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>zombie children tapping on glass watching curiously, bread tossed into enclosure, iron golem in next cage reaching through bars offering poppy flower, adventurer and golem making eye contact nodding, planning escape, comedic buddy moment</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>ゴーレムが檻破壊→逃走→しかしゾンビ戦車（武装豚）とレッドストーンミサイルが追撃</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、檻の中で冒険者（青いダイヤ鎧）とアイアンゴーレムが鉄格子越しに頷き合っている瞬間、ゴーレムが拳を握り締めて鉄格子に向かって振りかぶっている、まだ壊していない、脱獄の直前、夜の動物園、ゾンビの警備兵が背を向けている</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>iron golem smashing cage bars, adventurer and golem sprinting together, redstone missiles launching from towers, armored pig zombie tanks rolling in pursuit, high-speed chase through zombie city, dynamic tracking shot</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>捕まる→ゾンビ王の前→「お前が我々を作った。感謝する」→握手→しかし握手で主人公がゾンビ化開始</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ゾンビ兵士に両腕を掴まれてゾンビ王の前に連行された冒険者（青いダイヤ鎧）、罰を覚悟して怯えた表情、ゾンビ王が玉座から立ち上がって冒険者に向かって歩いてくる、まだ手は差し出していない、緊張の瞬間、ドラマチックなミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer brought before Zombie King, the King extending hand, cautious handshake, at contact adventurer skin turning green spreading from hand up arm, zombie transformation through handshake, the King smiling knowingly</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>半分ゾンビの顔でカメラを見る。片目が人間、片目がゾンビ。「仲間になれ」。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ゾンビ王と握手している冒険者（青いダイヤ鎧）、握った手から緑色が腕に広がり始めている瞬間、まだ顔には到達していない、冒険者が自分の手を見て目を見開いている、ゾンビ王が意味深に微笑んでいる、ミディアムクローズアップ</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>half-transformed adventurer slowly turning to look directly at camera, green skin spreading across face, Zombie King placing hand on his shoulder from behind, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #06 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #06「次元融合→ハイブリッドモブ→ウィザードラゴン→第3の次元→白い存在→リセット」</h3>
+<div class="hook"><b>フック:</b> ネザーポータル100個→次元混合→ドラゴンがウィザー食べる→存在しない次元が開く</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>ネザーポータル100個同時着火→空にヒビ→ネザーの赤い空が漏れる→草原に溶岩川</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、草原に整列した100個の未着火のネザーポータルの黒曜石フレーム、冒険者（青いダイヤ鎧）が火打ち石を持って最初のポータルに火をつけようとしている瞬間、まだ1つも着火していない、巨大なポータルの壁が不気味に並ぶ、平和な草原と青い空、ワイドパノラマ</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>hundred portals igniting simultaneously with purple flames, sky cracking open, red nether sky bleeding through, netherrack growing over grass, lava flowing through flower fields, ghasts emerging over village, two dimensions merging, wide panoramic sweep</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>ハイブリッドモブ。クリーパー×ブレイズ。ゾンビ×マグマキューブ。鶏×ガスト（巨大火吐き鶏）</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、100個のポータルが全て紫に光り空にヒビが入った直後、ネザーの赤い空が漏れて草原に溶岩が侵食し始めている、ネザーとオーバーワールドのモブが混ざり合う境界で困惑しているクリーパーとブレイズが隣り合っている、まだ融合していない、次元が混ざる途中、冒険者（青いダイヤ鎧）が混乱した表情、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>hybrid mobs spawning in rapid succession, creeper-blaze shooting fire, zombie-magma cube dripping lava, giant chicken-ghast flying overhead breathing fire, the adventurer dodging hybrid attacks, dynamic action with bizarre creatures</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>ドラゴンとウィザー同時出現→対峙→ドラゴンがウィザーを丸呑み→体内で融合→ウィザードラゴン誕生</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、次元融合の空にエンダードラゴンとウィザーが同時に出現した瞬間、互いに向き合って咆哮している、ドラゴンが口を大きく開けている、ウィザーの3つの頭が攻撃態勢、まだ戦闘は始まっていない、2体の究極ボスが睨み合う緊張、エピックワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>ender dragon and wither spawning simultaneously, roaring at each other, dragon opening jaw swallowing wither whole, body convulsing, three wither heads bursting from its back, Wither Dragon hybrid revealing itself with four heads, epic transformation</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>4つの頭が全方位にビーム→山が溶ける→海が蒸発→空にさらに大きな亀裂→青白い第3の光</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ドラゴンがウィザーを呑み込んで誕生したウィザードラゴン（4つの頭と6枚の翼）が翼を広げた直後、まだビームは発射していない、4つの口にエネルギーが溜まり始めている瞬間、周囲の山と海がまだ無傷、冒険者（青いダイヤ鎧）が見上げている、エピックなリビールショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>Wither Dragon firing destruction beams from four heads in all directions, mountains melting, ocean evaporating, sky cracking further, cyan-white light leaking through reality, blocks peeling off ground rising, wide dramatic shot</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>第3の次元。白いブロック。顔のない白いモブ。水が上に流れる。物理法則なし。全てが浮遊</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ウィザードラゴンの破壊で山が溶け海が蒸発した荒廃した世界、空に巨大な亀裂が開いて青白い光が漏れ出している、亀裂の縁に吸い込まれそうになっている冒険者（青いダイヤ鎧）が地面にしがみついている、ブロックが亀裂に向かって浮遊、第3の次元に入る直前</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>third dimension spilling through crack, white translucent blocks floating, faceless white mobs drifting, water flowing upward, trees growing sideways, adventurer being pulled in, everything floating in white space, dreamlike surreal atmosphere</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>白い次元の中心に巨大な白い人型。顔がない。手にマイクラの世界（立方体の地球）を持っている</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、白い第3の次元に吸い込まれた冒険者（青いダイヤ鎧）が白い空間に浮遊している、白い半透明ブロックと顔のない白いモブが漂う、遠くに巨大な白い人型のシルエットがぼんやり見える、まだ近くない、神秘的で不安な雰囲気、白とシアンの色彩、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>colossal white entity slowly turning its featureless face toward the tiny floating adventurer, the cubic planet rotating gently in its palm, god-like presence radiating, extreme wide shot</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>白い存在が手を閉じる→世界が圧縮→白い光→新ワールドのスポーン地点に立っている。何も起きてない草原</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、巨大な白い人型の存在が手のひらにマイクラの立方体の惑星を載せている、もう片方の手がゆっくり閉じようとしている瞬間、まだ完全に閉じていない、豆粒のような冒険者（青いダイヤ鎧）が浮遊して見上げている、神的な存在感、エクストリームワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>white entity closing hand, everything compressing to white point, smash cut to adventurer standing in brand new world spawn, looking around confused, sky briefly flashing a white crack that disappears</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>「……夢？」。自分の手を見る。普通。でも空に一瞬だけ白い亀裂。見なかったことにして歩き出す。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、新ワールドのスポーン地点に突然現れた冒険者（青いダイヤ鎧）、目を開けたばかりで周囲を確認し始める瞬間、新鮮な草原と朝日、空のインベントリ、まだ手を見ていない、「ここは…?」という困惑の表情、平和な新世界、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer looking at his hands checking reality, shrugging, walking toward a tree, behind him a white crack briefly flashing in the sky unseen, peaceful morning atmosphere, ominous peaceful ending, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #07 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>CHAOS #07「逆重力→天空世界→逆さま文明→重力2倍で全落下→2Dマイクラ化」</h3>
+<div class="hook"><b>フック:</b> 全部空に落ちる→天空に逆さま世界→重力2倍で崩壊→世界がペラペラに</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>コマンドミス→全てが空に「落下」。砂・水・溶岩・モブが上昇。村人「フゥン!?」と飛んでいく</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、コマンドブロックの前に立つ冒険者（青いダイヤ鎧）がボタンに手を伸ばしている瞬間、まだ押していない、周囲は正常な草原、村人が農業をしている、牛と鶏が草を食べている、全てが地面に普通にある平和な風景、ワイドドラマチックショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer pressing command block, everything falling upward, gravel sand water lava rising, villagers floating up flailing, cows spinning, chickens flapping normally unaffected, the adventurer grabbing fence post, absolute chaos of objects rising</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>空に逆さまの地面形成→逆さまの村・木→ジャンプして天空世界に「落ちる」→着地</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、全てが空に向かって落下中の瞬間、フェンスにしがみついている冒険者（青いダイヤ鎧）、砂・水・村人・牛が上昇中、空の上方にブロックが集まり始めて逆さまの地面がうっすら形成されつつある、まだ完成していない、鶏だけ普通に飛んでいる、カオスの上昇、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>blocks forming upside-down world in sky, the adventurer jumping and falling upward, landing on ceiling-ground of inverted world, looking down at original world below, disorienting perspective flip</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>逆さま生活モンタージュ。逆さまの家を建てる→逆さまのベッド→天井のプール→村人がもう適応してる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、逆さま世界の地面に着地したばかりの冒険者（青いダイヤ鎧）、足が天井側の地面についている、髪が上に向かっている、眼下に元の世界が遠くに見える、周囲に落ちてきた家や木が逆さまに散乱、村人が困惑して立ち上がっている、まだ生活は始まっていない、エッシャー的な遠近感</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>montage of upside-down living, building house on ceiling, sleeping in inverted bed, swimming in ceiling pool, hair hanging upward, villagers farming casually adapted, quick montage cuts of cozy inverted life</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>天空文明が発展→逆さま農場・逆さまポータル→突然揺れ→コマンドブロックが勝手に入力</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、発展した逆さま文明、逆さまの農場・逆さまの家・下向きに開くネザーポータル、平和な逆さま生活を送る村人たち、冒険者（青いダイヤ鎧）がくつろいでいる、全てが安定した逆さま世界、コマンドブロックが隅にあるがまだ静か、穏やかな日常</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>developed inverted civilization suddenly shaking, earthquake trembling, command block typing by itself with red sparks, the adventurer sensing danger reaching for it, blocks vibrating, ominous rumbling intensifying</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>重力2倍→天空世界が超加速で地面に落下。村人・家・水が弾丸のように叩きつけられる。大破壊</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、コマンドブロックが勝手に起動した直後、逆さま世界の全員が突然重くなり地面に押し付けられている瞬間、天空世界のブロックにヒビが入り始めている、まだ崩落していないが足元が崩れそう、冒険者（青いダイヤ鎧）が重力に耐えて膝をついている、不穏な振動</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>gravity doubling, entire sky world collapsing downward at terrifying speed, blocks villagers trees plummeting like meteors, smashing into ground creating explosions, the adventurer falling at double speed screaming, two worlds colliding catastrophically</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>2つの世界が重なって圧縮→全ブロック半分の高さ→木がペラペラ→村人が紙のように薄い→主人公もペラペラ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、天空世界が恐ろしい速度で地面に向かって崩落中、元の世界の地面と天空世界が衝突する直前の瞬間、上からブロックと村人が隕石のように降ってくる、下の地面に元の世界の残骸、2つの世界がサンドイッチのように圧縮される直前、冒険者（青いダイヤ鎧）が上を見上げて叫んでいる</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>both worlds compressing together, everything flattening to half-height, trees squishing flat, villagers becoming paper-thin, the adventurer squished into 2D, the entire world transitioning into side-scrolling 2D format</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>2Dになった主人公が横スクロールで歩く。「これ…別のゲームじゃん」。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、2つの世界が圧縮されて全てが半分の高さにペシャンコになった直後、ペラペラの冒険者（青いダイヤ鎧）が自分の薄い体を見て驚いている瞬間、周りの木も村人も紙のように薄い、まだ横スクロールにはなっていない、2D化した世界で立ち尽くす、サイドビュー</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>flattened 2D adventurer waddling sideways like a platformer through 2D landscape, turning to look at camera breaking fourth wall, side-view scrolling, comedic surreal ending, fading to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- CHAOS #08 TRIMMED -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-chaos">カオス</span><span class="tag t-hot">最強</span><span class="tag t-time">40秒 (8clip)</span></div>
+<h3>CHAOS #08「全バグ同時→世界崩壊→UI反乱→タイトル画面の裏側→新世界」</h3>
+<div class="hook"><b>フック:</b> 全部やった→世界壊れた→ゲーム自体壊れた→タイトル画面の向こう側に行った</div>
+</div>
+<details><summary>8clip × 5秒 = 40秒 — 🖼+🎬 デュアルプロンプト</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1（5秒）</div>
+<p>コマンドブロック20個のボタンを全部同時に押す→チャンク消失×重力反転×鶏1000匹×メガクリーパー全部同時</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、20個のコマンドブロックが壁のように並んでいる前に立つ冒険者（青いダイヤ鎧）、両手を大きく広げて全ボタンに手を伸ばしている瞬間、まだ押していない、コマンドブロックが不気味に光っている、背景は平和だがこれから全てが壊れる予感、覚悟の表情、ウルトラワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer slamming all 20 buttons simultaneously, chunk holes appearing, blocks flying upward, thousand chickens raining, giant creeper exploding, lava geysers erupting, endermen building TNT towers, villagers fusing into mecha, all simultaneously, ultimate chaos</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 2（5秒）</div>
+<p>ウィザードラゴン降臨→全方位破壊ビーム→テクスチャが剥がれる→ブロックの中が虚無</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、全バグが同時発生した直後の瞬間、チャンク穴が開き鶏が降り注ぎ巨大クリーパーが膨張中、空にウィザードラゴンが出現したばかりで翼を広げている、まだビームは撃っていない、全てが同時に起きているカオスの中で冒険者（青いダイヤ鎧）が立ち尽くしている、究極のカオス、ウルトラワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>Wither Dragon firing beams, block textures peeling off like wallpaper revealing void, sky cracking like painted dome falling, sun bouncing on ground like a ball, reality decomposing, the adventurer watching world unwrap itself</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 3（5秒）</div>
+<p>ゲームUI崩壊。ホットバーが溶ける。ハートが飛び散る。経験値バーが蛇になって逃げる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、ウィザードラゴンのビームでブロックのテクスチャが剥がれ始めた世界、空がドームのようにヒビが入っている、画面下部のゲームUIのホットバーがビクビク震え始めている瞬間、まだ崩壊していないがグリッチしている、ハートアイコンがピクピク動いている、冒険者（青いダイヤ鎧）がUIを見て異変に気づく、シュールなメタカオス</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>game HUD breaking free, hotbar melting dripping, heart icons shattering flying as shrapnel, experience bar crawling off screen like snake, hunger icons biting each other, inventory opening items escaping, the adventurer catching flying UI elements</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 4（5秒）</div>
+<p>全消滅→虚空に主人公だけ浮いている→遠くにMINECRAFTのロゴが光っている→近づく</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、UIもブロックも全て消滅した虚空の中、冒険者（青いダイヤ鎧）がポツンと浮遊している、周囲は完全な暗闘、遠くにかすかな金色の光が見える、まだMINECRAFTのロゴとは分からない距離、孤独と静寂、暗い虚空</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer floating in empty void, drifting slowly toward glowing MINECRAFT title logo in distance, the letters massive and golden, atmospheric fog, silence, cinematic slow approach</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 5（5秒）</div>
+<p>ロゴの裏側→コードが走ってる→触ると指が0と1に分解→通り抜けるとタイトル画面の中の世界</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、巨大なMINECRAFTのタイトルロゴの前に浮遊する冒険者（青いダイヤ鎧）、ロゴの裏側が見えてマトリックスのような緑のコードが走っている、冒険者が手をロゴの表面に向かって伸ばしている瞬間、まだ触れていない、指先がロゴの数センチ手前、神秘的な光</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer touching backside of MINECRAFT logo, fingertip dissolving into binary, passing through into title screen panorama made real and walkable, Singleplayer and Multiplayer buttons revealed as massive stone gates, surreal meta-dimension</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 6（5秒）</div>
+<p>Singleplayerの門=新世界の光。Multiplayerの門=大勢が手を振る。Quit Gameの門=暗闇。何もない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、タイトル画面のロゴを通り抜けた冒険者（青いダイヤ鎧）、体の一部がまだバイナリコードに分解されている、目の前にタイトル画面が実体化した空間が広がる、遠くに3つの巨大な門がぼんやり光っている、まだ門の中身は見えない、シュールなメタ次元に到着した瞬間</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>three massive gates glowing, Singleplayer showing peaceful sunrise, Multiplayer showing players waving, Quit Game leading to absolute darkness, adventurer standing between all three looking at each, warm light and dark void competing, emotional crossroads moment</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 7（5秒）</div>
+<p>Singleplayerの門に走る→光に飛び込む→体が金色のパーティクルに分解→新ワールドのスポーン地点</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、3つの巨大な門の間に立つ冒険者（青いダイヤ鎧）、Singleplayerの門が平和な日の出、Multiplayerの門がプレイヤーたちの影、Quit Gameの門が暗闇、冒険者がSingleplayerの門を選んで体を向けた瞬間、まだ走り出していない、決意の表情、感情的な岐路</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer sprinting toward Singleplayer gate, running into warm light, body dissolving into golden particles, smash cut to brand new world, fresh grass sunrise, standing alone with empty inventory, heroic into light</p></div>
+</div></div>
+<div class="scene-block"><div class="scene-num">Clip 8（5秒）</div>
+<p>新世界。まっさらな草原。笑顔。木に手を伸ばす。「さて……木を殴るか」。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana（静止画）</h5><p>アニメ風、マイクラ世界、新ワールドのスポーン地点に金色のパーティクルと共に現れた冒険者（青いダイヤ鎧）、目を開けたばかりで周囲を見回し始める瞬間、新鮮な草原と日の出、空のインベントリ、まだ木には手を伸ばしていない、暖かい金色の朝の光、ワイドショット</p></div>
+<div class="p-sd"><h5>Seedance2（モーション）</h5><p>adventurer smiling peacefully, reaching out toward a tree to punch it, the fundamental first action, warm golden morning light, wide shot slowly fading to warm black</p></div>
+</div></div>
+</div></details>
+</div>
+
+</div>
+
+<!-- ======== VIRAL FORMAT SECTION ======== -->
+<hr>
+<div class="sec-h" id="s-viral"><h2>🔥 バズフォーマット × マイクラ</h2><p>TikTok/YouTube Shortsで実際にバズってる「型」をマイクラアニメに移植。フォーマット自体にバイラル力がある。</p></div>
+
+<div class="note" style="margin:0 0 20px">
+<h4>プロット構造テンプレート（全台本共通）</h4>
+<p>全てのショートに以下のテンションカーブを適用する</p>
+<pre style="color:#93c5fd;font-size:13px;margin-top:8px;line-height:2">
+Clip 1 ██░░░░░░░░ 日常 / 設定 — 安心させる。「普通の世界」を見せる
+Clip 2 ███░░░░░░░ 小さな違和感 — 「ん？」と思わせる。まだ確信できない
+Clip 3 █████░░░░░ 発覚 — 「やばい」と気づく。リアクション。テンポUP
+Clip 4 ███████░░░ 暴走 — 制御不能。予想の斜め上に。BGMビルドアップ
+Clip 5 █████████░ クライマックス — 最大のカオス。情報量MAX
+Clip 6 ██████████ オチ — 予想外。笑い or 鳥肌 or 「は？」。ループ誘発
+</pre>
+</div>
+
+<div class="grid">
+
+<!-- VIRAL #01 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">POV</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>VIRAL #01「POV: あなたはマイクラのモブです」</h3>
+<div class="hook"><b>型:</b> POV一人称 — TikTok最強フォーマット。「あなたが○○だったら」<br><b>流れ:</b> 平和にブロックを運ぶエンダーマン生活→プレイヤーと目が合う→暴走→倒される→エンダーパールになって拾われる</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 ██░░░░ 日常</div>
+<p>エンダーマンの一人称視点。エンドの世界。ブロックを持って歩いてる。穏やかな日常。他のエンダーマンも歩いてる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、エンドの世界を一人称視点で見た構図、手前にエンダーマンの細長い黒い手がエンドストーンブロックを持っている、奥に黒曜石の塔とエンダードラゴンが飛んでいる、他のエンダーマンが遠くでブロックを運んでいる、紫のパーティクルが漂う、穏やかな雰囲気</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>first person walking forward slowly, the held block slightly bobbing with footsteps, other endermen walking past peacefully, purple particles drifting, calm ambient movement, camera gently swaying with each step</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 ███░░░ 違和感</div>
+<p>ポータルが光る。人間（プレイヤー）が入ってきた。遠くから見ている。「客人か」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、エンドの世界、一人称視点、遠くにエンドポータルが紫に光っている、そこから小さな人間の冒険者（青い鎧、茶髪）が出てきた直後、こちらには気づいていない、エンダーマンの黒い手がブロックを持ったまま立ち止まっている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the portal flashing with a player emerging, the enderman POV stopping and watching from distance, the player looking around not noticing the enderman yet, camera freezing as the enderman observes, slight tilt of curiosity</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 █████░ 発覚</div>
+<p>プレイヤーがクリスタルを壊し始める。痛い。「やめろ…」。でもまだ耐えてる。そしてプレイヤーがこっちを見る。目が合う</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、正面に冒険者が立っている、冒険者がこちらをまっすぐ見つめている瞬間、目と目が合った直後、視界の端が紫に歪み始めている、体が震え始める予兆、緊張感のある構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player slowly turning to look directly at camera/enderman, eye contact moment, the screen edges starting to pulse purple, the held block dropping from enderman hands, body starting to tremble, vision distorting, building rage</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 ███████ 暴走</div>
+<p>口が裂ける叫び声。体が勝手に動く。プレイヤーに突進。殴る。殴る。止まれない。「やめたいのに体が…！」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、激しいモーションブラー、目の前にプレイヤーの驚いた顔がアップで迫っている、エンダーマンの黒い腕が振りかぶっている、紫のオーラが爆発的に広がっている、画面全体が紫に染まっている、暴走中</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>violent shaking camera rushing forward at the player, enderman arms swinging wildly hitting the player, purple particles exploding with each hit, the player being knocked back, frantic uncontrollable attack, camera thrashing</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 █████████ クライマックス</div>
+<p>プレイヤーの剣が光る。斬られる。視界にダメージのノイズ。体が崩壊し始める。パーティクルに分解。「ああ…終わるのか」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、プレイヤーがダイヤの剣を振り下ろした直後、視界が赤いダメージエフェクトで覆われている、自分の体（エンダーマンの手）が紫のパーティクルに分解し始めている、視界がブレている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player sword slashing across the screen, red damage flash, the enderman hands dissolving into purple particles from fingertips, vision fading, world becoming blurry, body disintegrating, camera slowly tilting and falling</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 ██████████ オチ</div>
+<p>画面が暗い→ 丸い形の中から外を見ている。プレイヤーの手に持たれている。自分はエンダーパールになった。プレイヤーが笑顔で投げる。飛んでいく視界。暗転。テロップ「あなたはエンダーパールでした」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、エンダーパールの内側から見た一人称視点、丸い緑の半透明の壁の向こうにプレイヤーの巨大な笑顔が見える、プレイヤーの手がパールを掴んでいる、投げようとしている構え、歪んだ魚眼レンズ的な構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>view from inside the pearl seeing the player face grinning, the hand pulling back to throw, sudden acceleration as the pearl is thrown, world spinning and blurring as the pearl flies through air, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- VIRAL #02 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">ランキング</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>VIRAL #02「マイクラの死に方ランキング — 痛い順」</h3>
+<div class="hook"><b>型:</b> ランキング/Tier List — 「数字」と「順位」は人間が最も見てしまう構造<br><b>流れ:</b> 7位から1位まで。各死に方をアニメで再現。1位は誰も予想しない死に方</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 — 7位「サボテン」</div>
+<p>砂漠を歩いてサボテンに触れる。「いてっ」。ハート半分。地味に痛い。コミカル</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの砂漠、冒険者がサボテンに向かって歩いている、まだ触れていない、サボテンが画面中央、コミカルな雰囲気、明るい昼間、ワイドショット、ランキング「7位」のテロップ用余白が画面上部にある</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer walking forward casually then bumping into cactus, flinching back with comedic pain expression, red damage flash, jumping away holding his arm, camera static wide shot</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 5位「クリーパー背後爆発」</div>
+<p>建築中。背後でシューッ。振り返る暇もなく爆発。家ごと消える</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの草原、冒険者が木の家を建築中で背中を向けている、背後にクリーパーが2ブロックの距離で白く点滅し始めている、冒険者はまだ気づいていない、緊張感、ミディアムショット</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer placing blocks not noticing, the creeper behind him starting to flash and expand, the adventurer starting to turn his head, BOOM massive explosion destroying everything, the adventurer ragdolling through the air</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 4位「溶岩ダイブ（ダイヤ付き）」</div>
+<p>ダイヤフル装備で溶岩に落ちる。「あああダイヤがああ！！」。装備が溶けていく描写</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの地下洞窟、冒険者がダイヤフル装備で溶岩湖の縁に立っている、足元のブロックが崩れ始めている直前、下に赤い溶岩が光っている、恐怖の表情、縦構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the block under the adventurer cracking and breaking, falling into lava, arms flailing, armor pieces melting off one by one, the diamond chestplate dissolving last, sinking into orange, screen going red</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 3位「ネザーベッド爆発」</div>
+<p>ネザーで「疲れたから寝よ」→ベッドクリック→核爆発→「聞いてない！！」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラのネザー、ネザーラックの赤い洞窟の中に白いベッドを置いた冒険者、あくびをしながらベッドに手を伸ばしている、まだクリックしていない、周りにガストが遠くで浮いている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer yawning and clicking the bed, instant white flash explosion expanding from the bed, the entire netherrack cave blowing apart, the adventurer launched through the nether ceiling, comedic scale explosion</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — 2位「エンドの虚空落下」</div>
+<p>エンドの島から足を踏み外す。永遠の落下。何もない。音もない。ただ落ちる。ゆっくりハートが減る</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、エンドの紫黒い虚空、冒険者が仰向けで落下中、上にエンドの島が小さく遠ざかっている、周りは完全な闇、表情は絶望、髪が上になびいている、ハートアイコンが残り2個、縦構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer falling slowly through infinite void, the end island shrinking above, hair floating upward, hearts depleting one by one, reaching upward desperately, complete silence, camera slowly pulling back making him smaller</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — 番外「友達に押される」</div>
+<p>崖の上で景色を見ている。友達が後ろから走ってきて押す。落ちる。チャット「lol」。これが一番痛い（心が）</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの高い崖の上、冒険者が美しい夕日を眺めている背中越しのショット、後ろからもう1人のプレイヤー（赤い鎧）がニヤニヤしながら走ってきている、まだ押されていない、崖の下は遥か下の海</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer peacefully watching sunset, the red-armored player sprinting from behind and shoving him off, the adventurer tumbling off the cliff screaming, camera following him down, a chat message lol appearing on screen, fade to black</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 7 — 1位「？？？」</div>
+<p>テロップ「1位」。冒険者が普通に立っている。何も起きない。3秒。突然足元のブロックが消えてクリエイティブの人に壊される。「お前かよ！！」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの草原、冒険者が普通に立っている、何も異常がない完全に平和な画面、背景に花と青空、しかし足元のブロック1つだけわずかにヒビが入っている、ランキング「1位」のテロップ用余白</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer standing still looking confused nothing happening, 3 seconds of peace, then suddenly the block under him deleted by an invisible creative mode player, falling into void below, a floating creative player appearing above laughing, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- VIRAL #03 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">Before/After</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>VIRAL #03「Day 1 vs Day 1000 — 同じ場所で撮った」</h3>
+<div class="hook"><b>型:</b> Before/After・成長記録 — 変化の「差」が大きいほどバズる<br><b>流れ:</b> Day1の豆腐ハウスとDay1000の巨大城を同じアングルで交互に見せる。最後にDay1の方が良かった…のオチ</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 — Day 1</div>
+<p>土の豆腐ハウス。ドアなし。松明1本。中にベッドと作業台だけ。冒険者が誇らしげ。「最高の家だ！」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの草原、超シンプルな土ブロックの四角い家（3×3×3）、ドアがなく穴が開いてるだけ、松明が1本、冒険者（革の帽子、ボロい服）が腕組みして誇らしげに立っている、初々しい笑顔、夕暮れ、テロップ「Day 1」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer gesturing proudly at his tiny dirt house, spinning around to show it off, camera slowly panning around the pathetic but lovable structure, warm sunset lighting</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — Day 1000</div>
+<p>同じ場所。巨大な城。石・ダイヤブロック・ビーコン。庭園。噴水。冒険者はネザライト装備。でも表情が疲れてる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、同じ草原に建つ巨大な石造りの城、塔が4つ、ビーコンの光が空に伸びている、庭園と噴水、冒険者がネザライトフル装備で城の前に立っている、しかし目の下に隈があり疲れた表情、テロップ「Day 1000」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>camera slowly panning up the massive castle revealing its scale, beacon light shooting into sky, the adventurer standing with arms crossed but sighing, no smile, camera same angle as clip 1 for comparison</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 交互カット</div>
+<p>Day1の家→Day1000の城→Day1→Day1000。同じカメラアングルで高速切り替え。差が激しい</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、画面を左右分割、左半分がDay1の土の家（暖色・夕暮れ）、右半分がDay1000の城（寒色・夜）、真ん中に分割線、同じカメラアングル、対比が一目でわかる構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>rapid cuts alternating between the dirt house and castle, same camera angle, each cut getting faster, the contrast becoming more dramatic, split screen appearing then dissolving back to alternating cuts</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — Day 1000の中身</div>
+<p>城の中。豪華だけど誰もいない。チェスト100個にダイヤが溢れてるけど使い道がない。1人で広い部屋に座る</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、巨大な城の中の広いホール、百個のチェストからダイヤが溢れている、豪華なシャンデリア、しかし冒険者が1人だけ巨大なテーブルの端に座っている、空席が並ぶ、孤独な雰囲気</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>camera slowly panning through the empty grand hall, passing overflowing diamond chests, arriving at the adventurer sitting alone at the huge table, he looks down at his hands, lonely atmosphere, echo effect on any sound</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — Day 1の中身</div>
+<p>Day 1の土の家の中。狭いけど友達がいる。2人で1つのベッドを取り合って笑ってる。松明の光が暖かい</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、小さな土の家の中、冒険者ともう1人の友達（赤い鎧）がベッド1つを取り合って笑っている、松明の暖かいオレンジの光、作業台の上にパンが1個、狭いけど温かい、幸せな表情</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the two players playfully pushing each other trying to get on the single bed, both laughing, warm torch light flickering, cozy cramped space, genuine joy, camera close and intimate</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — オチ</div>
+<p>Day 1000の冒険者が城を振り返る。城を壊し始める。ツルハシで。1ブロックずつ。そこに土を置く。豆腐ハウスを作り始める。笑顔が戻る。テロップ「大事なのは建物じゃなかった」。暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、夕暮れの草原、巨大な城の横に小さな土の家を新しく建て始めている冒険者、手に土ブロックを持っている、城は半分壊されている、冒険者の表情は穏やかな笑顔、夕日の暖色</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer placing dirt blocks building a small house next to the crumbling castle, smiling genuinely for the first time, sunset light warming the scene, camera slowly pulling back showing the small dirt house and the ruined castle side by side, fade to warm black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- VIRAL #04 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">3タイプ</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>VIRAL #04「3種類のマイクラプレイヤー」</h3>
+<div class="hook"><b>型:</b> 「3タイプ」比較 — ステレオタイプ分類はシェア＆「自分はどれ？」コメントを誘発<br><b>流れ:</b> 同じ状況（洞窟でダイヤ発見）に対する3タイプの反応を並べる</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 — 状況提示</div>
+<p>洞窟でダイヤ8個発見。溶岩の真横。テロップ「あなたはどのタイプ？」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの洞窟、壁にダイヤ鉱石が8個光っている、すぐ隣に溶岩湖、松明の光、テロップ用の余白が上部にある、ダイヤが青く美しく光っている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>camera panning across cave wall revealing the diamond ore cluster glowing blue next to bubbling orange lava, dramatic reveal lighting, camera stopping on the diamonds</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2-3 — 慎重タイプ</div>
+<p>水バケツで溶岩を消す→安全確認→丁寧に掘る→全部回収→ニッコリ。テロップ「慎重勢」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、洞窟、メガネをかけた女性冒険者が水バケツで溶岩を慎重に消している、足場を確認しながら一歩ずつ進む、几帳面な性格が表情に出ている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>carefully pouring water to neutralize lava, checking every angle, mining diamonds one by one methodically, collecting all 8, satisfied nod and smile, safe and sound</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 脳筋タイプ</div>
+<p>溶岩無視して直接掘る→ダイヤ3個溶岩に落ちる→「うおおおおあああ!!!」→残り5個だけ回収→泣く</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、洞窟、筋肉質の男性冒険者がツルハシを振りかぶって溶岩の隣のダイヤを強引に掘っている、すでにダイヤ3個が溶岩に落ちて溶けている最中、絶叫の表情</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>wildly swinging pickaxe at diamonds, three diamond items popping out and falling into lava with sizzle, the player screaming and reaching for them too late, grabbing remaining 5, crying on the ground, comedic tragedy</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5-6 — 天才（？）タイプ</div>
+<p>TNTを置く。着火。洞窟ごと吹き飛ばす。ダイヤも全部消える。溶岩も消える。自分も死ぬ。テロップ「このタイプの人コメントで名乗り出て」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、洞窟、ニヤニヤしながらダイヤの横にTNTを置いている冒険者（サングラス）、火打ち石を持って着火する直前、狂気の笑顔、テロップ「天才タイプ」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>lighting the TNT with a grin, BOOM massive explosion destroying the entire cave including all diamonds and the player himself, death screen, then text appearing name yourself in comments, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- VIRAL #05 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">If映画</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>VIRAL #05「もし進撃の巨人がマイクラだったら」</h3>
+<div class="hook"><b>型:</b>「If [作品名] was Minecraft」— ポップカルチャー×マイクラ。元作品のファンも流入<br><b>流れ:</b> 壁の中の村人たち→壁の向こうから巨大ゾンビ→調査兵団（エリトラ装備）が戦う</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 — 壁の中の日常</div>
+<p>50ブロックの石壁に囲まれた村。村人が平和に暮らしている。壁の外は見えない。テロップ「100年間、壁の外にモブはいなかった」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラ世界、巨大な50ブロックの石レンガの壁に囲まれた村、中で村人たちが穏やかに暮らしている、畑、家、教会、壁の上に兵士（鉄の鎧）が見張りをしている、壁の外は見えない、進撃の巨人のウォール・マリアをマイクラ風に</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>camera slowly panning across the peaceful walled village, villagers farming and trading, a guard on the wall looking outward, birds flying, calm music, the wall casting a long shadow</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 地鳴り</div>
+<p>突然地面が揺れる。壁にヒビ。兵士「何だ…？」。壁の向こうから巨大な手がかかる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、壁の上から見下ろした構図、壁の外側に巨大なゾンビの手（20ブロック分の大きさ）が壁の上端に掴みかかっている、壁にヒビが入っている、兵士が後ずさりしている、恐怖の表情</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the ground shaking, cracks spreading across the wall, a colossal zombie hand rising from beyond the wall and gripping the top edge, the guard stumbling backward in terror, camera looking up at the hand</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 超大型ゾンビ</div>
+<p>壁を超えて顔が見える。50ブロックの超大型ゾンビ。腐った顔が壁の上から覗く。口を開ける。壁が蹴り壊される</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、超ローアングル、50ブロックの超巨大ゾンビが壁の上から顔を出している、腐った緑の肌、赤い目、壁が崩壊し始めている、破片が降ってくる、村人がパニックで逃げている、進撃の巨人の超大型巨人のオマージュ</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the colossal zombie peering over the wall, its foot kicking through the wall creating a massive breach, stone blocks exploding inward, villagers running and screaming, the zombie stepping through the hole, camera shaking from impacts</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 調査兵団出撃</div>
+<p>冒険者たちがエリトラ+ロケット花火で飛び立つ。立体機動装置のように壁を蹴って加速。釣竿をワイヤーとして使用</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの空、エリトラを装備した3人の冒険者がロケット花火で加速して超大型ゾンビに向かって飛んでいる、調査兵団のマント風の旗が翻っている、釣竿をワイヤーのように振っている、スピード感、ダイナミックな構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>three adventurers launching from the wall with elytra and firework rockets, banking and diving around the giant zombie like ODM gear, fishing rods hooking onto the zombie as grappling lines, dynamic aerial combat, camera following the lead flyer</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — うなじを狙え</div>
+<p>「うなじだ！マイクラでもうなじだ！！」。冒険者がゾンビの背後に回り込む。ネザライトの剣で斬りつける</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、超大型ゾンビのうなじのアップ、冒険者がネザライトの剣を振りかぶって突撃している、エリトラの翼が広がっている、ゾンビの首筋に剣が当たる直前の一瞬、集中線、進撃の巨人のうなじ斬りシーンのオマージュ</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer diving toward the zombie nape with sword raised, slashing across the back of the neck, green particle explosion from the wound, the zombie staggering and roaring, epic slow motion strike moment, camera circling the impact</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — 撃破</div>
+<p>超大型ゾンビが膝をつき、崩壊。経験値が雨のように降る。村人たちが歓声。冒険者が壁の上に立つ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、超大型ゾンビが膝をついて崩壊している、体がパーティクルに分解中、空から大量の経験値オーブが緑の雨のように降っている、壊れた壁の上に冒険者がシルエットで立っている、夕日、英雄的な構図</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the colossal zombie falling to its knees and dissolving into particles, experience orbs raining down like green snow, the adventurer landing on the broken wall in hero pose, sunset behind him, villagers cheering below</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 7 — オチ</div>
+<p>勝利の余韻。しかし壁の外の霧の中から、もう1体。いや、3体。5体。無数の巨大ゾンビのシルエット。暗転。テロップ「Season 2?」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、壊れた壁の穴から外を見ている冒険者の背中、霧の中に巨大ゾンビのシルエットが5体以上ぼんやり見える、絶望感、冒険者の肩が落ちている、テロップ「Season 2?」用の余白</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer turning to look through the wall breach, fog rolling in, one massive zombie silhouette appearing, then another, then five more, the adventurer shoulders dropping, camera slowly zooming into the fog, fade to black</p></div>
+</div></div>
+</div></details>
+</div>
+
+<!-- VIRAL #06 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag t-hot">バズ型</span><span class="tag t-chaos">Satisfying</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>VIRAL #06「マイクラの"気持ちいい"瞬間だけ集めた」</h3>
+<div class="hook"><b>型:</b> 満足感/ASMR系 — 「気持ちいい」映像はループ再生率が異常に高い<br><b>流れ:</b> ダイヤ発見の音→砂利が連鎖落下→溶岩にバケツ水→ビーコン起動→エンチャント→最後のオチ</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+<div class="scene-block"><div class="scene-num">Clip 1 — ダイヤ発見</div>
+<p>暗い洞窟をツルハシで掘っている。カチ、カチ、カチ…パリン！青い光。ダイヤ。目が輝く</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、暗い洞窟、冒険者がツルハシで石を掘っている、石の向こうにダイヤ鉱石の青い光がチラッと見え始めている直前、松明の暖かい光、期待の表情</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>pickaxe hitting stone rhythmically, the last hit revealing diamond ore behind it, blue light flooding the frame, the adventurer eyes widening with sparkle effect, satisfying crack sound on reveal</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 砂利連鎖落下</div>
+<p>天井の砂利ブロック1つを壊す→100個が連鎖落下→ザザザザザザ→スッキリ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、洞窟の天井に大量の砂利ブロックが積まれている、冒険者がツルハシで一番下の1つを壊す直前、上に100個以上の砂利が落ちる予感</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>one gravel block breaking, then the entire column of 100 gravel blocks cascading down in a satisfying chain reaction, dust cloud rising, the adventurer stepping back watching the domino fall, ASMR gravel sound</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 溶岩消し</div>
+<p>溶岩湖にバケツ水1杯→ジュワァァァ→全部黒曜石に→完璧</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、大きな溶岩湖の縁に立つ冒険者、水バケツを傾け始めた瞬間、水が流れ出す直前、溶岩がオレンジに光っている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>water pouring from bucket onto lava surface, spreading rapidly with satisfying hissing steam, the orange lava transforming to black obsidian in a wave pattern, steam rising beautifully, the entire lake solidifying</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — ビーコン起動</div>
+<p>ピラミッドの頂点にビーコンを置く→光の柱が空に伸びる→虹色に変わる→壮大</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鉄ブロックのピラミッドの頂点、冒険者がビーコンブロックを置く直前、手に持ったビーコンが淡く光っている、空に向かって光が伸びる予兆</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>placing the beacon block, a beam of light shooting straight up into the sky, the beam intensifying and changing colors through the rainbow, camera tilting up following the light into the clouds, epic satisfying activation moment</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — エンチャント</div>
+<p>エンチャントテーブルに本を置く→ルーン文字が飛ぶ→剣が紫に光る→シャープネスV。最高の引き</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、エンチャントテーブルの前の冒険者、テーブルから本棚に向かってルーン文字が飛んでいる、ダイヤの剣をテーブルに置く直前、紫の魔法的な光</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>placing the sword on the enchant table, rune letters flying from bookshelves spiraling around the sword, purple glow intensifying, the sword lifting and spinning, landing back down now glowing purple, enchantment text appearing</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — オチ「一番気持ちいい瞬間」</div>
+<p>テロップ「でも一番気持ちいいのは……」。冒険者がベッドに入る。寝る。画面が暗くなる。朝になる。テロップ「これ」。共感の嵐</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの小さな家の中、冒険者がベッドに横になっている、毛布を被って安心した表情、窓の外は夜、松明の暖かい光、穏やかで安全な空間</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the adventurer climbing into bed, pulling covers up, eyes closing peacefully, screen darkening to night, then rapidly brightening to morning sunrise through the window, the adventurer opening eyes refreshed, simple satisfying moment, fade to warm black</p></div>
+</div></div>
+</div></details>
+</div>
+
+</div>
+
+<!-- ======== NPC POV HORROR SECTION ======== -->
+<hr>
+<div class="sec-h" id="s-npc"><h2>👁 NPC視点ホラー — 「プレイヤーにされる事」記録</h2><p>GTA的NPC視点。プレイヤーの日常行為がモブ目線だと完全にホラー。監視カメラ/ドキュメンタリー風。一人称で「される側」の恐怖を描く。</p></div>
+
+<div class="note" style="margin:0 0 20px">
+<h4>演出ルール</h4>
+<p>• 全編NPC一人称 or 監視カメラ風の固定アングル<br>
+• BGMなし。環境音とNPCの内なる声（モノローグ）のみ<br>
+• プレイヤーは「顔が見えない恐怖の存在」として描く（逆光・シルエット・足音だけ）<br>
+• テロップは監視カメラ風のタイムスタンプ「DAY 1 / 07:32」<br>
+• 最後に「被害報告書」風のテロップでオチ</p>
+</div>
+
+<div class="grid">
+
+<!-- NPC #01 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag" style="background:rgba(167,139,250,.15);color:#a78bfa">NPC視点</span><span class="tag t-hot">鉄板</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>NPC #01「村人の1日 — 被害記録」</h3>
+<div class="hook"><b>視点:</b> 農民の村人。平和な朝→プレイヤーが来る→畑荒らし→家侵入→ベッド奪取→鉄ゴーレム破壊→夜にゾンビ化<br><b>トーン:</b> 監視カメラドキュメンタリー。タイムスタンプ付き。淡々とした恐怖</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1 — DAY 1 / 06:00「起床」</div>
+<p>村人の一人称視点。ベッドから起きる。窓の外に朝日。畑に向かう。穏やかな朝。他の村人も起きてくる。普通の1日が始まる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの村の家の中、一人称視点でベッドから起き上がった直後、窓から朝日が差し込んでいる、手前にベッドの端と村人の茶色い袖の手が見える、窓の外に畑と他の村人の影、穏やかな朝、監視カメラ風タイムスタンプ「DAY 1 / 06:00」が左上に</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV rising from bed, looking around the small room, turning to look out the window at sunrise, standing up and walking toward the door, peaceful morning sounds, birds chirping, gentle camera bob with footsteps</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — DAY 1 / 08:15「畑仕事」</div>
+<p>畑を耕している。にんじんを植える。隣の村人と「フゥン」（おはよう的な）。今日もいい天気。何も起きない平和</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、畑でにんじんを植えている村人の手が見える、隣の畑で別の村人が手を振っている、青空、蝶が飛んでいる、完全に平和な農村の風景、タイムスタンプ「DAY 1 / 08:15」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV hands planting carrots in farmland, looking up at neighboring villager who waves, looking around at the peaceful village, butterflies passing, calm rhythmic farming motions, idyllic atmosphere</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — DAY 1 / 14:22「異変」</div>
+<p>畑仕事中。遠くで木が倒れる音。「バキッ バキッ バキッ」。等間隔。機械的。自然の音じゃない。視線を上げると森の木が1本ずつ消えている。「…何だ？」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、畑から遠くの森を見ている、森の木が3本なくなっている不自然な穴、木の切り株がある、遠くにシルエットの人影が見える、村人の手がくわを握ったまま止まっている、不穏な雰囲気、タイムスタンプ「DAY 1 / 14:22」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV looking up from farming, hearing rhythmic chopping sounds, turning toward the forest, trees disappearing one by one in the distance, a dark silhouette visible between the trees, the farming hands freezing, slight camera zoom toward the figure</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — DAY 1 / 15:07「接触」</div>
+<p>人影が村に入ってくる。ダイヤの鎧。顔は逆光で見えない。真っ直ぐ畑に来る。にんじんを引き抜き始める。全部。1本も残さず。こちらを見もしない。「おい…それ…僕が…」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、目の前にプレイヤーのシルエット（青いダイヤ鎧、逆光で顔が黒い影）が立っていて畑のにんじんを引き抜いている、地面が荒らされている、村人の手が「やめて」と伸ばしかけている、プレイヤーはこちらを見ていない、タイムスタンプ「DAY 1 / 15:07」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the silhouetted player walking into frame, crouching and ripping out carrots rapidly without looking at the villager POV, the villager hand reaching out weakly, the player not acknowledging and moving to the next row, mechanical efficient destruction of the farm</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — DAY 1 / 19:45「侵入」</div>
+<p>夜。家にいる。ドアが開く。プレイヤーが入ってくる。チェストを開ける。中身を全部持っていく。ベッドに寝る。自分のベッドに。こちらを一瞥もせず。追い出された。自分の家から</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、暗い村の家の中、ドアが開いてプレイヤーのシルエットが立っている、松明の光で鎧だけ光っている、顔は暗い、チェストが開かれている、村人は部屋の隅に追いやられている視点、恐怖、タイムスタンプ「DAY 1 / 19:45」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>door swinging open, player silhouette entering backlit by moonlight, walking past the villager POV without looking, opening chest and taking everything, then lying down on the bed, the villager POV being pushed into the corner of the room, no eye contact ever made</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — DAY 1 / 20:30「防衛線崩壊」</div>
+<p>外に出される。アイアンゴーレムに助けを求める。しかしプレイヤーがゴーレムを殴っている。ゴーレムが応戦→プレイヤーが勝つ。鉄インゴットだけが地面に散らばる。村の守護者がいなくなった</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、夜の村、アイアンゴーレムがプレイヤーと戦っている、ゴーレムのHPが低くヒビだらけ、プレイヤーがダイヤ剣を振りかぶっている、村人は柵の影からこっそり見ている、地面に鉄インゴットが散らばっている、タイムスタンプ「DAY 1 / 20:30」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV peeking from behind a fence, the iron golem fighting the player but losing, final sword strike, the golem collapsing and dropping iron ingots, the player picking up the iron and walking away, the village now undefended, the villager POV slowly looking around at the dark empty village</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 7 — DAY 1 / 23:59「報告書」</div>
+<p>プレイヤーはログアウトして消えた。ゴーレムはいない。柵も壊されてる。遠くからゾンビの唸り声。視界の端が緑がかる。噛まれた。画面が歪む。最後のテロップ「被害報告: 畑全損 / 家屋侵入 / 守護者破壊 / 住民1名ゾンビ化」→暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、一人称視点、暗い村、柵が壊れて穴が開いている、その穴からゾンビが近づいてきている、視界の端が緑に歪み始めている（ゾンビ化の予兆）、遠くでプレイヤーがログアウトして粒子に消えた跡がある、タイムスタンプ「DAY 1 / 23:59」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV looking at broken fence, zombies approaching through the gap, a zombie lunging at camera, screen flashing green with bite, vision distorting and turning green, collapsing to ground, screen going static then black, damage report text appearing line by line</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+<!-- NPC #02 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag" style="background:rgba(167,139,250,.15);color:#a78bfa">NPC視点</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>NPC #02「牛の一人称 — 小麦で誘われた先」</h3>
+<div class="hook"><b>視点:</b> 草原の牛。小麦を見せられて嬉しそうについていく→穴に落とされる→大量の牛と一緒→繁殖させられる→子供が生まれる→目の前で屠殺が始まる<br><b>トーン:</b> 最初は牧歌的→後半ホラー映画。BGMの変化で緩急</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1 — 平原の平和</div>
+<p>牛の一人称視点。低い視点。草原。草を食べている。隣に仲間の牛。蝶が飛ぶ。風が気持ちいい。何も知らない幸せ</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの草原、牛の目線（低い一人称視点）、目の前に緑の草が広がっている、隣に別の牛が草を食べている、蝶が飛んでいる、青空と花、完全な平和、牛の鼻先が画面下に少し見える</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>low POV grazing on grass, looking up at blue sky, another cow nearby eating peacefully, a butterfly landing on the POV cow nose briefly, gentle swaying grass, calm pastoral atmosphere, slow camera bob</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 小麦の誘惑</div>
+<p>視界の端に人影。手に黄色いもの。小麦だ。体が勝手に反応する。近づきたい。足が動く。「あれは…おいしそう…」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、牛の一人称低視点、遠くにプレイヤーのシルエットが立っている、手に金色の小麦を持っている、小麦がキラキラ光って見える（牛の目には宝石のように映る）、体が前のめりになっている、抗えない引力</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV noticing the player in distance holding wheat, the wheat glowing attractively, the cow POV involuntarily walking forward toward the wheat, unable to resist, the player slowly backing away leading the cow, hypnotic following movement</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 穴</div>
+<p>ついていく。フェンスの門をくぐる。中には…大量の牛。50匹。ギュウギュウ詰め。門が閉まる音。振り返るともう出られない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、牛の一人称視点、フェンスで囲まれた狭いスペースに50匹以上の牛が押し込められている、こちらを見つめる無数の牛の目、背後でフェンスの門が閉まっている、閉所恐怖、暗い影</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV walking through a gate, revealing dozens of cows packed tightly in a fenced pen, turning around to see the gate closing behind, the player walking away, trapped, surrounded by other cows all looking at the POV with blank eyes</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 繁殖</div>
+<p>小麦が投げ込まれる。ハートが出る。体が勝手に反応する。隣の牛に近づく。子牛が生まれる。小さい。かわいい。「この子を守らなきゃ」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、牛の一人称視点、目の前に生まれたばかりの子牛がいる、小さくて目が大きい、ハートのパーティクルが消えかけている、母牛（視点主）が子牛を見下ろしている、柵の中で他の牛たちもハートを出している、プレイヤーの手が上から小麦をばら撒いている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>hearts floating, a baby cow spawning in front of POV, the tiny calf looking up with big eyes, the POV cow nuzzling the baby gently, a tender moment, but in the background the player hand throwing more wheat creating more breeding pairs, factory feeling creeping in</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — 屠殺</div>
+<p>プレイヤーが剣を持って柵の中に入ってくる。隣の牛が斬られる。ステーキと革がドロップ。子牛が鳴く。次の牛も。次も。順番が近づいてくる。逃げ場がない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、牛の一人称視点、目の前でプレイヤーがダイヤ剣を振り下ろして隣の牛を斬っている瞬間、ステーキと革のアイテムが飛び出している、子牛が母を失って鳴いている、柵の中で逃げ惑う牛たち、プレイヤーは無表情のシルエット</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player entering the pen with sword, swinging at the cow next to POV, the cow disappearing into meat and leather drops, baby cow crying, the player moving to the next cow methodically, POV cow backing into corner, nowhere to run, the sword getting closer</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — 最後</div>
+<p>プレイヤーがこちらを向く。剣を上げる。子牛が前に飛び出して母を庇う。プレイヤーの手が一瞬止まる。……振り下ろす。暗転。テロップ「生産効率: ステーキ×128 / 革×64 / 所要時間: 3分」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、牛の一人称視点、プレイヤーが正面に立っている、ダイヤ剣を振りかぶっている、手前に子牛が母（視点主）を庇うように立っている、子牛の小さな体がプレイヤーの影に入っている、剣が振り下ろされる直前</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player facing the POV cow with raised sword, the baby cow stepping in front protectively, the player pausing for one second, then the sword coming down, screen cutting to black, production report text appearing coldly: steak x128 leather x64 time 3 minutes</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+<!-- NPC #03 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag" style="background:rgba(167,139,250,.15);color:#a78bfa">NPC視点</span><span class="tag t-time">35秒 (7clip)</span></div>
+<h3>NPC #03「鶏の一人称 — 卵を産むたびに増える仲間。そして…」</h3>
+<div class="hook"><b>視点:</b> 鶏。狭い1×1の穴に押し込められてる。卵を産む→プレイヤーが回収→ホッパーの音がずっと鳴ってる→仲間が増えすぎてエンティティクラミング→体が消え始める<br><b>トーン:</b> 工場畜産ドキュメンタリー。淡々としているから余計に怖い</div>
+</div>
+<details><summary>7clip × 5秒 = 35秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1 — 記憶</div>
+<p>鶏の一人称。草原の記憶。広い空。風。走り回れた。「昔はこうだった」。今は暗い</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの明るい草原、鶏の低い一人称視点で広い世界を見ている、青空、花、自由に走れる空間、美しい風景、しかし画面の端が少し暗くなっている（記憶が薄れている暗示）</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>bright pastoral scene from chicken eye level, looking around at wide open plains, the image slowly fading at edges, dissolving into darkness, a memory ending, transitioning to dark confined space</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 現実</div>
+<p>暗い。1×1のガラスの箱。ホッパーの下。天井が低い。動けない。卵を産む→ホッパーに吸い込まれる。カチャカチャカチャ。機械的な音だけが響く</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鶏の一人称超低視点、1×1のガラスブロックの箱の中、天井にホッパーの金属の底が見える、暗い、狭い、下に卵が1個転がっている、ホッパーの隙間から外の光がわずかに見える</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>confined POV in tiny glass box, an egg dropping below the chicken, the egg rolling and being sucked into the hopper with a mechanical click, darkness, the hopper clicking rhythmically, the chicken looking up at the low ceiling unable to move</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 隣人</div>
+<p>ガラス越しに隣の箱が見える。同じ鶏。同じ箱。その隣も。その隣も。無限に並ぶ1×1の箱。全員同じことをしている。卵を産んでホッパーに吸われる</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鶏の一人称視点、ガラス越しに隣の箱に閉じ込められた鶏が見える、さらにその奥にも同じ箱が無限に並んでいる、全ての箱にホッパー、全ての鶏が同じ姿勢、工場ライン、暗い照明</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV looking through glass at the neighboring chicken in identical box, camera perspective shifting to reveal rows and rows of identical boxes stretching into darkness, each with a chicken and hopper, mechanical clicking sounds multiplying, factory horror</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 過密</div>
+<p>箱の中に別の鶏が押し込まれる。2匹で1×1。もう動けない。3匹目が来る。重なる。呼吸が苦しい</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鶏の一人称視点、1×1の箱の中に3匹の鶏が重なって押し込められている、視界が他の鶏の羽毛で埋まっている、ガラスが鶏で曇っている、窒息感、圧迫</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>another chicken being pushed into the same box from above, then another, feathers filling the screen, bodies pressing together, the POV being squished, vision narrowing, suffocating compression, muffled clucking sounds</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — エンティティクラミング</div>
+<p>24匹になった。限界。体がダメージを受け始める。赤く点滅。隣の鶏が消える。ドロップアイテムに。また1匹消える。「死んでるのか？ 消されてるのか？」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鶏の一人称視点、大量の鶏が1×1に詰め込まれて赤くダメージ点滅している、1匹が羽毛と生の鶏肉のアイテムに分解されている瞬間、残りの鶏がパニック、視界が赤いダメージフラッシュで明滅</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>red damage flashing, one chicken disappearing into feathers and raw chicken item drop, then another, panic, the POV chicken taking damage too, health depleting, chickens vanishing one by one around it, claustrophobic horror</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — プレイヤーの回収</div>
+<p>プレイヤーが来る。チェストを開ける。中に卵が何百個。ステーキも。全部回収。鶏を一瞥もせず去る。効率の数字しか見ていない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、鶏の一人称視点、ガラス越しにプレイヤーのシルエットがチェストを開けている、チェストの中に卵が大量に積まれている、プレイヤーは鶏を見ずにアイテムだけを見ている、無関心、工場の管理者</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player silhouette approaching, opening a chest, taking stacks of eggs and chicken meat, not once looking at the chickens, closing the chest and walking away, mechanical indifference, the POV chicken watching through glass</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 7 — 報告書</div>
+<p>暗転。テロップ「自動鶏牧場 稼働報告 / 卵生産: 2,400個/日 / 鶏肉生産: 128個/日 / エンティティ死亡: 正常範囲内 / ステータス: 稼働中」。最後にカチャ（ホッパーの音）だけ残って暗転</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>黒い背景にモニター風の緑色のテキストで「自動鶏牧場 稼働報告」と表示、下に統計数字が並んでいる、事務的なフォント、右下にホッパーのアイコン、工場の稼働報告書風、無機質</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>black screen with green monospace text appearing line by line like a terminal readout, egg production numbers, meat numbers, entity death normal, status operational, the hopper click sound continuing after all text appears, fade to black</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+<!-- NPC #04 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag" style="background:rgba(167,139,250,.15);color:#a78bfa">NPC視点</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>NPC #04「アイアンゴーレムの一人称 — 守っても守っても感謝されない」</h3>
+<div class="hook"><b>視点:</b> アイアンゴーレム。毎晩戦う→傷だらけ→修理してもらえない→花を渡しても無視される→最後にプレイヤーに鉄目的で殺される<br><b>トーン:</b> 静かな悲しみ。怒りではない。献身の虚しさ</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1 — 使命</div>
+<p>ゴーレムの一人称。高い視点。村を見下ろしている。朝。村人たちが動き回る。自分は動かない。見守っている。「僕はここを守るために作られた」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、マイクラの村、高い一人称視点（3ブロックの高さ）から村を見下ろしている、手前にアイアンゴーレムの大きな鉄の手が見える、手にポピーの花を1本持っている、村人たちが小さく歩き回っている、朝日、守護者の視点</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>high POV looking down at the village, villagers walking below going about their day, the iron hand holding a poppy flower gently, slowly panning across the peaceful village, protective watchful stillness, morning light</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 戦闘</div>
+<p>夜。ゾンビが来る。ゴーレムの手が振り下ろされる。ゾンビを打ち上げる。3体、5体、10体。朝まで戦い続ける。体にヒビが入る。誰も助けに来ない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ゴーレムの一人称視点、夜の村、目の前にゾンビが3体迫っている、ゴーレムの鉄の拳が振りかぶられている、体にヒビが入っている（画面端に亀裂のエフェクト）、遠くで村人が家に閉じこもっている</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>POV iron fist swinging at zombies, launching them into the air, more zombies coming, fighting through the night, each punch causing cracks to spread across the POV screen edges representing body damage, no one helping, relentless combat</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 無視</div>
+<p>朝。戦闘終了。ヒビだらけ。子供の村人が通る。花を差し出す。子供は素通り。大人の村人も通る。誰もゴーレムを見ない</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ゴーレムの一人称視点、朝、ヒビだらけの鉄の手がポピーの花を差し出している、目の前を子供の村人が歩いていく、花を見ていない、素通り、背景に大人の村人も全員ゴーレムを無視して通過中</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the cracked iron hand extending the poppy toward a child villager walking past, the child not even glancing at it, more villagers walking past ignoring the golem, the hand slowly lowering the rejected flower, defeated</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 来訪者</div>
+<p>プレイヤーが来る。ゴーレムの横を通る。止まる。振り返る。ゴーレムを見ている。「初めて…誰かが僕を見た」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ゴーレムの一人称視点、プレイヤー（ダイヤ鎧のシルエット）が振り返ってこちらを見ている、初めて誰かと目が合った瞬間、花をまだ手に持っている、期待の気配</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player walking past then stopping, slowly turning to look directly at the golem POV, eye contact, a moment of hope, the golem hand raising the flower slightly toward the player</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — 目的</div>
+<p>プレイヤーが剣を構える。「…え？」。斬られる。体にヒビ。もう一撃。膝をつく。鉄インゴットが自分の体から落ちる。「鉄…が欲しかったのか。僕じゃなくて」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ゴーレムの一人称視点、膝をついた低い視点、プレイヤーがダイヤ剣で斬りつけている、体から鉄インゴットが飛び出している、ゴーレムの手がヒビだらけで花を落としている、地面に落ちるポピー</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>the player swinging sword at POV, red damage flash, the POV dropping lower as the golem falls to its knees, iron ingots dropping from the body visible in frame, the poppy falling from the hand in slow motion, hitting the ground</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — 花</div>
+<p>視界が暗くなる。最後に見えるのは地面に落ちたポピー。プレイヤーの足がそれを踏んで去る。鉄インゴットだけを拾って。暗転。テロップ「鉄インゴット ×4 / ポピー ×1（未回収）」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、地面すれすれの超ローアングル、地面に落ちたポピーの花のクロースアップ、花の上にプレイヤーの足の影がかかっている、踏まれる直前、周りに鉄インゴットが散らばっている、夕日の光が横から差している</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>fading POV falling to ground level, the poppy flower on the ground in focus, the player foot stepping on it and walking away, a hand reaching down to pick up iron ingots but ignoring the flower, vision going dark, cold text appearing: iron ingot x4 poppy x1 not collected</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+<!-- NPC #05 -->
+<div class="card" style="grid-column:1/-1">
+<div class="card-top">
+<div class="tags"><span class="tag" style="background:rgba(167,139,250,.15);color:#a78bfa">NPC視点</span><span class="tag t-hot">最恐</span><span class="tag t-time">30秒 (6clip)</span></div>
+<h3>NPC #05「全モブの被害届 — 総集編」</h3>
+<div class="hook"><b>型:</b> ニュース番組パロディ。各モブが「被害」を証言する。プレイヤーの行為を犯罪として報道する<br><b>流れ:</b> MC（スケルトンキャスター）→村人の証言→牛の証言→鶏の証言→ゴーレムの証言→最後にプレイヤーが逮捕される</div>
+</div>
+<details><summary>6clip × 5秒 = 30秒 — 🖼+🎬 デュアル</summary><div class="detail-body">
+
+<div class="scene-block"><div class="scene-num">Clip 1 — ニュースOP</div>
+<p>ニュース番組風のOP。「モブニュース速報」。デスクにスケルトンのキャスターが座っている。「本日の事件です。容疑者は"プレイヤー"と名乗る男」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、テレビのニュース番組のセット、デスクの後ろにスケルトンがスーツを着てキャスターとして座っている、マイクを持っている、背景に「MOB NEWS」のロゴ、画面下にテロップ「速報：プレイヤーによる連続犯罪」、テレビ的なフレーミング</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>news broadcast opening animation, cutting to the skeleton anchor at the desk shuffling papers, looking at camera professionally, text scroll appearing at bottom, the skeleton gesturing to a screen behind showing a player mugshot</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 2 — 村人の証言</div>
+<p>現場中継。泣いている村人。「あの男は畑を全部荒らし、家に入り、ベッドを奪い、ゴーレムを殺した。エメラルドで全て買えると思っている」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ニュース中継風、荒らされた畑の前で泣いている村人にマイクが向けられている、背景に壊れた家と空のチェスト、画面左下に「被害者：村人A」のテロップ、ニュースカメラのフレーム</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>field reporter interviewing crying villager, the villager gesturing at destroyed farm behind him, showing empty chests, pointing at where the iron golem used to stand, emotional testimony, news camera slight shake</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 3 — 牛の証言</div>
+<p>牧場跡地。生き残りの牛がインタビューを受ける。「小麦で誘われた。穴に落とされた。仲間が目の前で……」。PTSDの目</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ニュース中継風、空になった牛小屋の前で1匹の牛にマイクが向けられている、牛の目はPTSDで虚ろ、背景にフェンスの柵と散らばった小麦、テロップ「生存者：牛」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>a traumatized cow being interviewed, staring blankly, a single tear rolling down, looking at the empty pen where its family used to be, the reporter holding mic patiently, solemn atmosphere</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 4 — 鶏の証言（ガラス箱の中から）</div>
+<p>自動鶏牧場の中から鶏がインタビュー。ガラス越し。「出してくれ。ここは暗い。ホッパーの音が止まらない」。記者のスケルトンがメモを取る</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ガラスの箱の中に閉じ込められた鶏がカメラに向かって訴えている、ガラス越し、外にスケルトンの記者がメモを取っている、ホッパーの機械が見える、暗い工場、テロップ「現場中継：自動鶏牧場」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>interview through glass with the imprisoned chicken, the chicken pressing against the glass, a skeleton reporter outside taking notes looking disturbed, the hopper clicking in background, camera pulling back to reveal the scale of the factory</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 5 — ゴーレムの遺影</div>
+<p>スタジオに戻る。キャスター「なお、本事件の唯一の目撃者であったアイアンゴーレム氏は…」。遺影（ゴーレムの写真にリボン）。「鉄インゴットにされました」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ニューススタジオ、スケルトンキャスターの横にアイアンゴーレムの遺影（黒いリボン付きの写真）が表示されている、ゴーレムの写真はポピーを持った生前の姿、キャスターが悲しそうな表情</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>back in studio, the skeleton anchor gesturing to a memorial photo of the iron golem with black ribbon, a moment of silence, the skeleton removing glasses and wiping an eye socket, solemn pause</p></div>
+</div></div>
+
+<div class="scene-block"><div class="scene-num">Clip 6 — 逮捕</div>
+<p>「速報です。容疑者が逮捕されました」。プレイヤーがゾンビ2体に腕を掴まれて連行されている。「離せ！俺はただゲームを遊んでただけだ！」。ゾンビ「黙れ。お前には黙秘権がある」。暗転。テロップ「つづく？」</p>
+<div class="dual">
+<div class="p-nb"><h5>nano-banana</h5><p>アニメ風、ニュース中継風、プレイヤー（ダイヤ鎧）が両側をゾンビの警官（警察帽をかぶったゾンビ）に掴まれて連行されている、背景に村のモブたちが見物している、村人が指さしている、画面下テロップ「容疑者確保」</p></div>
+<div class="p-sd"><h5>Seedance2</h5><p>breaking news footage of the player being escorted by two zombie police officers, the player struggling and protesting, villagers cows and chickens watching from behind police tape, the skeleton reporter in foreground doing a live report, fade to black with to be continued text</p></div>
+</div></div>
+
+</div></details>
+</div>
+
+</div>
+
+<div class="footer">マイクラバグアニメ台本集 — Seedance2用 — バグ12本 + カオス8本 + バズ型6本 + NPC視点5本（計31本）— 全clip 5秒基準 — 2026.03</div>
+</div>
+
+</body>
+</html>

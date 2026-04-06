@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！横動画（長尺）台本集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+h2 .cnt{font-size:13px;color:#555;font-weight:400;margin-left:8px}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:12px}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:20px 0;padding:22px 26px;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-mc{background:rgba(34,197,94,.12);color:#34d399}
+.t-story{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-chal{background:rgba(251,146,60,.12);color:#fb923c}
+.t-build{background:rgba(56,189,248,.12);color:#38bdf8}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-com{background:rgba(250,204,21,.12);color:#fbbf24}
+.t-emo{background:rgba(236,72,153,.12);color:#f472b6}
+.t-edu{background:rgba(52,211,153,.12);color:#34d399}
+.t-event{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-collab{background:rgba(239,68,68,.12);color:#f87171}
+.t-meta{background:rgba(96,165,250,.12);color:#60a5fa}
+
+.desc{color:#aaa;font-size:14px;line-height:1.8;margin-bottom:10px}
+.structure{background:#12121e;border-radius:10px;padding:14px 18px;font-size:13px;color:#999;line-height:1.9;margin-bottom:10px}
+.structure strong{color:#ccc}
+.appeal{font-size:12px;color:#666;border-top:1px solid #1a1a2e;padding-top:8px;margin-top:8px}
+.appeal strong{color:#888}
+
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#s-mc">マイクラ直球</a>
+<a href="#s-chal">チャレンジ</a>
+<a href="#s-story">ストーリー</a>
+<a href="#s-build">建築</a>
+<a href="#s-horror">ホラー</a>
+<a href="#s-com">コメディ企画</a>
+<a href="#s-emo">エモ・日常</a>
+<a href="#s-event">特別回</a>
+</nav>
+
+<div class="hero" id="top">
+<h1>よふかしくらぶ！横動画 台本集</h1>
+<p>YouTube長尺（8〜20分）。ショートで引き込んだ視聴者が「この4人をもっと見たい」と思って来る場所。全40案。</p>
+</div>
+
+<div class="wrap">
+
+<div class="note">
+<h4>横動画の設計思想</h4>
+<ul>
+<li><strong>ショートとの役割分担：</strong>ショート＝認知（「この4人面白い」）、横動画＝定着（「この4人をずっと見ていたい」）</li>
+<li><strong>横動画でしかできないこと：</strong>キャラの掘り下げ、長い掛け合い、伏線回収、空気感、ゆるい雑談</li>
+<li><strong>最初の30秒で勝負：</strong>横動画でも冒頭フックは必須。「今日のよふかしくらぶ、いつもと違う」と思わせる</li>
+<li><strong>ミッドロール誘導：</strong>8分以上でミッドロール広告が入る。8分は最低ライン。</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-mc">マイクラ直球系 <span class="cnt">8本</span></h2>
+<p class="sec-desc">マイクラのゲーム体験そのもので勝負する。プレイ映像＋掛け合いが核。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y01">
+<h3>Y01「4人で100日サバイバルしたら全員の性格が出すぎた」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">15-20分</span></div>
+<div class="desc">100日サバイバルのダイジェスト。Day 1→10→30→50→100と飛ばしながら、各キャラの拠点・プレイスタイルの変化を追う。あさめの家が毎回全壊してるのに毎回「新しい家建てた！」と元気なのがオチ。</div>
+<div class="structure"><strong>構成：</strong>Day1 スポーン混乱 → Day10 各自の拠点紹介 → Day30 初ネザー遠征 → Day50 共同建築開始 → Day70 エンダーアイ集め → Day100 エンドラ討伐 → エンディング</div>
+<div class="appeal"><strong>伸びる理由：</strong>「100日」は検索ワードとして強い。ダイジェスト形式でテンポよく見せつつ、キャラの成長が感じられる。</div>
+</div>
+
+<div class="sc" id="Y02">
+<h3>Y02「マイクラの全バイオーム制覇の旅」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-time">12-15分</span></div>
+<div class="desc">全バイオームを巡る旅。バイオームを見つけるたびにリアクションチェック。各バイオームで1つ「やること」を決めてから次へ。砂漠で砂城、ジャングルでターザン、雪原で雪合戦……。やとらだけ各バイオームの豆知識を語る。</div>
+<div class="structure"><strong>構成：</strong>出発宣言 → 草原→砂漠→ジャングル→雪原→沼地→メサ→キノコ島 → 各バイオームで1ミッション → 最後のレアバイオーム発見で全員叫ぶ</div>
+<div class="appeal"><strong>伸びる理由：</strong>旅系は視聴維持率が高い。「次はどこ？」で見続ける。各バイオームがパターンインタラプトになる。</div>
+</div>
+
+<div class="sc" id="Y03">
+<h3>Y03「マイクラの最強装備を全員分揃えるまで帰れない」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">15分</span></div>
+<div class="desc">ネザライトフル装備×4人分＝16セット。分業するが効率が最悪。あさめがダイヤを溶岩に落とす。ひぐれが古代の残骸の掘り方を知らない。まひるがネザー要塞で迷子。やとらだけ黙々と効率的に進める。</div>
+<div class="structure"><strong>構成：</strong>目標宣言 → 役割分担（破綻） → ダイヤ採掘編 → ネザー編 → 古代の残骸地獄 → エンチャント → 完成＆記念撮影</div>
+<div class="appeal"><strong>伸びる理由：</strong>「帰れない」系は鉄板。進捗バーを常に画面端に出すことで「あとどれくらい？」が気になる。</div>
+</div>
+
+<div class="sc" id="Y04">
+<h3>Y04「やとらのレッドストーン講座（を3人が全力で妨害する）」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-com">コメディ</span><span class="tag t-edu">教育</span><span class="tag t-time">10-12分</span></div>
+<div class="desc">やとらが真面目にレッドストーン回路を教えようとするが、あさめがスイッチを勝手に押す、ひぐれが回路の上を歩く、まひるがTNTを接続する。教育動画の皮をかぶった妨害コメディ。でも最後にちゃんと動く装置が完成する。</div>
+<div class="structure"><strong>構成：</strong>「今日は自動農場を作ります」 → 基礎説明（妨害1） → 回路組み立て（妨害2） → テスト運転（大爆発） → やり直し → 奇跡の完成</div>
+<div class="appeal"><strong>伸びる理由：</strong>教育系＋コメディのハイブリッド。レッドストーンの仕組みが自然と学べるので保存率が高い。「自分もやってみたい」コメント。</div>
+</div>
+
+<div class="sc" id="Y05">
+<h3>Y05「初見でネザー行ったら全員パニックになった」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">ひぐれの初ネザー。ポータルをくぐった瞬間のリアクション。ガストに泣く。マグマキューブに困惑。ブレイズに全滅。ネザー要塞で迷子。「もう二度と来たくない」と言いながら帰り道がわからない。</div>
+<div class="structure"><strong>構成：</strong>ポータル作成（緊張） → 初ネザー入場（衝撃） → 探索（恐怖） → ガスト遭遇（パニック） → 要塞発見 → ブレイズ戦（全滅） → 帰還……できない → 奇跡の帰還</div>
+<div class="appeal"><strong>伸びる理由：</strong>初ネザーの感動はマイクラプレイヤー全員の原体験。ひぐれの素朴なリアクションが視聴者の「あの頃」を思い出させる。</div>
+</div>
+
+<div class="sc" id="Y06">
+<h3>Y06「4人のワールド、1年後どうなった？」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-emo">エモ</span><span class="tag t-time">10分</span></div>
+<div class="desc">サーバー開始から1年。ワールドを上空から俯瞰。最初の豆腐ハウスがまだ残ってる。各拠点を巡りながら「ここでこんなことあったよね」と振り返る。最後に4人で新しい建築を始めて「まだまだ続くよ」。</div>
+<div class="structure"><strong>構成：</strong>空撮で全体像 → 最初のスポーン地点 → 各拠点の歴史 → 名場面の場所巡り → 「ここ覚えてる？」 → 新しい場所に新拠点 → 未来へ</div>
+<div class="appeal"><strong>伸びる理由：</strong>シリーズ追ってる人への最強ファンサ。新規には「こんなに歴史あるのか、最初から見たい」と過去動画への導線。</div>
+</div>
+
+<div class="sc" id="Y07">
+<h3>Y07「マイクラのアプデ全部試す会」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-edu">教育</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">最新アプデ（Tiny Takeover / Chaos Cubed）の新要素を4人で全部検証する。金のタンポポ実験、サルファーキューブの物理テスト、新バイオーム探検。やとらが解説担当だが、あさめが勝手に触って毎回カオスになる。</div>
+<div class="structure"><strong>構成：</strong>アプデ概要 → 新アイテム検証×3 → 新MOB検証 → 新バイオーム探検 → お気に入り投票 → 次のアプデ予想</div>
+<div class="appeal"><strong>伸びる理由：</strong>アプデ直後の検索需要＋教育系の保存率。定期フォーマットとして毎回のアプデでシリーズ化。</div>
+</div>
+
+<div class="sc" id="Y08">
+<h3>Y08「深夜のマイクラ釣り大会 — 一番レアなもの釣った人が勝ち」</h3>
+<div class="sc-meta"><span class="tag t-mc">マイクラ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">10分</span></div>
+<div class="desc">夜の海辺で4人が釣り竿を垂らす。ゆるい雑談をしながら釣果を競う。魚が釣れるたびにリアクション。エンチャント本が出たら大騒ぎ。まひるだけ「ゴミ」を引く。最後にまひるが名無しの地図を釣って宝の地図だと判明。</div>
+<div class="structure"><strong>構成：</strong>海辺集合 → ルール説明 → 釣り開始（雑談タイム） → レア釣果で盛り上がり → まひるの連続ゴミ → 逆転の宝の地図 → 宝探しへ（次回予告）</div>
+<div class="appeal"><strong>伸びる理由：</strong>ゆるい空気感が横動画の強み。雑談が面白ければ内容は何でもいい。釣りの「何が出るか」はガチャと同じドーパミン構造。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-chal">チャレンジ・対決系 <span class="cnt">6本</span></h2>
+<p class="sec-desc">ルールを決めて競う。勝敗がつくので最後まで見る理由が生まれる。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y09">
+<h3>Y09「マイクラかくれんぼ — 隠れる側はブロックに擬態していい」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">鬼1人、隠れる側3人。隠れる側はブロックを1つ選んで自分の周りに同じブロックを積んで擬態できる。制限時間5分で見つからなければ勝ち。あさめが花畑に花として隠れる。まひるが黒曜石の壁に溶け込む。ひぐれが丸石の中に隠れるが明らかにはみ出てる。</div>
+<div class="structure"><strong>構成：</strong>ルール説明 → Round 1（やとら鬼） → Round 2（あさめ鬼） → Round 3（まひる鬼） → 最終Round → MVP発表</div>
+<div class="appeal"><strong>伸びる理由：</strong>かくれんぼは全世界共通の遊び。擬態ルールがマイクラならではの独自性。視聴者が「そこにいる！」と叫びたくなる。</div>
+</div>
+
+<div class="sc" id="Y10">
+<h3>Y10「嘘つきマイクラ — 1人だけ違う世界にいる」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">4人のうち1人だけ別のシード値のワールドにいる。質問し合って「誰が嘘つき（別ワールド）か」を当てる。「スポーン地点の近くに村ある？」「海見える？」——嘘つきは他の3人の会話に合わせてテキトーに答える。</div>
+<div class="structure"><strong>構成：</strong>ルール説明 → 質問タイム（3分） → 推理タイム → 投票 → 正解発表 → 2戦目（嘘つき交代） → 3戦目</div>
+<div class="appeal"><strong>伸びる理由：</strong>人狼のマイクラ版。「誰が嘘つき？」は最後まで見る動機として最強。キャラの嘘のつき方に性格が出る。</div>
+</div>
+
+<div class="sc" id="Y11">
+<h3>Y11「30分でお城を建てろ — 4人同時建築バトル」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-build">建築</span><span class="tag t-time">15分</span></div>
+<div class="desc">制限時間30分で「城」をテーマに建築。完成後に互いの城を見学して投票。あさめ＝カラフルだがぐちゃぐちゃ。まひる＝不気味だが独創的。ひぐれ＝四角い。やとら＝完璧だが時間切れで片面だけ。</div>
+<div class="structure"><strong>構成：</strong>テーマ発表 → 制作タイム（タイムラプス＋実況交互） → 完成 → 見学ツアー → 投票＆講評 → 敗者罰ゲーム</div>
+<div class="appeal"><strong>伸びる理由：</strong>建築系は安定して人気。タイムラプスが映像として美しい。完成品のギャップが笑いになる。</div>
+</div>
+
+<div class="sc" id="Y12">
+<h3>Y12「マイクラ脱出ゲーム — やとらが作った牢獄から脱出しろ」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">15分</span></div>
+<div class="desc">やとらがレッドストーンとコマンドブロックで作った脱出マップを3人が攻略する。暗号解読、パズル、トラップ回避。あさめが力技で壊そうとする。まひるが暗号をあっさり解く。ひぐれがトラップに全部引っかかる。</div>
+<div class="structure"><strong>構成：</strong>マップ紹介 → Room 1（暗号） → Room 2（パルクール） → Room 3（レッドストーンパズル） → 最終Room（トラップ地獄） → 脱出成功/失敗</div>
+<div class="appeal"><strong>伸びる理由：</strong>脱出ゲームは「次の部屋はどんな仕掛け？」で視聴維持率が高い。やとらの制作者視点も入れると2倍楽しい。</div>
+</div>
+
+<div class="sc" id="Y13">
+<h3>Y13「マイクラ料理対決 — 一番美味そうな料理を作れ」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-build">建築</span><span class="tag t-com">コメディ</span><span class="tag t-time">10分</span></div>
+<div class="desc">マイクラのブロックで「料理」を建築。お題は「ラーメン」「ケーキ」「お弁当」。食べ物をブロックで表現するセンスが問われる。ひぐれの「ラーメン」が丸石の塊。まひるの「お弁当」が蜘蛛の目入り。</div>
+<div class="structure"><strong>構成：</strong>お題発表 → 制作（3品×タイムラプス） → 品評会（リアクション芸） → 総合優勝決定</div>
+<div class="appeal"><strong>伸びる理由：</strong>料理×建築のクロスオーバー。「ブロックでどう食べ物を表現するか」は発想力コンテンツ。SNSで完成品がシェアされやすい。</div>
+</div>
+
+<div class="sc" id="Y14">
+<h3>Y14「マイクラ伝言ゲーム建築 — 前の人の建築を見て次を作れ」</h3>
+<div class="sc-meta"><span class="tag t-chal">チャレンジ</span><span class="tag t-build">建築</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">お題「犬」→やとらが建築→あさめはやとらの建築だけ見て何か当てて建てる→まひる→ひぐれ。最後のひぐれの建築が原型を留めているか？ お題「犬」が「キノコ」になってたり。</div>
+<div class="structure"><strong>構成：</strong>ルール説明 → 1人目建築 → 2人目「これ何？」→建築 → 3人目 → 4人目 → 全公開＆答え合わせ → 2戦目</div>
+<div class="appeal"><strong>伸びる理由：</strong>伝言ゲームの崩壊っぷりが面白い。各段階で「元のお題から離れていく」のがビジュアルで見える。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-story">ストーリー・シリーズ系 <span class="cnt">6本</span></h2>
+<p class="sec-desc">キャラの関係性を描く。エモと物語で「次も見たい」を作る。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y15">
+<h3>Y15「よふかしくらぶ結成秘話 — 4人はこうして集まった」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-emo">エモ</span><span class="tag t-time">12-15分</span></div>
+<div class="desc">4人が出会う前の話。やとらがサーバーを立てた理由。あさめが「夜中に話せる人がほしかった」。まひるが「リアルの居場所がなかった」。ひぐれが「たまたま」入った。それぞれの孤独から始まって、4人が揃った夜。</div>
+<div class="structure"><strong>構成：</strong>やとら視点「ひとりのサーバー」 → あさめ合流「うるさいのが来た」 → まひる合流「静かなのが来た」 → ひぐれ合流「普通のが来た」 → 初めて4人で朝まで遊んだ夜</div>
+<div class="appeal"><strong>伸びる理由：</strong>オリジン・ストーリーは最強のファン定着装置。各キャラの背景が見えることで全ての掛け合いが深くなる。</div>
+</div>
+
+<div class="sc" id="Y16">
+<h3>Y16「やとらがログインしない日」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-emo">エモ</span><span class="tag t-time">10分</span></div>
+<div class="desc">いつもいるやとらが1週間ログインしない。3人で探しに行く（リアルで）——わけにもいかず、マイクラ内でやとらの拠点を守る。まひるが「やとらくんのレッドストーン壊したくない」。ひぐれが「アイツなしでも大丈夫だろ……大丈夫じゃないわ」。最後にやとらが何事もなく戻ってくる。理由は「PCが壊れた」。</div>
+<div class="structure"><strong>構成：</strong>Day 1「あれ、やとらいない」 → Day 3「まだいない」 → 3人で日常を回す → うまくいかない → Day 7 やとら帰還 → 「何してたの」「PC壊れた」 → 安堵</div>
+<div class="appeal"><strong>伸びる理由：</strong>「いつもいる人がいない」の不安は全視聴者が共感。やとらの存在の大きさを逆説的に描く。オチが日常的なのがリアル。</div>
+</div>
+
+<div class="sc" id="Y17">
+<h3>Y17「マイクラRPG — やとらが作った物語を3人が冒険する」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">20分</span></div>
+<div class="desc">やとらがコマンドブロックとNPCで作ったオリジナルRPGマップ。3人がプレイヤーとなって「闇の王を倒す」ストーリーを進める。やとら＝ゲームマスター（裏でリアルタイムにイベント発動）。ストーリーは厨二だがクオリティが高い。</div>
+<div class="structure"><strong>構成：</strong>OP映像 → キャラ選択（戦士/魔法使い/盗賊） → 村での情報収集 → ダンジョン → ボス戦 → ストーリーのどんでん返し → エンディング</div>
+<div class="appeal"><strong>伸びる理由：</strong>マイクラ内RPGは映像として新鮮。やとらの裏方が見えるのがメタ的に面白い。シリーズ化可能（Chapter 2、3…）。</div>
+</div>
+
+<div class="sc" id="Y18">
+<h3>Y18「まひるの秘密のワールド」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-emo">エモ</span><span class="tag t-horror">ミステリー</span><span class="tag t-time">12分</span></div>
+<div class="desc">まひるが「誰にも見せてない」ソロワールドを初公開。中はまひるの内面世界。地下に作られた巨大な美術館（額縁にスクショ）。空に浮かぶ島（「ここで泣いた」と書いてある看板）。最奥部に4人の像がある。「よふかしくらぶに入る前から、ここに4人分の場所を作ってた。……なんでだろ。会う前から居場所を用意してたんだね。あはは、気持ち悪いよね」</div>
+<div class="structure"><strong>構成：</strong>「見せたいものがある」 → ワールドに入る → 各部屋を巡る → 3人のリアクション（言葉を失う） → 最奥部の4人の像 → まひるの独白 → 3人の返事</div>
+<div class="appeal"><strong>伸びる理由：</strong>まひるの内面を建築で表現するのがマイクラならでは。「建築は心の鏡」。コメント欄が感想文で埋まる。</div>
+</div>
+
+<div class="sc" id="Y19">
+<h3>Y19「ひぐれのリアル友達が来た日」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">ひぐれが学校の友達をサーバーに連れてくる。リアル友達は「普通の陽キャ」。よふかしくらぶの異常さ（まひるの家、やとらの厨二、あさめのカオス）にドン引きする。ひぐれが「いつもこうなんだわ」と紹介する側に回る。最後にリアル友達が「……また来ていい？」。</div>
+<div class="structure"><strong>構成：</strong>友達紹介 → サーバーツアー（ドン引き連発） → 一緒にプレイ（カルチャーショック） → よふかしくらぶの良さを知る → 「また来ていい？」 → ひぐれの「だろ？」</div>
+<div class="appeal"><strong>伸びる理由：</strong>「外部の人の目」を通すことで、よふかしくらぶの異常さと良さを再発見させる。新キャラ登場で新鮮味。ゲストコラボの布石。</div>
+</div>
+
+<div class="sc" id="Y20">
+<h3>Y20「最後の夜 — サーバーリセット前日」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-emo">エモ</span><span class="tag t-time">15分</span></div>
+<div class="desc">ワールドをリセットすることになった。最後の夜、4人でワールドを歩き回る。思い出の場所、最初のベッド、初めてエンダードラゴンを倒した場所。最後にスポーン地点でスクショを撮って「せーの」でリセットボタンを押す。新しいワールドの最初の画面で終わる。</div>
+<div class="structure"><strong>構成：</strong>「明日リセットする」宣言 → 最後の夜の散歩 → 名場面の場所巡り → 各自の最後の作業 → スポーン地点集合 → スクショ → リセット → 新しい朝</div>
+<div class="appeal"><strong>伸びる理由：</strong>マイクラプレイヤー全員の「ワールドを消す切なさ」に刺さる。新シーズンへの期待も同時に作れる。絶対泣くやつ。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-build">建築・クリエイティブ系 <span class="cnt">4本</span></h2>
+<p class="sec-desc">作る楽しさ。タイムラプスが映える。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y21">
+<h3>Y21「4人で巨大よふかしくらぶ拠点を建てる」</h3>
+<div class="sc-meta"><span class="tag t-build">建築</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">15-20分</span></div>
+<div class="desc">共同建築プロジェクト。各自が1エリアを担当。あさめ＝遊び場、まひる＝地下秘密基地、ひぐれ＝広場、やとら＝全体設計＋自動装置。完成まで数日かかる大プロジェクトをダイジェストで。</div>
+<div class="structure"><strong>構成：</strong>設計会議 → 各担当決定 → 建築タイムラプス×4人分 → 中間報告（カオス） → 調整 → 完成ツアー</div>
+<div class="appeal"><strong>伸びる理由：</strong>完成物がサムネイルとして超強い。シリーズの「ホーム」が視覚的に完成することで世界観が固まる。</div>
+</div>
+
+<div class="sc" id="Y22">
+<h3>Y22「マイクラで学校を建てる — 俺たちの理想の学校」</h3>
+<div class="sc-meta"><span class="tag t-build">建築</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">4人がそれぞれ「理想の教室」を作る。あさめの教室は遊具だらけ。まひるの教室は地下で暗い。ひぐれの教室は普通（逆に珍しい）。やとらの教室にはレッドストーンの自動黒板がある。最後に廊下で繋げて1つの学校にする。</div>
+<div class="structure"><strong>構成：</strong>「理想の学校」ブレスト → 各自の教室建築 → 見学会 → 廊下で接続 → 完成した学校で授業ごっこ</div>
+<div class="appeal"><strong>伸びる理由：</strong>「理想の○○」建築は視聴者が「自分ならこうする」とコメントしたくなる。学校テーマはターゲット層にドンピシャ。</div>
+</div>
+
+<div class="sc" id="Y23">
+<h3>Y23「あさめに建築を教えたら天才だった」</h3>
+<div class="sc-meta"><span class="tag t-build">建築</span><span class="tag t-emo">エモ</span><span class="tag t-time">10分</span></div>
+<div class="desc">やとらがあさめにマンツーマンで建築を教える。最初は酷い。でもコツを掴んだ瞬間に「あさめの個性」が爆発。色使いが独創的で、やとらにはない感性の建築が生まれる。やとらが「……負けた」と認める。</div>
+<div class="structure"><strong>構成：</strong>「建築教えて！」 → 基礎レッスン（失敗連発） → ブレイクスルーの瞬間 → あさめ独自スタイルの開花 → 完成品にやとら絶句</div>
+<div class="appeal"><strong>伸びる理由：</strong>成長物語は普遍的に強い。「教える側が学ぶ」のどんでん返し。あさめとやとらの関係性が深まる。</div>
+</div>
+
+<div class="sc" id="Y24">
+<h3>Y24「コメント欄のリクエストを全部建築する」</h3>
+<div class="sc-meta"><span class="tag t-build">建築</span><span class="tag t-meta">メタ</span><span class="tag t-com">コメディ</span><span class="tag t-time">12分</span></div>
+<div class="desc">視聴者のコメントから建築リクエストを拾って実際に作る。「東京タワー作って」「まひるの部屋を明るくして」「ひぐれの石の剣を巨大化」。無茶振りにどう対応するかが面白い。</div>
+<div class="structure"><strong>構成：</strong>コメント読み上げ → リクエスト選定 → 建築×5-6個 → 完成品披露 → 次回のリクエスト募集</div>
+<div class="appeal"><strong>伸びる理由：</strong>視聴者参加型は最強のエンゲージメント。「自分のコメントが採用されるかも」でコメント率UP。定期シリーズ化。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-horror">ホラー・ミステリー系 <span class="cnt">4本</span></h2>
+<p class="sec-desc">マイクラの「夜」の怖さを活かす。よふかしくらぶの「深夜感」にぴったり。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y25">
+<h3>Y25「深夜3時のマイクラ — 洞窟の奥から声がする」</h3>
+<div class="sc-meta"><span class="tag t-horror">ホラー</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">12分</span></div>
+<div class="desc">深夜3時。4人が洞窟探検。環境音がいつもと違う。奥から「フゥーン」という音。ただの洞窟音——と思ったら、看板が置いてある。誰も書いてないはずの看板。そこに書いてあるのは——。ホラーを装ったコメディで終わるパターンと、ガチで怖いパターンの2つを用意。</div>
+<div class="structure"><strong>構成：</strong>深夜の洞窟へ → 不気味な環境音 → 「何か聞こえない？」 → 看板発見 → 一同恐怖 → 真相（やとらの仕込み or ガチで不明） → 帰り道でもう1つ怖い出来事</div>
+<div class="appeal"><strong>伸びる理由：</strong>ホラー×マイクラは鉄板。深夜テンション＋洞窟の音＝リアルに怖い。「これ本当なの？」でコメント考察。</div>
+</div>
+
+<div class="sc" id="Y26">
+<h3>Y26「ヒロブライン検証 — 全部の噂を試す」</h3>
+<div class="sc-meta"><span class="tag t-horror">ホラー</span><span class="tag t-mc">マイクラ</span><span class="tag t-edu">教育</span><span class="tag t-time">15分</span></div>
+<div class="desc">マイクラの最大の都市伝説「ヒロブライン」。召喚方法の噂を全部試す。金ブロックの祭壇、ネザーラックの十字、看板に名前を書く——。やとらが「全部嘘だ」と言いつつ、まひるが「でも……パッチノートに毎回"Removed Herobrine"って書いてあるのは……」。最後に何かが映り込む。</div>
+<div class="structure"><strong>構成：</strong>ヒロブライン概要説明 → 召喚方法①（失敗） → ②（失敗） → ③（失敗） → 「やっぱり嘘じゃん」 → ……最後の映像に何かが</div>
+<div class="appeal"><strong>伸びる理由：</strong>ヒロブラインは永遠のマイクラネタ。検証動画の形式で最後まで見せる。最後の「何か」でコメント爆発。</div>
+</div>
+
+<div class="sc" id="Y27">
+<h3>Y27「廃村を見つけた。住人はどこに消えた？」</h3>
+<div class="sc-meta"><span class="tag t-horror">ホラー</span><span class="tag t-story">ストーリー</span><span class="tag t-time">12分</span></div>
+<div class="desc">冒険中に村を発見。だが村人が1人もいない。ドアは開きっぱなし、畑は荒れている。チェストの中には日記のような看板。4人が「何があったのか」を推理していく。——正体はゾンビ村（全員がゾンビ化した村）。夜になってゾンビ村人が現れる。</div>
+<div class="structure"><strong>構成：</strong>村発見「誰もいない」 → 調査開始 → 看板の日記 → 各自の推理 → 夜が来る → ゾンビ村人登場 → 真相判明 → 村人治療（ポーション）→ 村が復活</div>
+<div class="appeal"><strong>伸びる理由：</strong>ゾンビ村というゲーム仕様をストーリーに昇華。推理パートで視聴者も考える。治療して村を復活させるのがカタルシス。</div>
+</div>
+
+<div class="sc" id="Y28">
+<h3>Y28「マイクラの"あの音"の正体を調べに行く」</h3>
+<div class="sc-meta"><span class="tag t-horror">ホラー</span><span class="tag t-edu">教育</span><span class="tag t-time">10分</span></div>
+<div class="desc">マイクラの洞窟環境音（Cave Sound）の全14種を解説しながら実際に聞きに行く。「この音がする場所は近くにMOBがいる証拠」「この音は完全にランダム」。知識と恐怖が同時に来る。まひるだけ「この音好き」と言って全員に引かれる。</div>
+<div class="structure"><strong>構成：</strong>「マイクラの怖い音、全部調べた」 → Cave Sound 1-5（よく聞く系） → 6-10（レア系） → 11-14（ガチ怖い系） → まとめ「知ると逆に怖い」</div>
+<div class="appeal"><strong>伸びる理由：</strong>教育系＋ホラーは保存率＋視聴完了率の両方が高い。「聞いたことある！」の共感が強い。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-com">コメディ企画系 <span class="cnt">6本</span></h2>
+<p class="sec-desc">笑いに全振り。テンポとキャラの掛け合いで勝負。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y29">
+<h3>Y29「マイクラ裁判 — やとらの城を壊したのは誰だ」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">12分</span></div>
+<div class="desc">やとらの城が半壊している。犯人は3人のうち誰か。やとら＝裁判長。3人が弁明する。あさめ「私じゃないもん！（怪しい）」。まひる「TNTの実験はしたけど城には当たってないはず……たぶん」。ひぐれ「俺クリーパーに追いかけられてた時にこっち来ちゃったかも」。証拠映像（リプレイMOD）で真実が明らかに。</div>
+<div class="structure"><strong>構成：</strong>事件発覚 → 裁判開廷 → 被告A弁明 → 被告B弁明 → 被告C弁明 → 証拠映像提出 → 判決 → 罰ゲーム</div>
+<div class="appeal"><strong>伸びる理由：</strong>裁判フォーマット＝「犯人は誰？」で最後まで見る。証拠映像のどんでん返しが気持ちいい。</div>
+</div>
+
+<div class="sc" id="Y30">
+<h3>Y30「4人でマイクラしりとり生活 — しりとりで出た物しか使えない」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">12分</span></div>
+<div class="desc">しりとりで言ったマイクラアイテムしか使えない生活。「ダイヤの剣」→「き……木の棒」→「う……ウサギ」→「ぎ……？」詰むと何も使えなくなる。戦略としりとり力の二重ゲーム。</div>
+<div class="structure"><strong>構成：</strong>ルール説明 → 序盤（順調） → 中盤（詰まり始める） → 終盤（ほぼ何も使えない） → 「"ん"で終わったら負け」 → カオスな結末</div>
+<div class="appeal"><strong>伸びる理由：</strong>しりとりは誰でも知ってるゲーム×マイクラ知識の掛け算。「そのアイテム名出るか！」で盛り上がる。</div>
+</div>
+
+<div class="sc" id="Y31">
+<h3>Y31「マイクラ人狼 — 1人だけ裏切り者がいる」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">15分</span></div>
+<div class="desc">4人で協力サバイバル。だが1人だけ「裏切り者」がいて、バレないように他の3人を全滅させる。裏切り者はクリーパーを誘導したり、トラップを仕込んだり。誰が裏切り者か、プレイ中に推理しながら進める。</div>
+<div class="structure"><strong>構成：</strong>裏切り者決定（視聴者だけ知ってる） → 協力プレイ開始 → 事件1（誰かの装備消失） → 事件2（拠点にTNT） → 推理タイム → 投票 → 正体発覚</div>
+<div class="appeal"><strong>伸びる理由：</strong>人狼系は鉄板。「誰が裏切り者？」で最後まで見る。視聴者は答えを知ってるので「あー！バレる！」のハラハラ。</div>
+</div>
+
+<div class="sc" id="Y32">
+<h3>Y32「マイクラで『はじめてのおつかい』」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">10分</span></div>
+<div class="desc">ひぐれに「村まで行って小麦10個買ってきて」とおつかいを頼む。やとら・あさめ・まひるは遠くから見守る（覗き見カメラ）。ひぐれが道に迷う、ゾンビに絡まれる、村を見つけるが取引方法がわからない。3人の実況が面白い。</div>
+<div class="structure"><strong>構成：</strong>おつかい出発 → 道中（迷う、戦う、泣く） → 村到着 → 取引チャレンジ → 帰還 → 「おかえり」</div>
+<div class="appeal"><strong>伸びる理由：</strong>「はじめてのおつかい」フォーマットの認知度。見守り視点が親目線。ひぐれの初心者リアクションが最大の武器。</div>
+</div>
+
+<div class="sc" id="Y33">
+<h3>Y33「禁止ワードマイクラ — 言ったらTNT」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-chal">チャレンジ</span><span class="tag t-time">10分</span></div>
+<div class="desc">各自に「禁止ワード」が設定される（本人だけ知らない）。あさめの禁止ワードは「かわいい」。まひるは「怖い」。ひぐれは「わかんない」。やとらは「フッ」。言った瞬間に足元のTNTが爆発。普段の口癖が禁止ワードだから地獄。</div>
+<div class="structure"><strong>構成：</strong>禁止ワード設定（視聴者だけ見える） → 通常プレイ開始 → 1人目爆発 → 「え、なんで？」 → 推理 → 禁止ワード特定 → 言わないように頑張る → でも言っちゃう</div>
+<div class="appeal"><strong>伸びる理由：</strong>キャラの口癖が禁止ワード＝絶対言う。視聴者は「言うぞ……言った！」の予測が楽しい。爆発のビジュアルインパクト。</div>
+</div>
+
+<div class="sc" id="Y34">
+<h3>Y34「ウソ攻略Wiki — 嘘の情報だけでマイクラを攻略する」</h3>
+<div class="sc-meta"><span class="tag t-com">コメディ</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">12分</span></div>
+<div class="desc">やとらが「ウソ攻略Wiki」を作成。ひぐれにそれを読ませて信じ込ませる。「ダイヤはY座標100で見つかる」「クリーパーは花をあげると仲間になる」「ネザーでベッドに寝ると回復する」。ひぐれが全部実行して大惨事。</div>
+<div class="structure"><strong>構成：</strong>「Wiki見つけた！」 → ウソ情報① 実行（失敗） → ② 実行（爆発） → ③ 実行（死亡） → 「このWiki嘘じゃね？」 → 犯人やとら発覚</div>
+<div class="appeal"><strong>伸びる理由：</strong>「ベッドで寝たら爆発」はマイクラ最大の罠。視聴者は知ってるからこそ「あーーー！」となる。教育的側面もある。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-emo">エモ・日常系 <span class="cnt">4本</span></h2>
+<p class="sec-desc">笑いもカオスもない、ただ4人がいる空気感。ファンが一番好きなやつ。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y35">
+<h3>Y35「深夜ラジオ — 4人でただ喋る回」</h3>
+<div class="sc-meta"><span class="tag t-emo">日常</span><span class="tag t-time">20-30分</span></div>
+<div class="desc">特に何もしない。マイクラ内で焚き火を囲んで雑談。お題カードを引いて「最近あった嬉しいこと」「マイクラ以外にハマってるもの」「10年後の自分」を語る。ゲームの音とキャラの声だけの空間。</div>
+<div class="structure"><strong>構成：</strong>焚き火を囲む → お題1 → お題2 → お題3 → フリートーク → 「そろそろ朝だね」 → 解散</div>
+<div class="appeal"><strong>伸びる理由：</strong>作業BGM・寝落ちBGMとして長時間再生される。再生時間が長いのでアルゴリズムに強い。ファンの「推し活」コンテンツ。</div>
+</div>
+
+<div class="sc" id="Y36">
+<h3>Y36「4人のスクショフォルダを公開する」</h3>
+<div class="sc-meta"><span class="tag t-emo">エモ</span><span class="tag t-meta">メタ</span><span class="tag t-time">10分</span></div>
+<div class="desc">各キャラのマイクラスクショフォルダを公開。あさめ＝食べ物と花の写真ばかり。まひる＝夜景と地下の写真（たまに他のメンバーの寝顔）。ひぐれ＝死亡画面のスクショが大半。やとら＝建築の設計メモと回路図。スクショから人柄が見える。</div>
+<div class="structure"><strong>構成：</strong>「スクショ見せて」 → あさめのフォルダ → まひるのフォルダ（闇） → ひぐれのフォルダ（悲惨） → やとらのフォルダ（几帳面） → 「一番いいスクショ」を各自選ぶ</div>
+<div class="appeal"><strong>伸びる理由：</strong>スクショ＝そのキャラが何を「残したい」と思ったか。キャラの内面が見える企画。視聴者が「自分のフォルダもこんな感じ」と共感。</div>
+</div>
+
+<div class="sc" id="Y37">
+<h3>Y37「雨の日のマイクラ」</h3>
+<div class="sc-meta"><span class="tag t-emo">日常</span><span class="tag t-mc">マイクラ</span><span class="tag t-time">10分</span></div>
+<div class="desc">マイクラ内で雨が降っている日。外に出られないので家の中で過ごす。各自の過ごし方を観察。あさめ＝ずっと窓から外を見てる。まひる＝本棚の前でぼーっとしてる。ひぐれ＝チェスト整理。やとら＝雨の音を聞きながら建築。たまに全員で窓際に集まって「雨やまないね」。</div>
+<div class="structure"><strong>構成：</strong>雨が降り始める → 各自の過ごし方（静かなカット割り） → 窓辺に集まる → ぽつぽつ喋る → 雨がやむ → 虹が出る → 外に飛び出す</div>
+<div class="appeal"><strong>伸びる理由：</strong>ASMR的な癒し動画。雨音＋マイクラ＋静かな会話。ストレス解消コンテンツとして再生回数が積み上がる。</div>
+</div>
+
+<div class="sc" id="Y38">
+<h3>Y38「朝が来るまで通話を切らない」</h3>
+<div class="sc-meta"><span class="tag t-emo">日常</span><span class="tag t-time">15-20分</span></div>
+<div class="desc">タイトル通り。夜11時から朝5時まで通話を繋いだまま過ごす。最初はテンション高い→深夜2時でテンションおかしくなる→4時で哲学語り始める→5時で鳥の声が聞こえて「朝だ」。リアルな深夜通話の空気感を再現。</div>
+<div class="structure"><strong>構成：</strong>23時「今日は朝まで！」 → 0時（ゲーム） → 1時（雑談） → 2時（テンションバグ） → 3時（哲学） → 4時（眠い） → 5時「鳥鳴いてる……朝だ」 → 「おやすみ」</div>
+<div class="appeal"><strong>伸びる理由：</strong>「よふかしくらぶ」の名前回収。深夜通話の空気感は10代に刺さる。時間経過でテンションが変わるのがリアル。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-event">特別回・コラボ系 <span class="cnt">2本</span></h2>
+<p class="sec-desc">ここぞという時に出す切り札。</p>
+<!-- ============================================================ -->
+
+<div class="sc" id="Y39">
+<h3>Y39「視聴者50人とマイクラ鬼ごっこ」</h3>
+<div class="sc-meta"><span class="tag t-event">特別回</span><span class="tag t-collab">コラボ</span><span class="tag t-time">15-20分</span></div>
+<div class="desc">登録者○万人記念。視聴者をサーバーに招待して大規模鬼ごっこ。4人が鬼、50人が逃げる。マイクラの広大なマップを使った大逃走劇。各キャラの鬼スタイルが違う（あさめ＝突撃、まひる＝罠、ひぐれ＝迷子、やとら＝戦略）。</div>
+<div class="structure"><strong>構成：</strong>ルール説明 → 参加者集合 → Round 1 → 4人視点切り替え → 最後の1人を追い詰める → 勝者表彰 → 記念撮影</div>
+<div class="appeal"><strong>伸びる理由：</strong>参加者が自分のSNSでシェア→流入。大規模イベントはサムネ映え。記念回として話題性。</div>
+</div>
+
+<div class="sc" id="Y40">
+<h3>Y40「よふかしくらぶ1周年 — 全台本の名場面総集編」</h3>
+<div class="sc-meta"><span class="tag t-event">特別回</span><span class="tag t-emo">エモ</span><span class="tag t-time">15-20分</span></div>
+<div class="desc">1年間の名場面を時系列で振り返る。各シーンに4人のコメンタリーを入れる。「この時まだひぐれ木の剣だったよね」「ここでまひる泣いたんだよね」。最後に視聴者からのメッセージを読む。</div>
+<div class="structure"><strong>構成：</strong>1年間の数字（再生数、投稿本数） → 名場面TOP10（コメンタリー付き） → NG集 → 視聴者メッセージ → 4人から一言 → 「2年目もよろしく」</div>
+<div class="appeal"><strong>伸びる理由：</strong>総集編は新規の入口。「面白いシーンだけ」を凝縮。ファンは「あの回だ！」で感動。</div>
+</div>
+
+<hr>
+
+<div class="note">
+<h4>横動画の投稿サイクル案</h4>
+<ul>
+<li><strong>週1本ペース：</strong>ショート（毎日〜隔日）＋ 横動画（週1）がベスト</li>
+<li><strong>初期10本の推奨順：</strong></li>
+<li>1. Y15（結成秘話）← 最初に「この4人は誰？」を伝える</li>
+<li>2. Y05（初ネザー）← マイクラ的な面白さ＋ひぐれの初心者視点</li>
+<li>3. Y29（裁判）← コメディで定着</li>
+<li>4. Y09（かくれんぼ）← 視聴者参加感</li>
+<li>5. Y21（拠点建築）← 世界観の確立</li>
+<li>6. Y25（洞窟ホラー）← ジャンル幅を見せる</li>
+<li>7. Y33（禁止ワード）← バズ狙いコメディ</li>
+<li>8. Y18（まひるの秘密ワールド）← エモで引き込む</li>
+<li>9. Y04（レッドストーン講座）← 教育系で保存率UP</li>
+<li>10. Y35（深夜ラジオ）← ファンが「ここが居場所」と思う回</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>ショートとの連動</h4>
+<ul>
+<li><strong>横動画の切り抜きをショートに：</strong>名場面を30秒に編集してショートとして投稿。「続きは概要欄のリンクから」</li>
+<li><strong>ショートの伏線を横動画で回収：</strong>ショートで匂わせた設定を横動画で掘り下げる（例：まひるの「開けないで」のチェスト → Y18で中身が判明）</li>
+<li><strong>横動画のフォーマットテスト：</strong>新企画はまずショートで1分版を出す → 反応が良ければ横動画で本編</li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer">よふかしくらぶ！横動画台本集 — 全40案 — 2026.04</div>
+
+</body>
+</html>

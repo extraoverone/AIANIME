@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！日刊台本 2026年4月10日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(250,204,21,.15);color:#fbbf24;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-update{background:rgba(34,211,153,.12);color:#34d399}
+.t-meme{background:rgba(251,146,60,.12);color:#fb923c}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-com{background:rgba(52,211,153,.12);color:#34d399}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-chaos{background:rgba(251,146,60,.12);color:#fb923c}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-pov{background:rgba(236,72,153,.12);color:#f472b6}
+.t-music{background:rgba(96,165,250,.12);color:#93c5fd}
+.t-orig{background:rgba(168,85,247,.12);color:#c084fc}
+.t-mystery{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-mrbeast{background:rgba(239,68,68,.12);color:#fca5a5}
+.t-story{background:rgba(236,72,153,.12);color:#f472b6}
+.t-build{background:rgba(34,211,153,.12);color:#34d399}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+
+.dial{padding:0 24px 20px}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:48px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.trend-tag{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.trend-tag strong{color:#fbbf24}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+
+.alert{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#fca5a5}
+.alert h4{color:#f87171;margin-bottom:8px;font-size:15px}
+.alert li{margin-bottom:4px}
+.alert ul{padding-left:18px;margin-top:6px}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+
+.emotion-map{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#c4b5fd}
+.emotion-map strong{color:#a78bfa}
+
+.thumb{background:rgba(251,146,60,.06);border:1px solid rgba(251,146,60,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fdba74}
+.thumb strong{color:#fb923c}
+
+.cut-points{background:rgba(34,211,153,.06);border:1px solid rgba(34,211,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#6ee7b7}
+.cut-points strong{color:#34d399}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#shorts">ショート台本</a>
+<a href="#long">横動画台本</a>
+<a href="#research">リサーチメモ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">DAILY SCRIPTS 2026.04.10</div>
+<h1>よふかしくらぶ！日刊台本 2026年4月10日</h1>
+<p>トレンド調査×音楽リサーチ×既存分析→台本生成→推敲強化。AI 5エージェント並列パイプラインで制作。全8本。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="shorts">ショート台本（5本）</h2>
+<p class="sec-desc">トレンド直撃＋キャラ深掘り。ループ設計＋イースターエッグ完備。</p>
+<!-- ============================================================ -->
+
+<!-- S01 -->
+<div class="sc" id="S01">
+<div class="sc-head">
+<h3>S01「62日かけて作った楽器が10秒で死んだ」</h3>
+<div class="sc-meta"><span class="tag t-trend">トレンド</span><span class="tag t-music">音楽</span><span class="tag t-update">銅トランペット</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> おなら音が鳴り響く（結末を先出し）→「10分前——」テロップ</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">音楽とは——時を刻む魂の鼓動である。……だからこの銅トランペット、62日酸化させた。熟成だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、待って、62日って何？ 2ヶ月放置してたってこと？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……熟成と言え</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">放置だね</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">レバーを引く。壮大なトランペット・ファンファーレ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">最高！！スクショ！！私この音で目覚ましにしたい！！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">銅が酸化し、音がズレ始める</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ん？ 今ピッチ変わった？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">気のせいだ。音楽とは揺らぎの中にこそ——</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">完全崩壊→おならみたいな音</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">は？……は？ なにこれ。なんか私の人生みたいな音してる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ワビサビじゃないよ！！ただの腐った音だよ！！……あれ、でもちょっとクセになる？ ……ならないわ！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">…………もう何もかも無理。この音を聞いた私の耳が無理</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">効率的にやろう。銅ヤスリで削れば音質は改善する。……理論上は</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……次は錆止めを塗ろう</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong>「錆止めを塗ろう」→冒頭のピカピカ銅に戻る。「塗った結果また最初からやってるんだ」</div>
+<div class="why"><strong>バズ要素:</strong> 銅トランペット最新アプデ直撃。壮大→崩壊のギャップ。音の変化でリピート誘発。</div>
+<div class="easter"><strong>イースターエッグ:</strong> ①冒頭で銅が既にわずかに変色 ②クリーパーが装置裏に1体</div>
+<div class="visual"><strong>BGM:</strong> 演奏パートはBGMなし銅トランペット音のみ。おなら音直前に0.8秒完全無音。</div>
+</div>
+
+<!-- S02 -->
+<div class="sc" id="S02">
+<div class="sc-head">
+<h3>S02「マイクラで一番ダンスがうまい奴が爆発した」</h3>
+<div class="sc-meta"><span class="tag t-music">音楽</span><span class="tag t-trend">トレンド曲</span><span class="tag t-chaos">クレイジーウォウウォ</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> 爆発跡のクレーターの前で4人が立ち尽くす→「……もう1回？」→タイトル</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">4人でダンス練習。あさめがリズム音痴</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あがる！！あがる！！踊りの天才かもしんない私！！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">5人目が自然に混じって踊っている</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">この子めっちゃうまくない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え……緑色じゃない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">…………。 今、5人いるけど。……私は数え間違えない</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……新メンバーか？ ……採用だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">なんで増えてんのー！！ 私がリーダーなんだけど！？ 面接した！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">待て。あいつ……泣いてないか？</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">クリーパーの目が潤んで見える</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">友達になろうよ！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">近づく→シュゥゥゥ→爆発</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">無理無理無理無理！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（爆発後）……もう1回踊る？</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 爆発→冒頭のクレーター。「何事もなかったかのようにまた踊ってる」</div>
+<div class="why"><strong>バズ要素:</strong> TikTokハッシュタグ直乗り。クリーパーに感情移入させてから爆発。</div>
+<div class="easter"><strong>イースターエッグ:</strong> ①練習シーン背景にクリーパー3体が待機（オーディション組） ②ひぐれとクリーパーの動きが完全同期</div>
+<div class="visual"><strong>BGM:</strong> トレンド曲使用。クリーパー認識の瞬間に曲がブツッと止まる→1秒無音→シュー音。</div>
+</div>
+
+<!-- S03 -->
+<div class="sc" id="S03">
+<div class="sc-head">
+<h3>S03「声を出したら即死のマイクラで"静寂好き"が最強だった」</h3>
+<div class="sc-meta"><span class="tag t-mrbeast">MrBeast系</span><span class="tag t-horror">ウォーデン</span><span class="tag t-update">ディープダーク</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> ウォーデンの咆哮音だけ（画面真っ暗）→ぶつ切り→タイトル</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">ルール：声を出したら、死ぬ。</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">4人がスニーク移動</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（チャット）声を封じられし者たち——これは修行だ。沈黙の修行</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（チャット）チャットでも厨二なのほんと草</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（チャット）足音も消せ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（チャット）静かな世界……最高……ここに住みたい……てか住む。現実より静かで最高</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（チャット）rkjfんhかおjksh</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（チャット）翻訳：たすけて</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（チャット）なんでわかるの！？！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（チャット）fjsdklfjsdklf！！！！！！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ダイヤ発見で興奮</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（チャット）あ、やば。声出しそうになった。危。心臓が無理</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">コウモリがあさめの顔面に</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ぅあ゛あ゛あ゛！！！！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ウォーデン出現→全滅</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">まひるだけ生存（静寂のポーション飲んでた）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あ。 静かな世界、終わった。……でもちょっとホッとしてる。あーだめだ私やっぱ静かなの向いてない</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">生存者：1名</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 全滅暗転→冒頭の暗い画面に戻る</div>
+<div class="why"><strong>バズ要素:</strong> 「○○したら死ぬ」はMrBeast系最強CTRタイトル。ウォーデン回は既存97本でゼロ。</div>
+<div class="easter"><strong>イースターエッグ:</strong> ①画面奥にウォーデンのシルエット（最初からいた） ②まひるが序盤にこっそりポーション飲むモーション ③座標Y=-52</div>
+<div class="visual"><strong>BGM:</strong> 全編BGMなし。環境音のみ。ウォーデンの足音を心臓の鼓動と同期。</div>
+</div>
+
+<!-- S04 -->
+<div class="sc" id="S04">
+<div class="sc-head">
+<h3>S04「エンチャント文字を解読したら"予言"が書いてあった」</h3>
+<div class="sc-meta"><span class="tag t-orig">オリジナル</span><span class="tag t-mystery">ミステリー</span><span class="tag t-update">エンチャント</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> やとら「この文字を読んだ者は——」（震え声）→暗転→「3分前——」</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……読める。この文字——読めるぞ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">は？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ読めるの！？ 天才じゃん！！やとらちゃん天才！！すごい！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ここにはこう書いてある——『今日の昼飯はパンにしろ』</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……思ってたのと違う</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次——『ピンク髪の者、推しに裏切られる』</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やめて！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">当たりそうで怖い</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">『お前の後ろに誰かいる』</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">全員フリーズ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やめてやめてやめて</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">知識に善悪はない</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……いや、ある</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最後の一文——</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">溜め</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">『——チャンネル登録しろ』</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">エンチャントテーブルに案件入ってんじゃん！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あ、でも登録はする。なんならメンバーシップも入る。エンチャントテーブルが言うなら</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">※本当はそう書いてありません</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> エンチャント文字アップ→冒頭の文字アップにシームレスに繋がる</div>
+<div class="why"><strong>バズ要素:</strong> 「エンチャント文字の意味」は常に検索される定番の謎。ホラー→ギャグの裏切り。</div>
+<div class="easter"><strong>イースターエッグ:</strong> ①本棚に1つ作業台が混じっている ②やとらの後ろにエンダーマン（解読を監視） ③「チャンネル登録しろ」表示時に0.1秒だけ別文字列がフラッシュ</div>
+<div class="visual"><strong>BGM:</strong> 解読序盤はコミカル探偵BGM→予言が当たり始めるとキー半音下降→「読めない方がいい」でBGM完全停止→オチでズッコケSE。</div>
+</div>
+
+<!-- S05 -->
+<div class="sc" id="S05">
+<div class="sc-head">
+<h3>S05「あさめが黙った。」</h3>
+<div class="sc-meta"><span class="tag t-orig">オリジナル</span><span class="tag t-emo">エモ</span><span class="tag t-pov">キャラ深掘り</span></div>
+</div>
+<div class="hook"><strong>フック:</strong> あさめが無言で丸石の壁を素手で殴り続けている→他3人がそっと覗く→テロップ「あさめが、笑わない。」</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……おはよ</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">声小さい。ジャンプしない。3人顔を見合わせる</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">太陽が沈黙した。……何があった、あさめ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え、あさめちゃんが元気ない……？ 推しが病んでる。私が病む前に推しが病んでる。これどうしたらいいの！？</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ひぐれ、あさめにこっそり金リンゴを渡す。無言。視線合わせない</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">3人の推理：</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">失恋だな</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">腹でも壊したか</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ダイヤ？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">なんでわかるの……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私も先週やった</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">"あの子"だよ……初日から使ってた、幸運IIIのあの子だよ……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……わかる。大事なものが壊れると、世界ごと壊れるよね。……私も昨日イヤホン片方なくした</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……あのピッケル、バックアップ取ってある</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">シュルカーボックスに、幸運IIIの予備。前に作っておいた</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれぇ……！！ 好き！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……別に。壊れると面倒だから</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめちゃんが笑った！！ 勝った！！ 今日は勝ち！！スクショ！！</span></div>
+</div>
+<div class="loop"><strong>ループ:</strong> 4人が走り出す後ろ姿→冒頭の「あさめが、笑わない。」に戻る。感情の落差でループ。</div>
+<div class="why"><strong>バズ要素:</strong> 「いつも元気な人が元気じゃない日」は共感バズ最強。あさめ内面は97本で初出。</div>
+<div class="easter"><strong>イースターエッグ:</strong> ①足元に耐久値0のダイヤツルハシ ②ひぐれの金リンゴはインベントリの最後の1個 ③冒頭「素手で殴る」＝ツルハシがないから</div>
+<div class="visual"><strong>BGM:</strong> 冒頭BGMなし素手の「ゴツ…ゴツ…」だけ→推理パートで推理ドラマ風BGM→まひる正解でBGM停止→泣き笑いでオルゴール的BGM→ひぐれツッコミでBGMぶつ切り。</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 id="long">横動画台本（3本）</h2>
+<p class="sec-desc">長尺ストーリー。感情設計マップ＋ショート切り出しポイント完備。</p>
+<!-- ============================================================ -->
+
+<!-- L01 -->
+<div class="sc" id="L01">
+<div class="sc-head">
+<h3>L01「ディズニーに行ったことない4人がマイクラで"理想のパーク"を作ったら」</h3>
+<div class="sc-meta"><span class="tag t-mrbeast">MrBeast系</span><span class="tag t-build">大規模建築</span><span class="tag t-time">15-20分</span></div>
+</div>
+<div class="thumb"><strong>サムネ案:</strong> 落差300ブロックのスプラッシュマウンテンを引きで撮ったカット＋「行ったことない」テキスト</div>
+<div class="hook"><strong>コンセプト:</strong> 記憶と想像だけで「夢のテーマパーク」を建築。再現ではなく創造。4人の個性が建築に直結。</div>
+<div class="emotion-map"><strong>感情設計マップ:</strong> ワクワク（企画発表）→集中（建築）→驚き＋笑い（お披露目）→カオス（テスト運営）→感動（夜景）。終盤の静かな感動がリピートを生む。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（Act1 企画発表）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ディズニー行ったことある？</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">全員「ない」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ想像で作ろう！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">あさめ担当：絶叫スプラッシュマウンテン（落差300ブロック）→「迫力重視！」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（まひる担当：推しと会えるマンション）ぎゃあ！……あ、これ私が作ったやつだ。私の才能が私を裏切ってる</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ひぐれ担当：ベンチ1つ→「疲れるから」→実は全員のアトラクションが見渡せる場所に設置</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">やとら担当：完全自動レッドストーンパーク→「闇の中を疾走するトロッコ」→哲学で設計</span></div>
+
+<div class="line"><span class="who who-n">（Act2 タイムラプス建築 2-8分）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">各自2分以内で交互に。あさめの水流暴走</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……覚えた</span></div>
+
+<div class="line"><span class="who who-n">（Act3 お披露目ツアー）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">1人ずつ案内。まひるのゾンビスポナー暴走</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私がバイオテロの首謀者みたいになってる……最高じゃん。ディズニーの歴史に名を刻んだ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">刻むな！！</span></div>
+
+<div class="line"><span class="who who-n">（Act4 テスト運営）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">モブ50体投入→カオス→トロッコがドームを突き破る→ひぐれの城に激突</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">————</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……直す。今すぐ直す</span></div>
+
+<div class="line"><span class="who who-n">（Act5 夜景）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">修復後のパーク。松明、ランタンが一斉に灯る。花火。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……また、作ろう。……前より、いいやつ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……泣く。無理。泣く。もう1回言って</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……1回しか言わない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">けちっ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">来年は本物行こうよ</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">それな</span></div>
+</div>
+<div class="why"><strong>バズ要素:</strong> 「行ったことない」で差別化。スケール＋失敗＋達成の王道。ひぐれのベンチが考察を呼ぶ。</div>
+<div class="cut-points"><strong>ショート切り出し:</strong> ①まひる自爆 ②トロッコ突破 ③ゾンビパンデミック ④花火ラスト ⑤ひぐれ「覚えた」</div>
+<div class="visual"><strong>BGM:</strong> 各アトラクションで編成を変える。カオスパートはBGMなしSE地獄。夜景はピアノメイン。</div>
+</div>
+
+<!-- L02 -->
+<div class="sc" id="L02">
+<div class="sc-head">
+<h3>L02「よふかしくらぶ、凍った夜——62時間が壊れた日」</h3>
+<div class="sc-meta"><span class="tag t-story">ストーリー</span><span class="tag t-emo">感動</span><span class="tag t-pov">喧嘩回</span><span class="tag t-time">12-15分</span></div>
+</div>
+<div class="thumb"><strong>サムネ案:</strong> 半壊した建築の前に立つやとらの背中＋あさめが遠くで小さく映る。寒色統一。文字は「凍った夜」のみ。</div>
+<div class="hook"><strong>コンセプト:</strong> 97本で初の本気の喧嘩回。日常系の文法を壊す。壊れてから再生するまでの物語。</div>
+<div class="emotion-map"><strong>感情設計マップ:</strong> 衝撃（崩壊）→沈黙（凍結）→涙（手紙）→カタルシス（再会）→希望（再建）。3分間のBGMなしが感情のダムを作り、手紙で決壊させる。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（Act1 崩壊）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">あさめのTNT誤爆→やとらの62時間の建築が半壊</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">62時間。……"ごめん"は3文字だ。62時間と3文字が釣り合うと、本気で思ってるのか</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……出てけ</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ログアウト</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（1人で）……俺、あんな声出るんだ</span></div>
+
+<div class="line"><span class="who who-n">（Act2 凍結）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">4分割画面。全員バラバラにログイン。会話なし、環境音のみ。あさめは泣いてる、やとらは壊れた建築を眺めてる、ひぐれはウロウロ、まひるは看板を書いている。3分間BGMなし。</span></div>
+
+<div class="line"><span class="who who-n">（Act3 手紙）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">まひるがこっそり3人のチェストに看板を置く</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（あさめへ）壊してしまったものを数えないで。あなたが作った笑顔の方が多い</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（やとらへ）62時間で作ったものより、4人で過ごした夜の方が価値がある</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ひぐれへ）完璧じゃなくていいから。あんたも頼っていいんだよ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">自分への手紙は——3回書いて3回消した。……自分に何書けばいいかわかんないんだよね。……でもいいや。みんなが戻れば、それで全部チャラ</span></div>
+
+<div class="line"><span class="who who-n">（Act4 再会）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（泣きながら）ごめんなさい。私がリーダーなのに、一番バカやった</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……リーダーだから、最初に謝れる。それでいい</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……壊れたものは、また作ればいい。——だが、同じものは二度と作れない。だから……新しく、もっといいものを作る。それが"創造"だ</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">やとら厨二復活</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">おかえり！！おかえりおかえり！！……あ、やば、泣いてる。嬉しいのに泣いてる。情緒バグってる</span></div>
+
+<div class="line"><span class="who who-n">（Act5 再建）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">4人で新しい神殿を建てる。4色のブロックが混ざった設計。やとらが旧建築の設計図を額縁に飾る</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">忘れないために</span></div>
+</div>
+<div class="why"><strong>バズ要素:</strong> サムネの異質さ。喧嘩→仲直りの感情アーク。まひるの手紙が切り抜き拡散。「62時間と3文字」が名言化。</div>
+<div class="cut-points"><strong>ショート切り出し:</strong> ①「62時間と3文字」 ②まひるの手紙シーン ③あさめの謝罪 ④「壊れたものは、また作ればいい」 ⑤厨二復活</div>
+<div class="visual"><strong>BGM:</strong> 日常BGM→TNT爆発でレコードが壊れるように歪んで停止→「出てけ」は完全無音→4分割は環境音のみ3分→手紙発見からピアノ1音ずつ→謝罪でピアノ+チェロ→再建でテンポアップ。</div>
+</div>
+
+<!-- L03 -->
+<div class="sc" id="L03">
+<div class="sc-head">
+<h3>L03「マイクラの音楽祭で1人だけレベルが違った」</h3>
+<div class="sc-meta"><span class="tag t-music">音楽</span><span class="tag t-chaos">コメディ</span><span class="tag t-update">銅トランペット</span><span class="tag t-time">15-18分</span></div>
+</div>
+<div class="thumb"><strong>サムネ案:</strong> まひるがノートブロック前で「は？？」の顔。あさめが耳を塞いでいる。「天才いた」を大きく。</div>
+<div class="hook"><strong>コンセプト:</strong> 推しの曲をノートブロックで再現して発表。技術差が笑いに。まひるの隠れた才能が発覚する回。</div>
+<div class="emotion-map"><strong>感情設計マップ:</strong> 笑い（準備）→爆笑（あさめ発表）→静寂＋感嘆（ひぐれ発表）→感動＋涙（まひる発表）→笑い（やとら天然）→温かい一体感（合奏）。まひる発表が感情のピーク。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（Act1 準備）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ルール説明→制限時間1時間→各自こっそり練習（モンタージュ）。あさめがリズム練習でブロック壊しまくる。まひるが深夜まで1人で調整。</span></div>
+
+<div class="line"><span class="who who-n">（Act2 あさめ発表「なんかTikTokで聞いたやつ」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ビートだけ。メロディなし。口で歌う→原曲の面影ゼロ→村人が1人ずつ席を立つ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">帰んないで！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">村人に拒否されるの逆にすごいよ。才能の暴力だよ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">褒めてないでしょ！！</span></div>
+
+<div class="line"><span class="who who-n">（Act3 ひぐれ発表「月光 第三楽章（未完成）」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">途中まで圧巻→音域が足りず途中で止まる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">未完成。まだ16小節目で止まってる</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">未完成こそ完成の始まりだ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……みんな、うるさい</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（間）……ありがと</span></div>
+
+<div class="line"><span class="who who-n">（Act4 まひる発表）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">ボカロ曲ガチ演奏。金ブロック/木材/粘土/砂で音色使い分け。全員絶句</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、まひるすごくない？？？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……それを、才能という</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">は！？……っていうかなんで私泣きそうなの。ほんと情緒おかしい</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">もう1回やる！！ 天才だから！！ 天才って言われたから！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（後で）でもみんなの前でガチ出しちゃったの恥ずかしいかも……引かれてない？</span></div>
+
+<div class="line"><span class="who who-n">（Act5 やとら発表「時の螺旋」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">銅ブロック酸化で音色変化するオリジナル</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">銅の酸化は62段階ある。これは第37段階——"黄昏の銅"だ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">4段階</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……概念の話をしている</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">概念でごまかすな！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">でも"黄昏の銅"はちょっとかっこいい</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひる！味方すんな！！</span></div>
+
+<div class="line"><span class="who who-n">（Act6 全員合奏「カエルの歌」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">輪唱→バラバラ→4回目に奇跡的に1小節だけ合う</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">問おう。これは音楽か</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……音楽</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">音楽！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">音楽だよ！！ 世界一下手で、世界一楽しい音楽だよ！！</span></div>
+<div class="line"><span class="who who-n">（演出）</span><span class="txt">夜空→虫の声→エンド</span></div>
+</div>
+<div class="why"><strong>バズ要素:</strong> 「天才が混ざってた」ギャップ。まひるの演奏→やとら「才能」が切り抜き映え。やとら天然（62段階）。</div>
+<div class="cut-points"><strong>ショート切り出し:</strong> ①村人が帰る ②まひるの演奏で空気変わる瞬間 ③「それを才能という」→まひる爆発 ④やとら銅酸化4段階 ⑤「世界一下手で世界一楽しい音楽」</div>
+<div class="visual"><strong>BGM:</strong> 各発表はBGMなし（ノートブロック自体がBGM）。まひるの演奏だけリバーブ追加でホール感。合奏で1小節合った瞬間にリバーブが深くなる（奇跡の1小節演出）。最後は虫の声だけ。</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 id="research">本日のリサーチメモ</h2>
+<p class="sec-desc">トレンド調査・音楽リサーチ・既存分析の要約。</p>
+<!-- ============================================================ -->
+
+<div class="note">
+<h4>マイクラトレンド（2026年4月）</h4>
+<ul>
+<li><strong>Tiny Takeover:</strong> 赤ちゃんMOB全面リニューアル、金のタンポポで永久幼体化。3/24配信。今が旬</li>
+<li><strong>Chaos Cubed:</strong> 硫黄キューブ（ブロック吸収→9種変化）。6月リリース予定。先行ネタで話題取れる</li>
+<li><strong>銅トランペット:</strong> ノートブロック＋銅ブロック。酸化で音色変化。音楽勢が反応中→S01/L03で使用</li>
+<li><strong>Minecraft Dungeons II:</strong> 2026秋。Deep Dark舞台のアクションRPG続編</li>
+<li><strong>名札クラフト解禁:</strong> 紙+金属ナゲット。名前付けカルチャー爆発</li>
+<li><strong>バージョン番号が西暦ベースに</strong>（26.1表記）。古参のノスタルジー</li>
+<li><strong>Minecraft Worldテーマパーク</strong>（ロンドン、2027年開業）</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>音楽・カルチャー</h4>
+<ul>
+<li><strong>バズ曲:</strong> クレイジーウォウウォ!!（モナキ）、好きすぎて滅!（M!LK）、lulu.（Mrs. GREEN APPLE/フリーレンOP）、ARIRANG（BTS）</li>
+<li><strong>ミーム:</strong> イタリアンブレインロット、エッホエッホ構文、バチモリーナ/POKÉDANCE</li>
+<li><strong>春アニメ:</strong> 黄泉のツガイ、転スラ4期、リゼロ4期、Dr.STONE、フリーレン2期</li>
+</ul>
+</div>
+
+<div class="note">
+<h4>既存台本の空白テーマ（要チェック）</h4>
+<ul>
+<li><strong>エンチャント回</strong>→S04で使用</li>
+<li><strong>ウォーデン/ディープダーク</strong>→S03で使用</li>
+<li><strong>あさめの内面深掘り</strong>→S05で使用</li>
+<li><strong>喧嘩/仲違い回</strong>→L02で使用</li>
+<li><strong>まだ未使用:</strong> ポーション調合、村人交易経済、エンドシティ/エリトラ初飛行、ファッションショー、料理回、嫉妬回、初恋回</li>
+</ul>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">Generated by よふかしくらぶ Script Factory — 5-agent parallel pipeline | 2026-04-10</div>
+
+</body>
+</html>

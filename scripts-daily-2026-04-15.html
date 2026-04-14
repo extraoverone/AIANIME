@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！日刊台本 2026年04月15日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(249,115,22,.15);color:#f97316;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-music{background:rgba(168,85,247,.15);color:#c084fc}
+.t-mrbeast{background:rgba(239,68,68,.12);color:#f87171}
+.t-original{background:rgba(34,211,153,.12);color:#34d399}
+.t-story{background:rgba(56,189,248,.12);color:#7dd3fc}
+.t-comedy{background:rgba(251,146,60,.12);color:#fb923c}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-short{background:rgba(249,115,22,.12);color:#f97316}
+.t-long{background:rgba(52,211,153,.12);color:#34d399}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+
+.concept{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 0;font-size:13px;color:#93c5fd}
+.concept strong{color:#60a5fa}
+
+.dial{padding:0 24px 20px}
+.dial-head{font-size:12px;font-weight:700;color:#555;padding:16px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:52px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.who-se{color:#444;font-style:italic;font-size:13px}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.music{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#e9d5ff}
+.music strong{color:#c084fc}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+.viral{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fca5a5}
+.viral strong{color:#f87171}
+.thumb{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.thumb strong{color:#fbbf24}
+.note{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:14px;color:#93c5fd}
+.note h4{color:#60a5fa;margin-bottom:8px;font-size:15px}
+.note li{margin-bottom:4px}
+.note ul{padding-left:18px;margin-top:6px}
+.research{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;padding:24px;margin-top:32px}
+.research h3{font-size:16px;font-weight:800;color:#888;margin-bottom:16px;text-transform:uppercase;letter-spacing:.04em}
+.research h4{font-size:14px;font-weight:700;color:#60a5fa;margin:16px 0 8px}
+.research p{font-size:13px;color:#666;line-height:1.8}
+.research ul{padding-left:18px;font-size:13px;color:#666;line-height:2}
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#shorts">ショート</a>
+<a href="#S01">S01</a>
+<a href="#S02">S02</a>
+<a href="#S03">S03</a>
+<a href="#S04">S04</a>
+<a href="#S05">S05</a>
+<a href="#longs">横動画</a>
+<a href="#L01">L01</a>
+<a href="#L02">L02</a>
+<a href="#L03">L03</a>
+<a href="#research">リサーチ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">日刊台本 2026.04.15</div>
+<h1>よふかしくらぶ！日刊台本<br>2026年04月15日</h1>
+<p>HerdCraft爆笑×エッホエッホ×誕生日サプライズ×深夜告白ゲーム×エリトラ初飛行。<br>ショート5本＋横動画3本。今日もキャラの深みを全部出し切る。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="shorts">ショート台本（5本）</h2>
+<p class="sec-desc">7〜8秒ループ設計。フック→裏切り→加速→余韻のリズムで全本組む。</p>
+<!-- ============================================================ -->
+
+<!-- S01 -->
+<div class="sc" id="S01">
+<div class="sc-head">
+<h3>S01「インベントリ開けたら、全部いなかった。」</h3>
+<div class="sc-meta">
+<span class="tag t-trend">トレンド</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">HerdCraft</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>あさめがインベントリを開ける。「?」マークが画面に浮かぶ。チェスト欄が完全に空。BGM：完全無音。インベントリを開ける環境音だけが響く。</div>
+
+<div class="concept"><strong>コンセプト：</strong>HerdCraft April Foolsアプデ（インベントリの中身が全部脚を生やして逃げ出す）をキャラクターのリアクションで描く7秒ループ。64個のダイヤが海の方まで全力疾走するスケール感と、「所有する側が試されている」というやとらの哲学が笑いの核心。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え……あれ？ダイヤは？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ローテンション）……下</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カメラが床を向く。64個のダイヤが全力疾走で逃走中。BGMが突然スポーツ実況風に切り替わる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えぇぇぇ！？走ってる！？なんで走ってんの！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション急上昇）ちょっ待って最高！！スクショ！！スクショ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……走る前に数えた。64個。全部いる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">そういう話じゃなくて！！追いかけなきゃ！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）待て、あさめ。——ダイヤとは、所有する側が試されている存在なのだ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">何それ！！試験受けてる場合じゃないから！！（全力で追いかける）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カメラが引く。ダイヤの群れがすでに海に向かっている遠景。あさめが追いかける。スタミナバーが削れていく。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">遠っっっ！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急に無気力）……逃げたダイヤってもう戻ってこないよね。はい終わった。無理。引退</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……非効率</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「遠っっっ！！」→ スタミナゼロで止まるあさめ → ダイヤは走り続けている遠景 → 冒頭のインベントリを開けるシーンへ。ループを重ねるごとにあさめのスタミナバーが1ループ目から削れた状態で始まる（段階的に疲弊）。</div>
+<div class="music"><strong>BGM設計：</strong>[0s] 完全無音（インベントリ音だけ）→ [3s] スポーツ実況的なBGMが突然開始 → [6s] ループ頭で毎回ピッチが微妙に上がる（加速感）</div>
+<div class="easter"><strong>イースターエッグ：</strong>64個のダイヤの中に1個だけ丸石が混じっている（2周目で発見）。3ループ目でひぐれがあさめの隣に静かに立って、何も言わずに追いかけ始めている。</div>
+<div class="viral"><strong>バズ設計：</strong>HerdCraft検索流入直撃。「やとらのセリフが毎回面白い」コメント確定。まひるの「最高→即死」2段階が短時間に入ることで情緒の振れ幅が笑いになる。「ダイヤが海まで逃げる」スケール感が視覚的インパクト大。</div>
+<div class="why">HerdCraft April Fools 2026（Java Edition 26w14a）は4月1〜8日限定で実際に配信。「インベントリの中身が足を生やして逃げる」という映像映えする要素を最大限活かしつつ、よふかしくらぶのキャラコメディに落とし込む。</div>
+</div>
+
+<!-- S02 -->
+<div class="sc" id="S02">
+<div class="sc-head">
+<h3>S02「エッホエッホしてる間に、ビル消えた。」</h3>
+<div class="sc-meta">
+<span class="tag t-music">ミーム音楽</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">エッホエッホ</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>あさめが52階建てビルを建設中（カメラが上を向いて高さを見せる）。BGM：建設音。遠くからエッホエッホのリズム音が近づいてくる。</div>
+
+<div class="concept"><strong>コンセプト：</strong>2026年最大日本ミーム「エッホエッホ」（走るフクロウ式緊急伝達）をまひるが実演。クリーパー接近を告げようとするが伝達が間に合わず52階建てビルが爆発。まひるの情緒が「ハイ→失敗→スクショで即回復」の3段転換。やとらが毎ループ違う場所に出現する隠し要素。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめが52階建てビルの最上部にブロックを置いている。建設BGM流れる。</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">エッホエッホのリズム音が遠くから接近してくる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（画面左から全力疾走）エッホエッホ！！エッホエッホ！！クリーパーが——来るって——！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ビル全体が爆発。52階建てが根元から崩れる。0.5秒の完全無音。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（がれきの上に立って）……ました</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">何が！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（がれきの山から足だけ出ている）……何秒遅れてる</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（なぜかビルの一番上のブロックの上に立っている）人間の伝達速度の限界を、今この瞬間に見た</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（茫然と立っている）……5日かけて建てたんだけど</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急にハイになる）あ、でもスクショ撮った！！爆発の瞬間！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">スクショより先に言って！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（次のクリーパーに向かって走り出す）エッホエッホ——（ループへ）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カメラが引く。まひるが次のクリーパーに向かって遠ざかる。がれきの前でひぐれがあさめの隣に立って黙って石を置き始めている（再建スタート）。</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「エッホエッホ——」→ 冒頭の建設シーンへ。3ループ目でひぐれが「また爆発する」と言っている声が最後に乗る。やとらの出現位置が1ループ目=ビルの上、2ループ目=クリーパーの真横、3ループ目=爆心地（爆発前から）と変化。</div>
+<div class="music"><strong>BGM設計：</strong>[0s] のどかな建設BGM → [まひる登場] エッホエッホリズム音が割り込む → [爆発後] 0.5秒の完全無音（笑いの核心）→ [まひるのスクショ発言後] チープなニュース速報音楽</div>
+<div class="easter"><strong>イースターエッグ：</strong>まひるが走る方向の先に、次のクリーパーが画面端に1フレームだけ見える（伏線）。ひぐれが再建している石が毎ループ1段だけ増えている。</div>
+<div class="viral"><strong>バズ設計：</strong>エッホエッホミームの検索流入。「間に合わなかったの私のせいじゃなくて、クリーパーが早すぎたんだよ」がコメント欄に広がる。あさめの「5日かけて建てたんだけど」の静かな悲しみが切り抜き確定。</div>
+<div class="why">エッホエッホミームは2025〜2026の日本トップミーム（流行語大賞ノミネート、ほっかほっか亭CMにも採用）。小学生〜30代まで通じる汎用ミームをMinecraftの「伝言失敗→爆発」という普遍的あるあるに直結させる。</div>
+</div>
+
+<!-- S03 -->
+<div class="sc" id="S03">
+<div class="sc-head">
+<h3>S03「笑ったらダイヤ没収。一番最後に笑ったの、誰だと思う？」</h3>
+<div class="sc-meta">
+<span class="tag t-mrbeast">MrBeast式</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">コメディ</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>テロップ「ルール：笑ったらダイヤ没収」。チェストに64個のダイヤが光っている。BGM：緊張感のある静かな音楽。</div>
+
+<div class="concept"><strong>コンセプト：</strong>笑ったらダイヤ没収のMrBeast式チャレンジ。最大の逆転：あさめが即脱落、まひるだけが「精神が安定している」という謎の理由で最後まで笑わない。ひぐれがまひるのスクショを見せられた瞬間に崩れる意外な最後。チェストのラベルが毎ループ変わるイースターエッグ。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ始めます。絶対笑わないこと（真顔、本気）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとら、おもむろに穴を掘り始める。穴に落ちる。デスサウンド。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ん゛っ……（必死に耐えている）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（プッ）</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">没収音。ダイヤが消える。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私笑ったけど！！これ笑わない方がおかしいでしょ！！没収しないで！！お願い！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">没収音。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……終わった。人生終わった（急に低温）</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">まひる脱落（0.7秒）。残り：あさめ・ひぐれ・やとら</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（まひるの崩壊を見て）んっ……んんっ……</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらがまた穴を掘り、さらに深い穴に落ちる。デスサウンドが遠い。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（崩壊）あははははは！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">没収音。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション急回復）あさめ笑った！！最高！！スクショ！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">また没収音。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……またスクショで笑った。終わりだ（即低温）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（完全な無表情、目だけ動いている）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（やとらが落ちた瞬間のスクショをひぐれの顔の前に突き出す）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（0.1秒）（口の端が動く）（ついに吹き出す。声が完全に崩れる）</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">全チェスト没収音の嵐。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっひぐれ笑った！？！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（まだ真顔）……私だけ残った</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">え！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">今日は精神が安定している（→ループへ）</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「今日は精神が安定している」→ スタート画面へ。まひるだけが「なぜか精神安定している日」という謎の逆転がループを見るたびに面白くなる設計。</div>
+<div class="music"><strong>BGM設計：</strong>開始〜: 緊張感のある無音 → ひぐれ崩壊の瞬間: 大音量ファンファーレ → まひる「今日は精神が安定している」: 急に穏やかなBGM</div>
+<div class="easter"><strong>イースターエッグ：</strong>チェストのラベルが毎ループ変化（1ループ目「ひぐれの私費」、2ループ目「やとら用哲学書代」、3ループ目「まひるの感情」）。まひるのチェストだけ中身が最初から「枯れ草」になっている（最初からダイヤがなかった）。</div>
+<div class="viral"><strong>バズ設計：</strong>「ひぐれが一番最後に笑う」という予想外の展開。「まひる笑ったけどこれ笑わない方がおかしいでしょ」が切り抜き確定。「今日は精神が安定している」がコメント欄ミームになる。</div>
+<div class="why">MrBeast型「没収ルール」フォーマットの逆張り：最も笑いそうな情緒不安定なまひるが最後に残るというキャラの意外性が核心。ひぐれが崩れる瞬間は全シリーズ通じてレアなので一番の切り抜きポイントになる。</div>
+</div>
+
+<!-- S04 -->
+<div class="sc" id="S04">
+<div class="sc-head">
+<h3>S04「やとらが嘘をついた。3秒でバレた。もう一回ついた。1秒でバレた。」</h3>
+<div class="sc-meta">
+<span class="tag t-original">オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">キャラ深掘り</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>やとらがドアの前に立っている。あさめがノックしようとしている。BGMが何気ない日常曲から始まり、やとらが喋り始めるとかすかにサスペンス音が混じる。</div>
+
+<div class="concept"><strong>コンセプト：</strong>あさめの誕生日サプライズを隠すため、厨二語で嘘をつき続けるやとら。嘘がエスカレートするたびに即バレていく。まひるが画面外から全部聞こえる音量で助言し続け、ひぐれがケーキを持って溜め息をつく。あさめは全部わかった顔で見ている。背景の飾り付けが毎ループ少し進んでいる。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら、今日何してるの？暇？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……我は今、"無の境地"に従事している。来ると——この聖域の均衡を根底から破壊することを意味する</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">聖域……ちょっとだけ見ていい？（ドアに近づく）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ドアの隙間から風船が1個出てくる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（風船に気づいていない振りをして）……これは、エーテルが物質化した現象だ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（囁き声、しかし全部聞こえる音量）やとらもっとうまく嘘ついて！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……今のは、エーテルの幻聴だ。そして我は今すぐ——"無の境地"に戻る</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ドアの隙間からケーキが滑り出てくる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（扉の向こうから、小声で）やとら、足</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（自分の足がケーキに乗っているのに気づく）……（処理中）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（笑いを堪えながら）ねえ、私入っていい？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……（長い沈黙）……我に、嘘はない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（画面外から）もうやとらに任せるの無理！！（→ループへ）</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「もうやとらに任せるの無理！！」→ 冒頭のやとらが立っているシーンへ。ループを重ねるごとに背景の飾り付けが少しずつ進んでいる（バレているのに作業を続けている）。</div>
+<div class="music"><strong>BGM設計：</strong>[0s] のどかな日常BGM → [やとらの嘘開始] かすかにサスペンス音が混入 → [ひぐれ「やとら、足」の瞬間] 完全無音（この一言が静寂の中で聞こえることが最高の笑い）→ ループで毎回BGMのテンポが少し速くなる（緊張感の加速）</div>
+<div class="easter"><strong>イースターエッグ：</strong>背景の飾り付けが毎ループ進んでいる（バレているのに全員が準備をやめていない）。ひぐれの「やとら、足」の声が最も冷静で、全体の笑いを増幅させる仕掛け。</div>
+<div class="viral"><strong>バズ設計：</strong>「やとらかわいすぎ」「ひぐれの"やとら、足"」「まひるが全部聞こえる音量」の三点がそれぞれコメントされる。「誕生日誰の？」考察コメント必至。2周目でケーキが足に乗っているのに気づく。</div>
+<div class="why">やとらが「積極的に何かをしようとして失敗する」話は既存台本に存在しない完全新角度。「厨二語で嘘をつく」という設定がキャラクターの面白さを最大限に引き出す。あさめが「全部わかっている」ことも既存台本では描かれてこなかった側面。</div>
+</div>
+
+<!-- S05 -->
+<div class="sc" id="S05">
+<div class="sc-head">
+<h3>S05「まひるのスクショ768枚、1枚だけ意味がわからなかった」</h3>
+<div class="sc-meta">
+<span class="tag t-original">オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">まひる深掘り</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>まひる「今日はスクショ見せる回！！私のスクショフォルダ、開放します！！」最高ハイテンション。あさめ「何枚あんの」まひる「768枚」。</div>
+
+<div class="concept"><strong>コンセプト：</strong>まひるの「スクショ！！」口癖がメタ的に展開。768枚のうちほぼ全部がやとらの落下シーン。しかし767枚目だけ夜空だけのスクショが存在する——まひるが一瞬素に戻る瞬間。その後急にハイに戻ることで「この子、強がってるな」という深みが生まれる設計。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">1枚目どーん！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">1枚目: やとらが深い穴に落ちている瞬間（顔が画面いっぱい）。デスサウンド。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……なぜこれを記録した。我の最も——屈辱的な瞬間を</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">表情が最高だったから！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">2枚目: やとらが別の穴に落ちている。さらに深い穴。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、私も一緒に落ちてるじゃん</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめはピンぼけしてたからトリミングした</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">トリミングされた！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……（ゆっくり別の方向を向く）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">766枚目——（声のトーンが少し落ちる）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……まひる、今テンション落ちた？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">落ちてない落ちてない（落ちてる）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">767枚目: やとら以外の誰も写っていない夜の空だけのスクショ。説明なし。</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">……</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">これは何？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（一瞬止まる）……うち、夜が好きで</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">完全無音。2秒。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……保存してたんだ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急にハイに戻る）768枚目！！やとらまた落ちてる！！（→ループへ）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（存在への問いが始まる）——やとらのこと嫌いなんじゃなくて。やとらが面白いのが悪いんだよ</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「768枚目！！やとらまた落ちてる！！」→ 冒頭へ。あさめが767枚目の夜空スクショを頭の中に持ったまま冒頭に戻ることで「この子のことが急に心配になった」感覚が積み重なる。2周目から767枚目を探す視聴者行動を生む設計。</div>
+<div class="music"><strong>BGM設計：</strong>開始〜766枚目: 明るいBGM → 767枚目の無音: BGM完全停止（夜空の静寂） → まひるが急に戻る瞬間: 明るいBGMが突然再開（落差が笑いと切なさを同時に生む）</div>
+<div class="easter"><strong>イースターエッグ：</strong>768という数字は「やとらが768回落ちた」説と「まひるがゲームを始めてから768日目」説の両解釈あり（コメント欄考察確定）。まひるが「やとらのこと嫌いなんじゃなくて、やとらが面白いのが悪いんだよ」というセリフが実はフォローになっていてキャラ関係の深みを示す。</div>
+<div class="viral"><strong>バズ設計：</strong>「まひる768枚全部やとらで笑う→夜空1枚で切ない」という感情の2段転換。「保存してたんだ」のひぐれの一言が全員の心を打つ。「うち、夜が好きで」が切り抜かれてよふかしくらぶのイメージソングのような扱いになる。</div>
+<div class="why">まひるの「スクショ！！」口癖を全台本通じて初めて主役にする回。スクショが「笑いの記録」だけでなく「孤独の時間の記録」でもあるという二面性がまひるのキャラクターを一段深くする。既存台本には存在しない「まひるの素」が垣間見える唯一のショート。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="longs">横動画台本（3本）</h2>
+<p class="sec-desc">8〜20分構成。スケール感・感情の山・サムネ力を全本で担保する。</p>
+<!-- ============================================================ -->
+
+<!-- L01 -->
+<div class="sc" id="L01">
+<div class="sc-head">
+<h3>L01「よふかしくらぶ株式会社、1000エメラルドで解散か存続かを決めた【設立から倒産まで14分】」</h3>
+<div class="sc-meta">
+<span class="tag t-mrbeast">MrBeast系</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-comedy">コメディ</span>
+<span class="tag t-time">12〜15分</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜30秒）：</strong>あさめが社長椅子に座っている。椅子が明らかに大きすぎる。テロップ「よふかしくらぶ株式会社、本日設立」。画面右上に収益カウンター「0 / 1000エメラルド」が表示される。</div>
+
+<div class="concept"><strong>コンセプト：</strong>4人が「よふかしくらぶ株式会社」を設立し、村人交易で1000エメラルドを稼ぐMrBeast系大企画。役職（あさめ=CEO、ひぐれ=CFO、まひる=情緒不安定広報部長、やとら=顧問哲学者・給料なし）がキャラクターを最大限に引き出す。画面常時表示のカウンターが数字のドラマを作る。</div>
+
+<div class="dial">
+<div class="dial-head">第1フェーズ：会社設立・朝礼（0:00〜1:30）</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">よふかしくらぶ株式会社、今日設立します！！目標は1000エメラルド。達成したらアイス買う。できなかったら——</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">できなかったら？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……またやる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（試算書を広げながら）達成確率83.7%です</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">残り16.3%は？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……まひる次第です</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急に不安になる）えっ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（自分の名前プレートを見て）……ちょっと待って。"情緒不安定広報部"って書いてある</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（目を逸らす）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（5秒の沈黙）……最高じゃん。スクショ。スクショ撮らせて（テンション戻る）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">株式会社とは——資本と労働の緊張関係によって成立する、人間の欲望の制度化された形態だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">なんかめちゃくちゃいいこと言ってる気がする！！よくわかんないけど！！</span></div>
+
+<div class="dial-head">第2フェーズ：相場崩壊（1:30〜4:00）　カウンター: 0エメラルド</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小麦を1スタック持って村人に突撃）あの、これ売って？エメラルドで買うからさ</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">花はエメラルドと交換できません</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……CEO、花は通貨ではないです</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">可愛いじゃん</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（村人に向かって）ねえ、私のこと覚えてますか……先週も来ました……</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">村人が無言で扉を閉める。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（静かな声で）……覚えてなかった</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">カウンター: 0 エメラルド</span></div>
+
+<div class="dial-head">第3フェーズ：戦略変更と交渉失敗（4:00〜7:00）　カウンター: 0→650エメラルド</div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……本の裁断→エンチャント交換ルートを発見しました。効率83%向上</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれ天才！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（村人と交渉中）あの、私……広報部長なんで（気合い十分）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめが近づくと村人がそっちを向く。まひるは無視される。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">は？あさめには反応した。私だけ無視された。村人に選ばれなかった。はい終わり。無理。広報部長辞めます（急降下）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるそれ悔しい方向ちょっとおかしいよ！！</span></div>
+
+<div class="dial-head">第4フェーズ：崩壊・危機（7:00〜10:00）　カウンター: 650→312エメラルド（暴落）</div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるが誤って村人に弓矢を放つ。取引相手が全滅。カウンターが650→312に急落。株価暴落SE。スローモーション。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（静かな声で）……なんで弓持ってたんだろ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひる、大丈夫？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">大丈夫じゃない。無理。本当に無理。ひぐれの83.7%、今崩れたよね</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（再計算）……達成確率11.2%になりました</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">なんで数字にするの！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">BGM完全停止。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ずっと遠くで哲学をしていたが立ち上がる）……（立ち上がる）</span></div>
+
+<div class="dial-head">第5フェーズ：やとら覚醒（10:00〜12:00）　カウンター: 312→997→1000エメラルド</div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……顧問として、一度だけ動く</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが村人の前に立つ。何も言わず、ただ村人を見る。長い沈黙。村人が最初にトレードを提示する。やとらが黙って受け入れ、また別の村人へ。カウンターが動き始める。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">交渉とは——相手が何を"欲しがっているふり"をしているかを見抜く技術だ。村人は、待たれることを好む</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（何かを書き留める）……なぜできる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あと3！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">カウンター: 997→1000。大音量ファンファーレ。</span></div>
+
+<div class="dial-head">第6フェーズ：報酬山分け・エンディング（12:00〜14:00）</div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">報酬分配: あさめ400、ひぐれ350、まひる250、やとら……0</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……思っていたより、少ない</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">やとらも不満あったの！？！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">我は——物質的豊かさより、哲学的充足を求める存在だ（間）……だが、350は少ない</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">正直じゃん！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとら！！アイス買ったらあげる！！（テンション戻る）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……（少し間を置いて）バニラがいい</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">よふかしくらぶ株式会社、今後の業績は未定です</span></div>
+</div>
+
+<div class="visual"><strong>展開構成：</strong>①会社設立の朝礼（キャラ紹介）→ ②あさめの花売りと相場崩壊（笑い）→ ③ひぐれの完璧戦略とまひるの失敗（対比）→ ④まひるの弓矢ミスで危機（感情の落下）→ ⑤やとら覚醒で逆転（意外性の最高点）→ ⑥報酬山分けとやとらが報酬なし（余韻の笑い）</div>
+<div class="music"><strong>BGM設計：</strong>朝礼: ポップな会社BGM → フェーズ2-3: 軽快なカウンターSE連動 → まひるの弓矢ミス: BGM停止+株価暴落SE → やとら覚醒: 無音→低音シネマティック → 達成: 大ファンファーレ → エンディング: 穏やかなピアノ</div>
+<div class="thumb"><strong>サムネ案：</strong>「1000エメラルドで解散か存続か」の文字 + 4人が役員席に座っている（椅子がそれぞれのキャラを反映した大きさ・形）+ 「よふかしくらぶ株式会社」の看板 + 右上に「残り688エメラルド」のカウンター</div>
+<div class="viral"><strong>バズ設計：</strong>MrBeast系の数値ドラマ（カウンターが動くスペクタクル）+ キャラコメディの融合。まひるが「舐められた」感で崩れる場面が切り抜き確定。やとら「村人は、待たれることを好む」が哲学ミームになる。</div>
+<div class="why">村人交易を軸にした動画は既存台本に一切存在しない。「役職制度がキャラを最大限に活かす」構造がよふかしくらぶの特長を引き出す最適な設計。やとらが「給料なし」なのに一番有能という逆転オチが全ての伏線に対する回収になる。</div>
+</div>
+
+<!-- L02 -->
+<div class="sc" id="L02">
+<div class="sc-head">
+<h3>L02「深夜のマイクラで「本当のことを1つだけ言う」ゲームをしたら、4人が変わった話」</h3>
+<div class="sc-meta">
+<span class="tag t-story">ストーリー</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-emo">感動</span>
+<span class="tag t-time">15〜18分</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜30秒）：</strong>深夜の採掘セッション。C418「Wet Hands」のピアノが流れている。4人が黙って掘っている。あさめ「……ねえ、ゲームしない？」。まひる「え、今もゲームしてるけど」。あさめ「違う、別のゲーム。本当のことを、1つだけ言うゲーム」。</div>
+
+<div class="concept"><strong>コンセプト：</strong>C418夜話（Mice on Venus）の続編として設計。「手を動かしながら告白する」という日本的な間接性が核心。4人がそれぞれ採掘・建築をしながら本当のことを言っていく。「深夜のマイクラ」という場所性が感情の扉を開ける。まひるの情緒は「ハイで参加→告白で落ちる→笑いに転換→また落ちる→落ち着く」の5段階。</div>
+
+<div class="dial">
+<div class="dial-head">ゲームの提案（0:00〜2:00）</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……なんとなく。深夜っぽいじゃん</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション上がる）やる！！やります！！私から言う！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">早い！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ——（急に止まる）……やっぱ私最後でいい</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">さっきから言う気満々だったじゃん！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（手が止まる）（何も言わない）</span></div>
+
+<div class="dial-head">ひぐれの告白（2:00〜4:30）</div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（長い沈黙の後）私、言う</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">弟が、チャンネルを見てる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……え</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">最初に気づいたの、弟の方だった。チャンネル名を見て——「これ、お姉ちゃんじゃない？」って（間）……今でも、毎週見てる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声で）……ひぐれ、それ——知ってたの？ずっと？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……半年くらい</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">半年！！何も言わなかったじゃん！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……言えなかった（間）……恥ずかしかったから</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声で）……弟くん、なんて言ってた？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……「面白いじゃん」って（間）……それだけ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（普通のトーンで）……よかったじゃん</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（うなずく。小さく。耳が少し赤い。）</span></div>
+
+<div class="dial-head">やとらの告白（4:30〜7:00）</div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……マインクラフトとは、リセットができる世界だ（間）死んでも、ログアウトしても、壊しても——戻れる。作り直せる</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（採掘の手を止めずに）……外より、ここの方が失敗できる</span></div>
+<div class="line"><span class="who who-n">（全員が採掘を続けながら）</span><span class="txt">しばらく無言で掘り続ける。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……そっか</span></div>
+
+<div class="dial-head">まひるの告白（7:00〜10:00）　情緒が3段変化</div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……じゃあ、私（テンション高め、でも少し緊張している）本当のこと言いますね！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……実は、今日。このゲーム——断ろうとしてた</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめが最初に言ったとき、「やる！！」って言ったけど——内心は逃げようとしてた。本当のこと言うの、怖かったから</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……で、今それを言ってる私が——きもっ。私きもっ。なに自分の本音とか言ってんの。きもいきもいきもい（急降下）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">きもくないよ！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">きもいって！！こういうの言う自分がきもいんだよ！！でも言っちゃったし！！もう無理！！消えたい！！</span></div>
+<div class="line"><span class="who who-n">（全員、少しの間を置いて——笑う）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">笑わないで！！（でも自分も笑い始めている）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（笑いながら、急に小声で）でも、言えてよかった</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（小さくうなずく）</span></div>
+
+<div class="dial-head">あさめの告白（10:00〜13:00）</div>
+<div class="line"><span class="who who-n">（採掘中）</span><span class="txt">あさめが小さな穴に落ちる（ハート1つ減る程度）。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">っと——大丈夫（誰も心配していないのにすぐ言う）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あさめって、いつも大丈夫って先に言う</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（手を止める）……そう？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">そう</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（掘りながら）……怖い日がある（間）動画出す前とか——みんなが楽しいかどうかわからなくて、怖くなる日がある。リーダーとか言ってるけど、本当は全然自信ない</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">でもなんでリーダーでいられるかって——みんながいれば、怖くても始められる。それが——本当のことです</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……あさめ、それは弱さではない（間）弱さを知りながら動くことを、我は——勇気と呼ぶ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……やとら、それ本当のこと言ってる？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……常に、本当のことしか言わない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（スクショ音）スクショした！！今の！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">このタイミングで！？！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">保存しとかなきゃいけないやつだから！！</span></div>
+
+<div class="dial-head">エンディング（13:00〜15:00）</div>
+<div class="line"><span class="who who-n">（全員が静かにマインクラフトをしている。ツルハシの音だけ。BGM停止。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが何かを置く音。ベッドが4つ、並んでいる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ひぐれ何置いたの？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……4つある</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……全員の</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ひぐれ、それいつ作ってたの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……さっき（間）……話してる間に</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小さく）……じゃあ、寝よっか</span></div>
+<div class="line"><span class="who who-n">（全員が自分のベッドに入る。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……おやすみ</span></div>
+<div class="line"><span class="who who-n">（全員）</span><span class="txt">おやすみ</span></div>
+<div class="line"><span class="who who-n">（画面が暗くなる。BGMが半分の音量でかすかに戻り始める。）</span><span class="txt"></span></div>
+</div>
+
+<div class="visual"><strong>展開構成：</strong>採掘中の偶発的な提案（笑い）→ ひぐれ：弟の告白（温かさ）→ やとら：「外より、ここの方が失敗できる」（静かな驚き）→ まひる：断ろうとしていた告白（笑い→感動）→ 無音採掘（余韻の溜め）→ あさめ：怖い日の告白（最高点）→ ひぐれのベッド4つ（静かな余韻）</div>
+<div class="music"><strong>BGM設計：</strong>冒頭: C418「Wet Hands」 → 告白中: フェードしながら続く → あさめ告白の直前: ツルハシの音だけ（完全停止）→ ひぐれのベッド: かすかに戻り始める（半音量）→ エンディング: 完全に戻るが遠くから聞こえる感じ</div>
+<div class="thumb"><strong>サムネ案：</strong>夜のマイクラの星空、4人のシルエット + 「本当のことを1つだけ言え」（白文字）+ 暗い背景に4つのベッドが並んでいる映像（最後のシーンを先出し）</div>
+<div class="viral"><strong>バズ設計：</strong>「まひるが断ろうとしていた」という逆説的衝撃。やとら「外より、ここの方が失敗できる」が哲学名言としてコメント欄に広がる。ひぐれが「話してる間に」ベッドを作っていたという描写がシリーズ最大の感動シーンになる。</div>
+<div class="why">C418夜話（Mice on Venus・4/11 L03）との対になる続編として設計。「静止して語る」前作に対し、「動きながら語る」という映像的差別化。まひるの「断ろうとしていた」という告白がチャンネルの起源に触れる重要な情報になり、既存視聴者が必ず反応する。</div>
+</div>
+
+<!-- L03 -->
+<div class="sc" id="L03">
+<div class="sc-head">
+<h3>L03「ひぐれが空を飛ぶ前に、10秒間止まった理由」</h3>
+<div class="sc-meta">
+<span class="tag t-emo">キャラ深掘り</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-story">ストーリー</span>
+<span class="tag t-time">12〜15分</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜30秒）：</strong>（動画開始直後、ひぐれの画面だけを映す）ひぐれ「……エンドに来たのは、エリトラが欲しかったから。それだけ」。あさめ「それだけ？」。ひぐれ「……それだけ、のはずだった」。テロップ「ひぐれが空を飛ぶまでの話」。</div>
+
+<div class="concept"><strong>コンセプト：</strong>ひぐれ視点のエリトラ初飛行記録。「弟に、空から見た景色を言葉で話したかった」という動機が最後に明かされる感動系。喧嘩回・C418夜話・深夜告白ゲームと並ぶ「ひぐれシリーズ」の1本。飛行中はBGMが消えて風の音だけになる音楽演出が映像的クライマックスを作る。</div>
+
+<div class="dial">
+<div class="dial-head">エンドへの出発（0:00〜1:30）</div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……エリトラが欲しかった</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、なんで急に？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……以前から</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">空への渇望は人類共通の——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">静かにして</span></div>
+
+<div class="dial-head">エンドシティ探索（1:30〜4:00）</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（迷子）えっどっち行けばいいの！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（エンダーマンに絡まれて）は？は？何？なんで私だけ？（急降下）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">エンドシティの建築様式は、プルプァーブロックという——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（黙々と全員を正しい方向に向ける。一言も言わずに。）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれどうやってルートわかるの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……全体マップを頭の中に作ってる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（エンダーマン撃退後・急にハイ）え、ひぐれ天才じゃん！！スクショ！！（ひぐれの画面をスクショ）</span></div>
+
+<div class="dial-head">エリトラ発見（4:00〜6:00）</div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれがアイテムフレームを見つける。止まる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれ？どうした？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（何も言わない。エリトラを見ている。）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ひぐれ、喜んでいるのか？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……別に</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（まひるに小声で）喜んでる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声で）めちゃくちゃ喜んでる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（エリトラを手に取る。しばらく見ている。）……（小さく）ずっと、ほしかった</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（いつもより声が小さく）スクショ……撮っていい？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（うなずく）</span></div>
+
+<div class="dial-head">初飛行前・塔の上（6:00〜9:00）</div>
+<div class="line"><span class="who who-n">（崖の端。全員がひぐれの後ろに立っている。風の音。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ひぐれ、準備できた？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（前を見ている。答えない。）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……空とは、人間が最も遠ざかった場所だ（間）……だからこそ、触れたとき——何かが変わる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（何も言えない。緊張しているのか、静かにしている。）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……ひぐれ、行ってきな</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（小さく）うん</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれがエリトラを広げる。飛んでいく。BGMが完全にフェードアウト。風の音と滑空音だけ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（気づいたら泣いている）あれ、なんで私泣いてんの</span></div>
+
+<div class="dial-head">着地・BGM復活（9:00〜11:00）</div>
+<div class="line"><span class="who who-n">（ひぐれが着地する。3秒の静寂。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……気持ちよかった</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（号泣）ひぐれ！！！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……え？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">なんか——なんか！！わかんないけど！！よかった！！！！（スクショを撮りながら泣いている）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひる泣いてる！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">泣いてない！！（泣いてる）スクショ撮ってる！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（まひるを見ている。少し困惑している。でも口の端が少し上がっている。）</span></div>
+<div class="line"><span class="who who-n">（BGM: ここで初めて穏やかな弦楽が戻る。）</span><span class="txt"></span></div>
+
+<div class="dial-head">弟の話・エンディング（11:00〜13:00）</div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ひぐれって、なんで飛びたかったの？エリトラ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……弟に（間）空から見た景色を——話したかった。言葉で</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……弟くん、マインクラフトしないの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……外に出るのが難しくて。最近、あまり——外に出てない（間）だから、代わりに——私が見てこようと思って。マインクラフトの空でも、何かが——伝わればと思って</span></div>
+<div class="line"><span class="who who-n">（長い静寂。）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（普通に）……じゃあ次は一緒にスクショ集めようよ。ひぐれが空から見た景色、全部</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">私スクショ撮る係やる！！（すぐ手を挙げる）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……我は、言語化を担当する</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（全員を見る）（小さく）ありがとう</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（まひるに）まひる、さっき撮ったの——後で送って</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（声が少し詰まる）……うん</span></div>
+<div class="line"><span class="who who-n">（4人で空を見ている。BGMが静かに続く。）</span><span class="txt"></span></div>
+</div>
+
+<div class="visual"><strong>展開構成：</strong>「それだけ、のはずだった」という過去形フック → エンドシティ探索（ひぐれの能力が光る場面）→ エリトラ発見（感情をアクションで見せる）→ 塔の上の10秒の沈黙 → 飛行（BGM消える）→ 「気持ちよかった」と着地 → 弟の動機開示 → 4人でスクショ集めを約束するエンディング</div>
+<div class="music"><strong>BGM設計：</strong>探索中: 軽い冒険BGM → エリトラ発見: 静かになる → 塔の上: BGMフェードアウト→風音のみ → 飛行: 完全無音+風を切る音だけ → 着地後3秒: 無音 → BGM復活: 穏やかな弦楽（ここが感情の解放点）</div>
+<div class="thumb"><strong>サムネ案：</strong>ひぐれが塔の端に立っている後ろ姿。足元のブロックのギリギリに足が乗っている。空が明るく、エンドの暗さとのコントラスト。テキスト「10秒間、動けなかった理由」（白文字、シンプル）。「飛んでいる」より「飛ぶ直前」の緊張と選択の瞬間が最も感情に刺さる。</div>
+<div class="viral"><strong>バズ設計：</strong>「弟に、空から見た景色を話したかった」という動機の遅延開示が全ての伏線を回収する。まひるが号泣しながらスクショを撮るシーンが切り抜き確定。ひぐれが「まひる、後で送って」と言う最後のシーンがシリーズ最大の感情ピークになる。</div>
+<div class="why">ひぐれの「弟」設定はL03（4/11・Mice on Venus）で一言触れただけで、深掘りした台本は一切存在しない。エリトラ初飛行も未使用の重要トレンド（Tiny Takeover名札解禁に次ぐ未使用アプデ要素）。「動機が最後に明かされる」という映像構造がサムネ力を最大化する。</div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<!-- RESEARCH MEMO -->
+<div class="research" id="research">
+<h3>本日のリサーチメモ</h3>
+
+<h4>マイクラトレンド（2026年4月時点）</h4>
+<ul>
+<li><strong>HerdCraft April Fools（26w14a）</strong>: 4/1〜4/8限定。インベントリが脚を生やして逃げる。「インベントリに意志がある」ミームが拡散中。S01で直接使用。</li>
+<li><strong>Tiny Takeover（Update 26.1）</strong>: 赤ちゃんMOBリニューアル＋名札クラフト可能化。「10年越しの夢が叶った」トーンが反応を呼ぶ。名札命名回は未使用（次回候補最上位）。</li>
+<li><strong>Chaos Cubed（Update 26.2予定）</strong>: 硫黄洞窟、サルファーキューブ（ブロックを吸収）。TNT吸収ネタは4/11既出。未使用角度: 氷吸収・ダイヤ吸収の比較実験。</li>
+<li><strong>Minecraft Dungeons II</strong>: Fall 2026発表。「4人でダンジョンズII全クリできるか?」コラボ企画の種として保存。</li>
+<li><strong>バージョン番号変更（26.1）</strong>: 「え、もう21じゃないの!?」ショック系コンテンツが伸びている。ショート1本の種として有効。</li>
+<li><strong>Minecraft World テーマパーク（London）</strong>: 「リアルのマイクラに行けるの!?」系コンテンツが伸びる。ファンタジー/ロールプレイ企画の種として保存。</li>
+</ul>
+
+<h4>音楽・ミームトレンド（2026年4月）</h4>
+<ul>
+<li><strong>エッホエッホミーム</strong>: 走るフクロウ発祥。流行語大賞ノミネート。ほっかほっか亭CM採用。小学生〜30代に通じる汎用ミーム。S02で使用。</li>
+<li><strong>Steel Ball Run（ジョジョ第7部）Netflix配信中</strong>: 「レース形式×旅」構造がマイクラ企画に応用可能。「バイオーム横断レース」企画の種として保存。</li>
+<li><strong>Re:Zero Season 4</strong>: 「ループ×リスポーン」並列は4/11 S02で既出。</li>
+<li><strong>北斗の拳リメイク</strong>: 「あたたたた」ネタ（掘り系コンテンツとの親和性高い）。次回候補として保存。</li>
+<li><strong>スピキ（SPIKI）音</strong>: 「電子ドラッグ」系音ミーム。チェストを開けたときのサプライズSEとして使える。</li>
+<li><strong>だが今は違う！（K2構文）</strong>: 4/11既出。</li>
+</ul>
+
+<h4>未使用角度リスト（Agent 3分析）— 次回以降の候補</h4>
+<ul>
+<li>名札でペットに命名する回（Tiny Takeoverトレンドに乗れる・最優先）</li>
+<li>ピクセルアート建築（上空俯瞰映像がサムネとして強い）</li>
+<li>役割交代サバイバル（あさめとひぐれが1時間だけキャラを交代）</li>
+<li>やとらの「本名・プロフィール」が漏れる回（ラテラル系・7秒ショート向き）</li>
+<li>まひるの推しキャラをマイクラ世界に実装する回</li>
+<li>四人が一つのキャラクターを10秒交代で操作する回</li>
+<li>ポーション調合とまひるの「錬金術師」キャラ（L01株式会社と対になる）</li>
+<li>あさめの「リーダー不安」を正面から掘り下げる回（L02告白ゲームの伏線として機能する後日談として）</li>
+</ul>
+</div>
+
+</div><!-- .wrap -->
+
+<div class="footer">よふかしくらぶ！日刊台本 2026.04.15 — ショート5本＋横動画3本 計8本</div>
+
+</body>
+</html>

@@ -391,12 +391,12 @@ function injectFavStars(iframe){
       color:#444;transition:.15s;line-height:1;user-select:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
     .fav-btn:hover{transform:scale(1.2)}
     .fav-btn.on{color:#fbbf24}
-    .sc{position:relative}
+    .sc,.card{position:relative}
   `;
   doc.head.appendChild(style);
 
-  // add star to each .sc card
-  const cards = doc.querySelectorAll('.sc');
+  // add star to each .sc card (and .card for v2 format)
+  const cards = doc.querySelectorAll('.sc, .card');
   cards.forEach(card=>{
     const id = card.id || card.querySelector('h3')?.textContent?.slice(0,30) || Math.random().toString(36).slice(2,8);
     if(!card.id) card.id = id;
@@ -404,7 +404,8 @@ function injectFavStars(iframe){
     const title = card.querySelector('h3')?.textContent || card.querySelector('.sc-head')?.textContent?.slice(0,60) || id;
     const preview = card.querySelector('.hook')?.textContent?.slice(0,100)
       || card.querySelector('.visual')?.textContent?.slice(0,100)
-      || card.querySelector('.desc')?.textContent?.slice(0,100) || '';
+      || card.querySelector('.desc')?.textContent?.slice(0,100)
+      || card.querySelector('.card-top .hook')?.textContent?.slice(0,100) || '';
 
     const btn = doc.createElement('span');
     btn.className = 'fav-btn' + (isFav(file,id) ? ' on' : '');

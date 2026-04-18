@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>よふかしくらぶ！結成編 EP01 — 眠れない夜に、四人が揃った</title>
+<title>よふかしくらぶ！結成編 EP01 — 放課後、4人集合</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -22,7 +22,10 @@ nav a:hover{color:#fff;background:#1a1a28}
 .hero .info{display:inline-flex;gap:16px;font-size:11px;color:#555;padding-top:6px;border-top:1px solid #1a1a2e;margin-top:14px}
 .hero .info span strong{color:#888}
 
-/* character bar */
+.chain{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:16px 20px;margin:24px 0;text-align:center;font-size:13px;color:#999}
+.chain strong{color:#ddd}
+.chain .arrow{color:#a78bfa;margin:0 10px;font-weight:900}
+
 .chars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:32px 0 48px}
 .ch{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:14px 12px;text-align:center}
 .ch-name{font-size:13px;font-weight:800;margin-bottom:3px}
@@ -41,7 +44,6 @@ h2{font-size:22px;font-weight:800;margin:60px 0 6px;color:#ddd}
 h2 .act{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4px;letter-spacing:.15em;text-transform:uppercase}
 .act-desc{color:#777;font-size:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
 
-/* scene card */
 .sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:22px 0;padding:26px 30px;transition:border-color .2s;position:relative}
 .sc:hover{border-color:#2a2a3a}
 .sc-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
@@ -69,7 +71,6 @@ h2 .act{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4p
 .who-n{color:#666;font-style:italic}
 .who-sys{color:#34d399;font-family:'Consolas',monospace;font-size:12px}
 .line .txt{color:#d4d4d8;flex:1}
-.line .txt em{color:#888;font-style:normal;font-size:12.5px}
 
 .beat{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:13px 18px;margin:12px 0;font-size:12.5px;color:#f9a8d4}
 .beat strong{color:#f472b6}
@@ -88,455 +89,551 @@ h2 .act{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4p
 <nav>
 <span class="logo">よふかしくらぶ！</span>
 <a href="#top">TOP</a>
-<a href="#act1">ACT 1</a>
-<a href="#act2">ACT 2</a>
-<a href="#act3">ACT 3</a>
-<a href="#act4">ACT 4</a>
-<a href="#end">結</a>
+<a href="#act1">起</a>
+<a href="#act2">1人目</a>
+<a href="#act3">2人目</a>
+<a href="#act4">3人目</a>
+<a href="#act5">結</a>
 </nav>
 
 <div class="hero" id="top">
 <div class="ep">EPISODE 01 — ORIGIN</div>
-<h1>よふかしくらぶ！<br>結成の夜</h1>
-<div class="sub">—— 眠れない夜に、四人が揃った ——</div>
+<h1>よふかしくらぶ！<br>放課後、4人集合</h1>
+<div class="sub">—— 一人が、一人を、呼ぶ ——</div>
 <div class="info">
-<span><strong>尺:</strong> 約14分</span>
+<span><strong>尺:</strong> 約15分</span>
 <span><strong>形式:</strong> 横動画・1話完結</span>
+<span><strong>舞台:</strong> 高校</span>
 <span><strong>リーダー:</strong> やとら</span>
 </div>
 </div>
 
 <div class="wrap">
 
-<!-- キャラ紹介バー -->
+<!-- 連鎖構造 -->
+<div class="chain">
+<strong>やとら</strong><span class="arrow">→</span> 自分で見つける <strong>ひぐれ</strong>
+<span class="arrow">→</span> 美術室で見てる <strong>まひる</strong>
+<span class="arrow">→</span> 裏垢繋がりで気づく <strong>あさめ</strong>
+</div>
+
 <div class="chars">
 <div class="ch ch-y">
 <div class="ch-name">やとら</div>
-<div class="ch-role">リーダー / 語り手</div>
-<div class="ch-desc">紫髪・中二病口調。不眠症。哲学好き。サーバー管理者。</div>
-</div>
-<div class="ch ch-a">
-<div class="ch-name">あさめ</div>
-<div class="ch-role">ムードメーカー</div>
-<div class="ch-desc">青髪・陽キャ・マイクラ初心者。学校では明るいが夜は寂しい。</div>
-</div>
-<div class="ch ch-m">
-<div class="ch-name">まひる</div>
-<div class="ch-role">情緒担当</div>
-<div class="ch-desc">ピンクツインテ・情緒不安定。前のサーバーで喧嘩して逃げてきた。</div>
+<div class="ch-role">2年・図書委員</div>
+<div class="ch-desc">紫髪。物静か。1人目だけ自分で探す。あとは誰かが連れてくる。</div>
 </div>
 <div class="ch ch-h">
 <div class="ch-name">ひぐれ</div>
-<div class="ch-role">職人</div>
-<div class="ch-desc">金髪赤目・無口。このサーバーで一人で建築を続けてきた。</div>
+<div class="ch-role">2年・美術室住み</div>
+<div class="ch-desc">金髪赤目。無口。やとらに見つかる。「もう一人いる」と教える。</div>
+</div>
+<div class="ch ch-m">
+<div class="ch-name">まひる</div>
+<div class="ch-role">1年・情緒担当</div>
+<div class="ch-desc">ピンクツインテ。美術室によく来る下級生。ひぐれが気にかけてた。</div>
+</div>
+<div class="ch ch-a">
+<div class="ch-name">あさめ</div>
+<div class="ch-role">2年・クラスの中心</div>
+<div class="ch-desc">青髪。人気者。裏垢がまひるにバレる。</div>
 </div>
 </div>
 
 <!-- ============================================================ -->
-<h2 id="act1"><span class="act">ACT 1 — PROLOGUE</span>眠れない者たち</h2>
-<p class="act-desc">午前3時。四人はそれぞれ、別々の場所で眠れずにいる。</p>
+<h2 id="act1"><span class="act">起 — OPENING</span>やとら、ひとり決意する</h2>
+<p class="act-desc">ある日の放課後。やとらが、ふと動き出す。</p>
 <!-- ============================================================ -->
 
 <div class="sc" id="ORG-01">
 <div class="sc-head">
 <span class="sc-num">SCENE 01</span>
-<span class="sc-title">コールドオープン — 星の降る図書館</span>
-<span class="sc-dur">0:00 – 0:45</span>
+<span class="sc-title">コールドオープン — 図書室の窓際</span>
+<span class="sc-dur">0:00 – 1:00</span>
 </div>
-<div class="setting"><strong>設定</strong>マイクラ世界。巨大な図書館の中。本棚が天井まで続いている。窓の外は真っ暗。唯一の光源は中央の魂のランタン。やとらがひとり、本を読んでいる。</div>
-<div class="camera"><strong>カメラ</strong>ゆっくりしたドリーバック。本棚の奥からやとらの後ろ姿へ。沈黙。エンチャントテーブルの羽ばたく音だけが鳴っている。</div>
-<div class="bgm"><strong>BGM</strong>なし。ページをめくる音。風の音。遠くに狼の遠吠え（1回だけ）。</div>
+<div class="setting"><strong>設定</strong>私立高校の図書室。放課後。窓から夕日。やとらが窓際で本を読んでいる。カバンにはクリーパーのキーホルダー。</div>
+<div class="camera"><strong>カメラ</strong>本のページのアップ → やとらの目元 → 窓の外（下校する生徒たち）→ 溜息。</div>
+<div class="bgm"><strong>BGM</strong>静かなピアノ。遠くに運動部のかけ声。</div>
 <div class="dial">
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）午前3時。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）世界の99%が、眠っている時間だ。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらがページをめくる。手が止まる。顔を上げる。窓の外に目をやる。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）——だが。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）眠れない人間は、確実にいる。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが立ち上がる。コマンドブロックの前へ。指先がキーを叩く。画面に「ワールドをパブリックに設定」の文字。やとらの目が一瞬だけ、映る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（小さく）……来い。眠れない者たちよ。</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; Server is now public.</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）2年の1学期。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）俺は、この学校で、マイクラの話をしたことが一度もない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）中学でも、そうだった。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">カバンのクリーパーのキーホルダー。隠すように机の下に置かれている。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……ずっと、言い出せなかった。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）言い出したら、笑われる気がして。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">窓の外を下校する生徒たち。楽しそうに談笑している。やとらが、本を閉じる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言、小さく）……この学校に、1人くらいは、いるはずだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……探そう。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（立ち上がる）……1人、だけでいい。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">—— やとら、動き出す ——</span></div>
 </div>
-<div class="beat"><strong>演出メモ：</strong>このシーンではやとら以外の３人は一切出さない。完全に「一人の男の物語」として始める。最後の「……来い」が投網になる。</div>
+<div class="beat"><strong>核となる願い：</strong>やとらが最初から「3人見つける」とは思っていない。「1人でいい」というハードルが低めの願いから始まる。この1人との出会いが、勝手に連鎖していく。</div>
 </div>
 
-<!-- タイトルカード -->
 <div class="title-card">
 <div class="tc-small">Y O F U K A S H I　C L U B　E P　0 1</div>
-<div class="tc-main">よふかしくらぶ！<br>結成の夜</div>
-<div class="tc-sub">— 眠れない夜を、面白い夜に変える —</div>
+<div class="tc-main">よふかしくらぶ！<br>放課後、4人集合</div>
+<div class="tc-sub">— 一人が、一人を、呼ぶ —</div>
 </div>
 
 <!-- ============================================================ -->
-<h2 id="act2"><span class="act">ACT 2 — INTRODUCTION</span>三人の夜</h2>
-<p class="act-desc">同時刻、別々の場所で、三人がそれぞれの「眠れない理由」を抱えている。</p>
+<h2 id="act2"><span class="act">承 1 — 1人目</span>やとらが見つける：美術室のひぐれ</h2>
+<p class="act-desc">やとら自身が、たまたま見かけて、たまたま話しかけた。</p>
 <!-- ============================================================ -->
 
 <div class="sc" id="ORG-02">
 <div class="sc-head">
 <span class="sc-num">SCENE 02</span>
-<span class="sc-title">あさめ —「みんなが寝てる時だけ、本当の自分になれる」</span>
-<span class="sc-dur">0:45 – 2:00</span>
+<span class="sc-title">発見 — 美術室の、マイクラの油絵</span>
+<span class="sc-dur">1:00 – 2:30</span>
 </div>
-<div class="setting"><strong>設定</strong>現実世界の部屋。蛍光灯を消した学習机。ノートPCの画面だけが顔を照らす。机の上にクラスの集合写真。みんな笑顔。あさめも、笑顔。</div>
-<div class="camera"><strong>カメラ</strong>写真のクローズアップ → あさめの横顔 → PC画面。表情が「集合写真のあさめ」と「今のあさめ」で微妙に違う。顔の筋肉が、少し抜けている。</div>
-<div class="bgm"><strong>BGM</strong>時計の秒針。街の遠音。</div>
+<div class="setting"><strong>設定</strong>放課後の美術室。窓から夕日。ひぐれ一人。油絵を描いている。やとらは図書室の本を返す途中、たまたま通りかかる。</div>
+<div class="camera"><strong>カメラ</strong>廊下を歩くやとら → 美術室の扉（半開き）→ 中のキャンバスがチラッと見える → やとらの足が止まる。</div>
+<div class="bgm"><strong>BGM</strong>鉛筆の音。筆の音。</div>
 <div class="dial">
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（モノローグ）学校では、ずっと笑ってる。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（モノローグ）みんなが笑うから、私も笑う。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（モノローグ）たぶん、私じゃなくてもいいんだと思う、あの笑顔は。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">PCにマイクラ起動画面。YouTubeのおすすめに「眠れない人、来い」という広告動画。リンク先はよふかしくらぶのサーバーアドレス。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（声を出して、明るく）——眠れない人、来い、だって。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（呟き）……私じゃん。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">サーバーアドレスをコピー。マイクラのマルチプレイ画面を開く。手が、少しだけ震えている。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小さく）初心者だけど……入っていいかな。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（自分を鼓舞）……行け、あさめ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが廊下を歩いている。美術室の扉が半開き。通り過ぎようとして、キャンバスがチラッと視界に入る。足が止まる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（心の中で）……え。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">油絵で描かれた、マイクラの村の風景。四角い木、四角い家、ブロックの質感。本物の油絵の質感で、マイクラを描いている。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（心の中で）……マイクラ、だ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（心の中で）油絵で、マイクラ、描いてる人が……。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが扉を静かに押し開けて、中に入る。ひぐれが筆を止めずに、気配を感じる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（振り向かずに）……美術部、今日休み。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（絵を見ながら）……村の、東側。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（筆が止まる）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">時間帯は、夕方の、12000ティックくらい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ゆっくり振り向く）……何。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し緊張）……合ってる？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（目を見開く）……合ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（立ち上がる）……1週間、誰にも気づかれなかったの、これ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……構図が、マイクラ知らないと出せない構図だから。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（じっと、やとらを見る）……あなた、誰。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……2年の、やとら。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……私もだ。ひぐれ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">二人の視線が、少し長く合う。</span></div>
 </div>
-<div class="beat"><strong>キャラの核：</strong>あさめは「明るい」のではなく「明るくしている」。この裏設定があるから、後半の彼女の太陽のような振る舞いに厚みが出る。</div>
+<div class="beat"><strong>やとらの能動性：</strong>1人目は、やとらが自分で見つけて、自分で話しかける。マイクラ知識（12000ティック）で「仲間」であることを伝える。暗号のような共通言語で、2人は一瞬で繋がる。</div>
 </div>
 
 <div class="sc" id="ORG-03">
 <div class="sc-head">
 <span class="sc-num">SCENE 03</span>
-<span class="sc-title">まひる —「一人でやるから、もう、いい」</span>
-<span class="sc-dur">2:00 – 3:10</span>
+<span class="sc-title">誘い — 俺と、マイクラやらない？</span>
+<span class="sc-dur">2:30 – 3:50</span>
 </div>
-<div class="setting"><strong>設定</strong>別の部屋。散らかった机。ぬいぐるみが床に落ちている。ヘッドホンをつけたまひるがPCの前で、泣きそうな顔。Discordの通知が鳴り続けている。ミュート済み。</div>
-<div class="camera"><strong>カメラ</strong>散らかった机の上を舐めるように。ペンが折れている。落書きノート。「もう要らない」の文字。最後にまひるの顔のアップ。</div>
-<div class="bgm"><strong>BGM</strong>低音のアンビエント。ヘッドホンから漏れる自分の息づかい。</div>
+<div class="setting"><strong>設定</strong>同じ美術室。ひぐれが絵を片付け始める。やとらが絵の前に立つ。</div>
+<div class="camera"><strong>カメラ</strong>二人の並び。距離感。</div>
+<div class="bgm"><strong>BGM</strong>ピアノ継続。</div>
 <div class="dial">
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">Discord画面。「まひるが退出しました」のメッセージが並ぶ。3つ、4つ、5つ。サーバーを連続で抜けている。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（モノローグ、声が震える）……別に、私が悪いわけじゃ、ないし。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（モノローグ）……悪いのかな。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（モノローグ）……ううん。悪くない。悪くないから。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">マイクラのマルチプレイリスト。全部「お気に入り解除」する。最後に一つだけ残る。知らないサーバー。名前は書かれていない。アドレスだけ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（画面を見て）……なにこれ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（少し笑う）……名前もないサーバーって、逆に、人がいなさそうでいいかも。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（力なく、自分に）……一人でやるから、もう、いい。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（接続する）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（しばらく黙って）……ひぐれ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なに。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……俺、マイクラ、5年やってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……私も、4年。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……この学校で、話せる人、ひぐれが初めて。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し間）……私も。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">お互いの「初めて」が重なる瞬間。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……今度、一緒に、やらない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（筆を置く）……やる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し驚く）……即答？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……4年、一人だった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……断る理由、ない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し笑う）……そっか。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが絵を片付けている途中、壁にある小さな落書きに目が止まる。鉛筆で、とても小さく、マイクラのクリーパーの顔。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ふと、壁を見て）……あ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（気づく）……それ、描いたの？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……違う。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……美術室にたまに来る、1年生。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し動く）……それ、クリーパーだろ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（頷く）……うん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し考える）……その子、たぶん、マイクラ、やってる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらの目が、少し光る。</span></div>
 </div>
-<div class="beat"><strong>キャラの核：</strong>まひるは「情緒不安定」ではなく「感情の振れ幅が正直」。1シーンの中で「悲しい→怒り→諦め→興味」と感情が移るのが彼女。3秒に1回感情が変わる。</div>
+<div class="beat"><strong>バトンの始まり：</strong>ひぐれがスカウトされたその場で、次の候補（まひる）の存在を匂わせる。やとらが主導するのではなく、「美術室の常連」をひぐれが知っているという自然な流れ。</div>
 </div>
+
+<!-- ============================================================ -->
+<h2 id="act3"><span class="act">承 2 — 2人目</span>ひぐれが連れてくる：1年のまひる</h2>
+<p class="act-desc">ひぐれが、気にかけていた後輩を、静かに呼ぶ。</p>
+<!-- ============================================================ -->
 
 <div class="sc" id="ORG-04">
 <div class="sc-head">
 <span class="sc-num">SCENE 04</span>
-<span class="sc-title">ひぐれ — 声を出さない少女</span>
-<span class="sc-dur">3:10 – 4:00</span>
+<span class="sc-title">ひぐれの観察 — まひるという子</span>
+<span class="sc-dur">3:50 – 5:00</span>
 </div>
-<div class="setting"><strong>設定</strong>マイクラ世界。やとらの図書館から少し離れた場所。崖の上。月明かり。ひぐれが黙々とブロックを積んでいる。巨大な塔。一人。</div>
-<div class="camera"><strong>カメラ</strong>俯瞰からのゆっくりしたズームイン。塔の全景 → ひぐれの手元 → ひぐれの横顔。彼女は表情を変えない。音楽もない。ブロックを置く音だけ。</div>
-<div class="bgm"><strong>BGM</strong>なし。ブロック配置音。風。</div>
+<div class="setting"><strong>設定</strong>翌日の放課後。また美術室。やとらとひぐれ、2人だけ。ひぐれが、棚の上から小さなスケッチブックを取り出す。</div>
+<div class="camera"><strong>カメラ</strong>スケッチブックのページをめくる手元 → ページに描かれた絵 → やとらの反応。</div>
+<div class="bgm"><strong>BGM</strong>静かなピアノ。</div>
 <div class="dial">
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれがブロックを1個置く。1歩下がる。角度を確認する。1個戻す。0.5ブロック調整したかったようだが、マイクラには0.5がない。少し、困った顔をする。それだけ。</span></div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">彼女はこのサーバーに、3ヶ月前から毎晩いる。</span></div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">一度も、誰とも、話していない。</span></div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">一度も、管理人に、会っていない。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">システムメッセージが流れる：「Server is now public」。ひぐれの手が、ほんの少しだけ止まる。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小さく、口だけ動く）……ふうん。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれは作業を再開する。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（スケッチブックを開いて）……見て。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">スケッチブックのページ。でもこれはひぐれの絵じゃない。下手な、でも一生懸命な、マイクラの絵。雪原に立つ家。薄い鉛筆で描かれている。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……美術室に、週2で来る子。1年のまひる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……いつも、1人で、これ描いてる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（絵を見て）……雪原に家、建ててる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……一人で、雪原、選ぶのは、意外と勇気いる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し頷く）……私も、そう思う。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し間）……あの子、よく泣いてる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（驚く）……美術室で？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……スマホ見て、泣きながら、絵、描いてる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（自分の絵の前に戻って）……気になってた。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……でも、私、話しかける性格じゃない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……俺たち2人なら、行ける？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（やとらを見る）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……行ける、かも。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（スケッチブックを閉じる）……明日、たぶん、来る。</span></div>
 </div>
-<div class="beat"><strong>キャラの核：</strong>ひぐれは「無口」ではなく「言葉を大事にしている」。ここでは「ふうん」だけ。でもその一言に、彼女がこのサーバーに執着している証拠が含まれる。</div>
+<div class="beat"><strong>ひぐれの優しさ：</strong>ひぐれは3ヶ月前からまひるを気にかけていたが、声をかけられなかった。やとらという「もう一人」が加わったことで、初めて動ける。1人では行けなかった場所に、2人なら行ける、という話。</div>
 </div>
-
-<!-- ============================================================ -->
-<h2 id="act3"><span class="act">ACT 3 — ENCOUNTER</span>奇跡は、偶然の顔をして来る</h2>
-<p class="act-desc">三人が、同じサーバーに、同じ夜、ログインする。</p>
-<!-- ============================================================ -->
 
 <div class="sc" id="ORG-05">
 <div class="sc-head">
 <span class="sc-num">SCENE 05</span>
-<span class="sc-title">合流 — スポーン地点の奇妙な夜</span>
-<span class="sc-dur">4:00 – 5:30</span>
+<span class="sc-title">勧誘 — 美術室で泣いてる後輩</span>
+<span class="sc-dur">5:00 – 6:30</span>
 </div>
-<div class="setting"><strong>設定</strong>やとらの図書館の正面広場。中央に大きな魂のランタン。サーバーがパブリックになって12分。誰も来ない。やとらが広場のベンチに座って、本を読んでいる。</div>
-<div class="camera"><strong>カメラ</strong>広場の俯瞰ショット → やとらの顔のアップ → 空。星が流れる。その瞬間、スポーン音。</div>
-<div class="bgm"><strong>BGM</strong>夜の虫の音。遠くに水音。</div>
+<div class="setting"><strong>設定</strong>その翌日。美術室。まひるが隅っこで、スマホを見ながら、静かに泣いている。スケッチブックを抱えて。やとらとひぐれが入ってくる。</div>
+<div class="camera"><strong>カメラ</strong>扉 → まひるの背中 → ひぐれが先に入る。やとらは後ろ。</div>
+<div class="bgm"><strong>BGM</strong>ピアノ、少し大きめ。</div>
 <div class="dial">
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; asame joined the game</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……えっ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……建物ある！！人いる！！</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（興奮）やばっ、やばっ、なんか凄い世界に来ちゃった！！</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめがカメラ（というかマイクラの視点）をぐるぐる回す。やとらに気づく。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（大声）あのーーっ！！！</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに顔を上げる）……客か。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ！しゃべった！</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">……喋る。</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; mahiru joined the game</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（心の中で）あ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（心の中で）人、いるじゃん。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（心の中で）帰ろ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（まひるに気づいて）あーっ！あなたも来たの！？</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">……え。あ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（逃げようとする）</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（追いかけて）ねえねえっ！初めまして！私あさめ！今来たばっかりで何もわかんなくて——</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（早口）わ、私まひる、じゃあね、もう寝ようと思ってて、また——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）——逃げる必要はない。</span></div>
+<div class="line"><span class="who who-n">（映像</span><span class="txt">まひるが、スマホ画面（SNS）を見て、指が震えている。「既読ついたのに返信こない」のやり取りが見える。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに近づく）……まひる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ビクッと、スマホを隠して）あ、ひぐれ先輩、すみませんっ、すぐ出ます——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（座る）……出なくていい。</span></div>
 <div class="line"><span class="who who-m">まひる</span><span class="txt">（固まる）</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">ここは、逃げてきた者のための場所だ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">……？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し笑って）我も、逃げてきた。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるが、少し、動きを止める。画面の彼女の口元が、わずかに、緩む。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（スケッチブックを指さす）……それ、見てもいい？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（必死に隠す）だ、ダメです！下手なんです！先輩に見せられるようなのじゃ——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに）……下手じゃない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（え、という顔）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……雪原、選んでる時点で、上手い。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（混乱）……え、なんで、雪原って分かるん——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（後ろを指さす）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるが、やとらの存在に初めて気づく。やとらが入り口に立っている。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（さらに混乱）……え、先輩、2人？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し会釈）……2年のやとら。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ひぐれから、話、聞いた。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（慌てて、ひぐれに）え、先輩、私の話、誰かにしたんですか！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（申し訳なさそうに、でも正直に）……気になってた、から。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（目が潤む）……え。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……週2で、ここで泣いてた。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（絶句）……見られてた……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（穏やかに）……雪原に家、建ててるんだろ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（驚いて）な、なんで分かるん——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（絵を指さす）……絵、見た。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……一人で、雪原、選ぶ人間は、たぶん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……誰かに気づいてほしくて、建ててる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるの目から、涙がぽろっと、1粒、落ちる。でも、今度は、スマホを見ていた時の涙と、違う。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（鼻声）……ずっと、誰かに、「雪原、選んだね」って、言ってほしかった……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに）……私、言う。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……まひるは、雪原、選んでる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（わんわん泣く）……先輩ぃ……。</span></div>
 </div>
-<div class="beat"><strong>設計の核：</strong>やとらの最初の本格的な台詞は「——逃げる必要はない」。この一言で、彼がただの中二病じゃなく「誰かを迎える人間」だとわかる。リーダー性の提示。</div>
+<div class="beat"><strong>ひぐれ主導：</strong>2人目の勧誘は、ひぐれが主導でやる。やとらは後ろで見守る。1人目の「やとら→ひぐれ」で得た関係を、「ひぐれ→まひる」で広げる。やとらが全員を引っ張るんじゃなく、「つながりが、つながりを呼ぶ」構造。</div>
 </div>
 
 <div class="sc" id="ORG-06">
 <div class="sc-head">
 <span class="sc-num">SCENE 06</span>
-<span class="sc-title">四人目 — ひぐれが降りてくる</span>
-<span class="sc-dur">5:30 – 6:30</span>
+<span class="sc-title">誘い — 3人で、やらない？</span>
+<span class="sc-dur">6:30 – 7:20</span>
 </div>
-<div class="setting"><strong>設定</strong>同じ広場。あさめが騒ぎ、まひるが戸惑い、やとらが見守る中。遠くの崖の上で作業していたひぐれが、塔の最上階からジャンプする。</div>
-<div class="camera"><strong>カメラ</strong>崖の上のひぐれのアップ → 落下する彼女の俯瞰 → 広場の3人のリアクション → ひぐれが水バケツでMLG着地（バシャッ）。</div>
-<div class="bgm"><strong>BGM</strong>無音から、ひぐれの落下の瞬間、静かなストリングスが立ち上がる。</div>
+<div class="setting"><strong>設定</strong>同じ美術室。まひるがやっと落ち着いた後。3人が床に座っている。</div>
+<div class="camera"><strong>カメラ</strong>3人の座った構図。まひるが真ん中。</div>
+<div class="bgm"><strong>BGM</strong>静かに、でも温かい調子に変わる。</div>
 <div class="dial">
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（空を見上げて）あれ、誰か降ってきてる！？</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">ええっ、死ぬって！あんな高さ！</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（動じず）……見ろ。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが地面の寸前で水バケツを出す。完璧なMLG。着地音。誰にも気づかれなかったかのように、普通に立ち上がる。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……すごっ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">今の、プロじゃん。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（呟き）……ひぐれ。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（やとらを見る）</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">3ヶ月、我は諸君を見てきた。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……知ってた。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（びっくり）え、しゃべる子だったんだ！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（本題）……まひる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（鼻をすすって）……はい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……私とやとら、マイクラ、一緒にやる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（目を見開く）……え！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……今日決めた。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し間、思い切って）……まひるも、入らない？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（即座に動揺）えっ、えっ、私、絶対迷惑かけるので、前のサーバーも喧嘩して出てきて、すぐ泣くし、感情が変だし——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（横から）……迷惑、かけていい。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（止まる）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し笑う）……雪原に一人で家建てる子が、迷惑って、何。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（涙目、でも笑ってる）……先輩、意外と、喋る……。</span></div>
 <div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……必要なときは。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（感動）……かっこいい……。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（場に向かって）——奇妙だ。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">我は一人でこのサーバーを作った。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（間）——だが今夜、四人が揃った。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">四人が揃うとは——偶然ではない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（深呼吸）……入り、ます。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……入らせて、ください！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるがスケッチブックを閉じる。そこに小さなメモが挟まれている。手書きの「SNSアカウント」のリスト。やとらがそれに気づく。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（何気なく）……まひる、SNSで、マイクラの人、フォローしてる？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（メモに気づかれたと焦る）あ、はい、裏垢で、いっぱい、してます。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……裏垢って、匿名で？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……はい。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（少し考えて、ハッとする）……あ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（気づく）……何？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（画面を見て）……同じ学校の人、1人だけ、フォローしてる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……匿名アカウントだけど、たぶん、うちの学校の人。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し身を乗り出す）……マイクラ、やってる人？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……超、真剣勢。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ネザライト装備のスクショとか、エンドラのタイムアタックとか。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（やとらを見る）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……誰だ、それ。</span></div>
 </div>
-<div class="beat"><strong>MLGの意味：</strong>ひぐれの登場を「技術で語る」設計。セリフで「私は腕があります」と言わせずに、1回のMLGで証明する。視聴者が「この子すごい」と自分で発見する。</div>
+<div class="beat"><strong>バトンの2回目：</strong>まひるがスカウトされた直後に、3人目（あさめ）の存在が匂わされる。ここでも、やとらが自分で発見するんじゃない。まひるが「フォローしてる匿名アカウント」という、まひるにしか持ってない情報を提供する。</div>
 </div>
 
 <!-- ============================================================ -->
-<h2 id="act4"><span class="act">ACT 4 — TRIAL &amp; DECLARATION</span>事件は、結成の前夜に起こる</h2>
-<p class="act-desc">平和な出会いの直後、最初の「事件」が起こる。それが四人を結びつける。</p>
+<h2 id="act4"><span class="act">承 3 — 3人目</span>まひるが気づく：クラスの中心のあさめ</h2>
+<p class="act-desc">匿名裏垢の正体が、意外な人だった。</p>
 <!-- ============================================================ -->
 
 <div class="sc" id="ORG-07">
 <div class="sc-head">
 <span class="sc-num">SCENE 07</span>
-<span class="sc-title">事件 — あさめ、爆破する</span>
-<span class="sc-dur">6:30 – 8:15</span>
+<span class="sc-title">推理 — この裏垢、誰だ</span>
+<span class="sc-dur">7:20 – 9:00</span>
 </div>
-<div class="setting"><strong>設定</strong>広場から図書館に四人で移動。やとらがツアー中。あさめが興奮して走り回る。</div>
-<div class="camera"><strong>カメラ</strong>図書館の天井のアップ → やとらの解説中の顔 → あさめが画面の端でゴソゴソ → ゆっくりパン → あさめの視点 → クリーパー。</div>
-<div class="bgm"><strong>BGM</strong>和やかなピアノ → クリーパーの「シュー」で止まる → 爆発 → 沈黙。</div>
+<div class="setting"><strong>設定</strong>美術室。3人がまひるのスマホを囲んでいる。裏垢のプロフィールと投稿履歴を見ている。</div>
+<div class="camera"><strong>カメラ</strong>スマホ画面のアップ → 3人の顔 → 推理が進むテンポ。</div>
+<div class="bgm"><strong>BGM</strong>少しだけミステリー調。</div>
 <div class="dial">
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（解説）この図書館は、我が3ヶ月かけて建てた。蔵書は7,432冊。全てエンチャント可能だ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（真面目に聞いて）……すごい、綺麗……。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（建築を見上げて、ボソッと）……柱の間隔、揃ってる。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（満足げに）気づくか。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ほんの少し頷く）</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">画面の端で、あさめが図書館の裏で何かを見つけている。箱のような影。クリーパー。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（遠くから）やとらさーん！これ可愛いやつですか！？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（振り向く）</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（顔色が変わる）……触るな。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ニコニコ近づく）でも緑でふわふわしてて——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">触るな！！</span></div>
-<div class="line"><span class="who who-sys">SFX</span><span class="txt">シューーーーッ</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ、えっ、何！？</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（短く）伏せて。</span></div>
-<div class="line"><span class="who who-sys">SFX</span><span class="txt">ドォォォォン！！！</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">爆発。図書館の裏側の壁が、大きく削れる。本棚が倒れる。本が散らばる。煙。沈黙。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（呆然）……えっ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……えっ、えっ、えっ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（血の気が引く）私……壊した？</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（背景で）……や、やば……やとらの3ヶ月が……。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（パニック）ごめ、ごめ、ごめんなさいっ！！知らなかったの！！ほんとに！！</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（無言で、ゆっくり、立ち上がる）</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声、怯えて）……怒ってる……絶対怒ってる……。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（泣きそう）私……今日、来ちゃダメだったのかも……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（スマホを見せる）……この人です。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">裏垢のプロフィール。「@mc_ender_main / 攻略勢 / 高校生 / 夜しかいません」。アイコンはエンダードラゴン。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（読み上げる）……「夜しかいません」。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（投稿時間を見て）……0時から3時。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">毎日、この時間。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……毎日、深夜3時まで起きてる高校生。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……同じ学校。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（投稿の背景を見て）……これ、うちの学校の、購買のパン。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（驚く）えっ、ほんとだ！背景に、うちの学食のドーナツが映ってる！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（じっと見る）……ドーナツ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……毎日、ドーナツ買ってる奴、知ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（やとらを見る）……誰。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（しばらく黙る）……俺のクラス。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……あさめ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（固まる）……えっ、あさめ先輩！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（興奮）学校で一番、明るい、あの、あさめ先輩！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（懐疑的）……違うでしょ。キャラ、真逆。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（スマホの別の投稿を見つけて）……これ、見ろ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">投稿：「今日、学校でクラスメイトにドーナツ配ってきた。本当はエンドラの討伐動画見たかったのに」と書いてある。時間は昨日の夜。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（呆然）……あさめ、先輩じゃん……完全に……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（呟く）……ギャップ、すごい。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（真剣）……あさめが、マイクラ真剣勢。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……全然、知らなかった。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（興奮）これ、どうするんですか！？直接聞きに行く！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（首を振る）……本人、隠してるんだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……いきなり「裏垢、見ました」は、キツい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し考えて）……別の方法、ある？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（しばらく黙る）……DM送る。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……匿名のアカウントとして。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ワクワク）……え、つまり、私の裏垢から？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……頼む。</span></div>
 </div>
-<div class="beat"><strong>山場の仕込み：</strong>ここであえて「取り返しのつかないこと」が起こる。3ヶ月かけた建築を、初対面のあさめが壊す。普通なら絶縁案件。ここから、やとらの「器」が試される。</div>
+<div class="beat"><strong>推理パートの面白さ：</strong>「裏垢の正体は意外な人」というネットミステリー系の展開。3人で一つの謎を追うことで、結束が強まる。しかも情報源は全員分担（やとら＝クラスメイト知識、ひぐれ＝観察力、まひる＝SNS経由）。</div>
 </div>
 
 <div class="sc" id="ORG-08">
 <div class="sc-head">
 <span class="sc-num">SCENE 08</span>
-<span class="sc-title">静寂 — ひぐれが動く</span>
-<span class="sc-dur">8:15 – 9:30</span>
+<span class="sc-title">接触 — 匿名DMから始まる</span>
+<span class="sc-dur">9:00 – 10:30</span>
 </div>
-<div class="setting"><strong>設定</strong>爆発の直後。誰も動けない。あさめが立ち尽くし、まひるが涙目、やとらが無言。そこで、ひぐれが一歩前に出る。</div>
-<div class="camera"><strong>カメラ</strong>全員の顔を順番に映す。あさめ（絶望）→まひる（同情）→やとら（無表情）→ひぐれ（動く）。</div>
-<div class="bgm"><strong>BGM</strong>無音。足音、ブロックを置く音だけ。</div>
+<div class="setting"><strong>設定</strong>その夜。まひるが自宅で、3人でDMを考える（Discordのグループ通話中）。1通のDMを打つ。あさめ側：自宅、ベッドの上。スマホに通知が来る。</div>
+<div class="camera"><strong>カメラ</strong>まひるの部屋 → Discord画面（アイコン3つ）→ DMを書く → 送信 → あさめの部屋に通知 → あさめの顔。</div>
+<div class="bgm"><strong>BGM</strong>深夜のアンビエント。</div>
 <div class="dial">
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが散らばった本を1冊、拾う。本棚の跡地にそっと置く。もう1冊拾う。置く。もう1冊。置く。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（声が震える）……ひぐれ、ちゃん……？</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（手を止めずに）……ここから、やり直す。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（泣きながら）……私も手伝う。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ボロボロ泣いて）私も……私も、一番、直す……！</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">三人が無言で修復を始める。本を拾い、壁を積み直す。やとらは、ずっと立ち尽くしている。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）3ヶ月。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）一人で、積んできた時間。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）——それが、12分で壊れた。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）本来なら、我は怒るべきだ。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが、三人の背中を見る。泣きながら本を拾うあさめ。黙々と壁を直すひぐれ。涙ぐみながらまひるが本棚に本を並べている。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）——だが。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）我が3ヶ月一人で積んだ時間よりも。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）今この12分の方が。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）——眠くない。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが、ゆっくりと、歩き出す。地面から本を拾う。ひぐれの横に座る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（小さく）……手伝う。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（顔を上げずに）……うん。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（顔を上げて、涙と鼻水で）……ほんとに、ごめんなさい……。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（あさめを見て、少し間）——面白かった。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（フリーズ）……え？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">……今の爆発。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">3ヶ月、我はこの図書館で、一度も——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">叫ばなかった。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ポカンと）……え、褒めてる？怒ってる？</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（笑いながら泣いてる）わかんないけど、たぶん、褒めてる……。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言で、ほんの少し、口角が上がる）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（PCに向かって）DM、なんて書くんですか……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（通話越し）……正直に書く。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（通話越し）……でも、名前は出さない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（悩みながらタイピング）……「はじめまして」……「あなたの投稿が好きです」……「うちの学校の人ですよね？」……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（通話越し）……最後のは、やめよう。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（消す）はい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……「マイクラ部、勝手に作りました」って書いて。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し笑う）……ひぐれ、大胆。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……本当のこと、書くだけ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（頑張ってタイピング）「はじめまして、マイクラ部を勝手に作りました。同じ学校だと思います。よかったら、入りませんか」……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（指が震える）送信……押します……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……押そう。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">送信ボタンが押される。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめの部屋。自宅。ベッドの上でマイクラを起動しようとしていたあさめ。スマホに通知。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（DMを読む）……え。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（画面を見直す）……マイクラ部？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（息を呑む）……同じ学校？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ベッドの上で座り直す、真剣）……誰。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（返信を打つ、震える手で）「こんばんは。私も同じ学校、たぶんです。誰ですか？」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">即返信。3人が画面の前で息を呑む。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（震える）……返信、来ました……！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……明かす？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……明日、学校で、会って言おう。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……その方が、ドラマチックだな。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（興奮）……「明日、学食で12:30に会いましょう。ドーナツの近く」って送っていい？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ニヤリ）……ドーナツは、余計だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し笑う）……絶対バレる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（爆笑）……じゃあ、ドーナツ、消して……「学食で」だけで。</span></div>
 </div>
-<div class="beat"><strong>転換点：</strong>ここでやとらが「怒る」を選ばずに「面白かった」と言うことで、彼のリーダーとしての器が確定する。3ヶ月の時間 vs 12分の出会い。質の違う時間。「眠くない」の一言が全てを結ぶ。</div>
+<div class="beat"><strong>3人のチーム感：</strong>ここでやっと「3人で一緒に何かする」という感覚が生まれる。DMを3人で書く、という共同作業が、彼らの関係を固める。「ドーナツは余計」のやり取りが、チームの空気を出す。</div>
 </div>
 
 <div class="sc" id="ORG-09">
 <div class="sc-head">
 <span class="sc-num">SCENE 09</span>
-<span class="sc-title">結成 — 看板に書かれた五文字</span>
-<span class="sc-dur">9:30 – 11:30</span>
+<span class="sc-title">対面 — 学食、ドーナツの近くで</span>
+<span class="sc-dur">10:30 – 12:30</span>
 </div>
-<div class="setting"><strong>設定</strong>図書館の修復がある程度進んだ後。四人が広場に戻る。夜明け前。空が少しだけ青い。やとらが看板ブロックを取り出す。</div>
-<div class="camera"><strong>カメラ</strong>四人の並び → やとらが看板を設置する手元のアップ → 看板の文字が1文字ずつ入力される → 最後に四人の顔のアップ。</div>
-<div class="bgm"><strong>BGM</strong>静かなピアノ。夜明けの予感のあるコード進行。</div>
+<div class="setting"><strong>設定</strong>翌日。昼休み。学食。ドーナツのコーナー。あさめが先に来ている。キョロキョロしている。やとらがドーナツを片手に近づく。後ろからひぐれとまひる。</div>
+<div class="camera"><strong>カメラ</strong>学食の喧騒 → あさめのキョロキョロした顔 → やとらが近づく → あさめがやとらを見て「え？」という顔。</div>
+<div class="bgm"><strong>BGM</strong>学食のざわめき → 3人が近づくとフェードアウト。</div>
 <div class="dial">
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（場に向かって）——提案がある。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（鼻声）……なに？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">我は、このサーバーを「眠れない人間」のために作った。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">だが——一人では、ただ眠れないだけだった。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">今夜、我は、初めて——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">「眠りたくない」と思った。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">三人が、やとらを見る。あさめはまだ泣きそう。まひるは目を丸くしている。ひぐれは、静かに。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（看板を取り出す）諸君に、名前をやる。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（看板を地面に設置する）</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが文字を入力していく。「よ・ふ・か・し・く・ら・ぶ」。1文字ずつ、画面にカチッと入る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（看板を完成させる）——よふかしくらぶ。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">眠れない夜を、面白い夜に変える。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">それが、我の提案だ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（目を見開いて）……えっ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（じわじわ来る）……えっ、私、入っていいの……？</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（図書館を壊した手を見て）……こんな、壊した人でも……？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（一瞬止まって）……壊したからだ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（え、と固まる）</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">3ヶ月、我の図書館には、誰も傷をつけなかった。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">誰も、入らなかったからだ。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（あさめを見て）お前が壊した壁は——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">我が作るのを忘れていた、入り口だ。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめの顔。涙が、今度は別の理由で、溢れる。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（泣きながら、笑いながら）……入る。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……入ります……！</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（遠慮がち）……あの……私も……いい？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">……逃げてきた者は、全員、歓迎される。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（鼻をすすって、小さく笑って）……うん。入る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（ひぐれを見る）</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少しの沈黙）</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……3ヶ月、迷ってた。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">今日、決めた。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……入る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに頷く）決まりだ。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">——四人で、夜を、明かす。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめ、ドーナツコーナーで、知らない人を探してる顔。普段の「明るいあさめ」とは違う、少し不安そうな顔。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（近づく、普通に）……あさめ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（振り向いて）……やとらくん？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（取り繕って、明るく）どしたのー？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……マイクラ部、入らない？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（顔が固まる）……え。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……昨日のDM、俺たち3人から。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれとまひるが、やとらの後ろから姿を現す。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小さく手を振って、緊張）……こ、こんにちは、先輩。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（軽く会釈）……どうも。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（凍りつく）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小声、めっちゃ焦り）……え、ちょ、ちょっと待って、あの裏垢、バレてる……？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに頷く）……バレてる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（周りを見渡して、焦る）……ここで言わないで！クラスの子見てる！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（提案）……場所、移そう。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……図書室。誰もいない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（頷いて、ドーナツを握りしめたまま）……行く。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人が学食を出る。あさめが振り向くと、クラスメイトが不思議そうに見ている。あさめが一瞬、笑顔を作る。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（クラスメイトに、明るく）ちょっと委員会！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（3人について歩きながら、小声で）……委員会じゃないですけど。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（不思議そう）あさめ先輩、さっきと、全然違う……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（少し自嘲）……これが、素。</span></div>
 </div>
-<div class="beat"><strong>最大の山場：</strong>「壊したから」の台詞で、やとらが全員の負い目を肯定に変える。これがリーダーの決定的な所作。「壊れた壁は、作り忘れていた入り口」という言い回しが、やとららしい中二病＋深い真実の表現。</div>
+<div class="beat"><strong>ギャップの提示：</strong>対面の瞬間に、あさめの「二面性」が視覚的に描かれる。クラスメイトに対しては明るいキャラ、3人の前では素の顔。ここで初めて視聴者もあさめの素顔を見る。</div>
 </div>
-
-<!-- ============================================================ -->
-<h2 id="end"><span class="act">EPILOGUE</span>夜明けと、次の夜</h2>
-<p class="act-desc">結成直後。四人で過ごす、最初の朝。</p>
-<!-- ============================================================ -->
 
 <div class="sc" id="ORG-10">
 <div class="sc-head">
 <span class="sc-num">SCENE 10</span>
-<span class="sc-title">最初の夜明け — また明日の夜</span>
-<span class="sc-dur">11:30 – 13:30</span>
+<span class="sc-title">告白 — 図書室、あさめの素顔</span>
+<span class="sc-dur">12:30 – 13:40</span>
 </div>
-<div class="setting"><strong>設定</strong>図書館の屋上。四人並んで座っている。空が青から紫、そしてオレンジに変わっていく。各自がゆるく雑談している。</div>
-<div class="camera"><strong>カメラ</strong>屋上の横長ロングショット。四人のシルエット → ゆっくりパン → 太陽が出る → 四人の顔が朝日に照らされる。</div>
-<div class="bgm"><strong>BGM</strong>オルゴール調のメインテーマ（これが「よふかしくらぶ！」のテーマになる）。</div>
+<div class="setting"><strong>設定</strong>図書室。窓際の奥。誰もいない。4人だけ。あさめがドーナツを机に置いて、座る。初めて、3人にちゃんと顔を向ける。</div>
+<div class="camera"><strong>カメラ</strong>あさめの顔のアップ。普段の笑顔が抜けている。素。</div>
+<div class="bgm"><strong>BGM</strong>温かいピアノ。</div>
 <div class="dial">
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（足をぶらぶら）……明日から学校だぁ……。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（ぼそっと）私もだ。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……一応、ある。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（本を閉じて）我は、夜勤だ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（食いつく）えっ、やとらって仕事してる人なの！？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">……大人の話だ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（小さく）……かっこよ。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（呟き）……設定、厚い。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（笑う）ひぐれ、意外と毒舌！</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し笑う）……必要なときは。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">太陽が、地平線から出る。マイクラの四角い太陽。四人の顔がオレンジに染まる。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（朝日を見て、小声）……朝、久しぶりに、綺麗だと思った。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（隣から）わかる。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（少し間）……私、朝が一番、苦手だったんだ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">学校始まるから。みんな元気だから。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">……でも今日は、夜明けが楽しみだった。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">夜が終わるのが、嬉しくなかった。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……それは。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（間）……よふかしくらぶが、成立した証拠だ。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（しみじみ）……いい夜だった。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うん。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（立ち上がる）——解散だ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、もう？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">夜は、終わる。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（全員を見渡して）——だが、また来る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">また明日の、夜に。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（明るく手を振る）また明日ーっ！！</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（手を振って）また、夜に……。</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（短く）……また。</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; asame left the game</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; mahiru left the game</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; higure left the game</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとら一人、屋上に残る。朝日を見る。図書館の壁に、昨日まではなかった「入り口」がある。穴の部分を、そのまま、戸にしてある。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）世界の99%が、目覚める時間だ。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）我々は——</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）眠る。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）——今日、初めて、眠れる気がする。</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらの姿が、フェードアウトしていく。画面に文字が浮かぶ。</span></div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">—— よふかしくらぶ ——</div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">結成の夜、ここに完。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（深呼吸）……バレたからには、言う。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私、マイクラ、超、真剣勢。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">毎晩、3時まで起きて、エンドラのタイムアタック、研究してる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ネザライト装備、全部、自分で集めた。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（感動）……すご……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（自嘲）でも、クラスの「あさめ」は、明るいあさめだから。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">この知識、使うとこ、ない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ドーナツを見て）……ドーナツ配ってる時間、マイクラしたいなって、ずっと思ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに）……私も。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ひぐれを見る）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……美術部、入るように勧められるけど、断ってる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……マイクラの絵、描きたいから。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……「マイクラ」って言えない、だけ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小声）……私も、言えてない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……同じクラスで、マイクラの話できる人、ずっと探してた。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……俺もだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……だから、勝手に、マイクラ部、作った。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（あさめを見て）……4人目、頼む。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（目を見開く）……4人目？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ドーナツを握って、涙目）……私、入っていいの？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……明るいキャラで、クラスの女王で、マイクラ詳しいって、ダサくない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（即答）……ダサくない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（即答）かっこいいです！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……エンドラのタイムアタック、教えてくれ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（号泣しながら、笑顔）……教える……教えます……！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ドーナツを3人に分ける）……ドーナツ、食べる？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（もらって）……ありがとうございます！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ドーナツを受け取る、少し笑って）……やっと、使うとこあったな、ドーナツ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（号泣しながら爆笑）……うん……！</span></div>
 </div>
-<div class="beat"><strong>結末の設計：</strong>ラストの「今日、初めて、眠れる気がする」は、Scene 01の「眠れない」と対になる。冒頭と終わりで同じキャラが正反対のことを言うことで、1話で「変わった」ことが視覚的に伝わる。視聴者に「また来週」を期待させる。</div>
+<div class="beat"><strong>4人目の加入：</strong>あさめが初めて素の顔を3人に見せる。「明るいキャラ」「マイクラ真剣勢」が矛盾じゃなく、別の顔として両立していいんだと知る。ドーナツが「キャラのための道具」から「本物の分かち合い」に変わる瞬間。</div>
 </div>
+
+<!-- ============================================================ -->
+<h2 id="act5"><span class="act">結 — FORMATION</span>放課後、視聴覚室で初ログイン</h2>
+<p class="act-desc">4人が揃った翌日。初めて、一緒にマイクラを起動する。</p>
+<!-- ============================================================ -->
 
 <div class="sc" id="ORG-11">
 <div class="sc-head">
 <span class="sc-num">SCENE 11</span>
-<span class="sc-title">Cスタ — 次回の種</span>
-<span class="sc-dur">13:30 – 14:00</span>
+<span class="sc-title">結成 — よふかしくらぶ、名付け</span>
+<span class="sc-dur">13:40 – 15:00</span>
 </div>
-<div class="setting"><strong>設定</strong>エンディング後。クレジットが流れた後。画面が一瞬暗転してから、次の夜のサーバー画面が開く。</div>
-<div class="camera"><strong>カメラ</strong>フェードイン → サーバー接続画面 → 4人のアイコン。</div>
-<div class="bgm"><strong>BGM</strong>軽い、コメディ寄りのBGM。</div>
+<div class="setting"><strong>設定</strong>翌日放課後。視聴覚室。やとらが借りている。4台のPCが並ぶ。4人が席についている。マイクラが起動している。</div>
+<div class="camera"><strong>カメラ</strong>4人のPC画面を俯瞰 → 4人のキャラがスポーン → 4人の笑顔。</div>
+<div class="bgm"><strong>BGM</strong>軽快な、アニメオープニング風。</div>
 <div class="dial">
 <div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; yatora joined the game</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; asame joined the game</span></div>
-<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; mahiru joined the game</span></div>
 <div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; higure joined the game</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（元気）みんな来たーっ！！よふかしくらぶ第二夜ぁーっ！！</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（興奮気味）今日何する！？ねえ何する！？</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（落ち着いて）……今日は——</span></div>
-<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらの後ろ、図書館のさらに奥。昨夜なかったはずの——巨大なクリーパー像が、しれっと立っている。高さ20m。あさめ作。</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">（固まる）……あさめ。</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ニコニコ）好きになっちゃったから！クリーパーのこと！</span></div>
-<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（建築家目線）……なんか、対称性ある。</span></div>
-<div class="line"><span class="who who-m">まひる</span><span class="txt">（興奮）あさめ、1日で建てたの！？</span></div>
-<div class="line"><span class="who who-a">あさめ</span><span class="txt">（誇らしげ）学校サボって！！</span></div>
-<div class="line"><span class="who who-y">やとら</span><span class="txt">……学校は、行け。</span></div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">—— NEXT EPISODE ——</div>
-<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">EP02「あさめの巨大クリーパー像、撤去裁判」</div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; mahiru joined the game</span></div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">&gt; asame joined the game</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（画面を見て、興奮）……4人、同じ画面にいる……。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（急に泣きそう）……私、マイクラ、誰かと一緒にやるの、今日、初めて……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（感極まる）……わ、私もです……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（同じく）……私もだ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……俺もだ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人が全員「初めて」であることに気づく。画面の中で、4つのキャラクターが、スポーン地点に並んで立っている。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（声を出して、明るく）……じゃあ、部の名前、決める？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……何がいい？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（即答）「よふかしくらぶ」！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し間）……なんで。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（画面を見て）……だって、私たち、みんな、夜しかマイクラできないじゃん。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">昼は「別人」やってて、夜、ここに帰ってくる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……そういう部、でしょ？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとら、ひぐれ、まひる、が、それぞれ、少し黙る。あさめが、言葉だけで、全員の芯を突いた。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに）……その通り。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（小さく）……夜、しか、できない、です……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し笑う）……あさめ、名付け、上手いな。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（得意げ）でしょ！？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらが、視聴覚室のホワイトボードにチョークで書く。「よふかしくらぶ」。字が少し歪んでいる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ホワイトボードを見て）……やとらくん、字、下手！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……言うな。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ボソッと）……クリーパー、寄り。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（爆笑）……本当だ！文字がクリーパーの顔に見える！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">全員が、声を出して、初めて、笑う。窓の外は、もう夕日。画面の中のマイクラ世界も、夜に変わりつつある。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（画面を見て）……夜、来た。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……よふかしくらぶの、第1夜、だ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（手を動かし始める）……家、建てる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（焦って）ど、どこから！？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（真顔、攻略勢モード）まず、木を、8個。それから——</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）1人見つけたら、1人が、また1人を、連れてきた。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）4人、揃った。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ、小さく笑う）……俺の予想より、面白い4人に、なった。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">画面の中のキャラクターたちが、横一列に並んで、夕日に向かって走っていく。画面にタイトル。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">—— よふかしくらぶ、結成 ——</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">EP01 完</span></div>
 </div>
-<div class="beat"><strong>次回フック：</strong>Cスタで「この4人の日常」を軽快に見せる。EP01のシリアス→EP02のコメディ、というトーンの切り替えを予告することで、「このシリーズは色んな顔がある」と視聴者に伝える。</div>
+<div class="beat"><strong>結末の決定打：</strong>「よふかしくらぶ」の命名が、やとらじゃなくあさめ、という設計が重要。やとらは「リーダー」だが、全てを決める独裁者じゃない。4人の中で、一番分かってる人の提案を受け入れる器。</div>
+</div>
+
+<div class="sc" id="ORG-12">
+<div class="sc-head">
+<span class="sc-num">SCENE 12</span>
+<span class="sc-title">Cスタ — 翌朝、廊下で</span>
+<span class="sc-dur">15:00 – 15:40</span>
+</div>
+<div class="setting"><strong>設定</strong>翌朝の廊下。あさめがクラスメイトと談笑している。遠くにやとら。二人の視線が合う。</div>
+<div class="camera"><strong>カメラ</strong>廊下の遠景 → あさめの笑顔（「明るいキャラ」モード）→ やとら、無表情で通り過ぎる → 二人だけの合図。</div>
+<div class="bgm"><strong>BGM</strong>軽いコメディ調。</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">廊下。あさめが「いつもの明るいあさめ」でクラスメイト3人と話している。「ねー昨日何してた？」「いつも通りー！」。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">そこにやとらが反対側から歩いてくる。目が合う。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（クラスメイトに）ちょっとトイレ！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめが離脱して、やとらに近づく。階段の影で止まる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（真顔、小声）……やとらくん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……何。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（真剣）……昨日のエンドラ戦、ベッドで行く？トラップで行く？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ベッド。10個。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ニヤリ）……了解。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめが戻っていく。クラスメイトの元へ。即「明るいあさめ」に戻る。やとらが遠くから見ている。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……昼のあさめと、夜のあさめは、別人だな。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……まあ、俺もだけど。</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">—— NEXT EPISODE ——</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">EP02「初めてのエンドラ戦、まひる、泣く」</span></div>
+</div>
+<div class="beat"><strong>次回フック：</strong>Cスタで「4人は普通に学校に戻る」＝続く日常を示す。昼の顔と夜の顔のギャップが、このシリーズの核。「また明日の夜」を期待させる。</div>
 </div>
 
 <div class="footer">
 <div class="f-title">よふかしくらぶ！ 結成編 EP01</div>
-<div>眠れない夜に、四人が揃った — 2026-04-18</div>
+<div>放課後、4人集合 — 2026-04-18</div>
 </div>
 
 </div><!-- /wrap -->

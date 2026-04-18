@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！日刊台本 2026年04月18日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(249,115,22,.15);color:#f97316;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-music{background:rgba(168,85,247,.15);color:#c084fc}
+.t-mrbeast{background:rgba(239,68,68,.12);color:#f87171}
+.t-original{background:rgba(34,211,153,.12);color:#34d399}
+.t-story{background:rgba(56,189,248,.12);color:#7dd3fc}
+.t-comedy{background:rgba(251,146,60,.12);color:#fb923c}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-short{background:rgba(249,115,22,.12);color:#f97316}
+.t-long{background:rgba(52,211,153,.12);color:#34d399}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+.concept{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 0;font-size:13px;color:#93c5fd}
+.concept strong{color:#60a5fa}
+
+.dial{padding:0 24px 20px}
+.dial-head{font-size:12px;font-weight:700;color:#555;padding:16px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:52px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.who-se{color:#444;font-style:italic;font-size:13px}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.music{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#e9d5ff}
+.music strong{color:#c084fc}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+.viral{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fca5a5}
+.viral strong{color:#f87171}
+.thumb{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.thumb strong{color:#fbbf24}
+
+.long-section{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden}
+.long-head{padding:22px 24px 14px}
+.long-head h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.long-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.long-body{padding:0 24px 24px}
+.long-block{margin-bottom:20px}
+.long-block h4{font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;padding-top:14px}
+.long-block p{font-size:14px;color:#999;line-height:1.8}
+.long-block .txt-box{background:#111;border-radius:8px;padding:14px 18px;font-size:14px;color:#bbb;line-height:1.9}
+.scene-label{font-size:12px;font-weight:700;color:#f97316;margin-bottom:6px}
+
+.name-serif{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14px;color:#fde68a;font-style:italic}
+.name-serif strong{color:#fbbf24;font-style:normal}
+
+.research{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;padding:24px;margin-top:32px}
+.research h3{font-size:16px;font-weight:800;color:#888;margin-bottom:16px;text-transform:uppercase;letter-spacing:.04em}
+.research h4{font-size:14px;font-weight:700;color:#60a5fa;margin:16px 0 8px}
+.research p{font-size:13px;color:#666;line-height:1.8}
+.research ul{padding-left:18px;font-size:13px;color:#666;line-height:2}
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#shorts">ショート</a>
+<a href="#D0418-S01">S01</a>
+<a href="#D0418-S02">S02</a>
+<a href="#D0418-S03">S03</a>
+<a href="#D0418-S04">S04</a>
+<a href="#D0418-S05">S05</a>
+<a href="#longs">横動画</a>
+<a href="#D0418-L01">L01</a>
+<a href="#D0418-L02">L02</a>
+<a href="#D0418-L03">L03</a>
+<a href="#research">リサーチ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">日刊台本 2026.04.18</div>
+<h1>よふかしくらぶ！日刊台本<br>2026年04月18日</h1>
+<p>ヒヨコ1000羽×ショパン音ハメ×廃人縛り×看板だけの夜×全員デス逆転。<br>Chaos Cubed変身ハードコア×ひぐれの秘密×4視点同時進行。<br>ショート5本＋横動画3本。推敲2エージェント全改善反映版。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="shorts">ショート台本（5本）</h2>
+<p class="sec-desc">7〜8秒ループ設計。フック→裏切り→加速→余韻のリズム全本統一。まひるのテンション変化を全本で最低2回確保。</p>
+<!-- ============================================================ -->
+
+<!-- S01 -->
+<div class="sc" id="D0418-S01">
+<div class="sc-head">
+<h3>S01「417番で朝になった。でも0番は最初からいた」</h3>
+<div class="sc-meta">
+<span class="tag t-trend">トレンド</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">Tiny Takeover</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>完全暗転。まひるの声だけ「……417番。ひぐれっぽい顔してる」。0.5秒の無音。タイトルドン。SE：ヒヨコの鳴き声が1羽から始まり重なっていく。テロップ「現在 AM 1:02」。</div>
+
+<div class="concept"><strong>コンセプト：</strong>Tiny Takeover（2026年3月アプデ）のヒヨコ1000羽を深夜に召喚→まひるが命名し始める→途中で「無理かも」→即回復→気づいたら朝。しかしひぐれが実は先に500番台まで進めていた。「0番」という最初からいる謎のヒヨコ伏線。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ1000羽召喚するよ！！深夜企画スタート！！</span></div>
+<div class="line"><span class="who who-n">（SE）</span><span class="txt">ピヨピヨピヨ……急速に重なり画面全体がヒヨコで埋まる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">かわいいいいいいいいいい！！！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）ちょっっっ最高！！スクショ！！スクショ！！これ全部名前つけていい！？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">1000羽いるよ！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（すでに命名中）1番"ぴよ"、2番"ぴよ太"、3番"小ぴよ"——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……全員ぴよ系じゃん</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ヒヨコとは——生まれた瞬間から名前を持たない存在だ。今まひるが、その空白を埋めている</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……やとら、それ今言う必要あった？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間）……あった</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……なかった</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">命名 50羽目</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">50番！！名前は"ちいちい"！！最高！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……あと950羽</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（3秒の沈黙）……無理かも</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えぇ……今さら！？！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（1秒後）いける！！61番！！名前は"ちいちいに"！！</span></div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">現在 AM 5:47</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">…………何時間やってたの</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……4時間47分</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（命名中、まったく顔を上げない）……あ、朝になってた</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひる！？まだ命名してたの！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ……あと2羽で……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……999番と1000番はつけてない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（絶句）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">いやなんで！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……残された空白にも、意味がある</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">今は聞いてない！！！</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「……あ、朝になってた」→ 冒頭の暗転「417番。ひぐれっぽい顔してる」へ。ループを重ねるたびに画面端のまひるの命名リストが増えていく。3ループ目でひぐれが静かにメモ帳を開いて命名の続きをしている1フレームが映る。</div>
+<div class="music"><strong>BGM設計：</strong>[0s] BGMなし、ヒヨコのSEのみ少しずつ重なる → [召喚] ローファイピアノ60BPM → [50羽目] BGM完全カット0.3秒 → [AM5:47] 朝の鳥の声に自然移行 → [ループ切れ目] BGMカット→タイトルと同時に音が戻る</div>
+<div class="easter"><strong>イースターエッグ：</strong>ヒヨコの群れの中に「0番」プレートを付けた2倍サイズのヒヨコが1羽いる。命名リストの最初のフレームに0.5秒だけ「0番：最初からいた」という記述が映る。2周目視聴者専用の報酬。</div>
+<div class="viral"><strong>バズ設計：</strong>Tiny Takeover検索流入直撃。まひるの「無理かも→即回復」がZ世代の情緒あるあると共鳴。「ひぐれが999・1000番をつけていない理由」考察コメントが量産される。ループのたびに命名リストが増えているのでリプレイ率が高い。</div>
+<div class="why">深夜のヒヨコ大量召喚という映像映えとTiny Takeoverトレンドの組み合わせ。「かわいい×時間消失×よふかし」の三重ヒット。まひるとひぐれの関係性がイースターエッグで深まる設計。</div>
+</div>
+
+<!-- S02 -->
+<div class="sc" id="D0418-S02">
+<div class="sc-head">
+<h3>S02「まひるの採掘がショパンになった夜。ひぐれだけ3分前から知ってた」</h3>
+<div class="sc-meta">
+<span class="tag t-music">音楽・音ハメ</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">キャラ深掘り</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>完全無音。まひるがツルハシを振り下ろす。ブロックが崩れる音がショパン夜想曲第20番のメロディラインと完全一致。まひる「あれ、なんか……ショパン？」（視聴者もまだ気づいていない段階）。</div>
+
+<div class="concept"><strong>コンセプト：</strong>採掘音がショパン夜想曲（遺作）のメロディと一致する奇跡→実はひぐれが3分前から気づいて採掘ルートを誘導していた→まひるは最後まで知らない→「発見者の権利ってなんですか」でまひる情緒崩壊→即回復。音ハメ×秘密のキャラドラマ。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あれ、なんか……ショパン？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">待って待って待って——今採掘音がショパンになった！？！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）なってる！！なってる！！！もう1回！！録画録画録画！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ本当に！？本当になってる！！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">音とは——破壊の中にのみ、真のリズムが宿る</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとらそれ！！今まで聞いたやとらの言葉で一番好き！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（わずかに間）……我も……そう思う</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっなに今めちゃくちゃ可愛かったんだけど！！スクショ！！（音声スクショしようとする）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">音声スクショないから！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（静かに）……気づいてたんだ、3分前から</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">なんで言わなかったの！？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……言ったら崩れそうで</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれが黙ってツルハシを持つ。正確なメトロノーム精度でAメロ→Bメロ→夜想曲が完成。全員しばらく無言。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）完成してる！！——</span></div>
+<div class="line"><span class="who who-n">（0.5秒の無音）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急に低温）……私が掘ってたのに。私の採掘なのに。なんでひぐれがいないと完成しないの。それが一番、むかつく</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言でまひるの前に立って静止する）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……なに</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……拍手（動かない）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">いや拍手してないじゃん！！！（→ループへ）</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「拍手してないじゃん！！！」→ 冒頭「あれ、なんかショパン？」へ。2ループ目でひぐれがまひるの採掘ルートをわずかに誘導している動きに気づく設計。3ループ目でやとらが「我も……そう思う」の後に耳が赤いのが見える。</div>
+<div class="music"><strong>BGM設計：</strong>[0s] 完全無音、採掘音のみ → [気づきの瞬間] BGM完全カット→採掘音の上にショパンのメロディが重なっていく → [曲完成] 画面をゆっくりズームアウト、音楽だけが残る2秒 → [ひぐれ「拍手」] 完全無音エンド</div>
+<div class="easter"><strong>イースターエッグ：</strong>ひぐれが採掘しているブロック配置が上から見るとショパン夜想曲の楽譜の冒頭小節の形になっている。やとらが「我も……そう思う」の後ろに小さく音符マークが1フレーム浮かぶ。</div>
+<div class="viral"><strong>バズ設計：</strong>「テトリス」ではなく「ショパン夜想曲」という意外な選曲が差別化。「発見者の権利ってなんですか」がコメントミーム化確定。「ひぐれが3分前から知ってた」という隠れた優しさへの「尊い」コメントが爆発。視聴者が自分でも試したくなるチャレンジ設計。</div>
+<div class="why">テトリスは音ハメ動画の文脈で使われすぎている。ショパン夜想曲（遺作）の選曲により「マイクラ×クラシック」の意外な組み合わせが映像として新鮮。ひぐれが知っていてまひるに気づかせた、という隠れた行為がキャラの深みを出す。</div>
+</div>
+
+<!-- S03 -->
+<div class="sc" id="D0418-S03">
+<div class="sc-head">
+<h3>S03「Minecraftから30秒離れたら全部消える縛り。5時間後、一番ヤバかったのはあさめだった」</h3>
+<div class="sc-meta">
+<span class="tag t-mrbeast">MrBeast式</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">廃人ループ</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>テロップ「ルール：30秒以上離れたら全アイテム消滅」。画面端に常時カウントダウン「残り 00:28」。あさめが目を血走らせたままキーボードを叩いている。テロップ「経過時間 5時間22分」。</div>
+
+<div class="concept"><strong>コンセプト：</strong>30秒離脱でアイテム消滅ルールで深夜縛り。まひるのハイ→低温→ハイの繰り返し×ひぐれの目が死んでいるが声だけ冷静×やとらが哲学より生存本能を優先×あさめが実はルールを理解していなかった逆転。「チェスト整理の達成感だけで生きてきた」。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（テロップ）</span><span class="txt">経過時間 5時間22分 / 残り 00:24</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（目が半開き）……まだ朝じゃない？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（目が完全に死んでいるが声は冷静）……あと2時間41分</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急にハイ）でも今チェスト整理したら達成感すごくて！！テンション上がってきた！！これずっとやれる気する！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">カウントダウン「残り 00:05」。全員が一斉にキャラを動かす。リセット「残り 00:30」。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急に低温）……チェスト整理、全部終わった。終わったら何もなくなった。もしかして私、チェスト整理のためにここにいたの（5秒無言）朝、来てほしくない</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">眠りとは——意識が肉体への支配権を手放す、最も誠実な行為だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらそれ"寝ていい"って言ってる！？！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……言っていない（間）——だが、魂は同意している</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">魂が寝ていいって言ってるじゃん！！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（変わらず冷静）……あと2時間39分</span></div>
+<div class="line"><span class="who who-n">（ひぐれのチェストをこっそり確認するまひる）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（まひるのチェストに素材を一個追加する。無言）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……なに</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……材料</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（3秒後・急にハイ）チェスト整理やる気出てきた！！スクショ！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">回復早っ！！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">カウントダウン「残り 00:08」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（無言でキャラを動かす）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急にハイ）やとらが動いてる！！あと8秒！！みんな！！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">動いて！！動いて！！！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（最も速く移動・冷静）</span></div>
+<div class="line"><span class="who who-n">（00:00）</span><span class="txt">（全員無言）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……生きてる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">生きてるーーー！！！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（小さくため息）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……朝まで、我々は——存在した</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「……朝まで、我々は——存在した」→ 「経過時間5時間22分」テロップへ。ループごとにひぐれの「あと○時間△分」が減っている（実際に時間が経過している証拠）。まひるのチェストの中身が毎ループ変わる。</div>
+<div class="music"><strong>BGM設計：</strong>[疲弊BGM60BPM] → [カウントダウン00:10] 緊張BGMに切り替え → [リセット] 一瞬の安堵SE → [チェスト整理終了] BGM完全停止・チェスト閉じるSEのみ → [00:00後] 朝BGMに移行</div>
+<div class="easter"><strong>イースターエッグ：</strong>ひぐれの「あと2時間41分」「あと2時間39分」が毎ループ微妙に減っている。やとらの目が3ループ目で完全に閉じかけている（寝落ち寸前）。まひるのチェスト整理の中身に「感情」というラベルがついたチェストがある。</div>
+<div class="viral"><strong>バズ設計：</strong>「チェスト整理の達成感だけで生きてきた」が深夜視聴者に直撃。「ひぐれが材料を追加する」さりげない優しさへの「こういうの好き」コメント。やとら「魂は同意している」がコメントミーム化。</div>
+<div class="why">「よふかしくらぶ」×夜活×ASMRの深夜縛りフォーマットはTikTokのマイクロコミュニティ需要に直撃。ひぐれが素材を追加するという行動による優しさの表現が感情的な深みをショートに加える。</div>
+</div>
+
+<!-- S04 -->
+<div class="sc" id="D0418-S04">
+<div class="sc-head">
+<h3>S04「声の出ない夜に、まひるが看板を7枚使った理由」</h3>
+<div class="sc-meta">
+<span class="tag t-original">オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">看板だけの夜</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜60秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>完全無音。あさめが看板を地面に置く。「声が出ない（家族が寝てる）」と書いてある。BGMなし。このショートは音声ゼロ、看板テキストのみで全部進む。</div>
+
+<div class="concept"><strong>コンセプト：</strong>完全無声・看板テキストのみの未踏フォーマット。まひるが「今日なんか声出なくてよかった」という病みエントリーから入り→やとらの看板が文字数で切れる爆笑→まひるが感情をあふれさせて7枚書く→全員「当たり前じゃない」で返す感動→即スクショで立ち直り。</div>
+
+<div class="dial">
+<div class="dial-head">台本（すべて看板テキスト）</div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">今日なに作る？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">家</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">もう少し情報ほしい</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">大きい家</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えぇ……（看板に書く）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">家とは——庇護と孤独が同居する矛盾の空間であり——（看板切れ）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">長い</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">長い（自覚あり）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとら1回に文字入りきる？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">入ら（看板切れ）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">入らないんかい！！！</span></div>
+<div class="line"><span class="who who-n">（映像・中盤）</span><span class="txt">みんなが建築を続ける中、まひるが1枚看板を置こうとして止まる。</span></div>
+<div class="line"><span class="who who-m">まひる（1枚目）</span><span class="txt">今日なんか声出なくてよかった。喋ったら泣いてたかも</span></div>
+<div class="line"><span class="who who-n">（全員の手が止まる）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……何かあった？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ない。ある。わからん</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……それ全部正解なんだよ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">え　あさめ急に！！スクショ！！（テンション急上昇）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">いや看板にスクショって何！！</span></div>
+<div class="line"><span class="who who-n">（映像・後半）</span><span class="txt">まひるが看板を置こうとして止める。また書こうとして止める。ついに7枚連続で設置。</span></div>
+<div class="line"><span class="who who-m">まひる（2〜7枚）</span><span class="txt">でもさ　なんか最近ずっと元気なフリしてたけど　ほんとはちょっとしんどくて　でもゲームしてる時間だけは忘れられて　みんながいるからここに来てて　それって当たり前のことだと思ってたけど　全然当たり前じゃないよね　声が出なくても　ここにいられること</span></div>
+<div class="line"><span class="who who-n">（全員・長い間）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">当たり前じゃない</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">当たり前じゃない</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">当たり前じゃない</span></div>
+<div class="line"><span class="who who-y">やとら（追加）</span><span class="txt">……まひるはスクショを、記憶の形に変換している（看板切れ）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……詩人</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……詩人（動揺している）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">最高！！スクショ！！（立ち直り）</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「最高！！スクショ！！」→ 冒頭の「声が出ない（家族が寝てる）」看板へ。2ループ目でまひるの7枚の看板を全部読もうとする視聴者行動を生む設計。まひるの7枚目看板の最後に小さく「ギュンです」と書いてある（2周目で気づく）。</div>
+<div class="music"><strong>BGM設計：</strong>全編BGMなし徹底。看板設置SEのみ。まひるが3枚目の看板を置いた瞬間：ピアノのC音が1回だけ。「当たり前じゃない」の返答看板が並ぶ画面：カメラがゆっくりパン・無音。エンド：まひるが花を1つ置く。SE1回。無音フェードアウト。</div>
+<div class="easter"><strong>イースターエッグ：</strong>まひるの7枚目看板の最後に極めて小さく「ギュンです」と書いてある。ひぐれが「当たり前じゃない」を返したとき、1回だけあさめのキャラクターに向かって1歩歩いている（言葉ではなく行動で示している）。</div>
+<div class="viral"><strong>バズ設計：</strong>「音声なし×看板テキストのみ」は音が出せない環境（電車・深夜）でも全部楽しめる。まひるの7枚看板がスクリーンショットされてSNS拡散。「看板だけなのに泣いた」コメントが続出。やとら「詩人（動揺している）」が切り抜き確定。</div>
+<div class="why">既存台本に存在しない完全未踏フォーマット。音声なしという制約がドラマ性を高め、SNS拡散に最適化されたスクショ向けコンテンツになる。まひるの病み→笑い→感動→笑いの4段変化が最も豊かな一本。</div>
+</div>
+
+<!-- S05 -->
+<div class="sc" id="D0418-S05">
+<div class="sc-head">
+<h3>S05「全員で死んだら、全員で戻ってこられた」</h3>
+<div class="sc-meta">
+<span class="tag t-original">オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">全員デス逆転</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜1秒）：</strong>（冒頭・伏線）まひるが溶岩の前で立ち止まる。「ここ……渡れそうな気がするんだけど」→ 他全員「無理」→ まひる「そう？」で話が流れる。BGM通常。→ 30秒後デスサウンドが4回連続で鳴る。</div>
+
+<div class="concept"><strong>コンセプト：</strong>全員同時デスという絶望→まひるが「冒頭で気づいていた」レール素材で溶岩を渡る→全アイテム回収→やとら×まひる初コンビ。「運命の同期」「計算外だった」「まひるが先に気づいていた」の3連発で笑いと感動が重なる。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（冒頭伏線）</span><span class="txt">まひるが溶岩の前で立ち止まる</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ここ……渡れそうな気がするんだけど</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">無理無理！ 溶岩じゃん！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……非効率。別ルートを使う</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（少し考えてから）そう？</span></div>
+<div class="line"><span class="who who-n">（30秒後）</span><span class="txt">デスサウンドが4回連続。「You died」が4つ同時に表示。BGMカット。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……全員？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（低温）全員</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……同時に（間）……計算外だった</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">計算してたの！？！？ひぐれ！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……してた（それだけ）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">これを——運命の同期と呼ぶ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">今そういう話じゃないから！！アイテム全部落としてきた！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（低温）私の鉄道プロジェクト……200ブロック分のレールが……</span></div>
+<div class="line"><span class="who who-n">（デスポイントへ全力疾走。溶岩の前で全員停止）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やっぱり無理だ！！アイテムが溶岩の向こう側にあるじゃん！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらがまひるを見る。まひるがやとらを見る。まひるが無言でレールを取り出す。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……レールある。これ渡れる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるとやとらが溶岩の上にレールを敷く。トロッコ全速。テロップ「全回収」。BGMが戻る。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）鉄道が溶岩を渡った！！！！最高！！スクショ！！！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">死んで正解だったね（笑い）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）まひるが……先に気づいていた</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">ギュンです！！</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（嬉しすぎて言葉が壊れた）ギュンです！！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……（意味は分からないが頷く）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ギュン。我も——ギュンだ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">みんなギュン言い出した！！！</span></div>
+</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「みんなギュン言い出した！！！」→ 冒頭「ここ……渡れそうな気がする」へ。2周目視聴者が「あ、ここが伏線か」と気づく設計。まひるがレールを取り出した瞬間スロットに「レール×200本」と表示（ずっと持ち歩いていた）。</div>
+<div class="music"><strong>BGM設計：</strong>[冒頭通常BGM] → [デスサウンド4連打] BGMカット・無音2秒 → [まひるがレールを取り出す] 無音のまま → [溶岩上を走る] BGM急加速 → [全回収] BGMピタッと止まる → [「死んで正解だったね」] 笑い声 → [「ギュン」] エンドBGM</div>
+<div class="easter"><strong>イースターエッグ：</strong>まひるがレールを取り出した瞬間スロットに「レール×200本」と表示されている（鉄道プロジェクト素材をずっと持ち歩いていた伏線）。デスポイントに向かう映像を振り返ると、まひるが全員より先に走り出していた瞬間が確認できる。</div>
+<div class="viral"><strong>バズ設計：</strong>やとら「ギュン。我も——ギュンだ」が全台本通じての最強切り抜き候補。「まひるが最初から気づいていた」伏線の答え合わせでリプレイ率爆上がり。「全員デス→全員で戻る」という感情的な奇跡の再定義。</div>
+<div class="why">全員同時デスという絶望から始まる逆転は既存台本未使用の構造。やとら×まひるのコンビ初使用。「ギュン」というZ世代語の自然な組み込みで若者層への訴求。</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 id="longs">横動画台本（3本）</h2>
+<p class="sec-desc">8〜20分設計。笑い→驚き→感動の複数感情レイヤー。まひるのテンション変化を1本で最低3回確保。</p>
+<!-- ============================================================ -->
+
+<!-- L01 -->
+<div class="long-section" id="D0418-L01">
+<div class="long-head">
+<h3>L01「まひるが豚になった。あさめが金ブロックになった。24時間後、全員生きていた」</h3>
+<div class="long-meta">
+<span class="tag t-mrbeast">MrBeast系</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-comedy">Chaos Cubed縛り</span>
+<span class="tag t-time">17〜20分</span>
+</div>
+</div>
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>Chaos Cubed（カオスキューブド）のサルファーキューブ応用縛り。食べたブロックのMOB性質に行動が引きずられる24時間ハードコアサバイバル。まひる→豚（嗅覚で食料探索、強制移動）、ひぐれ→スケルトン（夜しか活動できない、弓で敵を狙う）、やとら→エンドストーン（5分ごとにフリーズ縛り）、あさめ→金ブロック（敵MOBに狙われ続ける）。変身したからこそ気づいた本質、というオチ。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<p>4人が変身した状態でカメラ目線。まひる（豚耳スキン）、あさめ（金色の光を纏う）、ひぐれ（骸骨スキン・弓を持つ）、やとら（石のオーラ）。背景は夜のハードコードワールド。テキスト「変身縛り24時間ハードコア」「全員生存？」。</p>
+</div>
+
+<div class="long-block">
+<h4>展開構成</h4>
+<div class="txt-box">
+<div class="scene-label">導入（0:00〜0:40）フックから逆再生</div>
+暗転の中でのあさめモノローグ「昨日まひるが豚になって。ひぐれがスケルトンになって。やとらは途中から何もしゃべらなくなった。……私は最後まで人間でいたかったんだけど。食べちゃった」。タイトルドン。「24時間前に戻ります」。
+
+<div class="scene-label">展開1・まひる豚化（2:30〜5:00）</div>
+まひるがソウルサンドブロックを食べる→豚耳スキン。「にんじん……あったら……うれしい……（ぶひ）」→突然我に返る「私今何してた？？手が太い！！太い！！！草草草草！！スクショ！！」（テンション変化1・2回目）→また豚に戻る。数時間後：まひる「……ねえ。みんなちゃんと自分の形してる？」全員「（してない）」→まひる「私……豚なんだけど。ずっと豚。最初は面白かったんだけど……なんか……豚ってつらくなってきた」（テンション変化3回目）
+
+<div class="scene-label">展開2・ひぐれスケルトン化（5:00〜8:00）</div>
+ひぐれが骨ブロックを「効率的」と食べて白骨化。「おまえたちを……狩る」と弓であさめを追いかける。あさめ全力逃走。まひる（豚モード）「わああひぐれ怖い！！でも最高！！スクショ！！」→豚に引き戻される「にんじん……」。あさめ「朝になったらスケルトン焼けるから、お日様の下に出てくれる？」→ひぐれ「……（かすかに素の声で）……それは、嫌だ」→あさめ「（小さく笑う）ひぐれ、戻ってきてるじゃん」
+
+<div class="scene-label">展開3・やとらエンドストーン化（8:00〜11:00）</div>
+やとら「世界の果てと一体化する」とエンドストーン食べる。60秒完全無言→「……これは——美しい」。あさめが農場と戦闘を一人でこなしている間、まひる（豚モード）が嗅覚で食料312本収穫する「豚最強説」。やとら（60秒ごとに1発言）「……苦しいことは分かる」→まひる「やとら！！今日一番好きなこと言った！！」（テンション変化4回目）
+
+<div class="scene-label">クライマックス・あさめ変身（14:00〜17:00）</div>
+ライフ5まで減ったあさめが金ブロックを選んで食べる。「金ブロックって、みんなを照らすためにあるんだって。さっきなんとなく思った」。トーンが変わる。「あさめが真面目になる回」初展開。完璧な作戦指示：「やとらは——何もしなくていい。存在してるだけで、拠点の重心になってる」→ひぐれ「……（珍しく驚いた顔で）……あさめ、今すごいことを言った」→まひる「え泣きながら豚になってる！！」（テンション変化5回目）
+
+<div class="scene-label">最終夜・全変身連携（17:00〜19:00）</div>
+豚（まひる）が嗅覚で敵を探知、スケルトン（ひぐれ）が射ち、金（あさめ）が盾、石（やとら）が中央で安定させる。夜明け。全員生存。変身解除。
+
+<div class="scene-label">エンディング（19:00〜20:00）</div>
+まひる「豚の私が働いてる！！人格乗っ取られながら働いてた！！——でも（急に静かな声で）……変身してても、あさめってあさめだったよね（テンション変化6回目）」。あさめ「えっ……そう？」→まひる「うん。豚になっても金になっても……なんか、全員わかった。誰が誰か」→やとら「形は変わっても——核は揺るがない。それが——よふかしくらぶだ」→あさめ「（泣きそう）やとら今日すごくいいこと言いすぎじゃない？」。ひぐれ（小声）「変身しても——本質は変わらない。まひるは食欲で世界を救った」
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ：</strong>「まひるが豚になってから312本の食料を集めた。全員が変身しても——誰が誰か、全員わかった。それがよふかしくらぶだと思う」（やとら・エンディング）</div>
+
+<div class="long-block">
+<h4>BGM設計</h4>
+<div class="txt-box">
+冒頭モノローグ：完全無音 → タイトルドン：MrBeastドラムロール → まひる豚化：コメディBGM（トロンボーン混じり） → ひぐれスケルトン追跡：スリリングなストリングス → やとら石化以降：極端に静かなピアノ1音だけ → あさめ金変身：一瞬の完全無音→穏やかな金管楽器 → 最終夜：フルオーケストラ → エンディング：C418「Sweden」ピアノ
+</div>
+</div>
+
+<div class="long-block">
+<h4>バズ設計</h4>
+<p>まひる「豚ってつらくなってきた」（5文字で情緒崩壊）が切り抜き確定。ひぐれのスケルトン追いかけが「怖い」「笑える」でコメント2極化。あさめの「真面目になる回」は既存台本完全未使用の角度で視聴者騒然。やとらの1分発言システムが「次の発言まで何秒？」の中毒構造を生む。ハードコアのライフカウンターが常時表示で緊張感を持続。</p>
+</div>
+</div>
+</div>
+
+<!-- L02 -->
+<div class="long-section" id="D0418-L02">
+<div class="long-head">
+<h3>L02「3日間、ひぐれだけが知っていた」</h3>
+<div class="long-meta">
+<span class="tag t-story">ストーリー</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-emo">感動系</span>
+<span class="tag t-time">12〜15分</span>
+</div>
+</div>
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>ひぐれだけが「今夜23時にワールドがリセットされる」事実を3日前から知っている。他の3人は知らずにいつも通りの夜ふかし。ひぐれの完璧主義×孤独に守ろうとする内面が初めて見える感動系。3日間のひぐれのソロ映像をピアノのみで綴る。カウントダウンがホラー的な緊迫感と切なさを同時に作る。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<p>ひぐれが画面手前に立ち、後ろで3人がいつも通り楽しそうにしている。ひぐれの顔だけ少し俯いている。右上に赤いカウントダウン「残り4:18:00」。テキスト「3日間、ひぐれだけが知っていた」。夜の青みを帯びた色調。</p>
+</div>
+
+<div class="long-block">
+<h4>展開構成</h4>
+<div class="txt-box">
+<div class="scene-label">導入（0:00〜0:45）ひぐれモノローグフック</div>
+「今夜23時に、このワールドがリセットされる。私だけが知っている。……言えなかったのか、言わなかったのか。今でも分からない。残り、4時間と18分」。タイトルドン。
+
+<div class="scene-label">いつもの夜（0:45〜2:30）</div>
+画面右隅に「残り4:09:22」カウンターが静かに動く。あさめ「明日新しいバイオーム行こう！」まひる「行く行く！！」。ひぐれだけが「明日は——また考える」と言えない。
+
+<div class="scene-label">ひぐれの3日間・密かな記録（2:30〜4:30）</div>
+ひぐれが3日間、4人それぞれのカラーに合わせたルームを静かに建築。あさめ＝水色の絨毯、まひる＝ピンクの花の額縁、やとら＝紫の本棚、自分＝金色の燭台。ひぐれ「（誰にも見せるつもりがなかった）」。
+
+<div class="scene-label">ひぐれが看板を立てる（4:30〜7:00）</div>
+各地を駆け回り看板を立てる。「あさめが最初に豆腐ハウスを建てた場所」「4人で初めて夜を越えた」「ドラゴン倒した日、まひるが叫んで全員耳が痛かった」。まひる、看板を読んで気づく「ひぐれ、何か知ってる？」。
+
+一方、ワールドを歩きながら思い出を振り返る場面で：まひる「ここ！！覚えてる！！あさめがここで落ちたやつ！！スクショある！！」→あさめ「えっあれ残ってたの！！消してよ！！」→まひる「消せない消せない。これは歴史だから」（一瞬だけ笑う4人、その後また静かになる）
+
+<div class="scene-label">打ち明け（9:30〜11:30）</div>
+スポーン地点に4人が集まる。ひぐれが深呼吸。「……言えなかったのか、言わなかったのか」。まひる「3日前から知ってたの？」→テンション変化1回目：ショックで完全に落ちる。「なんで言わなかったの」。ひぐれ「言ったら、残り時間を意識して過ごすことになる。それが嫌だった。普通に遊んでてほしかった」。まひる「（泣きながら）謝らないでよ。謝ったら……もっと泣くじゃん。ひぐれが一人で3日間知ってたの——それが一番嫌だ（テンション変化2回目）」。
+
+あさめ「……ひぐれが一人で抱えてたの、分かる。分かるけど——次は言って。絶対言って」。ひぐれ「……（頷く）」。やとら「……我には——何も言えない（間）……ただ、ここにいる」。あさめ「（小さく）……うん」。
+
+やとら「……終わりとは——（止まる）」→まひる「やとら？」→やとら「……今は、言葉が出ない」→ひぐれ「……（やとらを見る）」→あさめ「それでいいよ」。
+
+<div class="scene-label">最後の40分（11:30〜13:30）</div>
+やとらが門を建てる。まひるがスクショを撮りまくる「スクショ撮れば……記憶になるから……（テンション変化3回目：悲しいけど動く）」。ひぐれ「集合写真、撮っていいか」。4人が門の前に並ぶ。カウントダウン「3・2・1」。スクショ音1回。
+
+<div class="scene-label">リセット（13:30〜15:00）</div>
+画面が白くなっていく。まひる「消える」。ひぐれ「よふかしくらぶは、リセットされない」。全員「また明日」→ひぐれ最後に「また明日（耳が赤い）」。白くなる。「明日、新しいワールドが始まります」。
+
+新ワールド起動。無音の中、鳥の声SE1回。全員が静かに立っている平地。まひる「……なんか、さっきまでと同じ場所にひぐれいる」→ひぐれ「スポーン地点、同じだったから（照れ隠し）」→全員笑い→エンド。
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ：</strong>「ひぐれが一人で3日間知ってたの——それが一番嫌だ。なんでそんな……<strong>一人で……</strong>」（まひる）</div>
+
+<div class="long-block">
+<h4>BGM設計</h4>
+<div class="txt-box">
+ひぐれモノローグ：C418「Subwoofer Lullaby」静かなピアノ → いつもの夜（みんな）：通常BGM（ひぐれとの対比が際立つ） → 3日間ソロ映像：ピアノのみ・セリフなし → まひる「それが一番嫌だ」の後：5秒の完全無音 → 最後の40分：C418「Mice on Venus」ピアノアレンジ → リセット直前：フェードアウト → 「また明日」の後：音が戻り始める（希望のサウンドで終わる）
+</div>
+</div>
+
+<div class="long-block">
+<h4>バズ設計</h4>
+<p>「3日間一人で知っていたひぐれ」という事実が視聴者の共感を爆発させる。やとら「今は、言葉が出ない」という哲学キャラが沈黙する重さ。「また明日」の終わり方が「次のワールドも見たい」という強力な動機を生む。まひるの「スクショ撮れば記憶になるから」がスクショ癖の初めての「悲しみ」への変換で切り抜き確定。</p>
+</div>
+</div>
+</div>
+
+<!-- L03 -->
+<div class="long-section" id="D0418-L03">
+<div class="long-head">
+<h3>L03「全員が同じ夜にいたのに、全員が違う夜を生きていた」</h3>
+<div class="long-meta">
+<span class="tag t-comedy">コメディ</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-emo">4視点同時進行</span>
+<span class="tag t-time">14〜18分</span>
+</div>
+</div>
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>ある夜の同じ30分を、あさめ→まひる→ひぐれ→やとらの順に全視点で見せる。「あの時こっちでこんなことが！？」の驚きが4重になる。あさめ視点では「平和な夜」が、実は全員がそれぞれの「違う夜」を生きていた。視聴者だけが全部の真実を知っている構造。2回見たくなる設計。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<p>4分割画面。左上・あさめが農場を刈っている（笑顔）。右上・まひるが空から落ちている（絶叫顔）。左下・ひぐれが農場を修復している（真剣顔・あさめに気づかれていない）。右下・やとらが崖から全員を見ている（不敵な笑み）。中央「同じ30分」のテキスト。「全員見た人だけわかる真実」。</p>
+</div>
+
+<div class="long-block">
+<h4>展開構成</h4>
+<div class="txt-box">
+<div class="scene-label">導入（0:00〜1:00）4分割フック</div>
+4分割画面で全員登場。あさめ「この夜、何も起きなかった夜」→まひる「なんにも起きなかった」→ひぐれ「ただの夜」→やとら「最も深い夜だった」。タイトルドン。
+
+<div class="scene-label">第1視点・あさめ（1:00〜4:30）平和な夜</div>
+農場整備中。21:05にひぐれが猛スピードで走り抜ける（「散歩にしては速いけどまあひぐれだしな」）。21:10にまひるが空から農場に落下（「なんで空から！？」）。21:15にやとらが農場に立って「大地は、語る」（ひぐれへのメッセージだが全然別の方向を向いている）。21:25にひぐれが逆方向に走り抜ける。農場整備完了「今日も平和だった！！」。テロップ「まひるが落ちてきた以外、平和な夜でした」。
+
+あさめ独り言「（花を植えながら）……みんな何してるんだろ（間）まあ、いっか」。画面の端でひぐれが動いているのが小さく映る。あさめは気づかない。
+
+<div class="scene-label">第2視点・まひる（4:30〜8:00）3秒の夜</div>
+エリトラ初飛行チャレンジ（ひぐれの宝物を1時間借りた）。山頂から飛び出す→農場に落下（テンション変化1回目：絶叫）→ひぐれの家で待ち伏せ。ひぐれ「もう一回やる？」→まひる「やる！！！！（テンション変化2回目・急上昇）」→3秒飛んで木に刺さる→ひぐれ「3秒は3秒だ」→まひる「なんかすごい肯定な感じする（テンション変化3回目・じわじわ回復）」。テロップ「まひるの30分まとめ：3秒飛んだ」
+
+<div class="scene-label">第3視点・ひぐれ（8:00〜11:30）黙って直した夜</div>
+「まひるに1時間エリトラを貸した。農場方向に風が来ている。あさめが農場整備中だった。予測：21:10頃に問題が発生する（メモを取る）」。21:09——ひぐれが静かに移動を始める（これがあさめ視点の「猛スピードで走り抜けた」の正体）。21:13——まひるが落下→ひぐれが無言で農場を修復。発言なし、ただ直している。21:25——修復完了、全力で家に走る（これが「逆方向に走り抜けた」の正体）。テロップ「あさめは何も気づかなかった」。
+
+まひる視点に切り替わる：まひる（自分の視点では何も知らない）「あれ……あれ？直ってる？なんで？（首をかしげて先に進む）」
+
+<div class="scene-label">第4視点・やとら（11:30〜14:30）最も深い夜</div>
+崖の上で全員を観察。まひるが飛び出す→風向きを計算→「農場に落ちる」と予測→的中→「この夜は深い」。農場に降りて修復中のひぐれに向かって「大地は、語る」（あさめ向けに見えたがひぐれへのメッセージだった）。ひぐれのみに「これも——夜の姿だ」。30分後、崖に戻って4人を俯瞰。やとらのモノローグ：「あさめにとっては静かな夜だった。まひるには3秒だけ落ちた夜だった。ひぐれには——誰にも言わずに手を動かした夜だった。我にとっては——全員が見えた夜だった。それだけで充分だと思った」。テロップ「やとらの30分まとめ：崖の上から全員を観察していた。全てを知っていた。誰にも言わなかった」
+
+<div class="scene-label">EPILOGUE（14:30〜16:00）</div>
+4分割に戻る。同じ瞬間・21:30。まひるが「ひぐれが修復してたって今初めて知った！！（号泣）ひぐれーーー！！（テンション変化4回目）」→ひぐれ「……別に」→まひる「『別に』じゃないから！！（泣きながら笑っている）」（テンション変化5回目）→あさめ「私何も気づかなかったじゃん！！自分で直したと思ってた！！」→やとら「崖の上から——ずっと見えていた（満足そうに）」→全員「なんで言わなかった！！」→やとら「……これが、最も深い夜だった（理由になっていない）」→全員「理由になってないから！！」→やとら「（間）……深い」→あさめ「深いで終わらせないで！！！」→まひる「深いで終わらせないで！！！（泣き笑い）！！スクショ！！」→ひぐれ「……（小さく笑う。ほぼ聞こえないくらい）」→あさめ「ひぐれ今笑った！！！初めて聞いた！！！」→ひぐれ「……（笑っていない）」。
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ：</strong>「あさめにとっては静かな夜だった。まひるには3秒だけ落ちた夜だった。ひぐれには——誰にも言わずに手を動かした夜だった。我にとっては——全員が見えた夜だった。それだけで充分だと思った」（やとら）</div>
+
+<div class="long-block">
+<h4>BGM設計</h4>
+<div class="txt-box">
+各視点で異なるBGM：あさめ視点＝のんびり農場BGM / まひる視点＝テンション連動・急上下 / ひぐれ視点＝作業音のみ・BGMなし / やとら視点＝崖の風音＋壮大なアンビエント → まひる落下の瞬間：全BGMカット→4分割画面→無音2秒 → やとらのモノローグ：無音で語る→「それだけで充分」の後、全員のBGMが同時に重なるレイヤー演出→フェードアウト → EPILOGUE：通常BGM再開→C418「Stal」で軽快にエンディング
+</div>
+</div>
+
+<div class="long-block">
+<h4>バズ設計</h4>
+<p>「ひぐれが修復してたのを誰も気づいていなかった」暴露が切り抜き確定。「やとら崖から全部見ていた」の衝撃で「やとら最強説」コメントが量産。「2回見たくなる構造」によりリプレイ率が異常に高くなりアルゴリズムに有利。まひるの「泣きながら笑っている」という感情の最高形が全視聴者に刺さる。ひぐれが「小さく笑う。ほぼ聞こえないくらい」というシリーズ史上初の場面でコメント欄が爆発。</p>
+</div>
+
+<div class="long-block">
+<h4>2回目に気づく要素（リプレイ設計）</h4>
+<div class="txt-box">
+あさめ視点：遠くで光っているのがやとらの松明（崖の位置）。まひるが落ちた直後、画面端でひぐれがすでに走り出している。
+まひる視点：農場に落ちた瞬間の下から見上げたカットに、崖の上のやとらのシルエットが映る。
+ひぐれ視点：修復しながら独り言「ここはまひるが好きそうな配置だから」（小声で聞き取りにくい）
+やとら視点：4人のBGMを分析すると、実は最初から全員のBGMが少しずつ混ざっていた
+</div>
+</div>
+</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<div class="research" id="research">
+<h3>本日のリサーチメモ（2026.04.18）</h3>
+
+<h4>マイクラトレンド（Agent 1調査）</h4>
+<ul>
+<li><strong>Tiny Takeover（2026年3月アプデ）：</strong>ヒヨコ大量スポーン・金のタンポポ（永遠ベビー化）。「かわいい×意外性」の最強コンボ。検索ワード「Tiny Takeover」「ベビーモブ」急上昇中。S01で直撃使用。</li>
+<li><strong>Chaos Cubed（2026年Q2リリース予定）：</strong>サルファーキューブ（ブロック吸収・変身・乗り物化）。史上初のメカニズムで「えっ何これ」引き止め力強。L01の変身縛りハードコアに活用。</li>
+<li><strong>Hardcoreデス系：</strong>喪失感＋共感＋ドラマが60秒に圧縮できる最強フォーマット。S05の全員デスに活用。</li>
+<li><strong>「夜活×ASMR×よふかし」：</strong>2026年TikTokのキーワードは「マイクロコミュニティ」。深夜設定がトレンドに直結。</li>
+</ul>
+
+<h4>音楽・ネットカルチャートレンド（Agent 2調査）</h4>
+<ul>
+<li><strong>「テトリス」/柊マグネタイト：</strong>2024年発表だが2026年4月現在も継続バズ中。ゲームプレイ動画との音ハメが定番化。→ただし使い古されているため、S02ではショパン夜想曲に変更。</li>
+<li><strong>「ギュンです」：</strong>Z世代のときめき感情語。S05でまひるのセリフとして使用。</li>
+<li><strong>「滅なんだけど」：</strong>Z世代の疲弊語。S02まひるのセリフに活用。</li>
+<li><strong>Re:ゼロ4期・転スラ4期：</strong>異世界転生パロディが旬。次回企画の候補。</li>
+<li><strong>MAZZEL「Get Up And Dance」：</strong>TikTok公式キャンペーン1000万超。ファンクビートとマイクラの採掘リズムの相性良。次回音ハメ企画候補。</li>
+</ul>
+
+<h4>既存台本との差別化（Agent 3分析）</h4>
+<ul>
+<li><strong>今回初解禁：</strong>看板だけの夜（S04）・全員同時視点切り替え（L03）・1人だけが秘密を知っている状況（L02）・あさめが真面目になる回（L01）・やとら×まひる2人コンビ（S05）</li>
+<li><strong>次回以降の候補：</strong>廃墟発見と歴史推理・浮遊島群落での村作り・たそまるが主役の番外編・Re:ゼロ死に戻りパロディ</li>
+</ul>
+</div>
+<!-- ============================================================ -->
+
+</div>
+
+<div class="footer">よふかしくらぶ！日刊台本 2026年04月18日 — 8本（ショート5本＋横動画3本）</div>
+</body>
+</html>

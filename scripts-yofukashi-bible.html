@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！シリーズバイブル</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1a2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:960px;margin:0 auto;padding:0 28px 80px}
+.hero{text-align:center;padding:80px 24px 48px}
+.hero .ep{display:inline-block;padding:4px 14px;background:rgba(250,204,21,.15);color:#fbbf24;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;margin-bottom:18px}
+.hero h1{font-size:clamp(26px,5vw,44px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;background:linear-gradient(135deg,#a78bfa,#f472b6,#fbbf24,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.hero .sub{color:#888;font-size:16px;margin-bottom:18px;font-weight:300;letter-spacing:.05em}
+.hero .catch{color:#fbbf24;font-size:14px;font-weight:700;margin-top:20px;padding-top:16px;border-top:1px solid #1a1a2e;font-style:italic}
+
+h2{font-size:24px;font-weight:900;margin:72px 0 8px;color:#eee;letter-spacing:-.01em}
+h2 .tag{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:6px;letter-spacing:.15em;text-transform:uppercase}
+.h2-desc{color:#888;font-size:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid #1a1a2e}
+
+h3{font-size:17px;font-weight:800;color:#ddd;margin:24px 0 10px}
+
+/* 3 pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.pillar{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:14px;padding:22px 20px;transition:.2s}
+.pillar:hover{border-color:#333;transform:translateY(-2px)}
+.pillar .pn{font-size:11px;font-weight:800;letter-spacing:.2em;color:#a78bfa;margin-bottom:8px}
+.pillar h4{font-size:15px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.5}
+.pillar p{font-size:13px;color:#aaa;line-height:1.8}
+
+/* character cards */
+.char-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.char{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;padding:24px 26px;position:relative}
+.char.y{border-top:4px solid #a78bfa}
+.char.a{border-top:4px solid #67e8f9}
+.char.m{border-top:4px solid #f472b6}
+.char.h{border-top:4px solid #fbbf24}
+.char-head{margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #1a1a2e}
+.char-head .n{font-size:20px;font-weight:900;margin-right:8px}
+.char.y .char-head .n{color:#a78bfa}
+.char.a .char-head .n{color:#67e8f9}
+.char.m .char-head .n{color:#f472b6}
+.char.h .char-head .n{color:#fbbf24}
+.char-head .role{font-size:11px;color:#888;background:#12121e;padding:3px 8px;border-radius:4px;display:inline-block;margin-top:4px}
+.char-row{display:flex;gap:10px;font-size:12.5px;padding:6px 0;border-bottom:1px dotted #1a1a2e;line-height:1.7}
+.char-row:last-child{border-bottom:none}
+.char-row .label{color:#666;font-weight:700;min-width:72px;flex-shrink:0;font-size:11px;letter-spacing:.05em}
+.char-row .val{color:#ccc;flex:1}
+.char-row.wound .val{color:#f9a8d4}
+.char-row.arc .val{color:#93c5fd}
+
+/* relationship matrix */
+.rel-matrix{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:14px;padding:24px;margin-top:24px}
+.rel-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0;border-bottom:1px dotted #1a1a2e;font-size:13px}
+.rel-row:last-child{border-bottom:none}
+.rel-row .pair{font-weight:800;color:#ddd;white-space:nowrap}
+.rel-row .desc{color:#aaa;line-height:1.7}
+.pair .sep{color:#f472b6;margin:0 4px;font-weight:400}
+.tension{background:rgba(239,68,68,.06);border-left:3px solid #f87171;padding:14px 18px;margin-top:16px;font-size:13px;color:#fca5a5;border-radius:0 10px 10px 0}
+.tension strong{color:#f87171;display:block;margin-bottom:4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* gimmick cards */
+.gim{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:20px 24px;margin:12px 0}
+.gim .gn{font-size:11px;color:#fbbf24;font-weight:800;letter-spacing:.15em;margin-bottom:6px}
+.gim h4{font-size:16px;font-weight:800;color:#fff;margin-bottom:10px}
+.gim p{color:#aaa;font-size:13px;line-height:1.8;margin-bottom:6px}
+.gim .ex{background:#12121e;padding:10px 14px;border-radius:6px;font-family:'Consolas',monospace;font-size:12px;color:#67e8f9;margin-top:8px}
+
+/* mystery cards */
+.mys{background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.2);border-radius:12px;padding:20px 24px;margin:12px 0}
+.mys .mn{font-size:11px;color:#c084fc;font-weight:800;letter-spacing:.15em;margin-bottom:6px}
+.mys h4{font-size:16px;font-weight:800;color:#d8b4fe;margin-bottom:10px}
+.mys p{color:#aaa;font-size:13px;line-height:1.8;margin-bottom:6px}
+.mys .reveal{color:#c084fc;font-size:12px;margin-top:8px;font-style:italic}
+
+/* sub character table */
+.sub-tab{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;overflow:hidden;margin-top:16px}
+.sub-cat{background:#12121e;padding:8px 20px;font-size:11px;color:#888;letter-spacing:.1em;font-weight:800;text-transform:uppercase;border-top:1px solid #1a1a2e}
+.sub-cat:first-child{border-top:none}
+.sub-row{display:grid;grid-template-columns:180px 1fr 120px;gap:14px;padding:14px 20px;border-top:1px solid #1a1a2e;font-size:13px;align-items:center}
+.sub-row .name{font-weight:800;color:#ddd}
+.sub-row .desc{color:#aaa;font-size:12.5px;line-height:1.6}
+.sub-row .ep{font-size:10px;color:#60a5fa;background:rgba(96,165,250,.08);padding:3px 8px;border-radius:4px;text-align:center;font-weight:700}
+
+/* episode roadmap */
+.ep-list{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;overflow:hidden;margin-top:16px}
+.ep-item{display:grid;grid-template-columns:60px 1fr;gap:16px;padding:14px 20px;border-top:1px solid #1a1a2e;font-size:13px;align-items:center}
+.ep-item:first-child{border-top:none}
+.ep-num{font-size:18px;font-weight:900;color:#fbbf24;font-family:'Consolas',monospace}
+.ep-body h5{font-size:14px;font-weight:800;color:#fff;margin-bottom:3px}
+.ep-body .ep-desc{color:#888;font-size:12px;line-height:1.6}
+.ep-body .ep-chars{font-size:10px;color:#60a5fa;margin-top:4px}
+
+/* viewer persona */
+.persona{background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(244,114,182,.06));border:1px solid rgba(168,85,247,.2);border-radius:14px;padding:24px 28px;margin-top:24px}
+.persona h4{color:#c084fc;font-size:15px;margin-bottom:12px;font-weight:800}
+.persona ul{padding-left:20px}
+.persona li{color:#ccc;font-size:13px;margin-bottom:6px;line-height:1.7}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520;margin-top:80px}
+
+@media(max-width:768px){
+.pillars{grid-template-columns:1fr}
+.char-grid{grid-template-columns:1fr}
+.sub-row{grid-template-columns:1fr}
+.rel-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#core">作品の核</a>
+<a href="#chars">キャラクター</a>
+<a href="#rels">関係性</a>
+<a href="#gim">看板ギミック</a>
+<a href="#mys">伏線</a>
+<a href="#subs">サブキャラ</a>
+<a href="#roadmap">全話構成</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="ep">SERIES BIBLE</div>
+<h1>よふかしくらぶ！<br>作品設定書</h1>
+<div class="sub">— Minecraft × 三層詐欺 × 四人の夜 —</div>
+<div class="catch">「名前通りに生きられない四人が、夜にだけ、ちゃんと揃う」</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="core"><span class="tag">01 — CORE CONCEPT</span>作品の核</h2>
+<p class="h2-desc">このアニメが「他のマイクラ系／学園系」と違う理由。1話目から最終回まで貫く3本の柱。</p>
+<!-- ============================================================ -->
+
+<div class="pillars">
+<div class="pillar">
+<div class="pn">PILLAR 01</div>
+<h4>三層詐欺アニメ</h4>
+<p>昼の顔（学校）× SNSの顔（TikTok・病み垢）× 夜の顔（Discord越しの素）。四人とも3つの仮面を持っている。「昼と夜」じゃなく「三層」。どの層で出会うかで全部変わる。</p>
+</div>
+<div class="pillar">
+<div class="pn">PILLAR 02</div>
+<h4>得意バラバラの補完劇</h4>
+<p>成長譚ではない。四人は最後まで得意分野が違ったまま。PC5年ガチ／スマホ勢／FPS勢／未経験＝誰も主役になれないから4人必要。欠けたら成立しない烏合の衆。</p>
+</div>
+<div class="pillar">
+<div class="pn">PILLAR 03</div>
+<h4>マイクラ＝素の自分の比喩</h4>
+<p>建てて壊せて、撃って殴って、配信にも絵にもなる。このゲームだけが四人の全領域を内包する。FPSじゃまひるの姫は剥がれない。マイクラじゃないと成立しない関係。</p>
+</div>
+</div>
+
+<div class="persona">
+<h4>刺さる視聴者像</h4>
+<ul>
+<li>深夜にDiscord開きがちな高校生〜20代前半</li>
+<li>「名前通りに生きられない自分」を肯定されたい人</li>
+<li>SNS疲れ、リアル疲れ、でもオンラインを捨てられない人</li>
+<li>ゆるい日常系で癒されたいが、キャラに深い傷があると嬉しい人</li>
+<li>マイクラ配信を見て育った世代、Apex/Valo 実況を知ってる世代</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="chars"><span class="tag">02 — CHARACTERS</span>主要キャラクター（4人）</h2>
+<p class="h2-desc">全員に「表の顔」「隠された傷」「クラブでの役割」「シーズンアーク」の4層。</p>
+<!-- ============================================================ -->
+
+<div class="char-grid">
+
+<div class="char y">
+<div class="char-head">
+<span class="n">やとら</span><span class="role">2年・図書委員・リーダー</span>
+</div>
+<div class="char-row"><span class="label">表の顔</span><span class="val">紫髪、物静か、本ばかり読んでる。クラスでは「いる？」レベル。普通の高校生口調。</span></div>
+<div class="char-row"><span class="label">ネット</span><span class="val">ROM専。TikTok眺めるのが唯一の「外を覗く窓」。自分から投稿は一切しない。</span></div>
+<div class="char-row"><span class="label">得意</span><span class="val">PCマイクラ5年。サバイバル、建築、レッドストーン、全分野平均以上。でも特化はない。</span></div>
+<div class="char-row wound"><span class="label">隠された傷</span><span class="val">中1で友達にマイクラの話をしたら「え、そんなゲームやってんの？」と引かれた。以来5年、誰にも話していない。</span></div>
+<div class="char-row"><span class="label">口癖</span><span class="val">「なあ」「まあ、な」「うん、誘ってる」「マジで」。知的だが寡黙ではない。時々ずれたボケ。</span></div>
+<div class="char-row arc"><span class="label">Sアーク</span><span class="val">「誰にも話せなかった」男が、4人の前で初めて自分を語れるようになる話。最終回で中1の真相を明かす。</span></div>
+</div>
+
+<div class="char a">
+<div class="char-head">
+<span class="n">あさめ</span><span class="role">2年・クラスの中心・情報源</span>
+</div>
+<div class="char-row"><span class="label">表の顔</span><span class="val">青髪、陽キャ。クラスで一番明るい、ドーナツ配る系。学年で3番目にフォロワー多い。</span></div>
+<div class="char-row"><span class="label">ネット</span><span class="val">TikTok 8,423フォロワー／Insta 2,400フォロワー。インフルエンサー志望。</span></div>
+<div class="char-row"><span class="label">得意</span><span class="val">スマホマイクラ3年。PvE向け。人との橋渡し、場の空気、情報収集。</span></div>
+<div class="char-row wound"><span class="label">隠された傷</span><span class="val">フォロワー8千は「1本バズっただけ」の遺産。中身空っぽ、次のバズに飢えている。仲間も最初は「コンテンツ素材」視点で集めてる。</span></div>
+<div class="char-row"><span class="label">口癖</span><span class="val">「じゃん！」「普通に普通」「楽しそう！」「バズったら動画撮ろう」。即決、軽いノリ。</span></div>
+<div class="char-row arc"><span class="label">Sアーク</span><span class="val">「数字のために仲間を集めた子」が、3人のために数字を捨てられるようになる話。中盤でバズと仲間の選択を迫られる。</span></div>
+</div>
+
+<div class="char m">
+<div class="char-head">
+<span class="n">まひる</span><span class="role">1年・通称「姫」・戦闘担当</span>
+</div>
+<div class="char-row"><span class="label">表の顔</span><span class="val">ピンクツインテ、黒レースカーディガン、イヤホン爆音。教室で誰とも話さない。「話しかけるな」オーラ。</span></div>
+<div class="char-row"><span class="label">ネット</span><span class="val">病み垢@hime_yami_ 3万フォロワー。サブカル界隈で有名な「姫」。顔出しなしで時々FPS配信。</span></div>
+<div class="char-row"><span class="label">得意</span><span class="val">Apexマスター／Valorantイモータル。FPSのアイム。マイクラはPvPサーバーだけ、基礎知識ゼロ。</span></div>
+<div class="char-row wound"><span class="label">隠された傷</span><span class="val">中学でFPSガチ勢だとバレてイジメられた。「姫」の装いは仮面、FPSの強さは人を近づけないための武器。</span></div>
+<div class="char-row"><span class="label">口癖</span><span class="val">「は？」「……最悪」「当たり前でしょ」「入ってあげる、わ」。ツンデレ、語尾「わ」。</span></div>
+<div class="char-row arc"><span class="label">Sアーク</span><span class="val">「仮面で自分を守ってきた姫」が、3人の前で初めて装備を外せる話。中盤で身バレ危機、終盤で素顔を見せる。</span></div>
+</div>
+
+<div class="char h">
+<div class="char-head">
+<span class="n">ひぐれ</span><span class="role">2年・やとら幼馴染・運動部すけっと</span>
+</div>
+<div class="char-row"><span class="label">表の顔</span><span class="val">金髪赤目、ヤンキー風、制服着崩し、口が悪い。部活入ってないが、サッカー部バスケ部陸上部、どこからも助っ人に呼ばれる運動神経。たまに美術室でも絵を描く。</span></div>
+<div class="char-row"><span class="label">ネット</span><span class="val">からっきし。SNSアカウントなし。LINEはやとらとクラスライン必要最低限。TikTok、Insta、全部知らない。</span></div>
+<div class="char-row"><span class="label">得意</span><span class="val">運動全般（サッカー・バスケ・陸上、平均以上）。絵はまぁうまい（本人も美術部入らない、才能と自称しない）。マイクラ未経験スタート、建築センスあり。</span></div>
+<div class="char-row wound"><span class="label">隠された傷</span><span class="val">どこの部活の助っ人もできるが、本命の居場所がない。友達多いけど一番近いのはやとらだけ、という矛盾。マイクラ仲間に「後出し」で4人目にされる屈辱＋5年間やとらの素を独占してたつもりだった悲しみ。</span></div>
+<div class="char-row"><span class="label">口癖</span><span class="val">「あ？」「つーか」「めんどい」「うるせー」「断る理由、ない」。ヤンキー風だが本音は素直。SNS用語は全部「何、それ」。</span></div>
+<div class="char-row arc"><span class="label">Sアーク</span><span class="val">「どこにも入らない助っ人」が「よふかしくらぶにだけは本籍を置く」話。最終回手前でクリーパーキーホルダーの秘密が明らかに。</span></div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<h2 id="rels"><span class="tag">03 — RELATIONSHIPS</span>関係性マトリクス</h2>
+<p class="h2-desc">全6組のペア関係。恋愛は明示しない。2本の嫉妬線で四人を動かす。</p>
+<!-- ============================================================ -->
+
+<div class="rel-matrix">
+<div class="rel-row"><span class="pair">やとら <span class="sep">&lt;&gt;</span> ひぐれ</span><span class="desc">幼馴染。中学からの付き合い。やとらだけがひぐれの素を知ってて、ひぐれだけがやとらの素を知ってる。距離が近すぎてお互いのマイクラ歴すら知らなかった。</span></div>
+<div class="rel-row"><span class="pair">やとら <span class="sep">&lt;&gt;</span> あさめ</span><span class="desc">最初の仲間。クラスメイトだが話したことはなかった。あさめのTikTokをやとらがROM専で見てた。対等な関係、でも距離は慎重。</span></div>
+<div class="rel-row"><span class="pair">やとら <span class="sep">&lt;&gt;</span> まひる</span><span class="desc">最初から「仮面の下」を見抜かれる関係。まひるはやとらの静けさに安心する。年上後輩だが、まひるが唯一敬語じゃないのがやとら。</span></div>
+<div class="rel-row"><span class="pair">あさめ <span class="sep">×</span> まひる</span><span class="desc">SNS格差ライバル。TikTok 8千 vs 病み垢3万。あさめは「インフル憧れ」、まひるは「影響力を武器に人を近づけない」。真逆の方向性のフォロワー活用。</span></div>
+<div class="rel-row"><span class="pair">あさめ <span class="sep">×</span> ひぐれ</span><span class="desc">やとらの注目争い。幼馴染の独占権 vs 最初に誘われた権利。シーズン通して地味に張り合う。</span></div>
+<div class="rel-row"><span class="pair">まひる <span class="sep">&lt;&gt;</span> ひぐれ</span><span class="desc">姫とヤンキー、表面的に対極。でも「人を近づけない」という根の部分が共通。中盤で意外と通じ合う回がある。</span></div>
+</div>
+
+<div class="tension">
+<strong>嫉妬線 ①</strong>
+<strong>ひぐれ × あさめ</strong>（やとらの注目）── 幼馴染の独占者ひぐれが、自分より先に誘われたあさめに対抗心。あさめは「私も対等」と主張したい。やとらは鈍くて気づかない。
+</div>
+<div class="tension">
+<strong>嫉妬線 ②</strong>
+<strong>まひる × あさめ</strong>（SNS影響力）── 病み垢3万のまひる、TikTok8千のあさめ。数字で上のはずのまひるが、あさめの「明るい影響力」に勝てないことにイラつく。
+</div>
+
+<!-- ============================================================ -->
+<h2 id="gim"><span class="tag">04 — SIGNATURE GIMMICKS</span>看板ギミック（毎話反復）</h2>
+<p class="h2-desc">視聴者が毎話予測＆楽しみにする定番仕掛け。3つ。</p>
+<!-- ============================================================ -->
+
+<div class="gim">
+<div class="gn">GIMMICK 01</div>
+<h4>ラストの SYSTEM JOINED ＋ モノローグ</h4>
+<p>毎話のエンディング直前、その話の主役キャラ視点のモノローグ（5〜10秒）と共に、四人のログイン通知が流れる。誰視点の話かはシステムログの並び順で示す。</p>
+<div class="ex">&gt; yatora joined the game<br>&gt; asame joined the game<br>&gt; mahiru joined the game<br>&gt; higure joined the game</div>
+</div>
+
+<div class="gim">
+<div class="gn">GIMMICK 02</div>
+<h4>Cスタ冒頭の「あさめTikTok数字」</h4>
+<p>毎話の頭（ロゴ前）に、あさめのTikTokフォロワー数／最新投稿のいいね数が表示される。世間から見た四人の温度計。伸びるとあさめ歓喜、停滞すると焦る。</p>
+<div class="ex">@asameee / followers 8,423 → 23,891 → 47,200 ...<br>latest: "友達と深夜マイクラ" / 23.1K likes</div>
+</div>
+
+<div class="gim">
+<div class="gn">GIMMICK 03</div>
+<h4>名前詐欺チャート更新</h4>
+<p>四人の「名前の時間帯 × 実際の活動時間帯」マトリクス。毎話、微妙に位置がずれる。各キャラが自分の名前通りに寄ったり離れたりする変化を視覚的に追える。</p>
+<div class="ex">朝|朝目 ○...... → 夜寄りに ○....●<br>昼|真昼 ○...... → 真夜寄りに ○....●<br>夕|日暮れ ..●.... → 本当に夕方 ..●....<br>夜|夜虎 ......● → 夜で安定 ......●</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="mys"><span class="tag">05 — SEASON MYSTERIES</span>シーズン貫通伏線（3本）</h2>
+<p class="h2-desc">EP01から最終回まで引っ張る謎。少しずつヒントが出て、回収されるタイミングが違う。</p>
+<!-- ============================================================ -->
+
+<div class="mys">
+<div class="mn">MYSTERY 01 — 最終回回収</div>
+<h4>やとら、5年間誰にも話さなかった本当の理由</h4>
+<p>中1の「引かれた」トラウマは序盤で語られる。でもそれだけじゃない。もっと深い理由 —— 当時マイクラを一緒にやろうと誘った友達Aが、今はどうしているのか？</p>
+<div class="reveal">▶ 回収：EP12 最終話、4人揃った状態でやとらが初めて全部を話す</div>
+</div>
+
+<div class="mys">
+<div class="mn">MYSTERY 02 — 中盤回収</div>
+<h4>まひる病み垢@hime_yami_ の最初の投稿</h4>
+<p>3万フォロワーの始まりは、中学時代の「イジメ実況」みたいな生々しい投稿。誰がそれを見つけて拡散したのか？ 「姫」というあだ名を最初に付けたのは誰？</p>
+<div class="reveal">▶ 回収：EP06 身バレ危機回、まひるが自らアカウントを開陳する</div>
+</div>
+
+<div class="mys">
+<div class="mn">MYSTERY 03 — 終盤回収</div>
+<h4>ひぐれのクリーパーキーホルダー</h4>
+<p>やとらのカバンに付いてるクリーパーキーホルダー、実はひぐれが中1の誕生日にあげたもの。ひぐれは今もそれをやとらが使い続けてることに、何を思っているのか？</p>
+<div class="reveal">▶ 回収：EP11、ひぐれが描いた4人の油絵の中でキーホルダーだけ色が違う</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="subs"><span class="tag">06 — SUPPORTING CAST</span>サブキャラクター（10人）</h2>
+<p class="h2-desc">4人の世界を広げる脇役。それぞれ特定のエピソードで機能する。</p>
+<!-- ============================================================ -->
+
+<div class="sub-tab">
+
+<div class="sub-cat">学校内（4）</div>
+<div class="sub-row"><span class="name">藤堂 蓮（とうどう れん）</span><span class="desc">3年・eスポーツ部部長。Valorant界隈でまひるのライバル（顔割れてる側）。「マイクラは子供のゲーム」発言で対立。</span><span class="ep">EP03</span></div>
+<div class="sub-row"><span class="name">黒瀬 茉耶（くろせ まや）</span><span class="desc">あさめの同クラス・TikTok仲間。コラボ動画撮ってたが、よふかしくらぶでの伸びを見て密かに嫉妬する。</span><span class="ep">EP05</span></div>
+<div class="sub-row"><span class="name">皆川 先生（みながわ）</span><span class="desc">視聴覚室担当の若手物理教師（男・30代）。元ネトゲ廃人、生徒に「4人以上の部活申請が必要」と条件出す。表では厳しいが裏で応援。</span><span class="ep">EP01,02,08</span></div>
+<div class="sub-row"><span class="name">田所 健太（たどころ けんた）</span><span class="desc">2年・やとらの中1時代のクラスメイト。当時やとらがマイクラの話をして引いた張本人。今は陽キャ、罪悪感ゼロ。</span><span class="ep">EP04</span></div>
+
+<div class="sub-cat">ネット上（2）</div>
+<div class="sub-row"><span class="name">@ヤミ民（やみみん）</span><span class="desc">まひるの病み垢古参ファン数名の集合体。姫の素顔変化に敏感、リプ欄が荒れる。</span><span class="ep">EP06</span></div>
+<div class="sub-row"><span class="name">ShirokumaP（しろくまぴー）</span><span class="desc">登録80万のマイクラ建築系実況者。やとらが5年間崇拝してきた存在。ひぐれの建築に目を付ける。</span><span class="ep">EP07</span></div>
+
+<div class="sub-cat">家族（2）</div>
+<div class="sub-row"><span class="name">陽葵（ひまり）</span><span class="desc">ひぐれの小6の妹。兄の絵のファン第一号。4人のマスコット見学者。毒舌だが天使。</span><span class="ep">EP09</span></div>
+<div class="sub-row"><span class="name">あさめ母</span><span class="desc">元ミスコン出身、現役美容インフルエンサー（フォロワー4万）。娘のTikTokは全面支持だがゲームには懐疑的。</span><span class="ep">EP10</span></div>
+
+<div class="sub-cat">ゲスト / ライバル（2）</div>
+<div class="sub-row"><span class="name">詩乃 カナデ（しの かなで）</span><span class="desc">他校の女子高生マイクラ建築配信者（登録3万）。やとらが密かに憧れてた存在で、ひぐれに興味を持つ。</span><span class="ep">EP11</span></div>
+<div class="sub-row"><span class="name">九条 悠真（くじょう ゆうま）</span><span class="desc">2学期転校生。元プロゲーマー崩れ、あらゆるゲームで天才。4人の関係をかき回す外的要因。</span><span class="ep">EP12</span></div>
+
+</div>
+
+<!-- ============================================================ -->
+<h2 id="roadmap"><span class="tag">07 — SEASON ROADMAP</span>シーズン全12話構成</h2>
+<p class="h2-desc">各話のテーマと軸キャラ。全体で「4人が本当の仲間になるまで」を描く。</p>
+<!-- ============================================================ -->
+
+<div class="ep-list">
+
+<div class="ep-item">
+<div class="ep-num">01</div>
+<div class="ep-body">
+<h5>結成 —「放課後、4人集合」</h5>
+<div class="ep-desc">やとらが中1のトラウマを経て、5年ぶりに仲間探しを始める。あさめ → まひる → ひぐれの順で集める。ひぐれが4人目＝屈辱で本気でキレる。皆川先生が「4人以上の部活申請」の条件を出す。</div>
+<div class="ep-chars">軸：やとら／ゲスト：皆川先生</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">02</div>
+<div class="ep-body">
+<h5>バズの余波 —「TikTokに4人出ちゃった」</h5>
+<div class="ep-desc">あさめがEP01の結成風景を無断投稿→バズる。まひるの病み垢にリプが流れ、姫の身バレリスクが浮上。部活申請書も書かなきゃいけない。</div>
+<div class="ep-chars">軸：あさめ／危機：まひる</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">03</div>
+<div class="ep-body">
+<h5>eスポ部 vs よふかしくらぶ</h5>
+<div class="ep-desc">藤堂蓮（eスポ部部長）が視聴覚室の予約を取り合って対立。「マイクラは子供のゲーム」発言。まひるが藤堂を見て過去がフラッシュバック。</div>
+<div class="ep-chars">軸：まひる／ライバル：藤堂蓮</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">04</div>
+<div class="ep-body">
+<h5>やとらの過去 —「中1の、あの日」</h5>
+<div class="ep-desc">田所健太と廊下で出くわし、当時のフラッシュバック。やとらが5年間誰にも話さなかった本当の理由の一端が見える。ひぐれが一番の理解者になる。</div>
+<div class="ep-chars">軸：やとら／ひぐれ／敵：田所健太</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">05</div>
+<div class="ep-body">
+<h5>TikTok友達 vs 新しい仲間</h5>
+<div class="ep-desc">黒瀬茉耶が「最近コラボしてくれないじゃん」と詰める。あさめが「数字のための友達」と「本物の仲間」で初めて悩む。インフル像と本音の戦い。</div>
+<div class="ep-chars">軸：あさめ／葛藤：黒瀬茉耶</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">06</div>
+<div class="ep-body">
+<h5>姫の身バレ危機 —「@hime_yami_ が学校で…」</h5>
+<div class="ep-desc">ヤミ民が「姫、最近、明るくなってない？」と騒ぎ、まひるの身バレ寸前。自ら病み垢のオリジン投稿を開示する決断。3人が守る。</div>
+<div class="ep-chars">軸：まひる／脅威：ヤミ民</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">07</div>
+<div class="ep-body">
+<h5>ShirokumaP からDM —「コラボしませんか？」</h5>
+<div class="ep-desc">ひぐれの建築を見つけた登録80万の実況者から連絡。4人はコラボするか悩む。やとらの崇拝対象と直接会う回。</div>
+<div class="ep-chars">軸：やとら／ひぐれ／ゲスト：ShirokumaP</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">08</div>
+<div class="ep-body">
+<h5>合宿回 —「サーバー借り切って48時間」</h5>
+<div class="ep-desc">皆川先生の家で合宿許可、学校非公式だが黙認。48時間ぶっ通しマイクラ。疲れと嫉妬線が噴出、初めて4人でガチ喧嘩する。</div>
+<div class="ep-chars">軸：全員／場：皆川先生宅</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">09</div>
+<div class="ep-body">
+<h5>ひぐれの家に4人集合 —「妹が天使で毒舌」</h5>
+<div class="ep-desc">ひぐれの家で集まり、妹・陽葵が登場。兄の絵を誇りに思ってる。ひぐれが家族の前ではどう振る舞うか明らかに。幼馴染側の秘密が少しだけ開く。</div>
+<div class="ep-chars">軸：ひぐれ／ゲスト：陽葵</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">10</div>
+<div class="ep-body">
+<h5>あさめ母、降臨 —「ママが元ミスコン」</h5>
+<div class="ep-desc">あさめ母が美容インフルとしてバズっており、娘のTikTok活動に監修を入れようとする。あさめが初めて「自分の表現は自分で決める」と立ち向かう。</div>
+<div class="ep-chars">軸：あさめ／ゲスト：あさめ母</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">11</div>
+<div class="ep-body">
+<h5>建築コンテスト —「他校の詩乃カナデ参戦」</h5>
+<div class="ep-desc">地域の学校対抗マイクラ建築コンテスト。詩乃カナデが個人で参加、ひぐれを「建築戦友」として接触。やとらの嫉妬線が初めて動く。キーホルダーの謎に接近。</div>
+<div class="ep-chars">軸：ひぐれ／やとら／ライバル：詩乃カナデ</div>
+</div>
+</div>
+
+<div class="ep-item">
+<div class="ep-num">12</div>
+<div class="ep-body">
+<h5>シーズンフィナーレ —「転校生、来る」</h5>
+<div class="ep-desc">九条悠真が転校してきて、あらゆる面で4人の上位互換。彼の登場で4人の絆がテストされる。やとらが中1の真相を全員の前で話す。「名前通りじゃなくても、いい」の答えが出る。</div>
+<div class="ep-chars">軸：4人／敵：九条悠真</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<div><strong>よふかしくらぶ！</strong> Series Bible</div>
+<div>作品設定書 — 2026-04-18</div>
+</div>
+
+</div><!-- /wrap -->
+
+</body>
+</html>

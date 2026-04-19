@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！深淵・地下都市編 — ショート台本集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1a2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 28px 80px}
+.hero{text-align:center;padding:72px 24px 40px}
+.hero .ep{display:inline-block;padding:4px 14px;background:rgba(96,165,250,.15);color:#60a5fa;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
+.hero h1{font-size:clamp(26px,5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.hero .sub{color:#888;font-size:15px;font-weight:300;letter-spacing:.05em}
+
+h2{font-size:22px;font-weight:800;margin:60px 0 6px;color:#ddd}
+h2 .tag{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4px;letter-spacing:.15em;text-transform:uppercase}
+.h2-desc{color:#888;font-size:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
+
+/* mechanics table */
+.mech-tab{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;overflow:hidden;margin-top:16px}
+.mech-row{display:grid;grid-template-columns:180px 1fr;gap:14px;padding:12px 20px;border-top:1px solid #1a1a2e;font-size:13px;align-items:center}
+.mech-row:first-child{border-top:none}
+.mech-row .label{font-weight:800;color:#67e8f9;font-size:13px}
+.mech-row .desc{color:#aaa;line-height:1.7}
+
+/* full script cards */
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:22px 0;padding:26px 30px}
+.sc.featured{border:2px solid rgba(168,85,247,.35);box-shadow:0 0 24px rgba(168,85,247,.08)}
+.sc-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #1a1a2e;flex-wrap:wrap}
+.sc-num{font-size:11px;font-weight:800;color:#a78bfa;letter-spacing:.15em}
+.sc.featured .sc-num{color:#c084fc}
+.sc-title{font-size:17px;font-weight:800;color:#fff;flex:1;min-width:200px}
+.sc-meta{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.05em}
+.t-dur{background:rgba(100,116,139,.15);color:#94a3b8}
+.t-feat{background:rgba(168,85,247,.15);color:#c084fc}
+.t-mech{background:rgba(103,232,249,.15);color:#67e8f9}
+.t-char{background:rgba(244,114,182,.15);color:#f472b6}
+
+.concept{background:rgba(168,85,247,.05);border-left:3px solid #a78bfa;padding:12px 18px;font-size:13px;color:#d8b4fe;margin-bottom:14px;border-radius:0 8px 8px 0}
+.concept strong{color:#c084fc;display:block;font-size:10px;letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}
+
+.scene-h{font-size:14px;font-weight:800;color:#fbbf24;margin:18px 0 8px;padding:6px 14px;background:rgba(250,204,21,.06);border-radius:6px;display:inline-block}
+
+.dial{padding:4px 0}
+.line{padding:7px 0;border-bottom:1px dotted #1a1a2e;font-size:14px;line-height:1.8;display:flex;gap:12px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:54px;font-size:13px}
+.who-y{color:#a78bfa}.who-a{color:#67e8f9}.who-m{color:#f472b6}.who-h{color:#fbbf24}
+.who-n{color:#666;font-style:italic}
+.who-sys{color:#34d399;font-family:'Consolas',monospace;font-size:12px}
+.line .txt{color:#d4d4d8;flex:1}
+
+.meta-box{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:12px 18px;margin:10px 0;font-size:12.5px;color:#7dd3fc}
+.meta-box strong{color:#38bdf8;display:block;font-size:10px;letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}
+
+.beat{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:13px 18px;margin:12px 0 0;font-size:12.5px;color:#f9a8d4}
+.beat strong{color:#f472b6}
+
+.telop{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);border-radius:10px;padding:10px 16px;margin:10px 0;font-size:13px;color:#fde68a;text-align:center;font-weight:700}
+
+/* pattern pool cards */
+.pool{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:700px){.pool{grid-template-columns:1fr}}
+.pat{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:18px 20px;transition:.2s}
+.pat:hover{border-color:#333;transform:translateY(-1px)}
+.pat .pn{font-size:10px;color:#60a5fa;font-weight:800;letter-spacing:.15em;margin-bottom:6px}
+.pat h4{font-size:15px;font-weight:800;color:#fff;margin-bottom:10px}
+.pat .hook{font-size:13px;color:#ccc;line-height:1.7;margin-bottom:10px}
+.pat .why{font-size:11.5px;color:#888;border-top:1px solid #1a1a2e;padding-top:8px;margin-top:8px}
+.pat .why strong{color:#f472b6}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520;margin-top:80px}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#mech">メカニクス</a>
+<a href="#DD-01">姫継承</a>
+<a href="#DD-02">3戦略粉砕</a>
+<a href="#pool">未開発プール</a>
+<a href="scripts-yofukashi-bible.html" style="color:#fbbf24">📖 Bible</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="ep">DEEP DARK / ANCIENT CITY SHORTS</div>
+<h1>よふかしくらぶ！<br>深淵・地下都市編</h1>
+<div class="sub">—— ウォーデンと地下都市の固有メカニクスで組むショート台本集 ——</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="mech"><span class="tag">01 — MECHANICS POOL</span>使える固有メカニクス</h2>
+<p class="h2-desc">地下都市とウォーデンだけが持つ仕様。これを笑いに変換する。</p>
+<!-- ============================================================ -->
+
+<div class="mech-tab">
+<div class="mech-row"><span class="label">盲目</span><span class="desc">ウォーデンは目が見えない。動かなければ気付かれない。</span></div>
+<div class="mech-row"><span class="label">振動探知</span><span class="desc">音・足音・通知音・心拍…全部バレる。声を出したら即死。</span></div>
+<div class="mech-row"><span class="label">嗅覚</span><span class="desc">見えなくても匂いで追跡。香水・汗・食べ物バレる。</span></div>
+<div class="mech-row"><span class="label">ソニックブーム</span><span class="desc">壁貫通の遠距離攻撃。隠れても逃げられない。</span></div>
+<div class="mech-row"><span class="label">4回シュリーカー</span><span class="desc">3回目の警告音で止めればギリ召喚されない。チキンレース成立。</span></div>
+<div class="mech-row"><span class="label">羊毛ブロック</span><span class="desc">唯一振動を伝えない救世主。絨毯作戦が可能。</span></div>
+<div class="mech-row"><span class="label">Swift Sneak</span><span class="desc">地下都市限定エンチャ。無音移動ができる。宝探しネタ。</span></div>
+<div class="mech-row"><span class="label">回収コンパス</span><span class="desc">死んだ場所を指す。地下都市で死ぬ→またそこへ導かれる無限地獄。</span></div>
+<div class="mech-row"><span class="label">壊れたポータル</span><span class="desc">未実装の謎のポータル。起動したら何処かヤバい次元へ（創作自由）。</span></div>
+<div class="mech-row"><span class="label">リインフォースド・ディープスレート</span><span class="desc">絶対に壊れない壁。絶望の象徴。</span></div>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="tag">02 — FULL SCRIPTS</span>完成台本（2本）</h2>
+<p class="h2-desc">メカニクスを核に、キャラ性と笑いを最大化したフル台本。</p>
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!-- DD-01 姫継承 -->
+<!-- ============================================================ -->
+<div class="sc featured" id="DD-01">
+<div class="sc-head">
+<span class="sc-num">DD-01</span>
+<span class="sc-title">古代都市、まひるが姫を継いだ日</span>
+<div class="sc-meta">
+<span class="tag t-feat">FEATURED</span>
+<span class="tag t-dur">50秒</span>
+<span class="tag t-mech">振動・シュリーカー</span>
+<span class="tag t-char">まひる覚醒</span>
+</div>
+</div>
+
+<div class="concept"><strong>コンセプト</strong>ホラー風に張り詰めた空気、ウォーデン降臨で視聴者震え上がる。が、ウォーデンは誰も殺さず、まひるに「姫」の看板を手渡す。まひるが深淵に本籍を移す馬鹿シリアス。</div>
+
+<div class="scene-h">🎬 HOOK（0:00-0:04）</div>
+<div class="meta-box"><strong>画</strong>真っ暗な深淵、青ソウルキャンドル、巨大骨格城／<strong>SE</strong>低音の鼓動</div>
+<div class="telop">「4人で深淵に入ったら、誰か1人、帰れなくなった」</div>
+
+<div class="scene-h">🎬 探索（0:04-0:15）</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（小声）絶対、音、出すな。出したら、即、死ぬ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（口パクで）も・う・帰・り・た・い</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（匍匐前進）……。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（無言、だが目が異常にキラついてる）</span></div>
+</div>
+
+<div class="scene-h">🎬 足音（0:15-0:22）</div>
+<div class="meta-box"><strong>SE</strong>ズシン……ズシン……</div>
+<div class="meta-box"><strong>画</strong>シュリーカー青く連鎖光る → 4回、召喚完了。巨大ウォーデンがゆっくり姿を現す</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（声にならない悲鳴）ひぃ……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（冷や汗）動くな、動くな……。</span></div>
+</div>
+
+<div class="scene-h">🎬 予想外（0:22-0:32）</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ウォーデンがあさめの前を通過 → やとらの前を通過 → ひぐれの前を通過。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">え。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">え。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ウォーデン、まひるの前で止まる。胸の光がまひるの病み垢通知ランプと同じリズムで点滅。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（目だけ動かす）……え、私？</span></div>
+</div>
+
+<div class="scene-h">🎬 姫継承（0:32-0:42）</div>
+<div class="dial">
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ウォーデンが手を差し出す。手のひらに看板ブロック。「姫 — 深淵継承」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（震える）な、なにこれ……？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ウォーデンが、まひるを、認めてる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">「姫」のブランド継承権かよ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（覚醒した目）……やっと、私の時代。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">地上の病み垢3万、捨ててくる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（叫ぶ）まひるちゃん！？戻って！！！</span></div>
+</div>
+
+<div class="scene-h">🎬 選択（0:42-0:50）</div>
+<div class="dial">
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ウォーデンと並んで歩き出す）真昼、って名前なのに、深淵の、姫になった。これ以上、名前詐欺、ない。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ、呆然）……まひるが、本籍を、深淵に、移した。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるのスマホに通知。病み垢フォロワー 30,000 → 300,000（急上昇）。投稿「深淵からライブ配信します」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">バズってる！？</span></div>
+</div>
+<div class="telop">「真の姫は、地上にはいなかった」</div>
+
+<div class="beat"><strong>秀逸ポイント：</strong>(1) ウォーデンが無言だから最後まで怖さが保たれる (2) 「姫」継承がシリーズテーマ「本当の居場所」と直結 (3) ループ設計＝2周目で「まひるの目、最初からキラついてた」＋「シュリーカー4回が病み垢通知リズム」＋「ウォーデンの色がまひる色」の3段仕込み</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DD-02 3戦略粉砕 -->
+<!-- ============================================================ -->
+<div class="sc featured" id="DD-02">
+<div class="sc-head">
+<span class="sc-num">DD-02</span>
+<span class="sc-title">やとらの深淵攻略3戦略、5年分、秒で崩壊</span>
+<div class="sc-meta">
+<span class="tag t-feat">FEATURED</span>
+<span class="tag t-dur">50秒</span>
+<span class="tag t-mech">盲目・嗅覚・ブーム</span>
+<span class="tag t-char">やとらのクール粉砕</span>
+</div>
+</div>
+
+<div class="concept"><strong>コンセプト</strong>やとらが5年かけた深淵攻略法3つを全部披露。全部、実際のマイクラ仕様で正しく粉砕。最終手段＝「帰る」で締める三段オチ。</div>
+
+<div class="scene-h">🎬 HOOK（0:00-0:05）</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（自信満々）俺、5年かけて、深淵攻略法、3つ、作った。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、さすがガチ勢！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">頼りになる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……今日、生きて帰れる感じ、ある？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（クール）ある。</span></div>
+</div>
+<div class="telop">「戦略家やとら、5年分の深淵攻略」</div>
+
+<div class="scene-h">🎬 戦略①：盲目バフ（0:05-0:16）</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ウォーデンは、盲目。動かなければ、絶対、気付かれない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">天才じゃん！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人静止、ウォーデンが目の前を通過。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（息ひそめ）……ほんとに通った。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ドヤ）だろ。これ、論文にしてもいい。</span></div>
+<div class="line"><span class="who who-sys">SE</span><span class="txt">ピコン！（あさめスマホ通知）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あ、TikTokコメント通知。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あさめ、喋るのも、ダメ、な？</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、喋っ、てる、のも、ダメ……？</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ソニックブーム → 4人吹っ飛び → You Died</span></div>
+</div>
+<div class="telop">理論①：× ／ 振動には「声」も含まれる</div>
+
+<div class="scene-h">🎬 戦略②：羊毛の絨毯（0:16-0:30）</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">対策、2。羊毛ブロックは、振動、伝えない。床、全部、羊毛にする。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人が羊毛を敷き詰めて歩く。完全無音。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">天才！本物の天才！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（超ドヤ）これは、動画ネタにもなる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ウォーデンが不審そうに近づく。鼻をヒクヒクさせる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小声）……あれ、匂い嗅いでない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……あ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ウォーデンがまひるに直行、撲殺。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（死に際）え、なんで、私だけ、死んだの……？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ウォーデンは、嗅覚、もあった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まひる、今日、何の香水？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……病み垢で貰った、深淵の香り、ってやつ。</span></div>
+<div class="line"><span class="who who-n">（コーラス）</span><span class="txt">それが原因だろ。</span></div>
+</div>
+<div class="telop">理論②：× ／ ウォーデンは嗅覚もある</div>
+
+<div class="scene-h">🎬 戦略③：壁の向こうは安全（0:30-0:42）</div>
+<div class="dial">
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し焦り）最後の策。壁の向こうに逃げれば、絶対、攻撃、届かない。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（疑心）今までの2つ、全部崩れてるよ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">これは、完璧。壁、厚さ5ブロック。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人が壁の向こうに隠れる。ウォーデンが壁越しに立つ。胸が青く光り始める。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（気づく）……あ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">なに。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……ソニックブーム、貫通する。</span></div>
+<div class="line"><span class="who who-sys">SE</span><span class="txt">ドンッ！！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ブームが壁を突き抜け、4人吹っ飛ぶ。You Died</span></div>
+</div>
+<div class="telop">理論③：× ／ ソニックブームは壁貫通</div>
+
+<div class="scene-h">🎬 最終戦略（0:42-0:50）</div>
+<div class="dial">
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">や、やとらくん……次の手、ある？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（長い沈黙）……ある。</span></div>
+<div class="line"><span class="who who-n">（3人）</span><span class="txt">（前のめり）！！！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最終戦略。帰る。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……は？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（真顔）深淵、攻略、しない。帰って、地上で、建築する。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……それ、5年かけて、たどり着いた、結論か？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">5年の重み、軽くない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（サッと手を返す）……クリエイティブモードで、観光だけ、する。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">4人、ポータルで地上へ撤退。</span></div>
+</div>
+<div class="telop">「やとらの本気の深淵攻略 — 3戦略全敗、最終手段は撤退」</div>
+
+<div class="beat"><strong>秀逸ポイント：</strong>(1) 全失敗が実仕様で正しい＝視聴者「へぇ知らなかった」教育効果 (2) やとらの戦略家＋クールぶってる＋5年ガチ勢キャラが一気に崩壊 (3) 三段オチの4つ目で角度を変える王道 (4) キャラ毎に敗因が違う（通知音/香水/自信過剰） (5) 「結局帰る」はマイクラ玄人あるあるで刺さる</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="pool"><span class="tag">03 — CONCEPT POOL</span>未開発パターンプール</h2>
+<p class="h2-desc">まだフル台本化していないアイデア。今後、深淵/ウォーデン系の話数を書く時の種。</p>
+<!-- ============================================================ -->
+
+<div class="pool">
+
+<div class="pat">
+<div class="pn">PATTERN A</div>
+<h4>ウォーデン育児中</h4>
+<div class="hook">古代都市に侵入したら、ウォーデンが子ウォーデンを寝かしつけ中。新ルール「赤ちゃん起こしたら即死」。ウォーデン＝母性系。子ウォーデンが泣き出し、親ウォーデンが怖い顔で4人を睨む→「失礼します」と静かに退場。</div>
+<div class="why"><strong>核：</strong>怖いもの＝実は日常のギャップ萌え。ビジュアル強い。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN C</div>
+<h4>サイレント・ゲームショー</h4>
+<div class="hook">深淵潜入をゲームショー形式で実況。ノイズメーター装備。「まひる、ため息！-10点！」。各キャラの「音を出す理由」でキャラ紹介：あさめ陽キャ、ひぐれ運動部反応、やとらクール発言、まひる無言。最後まで生き残るのはまひる（病み、一番音を出さない）。</div>
+<div class="why"><strong>核：</strong>フォーマットの新規性。キャラ性の可視化。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN D</div>
+<h4>やとらの道間違え</h4>
+<div class="hook">張り詰めた10秒、ウォーデン出現！→ ただのスケルトン。ここ古代都市じゃなくて普通の洞窟。やとらの指揮と講義、全部無駄。「……あれ」のクール崩壊。</div>
+<div class="why"><strong>核：</strong>クール崩壊ベタ笑い。読めるけど短尺なら成立。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN E</div>
+<h4>ひぐれ運動部無双</h4>
+<div class="hook">ウォーデンのソニックブームを、ひぐれがバスケのクロスオーバーで回避。サッカー部の走力で逃げ切る。「部活の応用でボス撃破」。運動神経とマイクラの異次元融合。</div>
+<div class="why"><strong>核：</strong>ひぐれの新設定（運動部すけっと）フル活用。爽快感。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN F</div>
+<h4>回収コンパス無限ループ</h4>
+<div class="hook">深淵で4人死亡 → リスポーン → 回収コンパスが深淵の入口を指す → 無意識に歩いて戻る → また死ぬ → コンパスが指す → また戻る。ウォーデンが「また来たな」の顔。行動の無限ループ化。</div>
+<div class="why"><strong>核：</strong>マイクラ固有アイテム（回収コンパス）の皮肉な使い方。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN G</div>
+<h4>壊れたポータル起動</h4>
+<div class="hook">古代都市の「壊れた未実装ポータル」を4人が修理起動したら、想定外の次元へ。オチの次元は自由設定 — 例：「Among Us世界」「バグった学校」「現実の視聴者の部屋」など、創作自由。</div>
+<div class="why"><strong>核：</strong>謎のロアを利用、ネザー/エンドじゃない第3の飛び先。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN H</div>
+<h4>Swift Sneak争奪戦</h4>
+<div class="hook">地下都市限定エンチャント「Swift Sneak」を巡って4人が泥棒合戦。静かに動く必要があるのに、奪い合いで振動発生→ウォーデン召喚。手に入れた奴は学校の廊下も無音で移動できる特権を得る。</div>
+<div class="why"><strong>核：</strong>レア報酬を取り合うチャレンジ型。今後の日常回につながる。</div>
+</div>
+
+<div class="pat">
+<div class="pn">PATTERN I</div>
+<h4>盲目ウォーデンと目合わせ</h4>
+<div class="hook">4人がウォーデンの真ん前に立って動かない。「盲目だから見えない」。絶対的安全。でも全員、別々の理由で動いちゃう（あさめ：TikTok撮りたい、ひぐれ：くしゃみ、まひる：スマホ通知）。一人ずつ脱落していく脱出ゲーム。</div>
+<div class="why"><strong>核：</strong>盲目メカニクスをキャラ毎の失敗で見せる。</div>
+</div>
+
+</div>
+
+<div class="footer">
+<div><strong>よふかしくらぶ！</strong> 深淵・地下都市編</div>
+<div>ショート台本集 — 2026-04-20</div>
+<div style="margin-top:10px"><a href="scripts-yofukashi-bible.html">📖 シリーズバイブル</a> ／ <a href="scripts-yofukashi-origin.html">← EP01 結成編</a></div>
+</div>
+
+</div>
+
+</body>
+</html>

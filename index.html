@@ -185,6 +185,11 @@ body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,
 <span class="name">直近バズ速報 04月</span>
 <span class="cnt">🔥</span>
 </div>
+<div class="nav-item" data-file="scripts-yofukashi-weekly-shorts.html" onclick="loadFile(this)">
+<span class="dot" style="background:#f87171"></span>
+<span class="name">今週のバズ Tracker</span>
+<span class="cnt">▶</span>
+</div>
 <div class="nav-item" data-file="scripts-yofukashi.html" onclick="loadFile(this)">
 <span class="dot" style="background:#67e8f9"></span>
 <span class="name">本編</span>
@@ -335,7 +340,7 @@ body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,
 
 <!-- iframe viewer -->
 <div class="viewer" id="viewer" style="display:none">
-<iframe id="frame" sandbox="allow-same-origin allow-scripts"></iframe>
+<iframe id="frame" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation allow-forms allow-downloads" allow="autoplay; fullscreen; picture-in-picture; clipboard-read; clipboard-write"></iframe>
 </div>
 
 <!-- favorites view -->

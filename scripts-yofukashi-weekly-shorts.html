@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！今週のバズショート — Weekly Tracker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:14px;line-height:1.6}
+a{color:#60a5fa;text-decoration:none}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0a0a14,#0f0f1a);border-bottom:1px solid #1a1a2e;padding:18px 24px}
+.header-inner{max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.title{font-size:20px;font-weight:900;background:linear-gradient(135deg,#fbbf24,#f87171,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.title .sub{font-size:11px;color:#666;margin-left:8px;font-weight:600}
+.stats{display:flex;gap:16px;font-size:11px;color:#888}
+.stats span strong{color:#fbbf24;font-size:14px;margin-right:3px}
+
+/* TOOLBAR */
+.toolbar{background:#0c0c14;border-bottom:1px solid #1a1a2e;padding:12px 24px;position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,10,18,.92)}
+.toolbar-inner{max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tg{display:flex;gap:4px;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:4px}
+.tg button{background:none;border:none;color:#888;padding:5px 11px;border-radius:5px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}
+.tg button:hover{color:#fff}
+.tg button.active{background:#1a1a2e;color:#60a5fa}
+.search{flex:1;min-width:180px;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:6px 12px;color:#eee;font-size:12px;outline:none}
+.search:focus{border-color:#60a5fa}
+.btn{background:#1a1a2e;border:1px solid #2a2a3e;color:#ddd;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;transition:.15s}
+.btn:hover{background:#262640;color:#fff}
+.btn.primary{background:linear-gradient(135deg,#a78bfa,#f472b6);border:none;color:#fff}
+.btn.primary:hover{transform:translateY(-1px)}
+.btn.danger{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3);color:#fca5a5}
+
+/* MAIN */
+main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
+.empty{text-align:center;padding:80px 20px;color:#444}
+.empty .icon{font-size:48px;margin-bottom:12px}
+.empty p{font-size:14px;max-width:360px;margin:0 auto}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+.card{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;overflow:hidden;transition:.2s;position:relative;cursor:pointer}
+.card:hover{border-color:#3a3a55;transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.card .thumb{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .thumb .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;transition:.2s}
+.card:hover .thumb .play{background:#f87171;transform:translate(-50%,-50%) scale(1.1)}
+.card.playing .thumb{display:none}
+.card .embed{aspect-ratio:9/16;display:none;background:#000}
+.card.playing .embed{display:block}
+.card .embed iframe{width:100%;height:100%;border:none}
+.card-body{padding:10px 12px}
+.card-title{font-size:12px;font-weight:700;color:#eee;line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px}
+.card-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.03em}
+.tg-jp{background:rgba(248,113,113,.18);color:#f87171}
+.tg-intl{background:rgba(96,165,250,.18);color:#60a5fa}
+.tg-cat{background:rgba(168,85,247,.15);color:#c084fc}
+.tg-hot{background:rgba(250,204,21,.18);color:#fbbf24}
+.card-footer{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#666}
+.card-channel{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-actions{display:none;position:absolute;top:8px;right:8px;gap:4px;background:rgba(0,0,0,.7);padding:4px;border-radius:6px;backdrop-filter:blur(4px);z-index:10}
+.card:hover .card-actions{display:flex}
+.card-actions button{background:none;border:none;color:#ccc;padding:4px;cursor:pointer;font-size:13px;border-radius:3px}
+.card-actions button:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.show{display:flex}
+.modal{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:14px;padding:24px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto}
+.modal h3{font-size:17px;font-weight:800;margin-bottom:14px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.modal h3 .close{background:none;border:none;color:#888;font-size:22px;cursor:pointer;padding:0;line-height:1}
+.modal h3 .close:hover{color:#fff}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11px;color:#888;margin-bottom:5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.field input,.field textarea,.field select{width:100%;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:8px 12px;color:#eee;font-size:13px;outline:none;font-family:inherit}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#60a5fa}
+.field textarea{min-height:60px;resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+
+.preview{background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:10px;display:flex;gap:10px;align-items:center;margin-top:8px;font-size:11px;color:#aaa}
+.preview img{width:60px;height:60px;object-fit:cover;border-radius:4px}
+.preview-info{flex:1}
+.preview-info strong{color:#eee;display:block;font-size:12px;margin-bottom:3px}
+
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#eee;padding:12px 18px;border-radius:8px;font-size:12px;z-index:300;transform:translateY(100px);opacity:0;transition:.3s;border:1px solid #333}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.err{background:rgba(239,68,68,.2);border-color:#ef4444;color:#fca5a5}
+.toast.ok{background:rgba(34,197,94,.15);border-color:#22c55e;color:#86efac}
+
+/* INFO BOX */
+.info{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:12.5px;color:#93c5fd;line-height:1.7}
+.info strong{color:#60a5fa}
+.info kbd{background:#1a1a2e;padding:2px 6px;border-radius:3px;font-size:11px;border:1px solid #2a2a3e;font-family:monospace}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="header-inner">
+<div class="title">🔥 今週のバズマイクラショート <span class="sub">Weekly Tracker / 国内・海外</span></div>
+<div class="stats">
+<span><strong id="st-total">0</strong>動画</span>
+<span><strong id="st-jp">0</strong>国内</span>
+<span><strong id="st-intl">0</strong>海外</span>
+<span><strong id="st-week">0</strong>今週追加</span>
+</div>
+</div>
+</div>
+
+<div class="toolbar">
+<div class="toolbar-inner">
+<div class="tg" id="filter-region">
+<button class="active" data-r="all">All</button>
+<button data-r="jp">🇯🇵 国内</button>
+<button data-r="intl">🌐 海外</button>
+</div>
+<div class="tg" id="filter-time">
+<button class="active" data-t="all">全期間</button>
+<button data-t="week">今週</button>
+<button data-t="month">今月</button>
+</div>
+<div class="tg" id="filter-cat">
+<button class="active" data-c="all">全カテゴリ</button>
+<button data-c="アプデ便乗">アプデ</button>
+<button data-c="チャレンジ">チャレンジ</button>
+<button data-c="アニメ">アニメ</button>
+<button data-c="ストーリー">ストーリー</button>
+<button data-c="検証">検証</button>
+<button data-c="ハック">ハック</button>
+<button data-c="メーム">メーム</button>
+<button data-c="その他">その他</button>
+</div>
+<input type="text" class="search" id="search" placeholder="🔎 検索（タイトル・チャンネル）">
+<select id="sort" class="search" style="flex:none;width:auto;font-size:12px">
+<option value="new">新しい順</option>
+<option value="old">古い順</option>
+<option value="views">再生数順</option>
+<option value="hot">🔥 HOT順</option>
+</select>
+<button class="btn primary" onclick="openAddModal()">+ 動画追加</button>
+<button class="btn" onclick="exportData()">📥 JSONエクスポート</button>
+<button class="btn" onclick="document.getElementById('imp-file').click()">📤 JSONインポート</button>
+<input type="file" id="imp-file" accept=".json" style="display:none" onchange="importData(event)">
+</div>
+</div>
+
+<main>
+<div class="info">
+<strong>📌 使い方：</strong>
+動画カードをクリックでその場で再生。「+ 動画追加」でURL貼るだけで自動的にタイトル・チャンネル名・サムネイル取得（YouTube oEmbed経由）。
+データは自動的にブラウザに保存（localStorage）。<kbd>JSONエクスポート</kbd>でバックアップ／他端末への移行も可能。
+</div>
+
+<div id="grid" class="grid"></div>
+<div id="empty" class="empty" style="display:none">
+<div class="icon">📭</div>
+<p>動画がまだありません。「+ 動画追加」からYouTube ShortsのURLを貼ってください。</p>
+</div>
+</main>
+
+<!-- ADD/EDIT MODAL -->
+<div class="modal-bg" id="modal-bg">
+<div class="modal">
+<h3 id="modal-title">動画を追加 <button class="close" onclick="closeModal()">&times;</button></h3>
+<div class="field">
+<label>YouTube ShortsまたはYouTube動画URL</label>
+<input type="text" id="m-url" placeholder="https://www.youtube.com/shorts/XXXX or https://youtu.be/XXXX">
+<button class="btn" style="margin-top:6px" onclick="autoFetchInfo()">⚡ タイトル・サムネ自動取得</button>
+<div id="preview" style="display:none" class="preview">
+<img id="prev-thumb" src="">
+<div class="preview-info">
+<strong id="prev-title">—</strong>
+<span id="prev-channel">—</span>
+</div>
+</div>
+</div>
+<div class="field">
+<label>タイトル（編集可）</label>
+<input type="text" id="m-title" placeholder="動画タイトル">
+</div>
+<div class="field">
+<label>チャンネル名</label>
+<input type="text" id="m-channel" placeholder="例: せぶーん">
+</div>
+<div class="field-row">
+<div class="field">
+<label>地域</label>
+<select id="m-region">
+<option value="jp">🇯🇵 国内</option>
+<option value="intl">🌐 海外</option>
+</select>
+</div>
+<div class="field">
+<label>カテゴリ</label>
+<select id="m-category">
+<option value="アプデ便乗">アプデ便乗</option>
+<option value="チャレンジ">チャレンジ</option>
+<option value="アニメ">アニメ</option>
+<option value="ストーリー">ストーリー</option>
+<option value="検証">検証</option>
+<option value="ハック">ハック</option>
+<option value="メーム">メーム</option>
+<option value="その他">その他</option>
+</select>
+</div>
+</div>
+<div class="field-row">
+<div class="field">
+<label>再生数（K単位、任意）</label>
+<input type="number" id="m-views" placeholder="例: 1500 (=1.5M)">
+</div>
+<div class="field">
+<label>HOT判定</label>
+<select id="m-hot">
+<option value="0">通常</option>
+<option value="1">🔥 HOT</option>
+</select>
+</div>
+</div>
+<div class="field">
+<label>備考・所感（任意）</label>
+<textarea id="m-comment" placeholder="例: フォロワー獲得型のお手本、よふかしで真似できる"></textarea>
+</div>
+<div class="modal-actions">
+<button class="btn" onclick="closeModal()">キャンセル</button>
+<button class="btn primary" id="save-btn" onclick="saveVideo()">保存</button>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const STORAGE_KEY = 'yofukashi-weekly-shorts-v1';
+let videos = [];
+let editIndex = -1;
+
+// ─── Storage ───
+function loadVideos(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      videos = JSON.parse(raw);
+    } else {
+      videos = getInitialSeed();
+      saveVideos();
+    }
+  } catch(e){
+    console.error('loadVideos failed', e);
+    videos = getInitialSeed();
+  }
+}
+function saveVideos(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(videos));
+}
+
+function getInitialSeed(){
+  // Pre-populate with reference channel sample shorts
+  // Users can replace these with real "this week" content
+  return [
+    {
+      id: 'demo-1', url: '', vid: '',
+      title: '【サンプル】サルファーキューブで温泉作ってみた',
+      channel: 'せぶーん（DGSSEVEN）参考',
+      region: 'jp', category: 'アプデ便乗', viewsK: 0, hot: 1,
+      comment: 'アプデ便乗の見本。実際のURLに置き換えてください',
+      addedDate: '2026-04-20'
+    },
+    {
+      id: 'demo-2', url: '', vid: '',
+      title: '【サンプル】マイクラで取った食料しかリアルで食えない縛り',
+      channel: 'なしろ参考',
+      region: 'jp', category: 'チャレンジ', viewsK: 0, hot: 1,
+      comment: 'リアル交差縛りの代表例。実際のURLに置き換え',
+      addedDate: '2026-04-20'
+    },
+    {
+      id: 'demo-3', url: '', vid: '',
+      title: '【SAMPLE】Camman18-style challenge with 3M comments',
+      channel: 'Camman18参考',
+      region: 'intl', category: 'チャレンジ', viewsK: 0, hot: 1,
+      comment: 'コメ参加型チャレンジ。実際のURLに置き換え',
+      addedDate: '2026-04-20'
+    }
+  ];
+}
+
+// ─── URL parsing ───
+function extractVideoId(url){
+  if(!url) return null;
+  const patterns = [
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+    /youtu\.be\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/  // raw video id
+  ];
+  for(const p of patterns){
+    const m = url.match(p);
+    if(m) return m[1];
+  }
+  return null;
+}
+
+// ─── oEmbed via noembed (CORS-friendly) ───
+async function fetchVideoInfo(url){
+  try{
+    const apiUrl = 'https://noembed.com/embed?url=' + encodeURIComponent(url);
+    const res = await fetch(apiUrl);
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if(data.error) throw new Error(data.error);
+    return {
+      title: data.title || '',
+      channel: data.author_name || '',
+      thumbnail: data.thumbnail_url || ''
+    };
+  } catch(e){
+    console.warn('noembed failed, trying direct YouTube oEmbed', e);
+    try{
+      const apiUrl = 'https://www.youtube.com/oembed?url=' + encodeURIComponent(url) + '&format=json';
+      const res = await fetch(apiUrl);
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      return {
+        title: data.title || '',
+        channel: data.author_name || '',
+        thumbnail: data.thumbnail_url || ''
+      };
+    } catch(e2){
+      throw new Error('Both oEmbed APIs failed. URL might be invalid.');
+    }
+  }
+}
+
+async function autoFetchInfo(){
+  const url = document.getElementById('m-url').value.trim();
+  const vid = extractVideoId(url);
+  if(!vid){
+    toast('有効なYouTube URLを入力してください', 'err');
+    return;
+  }
+  const cleanUrl = 'https://www.youtube.com/watch?v=' + vid;
+  toast('取得中...', 'ok');
+  try{
+    const info = await fetchVideoInfo(cleanUrl);
+    if(info.title) document.getElementById('m-title').value = info.title;
+    if(info.channel) document.getElementById('m-channel').value = info.channel;
+    document.getElementById('preview').style.display = 'flex';
+    document.getElementById('prev-thumb').src = info.thumbnail || ('https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg');
+    document.getElementById('prev-title').textContent = info.title;
+    document.getElementById('prev-channel').textContent = info.channel;
+    toast('情報を取得しました', 'ok');
+  } catch(e){
+    console.error(e);
+    // Fallback: just show thumbnail from videoId, user enters title manually
+    document.getElementById('preview').style.display = 'flex';
+    document.getElementById('prev-thumb').src = 'https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg';
+    document.getElementById('prev-title').textContent = '（取得失敗）手動でタイトル入力してください';
+    document.getElementById('prev-channel').textContent = '';
+    toast('自動取得失敗、手動で入力してください', 'err');
+  }
+}
+
+// ─── Modal ───
+function openAddModal(){
+  editIndex = -1;
+  document.getElementById('modal-title').firstChild.textContent = '動画を追加 ';
+  document.getElementById('m-url').value = '';
+  document.getElementById('m-title').value = '';
+  document.getElementById('m-channel').value = '';
+  document.getElementById('m-region').value = 'jp';
+  document.getElementById('m-category').value = 'チャレンジ';
+  document.getElementById('m-views').value = '';
+  document.getElementById('m-hot').value = '0';
+  document.getElementById('m-comment').value = '';
+  document.getElementById('preview').style.display = 'none';
+  document.getElementById('modal-bg').classList.add('show');
+}
+function openEditModal(idx){
+  editIndex = idx;
+  const v = videos[idx];
+  document.getElementById('modal-title').firstChild.textContent = '動画を編集 ';
+  document.getElementById('m-url').value = v.url || '';
+  document.getElementById('m-title').value = v.title || '';
+  document.getElementById('m-channel').value = v.channel || '';
+  document.getElementById('m-region').value = v.region || 'jp';
+  document.getElementById('m-category').value = v.category || 'チャレンジ';
+  document.getElementById('m-views').value = v.viewsK || '';
+  document.getElementById('m-hot').value = v.hot ? '1' : '0';
+  document.getElementById('m-comment').value = v.comment || '';
+  if(v.vid){
+    document.getElementById('preview').style.display = 'flex';
+    document.getElementById('prev-thumb').src = 'https://i.ytimg.com/vi/' + v.vid + '/hqdefault.jpg';
+    document.getElementById('prev-title').textContent = v.title;
+    document.getElementById('prev-channel').textContent = v.channel;
+  }
+  document.getElementById('modal-bg').classList.add('show');
+}
+function closeModal(){
+  document.getElementById('modal-bg').classList.remove('show');
+}
+
+function saveVideo(){
+  const url = document.getElementById('m-url').value.trim();
+  const title = document.getElementById('m-title').value.trim();
+  const channel = document.getElementById('m-channel').value.trim();
+  const vid = extractVideoId(url);
+
+  if(!title){
+    toast('タイトルを入力してください', 'err');
+    return;
+  }
+
+  const data = {
+    id: editIndex >= 0 ? videos[editIndex].id : ('vid-' + Date.now()),
+    url: vid ? 'https://www.youtube.com/shorts/' + vid : url,
+    vid: vid || '',
+    title,
+    channel,
+    region: document.getElementById('m-region').value,
+    category: document.getElementById('m-category').value,
+    viewsK: +document.getElementById('m-views').value || 0,
+    hot: document.getElementById('m-hot').value === '1' ? 1 : 0,
+    comment: document.getElementById('m-comment').value.trim(),
+    addedDate: editIndex >= 0 ? videos[editIndex].addedDate : new Date().toISOString().slice(0,10)
+  };
+
+  if(editIndex >= 0){
+    videos[editIndex] = data;
+    toast('更新しました', 'ok');
+  } else {
+    videos.unshift(data);
+    toast('追加しました', 'ok');
+  }
+  saveVideos();
+  closeModal();
+  render();
+}
+
+function deleteVideo(idx){
+  if(!confirm('この動画を削除しますか？')) return;
+  videos.splice(idx, 1);
+  saveVideos();
+  render();
+  toast('削除しました', 'ok');
+}
+
+// ─── Render ───
+function render(){
+  const region = document.querySelector('#filter-region button.active').dataset.r;
+  const time = document.querySelector('#filter-time button.active').dataset.t;
+  const cat = document.querySelector('#filter-cat button.active').dataset.c;
+  const search = document.getElementById('search').value.toLowerCase();
+  const sort = document.getElementById('sort').value;
+
+  let filtered = videos.slice();
+  if(region !== 'all') filtered = filtered.filter(v => v.region === region);
+  if(cat !== 'all') filtered = filtered.filter(v => v.category === cat);
+  if(time !== 'all'){
+    const now = new Date();
+    const cutoff = new Date(now);
+    if(time === 'week') cutoff.setDate(now.getDate() - 7);
+    if(time === 'month') cutoff.setDate(now.getDate() - 30);
+    filtered = filtered.filter(v => new Date(v.addedDate) >= cutoff);
+  }
+  if(search){
+    filtered = filtered.filter(v =>
+      (v.title || '').toLowerCase().includes(search) ||
+      (v.channel || '').toLowerCase().includes(search) ||
+      (v.comment || '').toLowerCase().includes(search)
+    );
+  }
+
+  if(sort === 'new') filtered.sort((a,b) => (b.addedDate || '').localeCompare(a.addedDate || ''));
+  if(sort === 'old') filtered.sort((a,b) => (a.addedDate || '').localeCompare(b.addedDate || ''));
+  if(sort === 'views') filtered.sort((a,b) => (b.viewsK || 0) - (a.viewsK || 0));
+  if(sort === 'hot') filtered.sort((a,b) => (b.hot || 0) - (a.hot || 0) || (b.viewsK || 0) - (a.viewsK || 0));
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+
+  if(filtered.length === 0){
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+  } else {
+    grid.style.display = 'grid';
+    empty.style.display = 'none';
+    grid.innerHTML = filtered.map((v, i) => {
+      const realIdx = videos.indexOf(v);
+      const thumbUrl = v.vid ? `https://i.ytimg.com/vi/${v.vid}/hqdefault.jpg` :
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="320" viewBox="0 0 180 320"><rect width="180" height="320" fill="%231a1a2e"/><text x="90" y="160" text-anchor="middle" fill="%23666" font-size="14">No URL</text></svg>';
+      return `
+        <div class="card" data-vid="${v.vid}" onclick="playCard(this)">
+          <div class="card-actions">
+            <button onclick="event.stopPropagation();openEditModal(${realIdx})" title="編集">✎</button>
+            <button onclick="event.stopPropagation();deleteVideo(${realIdx})" title="削除">🗑</button>
+          </div>
+          <div class="thumb">
+            <img src="${thumbUrl}" alt="" loading="lazy">
+            ${v.vid ? '<div class="play">▶</div>' : ''}
+          </div>
+          <div class="embed">
+            ${v.vid ? `<iframe src="" data-src="https://www.youtube.com/embed/${v.vid}?autoplay=1&playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>` : ''}
+          </div>
+          <div class="card-body">
+            <div class="card-title">${escHtml(v.title)}</div>
+            <div class="card-meta">
+              <span class="tag tg-${v.region === 'jp' ? 'jp' : 'intl'}">${v.region === 'jp' ? '🇯🇵' : '🌐'}</span>
+              <span class="tag tg-cat">${escHtml(v.category)}</span>
+              ${v.hot ? '<span class="tag tg-hot">🔥</span>' : ''}
+            </div>
+            <div class="card-footer">
+              <span class="card-channel">${escHtml(v.channel || '—')}</span>
+              ${v.viewsK ? `<span>${v.viewsK >= 1000 ? (v.viewsK/1000).toFixed(1)+'M' : v.viewsK+'K'}</span>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+  updateStats();
+}
+
+function playCard(el){
+  if(el.classList.contains('playing')) return;
+  const iframe = el.querySelector('iframe');
+  if(iframe && iframe.dataset.src){
+    iframe.src = iframe.dataset.src;
+  }
+  el.classList.add('playing');
+}
+
+function updateStats(){
+  document.getElementById('st-total').textContent = videos.length;
+  document.getElementById('st-jp').textContent = videos.filter(v => v.region === 'jp').length;
+  document.getElementById('st-intl').textContent = videos.filter(v => v.region === 'intl').length;
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  document.getElementById('st-week').textContent = videos.filter(v => new Date(v.addedDate) >= weekAgo).length;
+}
+
+function escHtml(s){
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function toast(msg, type){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type || '');
+  setTimeout(() => t.className = 'toast', 2200);
+}
+
+// ─── Import / Export ───
+function exportData(){
+  const data = {
+    exportedAt: new Date().toISOString(),
+    videos: videos
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'yofukashi-weekly-shorts-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('エクスポートしました', 'ok');
+}
+
+function importData(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try{
+      const data = JSON.parse(e.target.result);
+      const list = Array.isArray(data) ? data : (data.videos || []);
+      if(!Array.isArray(list)) throw new Error('Invalid format');
+      if(confirm(`${list.length}件をインポートします。既存データを上書きしますか？\nOK＝上書き / キャンセル＝マージ追加`)){
+        videos = list;
+      } else {
+        // Merge by id
+        for(const item of list){
+          const existing = videos.findIndex(v => v.id === item.id);
+          if(existing >= 0) videos[existing] = item;
+          else videos.push(item);
+        }
+      }
+      saveVideos();
+      render();
+      toast(`${list.length}件をインポート`, 'ok');
+    } catch(e){
+      console.error(e);
+      toast('インポート失敗：JSONが不正です', 'err');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+// ─── Filter events ───
+document.querySelectorAll('.tg').forEach(tg => {
+  tg.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    tg.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  });
+});
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('sort').addEventListener('change', render);
+
+// Close modal on background click
+document.getElementById('modal-bg').addEventListener('click', e => {
+  if(e.target.id === 'modal-bg') closeModal();
+});
+
+// ─── Init ───
+loadVideos();
+render();
+</script>
+
+</body>
+</html>

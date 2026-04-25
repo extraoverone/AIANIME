@@ -142,9 +142,11 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <option value="views">再生数順</option>
 <option value="hot">🔥 HOT順</option>
 </select>
-<button class="btn primary" onclick="openAddModal()">+ 動画追加</button>
-<button class="btn" onclick="exportData()">📥 JSONエクスポート</button>
-<button class="btn" onclick="document.getElementById('imp-file').click()">📤 JSONインポート</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900" onclick="openFetchModal()">🔥 トレンド自動取得</button>
+<button class="btn primary" onclick="openAddModal()">+ 手動追加</button>
+<button class="btn" onclick="exportData()">📥 エクスポート</button>
+<button class="btn" onclick="document.getElementById('imp-file').click()">📤 インポート</button>
+<button class="btn danger" onclick="clearAllVideos()" title="全削除">🗑</button>
 <input type="file" id="imp-file" accept=".json" style="display:none" onchange="importData(event)">
 </div>
 </div>
@@ -159,7 +161,8 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <div id="grid" class="grid"></div>
 <div id="empty" class="empty" style="display:none">
 <div class="icon">📭</div>
-<p>動画がまだありません。「+ 動画追加」からYouTube ShortsのURLを貼ってください。</p>
+<p style="margin-bottom:14px">動画がまだありません。<br>「🔥 トレンド自動取得」を押すとPiped API経由で人気動画を一括取得できます。</p>
+<button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900;padding:12px 24px" onclick="openFetchModal()">🔥 今すぐ取得</button>
 </div>
 </main>
 
@@ -233,10 +236,34 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 </div>
 </div>
 
+<!-- FETCH TRENDING MODAL -->
+<div class="modal-bg" id="fetch-modal-bg">
+<div class="modal" style="max-width:600px">
+<h3>🔥 トレンド動画を自動取得 <button class="close" onclick="closeFetchModal()">&times;</button></h3>
+<p style="font-size:12.5px;color:#999;margin-bottom:14px;line-height:1.7">
+Piped API（YouTube公開API、APIキー不要）経由でバズってるマイクラ動画を一括取得。プリセットを選んでください。重複は自動スキップ。
+</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+<button class="btn" data-preset="jp-all" onclick="fetchTrending('jp-all')" style="text-align:left;padding:10px 14px">🇯🇵 国内バズ全般</button>
+<button class="btn" data-preset="jp-update" onclick="fetchTrending('jp-update')" style="text-align:left;padding:10px 14px">🇯🇵 国内アプデ便乗</button>
+<button class="btn" data-preset="jp-story" onclick="fetchTrending('jp-story')" style="text-align:left;padding:10px 14px">🇯🇵 国内ストーリー系</button>
+<button class="btn" data-preset="intl-viral" onclick="fetchTrending('intl-viral')" style="text-align:left;padding:10px 14px">🌐 海外バイラル</button>
+<button class="btn" data-preset="intl-challenge" onclick="fetchTrending('intl-challenge')" style="text-align:left;padding:10px 14px">🌐 海外チャレンジ</button>
+<button class="btn" data-preset="intl-creators" onclick="fetchTrending('intl-creators')" style="text-align:left;padding:10px 14px">🌐 海外クリエイター</button>
+</div>
+<button class="btn primary" data-preset="all" onclick="fetchTrending('all')" style="width:100%;background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900;padding:12px">🔥 全部いっき取得（時間かかる、約30秒）</button>
+<p style="font-size:11px;color:#666;margin-top:14px;line-height:1.6">
+※ Piped APIの公開インスタンスを順番に試行します。タイムアウト/失敗があっても他で再試行。<br>
+※ 重複動画は自動的にスキップされます。<br>
+※ 地域・カテゴリは取得後タイトルから自動推定。あとで「✎編集」で変更できます。
+</p>
+</div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-const STORAGE_KEY = 'yofukashi-weekly-shorts-v2';
+const STORAGE_KEY = 'yofukashi-weekly-shorts-v3';
 let videos = [];
 let editIndex = -1;
 
@@ -260,56 +287,162 @@ function saveVideos(){
 }
 
 function getInitialSeed(){
-  // Pre-populated with REAL Minecraft shorts/videos found via research (2025-2026)
-  // Each entry has a real videoId so thumbnails load
-  const seed = [
-    // ─── 国内・ショート（実在URL）──────────────────────
-    { vid: 'ieGTkE9tG70', title: '2025年のVTuber何人いるか調べた結果がやばすぎた', channel: 'みっくんとみふう', region: 'jp', category: '検証', viewsK: 800, hot: 1, comment: 'VTuber×マイクラのクロスオーバー検証。コラボ層に強い' },
-    { vid: 'C9f1BR_YxFM', title: 'アイテム無しで落下ダメージを無効化できる海外の動画は本当か検証', channel: '愛channel', region: 'jp', category: '検証', viewsK: 1200, hot: 1, comment: '海外ハック検証系。「本当か」型のフックが鉄板' },
-    { vid: 'UJbLrsC0AFQ', title: '15年かけてエンドを現世みたいにした', channel: '不明', region: 'jp', category: 'ハック', viewsK: 500, hot: 1, comment: '長期建築のショート見せ。タイムラプス的構成' },
-    { vid: 'e5yWqNfjpU8', title: '最強の弓には『修繕』or『無限』どっち？', channel: '愛channel', region: 'jp', category: '検証', viewsK: 600, hot: 0, comment: 'シンプル検証もの。視聴者投票型のフォーマット' },
-    { vid: 'EQj9bpkZP2M', title: 'マイクラショート動画探偵【密室殺人】【ミステリー】', channel: 'そらねこ', region: 'jp', category: 'ストーリー', viewsK: 700, hot: 1, comment: 'ミステリーショート。よふかしくらぶでパロディ可能' },
-    { vid: 'r8pt65NGyQw', title: '【検証】岩盤くぐり抜けられるのはどれ？', channel: '不明', region: 'jp', category: '検証', viewsK: 400, hot: 0, comment: 'バグ系検証。比較フォーマット' },
-    { vid: 'O3D8CDiZOqg', title: 'トララレロトララの都市伝説を検証した結果', channel: '不明', region: 'jp', category: 'ストーリー', viewsK: 900, hot: 1, comment: '都市伝説検証。怖い話×マイクラ' },
-    { vid: 'JoWGWsxFFa0', title: '海外で大バズりした「リアルに影響が出る危険な世界」を調査', channel: '不明', region: 'jp', category: 'チャレンジ', viewsK: 1100, hot: 1, comment: '海外バズ→国内紹介ルート。情報還元型' },
-    { vid: '2k6ATiB12MI', title: '【ショートで700万回再生】マイクラやめたくなる瞬間まとめ', channel: '不明', region: 'jp', category: 'メーム', viewsK: 7000, hot: 1, comment: '700万再生のあるある系ショート総集編' },
-    { vid: 'uTEFXDX7lcQ', title: '【マイクラ】ショート動画 誰が一番バズらせられるか', channel: '不明', region: 'jp', category: 'メーム', viewsK: 500, hot: 0, comment: 'ショート制作対決企画。メタ的でおもしろい' },
+  // 空からスタート。「🔥 自動取得」ボタンでAPI経由でバズ動画を取得
+  return [];
+}
 
-    // ─── 海外・ショート（実在URL）──────────────────────
-    { vid: 'UQ4fHwC-hL0', title: 'Minecraft is getting a new game renderer 🤣 (lets make this viral!)', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 5000, hot: 1, comment: 'camman18のメーム拡散投稿。コメ参加型バズの典型' },
-    { vid: 'AYa6jziX5c4', title: 'defending myself.', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 3000, hot: 1, comment: 'リアクション型ショート。タイトルだけで気になる' },
-    { vid: 'eZXb1Eth5hI', title: 'looking at camman18 minecraft skins', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 2000, hot: 0, comment: 'コミュニティとの相互参加型コンテンツ' },
-    { vid: 'I7whKfU13kE', title: 'Funniest Minecraft Moments of 2025', channel: 'Minecraft Shorts', region: 'intl', category: 'メーム', viewsK: 2500, hot: 1, comment: '2025まとめショート。最新版' },
-    { vid: 'QqtnCJ_EE6U', title: '10000 IQ Minecraft Moment', channel: 'Minecraft Viral', region: 'intl', category: 'ハック', viewsK: 4000, hot: 1, comment: '頭脳プレイ系。「IQ表示」フォーマット' },
+// ─── Piped API でYouTube検索（CORS対応、APIキー不要）───
+const PIPED_INSTANCES = [
+  'https://pipedapi.kavin.rocks',
+  'https://pipedapi.adminforge.de',
+  'https://pipedapi.tokhmi.xyz',
+  'https://pipedapi-libre.kavin.rocks',
+  'https://api-piped.mha.fi'
+];
 
-    // ─── 海外・コンピレーション（参考用、長尺）─────────────
-    { vid: 'I9Tz_xvT6lA', title: "World's MOST Viewed Minecraft Shorts! (VIRAL CLIPS)", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 8000, hot: 1, comment: 'バズショート総集編。何が伸びてるか把握' },
-    { vid: 'xVMIXxYFhs0', title: "World's MOST VIEWED Minecraft Shorts EVER", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 12000, hot: 1, comment: '歴代バズショート。永久参考リファレンス' },
-    { vid: 'HhvCr8NzDKI', title: 'MOST Viewed MINECRAFT Shorts! (250M+ Views)', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 6000, hot: 1, comment: '2.5億再生超えコレクション' },
-    { vid: 'IWSk7Az2gnw', title: "World's FUNNIEST Minecraft Shorts", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 4000, hot: 0, comment: '面白さ特化のセレクション' },
-    { vid: 'seuxgKho9Xk', title: 'The Best Minecraft Video of 2025', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 3500, hot: 1, comment: '2025年ベストオブ。年間トレンド把握' },
-    { vid: 'yRYCdT11jzs', title: 'Year 2025 all viral shorts 😵🤯', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 2000, hot: 0, comment: '2025年バズ全集' },
-    { vid: '5wYpkorX2sk', title: 'Reacting to Minecraft Be Like... (Funny Shorts)', channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 5000, hot: 1, comment: 'PrestonPlayzのリアクションショート' },
-    { vid: 'r-DJq7caxcE', title: "Minecraft's FUNNIEST Shorts ft. Preston", channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 3000, hot: 0, comment: 'Prestonのコラボ＋反応芸' },
-    { vid: '9WCMxmnMInQ', title: 'MINECRAFT Shorts at DIFFERENT AGES!', channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 2500, hot: 0, comment: '年齢別マイクラ作品。世代比較ネタ' },
-    { vid: 'gsh0V4JVVeg', title: 'Viralmanclips18 #camman18 #minecraft #viral', channel: 'camman18 fan', region: 'intl', category: 'メーム', viewsK: 1500, hot: 0, comment: 'ファンメイドの拡散' },
-    { vid: '-bvZXXI0kFs', title: 'I Created FAKE Minecraft Shorts to Go VIRAL', channel: 'Minecraft Creator', region: 'intl', category: 'メーム', viewsK: 1800, hot: 1, comment: 'メタ的検証。「バズらせる方法」自体がバズる' },
-    { vid: 'STedYg3To2Y', title: 'How I Create Viral Minecraft Shorts', channel: 'Minecraft Creator', region: 'intl', category: 'メーム', viewsK: 1200, hot: 0, comment: 'バズ方程式の解説。クリエイター必見' }
-  ];
+async function pipedSearch(query, sortBy='upload_date'){
+  for(const instance of PIPED_INSTANCES){
+    try{
+      const url = `${instance}/search?q=${encodeURIComponent(query)}&filter=videos`;
+      const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+      if(!res.ok) continue;
+      const data = await res.json();
+      return data.items || [];
+    } catch(e){
+      console.warn('[piped] instance failed:', instance, e.message);
+      continue;
+    }
+  }
+  throw new Error('全てのPipedインスタンス接続失敗');
+}
 
-  return seed.map((s, i) => ({
-    id: 'seed-' + i,
-    vid: s.vid,
-    url: 'https://www.youtube.com/shorts/' + s.vid,
-    title: s.title,
-    channel: s.channel,
-    region: s.region,
-    category: s.category,
-    viewsK: s.viewsK,
-    hot: s.hot,
-    comment: s.comment,
-    addedDate: '2026-04-20'
-  }));
+// 日本語が含まれてれば'jp'、それ以外は'intl'
+function detectRegion(text){
+  return /[ぁ-んァ-ヶー一-龯]/.test(text || '') ? 'jp' : 'intl';
+}
+
+// タイトルからカテゴリを推測
+function guessCategory(title){
+  const t = (title || '').toLowerCase();
+  if(/アプデ|update|サルファー|temple|new block|新要素|新bio/i.test(t)) return 'アプデ便乗';
+  if(/縛り|challenge|チャレンジ|hardcore|but you can't|but i can't/i.test(t)) return 'チャレンジ';
+  if(/animation|アニメ|anime/i.test(t)) return 'アニメ';
+  if(/story|物語|ストーリー|ミステリー|mystery|怖い|horror/i.test(t)) return 'ストーリー';
+  if(/検証|test|tested|本当|truth|バグ|bug|exploit/i.test(t)) return '検証';
+  if(/トリック|trick|hack|tip|life hack|裏技/i.test(t)) return 'ハック';
+  if(/funny|面白|笑|moment|fail|wtf|cursed/i.test(t)) return 'メーム';
+  return 'その他';
+}
+
+// Piped item を内部形式に変換
+function pipedItemToVideo(item){
+  if(!item.url) return null;
+  const m = item.url.match(/v=([a-zA-Z0-9_-]{11})/) || item.url.match(/\/([a-zA-Z0-9_-]{11})$/);
+  if(!m) return null;
+  const vid = m[1];
+  const title = item.title || '';
+  const channel = item.uploaderName || '';
+  const region = detectRegion(title + ' ' + channel);
+  const category = guessCategory(title);
+  // viewsを K単位に
+  const viewsK = item.views ? Math.round(item.views / 1000) : 0;
+  // duration 60秒以下ならshort、それ以上ならregular video
+  const isShort = item.duration && item.duration <= 65;
+  return {
+    id: 'fetched-' + vid + '-' + Date.now(),
+    vid,
+    url: isShort ? 'https://www.youtube.com/shorts/' + vid : 'https://www.youtube.com/watch?v=' + vid,
+    title,
+    channel,
+    region,
+    category,
+    viewsK,
+    hot: viewsK >= 1000 ? 1 : 0, // 1M超えはHOT
+    comment: 'Piped API経由で自動取得 / ' + (item.uploadedDate || ''),
+    addedDate: new Date().toISOString().slice(0,10)
+  };
+}
+
+// プリセットクエリ
+const TREND_PRESETS = {
+  'jp-all': {
+    name: '🇯🇵 国内バズ全般',
+    queries: ['マイクラ shorts バズ', 'マイクラ ショート 検証', 'マイクラ 縛り', 'minecraft 日本']
+  },
+  'jp-update': {
+    name: '🇯🇵 国内アプデ便乗',
+    queries: ['マイクラ アプデ shorts', 'マイクラ サルファー', 'マイクラ 新要素 検証']
+  },
+  'jp-story': {
+    name: '🇯🇵 国内ストーリー系',
+    queries: ['マイクラ 都市伝説', 'マイクラ ミステリー shorts', 'マイクラ ホラー shorts']
+  },
+  'intl-viral': {
+    name: '🌐 海外バイラル',
+    queries: ['minecraft shorts viral', 'minecraft funny shorts', 'minecraft moments shorts']
+  },
+  'intl-challenge': {
+    name: '🌐 海外チャレンジ',
+    queries: ['minecraft hardcore shorts', "minecraft but you can't", 'minecraft challenge shorts']
+  },
+  'intl-creators': {
+    name: '🌐 海外クリエイター',
+    queries: ['camman18 minecraft', 'PrestonPlayz minecraft shorts', 'GEvids minecraft', 'sandiction minecraft', 'Aphmau minecraft']
+  },
+  'all': {
+    name: '🔥 全部いっき取得（時間かかる）',
+    queries: ['minecraft shorts viral', 'マイクラ shorts', 'minecraft funny moments', 'マイクラ 検証 shorts', 'minecraft challenge', 'マイクラ サルファー', 'camman18 minecraft', 'minecraft hardcore', 'マイクラ ホラー']
+  }
+};
+
+async function fetchTrending(presetKey){
+  const preset = TREND_PRESETS[presetKey];
+  if(!preset) return;
+  const btn = document.querySelector('[data-preset="'+presetKey+'"]');
+  if(btn){ btn.disabled = true; btn.textContent = '取得中...'; }
+  toast(`「${preset.name}」を取得中...`, 'ok');
+
+  let added = 0, skipped = 0, failed = 0;
+  for(const q of preset.queries){
+    try{
+      const items = await pipedSearch(q);
+      for(const item of items.slice(0, 12)){ // 各クエリ最大12件
+        const v = pipedItemToVideo(item);
+        if(!v) continue;
+        // 重複チェック
+        if(videos.some(x => x.vid === v.vid)){
+          skipped++;
+          continue;
+        }
+        videos.unshift(v);
+        added++;
+      }
+    } catch(e){
+      console.error('[fetchTrending]', q, e);
+      failed++;
+    }
+  }
+  saveVideos();
+  render();
+  if(btn){ btn.disabled = false; btn.textContent = preset.name; }
+  closeFetchModal();
+  toast(`${added}件追加 / ${skipped}件重複スキップ${failed?' / '+failed+'クエリ失敗':''}`, added>0?'ok':'err');
+}
+
+function openFetchModal(){
+  const modal = document.getElementById('fetch-modal-bg');
+  modal.classList.add('show');
+}
+function closeFetchModal(){
+  document.getElementById('fetch-modal-bg').classList.remove('show');
+}
+
+function clearAllVideos(){
+  if(!confirm('全ての動画を削除します。よろしいですか？')) return;
+  videos = [];
+  saveVideos();
+  render();
+  toast('全削除しました', 'ok');
 }
 
 // ─── URL parsing ───

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！直近バズ速報 2026.04</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+a:hover{text-decoration:underline}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1a2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28;text-decoration:none}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#fbbf24,#f87171,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 28px 80px}
+.hero{text-align:center;padding:64px 24px 40px}
+.hero .ep{display:inline-block;padding:4px 14px;background:rgba(248,113,113,.15);color:#f87171;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,5vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:10px;background:linear-gradient(135deg,#fbbf24,#f87171,#22d3ee,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.hero .sub{color:#888;font-size:14px;font-weight:300;letter-spacing:.05em}
+.hero .stamp{display:inline-block;background:#0f0f1a;border:1px solid #1a1a2e;border-radius:8px;padding:6px 14px;font-size:11px;color:#fbbf24;margin-top:14px;font-family:'Consolas',monospace}
+
+h2{font-size:22px;font-weight:800;margin:54px 0 6px;color:#ddd}
+h2 .tag{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4px;letter-spacing:.15em;text-transform:uppercase}
+.h2-desc{color:#888;font-size:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
+
+.trend{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;margin:14px 0;padding:18px 22px;transition:border-color .2s}
+.trend:hover{border-color:#2a2a3a}
+.trend.hot{border:2px solid rgba(248,113,113,.35);box-shadow:0 0 14px rgba(248,113,113,.06)}
+.trend-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.trend-num{font-size:11px;font-weight:800;color:#a78bfa;letter-spacing:.15em;min-width:42px}
+.trend.hot .trend-num{color:#f87171}
+.trend-name{font-size:16px;font-weight:800;color:#fff;flex:1;min-width:160px}
+.trend-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tg{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.05em}
+.tg-jp{background:rgba(248,113,113,.15);color:#f87171}
+.tg-int{background:rgba(96,165,250,.15);color:#60a5fa}
+.tg-tt{background:rgba(244,114,182,.15);color:#f472b6}
+.tg-yt{background:rgba(239,68,68,.15);color:#f87171}
+.tg-views{background:rgba(250,204,21,.15);color:#fbbf24}
+.tg-format{background:rgba(168,85,247,.15);color:#c084fc}
+.tg-hot{background:rgba(248,113,113,.25);color:#fca5a5}
+
+.what{background:rgba(56,189,248,.06);border-left:3px solid #38bdf8;padding:10px 16px;font-size:13px;color:#7dd3fc;margin-top:8px;border-radius:0 6px 6px 0}
+.what strong{color:#38bdf8;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px;text-transform:uppercase}
+
+.why{background:rgba(34,197,94,.06);border-left:3px solid #22c55e;padding:10px 16px;font-size:12.5px;color:#86efac;margin-top:8px;border-radius:0 6px 6px 0}
+.why strong{color:#22c55e;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px;text-transform:uppercase}
+
+.use{background:rgba(168,85,247,.06);border-left:3px solid #a78bfa;padding:10px 16px;font-size:12.5px;color:#d8b4fe;margin-top:8px;border-radius:0 6px 6px 0}
+.use strong{color:#a78bfa;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px;text-transform:uppercase}
+
+.summary{background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(244,114,182,.06));border:1px solid rgba(168,85,247,.2);border-radius:14px;padding:24px 28px;margin-top:24px}
+.summary h4{color:#c084fc;font-size:15px;margin-bottom:12px;font-weight:800}
+.summary ol{padding-left:20px}
+.summary li{color:#ddd;font-size:13.5px;margin-bottom:8px;line-height:1.75}
+.summary li strong{color:#fbbf24}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520;margin-top:60px}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#jp-update">アプデ便乗</a>
+<a href="#jp-live">妨害配信</a>
+<a href="#int-comment">コメント爆量</a>
+<a href="#int-meme">メーム</a>
+<a href="#tt-format">TT文法</a>
+<a href="#takeaway">取り込み</a>
+<a href="scripts-yofukashi-references.html" style="color:#22d3ee">📚 参考CH一覧</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="ep">TRENDING NOW — 2026.04</div>
+<h1>直近バズ速報<br>マイクラショート 2026年4月</h1>
+<div class="sub">— ランキングじゃない、今この瞬間バズってる具体例 ——</div>
+<div class="stamp">📅 リサーチ日: 2026-04-20</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="jp-update"><span class="tag">01 — 国内・アプデ便乗系</span>2026年3月のMinecraft Liveが燃料に</h2>
+<p class="h2-desc">3/22のMinecraft Live 2026で発表された「サルファーキューブ／硫黄／温泉／新バイオーム」がショートの最大エンジン。</p>
+<!-- ============================================================ -->
+
+<div class="trend hot">
+<div class="trend-head">
+<span class="trend-num">T01</span>
+<span class="trend-name">「中身が最低すぎる新要素」系反応動画</span>
+<div class="trend-meta"><span class="tg tg-hot">🔥HOT</span><span class="tg tg-jp">国内</span><span class="tg tg-yt">YouTube</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>「最高すぎるのに中身が最低すぎる新要素」というツッコミ型タイトルでアプデ要素を解説。サルファーキューブ／温泉／硫黄を「ヤバい仕様」で煽る。</div>
+<div class="why"><strong>なぜバズる</strong>(1)アプデ直後の検索需要が爆発 (2)「最高×最低」の二項対立タイトルが釣り (3)煽り＝視聴者に答え合わせさせる中毒性</div>
+<div class="use"><strong>よふかしで使える</strong>4人で「サルファーキューブで温泉作ろう→硫黄混入で全員ゆでダコ」の即席短尺。アプデ初週に投下するだけで検索流入確保</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T02</span>
+<span class="trend-name">「闇深い詳細」型・未公開情報考察</span>
+<div class="trend-meta"><span class="tg tg-jp">国内</span><span class="tg tg-yt">YouTube</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>「ライブで明かされなかった真の仕様」「実は○○が削除されていた」など内部情報・噂をショートで小出し</div>
+<div class="why"><strong>なぜバズる</strong>(1)アプデファンの「裏情報マニア」を引きつける (2)10秒で答えを言わない＝最後まで見せる構造</div>
+<div class="use"><strong>よふかしで使える</strong>やとらの戦略家キャラがピッタリ。「俺が分析した、Minecraft Liveの裏」シリーズ化可能</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T03</span>
+<span class="trend-name">「世界一簡単すぎるベイビーモード」型</span>
+<div class="trend-meta"><span class="tg tg-jp">国内</span><span class="tg tg-yt">YouTube</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>3月アプデで実装されたベイビーモードを「やばすぎる」「簡単すぎる」と煽る検証ショート</div>
+<div class="why"><strong>なぜバズる</strong>(1)アプデ要素＋極端形容詞＝鉄板 (2)「簡単すぎる」だと視聴者が「本当に？」と確認したくなる</div>
+<div class="use"><strong>よふかしで使える</strong>「ベイビーモードでウォーデン倒せる説」検証。あさめが楽勝で勝つコメディ</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="jp-live"><span class="tag">02 — 国内・TikTokライブ</span>新フォーマット「妨害配信」</h2>
+<p class="h2-desc">これは構造そのものが新しい。視聴者参加型ライブの新型。</p>
+<!-- ============================================================ -->
+
+<div class="trend hot">
+<div class="trend-head">
+<span class="trend-num">T04</span>
+<span class="trend-name">TikTokライブ・妨害マイクラ配信</span>
+<div class="trend-meta"><span class="tg tg-hot">🔥HOT</span><span class="tg tg-tt">TikTok</span><span class="tg tg-format">新形式</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>配信者がマイクラでブロック積み（タワー建築や整地）→ 視聴者がライブのギフトを投げると、その種類で「妨害モブ」が召喚される（クリーパー、エンダーマン等）→ 配信者vs視聴者バトル</div>
+<div class="why"><strong>なぜバズる</strong>(1)視聴者が「ストーリーを動かせる」参加感 (2)ギフト＝収益にも直結するTikTok Live収益モデルとマッチ (3)配信中の絶叫＝切り抜きショートで再バズ</div>
+<div class="use"><strong>よふかしで使える</strong>4人がローテーションで配信者役→他3人が視聴者役で妨害キャラやる切り抜きフォーマット。「やとらの整地、まひるが妨害して30秒で破壊」</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T05</span>
+<span class="trend-name">炎上系（ヒカキン×レコード動画パクリ問題）</span>
+<div class="trend-meta"><span class="tg tg-jp">国内</span><span class="tg tg-tt">TikTok</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>大手YouTuberのマイクラ動画が「他人の企画パクリ」と指摘されて炎上、TikTokで切り抜き拡散</div>
+<div class="why"><strong>なぜバズる</strong>(1)有名人＋炎上は最強の引き (2)「事の顛末」を10秒で見せる総集編フォーマット</div>
+<div class="use"><strong>よふかしで使える</strong>炎上は本筋じゃないが、「パクリ告発」をネタとして自虐パロディできる。「やとらが攻略法パクった疑惑」みたいな</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="int-comment"><span class="tag">03 — 海外・コメント爆量チャレンジ</span>視聴者参加型ショートの極致</h2>
+<p class="h2-desc">海外勢はもうコメント数を「再生数より重要なKPI」として扱ってる。</p>
+<!-- ============================================================ -->
+
+<div class="trend hot">
+<div class="trend-head">
+<span class="trend-num">T06</span>
+<span class="trend-name">Camman18 — チャレンジ系ショート</span>
+<div class="trend-meta"><span class="tg tg-hot">🔥HOT</span><span class="tg tg-int">海外</span><span class="tg tg-views">350万コメ</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>視聴者参加型のチャレンジ系ショート。1本で350万コメントを集める。「これ正解できる？」「コメントで答えて」型のミッションショート</div>
+<div class="why"><strong>なぜバズる</strong>(1)コメント数＝アルゴリズム最強の指標 (2)「答えたい」欲を刺激する問題形式 (3)コメ欄が「コミュニティ」になる→継続視聴</div>
+<div class="use"><strong>よふかしで使える</strong>「やとらが解いたこのなぞなぞ、わかる？」「正解はコメント欄で発表」型の謎かけショート。視聴者参加導線を設計</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T07</span>
+<span class="trend-name">Jellybeans — 応答動画 / リアクションショート</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-views">307万コメ</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>Camman18 等のチャレンジに「応答」する形のショート。リアクション芸＋追加チャレンジで307万コメント獲得</div>
+<div class="why"><strong>なぜバズる</strong>(1)既にバズった動画への便乗で初動が速い (2)「他人の挑戦に乗っかる」シリーズ化が容易 (3)コメント欄での内輪ノリ醸成</div>
+<div class="use"><strong>よふかしで使える</strong>4人それぞれが他のメンバーのショートに「応答」する内輪フォーマット。やとら→まひる→ひぐれ→あさめのチェーン</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="int-meme"><span class="tag">04 — 海外・メーム/ノスタルジア</span>感情×短尺の最終形態</h2>
+<p class="h2-desc">マイクラ単独のバズではなく、TikTok全体のメームに乗る形。億再生スケール。</p>
+<!-- ============================================================ -->
+
+<div class="trend hot">
+<div class="trend-head">
+<span class="trend-num">T08</span>
+<span class="trend-name">Sleeping City トレンド</span>
+<div class="trend-meta"><span class="tg tg-hot">🔥HOT</span><span class="tg tg-tt">TikTok</span><span class="tg tg-format">メーム</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>「眠る都市」をマイクラで再現する系のシネマティックショート。BGM＋スローモーション＋夜景の組み合わせで感情演出</div>
+<div class="why"><strong>なぜバズる</strong>(1)言葉なし、映像と音だけで完結＝言語の壁ない (2)「夜更かし」感情とリンク＝深夜帯の視聴者にハマる</div>
+<div class="use"><strong>よふかしで使える</strong>シリーズ名「よふかしくらぶ」と直接リンク。4人が夜の街を見下ろすシネマティックショートを定番化できる</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T09</span>
+<span class="trend-name">"Remember who you are" メーム × マイクラ</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-tt">TikTok</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>「Remember who you are（自分を思い出せ）」というメームに乗せて、マイクラの初期体験（昔やってた頃）を回想する系</div>
+<div class="why"><strong>なぜバズる</strong>(1)2010年代マイクラ世代（現20代）の郷愁 (2)誰もが共有する初期記憶＝共感再生</div>
+<div class="use"><strong>よふかしで使える</strong>やとらの「中1の頃、マイクラで引かれた」EP01冒頭を切り取って、このメームに乗せたショート。シリーズ宣伝になる</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T10</span>
+<span class="trend-name">シネマティック・マイクラ編集</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-tt">TikTok</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>CapCut / After Effectsでマイクラのプレイ映像を映画風にエフェクト。色味補正、被写界深度、スローモーション、シネマティックBGM</div>
+<div class="why"><strong>なぜバズる</strong>(1)「あのゲームがこんなにキレイに」のギャップ (2)BGMだけで感情誘導 (3)実況系の喧騒に対する「静かなマイクラ」</div>
+<div class="use"><strong>よふかしで使える</strong>PV／OP／EDをこの方式で作る。本編は実況、合間に「シネマティック挿入」で世界観演出</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="tt-format"><span class="tag">05 — TikTok量産文法</span>誰でも作れるテンプレ</h2>
+<p class="h2-desc">既に「フォーマット」として確立されたパターン。乗っかれば再生数が安定。</p>
+<!-- ============================================================ -->
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T11</span>
+<span class="trend-name">Cardi B "Up" × クラフト導入</span>
+<div class="trend-meta"><span class="tg tg-tt">TikTok</span><span class="tg tg-format">テンプレ</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>Cardi Bの「Up」のビートに合わせて、マイクラのクラフト操作（木→板→棒→剣）を高速で見せる秒単位編集</div>
+<div class="why"><strong>なぜバズる</strong>(1)BGMで自動的にバズの波に乗れる (2)15秒で完結する密度 (3)「あれ作ってみたい」の喚起</div>
+<div class="use"><strong>よふかしで使える</strong>4人それぞれの「クラフト指紋」をこのテンプレで作る。やとら＝ネザライト剣、まひる＝弓、ひぐれ＝建築ブロック、あさめ＝ケーキ</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T12</span>
+<span class="trend-name">AI 自動短尺化（長尺→Shorts）</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-format">テンプレ</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>AI（Opus Clip 等）で長尺動画から「バズりそうな15-60秒」を自動抽出。マイクラの長尺実況→ショートに量産</div>
+<div class="why"><strong>なぜバズる</strong>(1)1本の長尺から10本のショート量産 (2)AIが「視聴者離脱しない」場面を選ぶ (3)制作コスト激減</div>
+<div class="use"><strong>よふかしで使える</strong>横動画長尺シリーズが既にある→ AIで自動的にショートに切り出す。投稿頻度を上げられる</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T13</span>
+<span class="trend-name">AI生成 + テキストストーリー</span>
+<div class="trend-meta"><span class="tg tg-tt">TikTok</span><span class="tg tg-format">テンプレ</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>マイクラのプレイ映像を背景にRedditの怖い話／恋愛話／学校話の字幕＋AIナレーションを乗せる量産フォーマット</div>
+<div class="why"><strong>なぜバズる</strong>(1)目＝マイクラ映像（飽きない）/ 耳＝AI音声（ながら聞き）/ 文字＝ストーリー＝ 三重感覚刺激 (2)誰でも量産できる</div>
+<div class="use"><strong>よふかしで使える</strong>4人それぞれの「夜の語り」をAI音声＋マイクラ夜景で量産可能。シリーズ感維持しながら投稿頻度UP</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="int-mass"><span class="tag">06 — 海外・アニメショート </span>10億再生スケールの参考</h2>
+<p class="h2-desc">マイクラ直接ではないが、ショート文法の頂点。よふかしくらぶがアニメ路線で目指すべき水準。</p>
+<!-- ============================================================ -->
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T14</span>
+<span class="trend-name">Monica Toy アニメショート</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-views">22億再生</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>セリフなし、犬のキャラがドジを踏むだけの30秒アニメ。シリーズで22億再生を超えるYouTubeショートの王者</div>
+<div class="why"><strong>なぜバズる</strong>(1)言語の壁ゼロ＝全世界で視聴可能 (2)1ジョーク1本＝ループ視聴される (3)キャラだけで世界観確立</div>
+<div class="use"><strong>よふかしで使える</strong>4人キャラのアニメショート（セリフ最小）。「やとらがクールぶってドジ」「まひるがスマホで何かして爆発」みたいな1ジョーク短尺</div>
+</div>
+
+<div class="trend">
+<div class="trend-head">
+<span class="trend-num">T15</span>
+<span class="trend-name">Daniel LaBelle スポーツ系雑用</span>
+<div class="trend-meta"><span class="tg tg-int">海外</span><span class="tg tg-views">16億再生</span></div>
+</div>
+<div class="what"><strong>WHAT</strong>「○○のスポーツやってる選手だったら、家事はこうなる」というギャップ系ショート。サッカー選手の食器洗い、バスケ選手の洗濯</div>
+<div class="why"><strong>なぜバズる</strong>(1)「もしも○○が日常で」のギャップ笑い (2)アクションが視覚的＝言葉不要</div>
+<div class="use"><strong>よふかしで使える</strong>「もしマイクラのモブが学校の生徒だったら」「もしウォーデンが教師だったら」のギャップ系シリーズ</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="takeaway"><span class="tag">07 — TAKEAWAY</span>2026年4月時点の取り入れ方針</h2>
+<p class="h2-desc">よふかしくらぶで、明日から運用できるアクション5選。</p>
+<!-- ============================================================ -->
+
+<div class="summary">
+<h4>🎯 直近で取り入れるべき5アクション</h4>
+<ol>
+<li><strong>① アプデ便乗ショートを今週中に1本</strong> — 3/22のサルファーキューブ／温泉発表に乗っかる。「やとらが温泉でウォーデン倒す説」など。検索需要のピーク中に投下することで初動再生数を稼ぐ。</li>
+<li><strong>② TikTokライブ妨害配信フォーマットを採用</strong> — 4人ローテで配信者×妨害役。切り抜きが自動的にショートになる二毛作運用。</li>
+<li><strong>③ コメント参加型ショート</strong> — Camman18 流の「答えはコメント欄」型謎かけ。「やとらの戦略、これ何の話？」型でコメ欄をコミュニティ化。</li>
+<li><strong>④ Sleeping City風シネマティック</strong> — シリーズ名「よふかしくらぶ」と完璧マッチ。月1本「夜の演出」専用ショートを定番化。BGM選定が肝。</li>
+<li><strong>⑤ AI自動短尺化を導入</strong> — 既存の長尺コンテンツ（横動画40本、結成編EP01等）から AI ツールで毎週ショートを量産。ゼロから作るより10倍早い。</li>
+</ol>
+</div>
+
+<div class="summary" style="background:linear-gradient(135deg,rgba(250,204,21,.06),rgba(248,113,113,.06));border-color:rgba(250,204,21,.2)">
+<h4>⚡ 鮮度警告（このページの賞味期限）</h4>
+<ol>
+<li><strong>アプデ便乗ネタ：4月末まで</strong> — 5月になるとアプデ流入が落ちる。今週〜来週がピーク。</li>
+<li><strong>TikTokメーム：3週間で陳腐化</strong> — Sleeping City、Cardi B "Up" 等は乗るなら早く。来月には次のメームが来てる。</li>
+<li><strong>このページは2026/05に更新必須</strong> — 月1更新で「直近バズ速報」を維持。古い情報は害になる。</li>
+</ol>
+</div>
+
+<div class="footer">
+<div><strong>よふかしくらぶ！</strong> 直近バズ速報 2026.04</div>
+<div>2026-04-20 リサーチ更新</div>
+<div style="margin-top:10px"><a href="scripts-yofukashi-references.html">📚 参考CH一覧</a> ／ <a href="scripts-yofukashi-rules.html">特殊ルール30本</a> ／ <a href="scripts-yofukashi-bible.html">📖 シリーズバイブル</a></div>
+</div>
+
+</div>
+
+</body>
+</html>

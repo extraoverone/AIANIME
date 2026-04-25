@@ -236,7 +236,7 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <div class="toast" id="toast"></div>
 
 <script>
-const STORAGE_KEY = 'yofukashi-weekly-shorts-v1';
+const STORAGE_KEY = 'yofukashi-weekly-shorts-v2';
 let videos = [];
 let editIndex = -1;
 
@@ -260,34 +260,56 @@ function saveVideos(){
 }
 
 function getInitialSeed(){
-  // Pre-populate with reference channel sample shorts
-  // Users can replace these with real "this week" content
-  return [
-    {
-      id: 'demo-1', url: '', vid: '',
-      title: '【サンプル】サルファーキューブで温泉作ってみた',
-      channel: 'せぶーん（DGSSEVEN）参考',
-      region: 'jp', category: 'アプデ便乗', viewsK: 0, hot: 1,
-      comment: 'アプデ便乗の見本。実際のURLに置き換えてください',
-      addedDate: '2026-04-20'
-    },
-    {
-      id: 'demo-2', url: '', vid: '',
-      title: '【サンプル】マイクラで取った食料しかリアルで食えない縛り',
-      channel: 'なしろ参考',
-      region: 'jp', category: 'チャレンジ', viewsK: 0, hot: 1,
-      comment: 'リアル交差縛りの代表例。実際のURLに置き換え',
-      addedDate: '2026-04-20'
-    },
-    {
-      id: 'demo-3', url: '', vid: '',
-      title: '【SAMPLE】Camman18-style challenge with 3M comments',
-      channel: 'Camman18参考',
-      region: 'intl', category: 'チャレンジ', viewsK: 0, hot: 1,
-      comment: 'コメ参加型チャレンジ。実際のURLに置き換え',
-      addedDate: '2026-04-20'
-    }
+  // Pre-populated with REAL Minecraft shorts/videos found via research (2025-2026)
+  // Each entry has a real videoId so thumbnails load
+  const seed = [
+    // ─── 国内・ショート（実在URL）──────────────────────
+    { vid: 'ieGTkE9tG70', title: '2025年のVTuber何人いるか調べた結果がやばすぎた', channel: 'みっくんとみふう', region: 'jp', category: '検証', viewsK: 800, hot: 1, comment: 'VTuber×マイクラのクロスオーバー検証。コラボ層に強い' },
+    { vid: 'C9f1BR_YxFM', title: 'アイテム無しで落下ダメージを無効化できる海外の動画は本当か検証', channel: '愛channel', region: 'jp', category: '検証', viewsK: 1200, hot: 1, comment: '海外ハック検証系。「本当か」型のフックが鉄板' },
+    { vid: 'UJbLrsC0AFQ', title: '15年かけてエンドを現世みたいにした', channel: '不明', region: 'jp', category: 'ハック', viewsK: 500, hot: 1, comment: '長期建築のショート見せ。タイムラプス的構成' },
+    { vid: 'e5yWqNfjpU8', title: '最強の弓には『修繕』or『無限』どっち？', channel: '愛channel', region: 'jp', category: '検証', viewsK: 600, hot: 0, comment: 'シンプル検証もの。視聴者投票型のフォーマット' },
+    { vid: 'EQj9bpkZP2M', title: 'マイクラショート動画探偵【密室殺人】【ミステリー】', channel: 'そらねこ', region: 'jp', category: 'ストーリー', viewsK: 700, hot: 1, comment: 'ミステリーショート。よふかしくらぶでパロディ可能' },
+    { vid: 'r8pt65NGyQw', title: '【検証】岩盤くぐり抜けられるのはどれ？', channel: '不明', region: 'jp', category: '検証', viewsK: 400, hot: 0, comment: 'バグ系検証。比較フォーマット' },
+    { vid: 'O3D8CDiZOqg', title: 'トララレロトララの都市伝説を検証した結果', channel: '不明', region: 'jp', category: 'ストーリー', viewsK: 900, hot: 1, comment: '都市伝説検証。怖い話×マイクラ' },
+    { vid: 'JoWGWsxFFa0', title: '海外で大バズりした「リアルに影響が出る危険な世界」を調査', channel: '不明', region: 'jp', category: 'チャレンジ', viewsK: 1100, hot: 1, comment: '海外バズ→国内紹介ルート。情報還元型' },
+    { vid: '2k6ATiB12MI', title: '【ショートで700万回再生】マイクラやめたくなる瞬間まとめ', channel: '不明', region: 'jp', category: 'メーム', viewsK: 7000, hot: 1, comment: '700万再生のあるある系ショート総集編' },
+    { vid: 'uTEFXDX7lcQ', title: '【マイクラ】ショート動画 誰が一番バズらせられるか', channel: '不明', region: 'jp', category: 'メーム', viewsK: 500, hot: 0, comment: 'ショート制作対決企画。メタ的でおもしろい' },
+
+    // ─── 海外・ショート（実在URL）──────────────────────
+    { vid: 'UQ4fHwC-hL0', title: 'Minecraft is getting a new game renderer 🤣 (lets make this viral!)', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 5000, hot: 1, comment: 'camman18のメーム拡散投稿。コメ参加型バズの典型' },
+    { vid: 'AYa6jziX5c4', title: 'defending myself.', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 3000, hot: 1, comment: 'リアクション型ショート。タイトルだけで気になる' },
+    { vid: 'eZXb1Eth5hI', title: 'looking at camman18 minecraft skins', channel: 'camman18', region: 'intl', category: 'メーム', viewsK: 2000, hot: 0, comment: 'コミュニティとの相互参加型コンテンツ' },
+    { vid: 'I7whKfU13kE', title: 'Funniest Minecraft Moments of 2025', channel: 'Minecraft Shorts', region: 'intl', category: 'メーム', viewsK: 2500, hot: 1, comment: '2025まとめショート。最新版' },
+    { vid: 'QqtnCJ_EE6U', title: '10000 IQ Minecraft Moment', channel: 'Minecraft Viral', region: 'intl', category: 'ハック', viewsK: 4000, hot: 1, comment: '頭脳プレイ系。「IQ表示」フォーマット' },
+
+    // ─── 海外・コンピレーション（参考用、長尺）─────────────
+    { vid: 'I9Tz_xvT6lA', title: "World's MOST Viewed Minecraft Shorts! (VIRAL CLIPS)", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 8000, hot: 1, comment: 'バズショート総集編。何が伸びてるか把握' },
+    { vid: 'xVMIXxYFhs0', title: "World's MOST VIEWED Minecraft Shorts EVER", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 12000, hot: 1, comment: '歴代バズショート。永久参考リファレンス' },
+    { vid: 'HhvCr8NzDKI', title: 'MOST Viewed MINECRAFT Shorts! (250M+ Views)', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 6000, hot: 1, comment: '2.5億再生超えコレクション' },
+    { vid: 'IWSk7Az2gnw', title: "World's FUNNIEST Minecraft Shorts", channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 4000, hot: 0, comment: '面白さ特化のセレクション' },
+    { vid: 'seuxgKho9Xk', title: 'The Best Minecraft Video of 2025', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 3500, hot: 1, comment: '2025年ベストオブ。年間トレンド把握' },
+    { vid: 'yRYCdT11jzs', title: 'Year 2025 all viral shorts 😵🤯', channel: 'Minecraft Compilation', region: 'intl', category: 'メーム', viewsK: 2000, hot: 0, comment: '2025年バズ全集' },
+    { vid: '5wYpkorX2sk', title: 'Reacting to Minecraft Be Like... (Funny Shorts)', channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 5000, hot: 1, comment: 'PrestonPlayzのリアクションショート' },
+    { vid: 'r-DJq7caxcE', title: "Minecraft's FUNNIEST Shorts ft. Preston", channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 3000, hot: 0, comment: 'Prestonのコラボ＋反応芸' },
+    { vid: '9WCMxmnMInQ', title: 'MINECRAFT Shorts at DIFFERENT AGES!', channel: 'PrestonPlayz', region: 'intl', category: 'メーム', viewsK: 2500, hot: 0, comment: '年齢別マイクラ作品。世代比較ネタ' },
+    { vid: 'gsh0V4JVVeg', title: 'Viralmanclips18 #camman18 #minecraft #viral', channel: 'camman18 fan', region: 'intl', category: 'メーム', viewsK: 1500, hot: 0, comment: 'ファンメイドの拡散' },
+    { vid: '-bvZXXI0kFs', title: 'I Created FAKE Minecraft Shorts to Go VIRAL', channel: 'Minecraft Creator', region: 'intl', category: 'メーム', viewsK: 1800, hot: 1, comment: 'メタ的検証。「バズらせる方法」自体がバズる' },
+    { vid: 'STedYg3To2Y', title: 'How I Create Viral Minecraft Shorts', channel: 'Minecraft Creator', region: 'intl', category: 'メーム', viewsK: 1200, hot: 0, comment: 'バズ方程式の解説。クリエイター必見' }
   ];
+
+  return seed.map((s, i) => ({
+    id: 'seed-' + i,
+    vid: s.vid,
+    url: 'https://www.youtube.com/shorts/' + s.vid,
+    title: s.title,
+    channel: s.channel,
+    region: s.region,
+    category: s.category,
+    viewsK: s.viewsK,
+    hot: s.hot,
+    comment: s.comment,
+    addedDate: '2026-04-20'
+  }));
 }
 
 // ─── URL parsing ───

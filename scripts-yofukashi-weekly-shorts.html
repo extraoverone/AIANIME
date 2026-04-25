@@ -164,8 +164,13 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 </select>
 <button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900" onclick="openFetchModal()">🔥 トレンド自動取得</button>
 <button class="btn primary" onclick="openAddModal()">+ 手動追加</button>
-<button class="btn" onclick="exportData()">📥 エクスポート</button>
-<button class="btn" onclick="document.getElementById('imp-file').click()">📤 インポート</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#22c55e,#10b981);font-weight:900" onclick="saveToRemote()">💾 GitHubに保存</button>
+<button class="btn" onclick="loadFromRemote().then(r=>{if(r){render();toast('リモートから再読込','ok')}})">🔄 再読込</button>
+<button class="btn" onclick="openSettingsModal()" title="GitHub Token設定">⚙️</button>
+<span id="sync-status" style="font-size:11px;color:#888;margin-left:6px;white-space:nowrap"></span>
+<span style="flex:1"></span>
+<button class="btn" onclick="exportData()" title="JSONダウンロード">📥</button>
+<button class="btn" onclick="document.getElementById('imp-file').click()" title="JSONインポート">📤</button>
 <button class="btn danger" onclick="clearAllVideos()" title="全削除">🗑</button>
 <input type="file" id="imp-file" accept=".json" style="display:none" onchange="importData(event)">
 </div>
@@ -287,6 +292,37 @@ Piped API（YouTube公開API、APIキー不要）経由でバズってるマイ�
 
 <div class="toast" id="toast"></div>
 
+<!-- SETTINGS MODAL -->
+<div class="modal-bg" id="settings-modal-bg">
+<div class="modal" style="max-width:560px">
+<h3>⚙️ GitHub同期設定 <button class="close" onclick="closeSettingsModal()">&times;</button></h3>
+<p style="font-size:13px;color:#aaa;margin-bottom:12px;line-height:1.7">
+データを<strong>GitHubリポジトリに保存</strong>すると、他のデバイス・他のユーザーとも共有できます。<br>
+リポジトリ: <code style="color:#60a5fa">extraoverone/AIANIME</code> / ファイル: <code style="color:#60a5fa">data/weekly-shorts.json</code>
+</p>
+<div style="background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:12.5px;color:#93c5fd;line-height:1.8">
+<strong style="color:#60a5fa">📝 Personal Access Token (PAT) の作り方:</strong><br>
+1. <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Weekly+Shorts+Tracker" target="_blank" style="color:#60a5fa;text-decoration:underline">こちら</a>からToken発行ページへ<br>
+2. <strong>Scopes</strong>: <code>public_repo</code> にチェック<br>
+3. <strong>Expiration</strong>: 90 days など適当に<br>
+4. <strong>Generate token</strong> → コピーして下に貼り付け
+</div>
+<div class="field">
+<label>GitHub Personal Access Token</label>
+<input type="text" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:monospace;font-size:12px">
+</div>
+<div style="display:flex;gap:8px;margin-top:14px">
+<button class="btn" onclick="testToken()">🩺 Tokenテスト</button>
+<button class="btn primary" onclick="saveTokenFromModal()" style="flex:1">保存</button>
+</div>
+<p style="font-size:11px;color:#666;margin-top:12px;line-height:1.6">
+※ Tokenはこの端末のlocalStorageにのみ保存されます。GitHubには送信されません。<br>
+※ 紛失した場合はGitHub設定で削除して再発行してください。<br>
+※ Token空欄で保存すると削除されます（読込のみモード）。
+</p>
+</div>
+</div>
+
 <!-- DEBUG LOG PANEL -->
 <button class="log-toggle" onclick="toggleLog()" title="API取得ログ">📋 ログ</button>
 <div class="debug-log" id="debug-log">
@@ -303,26 +339,249 @@ Piped API（YouTube公開API、APIキー不要）経由でバズってるマイ�
 
 <script>
 const STORAGE_KEY = 'yofukashi-weekly-shorts-v3';
+const TOKEN_KEY = 'gh-pat-weekly-shorts';
+const REPO = 'extraoverone/AIANIME';
+const DATA_PATH = 'data/weekly-shorts.json';
+const REMOTE_URL = `https://raw.githubusercontent.com/${REPO}/master/${DATA_PATH}`;
 let videos = [];
 let editIndex = -1;
+let remoteSha = null;
+let dirty = false; // 未保存フラグ
+let lastRemoteUpdate = null;
 
-// ─── Storage ───
-function loadVideos(){
+// ─── ローカルストレージ ───
+function loadLocal(){
   try{
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
-      videos = JSON.parse(raw);
-    } else {
-      videos = getInitialSeed();
-      saveVideos();
+      const data = JSON.parse(raw);
+      videos = data.videos || data; // 後方互換
+      lastRemoteUpdate = data.lastRemoteUpdate || null;
     }
   } catch(e){
-    console.error('loadVideos failed', e);
-    videos = getInitialSeed();
+    console.error('loadLocal failed', e);
   }
 }
+function saveLocal(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    videos,
+    lastRemoteUpdate,
+    savedAt: new Date().toISOString()
+  }));
+}
+
+// 互換用エイリアス
 function saveVideos(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(videos));
+  saveLocal();
+  setDirty(true);
+}
+function loadVideos(){
+  loadLocal();
+  if(videos.length === 0) videos = getInitialSeed();
+}
+
+// ─── GitHub 同期 ───
+function getToken(){
+  return localStorage.getItem(TOKEN_KEY) || '';
+}
+function setToken(t){
+  if(t) localStorage.setItem(TOKEN_KEY, t);
+  else localStorage.removeItem(TOKEN_KEY);
+  updateSyncStatus();
+}
+
+function setDirty(d){
+  dirty = d;
+  updateSyncStatus();
+}
+
+function updateSyncStatus(){
+  const el = document.getElementById('sync-status');
+  if(!el) return;
+  const hasToken = !!getToken();
+  if(dirty){
+    el.innerHTML = '⚠️ 未保存の変更あり';
+    el.style.color = '#fbbf24';
+  } else if(!hasToken){
+    el.innerHTML = '⚙️ Token未設定（読込のみ）';
+    el.style.color = '#888';
+  } else {
+    el.innerHTML = '✓ GitHub同期済み';
+    el.style.color = '#22c55e';
+  }
+}
+
+// リモートから読み込み
+async function loadFromRemote(){
+  dlog('info', 'リモート(GitHub)から読み込み試行...');
+  try{
+    const res = await fetch(REMOTE_URL + '?_=' + Date.now(), {
+      cache: 'no-cache'
+    });
+    if(!res.ok){
+      dlog('warn', `リモート読込失敗 HTTP ${res.status}`);
+      return false;
+    }
+    const data = await res.json();
+    const remoteVideos = data.videos || [];
+    const remoteUpdated = data.updatedAt || '';
+    dlog('ok', `リモート: ${remoteVideos.length}件 (更新: ${remoteUpdated})`);
+
+    // ローカルが空、または リモートの方が新しい場合はリモート採用
+    if(videos.length === 0 || (lastRemoteUpdate && remoteUpdated > lastRemoteUpdate)){
+      videos = remoteVideos;
+      lastRemoteUpdate = remoteUpdated;
+      saveLocal();
+      dlog('info', 'リモートデータを採用');
+      setDirty(false);
+      return true;
+    } else if(remoteVideos.length > videos.length){
+      // リモートの方が件数多い場合（他者が追加した可能性）
+      const localVids = new Set(videos.map(v => v.vid));
+      const newOnes = remoteVideos.filter(v => !localVids.has(v.vid));
+      if(newOnes.length > 0){
+        videos = [...newOnes, ...videos];
+        saveLocal();
+        lastRemoteUpdate = remoteUpdated;
+        dlog('info', `リモートから${newOnes.length}件マージ`);
+      }
+    }
+    setDirty(false);
+    return true;
+  } catch(e){
+    dlog('err', 'リモート読込エラー: ' + e.message);
+    return false;
+  }
+}
+
+// リモートに保存（GitHub Contents API）
+async function saveToRemote(){
+  const token = getToken();
+  if(!token){
+    toast('GitHubトークン未設定。⚙️設定から登録してください', 'err');
+    openSettingsModal();
+    return false;
+  }
+  dlog('info', 'GitHub Contents APIで保存中...');
+
+  // 1. 現在のSHAを取得
+  let sha = remoteSha;
+  try{
+    const getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${DATA_PATH}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    if(getRes.ok){
+      const d = await getRes.json();
+      sha = d.sha;
+      remoteSha = sha;
+      dlog('info', `現SHA取得: ${sha.slice(0,8)}`);
+    } else if(getRes.status === 404){
+      dlog('info', 'ファイル新規作成');
+      sha = null;
+    } else {
+      dlog('err', `SHA取得失敗: ${getRes.status}`);
+      const errText = await getRes.text();
+      dlog('err', `詳細: ${errText.slice(0,200)}`);
+      toast('GitHub認証失敗。Tokenが正しいか確認', 'err');
+      return false;
+    }
+  } catch(e){
+    dlog('err', 'SHA取得エラー: ' + e.message);
+    toast('ネットワークエラー: ' + e.message, 'err');
+    return false;
+  }
+
+  // 2. PUT でコミット
+  const content = JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    videos
+  }, null, 2);
+
+  // UTF-8 → base64
+  const b64 = btoa(unescape(encodeURIComponent(content)));
+
+  try{
+    const putRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${DATA_PATH}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: `Update weekly shorts: ${videos.length}件 (${new Date().toLocaleString('ja-JP')})`,
+        content: b64,
+        sha: sha || undefined
+      })
+    });
+    if(!putRes.ok){
+      const errText = await putRes.text();
+      dlog('err', `PUT失敗 ${putRes.status}: ${errText.slice(0,300)}`);
+      toast(`保存失敗 ${putRes.status}: ${errText.slice(0,80)}`, 'err');
+      return false;
+    }
+    const result = await putRes.json();
+    remoteSha = result.content.sha;
+    lastRemoteUpdate = new Date().toISOString();
+    saveLocal();
+    setDirty(false);
+    dlog('ok', `保存成功: コミット ${result.commit.sha.slice(0,8)}`);
+    toast(`✓ GitHubに保存しました (${videos.length}件)`, 'ok');
+    return true;
+  } catch(e){
+    dlog('err', 'PUT エラー: ' + e.message);
+    toast('保存エラー: ' + e.message, 'err');
+    return false;
+  }
+}
+
+async function testToken(){
+  const token = getToken();
+  if(!token){
+    toast('Tokenが未設定', 'err');
+    return;
+  }
+  dlog('info', 'Tokenテスト中...');
+  try{
+    const res = await fetch('https://api.github.com/user', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    if(res.ok){
+      const user = await res.json();
+      dlog('ok', `Token有効: ${user.login}`);
+      toast(`✓ Token有効 (${user.login})`, 'ok');
+    } else {
+      dlog('err', `Token無効: ${res.status}`);
+      toast(`Token無効 (${res.status})`, 'err');
+    }
+  } catch(e){
+    dlog('err', 'Testエラー: ' + e.message);
+    toast('テスト失敗', 'err');
+  }
+}
+
+function openSettingsModal(){
+  document.getElementById('settings-modal-bg').classList.add('show');
+  const tokenInput = document.getElementById('pat-input');
+  const t = getToken();
+  if(t) tokenInput.value = t.slice(0,4) + '...' + t.slice(-4);
+  else tokenInput.value = '';
+}
+function closeSettingsModal(){
+  document.getElementById('settings-modal-bg').classList.remove('show');
+}
+function saveTokenFromModal(){
+  const v = document.getElementById('pat-input').value.trim();
+  if(v.includes('...')){
+    // マスク表示のままなら変更なし
+    closeSettingsModal();
+    return;
+  }
+  if(v && !v.startsWith('ghp_') && !v.startsWith('github_pat_')){
+    if(!confirm('TokenがGitHubの形式と違います。それでも保存？')) return;
+  }
+  setToken(v);
+  closeSettingsModal();
+  toast(v ? 'Token保存しました' : 'Token削除しました', 'ok');
 }
 
 function getInitialSeed(){
@@ -1020,7 +1279,15 @@ async function healthCheck(){
 // ─── Init ───
 loadVideos();
 render();
-dlog('info', `アプリ起動 / 既存${videos.length}件`);
+updateSyncStatus();
+dlog('info', `アプリ起動 / ローカル${videos.length}件`);
+
+// 起動時にリモートと同期
+(async () => {
+  await loadFromRemote();
+  render();
+  updateSyncStatus();
+})();
 </script>
 
 </body>

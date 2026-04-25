@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！参考チャンネル — リサーチノート</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+a:hover{text-decoration:underline}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1a2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28;text-decoration:none}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 28px 80px}
+.hero{text-align:center;padding:72px 24px 40px}
+.hero .ep{display:inline-block;padding:4px 14px;background:rgba(34,211,238,.15);color:#22d3ee;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
+.hero h1{font-size:clamp(24px,5vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#22d3ee,#a78bfa,#f472b6,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.hero .sub{color:#888;font-size:15px;font-weight:300;letter-spacing:.05em}
+
+h2{font-size:22px;font-weight:800;margin:60px 0 6px;color:#ddd}
+h2 .tag{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4px;letter-spacing:.15em;text-transform:uppercase}
+.h2-desc{color:#888;font-size:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
+
+.ch{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;margin:14px 0;padding:18px 22px;transition:border-color .2s}
+.ch:hover{border-color:#2a2a3a}
+.ch.featured{border:2px solid rgba(168,85,247,.3);box-shadow:0 0 14px rgba(168,85,247,.06)}
+.ch.featured .ch-name{color:#c084fc}
+.ch-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.ch-name{font-size:17px;font-weight:800;color:#fff;flex:1;min-width:160px}
+.ch-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tg{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.05em}
+.tg-jp{background:rgba(248,113,113,.15);color:#f87171}
+.tg-int{background:rgba(96,165,250,.15);color:#60a5fa}
+.tg-tt{background:rgba(244,114,182,.15);color:#f472b6}
+.tg-shorts{background:rgba(250,204,21,.15);color:#fbbf24}
+.tg-story{background:rgba(168,85,247,.15);color:#c084fc}
+.tg-anime{background:rgba(34,211,238,.15);color:#22d3ee}
+.tg-bind{background:rgba(34,197,94,.15);color:#22c55e}
+.tg-feat{background:rgba(168,85,247,.2);color:#c084fc}
+
+.ch-desc{font-size:13.5px;color:#bbb;line-height:1.75;margin-bottom:8px}
+.ch-learn{background:rgba(34,197,94,.06);border-left:3px solid #22c55e;padding:10px 16px;font-size:12.5px;color:#86efac;margin-top:10px;border-radius:0 6px 6px 0}
+.ch-learn strong{color:#22c55e;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px;text-transform:uppercase}
+.ch-link{display:inline-block;font-size:11px;color:#60a5fa;margin-top:6px}
+
+.cat-summary{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:13px;color:#aaa;line-height:1.8}
+.cat-summary strong{color:#ddd}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520;margin-top:60px}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#jp-mc">国内マイクラ</a>
+<a href="#jp-story">ストーリー縛り</a>
+<a href="#jp-group">グループ実況</a>
+<a href="#int-shorts">海外ショート</a>
+<a href="#int-challenge">海外チャレンジ</a>
+<a href="#anime">アニメ風</a>
+<a href="#meta">企画の祖</a>
+<a href="scripts-yofukashi-bible.html" style="color:#fbbf24">📖 Bible</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="ep">REFERENCE CHANNELS — RESEARCH NOTE</div>
+<h1>参考チャンネル<br>リサーチノート</h1>
+<div class="sub">— ショートでバズってる、企画/台本に使えるチャンネル一覧 ——</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="jp-mc"><span class="tag">01 — 国内・マイクラ実況系</span>原点・直接の参考</h2>
+<p class="h2-desc">ユーザー指定の参考2チャンネル＋同系統の人気実況者。よふかしくらぶの直接の文脈。</p>
+<!-- ============================================================ -->
+
+<div class="ch featured">
+<div class="ch-head">
+<span class="ch-name">せぶーん（DGSSEVEN）</span>
+<div class="ch-meta"><span class="tg tg-feat">★参考指定</span><span class="tg tg-jp">国内</span><span class="tg tg-shorts">ショート</span></div>
+</div>
+<div class="ch-desc">ゆっくり実況スタイル。「ハート1個でハードコアクリア」など極端難易度の検証系、「ウォーデンウイルスに汚染された世界」など世界改変系。台本構成の整い具合が特徴。2012年6月から13年継続。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)「○○なら絶対無理」を結論先出し→検証で覆すフォーマット (2)ゆっくり台本＝シンプル明快な掛け合い (3)タイトルだけでフックが立つ命名術</div>
+<a class="ch-link" href="https://www.youtube.com/@DGSSEVEN" target="_blank">→ YouTube @DGSSEVEN</a>
+</div>
+
+<div class="ch featured">
+<div class="ch-head">
+<span class="ch-name">なしろ【マイクラ】</span>
+<div class="ch-meta"><span class="tg tg-feat">★参考指定</span><span class="tg tg-jp">国内</span><span class="tg tg-bind">縛り</span></div>
+</div>
+<div class="ch-desc">リアル交差縛り系の代表。「現実でできること縛り」「マイクラ内で食べたものしかリアルで食べられない縛り」「すべて一つしかない世界」。ルールが日常に侵食する設計。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)1文で説明できる強烈ルール (2)ルールが現実生活と接続して笑える (3)サムネで「ヤバそう」と一瞬で伝わる構図</div>
+<a class="ch-link" href="https://www.youtube.com/@nashirominecraft" target="_blank">→ YouTube @nashirominecraft</a>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">ちろぴの</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-bind">縛り</span></div>
+</div>
+<div class="ch-desc">「1マスの世界で100日サバイバル」など極小スペース縛り、ハードコア系企画。総集編フォーマット強い。</div>
+<div class="ch-learn"><strong>学べる点</strong>「○○の世界で100日」というフォーマットが鉄板。空間制約＋時間制約のかけ算でドラマが生まれる</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">ふうはや</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-shorts">ショート</span></div>
+</div>
+<div class="ch-desc">マイクラ実況＋ショート両刀。短尺でテンポよく見せる構成が参考になる。</div>
+<div class="ch-learn"><strong>学べる点</strong>長尺と短尺の使い分け。ショートで導入→長尺で深掘り、の動線設計</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="jp-story"><span class="tag">02 — 国内・ストーリー/縛り企画系</span>シナリオ重視の作家系</h2>
+<p class="h2-desc">よふかしくらぶの「ストーリー＋キャラ」軸の参考。台本書きが活きるタイプ。</p>
+<!-- ============================================================ -->
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">FukaFuka295（ふかふか）</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-story">ストーリー</span></div>
+</div>
+<div class="ch-desc">『ニュータウン建設物語』シリーズ。長期ストーリー型マイクラ動画の代表。建築×物語の融合。</div>
+<div class="ch-learn"><strong>学べる点</strong>建築過程を「街の成長物語」として語るドラマ仕立て。よふかしくらぶの建築回に応用可能</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">ゆるりるチャンネル</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-story">怖い話</span></div>
+</div>
+<div class="ch-desc">ゆっくり実況で都市伝説・怖い話・マイクラ系のストーリー動画。深淵編やホラー系で参考になる。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)「実は」型の謎解き構成 (2)淡々と語る恐怖の演出 (3)都市伝説を本筋に絡める手法</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">まいぜんシスターズ</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-story">ストーリー</span></div>
+</div>
+<div class="ch-desc">2人組、子供向けに最適化。「映画「新脱獄」」など3000万再生超えのストーリー回。コマンド職人＋掛け合い。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)2人の役割分担（ボケ/ツッコミ＋技術担当） (2)子供にも分かるシンプルな起承転結 (3)コマンド/技術を物語の演出に使う発想</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="jp-group"><span class="tag">03 — 国内・グループ実況系</span>多人数キャラ運用の参考</h2>
+<p class="h2-desc">よふかしくらぶ4人体制の参考。キャラ立てとグループダイナミクス。</p>
+<!-- ============================================================ -->
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">カラフルピーチ</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-bind">企画</span></div>
+</div>
+<div class="ch-desc">12人グループのマイクラ実況。「鬼ごっこ」「だるまさんがころんだ」などオリジナル企画も展開。結成2年で登録100万。ゆるふわ女子・弟系・ツッコミなどキャラ立て徹底。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)各メンバーのキャラ役割を明確化（よふかし4人の参考） (2)伝統遊び×マイクラの企画化 (3)複数人だから生まれる予期せぬ展開</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">ドズル社</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-story">ストーリー</span></div>
+</div>
+<div class="ch-desc">男性5人組。企画の面白さ＋スキルの高さ＋ストーリー性。毎日更新。2025年YouTube国内登録者増加ランキング8位。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)毎日更新を支える企画フォーマット化 (2)ストーリー性のあるシリーズ運用 (3)5人各自のキャラを動かしながらの実況回し</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">日常組</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-story">グループ</span></div>
+</div>
+<div class="ch-desc">4人組実況グループ。マイクラランキング2位。プレイ内容よりトーク（掛け合い）目当てのファンが多い。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)4人のキャラの違いをトークで活かす（よふかし4人にダイレクト参考） (2)ゲーム＝舞台、トーク＝主役の設計 (3)雑談耐性のあるキャラ作り</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="int-shorts"><span class="tag">04 — 海外・ショート専門</span>ショート文法の最先端</h2>
+<p class="h2-desc">YouTube Shorts でバズの方程式を確立した海外勢。台本というより「3秒フック→展開→オチ」の文法を学ぶ。</p>
+<!-- ============================================================ -->
+
+<div class="ch featured">
+<div class="ch-head">
+<span class="ch-name">GEVids</span>
+<div class="ch-meta"><span class="tg tg-feat">★必見</span><span class="tg tg-int">海外</span><span class="tg tg-shorts">ショート専門</span></div>
+</div>
+<div class="ch-desc">米国、登録者520万超。マイクラショート専門チャンネルの代表格。「マイクラショート界の最強」と評される。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)ショート専門で運用するチャンネル戦略 (2)1本60秒以下の起承転結フォーマット (3)サムネ・タイトル・3秒フックの精度</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">Power Studios</span>
+<div class="ch-meta"><span class="tg tg-int">海外</span><span class="tg tg-shorts">ショート</span></div>
+</div>
+<div class="ch-desc">トレンド型のマイクラショート。チャレンジ・トリック・カラクリ系。「これ知ってる？」型の発見コンテンツ。</div>
+<div class="ch-learn"><strong>学べる点</strong>マイクラの隠れた仕様を「えっそうなの！？」型で見せる教育エンタメ手法</div>
+</div>
+
+<div class="ch featured">
+<div class="ch-head">
+<span class="ch-name">PrestonPlayz</span>
+<div class="ch-meta"><span class="tg tg-feat">★必見</span><span class="tg tg-int">海外</span><span class="tg tg-shorts">ショート</span></div>
+</div>
+<div class="ch-desc">高エネルギー系。ショートでバイラルトラップ（TNTドアや見えないチェスト）の検証・反応芸。「ハードコア400日」など長尺企画もあり。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)バイラルクリップ集約フォーマット (2)反応芸（リアクション）の使い方 (3)企画と検証の両輪運用</div>
+<a class="ch-link" href="https://www.youtube.com/@PrestonPlayz/shorts" target="_blank">→ @PrestonPlayz/shorts</a>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">GG Animation</span>
+<div class="ch-meta"><span class="tg tg-int">海外</span><span class="tg tg-anime">アニメ</span><span class="tg tg-story">ストーリー</span></div>
+</div>
+<div class="ch-desc">マイクラ風アニメーション＋ユーモア＋ストーリーテリング。エンゲージング・キャラクター×予想外の展開。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)実況じゃなくアニメ動画として作る選択肢 (2)1分以内の起伏ある脚本 (3)予想外のオチ設計</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="int-challenge"><span class="tag">05 — 海外・チャレンジ/ハードコア系</span>極限縛りの本家</h2>
+<p class="h2-desc">なしろ系の極限まで突き詰めた海外勢。なしろ→海外勢の構造比較で「日本ショート向きの調整」が見える。</p>
+<!-- ============================================================ -->
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">WadZee</span>
+<div class="ch-meta"><span class="tg tg-int">海外</span><span class="tg tg-bind">ハードコア</span></div>
+</div>
+<div class="ch-desc">ハードコアマイクラの代表的英語チャンネル。「ハードコアで○○まで生き延びる」プレイリストが本流。長尺＋緊張感の作り。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)ハードコアモード＝1回死んだら終わり、の緊張感の作り方 (2)「○○達成まで」の進捗ドラマ化 (3)失敗→挑戦→失敗の物語性</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">ForgeLabs</span>
+<div class="ch-meta"><span class="tg tg-int">海外</span><span class="tg tg-story">サバイバル</span></div>
+</div>
+<div class="ch-desc">超過酷な世界・MOD入りハードコアサバイバルの長尺シリーズ。「ゾンビアポカリプスで100日」「ロストワールドで200日」など。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)MODで世界改変＋ストーリーテリングの両立 (2)長尺サバイバルの語り口（一人称ナレーション） (3)極限環境で生まれるドラマ</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="anime"><span class="tag">06 — アニメ風 / TikTokストーリー</span>動画演出の新潮流</h2>
+<p class="h2-desc">よふかしくらぶの「アニメっぽさ」に直結。マイクラを「実況」じゃなく「映像作品」として作る勢。</p>
+<!-- ============================================================ -->
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">アンナ（@Anna_GAMEch）</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-anime">アニメ制作</span></div>
+</div>
+<div class="ch-desc">マイクラアニメ制作のクリエイター。Mine-imator/Blender でマイクラ風アニメを作る分野の参考。</div>
+<div class="ch-learn"><strong>学べる点</strong>マイクラアニメ制作の制作工程・ツール選定。よふかしくらぶをアニメ動画で作る場合の参考</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">TikTok #minecraftanimation 系</span>
+<div class="ch-meta"><span class="tg tg-tt">TikTok</span><span class="tg tg-anime">アニメ</span></div>
+</div>
+<div class="ch-desc">スティーブ／アレックス×アニメ風演出のショート群。「マイクラ世界の物語をアニメで語る」フォーマットが量産されてる。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)アニメ調マイクラの量産方法 (2)BGM・効果音の使い回しテンプレ (3)1分以内のアニメ脚本術</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">TikTok Reddit Story 風マイクラ動画</span>
+<div class="ch-meta"><span class="tg tg-tt">TikTok</span><span class="tg tg-story">ストーリー</span></div>
+</div>
+<div class="ch-desc">マイクラのプレイ映像を背景にRedditの怖い話/恋愛話/学校話の字幕＋AIナレを乗せるフォーマット。激バズ量産系。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)ゲーム映像＝目の保養、字幕＝物語、AIナレ＝聞き流せる の三層構造 (2)これ自体をパロディする企画も成立する (3)ニュアンス的に「よふかしくらぶの夜の語り」と相性◎</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="meta"><span class="tag">07 — 企画の祖（マイクラ外）</span>大規模企画＆フォーマット参考</h2>
+<p class="h2-desc">マイクラに直接関係ないが、企画構造・台本術として強烈に参考になる。</p>
+<!-- ============================================================ -->
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">MrBeast / Beast Reacts</span>
+<div class="ch-meta"><span class="tg tg-int">海外</span><span class="tg tg-bind">大規模企画</span></div>
+</div>
+<div class="ch-desc">大規模企画系の元祖。「マイクラハードコアで生き残ったら賞金」「最後まで残った人に1万ドル」型のサバイバル企画フォーマット。マイクラ実況者でこれを真似する人が大量にいる。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)賞金/景品＝視聴者を引きつける本物の動機の作り方 (2)エスカレーション構造（最初は楽→最後ヤバい） (3)1本の動画にいくつもの「ピーク」を仕込む構成術</div>
+</div>
+
+<div class="ch">
+<div class="ch-head">
+<span class="ch-name">大人のマイクラ企画室</span>
+<div class="ch-meta"><span class="tg tg-jp">国内</span><span class="tg tg-bind">企画系</span></div>
+</div>
+<div class="ch-desc">マイクラ企画専門チャンネル。複数実況者を集めて単発企画（「1人1列しか動けない世界で50人レース」「高速クリーパーから逃げる世界」等）を実施。</div>
+<div class="ch-learn"><strong>学べる点</strong>(1)単発企画の発想カタログ (2)「1文ルール」の宝庫 (3)複数人参加型ルールゲームの構造</div>
+<a class="ch-link" href="https://scrapbox.io/minecraft-projects/" target="_blank">→ マインクラフト企画集 (Scrapbox)</a>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="tag">08 — 観察ポイント総まとめ</span>共通する勝ちパターン</h2>
+<p class="h2-desc">複数チャンネルから抽出した、ショート企画でバズる構成要素。</p>
+<!-- ============================================================ -->
+
+<div class="cat-summary">
+<strong>① 1文ルール</strong> — タイトルだけで企画内容が分かる。「現実でできること縛り」「ハート1個ハードコア」「すべて一つしかない世界」。これがフックの90%。<br><br>
+<strong>② 結論先出し</strong> — 「○○したら○○になった」のサムネ＋テロップで結論を最初に見せる。視聴者を「過程」で引きつける。<br><br>
+<strong>③ 過程のエスカレーション</strong> — 最初は楽→だんだん詰む→ピーク→オチ。なしろ・ちろぴの・MrBeast 共通の鉄則。<br><br>
+<strong>④ キャラ役割の明確化</strong> — グループ系（カラフルピーチ・ドズル社・日常組）が共通する強み。よふかしくらぶの4人キャラ確立がここに直結。<br><br>
+<strong>⑤ 短尺化と長尺化の両輪</strong> — ショートで認知→長尺でファン化。ふうはやの戦略。シリーズ通して同じネタの長短バリエーションを作る。<br><br>
+<strong>⑥ ループ設計</strong> — 海外ショート（GEVids等）が徹底してる。最後のフレームが冒頭に繋がる仕掛け＝再生時間2倍カウント。<br><br>
+<strong>⑦ リアル交差</strong> — なしろ系が最強の独自性。マイクラ世界がリアル生活に侵食する瞬間が一番バズる。
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="tag">09 — よふかしくらぶ への直接適用案</span>このリサーチを台本に落とす</h2>
+<!-- ============================================================ -->
+
+<div class="cat-summary">
+<strong>適用1: せぶーん流「結論先出し検証」フォーマット</strong><br>
+タイトル：「やとらの深淵攻略3戦略、5年分、秒で崩壊」← 既に実装<br><br>
+
+<strong>適用2: なしろ流「リアル交差縛り」</strong><br>
+30本ルール集の Category F 全部がこの系統。Recommend：「マイクラで取った食料しかリアルで食えない」<br><br>
+
+<strong>適用3: カラフルピーチ流「伝統遊び×マイクラ」</strong><br>
+4人で「だるまさんがころんだ」「鬼ごっこ」「ケイドロ」をマイクラ世界でやる短尺企画。各キャラの動きにキャラ性が乗る。<br><br>
+
+<strong>適用4: GEVids 流「ショート専門設計」</strong><br>
+ショート用ファイル『scripts-yofukashi-rules.html』を本格運用。3秒フック→展開→オチ→ループ の徹底。<br><br>
+
+<strong>適用5: TikTok Reddit Story 流「アニメ＋字幕＋語り」</strong><br>
+4人のキャラの背景音声＋マイクラ映像でショート量産。よふかし「夜の語り」シリーズの新フォーマット。<br><br>
+
+<strong>適用6: MrBeast 流「賞金エスカレーション」</strong><br>
+4人が動画内で何かを賭ける。「最後まで生き残った奴がリアルでドーナツおごり」など、リアル賞金リンク。
+</div>
+
+<div class="footer">
+<div><strong>よふかしくらぶ！</strong> 参考チャンネル リサーチノート</div>
+<div>2026-04-20</div>
+<div style="margin-top:10px"><a href="scripts-yofukashi-bible.html">📖 シリーズバイブル</a> ／ <a href="scripts-yofukashi-rules.html">特殊ルール30本</a> ／ <a href="scripts-yofukashi-deepdark.html">深淵編</a></div>
+</div>
+
+</div>
+
+</body>
+</html>

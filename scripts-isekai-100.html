@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クラフトワールド100 — 異世界転生バトロワ設定資料</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:16px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#10b981,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,4.5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;line-height:1.3;background:linear-gradient(135deg,#10b981,#3b82f6,#a855f7,#ec4899,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:#888;font-size:15px;font-weight:600;margin-bottom:20px}
+.hero p{color:#777;font-size:14px;max-width:680px;margin:0 auto 12px}
+.badge{display:inline-block;padding:4px 16px;border-radius:20px;font-size:12px;font-weight:800;margin:4px 4px}
+.b-genre{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.3)}
+.b-format{background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.25)}
+.b-cast{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.25)}
+.b-sp{background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.25)}
+
+/* Section box */
+.sec{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:18px;margin:36px 0;overflow:hidden}
+.sec-head{padding:24px 28px 14px;border-bottom:1px solid #1a1a2e;background:linear-gradient(180deg,rgba(168,85,247,.04),transparent)}
+.sec-head h2{font-size:22px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sec-head h2 .num{font-size:13px;color:#666;font-weight:700;background:#1a1a2e;padding:3px 10px;border-radius:6px}
+.sec-head .sec-sub{font-size:13px;color:#666}
+.sec-body{padding:24px 28px}
+
+h3{font-size:18px;font-weight:800;color:#e2e8f0;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid #1a1a2e}
+h3:first-child{margin-top:0}
+h4{font-size:15px;font-weight:800;color:#a78bfa;margin:18px 0 8px}
+p{color:#bbb;margin-bottom:10px}
+.lead{color:#ddd;font-size:15px;line-height:1.9}
+
+/* Inline box */
+.box{background:#0b0b18;border:1px solid #1a1a2e;border-radius:10px;padding:16px 20px;margin:12px 0}
+.box-em{background:rgba(16,185,129,.06);border-color:rgba(16,185,129,.25)}
+.box-warn{background:rgba(239,68,68,.05);border-color:rgba(239,68,68,.25)}
+.box-info{background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.25)}
+
+.kv{display:grid;grid-template-columns:130px 1fr;gap:6px 16px;margin:10px 0}
+.kv dt{color:#666;font-size:13px;font-weight:700}
+.kv dd{color:#ddd;font-size:14px}
+
+ul.bullets{list-style:none;padding:0;margin:8px 0}
+ul.bullets li{padding:6px 0 6px 22px;position:relative;color:#bbb;font-size:14px;line-height:1.8}
+ul.bullets li::before{content:"▸";color:#10b981;position:absolute;left:6px;font-weight:900}
+
+/* Character cards */
+.char-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+.char{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:14px;padding:18px 22px;border-left:4px solid #555}
+.char.protag{border-left-color:#10b981;background:linear-gradient(180deg,rgba(16,185,129,.04),transparent)}
+.char-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.char-id{background:#1a1a2e;color:#888;font-size:11px;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.04em}
+.char-name{font-size:18px;font-weight:900;color:#fff}
+.char-role{font-size:11px;color:#666;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.char-tags{display:flex;gap:5px;flex-wrap:wrap;margin-left:auto}
+.tag{display:inline-block;padding:2px 9px;border-radius:5px;font-size:10px;font-weight:700}
+.t-ability{background:rgba(16,185,129,.12);color:#34d399}
+.t-faction{background:rgba(59,130,246,.12);color:#60a5fa}
+.t-role{background:rgba(168,85,247,.12);color:#c084fc}
+.t-danger{background:rgba(239,68,68,.12);color:#f87171}
+.char-line{font-size:13.5px;color:#aaa;margin:6px 0;line-height:1.7}
+.char-line strong{color:#e2e8f0;font-weight:700;display:inline-block;min-width:78px}
+.ability-box{background:#080812;border:1px solid #1e1e30;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px}
+.ability-box .ab-name{color:#34d399;font-weight:800;margin-bottom:4px;font-size:13px}
+.ability-box .ab-desc{color:#aaa;line-height:1.7;margin-bottom:6px}
+.ability-box .ab-trick{color:#fbbf24;font-size:12px;line-height:1.7}
+.ability-box .ab-trick strong{color:#fcd34d}
+
+/* Faction cards */
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:16px 0}
+.fac{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:14px;padding:18px 22px}
+.fac-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.fac-mark{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+.fac-name{font-size:16px;font-weight:900;color:#fff}
+.fac-leader{font-size:11px;color:#666;font-weight:700;margin-top:4px}
+.fac-desc{color:#bbb;font-size:13px;line-height:1.75;margin-top:8px}
+.fac-power{margin-top:10px;padding-top:10px;border-top:1px dashed #1a1a2e;font-size:12px;color:#888}
+.fac-power strong{color:#aaa}
+
+/* Ability table */
+.tbl-wrap{overflow-x:auto;margin:16px 0;border-radius:10px;border:1px solid #1a1a2e}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#0a0a14}
+th{background:#12121e;color:#888;font-weight:800;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1a1a2e;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid #14141e;color:#bbb;line-height:1.7;vertical-align:top}
+tr:hover td{background:#10101a}
+td.no{color:#555;font-weight:800;font-family:'Courier New',monospace;width:42px}
+td.name{color:#e2e8f0;font-weight:700;white-space:nowrap}
+td.ab{color:#34d399;font-weight:700}
+td.desc{color:#999;font-size:12.5px}
+td.trick{color:#fbbf24;font-size:12px}
+
+/* Script (台本) */
+.script{background:#0b0b18;border:1px solid #1a1a2e;border-radius:14px;margin:24px 0;overflow:hidden}
+.scr-head{padding:20px 26px 14px;border-bottom:1px solid #1a1a2e}
+.scr-head h3{margin:0;border:none;padding:0;font-size:18px;color:#fff}
+.scr-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.scr-body{padding:6px 0}
+.part{padding:12px 26px 6px;background:#080812;border-top:1px solid #14141e;border-bottom:1px solid #14141e}
+.part-label{font-size:10px;font-weight:800;color:#444;letter-spacing:.12em;text-transform:uppercase}
+.part-title{font-size:14px;font-weight:800;color:#bbb;margin-top:2px}
+.part-time{font-size:10px;color:#444;margin-top:1px}
+
+.dial{padding:6px 26px 12px}
+.line{padding:8px 0;border-bottom:1px solid #0e0e18;font-size:14.5px;line-height:1.85;display:flex;gap:12px}
+.line:last-child{border-bottom:none}
+.who{font-weight:800;flex-shrink:0;min-width:78px;font-size:13px}
+.txt{flex:1;color:#ddd}
+.who-haru{color:#34d399}
+.who-saki{color:#f472b6}
+.who-jin{color:#fbbf24}
+.who-rin{color:#67e8f9}
+.who-tetsu{color:#a78bfa}
+.who-gaku{color:#60a5fa}
+.who-yuki{color:#94a3b8}
+.who-midori{color:#86efac}
+.who-ayame{color:#fb7185}
+.who-hagane{color:#fdba74}
+.who-kuroe{color:#c084fc}
+.who-god{color:#fde047}
+.who-mob{color:#555}
+.who-n{color:#64748b}
+.who-sys{color:#10b981;font-family:'Courier New',monospace;font-size:12px}
+
+.stage{padding:7px 26px 7px 38px;font-size:13px;color:#4a4a60;font-style:italic;border-left:3px solid #1e1e30;background:#080814;margin:2px 0;line-height:1.7}
+.sysmsg{padding:10px 26px;background:rgba(16,185,129,.06);border-left:3px solid rgba(16,185,129,.4);font-size:12.5px;color:#6ee7b7;font-family:'Courier New',monospace;letter-spacing:.02em;line-height:1.8;white-space:pre-wrap}
+.death{padding:10px 26px;background:rgba(239,68,68,.07);border-left:3px solid rgba(239,68,68,.5);font-size:12.5px;color:#fca5a5;font-family:'Courier New',monospace}
+.act-divider{text-align:center;padding:18px;color:#222;font-size:18px;letter-spacing:.2em;border-top:1px solid #111;border-bottom:1px solid #111}
+.why{padding:16px 26px;font-size:13px;color:#666;background:#070710;border-top:1px solid #111;line-height:1.8}
+.why strong{color:#888}
+
+@media (max-width:640px){
+.kv{grid-template-columns:100px 1fr}
+.char-tags{margin-left:0}
+.char-name{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">クラフトワールド100</span>
+<a href="#overview">作品概要</a>
+<a href="#world">世界観</a>
+<a href="#chars">キャラ</a>
+<a href="#abilities">能力一覧</a>
+<a href="#factions">勢力図</a>
+<a href="#ep01">第1話</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+<div>
+<span class="badge b-genre">異世界転生 × バトロワ × マイクラ</span>
+<span class="badge b-format">フォーマット ▸ 連続群像劇</span>
+<span class="badge b-cast">キャスト ▸ 100名</span>
+<span class="badge b-sp">シーズン1 構想中</span>
+</div>
+<h1>クラフトワールド100<br><span style="font-size:.55em;color:#888;font-weight:700;background:none;-webkit-text-fill-color:#888">〜異世界転生で能力ガチャしたら全員ハズレだった件〜</span></h1>
+<p class="sub">100人の異世界転生者がマイクラ世界に放り込まれる。能力は全員「ハズレ」。発想と知識が全ての群像バトルロワイアル。</p>
+</div>
+
+<!-- ============ 作品概要 ============ -->
+<div class="sec" id="overview">
+<div class="sec-head">
+<h2><span class="num">01</span>作品概要</h2>
+<div class="sec-sub">タイトル / ログライン / コアコンセプト</div>
+</div>
+<div class="sec-body">
+
+<h3>タイトル候補</h3>
+<dl class="kv">
+<dt>本タイトル</dt><dd><strong style="color:#34d399">クラフトワールド100</strong></dd>
+<dt>サブタイトル</dt><dd>〜異世界転生で能力ガチャしたら全員ハズレだった件〜</dd>
+<dt>略称</dt><dd>クラフト100 / CW100</dd>
+<dt>英題</dt><dd>CRAFT WORLD 100 — Hundred Losers in the Cube</dd>
+<dt>別案</dt><dd>「100人の異世界クラフター」「キューブ・ロワイアル」「ハズレスキル100」</dd>
+</dl>
+
+<h3>ログライン</h3>
+<div class="box box-em">
+<p class="lead">気づけば全員、立方体の世界にいた。<br>
+神は言った——「最後の1人だけが帰れる。あとはエンドラに殺されるか、お互いに殺しあえ」と。<br>
+全員にひとつずつ「能力」が配られた。だがどれも、<strong style="color:#fbbf24">弱い。微妙。ハズレ</strong>。<br>
+——ただし、<strong style="color:#34d399">使い方を知ってる奴にだけは、最強</strong>。</p>
+</div>
+
+<h3>コアコンセプト（3行）</h3>
+<ul class="bullets">
+<li><strong style="color:#e2e8f0">「ハズレ能力」を発想で化けさせる知略バトル</strong>。チート無双の真逆。</li>
+<li><strong style="color:#e2e8f0">マイクラの仕様が能力と絡む</strong>。レッドストーン、エンチャント、MOB、バイオーム——マイクラを知ってる人ほど何倍も楽しい。</li>
+<li><strong style="color:#e2e8f0">100人群像劇</strong>。最初は1人視点から始まり、勢力争いで多視点が交差していく。</li>
+</ul>
+
+<h3>ターゲット視聴者</h3>
+<ul class="bullets">
+<li>マイクラ実況/解説を見てる10代〜20代（「あ、その仕様知ってる！」が刺さる）</li>
+<li>ダンガンロンパ・ノゲノラ・賭ケグルイ系の頭脳バトル好き</li>
+<li>異世界モノ食傷世代の「能力ハズレ」逆張り需要</li>
+<li>長期視聴に耐える群像劇を求めるアニメファン</li>
+</ul>
+
+<h3>シリーズ構成（想定）</h3>
+<ul class="bullets">
+<li><strong>シーズン1</strong>（12〜13話）: スポーン〜初期勢力形成〜最初の大規模戦闘。100→約60人に。</li>
+<li><strong>シーズン2</strong>: ネザー解禁、勢力再編、裏切りラッシュ。60→約25人。</li>
+<li><strong>シーズン3</strong>: エンド到達、エンドラ討伐レース。25→1人。最終決着。</li>
+<li>合計約36話想定。各シーズンに「視点キャラ」を移し替えていく構成。</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ============ 世界観 ============ -->
+<div class="sec" id="world">
+<div class="sec-head">
+<h2><span class="num">02</span>世界観設定</h2>
+<div class="sec-sub">なぜ転生したか / マイクラ世界のルール / 勝利条件</div>
+</div>
+<div class="sec-body">
+
+<h3>転生の経緯</h3>
+<p class="lead">この世界の創造神は <strong style="color:#fde047">クラフター（Crafter）</strong> と呼ばれている。彼の正体は——<strong>マイクラに飽きた、ただの神</strong>。サンドボックスを完璧に作り終え、ワールドに「住人」を配置するだけになった彼は、暇つぶしに<strong>異世界からNPCを召喚する</strong>ことを思いついた。</p>
+
+<div class="box">
+<p>クラフターのルールはひとつ——<strong style="color:#fbbf24">「自分で進化していく住人なら、見てて楽しいだろう」</strong>。<br>
+集められたのは、現実世界で「平凡」とされていた100人。学生、社会人、フリーター、引きこもり——年齢も国籍も性別もバラバラ。共通点は「特別な才能がない」こと。<br>
+クラフターは全員に <strong style="color:#34d399">固有能力を1つだけ</strong> 配った。だがそれは <strong style="color:#fbbf24">「微妙な能力」</strong> ばかり。理由は明快——<strong>「最初から強い能力じゃつまらない」</strong>から。</p>
+</div>
+
+<h3>マイクラ世界のルール</h3>
+<dl class="kv">
+<dt>ワールド規模</dt><dd>半径約3,000ブロック。中央に山、周囲に砂漠/海洋/森林/平原/ジャングル。後にネザー/エンドゲートも解禁。</dd>
+<dt>時間進行</dt><dd>マイクラ時間と現実時間が同期。1日=20分ではなく <strong>1日=24時間</strong> のリアル進行。夜は本当に怖い。</dd>
+<dt>リスポーン</dt><dd><strong style="color:#f87171">無し</strong>。死=現実でも死亡。ベッドリスポーンも無効。</dd>
+<dt>初期装備</dt><dd>素手のみ。インベントリ27枠は健在。</dd>
+<dt>スポーン位置</dt><dd>100人ランダム散布。半径500ブロック以内に分散。</dd>
+<dt>モブ</dt><dd>マイクラ仕様完全準拠。ゾンビ/スケルトン/クリーパー/エンダーマン/ウィザー/エンドラ全部いる。</dd>
+<dt>クラフト</dt><dd>マイクラ仕様完全準拠。レシピ知識は各自の頭の中にある分だけ。</dd>
+<dt>エンチャント/ポーション</dt><dd>使用可能。素材はマイクラと同じ。</dd>
+<dt>レッドストーン</dt><dd>使用可能。回路を組める者は事実上の「核兵器」を作れる。</dd>
+<dt>体力/満腹度</dt><dd>マイクラのHPバー20、満腹度バー20そのまま。痛覚はリアル。</dd>
+<dt>チャット</dt><dd>マイクラのチャット欄（自分の視界右下）に <strong>誰かの死亡通知</strong> が流れる。発言は声出しのみ（チャット送信機能なし）。</dd>
+</dl>
+
+<h3>勝利条件</h3>
+<div class="box box-em">
+<p><strong style="color:#34d399;font-size:16px">「最後の1人になり、エンドラを倒せ」</strong></p>
+<p style="margin-top:8px">単純な殺し合いではなく、<strong>エンドラ撃破</strong>が条件。つまり最後まで生き残ってもエンドラを倒せなければ帰れない。<br>
+逆に言えば、99人を生かしたままエンドラを倒しに行くことも理論上は可能（現実的にはほぼ不可能）。</p>
+</div>
+
+<h3>セカンダリルール（クラフター宣言）</h3>
+<ul class="bullets">
+<li><strong>ベッドで眠ると 現実の記憶を1日分思い出せる</strong>（任意）。能力ヒントを得る手段。</li>
+<li><strong>能力は1人1つ。譲渡・複製不可</strong>。能力者を殺しても能力は受け継げない。</li>
+<li><strong>能力名と効果の概要は本人にしか分からない</strong>（他人に話すかは自由）。</li>
+<li><strong>毎日0:00（マイクラ時間）に死亡者数とランキングが空に表示される</strong>。</li>
+<li><strong>30日に1度、クラフターが「イベント」を発生させる</strong>（補給ドロップ、ゾンビ大発生、雷雨3日連続など）。</li>
+</ul>
+
+<h3>世界に散らばる謎</h3>
+<ul class="bullets">
+<li>序盤に発見される「<strong>古い看板</strong>」——前回も100人召喚されていた痕跡。</li>
+<li>エンドポータルは見つかっているが、起動には12個のエンダーアイが必要（=ブレイズと戦う必要）。</li>
+<li>クラフター自身もこの世界のどこかにNPCとして紛れている、という都市伝説。</li>
+<li>能力者の中に <strong>「能力を消去する能力」</strong> を持つ者が紛れている疑惑。</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ============ 主要キャラクター ============ -->
+<div class="sec" id="chars">
+<div class="sec-head">
+<h2><span class="num">03</span>主要キャラクター</h2>
+<div class="sec-sub">視点キャラ＋重要キャラ計11名の詳細</div>
+</div>
+<div class="sec-body">
+
+<div class="char-grid">
+
+<!-- 主人公 -->
+<div class="char protag">
+<div class="char-head">
+<span class="char-id">No.001</span>
+<span class="char-name">黒崎 ハル</span>
+<span class="char-role">主人公 / 視点キャラ</span>
+<span class="char-tags">
+<span class="tag t-role">PROTAGONIST</span>
+<span class="tag t-faction">無所属→…</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 17歳・男・高2</div>
+<div class="char-line"><strong>外見</strong> 黒髪セミロング、痩せ型、目の下にクマ、いつも眠そう。フード付きパーカー＋ジーンズで転生。</div>
+<div class="char-line"><strong>性格</strong> 観察型・受け身。喧嘩は弱いが、状況把握が早い。表に出ないだけで頭は回る。マイクラ歴は「弟が遊んでるのを横で見てた」程度の中の上。</div>
+<div class="char-line"><strong>口調</strong> 「……うん」「いや、それは多分こうじゃね？」「めんどくせ……でもやるか」</div>
+<div class="char-line"><strong>転生前</strong> 何の取り柄もないと自覚している高校生。妹がいる。バイト先のコンビニから帰る途中で召喚された。</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「1分後ブロック消滅」</div>
+<div class="ab-desc">自分が設置したブロックは、1分後に音もなく消える（ドロップしない）。1日の設置数制限なし。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 空中足場で逃走 → 追手が登った瞬間に消滅で落下殺。② 罠の蓋。③ 一夜の隠れ家を作って朝に消す（痕跡ゼロ）。④ 砂や砂利で生き埋めにして1分後に「事故死」偽装。⑤ TNTを土で囲んで起爆→1分後に土消滅で爆風が露出。後半「1分」を逆算した爆発トリックの常連になる。</div>
+</div>
+</div>
+
+<!-- ヒロイン枠 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.014</span>
+<span class="char-name">神楽 サキ</span>
+<span class="char-role">ヒロイン / ハルの初期同盟</span>
+<span class="char-tags">
+<span class="tag t-faction">無所属→ハル組</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 16歳・女・高1</div>
+<div class="char-line"><strong>外見</strong> 茶髪ショート、小柄、目つきが鋭い。学校のジャージで転生。</div>
+<div class="char-line"><strong>性格</strong> 動物好きが高じて獣医志望だった。人見知り、動物には饒舌。判断が早く、ハルの「考える力」と相性が良い。</div>
+<div class="char-line"><strong>口調</strong> 「……それ、たぶん怒ってるよ」「ハル、こいつ役に立つ」「うん、行ける」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「MOBと会話できる」</div>
+<div class="ab-desc">ゾンビ、スケルトン、村人、動物、すべての敵対/中立MOBと言葉が通じる。命令はできない（説得は可能）。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 村人に「あの人怪しい」と密告 → 鉄ゴーレムが攻撃。② ゾンビに「あっち美味しそう」と言って敵陣へ誘導。③ クリーパーに自爆位置を相談（爆発タイミングを共有）。④ エンダーマンと交渉してエンダーパールを譲渡。⑤ シーズン2でピグリンとの外交担当に。事実上の <strong>「軍勢を持つ」</strong> キャラへ。</div>
+</div>
+</div>
+
+<!-- 同盟仲間 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.027</span>
+<span class="char-name">火室 ジン</span>
+<span class="char-role">前線担当 / 単独行動派</span>
+<span class="char-tags">
+<span class="tag t-faction">無所属</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 19歳・男・元バンドマン</div>
+<div class="char-line"><strong>外見</strong> 金髪、ピアス、革ジャケット。喧嘩慣れした体つき。</div>
+<div class="char-line"><strong>性格</strong> 短気で口悪いが、義理堅い。一度仲間と認めると裏切らない。マイクラ未経験だったが、転生3日で適応する地頭の持ち主。</div>
+<div class="char-line"><strong>口調</strong> 「あ？ なんだお前」「うっせー、わかってんだよ」「行くぞ、灯ねぇと夜が来る」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「松明、無限生成」</div>
+<div class="ab-desc">手のひらから松明を1秒に1本ずつ取り出せる。素材消費なし。ただし松明以外は出せない。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 夜の安全確保が完全フリー → 夜の活動コストが他人と段違い。② 松明を投げてMOBスポーンを潰す（湧き潰し戦争）。③ 敵拠点の周囲を松明で囲って <strong>湧き潰し攻撃</strong>（スポナーを止める）。④ 木材製のため、燃やせば松明束=即時火炎放射。⑤ 視界を奪うフラッシュとして接近戦に使う。</div>
+</div>
+</div>
+
+<!-- ヒーラー枠 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.033</span>
+<span class="char-name">白雪 リン</span>
+<span class="char-role">後方支援 / 補給</span>
+<span class="char-tags">
+<span class="tag t-faction">中立</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 20歳・女・大学生</div>
+<div class="char-line"><strong>外見</strong> ロングストレート黒髪、青いワンピース。儚げ。</div>
+<div class="char-line"><strong>性格</strong> 一見おとなしいが、生存への執着が異常に強い。勢力に属さず、誰にでも水を売る商人ポジション。</div>
+<div class="char-line"><strong>口調</strong> 「……どうぞ」「お礼は、エメラルドでいいです」「ごめんなさい、それは渡せません」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「水バケツ、無限化」</div>
+<div class="ab-desc">所持している水バケツが空にならない。ただしバケツは1個だけ、自分の所持品の水バケツのみ対象。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 砂漠中央で <strong>水の独占</strong> → 経済の中心に。② コンジット用のインフラ提供。③ 溶岩流に注ぎ続けて黒曜石を量産（=ネザーポータル独占）。④ 火災を即時消火（密命任務専門の救助役にも）。⑤ <strong>水流エレベーター</strong> を恒久設置でファストトラベル網。</div>
+</div>
+</div>
+
+<!-- クラフト職人 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.041</span>
+<span class="char-name">黒沼 テツ</span>
+<span class="char-role">クラフター / 開発担当</span>
+<span class="char-tags">
+<span class="tag t-faction">ガク連合</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 23歳・男・元プログラマ</div>
+<div class="char-line"><strong>外見</strong> メガネ、ボサボサ髪、痩身、無精ヒゲ。Tシャツ＋短パンで転生。</div>
+<div class="char-line"><strong>性格</strong> マイクラガチ勢。レッドストーン回路を脳内で組める。喋らないが、設計図を書く速度は化け物。</div>
+<div class="char-line"><strong>口調</strong> 「……これ、なんで動かないんだ」「2tickずらせばいける」「リピーターが足りない」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「クラフト時間、1秒短縮」</div>
+<div class="ab-desc">作業台での同一レシピのクラフト時間が、毎回1秒短縮される。マイクラ本来は瞬時クラフトなので、この世界では<strong>2秒かかる</strong>のがデフォ。1秒短縮は実質「半減」。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 大量生産の速度2倍 → 拠点開発の主役。② 緊急時のポーション量産で勢力の医療担当に。③ <strong>ピストン回路でTNTを連射する自動装置</strong> を組み、戦争兵器を量産。④ 他人より早く鉄装備一式を揃えられる → 序盤の優位を勢力に提供。</div>
+</div>
+</div>
+
+<!-- リーダー -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.058</span>
+<span class="char-name">雷堂 ガク</span>
+<span class="char-role">勢力リーダー / 政治家</span>
+<span class="char-tags">
+<span class="tag t-faction">ガク連合 リーダー</span>
+<span class="tag t-danger">敵にすると厄介</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 28歳・男・元IT営業マネージャ</div>
+<div class="char-line"><strong>外見</strong> 短髪黒、長身、スーツ姿のまま転生。眼光鋭い。</div>
+<div class="char-line"><strong>性格</strong> カリスマ型のリーダー。3日でガク連合（人数20人超）を作り上げた手腕の持ち主。理性的だが、目的のためなら平気で見捨てる冷酷さもある。</div>
+<div class="char-line"><strong>口調</strong> 「あなたの能力は、組織で活きる」「裏切りは、コストです。やめたほうがいい」「全員、生き残らせるとは言ってない」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「他人のチャットが見える」</div>
+<div class="ab-desc">他人の声出し発言の <strong>ログ</strong> が、自分のチャット欄に文字で表示される。半径50ブロック以内のみ。同時に大勢が話すと処理しきれず流れる。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 拠点に潜入させた仲間経由で敵勢力の会話を傍受。② 集会で誰が誰の悪口を言ったか全部把握 → 勢力内部の派閥を完全管理。③ ログをスクショ的に記憶 → 後で証拠として提示。④ 「お前、昨日あいつにこう言ったよな？」で全員を支配する <strong>政治の鬼</strong>。</div>
+</div>
+</div>
+
+<!-- 陰キャ夜型 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.062</span>
+<span class="char-name">蓮見 ユウキ</span>
+<span class="char-role">夜の暗殺者</span>
+<span class="char-tags">
+<span class="tag t-faction">無所属（夜働き）</span>
+<span class="tag t-danger">影の脅威</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 19歳・男・引きこもり</div>
+<div class="char-line"><strong>外見</strong> ボサボサ黒髪、目つき悪い、痩身。黒パーカー。</div>
+<div class="char-line"><strong>性格</strong> 昼間は無気力で誰にも相手にされないが、夜になると別人。元の世界で深夜のFPSが生き甲斐だった。</div>
+<div class="char-line"><strong>口調</strong> 昼「……眠い」 / 夜「ふぅ。さて、今日は誰を狩ろうか」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「夜限定、全ステータス＋1」</div>
+<div class="ab-desc">マイクラ時間で夜（暗くなった瞬間）から朝まで、攻撃力・防御力・移動速度・採掘速度すべてが+1される。日中は通常以下。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① <strong>夜は最強格</strong> の戦闘力。鉄剣で他人の鉄装備を1撃半で削れる。② 暗視効果はないが、目が慣れているので地形を完璧に記憶した「ホームグラウンド戦」が得意。③ <strong>暗黒街の暗殺者</strong> として依頼を受ける闇商売を始める。④ 永続的な夜（ネザー・洞窟）でも常時+1なので、シーズン2以降ネザーで覚醒する。</div>
+</div>
+</div>
+
+<!-- 治療 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.071</span>
+<span class="char-name">翡翠 ミドリ</span>
+<span class="char-role">医療担当 / 薬草師</span>
+<span class="char-tags">
+<span class="tag t-faction">中立→ピース陣営</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 24歳・女・元看護師</div>
+<div class="char-line"><strong>外見</strong> 緑髪ロング、白衣で転生（夜勤明けだった）、優しい目。</div>
+<div class="char-line"><strong>性格</strong> 殺し合いを拒否。負傷者を敵味方関係なく治療する。ピース陣営の創設者の1人。</div>
+<div class="char-line"><strong>口調</strong> 「動かないで。包帯、巻きますね」「あなたが誰でも、生かします」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「キノコを食べても安全」</div>
+<div class="ab-desc">通常は中毒を起こす毒キノコ・茶キノコ・赤キノコ・ワーデン洞窟の謎キノコを食べても無害。さらに食べると微量の <strong>HP回復</strong> 効果。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 食料に困らない（マイクラ世界はキノコが大量）。② <strong>キノコシチュー</strong> 量産で勢力の食料インフラを掌握。③ 毒キノコを敵に食わせる暗殺。④ ムーシュルーム島を本拠地化 → 永久食料源の独占。⑤ シーズン2、ネザーのワートと組み合わせてポーション原料の中心に。</div>
+</div>
+</div>
+
+<!-- ナビ -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.079</span>
+<span class="char-name">朱雀 アヤメ</span>
+<span class="char-role">情報屋 / ナビゲーター</span>
+<span class="char-tags">
+<span class="tag t-faction">ガク連合 情報部</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 22歳・女・元ジャーナリスト見習い</div>
+<div class="char-line"><strong>外見</strong> 赤髪ボブ、メガネ、活動的な服装。地図とノートをすぐ手作り。</div>
+<div class="char-line"><strong>性格</strong> 詮索好き。情報を金に変えるビジネスセンス。ガクに引き抜かれて連合の情報部長に。</div>
+<div class="char-line"><strong>口調</strong> 「面白い話、持ってる？」「それ、いくらで買う？」「あー、そこは行くと死ぬよ」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「Y座標、常時表示」</div>
+<div class="ab-desc">自分の現在Y座標が視界右上に常に表示される。X/Z座標は分からない。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 鉱石の高度（ダイヤY-58、ネザライトY-15等）を把握して採掘効率を最大化。② 他人を案内するナビゲーターになって金を稼ぐ。③ 地下迷路で唯一の方角感覚を持つ存在。④ 「Y0以下に行ったら死ぬ罠」を作って、自分だけ安全に活動。⑤ エンドポータル探索で最大の戦力に。</div>
+</div>
+</div>
+
+<!-- 戦闘 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.083</span>
+<span class="char-name">鋼田 ハガネ</span>
+<span class="char-role">最強戦士候補</span>
+<span class="char-tags">
+<span class="tag t-faction">ガク連合 武力</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 30歳・男・元自衛隊レンジャー</div>
+<div class="char-line"><strong>外見</strong> 短髪、筋肉質、大柄、迷彩シャツ。</div>
+<div class="char-line"><strong>性格</strong> 寡黙な戦闘マシン。倫理観は普通だが、命じられれば非情にもなる。</div>
+<div class="char-line"><strong>口調</strong> 「了解」「下がってろ」「殺すか」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「鉄装備のみ、修理コスト0」</div>
+<div class="ab-desc">鉄装備（剣・斧・防具）の耐久が0になっても自動で全回復する。条件: 装備中であること。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① 鉄装備で永久戦闘可能 → 物量戦で他人の装備を消耗させて勝つ。② エンチャントが乗らない弱点はあるが、<strong>無限矢を弓ではなく鉄剣で受け止める盾運用</strong> など発想で補う。③ ダイヤ装備が普及しても、鉄剣がいくらでも壊せるなら殴りつぶせる。④ シーズン後半、ダイヤ装備の敵にも「<strong>修理コスト</strong>」で消耗戦を仕掛けて勝利。</div>
+</div>
+</div>
+
+<!-- ラスボス候補 -->
+<div class="char">
+<div class="char-head">
+<span class="char-id">No.???</span>
+<span class="char-name">闇宮 クロエ</span>
+<span class="char-role">ラスボス候補 / 影の女王</span>
+<span class="char-tags">
+<span class="tag t-faction">黒猫団 黒幕</span>
+<span class="tag t-danger">最重要警戒</span>
+</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 不明（外見25前後）・女</div>
+<div class="char-line"><strong>外見</strong> 銀髪ロング、黒のロングコート、左目に眼帯。</div>
+<div class="char-line"><strong>性格</strong> 全てを把握しているような余裕。誰にも本性を見せない。集団に表立って加わらず、暗躍する。</div>
+<div class="char-line"><strong>口調</strong> 「……ふぅん、面白いね」「君、覚えとくよ」「死ぬなら、綺麗に死んで」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「自分の名前/IDを隠せる」</div>
+<div class="ab-desc">死亡通知に自分の名前が表示されない（=死んでも誰にも気付かれない）。さらに自分が誰かを殺してもキル通知が出ない。</div>
+<div class="ab-trick"><strong>工夫ポイント:</strong> ① <strong>密室殺人が可能</strong>（誰が殺したか永遠に分からない）。② 「もう死んだはず」と思わせて偽装死。③ 一度勢力を抜けたフリをして潜入。④ 真の目的：「<strong>能力を消去する能力者</strong> を探している」。⑤ 最終局面で <strong>「クラフター」自身説</strong> がほのめかされる。</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ============ 100人能力一覧 ============ -->
+<div class="sec" id="abilities">
+<div class="sec-head">
+<h2><span class="num">04</span>全100人 能力一覧</h2>
+<div class="sec-sub">No. / 名前 / 能力 / 一見ハズレな理由 / 化けるポイント</div>
+</div>
+<div class="sec-body">
+
+<p style="color:#888;font-size:13px;margin-bottom:14px">※ 上記の主要キャラ11名（No.001/014/027/033/041/058/062/071/079/083/???）も含む。No.???（闇宮クロエ）は便宜上 No.100 として記載。</p>
+
+<h3 style="color:#10b981">▼ ブロック・地形操作系（No.001〜015）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">001</td><td class="name">黒崎 ハル</td><td class="ab">1分後ブロック消滅</td><td class="trick">空中足場→消滅で落下殺。痕跡ゼロの隠れ家。</td></tr>
+<tr><td class="no">002</td><td class="name">岩戸 タケル</td><td class="ab">土ブロック採掘速度2倍</td><td class="trick">土の壁を突破する速度が異常。整地・農地拡張で勢力資源化。</td></tr>
+<tr><td class="no">003</td><td class="name">砂原 サキコ</td><td class="ab">砂が落下しない（自分周囲3）</td><td class="trick">砂柱を空中要塞に。砂の屋根を崩さず移動。</td></tr>
+<tr><td class="no">004</td><td class="name">石森 ゴロウ</td><td class="ab">丸石が手に持つだけで1個ずつ増殖</td><td class="trick">超低速だが永続。1日1スタック。建材供給の独占。</td></tr>
+<tr><td class="no">005</td><td class="name">ハーフ太郎</td><td class="ab">ハーフブロックが2倍量クラフト</td><td class="trick">階段建築コスト半減。長距離通路建設の効率化。</td></tr>
+<tr><td class="no">006</td><td class="name">アズマ レン</td><td class="ab">看板の文字、自分にだけ見える「裏面」が書ける</td><td class="trick">伝言を仲間にだけ残せる。罠サインの偽装。</td></tr>
+<tr><td class="no">007</td><td class="name">マツダ ヒロ</td><td class="ab">階段ブロックの向きが自動で正しくなる</td><td class="trick">ネタに見えるが、建築速度2倍。建築勢力で重宝。</td></tr>
+<tr><td class="no">008</td><td class="name">ウエハラ ジュン</td><td class="ab">設置したベッドが半分の素材で作れる</td><td class="trick">ウール集めが地獄なこの世界で、ベッド供給の独占。</td></tr>
+<tr><td class="no">009</td><td class="name">ベッド爆発無効</td><td class="ab">ベッド爆発無効</td><td class="trick">ネザーで <strong>ベッド爆弾</strong> を安全に起爆できる唯一の人間。シーズン2の超兵器。</td></tr>
+<tr><td class="no">010</td><td class="name">サクライ アオイ</td><td class="ab">水中で呼吸時間+10秒</td><td class="trick">水中拠点や海底神殿攻略で唯一無二。</td></tr>
+<tr><td class="no">011</td><td class="name">フカヤ ミナミ</td><td class="ab">水面歩行（一歩だけ）</td><td class="trick">川や池の渡河に有用。逃走時の救命具。</td></tr>
+<tr><td class="no">012</td><td class="name">ナギサ ユイ</td><td class="ab">サンゴが自分周囲で乾燥しない</td><td class="trick">建築素材としての価値、海洋勢力の建材独占。</td></tr>
+<tr><td class="no">013</td><td class="name">スズキ コウ</td><td class="ab">焚き火を素手で消せる</td><td class="trick">自分の足跡を消す痕跡管理。煙の合図を即時制御。</td></tr>
+<tr><td class="no">014</td><td class="name">神楽 サキ</td><td class="ab">MOBと会話できる</td><td class="trick">ゾンビ軍団を指揮、村人と交渉、エンダーマンと取引。</td></tr>
+<tr><td class="no">015</td><td class="name">トウマ アキラ</td><td class="ab">マグマブロックでダメージ半減</td><td class="trick">マグマトラップを自分だけ安全に渡れる脱出路に。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#3b82f6">▼ 道具・クラフト系（No.016〜030）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">016</td><td class="name">フジワラ ナナ</td><td class="ab">同じレシピを2回連続クラフトで2回目素材なし</td><td class="trick">大量生産の効率2倍、戦争前の装備量産で勝つ。</td></tr>
+<tr><td class="no">017</td><td class="name">アサカワ ジュリ</td><td class="ab">弓の引き絞り時間-0.1秒</td><td class="trick">PvPで先手を取れる。スケルトンとの撃ち合いで勝つ。</td></tr>
+<tr><td class="no">018</td><td class="name">クギミヤ ハヤテ</td><td class="ab">矢の軌道がうっすら見える</td><td class="trick">遠距離狙撃の命中率が異常に上がる。射手の頂点。</td></tr>
+<tr><td class="no">019</td><td class="name">ハヤミ レイ</td><td class="ab">釣竿の耐久が無限</td><td class="trick">エンチャント本量産（釣り）→ 勢力の魔法供給源。</td></tr>
+<tr><td class="no">020</td><td class="name">サトウ シュウ</td><td class="ab">バケツの中身を1個だけ「冷凍」できる</td><td class="trick">水バケツ→氷バケツ、敵地に氷の地雷原。</td></tr>
+<tr><td class="no">021</td><td class="name">テラサキ アユ</td><td class="ab">作業台が遠隔で1度だけ起動できる</td><td class="trick">敵拠点の作業台を勝手に使ってアイテム盗用。</td></tr>
+<tr><td class="no">022</td><td class="name">タチバナ コウキ</td><td class="ab">かまど燃料の燃焼時間+1秒</td><td class="trick">微妙だが、量産時に石炭1個分のコスト浮く。</td></tr>
+<tr><td class="no">023</td><td class="name">アシハラ サチ</td><td class="ab">エンチャント結果を1度だけ覗き見できる</td><td class="trick">エンチャント運ゲーをスキル化。最強装備量産。</td></tr>
+<tr><td class="no">024</td><td class="name">ノミヤ シン</td><td class="ab">金床で名付けるとコスト0</td><td class="trick">装備の <strong>修復連鎖</strong> でコスト爆発を回避、永続最強装備が作れる。</td></tr>
+<tr><td class="no">025</td><td class="name">ナカニシ アン</td><td class="ab">経験値オーブを1.1倍吸収</td><td class="trick">エンチャント効率1割増。長期で圧倒的な装備差に。</td></tr>
+<tr><td class="no">026</td><td class="name">マツモト カイ</td><td class="ab">ハサミの刈り取り効率2倍</td><td class="trick">ウールの独占供給、ベッド・カーペット経済。</td></tr>
+<tr><td class="no">027</td><td class="name">火室 ジン</td><td class="ab">松明、無限生成</td><td class="trick">夜と洞窟の支配者。湧き潰し戦争の主役。</td></tr>
+<tr><td class="no">028</td><td class="name">トオヤマ シズク</td><td class="ab">バケツが空にならない（中身は変えるたびリセット）</td><td class="trick">水か溶岩を即時供給、戦場の状況改変装置。</td></tr>
+<tr><td class="no">029</td><td class="name">ホリ ジン</td><td class="ab">ピストンが0.05秒早く動く</td><td class="trick">レッドストーン回路師にとって <strong>神</strong>。連射TNT砲台。</td></tr>
+<tr><td class="no">030</td><td class="name">フカミ コトハ</td><td class="ab">レッドストーン信号を素手で1ブロック伸ばせる</td><td class="trick">回路の小型化が可能、敵地で <strong>素手で罠回路</strong> を即席設置。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#a855f7">▼ MOB・動物系（No.031〜050）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">031</td><td class="name">アサヒ レン</td><td class="ab">ゾンビが自分の認知が0.5秒遅い</td><td class="trick">先手1発で勝てる。ゾンビパルクール。</td></tr>
+<tr><td class="no">032</td><td class="name">サイトウ メイ</td><td class="ab">スケルトンの矢、1日1回無効化</td><td class="trick">ピンポイントの危機回避。砂漠寺院攻略の鍵。</td></tr>
+<tr><td class="no">033</td><td class="name">白雪 リン</td><td class="ab">水バケツ無限化</td><td class="trick">経済の中心、黒曜石量産、コンジット供給。</td></tr>
+<tr><td class="no">034</td><td class="name">ナリタ コウタ</td><td class="ab">クリーパーの導火線音が聞こえる（半径10）</td><td class="trick">爆発予兆の完璧把握、誘導爆破の達人。</td></tr>
+<tr><td class="no">035</td><td class="name">アリタ チハル</td><td class="ab">エンダーマンと目が合っても怒らせない</td><td class="trick">エンドにノーリスクで突撃可能、エンダーパール独占交渉。</td></tr>
+<tr><td class="no">036</td><td class="name">クモタ アヤ</td><td class="ab">クモが自分を仲間と勘違いする</td><td class="trick">蜘蛛スポナーをペット化、ジャングル進攻時の盾。</td></tr>
+<tr><td class="no">037</td><td class="name">ムラモト ハジメ</td><td class="ab">村人との取引コスト-1エメラルド</td><td class="trick">取引が他人の半額、エンチャ本市場を独占。</td></tr>
+<tr><td class="no">038</td><td class="name">カジヤ ノブ</td><td class="ab">鍛冶屋のレシピを1個だけ盗み見</td><td class="trick">最強エンチャ本のリーク、装備差を生む。</td></tr>
+<tr><td class="no">039</td><td class="name">ピグミ シン</td><td class="ab">ピグリンが攻撃して来ない（金不要）</td><td class="trick">ネザー進攻時に <strong>ノーコスト要塞攻略</strong>。</td></tr>
+<tr><td class="no">040</td><td class="name">ガストン アサ</td><td class="ab">ガストの炎弾を反射しやすい（軌道が緩い）</td><td class="trick">ネザー戦闘の主役、ガスト牧場経営も可能。</td></tr>
+<tr><td class="no">041</td><td class="name">黒沼 テツ</td><td class="ab">クラフト時間1秒短縮</td><td class="trick">大量生産2倍、TNT連射砲台、ポーション量産。</td></tr>
+<tr><td class="no">042</td><td class="name">ブレイズ コウ</td><td class="ab">ブレイズロッドのドロップ率+1%</td><td class="trick">微妙だが、長期蓄積で <strong>ブレイズロッドの王</strong>。エンドラ突入権を握る。</td></tr>
+<tr><td class="no">043</td><td class="name">ネコハラ アヤ</td><td class="ab">猫が必ず懐く</td><td class="trick">猫がいるとファントム/クリーパーが寄らない。<strong>歩く防壁</strong>。</td></tr>
+<tr><td class="no">044</td><td class="name">イヌタ ケンタ</td><td class="ab">犬の遠吠えで敵が10秒怯む</td><td class="trick">犬軍団を率いて突撃、PvPで開幕硬直を取る。</td></tr>
+<tr><td class="no">045</td><td class="name">カメダ ウミ</td><td class="ab">カメの卵を踏んでも割れない</td><td class="trick">カメのスケイル量産、水中呼吸ヘルメット独占。</td></tr>
+<tr><td class="no">046</td><td class="name">フェイ ナナ</td><td class="ab">ファントムに襲われない</td><td class="trick">睡眠不要の活動、夜間任務の専属。</td></tr>
+<tr><td class="no">047</td><td class="name">ストラ ヒカル</td><td class="ab">ストライダーに溶岩を歩かせる</td><td class="trick">ネザーの移動革命、勢力にとっての交通インフラ。</td></tr>
+<tr><td class="no">048</td><td class="name">アレイ ナミ</td><td class="ab">アレイが自分のアイテムを優先回収</td><td class="trick">採掘・農作業の効率化、戦闘時のアイテム回収サポート。</td></tr>
+<tr><td class="no">049</td><td class="name">オウムタ ハル</td><td class="ab">オウムが自分の言葉を学習する</td><td class="trick">遠隔地の偽情報拡散、敵勢力の混乱工作。</td></tr>
+<tr><td class="no">050</td><td class="name">ヤギモト ツカサ</td><td class="ab">ヤギに突き飛ばされない</td><td class="trick">ヤギの角を確実に取得、シリンダー式吹き飛ばし武器の独占。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#ec4899">▼ ステータス・身体系（No.051〜065）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">051</td><td class="name">アシタカ シン</td><td class="ab">落下ダメージ-1</td><td class="trick">微妙だが死亡フラグを潰す保険。崖戦闘の達人化。</td></tr>
+<tr><td class="no">052</td><td class="name">クロカワ ユウ</td><td class="ab">夜目（半径3ブロック）</td><td class="trick">夜間活動でローソク不要、奇襲の達人。</td></tr>
+<tr><td class="no">053</td><td class="name">ハシモト レナ</td><td class="ab">腹が減らない代わりに自然回復しない</td><td class="trick">食料探索ゼロ、長期遠征の主軸。回復ポーション運用必須。</td></tr>
+<tr><td class="no">054</td><td class="name">サナギ アオ</td><td class="ab">満腹度の回復速度が食事1回+0.5</td><td class="trick">微増だが、長距離移動の実質的な体力管理が楽に。</td></tr>
+<tr><td class="no">055</td><td class="name">ソラハシ ナギ</td><td class="ab">歩行音を消せる</td><td class="trick">完全な隠密行動、ウォーデン洞窟の唯一の探索者。</td></tr>
+<tr><td class="no">056</td><td class="name">フユカワ シズカ</td><td class="ab">凍えない（粉雪・氷上で減速しない）</td><td class="trick">タイガ・雪山の支配者、粉雪トラップを自由通行。</td></tr>
+<tr><td class="no">057</td><td class="name">ナミハタ コウ</td><td class="ab">サボテンに刺されない</td><td class="trick">サボテン迷路を平気で進める、敵向けサボテン牧場。</td></tr>
+<tr><td class="no">058</td><td class="name">雷堂 ガク</td><td class="ab">他人のチャットが見える（半径50）</td><td class="trick">情報戦・諜報の頂点、勢力の心臓。</td></tr>
+<tr><td class="no">059</td><td class="name">アマミ レイ</td><td class="ab">天気を1日1回当てられる</td><td class="trick">雷雨予測=チャネリング避雷針=トライデント設計。</td></tr>
+<tr><td class="no">060</td><td class="name">ホシナ ユイ</td><td class="ab">ベッドで寝るとHP+1（最大）</td><td class="trick">毎日地味に1回復、長期で生存力に直結。</td></tr>
+<tr><td class="no">061</td><td class="name">アリス カナ</td><td class="ab">同じバイオームに居続けると微回復</td><td class="trick">拠点に居れば実質ヒーラー不要、要塞籠城の主。</td></tr>
+<tr><td class="no">062</td><td class="name">蓮見 ユウキ</td><td class="ab">夜限定 全ステータス+1</td><td class="trick">夜の暗殺者、ネザー・洞窟の常勝。</td></tr>
+<tr><td class="no">063</td><td class="name">ナカガミ サワ</td><td class="ab">他人より0.5秒早く目覚める</td><td class="trick">寝込み襲撃で <strong>必ず先手</strong>。寝起き殺しの達人。</td></tr>
+<tr><td class="no">064</td><td class="name">マエハタ ジュリ</td><td class="ab">死亡時、最後の言葉が全員の空に表示</td><td class="trick">遺言で犯人告発、勢力崩壊の最終手段。</td></tr>
+<tr><td class="no">065</td><td class="name">タツキ ソウ</td><td class="ab">他人の死亡通知に1秒早く気付く</td><td class="trick">死体漁りの優位、現場一番乗りで装備回収。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#f59e0b">▼ 食料・農業系（No.066〜075）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">066</td><td class="name">タマゴ アヤ</td><td class="ab">卵の孵化率3倍</td><td class="trick">鶏ファーム独占、肉と羽根の供給源。</td></tr>
+<tr><td class="no">067</td><td class="name">ニンジャ ノリ</td><td class="ab">ニンジン馬に乗ると速度+5%</td><td class="trick">伝令任務、ヒットアンドアウェイの達人。</td></tr>
+<tr><td class="no">068</td><td class="name">サトウ アメ</td><td class="ab">砂糖を投げると鶏が3秒止まる</td><td class="trick">小ネタだが、ジャンプブースト用の砂糖キビを支配。</td></tr>
+<tr><td class="no">069</td><td class="name">ヒツジ ハル</td><td class="ab">羊の毛刈りで2倍取れる</td><td class="trick">ベッド経済、染色市場の支配。</td></tr>
+<tr><td class="no">070</td><td class="name">マグマ レイ</td><td class="ab">かまどでの精錬が常に冷却済み</td><td class="trick">焼き肉・焼石を即時取り出し、料理人ポジ。</td></tr>
+<tr><td class="no">071</td><td class="name">翡翠 ミドリ</td><td class="ab">キノコ毒無効＋微回復</td><td class="trick">食料無限、ムーシュルーム島支配、暗殺キノコ。</td></tr>
+<tr><td class="no">072</td><td class="name">アマガサ ハル</td><td class="ab">水中で作物が育つ速度+10%</td><td class="trick">海底農場の独占者。海洋勢力の食料担当。</td></tr>
+<tr><td class="no">073</td><td class="name">スイカ ジン</td><td class="ab">スイカを切ると常に9個（最大値）</td><td class="trick">食料効率が固定で最大、食料インフラ単独運用可。</td></tr>
+<tr><td class="no">074</td><td class="name">サケ ノブ</td><td class="ab">ポーションの効果時間+10秒</td><td class="trick">微増だが、PvPでの優位確定。ポーション主力勢力で必須。</td></tr>
+<tr><td class="no">075</td><td class="name">ハチミツ アン</td><td class="ab">ハチに刺されない</td><td class="trick">ハチミツ独占、回復食材の流通の鍵。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#06b6d4">▼ 移動・空間系（No.076〜085）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">076</td><td class="name">ボウト カズ</td><td class="ab">ボートが陸を1秒だけ走る</td><td class="trick">わずかな段差を無視できる、緊急脱出に。</td></tr>
+<tr><td class="no">077</td><td class="name">レール ハヤ</td><td class="ab">トロッコがレールなしで30cm進む</td><td class="trick">設計図次第で <strong>無限軌道</strong> 構築、勢力の輸送網独占。</td></tr>
+<tr><td class="no">078</td><td class="name">エンドウ シュン</td><td class="ab">エンダーパールの飛距離+1ブロック</td><td class="trick">微増だが、エンド戦の足場間ジャンプで生死を分ける。</td></tr>
+<tr><td class="no">079</td><td class="name">朱雀 アヤメ</td><td class="ab">Y座標常時表示</td><td class="trick">鉱脈の最適採掘、エンドポータル探索のリーダー。</td></tr>
+<tr><td class="no">080</td><td class="name">タマミ シオン</td><td class="ab">コーラスフルーツの転送先を予測</td><td class="trick">エンド戦闘でランダム転送のリスクを消す、唯一の安定移動者。</td></tr>
+<tr><td class="no">081</td><td class="name">マグマト ナギ</td><td class="ab">ネザーポータルを5秒早く渡れる</td><td class="trick">緊急避難・奇襲、ネザー伝令の専属。</td></tr>
+<tr><td class="no">082</td><td class="name">ホロ サキ</td><td class="ab">コンパスがネザーでも壊れない</td><td class="trick">ネザー迷子防止、勢力のネザー侵攻ガイド。</td></tr>
+<tr><td class="no">083</td><td class="name">鋼田 ハガネ</td><td class="ab">鉄装備のみ修理0コスト</td><td class="trick">永続戦闘、消耗戦の鬼。</td></tr>
+<tr><td class="no">084</td><td class="name">ヨミダ シン</td><td class="ab">魂の砂を踏んでも遅くならない</td><td class="trick">ネザー要塞戦の主役、敵向け魂の砂トラップを設置可。</td></tr>
+<tr><td class="no">085</td><td class="name">アズマ レイ</td><td class="ab">氷の上で滑らない</td><td class="trick">氷上戦闘で唯一の安定足場、雪山支配者。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#a78bfa">▼ 視覚・知覚系（No.086〜095）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">086</td><td class="name">アサノ サオリ</td><td class="ab">鉱石を1日1回X線視（半径3秒）</td><td class="trick">ダイヤ・ネザライトの位置を確実に把握、勢力の最重要採掘員。</td></tr>
+<tr><td class="no">087</td><td class="name">ユウギリ シズ</td><td class="ab">自分の足跡が30秒残る（自分にだけ見える）</td><td class="trick">迷子にならない、撤退路の確保、トラップ位置記憶。</td></tr>
+<tr><td class="no">088</td><td class="name">ホシガキ レイ</td><td class="ab">特定モブの足音だけ聞き分け（自選1種）</td><td class="trick">ウォーデン選択で <strong>絶対回避</strong>、ディープダーク唯一の安全探索者。</td></tr>
+<tr><td class="no">089</td><td class="name">クルミ シン</td><td class="ab">自分のクラフト履歴を見返せる</td><td class="trick">レシピ忘却防止、勢力のレシピ管理者。</td></tr>
+<tr><td class="no">090</td><td class="name">ミドリカワ アユ</td><td class="ab">他人の能力名だけ知れる（説明なし）</td><td class="trick">敵の能力リストを把握 → ガク連合と取引で情報資源化。</td></tr>
+<tr><td class="no">091</td><td class="name">アケミ ノエル</td><td class="ab">ダイヤの音が聞こえる（半径2のみ）</td><td class="trick">短距離だが <strong>確実</strong>、採掘探索の最終確認役。</td></tr>
+<tr><td class="no">092</td><td class="name">アメジ ナオ</td><td class="ab">アメジストが自分にだけ反応する（光る）</td><td class="trick">アメジスト鉱床の独占、望遠鏡量産で偵察優位。</td></tr>
+<tr><td class="no">093</td><td class="name">ヒカル ナギ</td><td class="ab">焚き火の光が自分にだけ広い（半径2倍）</td><td class="trick">少ない燃料で広範囲湧き潰し、夜間任務の効率化。</td></tr>
+<tr><td class="no">094</td><td class="name">ナガレ シズカ</td><td class="ab">水流方向が常に視覚化される</td><td class="trick">水流装置の設計者、海洋戦闘の支配者。</td></tr>
+<tr><td class="no">095</td><td class="name">アンジュ ミナ</td><td class="ab">他人のXP残量が見える</td><td class="trick">エンチャ前の他人のXPを把握 → 妨害・奪取のタイミング策定。</td></tr>
+</table>
+</div>
+
+<h3 style="color:#ef4444">▼ メタ・特殊系（No.096〜100）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>名前</th><th>能力</th><th>化けるポイント</th></tr>
+<tr><td class="no">096</td><td class="name">ヒラサワ ジン</td><td class="ab">ベッドで寝ると現実の記憶が1日分追加で戻る</td><td class="trick">前世のスキル・知識を取り戻す唯一の能力。長期で <strong>最強格</strong>。</td></tr>
+<tr><td class="no">097</td><td class="name">ヤマト アズサ</td><td class="ab">死亡時にアイテム1個保持</td><td class="trick">死を覚悟した突撃、最高装備1個を次の同盟者に渡せる。</td></tr>
+<tr><td class="no">098</td><td class="name">スガハラ ヒロ</td><td class="ab">能力の説明書を1日1ページ読める</td><td class="trick">他人の能力詳細を入手、ガク連合の情報部最重要資源。</td></tr>
+<tr><td class="no">099</td><td class="name">??? （消去者）</td><td class="ab">能力を1回だけ消去できる（自分の）</td><td class="trick">最終局面の <strong>切り札</strong>。能力封印の対抗手段、または「能力を捨てて人間化する」儀式の鍵。</td></tr>
+<tr><td class="no">100</td><td class="name">闇宮 クロエ</td><td class="ab">自分のID・名前を隠せる</td><td class="trick">完全な暗殺、偽装死、潜入工作。ラスボス候補の根幹能力。</td></tr>
+</table>
+</div>
+
+<div class="box box-info" style="margin-top:24px">
+<p style="color:#aaa;font-size:13px;line-height:1.85">
+<strong style="color:#60a5fa">設計の意図：</strong><br>
+能力は全て「マイクラを少し詳しく知っている人」が「これ、こう使えるじゃん！」と気付ける設計。<br>
+チート級能力を排除し、<strong>知識×発想×組み合わせ</strong> で勝敗が決まる構造に。<br>
+弱い能力同士の「協力」が成立する余地が広く、勢力結成の動機が自然に生まれる。<br>
+特に No.029 ピストン高速化、No.030 レッドストーン素手伸長、No.041 クラフト時間短縮 の3人が組むだけで <strong>レッドストーン産業帝国</strong> が成立する——という相互作用が、勢力図のリアリティを生んでいる。</p>
+</div>
+
+</div>
+</div>
+
+<!-- ============ 勢力図 ============ -->
+<div class="sec" id="factions">
+<div class="sec-head">
+<h2><span class="num">05</span>勢力図</h2>
+<div class="sec-sub">序盤2週間で形成される5大勢力</div>
+</div>
+<div class="sec-body">
+
+<div class="fac-grid">
+
+<div class="fac" style="border-left:4px solid #3b82f6">
+<div class="fac-head">
+<div class="fac-mark" style="background:#3b82f6"></div>
+<div>
+<div class="fac-name">ガク連合（GAKU UNION）</div>
+<div class="fac-leader">リーダー: 雷堂ガク（No.058）/ 規模: 約25人</div>
+</div>
+</div>
+<div class="fac-desc">最大勢力。ガクが3日で組織化した <strong>政治型</strong> の勢力。本拠地は平原バイオームに作った正式な「街」。鉄骨と石レンガの建築。住民票制度・能力登録制・配給制と、現代社会を縮小したような統治が特徴。</div>
+<div class="fac-power"><strong>主要能力者:</strong> ガク（諜報）／黒沼テツ（クラフト）／朱雀アヤメ（情報屋）／鋼田ハガネ（武力）／フジワラナナ（量産）。レッドストーン×大量生産×情報網で、<strong>序盤の覇権</strong> を握る。</div>
+</div>
+
+<div class="fac" style="border-left:4px solid #ef4444">
+<div class="fac-head">
+<div class="fac-mark" style="background:#ef4444"></div>
+<div>
+<div class="fac-name">黒猫団（NEKO-DAN）</div>
+<div class="fac-leader">表のリーダー: ナリタコウタ / 真の黒幕: 闇宮クロエ（No.100）/ 規模: 約12人</div>
+</div>
+</div>
+<div class="fac-desc"><strong>暗躍型</strong>。表向きは「中立の傭兵団」、裏ではクロエが情報売買と暗殺請負で他勢力を内側から蝕んでいる。本拠地は廃坑跡の地下。誰がメンバーかは外からは分からない。蓮見ユウキも夜だけ協力する半協力者。</div>
+<div class="fac-power"><strong>主要能力者:</strong> クロエ（隠蔽）／ユウキ（夜の暗殺）／ヒラサワジン（記憶回復）／ホシガキレイ（足音聞き分け）。<strong>誰が殺したか分からない事件</strong> が連鎖し、ガク連合内に疑心暗鬼を生む。</div>
+</div>
+
+<div class="fac" style="border-left:4px solid #10b981">
+<div class="fac-head">
+<div class="fac-mark" style="background:#10b981"></div>
+<div>
+<div class="fac-name">ピース陣営（PEACE）</div>
+<div class="fac-leader">創設: 翡翠ミドリ（No.071）／規模: 約18人</div>
+</div>
+</div>
+<div class="fac-desc"><strong>戦闘拒否</strong>を理念とする生産特化勢力。ムーシュルーム島に本拠地を構築し、食料・回復・治療を全勢力に有料提供する <strong>中立国</strong> として運営。武装は最低限。襲撃を受けないよう、全勢力に「必要不可欠な存在」と認識させる戦略。</div>
+<div class="fac-power"><strong>主要能力者:</strong> ミドリ（食料）／白雪リン（水）／スイカジン（食料）／サケノブ（ポーション）／ナカガミサワ（早起き警戒）。<strong>食料と治療を独占</strong> することで、武力を持たずに勢力均衡の中心に立つ。</div>
+</div>
+
+<div class="fac" style="border-left:4px solid #f59e0b">
+<div class="fac-head">
+<div class="fac-mark" style="background:#f59e0b"></div>
+<div>
+<div class="fac-name">自由連合（FREE）</div>
+<div class="fac-leader">代表者: 火室ジン（No.027）／規模: 緩やか・約15人</div>
+</div>
+</div>
+<div class="fac-desc"><strong>反ガク</strong>の理念を共有する緩い連合体。本拠地を持たず、メンバーは各地に散らばっている。「組織に縛られたくない」一匹狼たちの相互不可侵協定で、攻撃された時だけ集結する。ガク連合との小競り合いが日常。</div>
+<div class="fac-power"><strong>主要能力者:</strong> 火室ジン（松明）／カジヤノブ（鍛冶情報）／クギミヤハヤテ（弓）／アマミレイ（天気予測）／タチバナコウキ（精錬）。機動力と地形利用に長け、<strong>正面戦闘を避けたゲリラ</strong> でガクを苦しめる。</div>
+</div>
+
+<div class="fac" style="border-left:4px solid #a78bfa">
+<div class="fac-head">
+<div class="fac-mark" style="background:#a78bfa"></div>
+<div>
+<div class="fac-name">無所属（SOLO PLAYERS）</div>
+<div class="fac-leader">代表的人物: 黒崎ハル（No.001）／神楽サキ（No.014）／ほか少数</div>
+</div>
+</div>
+<div class="fac-desc">どの勢力にも属さない者たち。ハル＆サキの2人組のように小集団で動く者もいれば、完全な単独行動者もいる。一見不利だが、勢力に縛られない <strong>自由度</strong> と、誰からも警戒されない <strong>低存在感</strong> が武器。</div>
+<div class="fac-power"><strong>主要能力者:</strong> ハル（ブロック消滅）／サキ（MOB会話）／その他散在。シーズン1終盤、勢力大戦の混乱の中で <strong>ハル組がダークホース</strong> として頭角を現す。</div>
+</div>
+
+</div>
+
+<h3>勢力相関図（シーズン1中盤想定）</h3>
+<div class="box">
+<pre style="color:#aaa;font-size:12px;line-height:1.7;font-family:'Courier New',monospace;overflow-x:auto">
+                  ┌───────────┐
+                  │ ガク連合  │ ←─── 雇用 ───── 自由連合
+                  │  (25人)   │   ◀ 小競り合い ▶  (15人)
+                  └─────┬─────┘
+                        │ 食料・治療購入
+                        ▼
+                  ┌───────────┐
+                  │ピース陣営 │ ←─── 商売 ───── 無所属たち
+                  │  (18人)   │                  (10人前後)
+                  └───────────┘
+                        ▲
+            隠れて取引・情報売買
+                        │
+                  ┌───────────┐
+                  │ 黒猫団    │ ←─── 暗殺請負 ── ★全勢力に潜伏
+                  │  (12人)   │
+                  └───────────┘
+</pre>
+</div>
+
+</div>
+</div>
+
+<!-- ============ 第1話シナリオ ============ -->
+<div class="sec" id="ep01">
+<div class="sec-head">
+<h2><span class="num">06</span>第1話シナリオ「立方体の世界へようこそ」</h2>
+<div class="sec-sub">EP01 / 想定尺: 24分 / 視点: 黒崎ハル</div>
+</div>
+<div class="sec-body">
+
+<div class="script">
+
+<div class="scr-head">
+<h3>第1話「立方体の世界へようこそ」</h3>
+<div class="scr-meta">
+<span class="tag t-ability">フル台本</span>
+<span class="tag t-role">ハル視点</span>
+<span class="tag t-faction">登場 約12名</span>
+</div>
+</div>
+
+<!-- =========== Cold Open =========== -->
+<div class="part">
+<div class="part-label">COLD OPEN / アバン</div>
+<div class="part-title">「気づいたら、立方体だった」</div>
+<div class="part-time">00:00 〜 02:30</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】真っ暗。コンビニのドアチャイム「ピンポーン♪」。レジ袋の擦れる音。深夜の住宅街、街灯の下を歩く高校生の後ろ姿——黒崎ハル。スマホをいじりながら歩いている。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">（小声）……唐揚げ買い忘れた。妹キレるな……。</span></div>
+
+<div class="stage">【映像】ハルの足元にうっすら光の輪。ハル、気付かない。次の瞬間——光が膨れ上がり、画面真っ白。</div>
+
+<div class="stage">【SE】ブツッ……音が消える。</div>
+
+<div class="stage">【映像】青空。鳥の声。広い草原。ハル、芝生の上に倒れている。レジ袋を握ったまま。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……ん？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">え？</span></div>
+
+<div class="stage">【映像】ハル、ゆっくり起き上がる。視界に飛び込んでくるのは——<strong>四角い木</strong>。<strong>四角い羊</strong>。<strong>四角い太陽</strong>。すべてが立方体で構成された世界。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……は？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">マイクラ……？</span></div>
+
+<div class="stage">【映像】ハル、自分の手を見る。手も少し四角い。動かすとカクカクではなく、滑らかに動く。だが質感が「ゲーム」と「現実」の中間。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">えっと……夢？</span></div>
+
+<div class="stage">【映像】ハル、頬をつねる。痛い。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……痛い。痛いんだ。</span></div>
+
+<div class="stage">【SE】突然、空に巨大な文字が浮かぶ。ゴォオオン……鐘の音のようなSE。</div>
+
+<div class="sysmsg">▶ SYSTEM ANNOUNCEMENT
+▶ ようこそ、CRAFT WORLDへ。
+▶ あなたは100人の召喚者の1人です。
+▶ ルール: 最後に1人になり、エンドラを倒した者だけが、現実に帰れます。
+▶ 詳細は今夜0時にアナウンス。それまで、各自で「能力」を確認してください。
+▶ ——CRAFTER</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……は？</span></div>
+
+<div class="stage">【タイトルドン】<strong>「クラフトワールド100」</strong>。BGM: 不穏なエレクトロから、徐々に壮大なオーケストラへ転調。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 1 =========== -->
+<div class="part">
+<div class="part-label">PART 1</div>
+<div class="part-title">「能力ガチャ、全員ハズレ説」</div>
+<div class="part-time">02:30 〜 07:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】ハル、立ち上がってあたりを見回す。広い平原、遠くに森と山。空に鐘の文字は消えた。視界右下に、半透明の <strong>マイクラ風UI</strong>（HPバー20、満腹度バー20、経験値ゲージ）が浮かんでいる。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……マジで、UIあるじゃん。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">（試しに）「インベントリ開け」</span></div>
+
+<div class="stage">【映像】目の前に9×3のグリッドが浮かぶ。空。装備欄も空。手にあるのはコンビニのレジ袋（中身: ペットボトルと菓子パン）だけ。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……ガチで、マイクラかよ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">能力って言ってたな……。</span></div>
+
+<div class="stage">【映像】ハルの視界の左上に、半透明のテキストがフェードイン。</div>
+
+<div class="sysmsg">▶ ABILITY ASSIGNED
+▶ No.001 / 黒崎ハル
+▶ スキル名: 「Vanishing Block」
+▶ 効果: あなたが設置したブロックは、設置から60秒後に音もなく消滅します。
+▶ ドロップ: なし。設置数制限: なし。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">え、これだけ？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">いやいや、せめて剣とか、空飛べるとか……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">何だよ、ブロックが消えるって。</span></div>
+
+<div class="stage">【映像】ハル、近くの木に近づく。試しに殴る。マイクラと同じく、何度か殴ると <strong>木のブロック</strong> が手の中に。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……お、これは普通にマイクラの仕様。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">じゃあ、これ置いてみるか。</span></div>
+
+<div class="stage">【映像】ハル、足元に木のブロックを設置。</div>
+
+<div class="stage">【映像】60秒後。木のブロックが、煙ひとつ立てずに <strong>消える</strong>。アイテム化もしない。完全に消失。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">うん、やっぱり弱い。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">普通にハズレ。</span></div>
+
+<div class="stage">【映像】ハル、その場に座り込む。レジ袋の菓子パンを開けて、かじる。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……100人いるって言ってたな。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">99人と殺し合い……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……ブロックが消える能力で？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">無理だろ……。</span></div>
+
+<div class="stage">【映像】遠くから女子の悲鳴。「キャッ！」</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……人いるじゃん。</span></div>
+
+<div class="stage">【映像】ハル、声のする方へ走る。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 2 =========== -->
+<div class="part">
+<div class="part-label">PART 2</div>
+<div class="part-title">「ヒロイン、ゾンビとお喋り中」</div>
+<div class="part-time">07:00 〜 11:30</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】ハル、林を抜ける。開けた場所に、女子高生の姿。神楽サキ。学校のジャージ姿。彼女の目の前には——<strong>ゾンビ</strong>。3体。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">（小声）……うわ、ゾンビ。</span></div>
+
+<div class="stage">【映像】ハル、ゾンビに襲われる女子を助けに行こうと足を踏み出す——が、止まる。</div>
+
+<div class="stage">【映像】サキ、ゾンビと <strong>普通に喋っている</strong>。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……だから、私のこと、襲わないで欲しいの。</span></div>
+
+<div class="line"><span class="who who-mob">ゾンビA</span><span class="txt">ウオォォ……（でも、お腹空いた）</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">えっと、あっちに、もっと美味しそうな人いたよ。たぶん。</span></div>
+
+<div class="line"><span class="who who-mob">ゾンビB</span><span class="txt">グルル？（マジで）</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">うん。たぶん。</span></div>
+
+<div class="stage">【映像】ゾンビ3体、ぞろぞろと別方向へ歩いて去っていく。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……は？</span></div>
+
+<div class="stage">【映像】サキ、振り返る。ハルと目が合う。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……あ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……ええっと。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">ゾンビと、喋ってた？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……うん。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">私の能力みたい。MOBと会話できる、って。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……それ、強くね？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">ううん、命令はできないの。説得だけ。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">あと、嘘つくと信用なくす。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……それでも強いだろ。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">あなたの能力は？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……ブロックが、1分後に、消える。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">弱いね。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">うん。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">でも、組まない？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……は？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">私、戦闘弱いし、誰か仲間いた方がいい。あなた、悪い人じゃなさそう。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……判断、早ない？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">私、動物の感情読めるから。人もちょっとわかる。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">あなた、悪い人じゃない。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……まあ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">いいよ。よろしく。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">俺、黒崎ハル。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">神楽サキ。よろしく。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 3 =========== -->
+<div class="part">
+<div class="part-label">PART 3</div>
+<div class="part-title">「先に動いた男、雷堂ガク」</div>
+<div class="part-time">11:30 〜 15:30</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】場面転換。同じ世界、別の地点。スーツ姿の男——雷堂ガク（28）が、3人の召喚者を前に演説している。</div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">皆さん、状況を整理しましょう。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">私たちは100人。最後の1人だけが帰れる。シンプルなルールです。</span></div>
+
+<div class="line"><span class="who who-mob">参加者A</span><span class="txt">じゃあ、もう殺し合いってことかよ……。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">いえ。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">最終的にはそうなる。でも今すぐじゃない。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">最初の1か月は、<strong>組織を作った者が勝つ</strong>。1人で森を彷徨ってる奴から順に死ぬ。</span></div>
+
+<div class="line"><span class="who who-mob">参加者B</span><span class="txt">……組織って、あんたの下に付けってこと？</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">そうです。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">あなた方の能力を聞かせてください。組織で活きるなら、安全と食料を保証します。</span></div>
+
+<div class="line"><span class="who who-mob">参加者A</span><span class="txt">……俺、「ハーフブロックが2倍量クラフトできる」って能力で……。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">建築要員として歓迎します。月給はエメラルド10個。</span></div>
+
+<div class="line"><span class="who who-mob">参加者B</span><span class="txt">月給って……。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">この世界でも経済は機能します。村人は実在し、エメラルドは流通する。</span></div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">私の能力は——「他人のチャットが見える」。</span></div>
+
+<div class="stage">【映像】ガク、口角を上げる。視界右上に、参加者たちの会話ログがリアルタイムで流れる演出。</div>
+
+<div class="line"><span class="who who-gaku">ガク</span><span class="txt">あなた方が裏切っても、私には全部聞こえています。</span></div>
+
+<div class="line"><span class="who who-mob">参加者A</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-mob">参加者B</span><span class="txt">わかった。入る。</span></div>
+
+<div class="stage">【映像】ガク、満足げに頷く。背後にすでに数人の召喚者が控えている。組織の萌芽。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 4 =========== -->
+<div class="part">
+<div class="part-label">PART 4</div>
+<div class="part-title">「最初の死者」</div>
+<div class="part-time">15:30 〜 19:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】ハルとサキ、一緒に行動。木を切り、木材を集めている。日が傾き始めている。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">夜、来るね。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">マイクラの夜って、ヤバいんだろ？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">うん。ゾンビとスケルトンとクリーパー。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">私、ゾンビとは話せるけど、説得は時間かかる。多すぎると無理。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……拠点、作るしかないか。</span></div>
+
+<div class="stage">【映像】2人、急ピッチで木のシェルターを作る。ハルが壁を組む。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">ハル、屋根は？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……あ、足りない。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">俺の能力で、上に足場作って木伐るわ。</span></div>
+
+<div class="stage">【映像】ハル、空中に木のブロックを設置していく。階段状に。登っていって高い枝を伐採。降りる前に、設置から1分経過したブロックがすっと消える。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……それ、便利じゃん。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">あ、ホントだ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">逃走に使えそう。追っ手が登った瞬間に消えれば、落ちる。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……それ、結構強い能力じゃない？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……かもしれない。</span></div>
+
+<div class="stage">【映像】夕暮れ。空に文字が浮かぶ。最初の死亡通知。</div>
+
+<div class="sysmsg">▶ DEATH NOTICE
+▶ No.??? — STARVED IN THE FOREST.
+▶ REMAINING: 99 / 100</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……もう、死んだ。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">餓死、って。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">早……。</span></div>
+
+<div class="stage">【映像】続いて2人目、3人目の通知。</div>
+
+<div class="sysmsg">▶ DEATH NOTICE
+▶ No.??? — KILLED BY CREEPER.
+▶ REMAINING: 98 / 100
+
+▶ DEATH NOTICE
+▶ No.??? — UNKNOWN CAUSE.
+▶ REMAINING: 97 / 100</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……「原因不明」、って。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……人為的、ってことか。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">もう動いてる奴いる、ってことだよな。</span></div>
+
+<div class="stage">【映像】サキ、ぞっとした表情。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 5 =========== -->
+<div class="part">
+<div class="part-label">PART 5</div>
+<div class="part-title">「夜、声と影」</div>
+<div class="part-time">19:00 〜 22:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】完全な夜。ハルとサキ、シェルターの中。窓から外を見る。月明かりの下、シルエットがいくつもうごめく。ゾンビ、スケルトン、そして——遠くで「シュッ」という音。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">クリーパー、近い。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">マジか。</span></div>
+
+<div class="stage">【SE】突然、シェルターの外から男の声。</div>
+
+<div class="line"><span class="who who-jin">男の声</span><span class="txt">おい、中に誰かいるか。開けてくれ、頼む。</span></div>
+
+<div class="stage">【映像】ハルとサキ、目を見合わせる。</div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……どうする？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">罠かもしれない。</span></div>
+
+<div class="line"><span class="who who-jin">男の声</span><span class="txt">こっちは武器ねぇ！能力もしょーもねぇんだよ！松明出すだけ！</span></div>
+
+<div class="line"><span class="who who-jin">男の声</span><span class="txt">クソ、クリーパーが——！</span></div>
+
+<div class="stage">【SE】「シュッ……シュッ……ボォン！！」</div>
+
+<div class="stage">【映像】爆発音。シェルターが揺れる。サキ、悲鳴。ハル、急いでドアを開ける。</div>
+
+<div class="stage">【映像】そこには、煤だらけの金髪男——火室ジン（19）。革ジャケットがぼろぼろ。手のひらに松明を1本握っている。</div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">……助かった。サンキュ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……松明だけって、マジ？</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">マジ。手のひらから出る。便利だけど、戦力にはならねぇよ。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">……そっちは？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">ブロックが1分後に消える。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">MOBと会話できる。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">全員、ハズレかよ。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">そうみたい。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">……でも、お前らの能力、組み合わせ次第で結構ヤバくね？</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……どういう意味？</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">あの女子、ゾンビ操れるんだろ？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">操れない、説得だけ。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">説得できれば操れるのと一緒だろ。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">で、お前のブロック消滅。これ、罠仕掛けに最強じゃん。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">で、俺の松明は夜の安全保障。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">3人組めば、結構生き残れんじゃね？</span></div>
+
+<div class="stage">【映像】ハルとサキ、顔を見合わせる。</div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……名前は？</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">火室ジン。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">黒崎ハル。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">神楽サキ。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">よろしくな。</span></div>
+
+<div class="stage">【映像】3人、シェルターに入る。ジン、入口に松明を3本、外に投げる。明かりが広がり、近くのMOBが散っていく。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 6 =========== -->
+<div class="part">
+<div class="part-label">PART 6</div>
+<div class="part-title">「クラフター、空に降臨」</div>
+<div class="part-time">22:00 〜 23:30</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】マイクラ時間で0:00。空に光。鐘の音。あの宣言が始まる。</div>
+
+<div class="sysmsg">▶ CRAFTER ANNOUNCEMENT
+▶ ようこそ、生き残った97人へ。
+▶ ルールの詳細を伝えます。</div>
+
+<div class="stage">【映像】空に <strong>巨大な顔</strong>。男とも女ともつかない、笑っているようで無表情な顔。クラフター。</div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">改めて、ようこそ。退屈しのぎに、君たちを呼びました。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">ルールは3つ。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">1. <strong>最後の1人になり、エンドラを倒した者だけが現実に帰れます</strong>。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">2. <strong>死=現実でも死亡</strong>。リスポーンはありません。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">3. <strong>能力は1人1つ。譲渡・複製・奪取はできません</strong>。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">最後に、補足を1つ。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">君たちの能力は、私が <strong>意図して弱く</strong> しました。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……は？</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">最初から強い能力じゃ、つまらないでしょう。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">頭を使ってください。発想を凝らしてください。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">弱い能力で、強敵を倒す。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">それが、君たちに与えた <strong>本当のゲーム</strong> です。</span></div>
+
+<div class="line"><span class="who who-god">クラフター</span><span class="txt">それでは——お楽しみを。</span></div>
+
+<div class="stage">【映像】顔が消える。空が静かになる。</div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">……あの野郎、楽しんでやがる。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">ハズレ能力で、強敵を倒せ、ってことか。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……できる気がしないけど。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">やんねぇと死ぬんだろ？やるしかねぇ。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">……ね、ハル。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">あなたの能力、さっきも思ったけど、たぶん——めちゃくちゃ強くできる。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……どうやって？</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">「1分後に消える」を <strong>逆算</strong> すれば、罠の起動タイミングを完璧にコントロールできる。</span></div>
+
+<div class="line"><span class="who who-saki">サキ</span><span class="txt">爆弾の蓋、足場、隠れ家、退路の遮断——全部、時限式の道具になる。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……かもな。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">よし、今夜はここで寝るぞ。明日から動く。</span></div>
+
+<div class="line"><span class="who who-jin">ジン</span><span class="txt">まずは、生き残ってる奴を探す。仲間にできそうな奴は仲間に、ヤバそうな奴は把握する。</span></div>
+
+<div class="line"><span class="who who-haru">ハル</span><span class="txt">……了解。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- =========== PART 7 / EPILOGUE =========== -->
+<div class="part">
+<div class="part-label">EPILOGUE</div>
+<div class="part-title">「同時刻、別の場所では——」</div>
+<div class="part-time">23:30 〜 24:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】場面転換。月夜の廃坑。トロッコレールの跡。地下深く。</div>
+
+<div class="stage">【映像】銀髪、左目に眼帯の女——闇宮クロエ。黒のロングコート。彼女の足元には、誰かが倒れている。胸から血。</div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">……ふぅ。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">3人目。</span></div>
+
+<div class="stage">【映像】空に死亡通知が出ない。クロエが殺しても、誰にも気付かれない。</div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">私の能力は——「自分のIDを隠せる」。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">死亡通知に名前が出ない。キル通知も出ない。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">確かに、地味ね。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">でも——<strong>誰にも知られず、何人でも殺せる</strong>。</span></div>
+
+<div class="stage">【映像】クロエ、振り返る。カメラ目線。微笑む。</div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">私は、この世界で「能力を消去できる人」を探している。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">100人の中に、1人だけ。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">その人を見つけて——<strong>消す</strong>。</span></div>
+
+<div class="line"><span class="who who-kuroe">クロエ</span><span class="txt">そうしたら、この世界は、変わる。</span></div>
+
+<div class="stage">【映像】クロエ、暗闇に消える。</div>
+
+<div class="stage">【映像】場面転換。クラフターの声、ナレーションのみ。</div>
+
+<div class="line"><span class="who who-god">クラフター（声）</span><span class="txt">100人の弱者たち。</span></div>
+
+<div class="line"><span class="who who-god">クラフター（声）</span><span class="txt">この世界で、誰が <strong>本当に弱い</strong> のか——。</span></div>
+
+<div class="line"><span class="who who-god">クラフター（声）</span><span class="txt">それを、見せてもらおう。</span></div>
+
+<div class="stage">【映像】カットアウト、暗転。次回予告へ。</div>
+</div>
+
+<div class="part" style="border-top:1px solid #1a1a2e">
+<div class="part-label">NEXT EPISODE</div>
+<div class="part-title">第2話「鉄装備の男、襲来」</div>
+<div class="part-time">PREVIEW</div>
+</div>
+
+<div class="dial">
+<div class="stage">【次回予告】鉄装備に身を包んだ男・鋼田ハガネがハル組のシェルターに襲撃。「鉄装備のみ修理0コスト」の永続戦闘力に、3人は無力。だがハルが思いつく、たった一つの——</div>
+
+<div class="line"><span class="who who-haru">ハル（次回）</span><span class="txt">……鉄装備が <strong>修理0</strong> なら——壊して、剥がせばいい。</span></div>
+
+<div class="line"><span class="who who-jin">ジン（次回）</span><span class="txt">どうやって。</span></div>
+
+<div class="line"><span class="who who-haru">ハル（次回）</span><span class="txt"><strong>1分間だけ</strong>、生き残ればいい。</span></div>
+
+<div class="stage">次回「鉄装備の男、襲来」。ハルの「ブロック消滅」、覚醒の第1歩——。</div>
+</div>
+
+<div class="why">
+<strong>第1話のフック設計：</strong> ① コールドオープン30秒で「マイクラ世界に転生」を完全提示（既視感に頼って速攻で本題へ）。② 主人公の能力を <strong>意図的にハズレに見せて</strong> 視聴者と一緒に絶望させる。③ サキ・ジンの能力も「弱い」と紹介→3人で組むだけで生存可能、を体験させる。④ ガクの登場で <strong>勢力の脅威</strong> を、クロエの登場で <strong>ラスボスの存在</strong> を提示。⑤ 次回予告でハルの能力が「強くなり得る」確信を持たせて引き。
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ============ Footer ============ -->
+<div style="text-align:center;padding:40px 20px;color:#444;font-size:12px">
+クラフトワールド100 — 設定資料 v1.0 / 2026-04-26<br>
+別シリーズ。<a href="scripts-yofukashi-bible.html" style="color:#666">よふかしくらぶ！</a>とは独立した世界観。
+</div>
+
+</div>
+
+</body>
+</html>

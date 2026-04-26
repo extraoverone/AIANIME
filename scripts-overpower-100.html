@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シンギュラ100 — 100人の能力者・チート級アビリティ＋EP01</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:16px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,4.5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;line-height:1.3;background:linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6,#ec4899,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:#888;font-size:15px;font-weight:600;margin-bottom:20px}
+.hero p{color:#777;font-size:14px;max-width:680px;margin:0 auto 12px}
+.badge{display:inline-block;padding:4px 16px;border-radius:20px;font-size:12px;font-weight:800;margin:4px 4px}
+.b-genre{background:rgba(6,182,212,.15);color:#22d3ee;border:1px solid rgba(6,182,212,.3)}
+.b-format{background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.25)}
+.b-cast{background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.25)}
+
+.sec{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:18px;margin:36px 0;overflow:hidden}
+.sec-head{padding:24px 28px 14px;border-bottom:1px solid #1a1a2e;background:linear-gradient(180deg,rgba(6,182,212,.04),transparent)}
+.sec-head h2{font-size:22px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sec-head h2 .num{font-size:13px;color:#666;font-weight:700;background:#1a1a2e;padding:3px 10px;border-radius:6px}
+.sec-head .sec-sub{font-size:13px;color:#666}
+.sec-body{padding:24px 28px}
+
+h3{font-size:18px;font-weight:800;color:#e2e8f0;margin:28px 0 12px;padding-bottom:6px;border-bottom:1px solid #1a1a2e}
+h3:first-child{margin-top:0}
+h4{font-size:15px;font-weight:800;color:#22d3ee;margin:18px 0 8px}
+p{color:#bbb;margin-bottom:10px}
+.lead{color:#ddd;font-size:15px;line-height:1.9}
+
+.box{background:#0b0b18;border:1px solid #1a1a2e;border-radius:10px;padding:16px 20px;margin:14px 0}
+.box-em{background:rgba(6,182,212,.06);border-color:rgba(6,182,212,.25)}
+.box-info{background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.25)}
+.box-warn{background:rgba(244,63,94,.06);border-color:rgba(244,63,94,.25)}
+
+ul.bullets{list-style:none;padding:0;margin:8px 0}
+ul.bullets li{padding:6px 0 6px 22px;position:relative;color:#bbb;font-size:14px;line-height:1.8}
+ul.bullets li::before{content:"▸";color:#22d3ee;position:absolute;left:6px;font-weight:900}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;border-radius:10px;border:1px solid #1a1a2e}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#0a0a14}
+th{background:#12121e;color:#888;font-weight:800;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1a1a2e;white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid #14141e;color:#bbb;line-height:1.7;vertical-align:top}
+tr:hover td{background:#10101a}
+td.no{color:#555;font-weight:800;font-family:'Courier New',monospace;width:42px}
+td.skill{color:#22d3ee;font-weight:800;white-space:nowrap;width:160px;font-size:13.5px}
+td.basic{color:#94a3b8;font-size:12.5px;width:32%}
+td.cheat{color:#f472b6;font-size:12.5px}
+td.cheat strong{color:#ec4899}
+td.basic strong{color:#cbd5e1}
+
+.cat-band{display:inline-block;padding:4px 14px;border-radius:6px;font-size:12px;font-weight:800;margin-right:8px;letter-spacing:.04em}
+
+/* Character cards */
+.char{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:14px;padding:18px 22px;margin:14px 0;border-left:4px solid #22d3ee}
+.char-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.char-id{background:#1a1a2e;color:#888;font-size:11px;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.04em}
+.char-name{font-size:18px;font-weight:900;color:#fff}
+.char-role{font-size:11px;color:#666;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.char-line{font-size:13.5px;color:#aaa;margin:6px 0;line-height:1.7}
+.char-line strong{color:#e2e8f0;font-weight:700;display:inline-block;min-width:78px}
+.ability-box{background:#080812;border:1px solid #1e1e30;border-radius:8px;padding:12px 16px;margin-top:10px;font-size:13px}
+.ability-box .ab-name{color:#22d3ee;font-weight:800;margin-bottom:4px;font-size:14px}
+.ability-box .ab-desc{color:#aaa;line-height:1.7;margin-bottom:6px}
+.ability-box .ab-cheat{color:#f472b6;font-size:12.5px;line-height:1.7;margin-top:8px;padding-top:8px;border-top:1px dashed #1e1e30}
+.ability-box .ab-cheat strong{color:#ec4899}
+
+/* Script */
+.script{background:#0b0b18;border:1px solid #1a1a2e;border-radius:14px;margin:24px 0;overflow:hidden}
+.scr-head{padding:20px 26px 14px;border-bottom:1px solid #1a1a2e;background:linear-gradient(180deg,rgba(244,63,94,.05),transparent)}
+.scr-head h3{margin:0;border:none;padding:0;font-size:18px;color:#fff}
+.scr-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{display:inline-block;padding:2px 9px;border-radius:5px;font-size:10px;font-weight:700}
+.t-ep{background:rgba(244,63,94,.15);color:#fb7185}
+.t-time{background:rgba(251,191,36,.12);color:#fbbf24}
+.t-pov{background:rgba(34,211,238,.12);color:#22d3ee}
+
+.part{padding:14px 26px 6px;background:#080812;border-top:1px solid #14141e;border-bottom:1px solid #14141e}
+.part-label{font-size:10px;font-weight:800;color:#444;letter-spacing:.12em;text-transform:uppercase}
+.part-title{font-size:14px;font-weight:800;color:#bbb;margin-top:2px}
+.part-time{font-size:10px;color:#444;margin-top:1px}
+.dial{padding:6px 26px 12px}
+.line{padding:8px 0;border-bottom:1px solid #0e0e18;font-size:14.5px;line-height:1.85;display:flex;gap:12px}
+.line:last-child{border-bottom:none}
+.who{font-weight:800;flex-shrink:0;min-width:78px;font-size:13px}
+.txt{flex:1;color:#ddd}
+.who-tsubasa{color:#22d3ee}
+.who-rei{color:#f472b6}
+.who-kuro{color:#fbbf24}
+.who-shinobu{color:#a78bfa}
+.who-gov{color:#94a3b8}
+.who-mob{color:#555}
+.who-n{color:#64748b}
+.who-sys{color:#34d399;font-family:'Courier New',monospace;font-size:12px}
+.stage{padding:7px 26px 7px 38px;font-size:13px;color:#4a4a60;font-style:italic;border-left:3px solid #1e1e30;background:#080814;margin:2px 0;line-height:1.7}
+.rewind{padding:8px 26px;background:rgba(34,211,238,.06);border-left:3px solid rgba(34,211,238,.4);font-size:12.5px;color:#67e8f9;font-family:'Courier New',monospace;letter-spacing:.02em}
+.act-divider{text-align:center;padding:18px;color:#222;font-size:18px;letter-spacing:.2em;border-top:1px solid #111;border-bottom:1px solid #111}
+.why{padding:16px 26px;font-size:13px;color:#666;background:#070710;border-top:1px solid #111;line-height:1.8}
+.why strong{color:#888}
+
+@media (max-width:640px){
+td.skill,td.basic{width:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">シンギュラ100</span>
+<a href="#overview">概要</a>
+<a href="#world">世界観</a>
+<a href="#chars">主要キャラ</a>
+<a href="#abilities">能力一覧</a>
+<a href="#ep01">第1話</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+<div>
+<span class="badge b-genre">現代能力者バトル</span>
+<span class="badge b-format">「強い × 工夫でチート」設計</span>
+<span class="badge b-cast">100名</span>
+</div>
+<h1>シンギュラ100<br><span style="font-size:.55em;color:#888;font-weight:700;background:none;-webkit-text-fill-color:#888">〜全員チート級。だが本気を出した者は、それすら超える〜</span></h1>
+<p class="sub">ハズレなし。100人全員が <strong style="color:#22d3ee">そこそこ強い能力者</strong>。だが <strong style="color:#ec4899">使い方を知る者だけが</strong>、本物のチートに化ける。</p>
+</div>
+
+<!-- ============ 概要 ============ -->
+<div class="sec" id="overview">
+<div class="sec-head">
+<h2><span class="num">01</span>作品概要</h2>
+<div class="sec-sub">タイトル / ログライン / 設計思想</div>
+</div>
+<div class="sec-body">
+
+<h3>タイトル</h3>
+<p class="lead"><strong style="color:#22d3ee">シンギュラ100</strong>（SINGULA 100）<br>
+<span style="color:#888;font-size:14px">〜100人の能力者覚醒譚〜</span></p>
+
+<h3>ログライン</h3>
+<div class="box box-em">
+<p class="lead">ある日、世界に <strong style="color:#22d3ee">特異点（シンギュラ）</strong> が降りた。<br>
+日本中の100人の若者が、突如として <strong>「能力」</strong> に目覚めた。<br>
+全員が、軍隊1個分隊くらいなら1人で潰せる強さ——だが、<br>
+真にチート級になるのは、自分の能力を <strong>「正しく使い倒した者だけ」</strong>。<br>
+能力者狩りの政府、暴走する仲間、覚醒する自分——選択の物語が始まる。</p>
+</div>
+
+<h3>姉妹版との違い</h3>
+<ul class="bullets">
+<li><strong>クラフトワールド100</strong>: マイクラ仕様前提のハズレ能力</li>
+<li><strong>ABILITY 100</strong>: 異世界転生の成長型ハズレスキル</li>
+<li><strong>シンギュラ100（本作）</strong>: <strong>全員そこそこ強い</strong>。差は「使い方の発想」だけ</li>
+</ul>
+
+<h3>設計思想</h3>
+<div class="box">
+<p>「ハズレ能力者の物語」の真逆。<strong>全員が普通に強い</strong>から、<br>
+能力の <strong>強弱</strong> ではなく <strong>発想の差</strong> がドラマを生む。</p>
+<ul class="bullets">
+<li>能力単体で <strong>1個分隊潰せる</strong> 程度の威力（パワーインフレ前提）</li>
+<li>ただし <strong>真の力</strong> は使い方で開放される</li>
+<li>同じ能力でも、本人の知識・倫理観・発想で結果が <strong>10倍違う</strong></li>
+<li>強者同士の戦いだから、頭脳戦・心理戦が最重要</li>
+<li>「炎を出せる」程度の能力者でも、工夫一つで <strong>都市を消せる</strong></li>
+</ul>
+</div>
+
+<h3>シリーズ構成（想定）</h3>
+<ul class="bullets">
+<li><strong>シーズン1</strong>: 覚醒〜政府の追跡〜地下抵抗組織との合流</li>
+<li><strong>シーズン2</strong>: 100人の派閥戦争〜暴走能力者の鎮圧</li>
+<li><strong>シーズン3</strong>: シンギュラの正体〜能力者と人類の共存問題</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ============ 世界観 ============ -->
+<div class="sec" id="world">
+<div class="sec-head">
+<h2><span class="num">02</span>世界観</h2>
+<div class="sec-sub">特異点 / 政府 / 100人</div>
+</div>
+<div class="sec-body">
+
+<h3>特異点（シンギュラ）の降臨</h3>
+<p>2026年4月15日、午前4時27分。<br>
+日本上空で説明不能の <strong>光の柱</strong> が観測された。3秒で消えた。<br>
+だが翌朝、<strong>日本中の100人の若者（14〜29歳）</strong> が、それぞれ固有の能力に目覚めていた。</p>
+
+<div class="box">
+<p>能力の選定基準は不明。地理的にも、職業的にも、出自的にもバラバラ。<br>
+共通点は <strong>「14〜29歳の日本国籍保有者」</strong>のみ。<br>
+能力は本人にしか分からない形で <strong>頭の中に直接「説明書」が降りてきた</strong>。</p>
+</div>
+
+<h3>政府の対応</h3>
+<ul class="bullets">
+<li><strong>4月16日</strong>: 内閣府に「特異現象対策室」（通称: <strong>SCD</strong>）が秘密裏に設置</li>
+<li><strong>4月17日</strong>: 100人のリストが完成（手段不明・霊感的な何か）</li>
+<li><strong>4月18日</strong>: <strong>能力者収容計画</strong> 発動。全員を「保護」名目で拘束</li>
+<li><strong>建前</strong>: 能力者を保護し、研究する</li>
+<li><strong>本音</strong>: 制御不能になる前に <strong>能力を国家管理下</strong> に置く</li>
+</ul>
+
+<h3>100人の現状（物語開始時点）</h3>
+<dl style="display:grid;grid-template-columns:130px 1fr;gap:6px 16px;margin:10px 0">
+<dt style="color:#666;font-size:13px;font-weight:700">SCD収容済み</dt><dd style="color:#ddd;font-size:14px">約30名。地下施設で「研究対象」</dd>
+<dt style="color:#666;font-size:13px;font-weight:700">逃亡中</dt><dd style="color:#ddd;font-size:14px">約40名。各地に潜伏</dd>
+<dt style="color:#666;font-size:13px;font-weight:700">地下抵抗組織</dt><dd style="color:#ddd;font-size:14px">約15名。「サンクチュアリ」を結成</dd>
+<dt style="color:#666;font-size:13px;font-weight:700">暴走中</dt><dd style="color:#ddd;font-size:14px">約10名。能力で犯罪、テロ</dd>
+<dt style="color:#666;font-size:13px;font-weight:700">未把握</dt><dd style="color:#ddd;font-size:14px">約5名。能力者本人すら自覚していない可能性</dd>
+</dl>
+
+<h3>能力の特性</h3>
+<ul class="bullets">
+<li>能力者は <strong>能力使用時に微弱なオーラ</strong> を発する（センサーで検知可能）</li>
+<li>能力使用には <strong>体力消耗</strong> がある（連続使用で疲労）</li>
+<li>能力に <strong>致死性のリスク</strong> はない（暴走死はしない）</li>
+<li>能力同士は <strong>相性</strong> がある（炎は水に弱いなど直感的）</li>
+<li><strong>能力名と効果の説明</strong> は本人のみ知る（他人に話すかは自由）</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ============ 主要キャラ ============ -->
+<div class="sec" id="chars">
+<div class="sec-head">
+<h2><span class="num">03</span>主要キャラクター</h2>
+<div class="sec-sub">主人公＋初期7名</div>
+</div>
+<div class="sec-body">
+
+<div class="char" style="border-left-color:#22d3ee">
+<div class="char-head">
+<span class="char-id">No.001</span>
+<span class="char-name">久遠 ツバサ（くおん つばさ）</span>
+<span class="char-role">主人公 / 視点キャラ</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 18歳・男・大学1年</div>
+<div class="char-line"><strong>外見</strong> 黒髪短髪、中肉中背、眼鏡。普通の大学生風。覚醒前は地味な存在。</div>
+<div class="char-line"><strong>性格</strong> 思考型・観察型。喧嘩は苦手だが、頭の回転は速い。能力を活かす発想力が異常に高い。</div>
+<div class="char-line"><strong>口調</strong> 「……ちょっと待って」「いや、それ、もう1回考えよう」「……巻き戻すか」</div>
+<div class="char-line"><strong>背景</strong> 父子家庭、父は警察官。覚醒前は哲学科の学生。普段から「もし時間が戻せたら」と考えがちな性格。</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「リワインド」 / Rewind</div>
+<div class="ab-desc">自分の認識のみを <strong>10秒前まで巻き戻せる</strong>。世界は戻らない。<br>
+つまり「今この瞬間から、10秒前の出来事を全て知った状態」で再開できる。1日に発動回数の制限なし。<br>
+ただし発動には <strong>3秒間の集中</strong> が必要（戦闘中は隙になる）。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① 敵の必殺技を <strong>「見てから」</strong> 対策できる（無敵級の防御）<br>
+② 死亡した瞬間に巻き戻せば <strong>「予知の達人」</strong>として行動できる<br>
+③ 会話の失敗を <strong>無限に修正</strong>（恋愛・交渉・尋問）<br>
+④ ジャンケン・籤・確率系で <strong>絶対に負けない</strong><br>
+⑤ 真のチート: <strong>「複数人で同時に能力を使う」</strong> ことで <strong>「お互いの記憶だけが残る無限ループ」</strong> が可能（仲間内での議論を10秒×100回繰り返して最適解を出すなど）</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#f472b6">
+<div class="char-head">
+<span class="char-id">No.014</span>
+<span class="char-name">水無月 レイ（みなづき れい）</span>
+<span class="char-role">ヒロイン / 戦闘担当</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 17歳・女・高2</div>
+<div class="char-line"><strong>外見</strong> 銀髪ロング（覚醒で変色）、長身、運動部体型。学校のジャージで逃亡中。</div>
+<div class="char-line"><strong>性格</strong> 直感型・行動型。判断が早く、戦闘経験ゼロでも能力で軍隊1個小隊を倒した実績。</div>
+<div class="char-line"><strong>口調</strong> 「やる、行く、終わり」「考えてる暇ない」「ツバサ、ちゃんと巻き戻して」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「ハイドロ」 / Hydro</div>
+<div class="ab-desc">半径10m以内の <strong>水を自由に操れる</strong>。水の量・形・温度・速度すべて操作可能。<br>
+水道水・雨・湿気・空気中の水分も対象。生成はできない（既存の水を扱う）。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① 雨の日は <strong>戦場全体が武器</strong>。落下する1粒1粒を弾丸に変換<br>
+② 敵の体内（70%水分）の水を <strong>沸騰させて即死</strong>（倫理的に封印中）<br>
+③ 空気中の湿気を集めて <strong>視界を奪う霧</strong> を生成<br>
+④ 水を高圧縮した <strong>水ジェット</strong> で鋼板貫通<br>
+⑤ <strong>目標の唾液を凍らせて窒息</strong>させる微細操作（最も恐れられる使い方）</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#fbbf24">
+<div class="char-head">
+<span class="char-id">No.027</span>
+<span class="char-name">黒崎 玖郎（くろさき くろう）</span>
+<span class="char-role">最初の敵 → 後の仲間</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 22歳・男・元自衛隊員</div>
+<div class="char-line"><strong>外見</strong> 短髪、筋肉質、左頬に古傷。黒のコート。</div>
+<div class="char-line"><strong>性格</strong> 元軍人らしい合理性。最初はSCD側で動いていたが、収容施設の実態を知って離反。</div>
+<div class="char-line"><strong>口調</strong> 「下がっていろ」「無駄な動きはするな」「俺の能力を見たな。次は容赦しない」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「アクセラレート」 / Accelerate</div>
+<div class="ab-desc">自分の身体を <strong>最大10倍まで加速</strong> できる。視覚・反射・筋力すべて。<br>
+通常の人間からは「瞬間移動」に見える速度で動ける。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① 銃弾を <strong>見てから避けられる</strong>（10倍速の世界では弾速が遅い）<br>
+② 一瞬で <strong>千の動作</strong>。手刀で鎧を破く、関節を全箇所決める<br>
+③ 加速中に <strong>会話速度も10倍</strong>。短時間に大量情報を共有<br>
+④ ただし <strong>体への負担</strong> が大きく、長時間使うと骨折・関節破壊<br>
+⑤ <strong>ツバサのリワインドと組むと無敵</strong>（10倍速で行動 → 失敗したら巻き戻す）</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#a78bfa">
+<div class="char-head">
+<span class="char-id">No.045</span>
+<span class="char-name">如月 シノブ（きさらぎ しのぶ）</span>
+<span class="char-role">情報担当 / 諜報</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 24歳・女・元IT企業勤務</div>
+<div class="char-line"><strong>外見</strong> 黒髪ボブ、メガネ、痩身。スーツ姿。</div>
+<div class="char-line"><strong>性格</strong> 冷静・分析的。能力を使い倒す発想力がツバサに次いで高い。</div>
+<div class="char-line"><strong>口調</strong> 「データ取れた」「相手の能力、3パターン考えた」「ツバサ君、巻き戻していい？」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「マインドコピー」 / Mind Copy</div>
+<div class="ab-desc">触れた相手の <strong>「直前1分間の記憶」を完全コピー</strong>できる。会話・思考・視覚すべて。<br>
+ただし1分以上前の記憶は取れない。連続使用には10分のクールタイム。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① 敵を倒した直後に触れて <strong>「敵の記憶を奪取」</strong>＝組織情報の即時抽出<br>
+② <strong>暗証番号・パスワード</strong>を入力させてから触れる→完全奪取<br>
+③ 自分の仲間の戦闘経験を <strong>連鎖コピー</strong>して、戦闘経験ゼロでも一流戦闘員に<br>
+④ 真のチート: <strong>能力者本人に触れて「能力の使い方」を直接コピー</strong>＝事実上の能力盗用</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#fb7185">
+<div class="char-head">
+<span class="char-id">No.062</span>
+<span class="char-name">紅蓮寺 アサ（ぐれんじ あさ）</span>
+<span class="char-role">サンクチュアリ リーダー</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 26歳・女・元医師</div>
+<div class="char-line"><strong>外見</strong> 赤毛ロング、白衣、長身。冷静な美女。</div>
+<div class="char-line"><strong>性格</strong> 慈悲深いが冷徹。地下抵抗組織「サンクチュアリ」を作った張本人。</div>
+<div class="char-line"><strong>口調</strong> 「私たちは、人類の敵じゃない」「ただ、共存の道を選びたいだけ」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「ヒール」 / Heal</div>
+<div class="ab-desc">触れた対象の <strong>傷・病気・毒を完全治癒</strong>。失った臓器も再生可能。<br>
+ただし <strong>自分の体力を使う</strong>（重症1人で1日寝込む）。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① <strong>「治癒の逆」</strong>を発動できる（傷を増やす）→事実上の暗殺能力<br>
+② 触れた敵の <strong>免疫を破壊</strong>して即時感染症発症<br>
+③ 自分の体力を <strong>仲間に分配</strong>するブースト機能<br>
+④ <strong>能力者の能力を「治癒」と称して消去</strong>できる（隠し技）</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#fde047">
+<div class="char-head">
+<span class="char-id">No.083</span>
+<span class="char-name">天羽 ヒカル（あもう ひかる）</span>
+<span class="char-role">サンクチュアリ ナンバー2</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 21歳・男・元プロゲーマー</div>
+<div class="char-line"><strong>外見</strong> 茶髪、痩身、無表情。フード付きパーカー。</div>
+<div class="char-line"><strong>性格</strong> 寡黙、ゲーマー的合理主義。能力を「ゲームの最適解」として運用する。</div>
+<div class="char-line"><strong>口調</strong> 「最適解は、これ」「無駄行動、3回」「次の一手、見えてる」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「フォーキャスト」 / Forecast</div>
+<div class="ab-desc">5秒先の <strong>視界の映像</strong> が見える。音は聞こえない。<br>
+連続発動可能だが、<strong>確定未来ではない</strong>（自分の行動次第で変わる）。</div>
+<div class="ab-cheat"><strong>チート化のポイント:</strong><br>
+① 戦闘で <strong>全攻撃の事前回避</strong>＝事実上の絶対回避<br>
+② 弾道予測 → <strong>銃弾を素手で受ける</strong> 避け方が事前に分かる<br>
+③ 5秒の積み重ねで <strong>長時間の戦術</strong> を組める<br>
+④ ツバサのリワインドと組むと <strong>「未来予知＋過去巻き戻し」</strong> の時間支配コンビに</div>
+</div>
+</div>
+
+<div class="char" style="border-left-color:#ef4444">
+<div class="char-head">
+<span class="char-id">No.???</span>
+<span class="char-name">SCD室長 — 碑文 ジュウベエ（ひもん じゅうべえ）</span>
+<span class="char-role">ラスボス候補 / 政府側</span>
+</div>
+<div class="char-line"><strong>年齢/性別</strong> 推定50代・男</div>
+<div class="char-line"><strong>外見</strong> 白髪、灰色のスーツ、無表情。</div>
+<div class="char-line"><strong>性格</strong> 冷徹・合理。能力者を <strong>「兵器」</strong> として運用したい。</div>
+<div class="char-line"><strong>口調</strong> 「能力者は人間ではない。資源だ」「100人を国家のために使う」</div>
+<div class="ability-box">
+<div class="ab-name">▸ 能力「???」（不明）</div>
+<div class="ab-desc">本人の能力は明かされていない。100人のリストにすら載っていない疑惑。<br>
+真相は <strong>「能力者を能力者と認識させなくする」</strong> 認識操作系か——</div>
+<div class="ab-cheat"><strong>真の脅威:</strong> 100人の能力者を <strong>「政府の手駒」として再教育</strong> し、世界征服級の戦力を組織する。最終決戦の相手。</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============ 100能力一覧 ============ -->
+<div class="sec" id="abilities">
+<div class="sec-head">
+<h2><span class="num">04</span>全100能力 — 基本性能 / チート化の発想</h2>
+<div class="sec-sub">全員「そこそこ強い」 × 工夫で「チート級」</div>
+</div>
+<div class="sec-body">
+
+<!-- 元素・物理 -->
+<h3><span class="cat-band" style="background:rgba(244,63,94,.15);color:#f87171">A</span>元素・物理操作系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能（普通に強い）</th><th>チート化の発想</th></tr>
+<tr><td class="no">001</td><td class="skill">リワインド（ツバサ）</td><td class="basic">自分の認識を10秒前に巻き戻す。世界は戻らない。</td><td class="cheat">必殺技を <strong>見てから対策</strong>。死を回避し続ける <strong>不死身</strong>。</td></tr>
+<tr><td class="no">002</td><td class="skill">パイロカイン</td><td class="basic">手から火炎放射（火炎放射器級）。射程10m。</td><td class="cheat">敵のガソリン・ガスタンクを <strong>遠距離発火</strong> → 都市消失級爆発。</td></tr>
+<tr><td class="no">003</td><td class="skill">ハイドロ（レイ）</td><td class="basic">半径10mの水を完全操作。</td><td class="cheat">敵の <strong>体内水分70%を沸騰</strong>＝即死。空気中湿気で霧。</td></tr>
+<tr><td class="no">004</td><td class="skill">エレクトロ</td><td class="basic">手から電撃（10万V）。射程5m。</td><td class="cheat">電線網に流して <strong>都市1区画を停電</strong>。電子機器全破壊。</td></tr>
+<tr><td class="no">005</td><td class="skill">フリーズ</td><td class="basic">触れた物を瞬時に凍結（液体窒素級）。</td><td class="cheat">敵の関節を <strong>凍結粉砕</strong>。空気中の水分を凍らせ <strong>足場の氷壁</strong>。</td></tr>
+<tr><td class="no">006</td><td class="skill">グラビトン</td><td class="basic">半径3mの重力を ×10〜÷10 で操作。</td><td class="cheat">敵を <strong>10G圧迫で内臓破裂</strong>。重力ゼロで放り投げて重力10倍で叩き落とす。</td></tr>
+<tr><td class="no">007</td><td class="skill">テレキネシス</td><td class="basic">100kgまで念力で動かせる。</td><td class="cheat">敵の <strong>骨を折る・血流を止める</strong>。自分の体重を浮かせて飛行。</td></tr>
+<tr><td class="no">008</td><td class="skill">テレポート</td><td class="basic">10m以内、視界の場所に瞬間移動。</td><td class="cheat">敵の体内に <strong>空気を転送</strong>＝塞栓死。岩を敵の頭に転送＝即死。</td></tr>
+<tr><td class="no">009</td><td class="skill">アクセラレート（玖郎）</td><td class="basic">自分を最大10倍速まで加速。</td><td class="cheat">銃弾を <strong>見てから避ける</strong>。一瞬で千手観音。</td></tr>
+<tr><td class="no">010</td><td class="skill">マスチェンジ</td><td class="basic">触れた物の質量を ×10 まで変えられる。</td><td class="cheat">小石を <strong>砲弾化</strong> して投擲。自分を1kgに軽量化して飛ぶ。</td></tr>
+<tr><td class="no">011</td><td class="skill">ライトベンド</td><td class="basic">半径3mの光を屈折させ、自分の姿を <strong>透明化</strong>。</td><td class="cheat">レーザーを反射して <strong>自分から発射</strong>。鏡像幻影で複数体に見せる。</td></tr>
+<tr><td class="no">012</td><td class="skill">サウンドバニッシュ</td><td class="basic">半径20mの音を完全消去。</td><td class="cheat"><strong>銃声・爆発音ゼロ</strong>の暗殺。敵の連携を <strong>音消しで分断</strong>。</td></tr>
+<tr><td class="no">013</td><td class="skill">ガストフォース</td><td class="basic">手から圧縮空気を放出（戦車を吹き飛ばす級）。</td><td class="cheat">空気を真空化して <strong>窒息死</strong>。圧縮空気弾で <strong>音速衝撃波</strong>。</td></tr>
+<tr><td class="no">014</td><td class="skill">マグマブレス</td><td class="basic">口から1500℃の熱風を放つ。</td><td class="cheat">建物の鉄骨を <strong>溶かして倒壊</strong>。地中マグマと共鳴して火山誘発。</td></tr>
+<tr><td class="no">015</td><td class="skill">テラフォーム</td><td class="basic">半径5mの土・石を自由に成形。</td><td class="cheat"><strong>足元を即時陥没</strong>させて生き埋め。地面から槍を生やす。</td></tr>
+</table>
+</div>
+
+<!-- 身体強化 -->
+<h3><span class="cat-band" style="background:rgba(251,146,60,.15);color:#fb923c">B</span>身体強化・戦闘特化系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">016</td><td class="skill">パワーストライク</td><td class="basic">筋力10倍。素手でコンクリート粉砕。</td><td class="cheat">空気を <strong>パンチで切り裂く</strong>＝音速衝撃波。投擲で全方位攻撃。</td></tr>
+<tr><td class="no">017</td><td class="skill">アイアンスキン</td><td class="basic">皮膚が鋼鉄並み硬度。銃弾無効。</td><td class="cheat">攻撃に転用して <strong>ヘッドバット＝鉄球</strong>。武器も身体も最強。</td></tr>
+<tr><td class="no">018</td><td class="skill">リジェネ</td><td class="basic">致命傷も10秒で完全治癒。</td><td class="cheat">手足を <strong>自爆して武器化</strong>＋再生。痛覚オフで不死身突撃。</td></tr>
+<tr><td class="no">019</td><td class="skill">ジャンプ</td><td class="basic">最大100m垂直跳躍。</td><td class="cheat">上空100mから <strong>足踏み爆撃</strong>。屋上から屋上へ機動。</td></tr>
+<tr><td class="no">020</td><td class="skill">クローン</td><td class="basic">自分の分身を1体作れる（実体あり、5分間）。</td><td class="cheat">分身を <strong>陽動・盾・暗殺</strong>に分担。本体不明で攪乱。</td></tr>
+<tr><td class="no">021</td><td class="skill">サイズシフト</td><td class="basic">自分の体を50cm〜5mで変えられる。</td><td class="cheat">巨大化で <strong>戦車をブン投げる</strong>。小型化で密室潜入。</td></tr>
+<tr><td class="no">022</td><td class="skill">ガンナー</td><td class="basic">どんな投擲物も <strong>百発百中</strong>＋射程3倍。</td><td class="cheat">紙コップを <strong>音速で投擲</strong>＝銃弾級殺傷力。</td></tr>
+<tr><td class="no">023</td><td class="skill">ステルス</td><td class="basic">完全に音・気配・存在感を消す。</td><td class="cheat">透明化なしでも <strong>視界に入っても気付かれない</strong>＝最強暗殺者。</td></tr>
+<tr><td class="no">024</td><td class="skill">ブラッドリンク</td><td class="basic">触れた相手の血流を操作（止血・出血）。</td><td class="cheat">敵の心臓に <strong>血栓を作って即死</strong>。仲間の血流加速で全力以上。</td></tr>
+<tr><td class="no">025</td><td class="skill">ポイズンタッチ</td><td class="basic">触れたものに猛毒を付与（致死量）。</td><td class="cheat">水道に触れて <strong>都市1区画毒殺</strong>。空気に毒で範囲攻撃。</td></tr>
+</table>
+</div>
+
+<!-- 精神・心理 -->
+<h3><span class="cat-band" style="background:rgba(168,85,247,.15);color:#c084fc">C</span>精神・心理操作系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">026</td><td class="skill">マインドコピー（シノブ）</td><td class="basic">触れた相手の直前1分間の記憶コピー。</td><td class="cheat">能力者に触れて <strong>能力の使い方を直接コピー</strong>＝能力盗用。</td></tr>
+<tr><td class="no">027</td><td class="skill">テレパス</td><td class="basic">半径50mの特定相手と思考通信。</td><td class="cheat">複数人に同時テレパスで <strong>戦場の指揮系統</strong> を完全構築。</td></tr>
+<tr><td class="no">028</td><td class="skill">ヒプノアイ</td><td class="basic">目を合わせた相手を5秒間支配。</td><td class="cheat">5秒で <strong>「自分を撃て」</strong>と命令して敵自滅。連鎖催眠で集団化。</td></tr>
+<tr><td class="no">029</td><td class="skill">エモジャック</td><td class="basic">半径10mの感情を1段階操作（怒り↑など）。</td><td class="cheat">敵勢力に <strong>恐怖を流し込んで撤退</strong>。仲間に勇気で全力以上。</td></tr>
+<tr><td class="no">030</td><td class="skill">ライウォッチ</td><td class="basic">嘘判定100%、半径20m。</td><td class="cheat">尋問・取引で <strong>絶対の優位</strong>。政治の支配。</td></tr>
+<tr><td class="no">031</td><td class="skill">ドリームウォーク</td><td class="basic">睡眠中の対象の夢に侵入。</td><td class="cheat">夢の中で <strong>記憶を植え付ける</strong>＝洗脳。トラウマ植え込み。</td></tr>
+<tr><td class="no">032</td><td class="skill">マインドリンク</td><td class="basic">触れた仲間と <strong>感覚共有</strong>（視覚・聴覚）。</td><td class="cheat">100人で繋がれば <strong>全方位視界・無限情報網</strong>。</td></tr>
+<tr><td class="no">033</td><td class="skill">フィアブースト</td><td class="basic">自分への恐怖心を放出（圧倒）。</td><td class="cheat">敵が <strong>戦意喪失</strong>。一般人は気絶。</td></tr>
+<tr><td class="no">034</td><td class="skill">フォゲット</td><td class="basic">触れた相手の直前30秒の記憶を消去。</td><td class="cheat">犯行現場の <strong>目撃者を全員リセット</strong>＝完全犯罪。</td></tr>
+<tr><td class="no">035</td><td class="skill">チャーム</td><td class="basic">自分への好感度を強制+50%。</td><td class="cheat">勢力リーダーに使えば <strong>敵組織の中枢に潜入</strong>。</td></tr>
+</table>
+</div>
+
+<!-- 知覚・情報 -->
+<h3><span class="cat-band" style="background:rgba(34,211,238,.15);color:#22d3ee">D</span>知覚・情報系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">036</td><td class="skill">フォーキャスト（ヒカル）</td><td class="basic">5秒先の視界が見える。</td><td class="cheat">全攻撃の <strong>事前回避</strong>。長時間の積み重ねで戦術構築。</td></tr>
+<tr><td class="no">037</td><td class="skill">クレアボヤンス</td><td class="basic">数km先の特定地点の景色が見える。</td><td class="cheat">敵基地の内部を <strong>無侵入で完全把握</strong>。</td></tr>
+<tr><td class="no">038</td><td class="skill">サーモグラフ</td><td class="basic">熱感知。壁越しに人体検知。</td><td class="cheat">建物内の <strong>全員位置把握</strong>＝奇襲・人質救出の専門。</td></tr>
+<tr><td class="no">039</td><td class="skill">バイブレーション</td><td class="basic">地面振動で半径100mの動きを把握。</td><td class="cheat">床に伝わる <strong>足音だけで個人識別</strong>。完全索敵。</td></tr>
+<tr><td class="no">040</td><td class="skill">アイゼン</td><td class="basic">透視（壁の向こう、5cmまで）。</td><td class="cheat">金庫・ロッカーの <strong>中身完全把握</strong>。隠し兵器の発見。</td></tr>
+<tr><td class="no">041</td><td class="skill">エコーロケート</td><td class="basic">音波で半径50mの3D構造把握。</td><td class="cheat">完全暗闇で <strong>戦闘可能</strong>。地下構造の解析。</td></tr>
+<tr><td class="no">042</td><td class="skill">トラッカー</td><td class="basic">一度見た人物を <strong>地球上どこでも追跡</strong>可能。</td><td class="cheat">逃亡能力者の <strong>全把握</strong>＝政府にも組織にも超重要人材。</td></tr>
+<tr><td class="no">043</td><td class="skill">アナライズ</td><td class="basic">視た物体の組成・構造を完全解析。</td><td class="cheat">敵能力者の <strong>能力の弱点</strong> を視ただけで把握。</td></tr>
+<tr><td class="no">044</td><td class="skill">プローブ</td><td class="basic">触れた物の所有者の感情・記録が流れ込む。</td><td class="cheat">遺品・武器から <strong>持ち主の全行動</strong> を再現。</td></tr>
+<tr><td class="no">045</td><td class="skill">マップサイト</td><td class="basic">頭の中に半径1kmの完全地図が常時表示。</td><td class="cheat">敵の位置・建物構造・最短経路を <strong>常時把握</strong>。</td></tr>
+</table>
+</div>
+
+<!-- 物質・素材 -->
+<h3><span class="cat-band" style="background:rgba(251,191,36,.15);color:#fbbf24">E</span>物質・素材操作系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">046</td><td class="skill">メタルベンド</td><td class="basic">触れた金属を粘土のように成形。</td><td class="cheat">敵の <strong>銃を即時破壊</strong>。鉄柱を剣に成形して即装備。</td></tr>
+<tr><td class="no">047</td><td class="skill">グラスメイク</td><td class="basic">手から強化ガラスを生成（バリケード級）。</td><td class="cheat">空中ガラスドームで <strong>即席要塞</strong>。透明刃物で見えない攻撃。</td></tr>
+<tr><td class="no">048</td><td class="skill">ストーンスキン</td><td class="basic">触れた物質の硬度を10倍化。</td><td class="cheat">布を <strong>鋼鉄装甲</strong>に。卵を爆弾に変換。</td></tr>
+<tr><td class="no">049</td><td class="skill">エロード</td><td class="basic">触れた物の硬度を1/10に下げる。</td><td class="cheat">敵の鎧・武器を <strong>布同然に劣化</strong>。ビルの柱を腐らせて倒壊。</td></tr>
+<tr><td class="no">050</td><td class="skill">ボムタッチ</td><td class="basic">触れた小物を時限爆弾化（最大C4級）。</td><td class="cheat">敵のポケットの <strong>携帯</strong>に触れて爆破。指輪が地雷。</td></tr>
+<tr><td class="no">051</td><td class="skill">マターメイク</td><td class="basic">頭で想像した物体を3秒で生成（質量制限あり）。</td><td class="cheat"><strong>銃・弾薬を即時生成</strong>。複雑な機械も精密に作る。</td></tr>
+<tr><td class="no">052</td><td class="skill">フューズ</td><td class="basic">触れた2つの物体を融合させる。</td><td class="cheat">敵の <strong>体と床を融合</strong>＝完全拘束。武器と腕を融合で永続装備。</td></tr>
+<tr><td class="no">053</td><td class="skill">ディゾルブ</td><td class="basic">触れた物質を10秒で液体化。</td><td class="cheat">敵の銃を <strong>液体化</strong>。壁を液体化して通り抜け。</td></tr>
+<tr><td class="no">054</td><td class="skill">クリスタルエッジ</td><td class="basic">手から水晶剣を生成（ダイヤ硬度）。</td><td class="cheat">水晶弾で <strong>遠距離飛び道具</strong>。地面から水晶柱で串刺し。</td></tr>
+<tr><td class="no">055</td><td class="skill">ペイントワーパー</td><td class="basic">描いた絵を <strong>実体化</strong>させる（B5サイズまで）。</td><td class="cheat"><strong>銃・弾薬・鍵</strong>を絵で量産。複雑な絵で爆弾もOK。</td></tr>
+</table>
+</div>
+
+<!-- 動植物・生命 -->
+<h3><span class="cat-band" style="background:rgba(34,197,94,.15);color:#86efac">F</span>動植物・生命系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">056</td><td class="skill">ヒール（アサ）</td><td class="basic">触れた相手の傷・病を完全治癒。</td><td class="cheat">逆使用で <strong>傷を作る</strong>＝暗殺。能力者の能力を「治癒」と称して消去。</td></tr>
+<tr><td class="no">057</td><td class="skill">ビーストコール</td><td class="basic">半径500mの動物を呼び寄せ・指揮可能。</td><td class="cheat">都市の <strong>鳩・烏・鼠を兵団化</strong>。猛獣を従えて護衛。</td></tr>
+<tr><td class="no">058</td><td class="skill">ウィンドプラント</td><td class="basic">触れた植物を瞬間成長させ、操作。</td><td class="cheat">敵を <strong>蔓で拘束</strong>。地面から木の槍で串刺し。森を1日で創る。</td></tr>
+<tr><td class="no">059</td><td class="skill">インセクトロード</td><td class="basic">半径100mの虫（数千匹）を完全支配。</td><td class="cheat">蜂・蟻の津波で <strong>個別暗殺・大規模制圧</strong>。</td></tr>
+<tr><td class="no">060</td><td class="skill">セルブースト</td><td class="basic">触れた相手の身体能力を一時2倍。</td><td class="cheat">仲間に <strong>連鎖ブースト</strong>＝戦闘集団全員チート化。</td></tr>
+<tr><td class="no">061</td><td class="skill">ジェロントス</td><td class="basic">触れた生物の年齢を ±5歳 操作。</td><td class="cheat">敵を <strong>幼児化して戦力外</strong>。仲間を全盛期に戻して最強化。</td></tr>
+<tr><td class="no">062</td><td class="skill">バイオステイル</td><td class="basic">触れた生物の動きを5秒間完全停止。</td><td class="cheat">5秒あれば <strong>頭部を切り落とせる</strong>＝確実な暗殺。</td></tr>
+<tr><td class="no">063</td><td class="skill">ファンガル</td><td class="basic">手から菌類を放出（瞬間繁殖）。</td><td class="cheat">敵の食料を <strong>菌で汚染</strong>。建物を菌で侵食して倒壊。</td></tr>
+<tr><td class="no">064</td><td class="skill">アサシンガス</td><td class="basic">無臭・無色の麻酔ガスを口から放出。</td><td class="cheat">換気口から流して <strong>建物全員を昏睡</strong>。狙い撃ちも可。</td></tr>
+<tr><td class="no">065</td><td class="skill">クローズワン</td><td class="basic">他の能力者の能力を10分間封印（半径10m）。</td><td class="cheat">能力者バトルの <strong>絶対カウンター</strong>。組織内の能力者制裁。</td></tr>
+</table>
+</div>
+
+<!-- 時空・確率 -->
+<h3><span class="cat-band" style="background:rgba(139,92,246,.15);color:#a78bfa">G</span>時空・確率系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">066</td><td class="skill">タイムストップ</td><td class="basic">半径1mの時間を3秒だけ停止（自分は動ける）。</td><td class="cheat">3秒で <strong>致命攻撃を10発入れる</strong>。心臓を素手で抜く。</td></tr>
+<tr><td class="no">067</td><td class="skill">スローフィールド</td><td class="basic">半径10mの時間を1/10に減速。</td><td class="cheat">敵の銃弾が <strong>静止して見える</strong>。連射で大量殲滅。</td></tr>
+<tr><td class="no">068</td><td class="skill">ファストフィールド</td><td class="basic">半径5m内の自分・仲間の時間を10倍加速。</td><td class="cheat">仲間と <strong>10倍速で会話＋攻撃</strong>。10秒の戦闘が1秒。</td></tr>
+<tr><td class="no">069</td><td class="skill">プロバビリティ</td><td class="basic">確率事象を1日3回、自分の有利に修正。</td><td class="cheat">弾道・籤・反応——<strong>運ゲーで絶対勝利</strong>。</td></tr>
+<tr><td class="no">070</td><td class="skill">スペースフォールド</td><td class="basic">半径3mの空間を折り畳んで距離をゼロに。</td><td class="cheat">敵との距離を <strong>瞬時にゼロ</strong>＝即時近接戦。脱出ルート即時生成。</td></tr>
+<tr><td class="no">071</td><td class="skill">パスト・エコー</td><td class="basic">場所の <strong>過去24時間の出来事</strong>を映像で見られる。</td><td class="cheat">事件現場で <strong>犯人を完全特定</strong>。捜査員として無双。</td></tr>
+<tr><td class="no">072</td><td class="skill">フラックス</td><td class="basic">触れた物の <strong>慣性</strong>を消す（ぶつかっても止まらない）。</td><td class="cheat">指で押した <strong>小石が音速で永久飛行</strong>＝銃弾代わり。</td></tr>
+<tr><td class="no">073</td><td class="skill">フェイズ</td><td class="basic">5秒間、自分の体が壁・物体をすり抜けられる。</td><td class="cheat">敵の <strong>体内に手を入れて心臓掴む</strong>。金庫の中身回収。</td></tr>
+<tr><td class="no">074</td><td class="skill">タイムループ</td><td class="basic">直近1分間を <strong>もう1度再体験</strong>（自分のみ、結果は分岐）。</td><td class="cheat">命のかかる選択を <strong>無限試行</strong>。完全成功まで繰り返す。</td></tr>
+<tr><td class="no">075</td><td class="skill">ドップル</td><td class="basic">自分の姿を別の場所に <strong>幻影投影</strong>（音・触感なし）。</td><td class="cheat">陽動で敵を <strong>誤った方向に集中</strong>。本体は別ルートで奇襲。</td></tr>
+</table>
+</div>
+
+<!-- 通信・社会 -->
+<h3><span class="cat-band" style="background:rgba(96,165,250,.15);color:#60a5fa">H</span>通信・情報・社会系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">076</td><td class="skill">ハッカー</td><td class="basic">触れた電子機器を <strong>素手で完全制御</strong>。</td><td class="cheat">スマホ1台で <strong>都市インフラを乗っ取り</strong>。銀行・電力支配。</td></tr>
+<tr><td class="no">077</td><td class="skill">ボイスフェイク</td><td class="basic">他人の声を完璧に再現（録音1回必要）。</td><td class="cheat">電話で <strong>政府高官を装う</strong>。指示を出して組織を動かす。</td></tr>
+<tr><td class="no">078</td><td class="skill">マルチリングア</td><td class="basic">全言語を瞬時翻訳・話せる。</td><td class="cheat">国際組織との <strong>外交独占</strong>。古文書解読。</td></tr>
+<tr><td class="no">079</td><td class="skill">フェイスチェンジ</td><td class="basic">自分の顔を1分間、他人の顔に変えられる。</td><td class="cheat">敵の <strong>身分証で施設突破</strong>。VIPを装って警護を欺く。</td></tr>
+<tr><td class="no">080</td><td class="skill">クラウドリーダー</td><td class="basic">SNSから <strong>「現在の世論」</strong>を直感で完全把握。</td><td class="cheat">情報操作で <strong>世論誘導</strong>。能力者賛成派を作る政治工作。</td></tr>
+<tr><td class="no">081</td><td class="skill">レコード</td><td class="basic">触れた物に <strong>音声・映像を保存</strong>できる（無制限）。</td><td class="cheat">小石1個に <strong>1万時間の証拠映像</strong>。法廷の最終兵器。</td></tr>
+<tr><td class="no">082</td><td class="skill">バインドコード</td><td class="basic">紙に書いた契約に <strong>強制力</strong>を持たせる（破ると激痛）。</td><td class="cheat">相手を脅して契約サイン → <strong>絶対裏切れない奴隷化</strong>。</td></tr>
+<tr><td class="no">083</td><td class="skill">マイクロスパイ</td><td class="basic">髪の毛1本を <strong>遠隔操作のドローン化</strong>。</td><td class="cheat">髪を抜いて配ればどこへでも <strong>完全潜入監視</strong>。</td></tr>
+<tr><td class="no">084</td><td class="skill">エンクリプト</td><td class="basic">自分の発言・書記を <strong>暗号化</strong>（指定相手のみ理解可）。</td><td class="cheat">敵に聞かれても <strong>完璧な機密通信</strong>。組織の中枢通信。</td></tr>
+<tr><td class="no">085</td><td class="skill">マスメモリ</td><td class="basic">触れた相手全員の記憶を <strong>同時に把握</strong>（1度に最大10人）。</td><td class="cheat">人混みで触れて <strong>群衆の見聞を一括取得</strong>＝最強情報源。</td></tr>
+</table>
+</div>
+
+<!-- メタ・特殊 -->
+<h3><span class="cat-band" style="background:rgba(244,63,94,.15);color:#f87171">I</span>メタ・特殊系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力</th><th>基本性能</th><th>チート化の発想</th></tr>
+<tr><td class="no">086</td><td class="skill">ミラージュ</td><td class="basic">半径20mの相手の知覚を <strong>幻覚で改変</strong>。</td><td class="cheat">敵に <strong>味方を敵と誤認</strong>させる→同士討ち。</td></tr>
+<tr><td class="no">087</td><td class="skill">ラックスティール</td><td class="basic">触れた相手の <strong>運</strong>を吸収（24時間）。</td><td class="cheat">敵の <strong>狙い・反応・運ゲー</strong>すべて自分有利。</td></tr>
+<tr><td class="no">088</td><td class="skill">パワーミラー</td><td class="basic">他の能力者の能力を <strong>1日だけコピー</strong>（接触必要）。</td><td class="cheat">最強の能力者を <strong>毎日選んで奪える</strong>。能力者狩りの頂点。</td></tr>
+<tr><td class="no">089</td><td class="skill">ヴォイドキャンセル</td><td class="basic">触れた瞬間、相手の <strong>能力を無効化</strong>（接触のみ）。</td><td class="cheat">能力者バトルの <strong>絶対防御</strong>。チート相手にも素手で勝つ。</td></tr>
+<tr><td class="no">090</td><td class="skill">エナジードレイン</td><td class="basic">触れた相手の体力を吸収。自分の体力に変換。</td><td class="cheat">敵を <strong>触れて疲弊死</strong>。仲間に体力分配。</td></tr>
+<tr><td class="no">091</td><td class="skill">バリア</td><td class="basic">自分中心半径3mに <strong>絶対防御の壁</strong>（5秒）。</td><td class="cheat">爆撃の中で <strong>無傷生存</strong>。仲間も保護。</td></tr>
+<tr><td class="no">092</td><td class="skill">サモン</td><td class="basic">手から <strong>従順な狼型獣</strong>を1体召喚（5分）。</td><td class="cheat">複数体の連係＋自分の指揮で <strong>1人で軍隊運用</strong>。</td></tr>
+<tr><td class="no">093</td><td class="skill">クロックバック</td><td class="basic">触れた物を <strong>10秒前の状態に戻す</strong>。</td><td class="cheat">敵が壊した物を <strong>復元</strong>。腐った食料を新鮮化。</td></tr>
+<tr><td class="no">094</td><td class="skill">フューチャーフラッシュ</td><td class="basic">1日1回、未来の重要シーンが直感で見える。</td><td class="cheat">致命的選択の <strong>結果を事前認知</strong>＝戦略的正解選び。</td></tr>
+<tr><td class="no">095</td><td class="skill">ウィスパー</td><td class="basic">死者の魂と1分間対話可能（24時間以内死亡者）。</td><td class="cheat">死亡した能力者から <strong>能力の真実・敵の情報</strong>を即座入手。</td></tr>
+<tr><td class="no">096</td><td class="skill">トランスファー</td><td class="basic">触れた仲間の能力を <strong>一時交換</strong>（10分）。</td><td class="cheat">状況に応じて <strong>最適な能力に切り替え</strong>。チーム戦の鬼。</td></tr>
+<tr><td class="no">097</td><td class="skill">スティッキー</td><td class="basic">触れた物を <strong>任意の物質に瞬間接着</strong>（無理に剥がすと爆発）。</td><td class="cheat">敵の手を <strong>銃に接着</strong>＝武装解除。爆弾仕掛けの達人。</td></tr>
+<tr><td class="no">098</td><td class="skill">アンセン</td><td class="basic">自分の存在をシステム上 <strong>「いない」</strong>と認識させる（カメラ・センサーすべて）。</td><td class="cheat">SCDの <strong>監視網を完全突破</strong>。記録に残らない暗殺。</td></tr>
+<tr><td class="no">099</td><td class="skill">ノクターン</td><td class="basic">夜間限定、全ステータス2倍。視界・反射・出力すべて。</td><td class="cheat">夜間戦闘で <strong>誰よりも強い</strong>。夜の暗殺者として組織の中核。</td></tr>
+<tr><td class="no">100</td><td class="skill">ジェネシス（碑文 ジュウベエ?）</td><td class="basic">能力者の <strong>能力を書き換えられる</strong>（接触10秒）。</td><td class="cheat">100人の能力者を <strong>「政府の手駒」に再構成</strong>。最終決戦の理由。</td></tr>
+</table>
+</div>
+
+<div class="box box-info" style="margin-top:24px">
+<p style="color:#aaa;font-size:13px;line-height:1.85">
+<strong style="color:#60a5fa">設計の意図:</strong><br>
+全100能力が <strong>「単体で軍隊1個分隊潰せる」</strong> 強さ。<br>
+だから <strong>「能力の強弱」</strong> ではなく <strong>「使い方の発想」</strong> がドラマを作る。<br>
+同じ「炎を出す」能力でも、ガソリンスタンドに撃つ者と、肉を焼く者では <strong>結果が10万倍</strong> 違う。<br>
+これが <strong>「強者バトルの真の面白さ」</strong>——力の差ではなく <strong>知恵の差</strong> の物語。</p>
+</div>
+
+</div>
+</div>
+
+<!-- ============ 第1話 ============ -->
+<div class="sec" id="ep01">
+<div class="sec-head">
+<h2><span class="num">05</span>第1話「巻き戻る7秒間」（ためし台本）</h2>
+<div class="sec-sub">EP01 / 想定尺: 22分 / 視点: 久遠ツバサ</div>
+</div>
+<div class="sec-body">
+
+<div class="script">
+
+<div class="scr-head">
+<h3>第1話「巻き戻る7秒間」</h3>
+<div class="scr-meta">
+<span class="tag t-ep">フル台本</span>
+<span class="tag t-time">22分</span>
+<span class="tag t-pov">ツバサ視点</span>
+</div>
+</div>
+
+<!-- COLD OPEN -->
+<div class="part">
+<div class="part-label">COLD OPEN</div>
+<div class="part-title">「未来から始まる物語」</div>
+<div class="part-time">00:00 〜 02:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】路地裏。雨。倒れている男2人（SCD職員、黒スーツ）。立っているのはレイ（銀髪、血まみれのジャージ）と、ツバサ（眼鏡、震えている）。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">ツバサ。後ろ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">え？</span></div>
+
+<div class="stage">【映像】ツバサの背後から、3人目のSCD職員が発砲。バン！</div>
+
+<div class="stage">【映像】ツバサの胸に弾痕。倒れる。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">ツバサっ！</span></div>
+
+<div class="stage">【映像】カメラ、ツバサの瞳に寄る。瞳の中で時計の針が逆回転する。</div>
+
+<div class="rewind">
+▶ REWIND ENGAGED
+▶ ABILITY: rewind 10s
+▶ Reloading consciousness...
+</div>
+
+<div class="stage">【映像】場面が <strong>10秒前</strong> に戻る。レイとツバサ、背後を警戒している瞬間。ツバサ、ハッと振り返る。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">レイ、後ろ！</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">え？</span></div>
+
+<div class="stage">【映像】レイ、振り返って水流操作。3人目の職員に水弾が直撃して気絶。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……ツバサ、今、何した？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……たぶん、巻き戻した。10秒前に。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……あんた、いま、私の命を救った。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……いや、自分の命だよ。たぶん。</span></div>
+
+<div class="stage">【タイトルドン】<strong>「シンギュラ100 — 第1話 巻き戻る7秒間」</strong>。BGM: 緊迫したシンセ。</div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- PART 1 -->
+<div class="part">
+<div class="part-label">PART 1</div>
+<div class="part-title">「目覚めた朝」</div>
+<div class="part-time">02:00 〜 06:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】時間を遡って、4月15日の朝。ツバサの自室。アパート、6畳。本棚に哲学書。</div>
+
+<div class="stage">【映像】ツバサ、目を覚ます。頭が痛い。視界の隅に何か <strong>白い文字</strong>。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……夢、か？</span></div>
+
+<div class="stage">【映像】文字が浮かぶ。脳内に直接投影されているような。</div>
+
+<div class="sysmsg" style="padding:10px 26px;background:rgba(34,211,238,.06);border-left:3px solid rgba(34,211,238,.4);font-size:12.5px;color:#67e8f9;font-family:'Courier New',monospace;line-height:1.8">▶ ABILITY ACTIVATED
+▶ ID: 001 / 久遠 ツバサ
+▶ NAME: REWIND
+▶ EFFECT: あなたの認識のみを、最大10秒前まで巻き戻せます。
+▶ COOLDOWN: なし。発動には3秒の集中が必要。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……は？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">えっと、なに、これ。</span></div>
+
+<div class="stage">【映像】ツバサ、台所へ。父親（警察官、50代）がコーヒーを淹れている。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">父さん、変な夢、見なかった？</span></div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">夢？……いや、特には。なんで？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……いや、いいや。</span></div>
+
+<div class="stage">【映像】テレビのニュース。「昨夜午前4時27分、日本上空で説明不能の光柱が観測——」</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">（独白）光の柱……。</span></div>
+
+<div class="stage">【映像】ツバサ、自室に戻る。手のひらを見つめる。「3秒集中」の感覚を試す。</div>
+
+<div class="stage">【映像】カップのコーヒーをこぼす。──「ヤバ」──ツバサ、目をつぶって集中3秒。</div>
+
+<div class="rewind">▶ REWIND -7s</div>
+
+<div class="stage">【映像】時間が <strong>7秒前</strong> に戻る。ツバサ、コーヒーカップを置く前の自分の手の動きを「見覚えがある」状態。今度は注意してカップを置く。こぼれない。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……マジか。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">これ、何にでも使えるじゃん。</span></div>
+
+<div class="stage">【映像】ツバサ、何度も試す。机から物を落とす→巻き戻す→落とさない。じゃんけんを1人でする→負けたら巻き戻す→必勝。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……いや、これ、ヤバい能力じゃないか？</span></div>
+
+<div class="stage">【映像】玄関のチャイム。ピンポン。父が出る。声が聞こえる——「警視庁特異現象対策室です。久遠ツバサさん、いらっしゃいますか？」</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">（小声）……来た。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- PART 2 -->
+<div class="part">
+<div class="part-label">PART 2</div>
+<div class="part-title">「保護という名の連行」</div>
+<div class="part-time">06:00 〜 10:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】玄関。SCDの黒スーツが2人。父親、警察官として相手のIDを確認している。</div>
+
+<div class="line"><span class="who who-gov">SCD職員A</span><span class="txt">息子さんの「保護」のため、ご同行いただきたい。</span></div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">保護？息子が何かしたって言うのか？</span></div>
+
+<div class="line"><span class="who who-gov">SCD職員A</span><span class="txt">いえ、特殊な「適性」があると判明しました。安全のため、隔離施設で生活していただきます。</span></div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">どこの施設だ。期間は。</span></div>
+
+<div class="line"><span class="who who-gov">SCD職員A</span><span class="txt">……機密です。</span></div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">機密。</span></div>
+
+<div class="stage">【映像】父、息子を振り返る。長年の警察勘で、状況を即理解している。</div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">（小声）ツバサ、裏口だ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">え。</span></div>
+
+<div class="line"><span class="who who-mob">父</span><span class="txt">行け。あとで連絡する。</span></div>
+
+<div class="stage">【映像】ツバサ、ためらいながら裏口へ。父はSCD職員と向き合い、わざと話を引き伸ばす。</div>
+
+<div class="stage">【映像】ツバサ、裏口から路地へ。雨が降り始めている。走る。</div>
+
+<div class="stage">【映像】曲がり角でぶつかる——銀髪の少女、レイ。彼女もまた、走って逃げてきた。両者、転倒。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">うわっ！</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">すいません……！</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">あんた、能力者？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">え？</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">能力者か、訊いてる。SCDが追ってきてるなら、能力者でしょ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……たぶん、そう。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">じゃ、今は協力ね。後ろ！</span></div>
+
+<div class="stage">【映像】路地の入口にSCD職員2人が現れる。1人が銃を構える。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">ハイドロ。</span></div>
+
+<div class="stage">【映像】レイ、手を伸ばす。雨水が彼女の意のままに集まり、SCD職員2人を <strong>水弾で吹き飛ばす</strong>。気絶。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……うわ、強っ。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">水なら、私の領域。立てる？逃げるよ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">あ、はい……。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……ところで、あんたの能力は？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……「10秒前まで巻き戻せる」。自分の認識だけ。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……それ、めちゃくちゃ強くない？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……今朝、知った。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">使い方、ちゃんと考えて。あんたの能力、たぶん、私の能力より <strong>10倍ヤバい</strong>。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- PART 3 -->
+<div class="part">
+<div class="part-label">PART 3</div>
+<div class="part-title">「サンクチュアリへの道」</div>
+<div class="part-time">10:00 〜 14:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】廃ビルの1階。ツバサとレイ、雨を凌ぐ。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">私、水無月レイ。能力は「ハイドロ」、半径10mの水を操れる。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">久遠ツバサ。能力は「リワインド」。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">名前のセンスが、ちょっとイタい。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">俺がつけたんじゃない、勝手に出てきた名前。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">で、これからどうするの？SCDに見つかるの時間の問題でしょ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……レイは、当てがあるの？</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">ある。「サンクチュアリ」って組織。能力者だけの隠れ家を作ってる。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……信頼できる？</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">SCDより、たぶん100倍マシ。SCDは能力者を <strong>「兵器」</strong>として運用したいだけだから。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……兵器？</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">私のいた施設、能力封じの薬を打たれて、訓練と称してお互いに殺し合いさせてた。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……マジ？</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">マジ。私、3日で逃げた。仲間2人、置いて来た。</span></div>
+
+<div class="stage">【映像】レイ、水たまりを見つめる。水が彼女の意思に呼応してさざめく。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">サンクチュアリに行けば、力を合わせて仲間を取り戻せる。あんた、来る？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……行く。父さんのことも、巻き込みたくない。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">じゃあ、決まり。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- PART 4 -->
+<div class="part">
+<div class="part-label">PART 4</div>
+<div class="part-title">「黒崎玖郎、戦闘の鬼」</div>
+<div class="part-time">14:00 〜 18:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】夜。ツバサとレイ、サンクチュアリの隠れ家へ向かう途中。地下鉄駅構内。人気はない。</div>
+
+<div class="stage">【映像】突然、目の前に <strong>黒コートの男</strong>。立ち塞がる。黒崎玖郎。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">水無月レイ。久遠ツバサ。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……SCDか。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">そうだ。お前らを連行しに来た。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……レイ、逃げよう。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">無駄だ。</span></div>
+
+<div class="stage">【映像】玖郎、構える。次の瞬間——<strong>消えた</strong>。</div>
+
+<div class="stage">【SE】「キィン」という金属音。レイの首元に、玖郎の手刀が当てられている。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……速っ。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">能力「アクセラレート」。10倍速。お前の <strong>水操作の発動より、俺の動きが速い</strong>。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">レイっ！</span></div>
+
+<div class="stage">【映像】玖郎、もう一方の手でツバサを指差す。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">動くな、リワインド使い。お前が能力使う <strong>3秒の集中</strong>、俺の世界では <strong>30秒</strong> だ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……知ってるのか、俺の能力。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">SCDは100人の能力リストを持っている。お前の能力も筒抜けだ。</span></div>
+
+<div class="stage">【映像】玖郎、レイの首にナイフを当てる。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">投降しろ。3秒で決めろ。動けば、こいつの首が落ちる。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">（独白）巻き戻しても、こいつは10倍速。3秒の集中の間に、俺もレイも殺される。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">（独白）……でも。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">（独白）<strong>10秒の中で、何度も巻き戻せばいい</strong>。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">分かった。投降する。</span></div>
+
+<div class="stage">【映像】ツバサ、両手を上げる。玖郎、警戒しながら近づく。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">よし。手錠を——</span></div>
+
+<div class="stage">【映像】ツバサ、玖郎が一瞬油断した瞬間に、目を閉じる。3秒集中。</div>
+
+<div class="rewind">▶ REWIND -10s</div>
+
+<div class="stage">【映像】時間が10秒前に戻る。玖郎は <strong>まだ後ろの暗闇</strong>にいる。これから出てくる。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">レイ、後ろから来る。10秒以内に水で攻撃して。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">え？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">早く！</span></div>
+
+<div class="stage">【映像】レイ、即座に水道管を破壊して大量の水を生成。玖郎、暗闇から現れた瞬間に <strong>水流の壁</strong> を喰らう。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">なっ——！</span></div>
+
+<div class="stage">【映像】玖郎、加速で水流を抜けようとする。だが、レイの水は <strong>真空圧縮された水ジェット</strong>。10倍速でも、回避不可能な圧力。</div>
+
+<div class="stage">【映像】玖郎、地下鉄構内の壁にぶつかる。気絶寸前。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">ツバサ、何で来るって分かったの？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……巻き戻した。10秒前に。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……それ、<strong>ヤバすぎる</strong>。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">うん、自分でもそう思う。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- PART 5 -->
+<div class="part">
+<div class="part-label">PART 5</div>
+<div class="part-title">「7秒の選択」</div>
+<div class="part-time">18:00 〜 22:00</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】気絶している玖郎を見下ろす2人。雨が地下鉄の入口から降り込んでいる。</div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">どうする？SCDの兵士、殺す？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……殺さない。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">理由は？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">こいつ、最初から「狙撃命令」をもらってたら、もう撃ってる。<strong>連行命令</strong>だったから、生かして来た。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">それに、こいつの言葉、ちょっと違和感あった。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">違和感？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">「SCDは100人の能力リストを持っている」って、敢えて教えてきた。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">敵の情報を <strong>わざわざ漏らした</strong>。意図的に、たぶん。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">……離反者？</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">かもしれない。<strong>俺、巻き戻して、もう一回試してみる</strong>。</span></div>
+
+<div class="stage">【映像】ツバサ、目を閉じる。3秒集中。</div>
+
+<div class="rewind">▶ REWIND -7s</div>
+
+<div class="stage">【映像】時間が <strong>7秒前</strong> に戻る。玖郎、まだ気絶していない、よろよろと立ち上がろうとしている瞬間。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">玖郎さん。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">……俺の名を、なぜ。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">あなたが、わざと能力リストの存在を漏らしたから。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">ご親切に、ありがとう。あなた、SCDを離反するつもりですよね。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">……気付いたか。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">サンクチュアリ、知ってますか？</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">紅蓮寺アサの組織か。知っている。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">一緒に行きませんか。あなたの加速が、俺の巻き戻しと組めば、最強コンビです。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">……俺は、SCDの過去がある。受け入れられるか。</span></div>
+
+<div class="line"><span class="who who-rei">レイ</span><span class="txt">アサさんなら、受け入れる。<strong>過去より、未来を見る人</strong> だから。</span></div>
+
+<div class="stage">【映像】玖郎、しばらく考える。</div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">……分かった。同行する。</span></div>
+
+<div class="line"><span class="who who-kuro">玖郎</span><span class="txt">久遠ツバサ。お前の能力、とんでもないな。</span></div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ</span><span class="txt">……自分でも、そう思います。</span></div>
+</div>
+
+<div class="act-divider">＊  ＊  ＊</div>
+
+<!-- EPILOGUE -->
+<div class="part">
+<div class="part-label">EPILOGUE</div>
+<div class="part-title">「碑文ジュウベエの目」</div>
+<div class="part-time">22:00 〜 22:30</div>
+</div>
+
+<div class="dial">
+<div class="stage">【映像】場面転換。SCD本部、室長室。窓際に立つ <strong>白髪の男</strong>——碑文ジュウベエ。モニターには3人（ツバサ、レイ、玖郎）の写真。</div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">面白い。</span></div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">001番、リワインド使い。</span></div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">この能力は、<strong>使い方次第で世界を変える</strong>。</span></div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">急いで保護するんじゃない。<strong>育ててから、書き換える</strong>。</span></div>
+
+<div class="stage">【映像】碑文、モニターのツバサの顔を指で撫でる。</div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">100人の中で、最初に <strong>「神」</strong> になるのは、お前だ。久遠ツバサ。</span></div>
+
+<div class="line"><span class="who who-gov">碑文</span><span class="txt">そして、お前の能力は——<strong>俺がもらう</strong>。</span></div>
+
+<div class="stage">【映像】カットアウト、暗転。次回予告へ。</div>
+</div>
+
+<div class="part" style="border-top:1px solid #1a1a2e">
+<div class="part-label">NEXT EPISODE</div>
+<div class="part-title">第2話「サンクチュアリの女王」</div>
+<div class="part-time">PREVIEW</div>
+</div>
+
+<div class="dial">
+<div class="stage">【次回予告】サンクチュアリ本部に到達したツバサたち。リーダー紅蓮寺アサが告げる「私たちの目的は、共存」。だが組織内部に、不穏な気配——「能力者の中に、裏切り者がいる」。誰が？なぜ？ツバサのリワインドが暴く、初の <strong>能力者連続殺人事件</strong>——。</div>
+
+<div class="line"><span class="who who-tsubasa">ツバサ（次回）</span><span class="txt">……巻き戻して、何度でも。真実が見えるまで。</span></div>
+
+<div class="stage">第2話「サンクチュアリの女王」。</div>
+</div>
+
+<div class="why">
+<strong>第1話のフック設計:</strong> ① コールドオープンでツバサが <strong>未来を巻き戻して仲間を救う</strong>シーンを先に見せる（能力の威力を5秒で提示）。② 朝の覚醒シーンで <strong>世界観・能力ルール</strong> を説明。③ レイとの出会いで <strong>政府の悪意・能力者の絆</strong> を提示。④ 玖郎戦で <strong>「巻き戻し×加速」の頭脳戦</strong> を見せる（チート級バトルの片鱗）。⑤ Epilogueでラスボスの存在を提示し引き。<br><br>
+本作のキモは「<strong>強い能力同士の戦いだから、頭脳戦が成立する</strong>」こと——ツバサが10秒の巻き戻しを「3回連続使う」「敵の油断を読んで使う」「言葉で相手を変える」など、<strong>能力＋発想</strong>の組み合わせで毎回違う勝ち方を見せる構造。
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:40px 20px;color:#444;font-size:12px">
+シンギュラ100 — 設定資料＋EP01 v1.0 / 2026-04-26<br>
+姉妹版: <a href="scripts-isekai-100.html" style="color:#666">クラフトワールド100</a> / <a href="scripts-ability-100.html" style="color:#666">ABILITY 100</a>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABILITY 100 — 汎用版・100人ハズレ能力アイデア集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:16px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#f59e0b,#ef4444,#a855f7,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,4.5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;line-height:1.3;background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899,#a855f7,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:#888;font-size:15px;font-weight:600;margin-bottom:20px}
+.hero p{color:#777;font-size:14px;max-width:680px;margin:0 auto 12px}
+.badge{display:inline-block;padding:4px 16px;border-radius:20px;font-size:12px;font-weight:800;margin:4px 4px}
+.b-genre{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.3)}
+.b-format{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.25)}
+.b-cast{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+
+.sec{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:18px;margin:36px 0;overflow:hidden}
+.sec-head{padding:24px 28px 14px;border-bottom:1px solid #1a1a2e;background:linear-gradient(180deg,rgba(245,158,11,.04),transparent)}
+.sec-head h2{font-size:22px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sec-head h2 .num{font-size:13px;color:#666;font-weight:700;background:#1a1a2e;padding:3px 10px;border-radius:6px}
+.sec-head .sec-sub{font-size:13px;color:#666}
+.sec-body{padding:24px 28px}
+
+h3{font-size:18px;font-weight:800;color:#e2e8f0;margin:28px 0 12px;padding-bottom:6px;border-bottom:1px solid #1a1a2e}
+h3:first-child{margin-top:0}
+h4{font-size:15px;font-weight:800;color:#fbbf24;margin:18px 0 8px}
+p{color:#bbb;margin-bottom:10px}
+.lead{color:#ddd;font-size:15px;line-height:1.9}
+
+.box{background:#0b0b18;border:1px solid #1a1a2e;border-radius:10px;padding:16px 20px;margin:14px 0}
+.box-em{background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.25)}
+.box-info{background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.25)}
+
+ul.bullets{list-style:none;padding:0;margin:8px 0}
+ul.bullets li{padding:6px 0 6px 22px;position:relative;color:#bbb;font-size:14px;line-height:1.8}
+ul.bullets li::before{content:"▸";color:#fbbf24;position:absolute;left:6px;font-weight:900}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;border-radius:10px;border:1px solid #1a1a2e}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#0a0a14}
+th{background:#12121e;color:#888;font-weight:800;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1a1a2e;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #14141e;color:#bbb;line-height:1.7;vertical-align:top}
+tr:hover td{background:#10101a}
+td.no{color:#555;font-weight:800;font-family:'Courier New',monospace;width:42px}
+td.name{color:#e2e8f0;font-weight:700;white-space:nowrap;width:120px}
+td.ab{color:#fbbf24;font-weight:700;width:240px}
+td.trick{color:#94a3b8;font-size:12.5px}
+td.trick strong{color:#fcd34d}
+
+.cat-band{display:inline-block;padding:4px 14px;border-radius:6px;font-size:12px;font-weight:800;margin-right:8px;letter-spacing:.04em}
+
+.synergy{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:12px;padding:18px 22px;margin:14px 0}
+.synergy h4{margin-top:0;color:#34d399;font-size:14px}
+.synergy .combo{font-size:13px;color:#bbb;line-height:1.85}
+.synergy .combo strong{color:#fbbf24}
+.synergy .effect{color:#aaa;font-size:12.5px;margin-top:6px;line-height:1.7}
+
+.setting-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.setting{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:12px;padding:16px 18px;border-left:4px solid #555}
+.setting h4{margin-top:0;font-size:14px}
+.setting p{font-size:12.5px;color:#999;line-height:1.7;margin-bottom:0}
+.setting.s1{border-left-color:#3b82f6}
+.setting.s2{border-left-color:#a855f7}
+.setting.s3{border-left-color:#ef4444}
+.setting.s4{border-left-color:#10b981}
+
+@media (max-width:640px){
+td.name{width:auto}
+td.ab{width:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">ABILITY 100</span>
+<a href="#overview">概要</a>
+<a href="#settings">想定世界観</a>
+<a href="#abilities">能力一覧</a>
+<a href="#synergy">シナジー</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+<div>
+<span class="badge b-genre">汎用 / 世界観非依存</span>
+<span class="badge b-format">能力アイデア集</span>
+<span class="badge b-cast">100名分</span>
+</div>
+<h1>ABILITY 100<br><span style="font-size:.55em;color:#888;font-weight:700;background:none;-webkit-text-fill-color:#888">〜100人の地味スキル者、生存ゲーム〜</span></h1>
+<p class="sub">マイクラ依存ナシ。現代・学園・異世界・ポストアポカリプス、どんな舞台でも刺さる「ハズレ能力」100個。</p>
+</div>
+
+<!-- ============ 概要 ============ -->
+<div class="sec" id="overview">
+<div class="sec-head">
+<h2><span class="num">01</span>このリストについて</h2>
+<div class="sec-sub">設計思想 / 使い方</div>
+</div>
+<div class="sec-body">
+
+<div class="box box-em">
+<p class="lead"><strong style="color:#fbbf24">姉妹版「クラフトワールド100」</strong> のマイクラ仕様依存を取り除き、<br>
+<strong>どんな舞台でもそのまま使える</strong> 形で再設計した汎用能力プール。</p>
+</div>
+
+<h3>設計ルール</h3>
+<ul class="bullets">
+<li>全能力に <strong>「え、それ弱くない？」</strong> 感がある（パッと見ハズレ）</li>
+<li>使い方を考えれば <strong>必ず化ける</strong> ように設計（発想・知識・組み合わせ）</li>
+<li>マイクラ仕様（クラフト/MOB/レッドストーン等）を <strong>一切前提にしない</strong></li>
+<li>現代日本/中世ファンタジー/学園/SF、舞台不問で機能する物理・心理・社会ベース</li>
+<li>能力同士の <strong>シナジー</strong> が成立しやすく、勢力結成の動機が自然に生まれる</li>
+</ul>
+
+<h3>こんな作品に使える</h3>
+<ul class="bullets">
+<li>異世界転生バトロワ（マイクラ以外の舞台で）</li>
+<li>現代能力者バトル（学園・都市・潜入）</li>
+<li>「ハズレ能力で成り上がる」テンプレ系小説のスキル設計</li>
+<li>TRPGのキャラビルド素材</li>
+<li>キャラ作りの発想刺激（地味だがクセのあるキャラに即変換可能）</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ============ 想定世界観 ============ -->
+<div class="sec" id="settings">
+<div class="sec-head">
+<h2><span class="num">02</span>想定できる舞台 4パターン</h2>
+<div class="sec-sub">同じ能力リストをこう使い回せる</div>
+</div>
+<div class="sec-body">
+
+<div class="setting-grid">
+<div class="setting s1">
+<h4 style="color:#60a5fa">A. 現代都市バトロワ</h4>
+<p>東京の地下サーバーに閉じ込められた100人。能力は全員ハズレ。地下鉄・コンビニ・廃ビルが舞台。<strong>「電気・電子機器・スマホ」</strong> がある現代だからこそ化ける能力（静電気/影/影響力系）が映える。</p>
+</div>
+<div class="setting s2">
+<h4 style="color:#c084fc">B. 中世ファンタジー</h4>
+<p>異世界転生で100人召喚。剣と魔法の世界に「微妙な特殊能力」を持って降臨。<strong>「鋼鉄文明・人力中心」</strong> の世界では物理介入系（落下速度/重力/温度）が破格に強くなる。</p>
+</div>
+<div class="setting s3">
+<h4 style="color:#f87171">C. ポストアポカリプス</h4>
+<p>滅亡後の地球で100人が目覚める。文明壊滅後の世界では <strong>「食料・水・情報」</strong> が金。植物会話・蜂蜜生成・指紋消失などサバイバル系が突如チート級に化ける。</p>
+</div>
+<div class="setting s4">
+<h4 style="color:#34d399">D. 学園能力者バトル</h4>
+<p>能力に目覚めた100人の高校生。校内・部活・SNSが戦場。<strong>「人間関係と心理戦」</strong> が中心の場では、影響力・嘘判定・好印象系が異常な威力を発揮。</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============ 能力一覧 ============ -->
+<div class="sec" id="abilities">
+<div class="sec-head">
+<h2><span class="num">03</span>全100能力アイデア</h2>
+<div class="sec-sub">No. / 能力名 / 効果＋化けるポイント</div>
+</div>
+<div class="sec-body">
+
+<!-- 物理現象操作 -->
+<h3><span class="cat-band" style="background:rgba(59,130,246,.15);color:#60a5fa">A</span>物理現象操作系（小規模・地味）</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">001</td><td class="ab">微熱操作</td><td class="trick">半径30cmの空気の温度を ±1℃ 動かせる。<strong>火薬の自然発火点を一瞬で超えさせて爆発させる</strong>／冷蔵食品をピンポイントで腐らせる／相手のスマホをCPU高温警告で落とす。</td></tr>
+<tr><td class="no">002</td><td class="ab">落下速度減衰</td><td class="trick">落下中の物体の速度を10%遅くできる（1日3回）。<strong>暗殺の凶器を一瞬遅らせて回避</strong>／屋上から飛び降りた仲間の救命／落とした重要書類のキャッチ。</td></tr>
+<tr><td class="no">003</td><td class="ab">音速ディレイ</td><td class="trick">自分中心半径3mの音を0.5秒だけ遅延させる。<strong>銃声・爆発音が0.5秒遅れて届く＝奇襲が成立</strong>／殴った瞬間の音だけ消えて「一瞬で気絶」演出／会議で発言タイミングをずらして主導権を奪う。</td></tr>
+<tr><td class="no">004</td><td class="ab">摩擦減少</td><td class="trick">触れた面の摩擦係数を10%下げる（5分持続）。<strong>階段を走る追っ手を転倒させる</strong>／ドアノブを掴めなくする／敵の剣を握れなくして武装解除。</td></tr>
+<tr><td class="no">005</td><td class="ab">静電気生成</td><td class="trick">任意の場所に1日10回、軽い静電気を起こせる。<strong>電子ロックの誤作動／監視カメラのノイズ／火薬への引火</strong>／PCのデータ破損で証拠隠滅。</td></tr>
+<tr><td class="no">006</td><td class="ab">影濃度調整</td><td class="trick">自分の影だけ5%濃くor薄くできる。<strong>濃くして相手の視界を遮る</strong>／薄くして潜伏／影の長さで時刻を偽装。</td></tr>
+<tr><td class="no">007</td><td class="ab">微重力</td><td class="trick">5秒だけ自分の体重を10%軽減（1日5回）。<strong>跳躍力＋10%＝ビル間を飛び越える</strong>／薄い氷の上を渡れる／吊り橋の重量制限を超えて渡る。</td></tr>
+<tr><td class="no">008</td><td class="ab">微風操作</td><td class="trick">半径1mの風向きを変えられる（風速は変えられない）。<strong>矢/銃弾の軌道を数mmずらして急所外し</strong>／毒ガス・煙幕の方向を逆転／タバコの煙で相手を炙り出し。</td></tr>
+<tr><td class="no">009</td><td class="ab">体温自在</td><td class="trick">自分の体温を ±2℃ 動かせる。<strong>サーマル探知の回避</strong>／死体偽装（体温を下げる）／低体温症の患者として救急車を呼ぶ偽装。</td></tr>
+<tr><td class="no">010</td><td class="ab">屈折</td><td class="trick">自分を通る光を1度だけ曲げられる。<strong>狙撃の照準が常にズレる</strong>／監視カメラに映る位置が実位置と違う／鏡像が成立しない＝吸血鬼偽装。</td></tr>
+</table>
+</div>
+
+<!-- 感覚・知覚 -->
+<h3><span class="cat-band" style="background:rgba(168,85,247,.15);color:#c084fc">B</span>感覚・知覚系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">011</td><td class="ab">指紋消失</td><td class="trick">自分の指紋が一切残らない。<strong>完全犯罪</strong>／契約書を握っても証拠ゼロ／犯人偽装で他人の指紋を残す側に。</td></tr>
+<tr><td class="no">012</td><td class="ab">嘘判定（精度70%）</td><td class="trick">1日1回、相手の発言が嘘か本当か直感で判定。<strong>取り調べ／交渉／裏切り検知</strong>／ガセ情報の選別で勢力の頭脳に。</td></tr>
+<tr><td class="no">013</td><td class="ab">呼吸消音</td><td class="trick">自分の呼吸音を完全に消せる。<strong>暗殺の最後の一押し</strong>／隠れんぼ無敵／睡眠中に殺されても「呼吸が止まったことに気付かれない」事故偽装。</td></tr>
+<tr><td class="no">014</td><td class="ab">植物の声</td><td class="trick">半径5mの植物と簡単な意思疎通。<strong>毒草の警告（食えるか聞ける）</strong>／敵が森を通った痕跡を聞き出す／観葉植物を諜報員にできる。</td></tr>
+<tr><td class="no">015</td><td class="ab">感情リード（10秒）</td><td class="trick">1日1回、誰か1人の感情が10秒だけ流れ込む。<strong>嘘発見の決定打</strong>／好意・敵意の判別／告白の成功率100%化。</td></tr>
+<tr><td class="no">016</td><td class="ab">彩度操作</td><td class="trick">自分の視界の彩度を上げ下げできる。<strong>暗闇で目を慣らす速度2倍</strong>／フラッシュ無効／色覚情報の整理で監視業務に最適。</td></tr>
+<tr><td class="no">017</td><td class="ab">説得ボイス（+5%）</td><td class="trick">自分の声に説得力ボーナス +5%。<strong>営業・交渉・演説で僅差を覆す</strong>／勢力リーダー候補／ラジオ放送で集団扇動。</td></tr>
+<tr><td class="no">018</td><td class="ab">痛覚遮断</td><td class="trick">10秒間、痛覚を完全カット（1日3回）。<strong>致命傷でも10秒は動ける＝最後の一撃</strong>／応急処置／拷問耐性。</td></tr>
+<tr><td class="no">019</td><td class="ab">心拍可視</td><td class="trick">半径2mの相手の心拍数が見える。<strong>嘘発見・興奮検知・健康チェック</strong>／戦闘で「いつ攻撃しようとしているか」読みやすい。</td></tr>
+<tr><td class="no">020</td><td class="ab">体重操作（±5kg）</td><td class="trick">自分の体重を ±5kg 動かせる。<strong>体重計詐欺、足跡偽装、シーソー型罠の操作</strong>／吊り橋の重量制限／「軽い」と思わせて投げ飛ばし戦術。</td></tr>
+</table>
+</div>
+
+<!-- 時間・記憶 -->
+<h3><span class="cat-band" style="background:rgba(16,185,129,.15);color:#34d399">C</span>時間・記憶系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">021</td><td class="ab">5分前再生</td><td class="trick">5分前の自分の行動を完全再生できる。<strong>記憶喪失偽装の暴き／戦闘パターンの分析</strong>／「俺、5分前にあいつ見たな」で証言。</td></tr>
+<tr><td class="no">022</td><td class="ab">完全時計</td><td class="trick">体内時計の誤差0秒。<strong>爆破タイミング、待ち合わせ、暗殺、罠起動——全てに微細な優位</strong>／タイムロックを秒単位で攻略。</td></tr>
+<tr><td class="no">023</td><td class="ab">発言再生（1日1回）</td><td class="trick">24時間以内に聞いた誰かの発言を1つだけ正確に再生。<strong>裁判で決定的な証拠音声</strong>／恫喝＝「お前、昨日こう言ったよな」。</td></tr>
+<tr><td class="no">024</td><td class="ab">3秒巻き戻し</td><td class="trick">1日1回、自分の認識を3秒だけ過去に戻す（世界は戻らない）。<strong>致命的ミスを回避</strong>／敵の動きを「もう1回見せて」予測。</td></tr>
+<tr><td class="no">025</td><td class="ab">短眠</td><td class="trick">睡眠時間が半分でいい。<strong>活動時間が他人の1.5倍</strong>／夜の見張り／長期遠征の常勤者。</td></tr>
+<tr><td class="no">026</td><td class="ab">高速計算</td><td class="trick">頭の中で日付・距離・確率を10倍速で計算できる。<strong>ギャンブル・戦略・暗号</strong>／勢力の参謀ポジ。</td></tr>
+<tr><td class="no">027</td><td class="ab">脳内スクショ</td><td class="trick">1日1回、見ている景色を脳内に永久保存。<strong>地図・暗号・敵の顔・施設の構造</strong>を完全記憶。</td></tr>
+<tr><td class="no">028</td><td class="ab">速読</td><td class="trick">1秒で1ページ読める。<strong>図書館を1日で消化＝知識量で他者を圧倒</strong>／契約書の罠を即見抜く。</td></tr>
+<tr><td class="no">029</td><td class="ab">完全顔記憶</td><td class="trick">1度見た顔を絶対忘れない。<strong>変装看破／群衆から特定人物を瞬時発見</strong>／勢力の諜報部長。</td></tr>
+<tr><td class="no">030</td><td class="ab">音声反復</td><td class="trick">1度聞いた音を3秒だけ正確に再生できる（声・楽音・SE）。<strong>暗証番号の音／鍵開け（解錠音の再現）／声マネで電話詐欺</strong>。</td></tr>
+</table>
+</div>
+
+<!-- 動植物 -->
+<h3><span class="cat-band" style="background:rgba(34,197,94,.15);color:#86efac">D</span>動植物・自然系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">031</td><td class="ab">蚊不可侵</td><td class="trick">蚊に絶対刺されない。<strong>マラリア・デング熱の流行地で唯一の生存者</strong>／夏の見張り／ジャングル探索の専属。</td></tr>
+<tr><td class="no">032</td><td class="ab">鳩使い</td><td class="trick">鳩に簡単な指示ができる（「あの建物の窓に行け」程度）。<strong>伝書、偵察、街中の偵察ネットワーク構築</strong>。</td></tr>
+<tr><td class="no">033</td><td class="ab">犬無音化</td><td class="trick">犬に絶対吠えられない。<strong>侵入・潜入・警備突破の専門</strong>／番犬を全員無効化。</td></tr>
+<tr><td class="no">034</td><td class="ab">猫吸引</td><td class="trick">半径10mの猫が必ず自分に寄ってくる。<strong>猫だらけにして混乱・癒し・心理操作</strong>／猫アレルギーの敵を無力化。</td></tr>
+<tr><td class="no">035</td><td class="ab">蜂蜜生成</td><td class="trick">手から1日100gの蜂蜜が出る。<strong>食料・薬・粘着罠・燃料</strong>／殺菌作用で傷の治療。</td></tr>
+<tr><td class="no">036</td><td class="ab">虫よけオーラ</td><td class="trick">半径1mに虫が寄らない。<strong>ジャングル戦闘で頭がクリア／衛生／盗聴用の虫型ドローンも寄せ付けない</strong>。</td></tr>
+<tr><td class="no">037</td><td class="ab">促成栽培</td><td class="trick">1日1株だけ植物の成長を3倍にできる。<strong>食料・薬草・隠蔽（壁を蔦で覆う）／敵の足元を刺草で塞ぐ</strong>。</td></tr>
+<tr><td class="no">038</td><td class="ab">産卵察知</td><td class="trick">鶏や鳥が卵を産む直前を察知できる。<strong>サバイバルで朝食確保</strong>／養鶏場の効率化／野鳥の巣を見つけて食料源に。</td></tr>
+<tr><td class="no">039</td><td class="ab">魚召集</td><td class="trick">水中の魚が自分の手元に集まる。<strong>食料無限</strong>／敵の船底に魚を集めて転覆／水中潜伏中の偽装（魚が群れる場所）。</td></tr>
+<tr><td class="no">040</td><td class="ab">G操作</td><td class="trick">ゴキブリに簡単な指示ができる。<strong>偵察・心理攻撃・配電盤への誘導でショート</strong>／会議室に突入させて場を破壊。</td></tr>
+</table>
+</div>
+
+<!-- 身体・生理 -->
+<h3><span class="cat-band" style="background:rgba(236,72,153,.15);color:#f472b6">E</span>身体・生理系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">041</td><td class="ab">3秒石化</td><td class="trick">1日1回、3秒間「絶対に動かない壁」になれる（HP無敵）。<strong>致命の一撃を3秒だけ完全防御＝盾</strong>／誰かを背に庇って一発受け止め。</td></tr>
+<tr><td class="no">042</td><td class="ab">速髪</td><td class="trick">髪が一夜で30cm伸びる。<strong>変装、ロープ素材、罠の縛り紐／DNA証拠の操作</strong>。</td></tr>
+<tr><td class="no">043</td><td class="ab">涙完全制御</td><td class="trick">涙を出すか出さないか完全制御。<strong>嘘泣き＝裁判・交渉・ハニートラップ</strong>／拷問で涙を出さない＝精神的優位。</td></tr>
+<tr><td class="no">044</td><td class="ab">粘着唾液</td><td class="trick">自分の唾液に弱い接着剤の効果。<strong>応急修理・封筒の封・小型物の固定</strong>／指輪・宝石を即時隠蔽。</td></tr>
+<tr><td class="no">045</td><td class="ab">無臭</td><td class="trick">汗・体臭・口臭ゼロ。<strong>探知犬・センサー回避／潜入のプロ</strong>／死体偽装で「腐敗が始まらない」演出。</td></tr>
+<tr><td class="no">046</td><td class="ab">5分透明</td><td class="trick">1日1回、5分間体が透明になる（服は透明にならない）。<strong>裸で動けば真の透明＝偵察・脱出</strong>／服を脱いだ瞬間、敵は混乱で隙だらけ。</td></tr>
+<tr><td class="no">047</td><td class="ab">片目鷹視</td><td class="trick">5秒だけ片目の視力が10倍になる。<strong>狙撃・観察・遠距離の文字読み</strong>／看板・地図の遠隔情報取得。</td></tr>
+<tr><td class="no">048</td><td class="ab">心拍自在</td><td class="trick">自分の心拍数を任意に変えられる。<strong>嘘発見器を完全突破</strong>／心臓発作偽装で警戒を解く／メディカルチェックで合否操作。</td></tr>
+<tr><td class="no">049</td><td class="ab">解毒胃</td><td class="trick">致死量未満の毒を分解できる。<strong>暗殺対策・毒見役</strong>／毒キノコや汚水でも生存／毒入り料理を平気で食べて相手を疑わせる。</td></tr>
+<tr><td class="no">050</td><td class="ab">高速爪</td><td class="trick">爪が0.5秒で5cm伸ばせる（自分の意思で）。<strong>即席武器、開錠、つっかえ棒外し</strong>／顔面に伸ばせば威嚇兵器。</td></tr>
+</table>
+</div>
+
+<!-- 物質・素材 -->
+<h3><span class="cat-band" style="background:rgba(251,146,60,.15);color:#fb923c">F</span>物質・素材操作系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">051</td><td class="ab">紙鋼化</td><td class="trick">紙1枚を3秒間「鉄の硬さ」にできる（1日10回）。<strong>即席装甲・盾・刃物</strong>／新聞紙を盾に銃弾防御／本のページを刃にして暗殺。</td></tr>
+<tr><td class="no">052</td><td class="ab">瞬間冷凍</td><td class="trick">コップ1杯分の水を3秒で凍らせる。<strong>飲み物に氷の罠／鍵穴を凍らせて開かなくする／液体を即時凍結で投擲</strong>。</td></tr>
+<tr><td class="no">053</td><td class="ab">甘香放出</td><td class="trick">砂糖の香りを1秒だけ広範囲に発散できる。<strong>動物・虫の誘引／敵犬の嗅覚撹乱</strong>／菓子店で全顧客を引き寄せる宣伝兵器。</td></tr>
+<tr><td class="no">054</td><td class="ab">錆除去</td><td class="trick">自分の唾液で錆を1秒で除去。<strong>古道具を蘇らせる</strong>／鍵・銃・武器の整備独占／敵の銃を「整備済み」と騙して提供。</td></tr>
+<tr><td class="no">055</td><td class="ab">超剥離</td><td class="trick">木の皮・壁紙・ラベルを剥がす速度が10倍。<strong>痕跡消去・素材調達／ラベル偽装で毒物を「水」と思わせる</strong>。</td></tr>
+<tr><td class="no">056</td><td class="ab">蝋細工</td><td class="trick">ロウソクの蝋を素手で自在に成形できる。<strong>鍵の型取り→複製鍵／罠の引き金カバー／指紋取り型</strong>。</td></tr>
+<tr><td class="no">057</td><td class="ab">高速結束</td><td class="trick">ロープを結ぶ速度が10倍。<strong>3秒で人を縛り上げる</strong>／罠設置、ボーリング、登攀。</td></tr>
+<tr><td class="no">058</td><td class="ab">微小製鉄</td><td class="trick">鉄屑から1日10gだけ純鉄を取り出せる。<strong>長期で武器・道具の素材独占</strong>／針・釘・刃を量産。</td></tr>
+<tr><td class="no">059</td><td class="ab">常時清潔</td><td class="trick">自分の服が常にシミ・汚れゼロ。<strong>潜入・印象操作の絶対王者</strong>／殺害現場でも返り血ゼロ＝犯人と思われない。</td></tr>
+<tr><td class="no">060</td><td class="ab">革柔軟化</td><td class="trick">革を素手で1分で柔らかくできる。<strong>装備の即席フィッティング／拘束革の解除／武器の柄の調整</strong>。</td></tr>
+</table>
+</div>
+
+<!-- 確率・運 -->
+<h3><span class="cat-band" style="background:rgba(245,158,11,.15);color:#fbbf24">G</span>確率・運命系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">061</td><td class="ab">5連コイン</td><td class="trick">コイントスを5回連続当てられる（その後10回外れる）。<strong>重要な選択を5回だけ完璧</strong>／敵に「ハズレ用ターン」を仕向ける詐欺術。</td></tr>
+<tr><td class="no">062</td><td class="ab">微ダイス補正</td><td class="trick">サイコロの目を1日1回 +1 できる。<strong>ギャンブル・TRPG的決断</strong>／罠の発動率／クリティカル判定。</td></tr>
+<tr><td class="no">063</td><td class="ab">じゃんけん必勝</td><td class="trick">1日1回じゃんけんで必ず勝てる（読み発動）。<strong>地味だが、揉め事の解決権を毎日取れる</strong>／ネタかと思いきや勢力内政治の鍵。</td></tr>
+<tr><td class="no">064</td><td class="ab">クジ回避</td><td class="trick">ハズレを1日1回だけ避けられる。<strong>毒入りグラスの選別／敵が用意したシナリオから外れる</strong>／命がけのロシアンルーレットで生存。</td></tr>
+<tr><td class="no">065</td><td class="ab">過去確認</td><td class="trick">自分が今いる場所に「3秒前まで誰がいたか」が分かる。<strong>暗殺後の現場検証／敵の足取り追跡／罠の設置者特定</strong>。</td></tr>
+<tr><td class="no">066</td><td class="ab">遺失物探知</td><td class="trick">落とし物を見つける確率が3倍。<strong>戦場の死体漁り・装備回収の効率化</strong>／鍵・財布・USBの拾得で情報資源化。</td></tr>
+<tr><td class="no">067</td><td class="ab">10文字予測</td><td class="trick">1日1回、相手の次の発言を10文字だけ予測。<strong>会議の論破／告白の先回り／脅迫文の一手先</strong>。</td></tr>
+<tr><td class="no">068</td><td class="ab">雨除けバリア</td><td class="trick">自分の周囲50cmに雨が当たらない。<strong>潜入時の足跡管理／傘いらずで両手フリー／雨中でも書類が濡れない</strong>。</td></tr>
+<tr><td class="no">069</td><td class="ab">避雷</td><td class="trick">雷が自分に絶対落ちない。<strong>雷攻撃の能力者対策／嵐の中の唯一の伝令／鉄塔の上で安全</strong>。</td></tr>
+<tr><td class="no">070</td><td class="ab">盲撃</td><td class="trick">1日1回、目を閉じて投擲・射撃すると必中。<strong>覚醒した瞬間の一撃必殺</strong>／視界を奪われた状態を逆手に取る。</td></tr>
+</table>
+</div>
+
+<!-- 情報・通信 -->
+<h3><span class="cat-band" style="background:rgba(96,165,250,.15);color:#60a5fa">H</span>情報・通信系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">071</td><td class="ab">消える文字</td><td class="trick">自分が書いた文字が10分後に消える。<strong>機密通信／罠サインの一時設置／犯行声明の証拠隠滅</strong>。</td></tr>
+<tr><td class="no">072</td><td class="ab">姓名表示</td><td class="trick">半径10m以内の人の名前が頭上に見える（本人にだけ）。<strong>諜報・潜入・偽名看破</strong>／敵の組織図を一瞬で把握。</td></tr>
+<tr><td class="no">073</td><td class="ab">キーワードアラート</td><td class="trick">事前登録した言葉を誰かが言うと脳内アラーム（半径50m）。<strong>暗号通信／敵の合言葉キャッチ／自分の名前を呼ばれた瞬間に察知</strong>。</td></tr>
+<tr><td class="no">074</td><td class="ab">正確地図</td><td class="trick">自分が手書きする地図が常に正確。<strong>勢力の地理担当／敵に偽地図を渡しても自分のは正確</strong>。</td></tr>
+<tr><td class="no">075</td><td class="ab">敵味方識別</td><td class="trick">半径20mの人物が「自分にとって敵か味方か」を1日3回判定可能。<strong>裏切り検知／会談時の警戒／勢力分裂前の予兆把握</strong>。</td></tr>
+<tr><td class="no">076</td><td class="ab">折り紙暗号</td><td class="trick">紙の折り目で自分にしか読めない暗号を作れる。<strong>受け渡し時に「ただの折り紙」に偽装した秘密通信</strong>。</td></tr>
+<tr><td class="no">077</td><td class="ab">声偽装（1分）</td><td class="trick">1日1回、自分の声を別の人の声に1分だけ変えられる。<strong>電話詐欺・指示偽装・録音工作</strong>。</td></tr>
+<tr><td class="no">078</td><td class="ab">影への筆記</td><td class="trick">自分の影の中に短いメッセージを書ける（他人にも見える）。<strong>遺言・脅迫・指示</strong>を消えない形で残す／死後も犯人を告発。</td></tr>
+<tr><td class="no">079</td><td class="ab">嘘判定×3</td><td class="trick">半径5mで誰がいま嘘をついたかを1日3回判定。<strong>取り調べ・尋問・取引の鬼</strong>／勢力の司法担当ポジ。</td></tr>
+<tr><td class="no">080</td><td class="ab">鏡像転送</td><td class="trick">鏡に映る自分の像を、1分だけ別の鏡に表示できる（音は出ない）。<strong>監視・偵察・偽装出現</strong>／敵に「ここにいる」と思わせて別所で襲撃。</td></tr>
+</table>
+</div>
+
+<!-- 心理・社会 -->
+<h3><span class="cat-band" style="background:rgba(167,139,250,.15);color:#a78bfa">I</span>心理・社会系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">081</td><td class="ab">初対面好印象</td><td class="trick">初対面の相手から +10% 好印象を得る。<strong>勢力リーダー候補／営業／情報源の確保</strong>／99人の中で人脈構築の最速ランナー。</td></tr>
+<tr><td class="no">082</td><td class="ab">集中持続</td><td class="trick">自分が話すと相手の集中が10秒長続き。<strong>説明・説得・命令の浸透率を底上げ</strong>／教師・指揮官として圧倒的。</td></tr>
+<tr><td class="no">083</td><td class="ab">存在感ゼロ</td><td class="trick">自分の存在感を消せる（視界に入っても気付かれにくい）。<strong>会議に紛れて情報収集／暗殺の前段階</strong>／忘れられたフリで罠を仕掛ける。</td></tr>
+<tr><td class="no">084</td><td class="ab">3秒沈黙</td><td class="trick">1日1回、相手を3秒間沈黙させられる。<strong>議論の決着／戦闘前の警告封じ／告発を遮る</strong>。</td></tr>
+<tr><td class="no">085</td><td class="ab">名前威圧</td><td class="trick">自分の名前を聞いた相手が一瞬警戒する（0.5秒）。<strong>地味だが、敵の初動を毎回0.5秒遅らせる＝累積で生存率激変</strong>。</td></tr>
+<tr><td class="no">086</td><td class="ab">子供無敵</td><td class="trick">子供から絶対に好かれる。<strong>避難所・施設での情報源／子供を盾にする倫理観なき作戦</strong>／誘拐対策。</td></tr>
+<tr><td class="no">087</td><td class="ab">老人信頼</td><td class="trick">老人から絶対に信頼される。<strong>地域コミュニティの情報網独占／古い記録・口承の入手</strong>。</td></tr>
+<tr><td class="no">088</td><td class="ab">スマイルブースト</td><td class="trick">自分の笑顔の効果が2倍。<strong>営業・写真・SNSのバズ／敵を油断させる</strong>／笑顔のまま殺すサイコパス演出。</td></tr>
+<tr><td class="no">089</td><td class="ab">怒気冷却</td><td class="trick">自分が怒ると周囲の温度が1℃下がる。<strong>無言の威圧／相手に「ヤバい奴だ」と直感させる／真夏の冷房代わり</strong>。</td></tr>
+<tr><td class="no">090</td><td class="ab">真顔3倍</td><td class="trick">5秒だけ「真剣な顔」が3倍説得力を持つ。<strong>スピーチのキメ／嘘の念押し／告白</strong>。</td></tr>
+</table>
+</div>
+
+<!-- メタ・特殊 -->
+<h3><span class="cat-band" style="background:rgba(239,68,68,.15);color:#f87171">J</span>メタ・特殊系</h3>
+<div class="tbl-wrap">
+<table>
+<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
+<tr><td class="no">091</td><td class="ab">能力名偽装</td><td class="trick">他人に自分の能力名を偽って伝えられる（システム的にも偽装される）。<strong>真の能力を最後まで隠す／フェイク能力で敵を誘導</strong>。</td></tr>
+<tr><td class="no">092</td><td class="ab">フェイク発動</td><td class="trick">1日1回、自分の能力を「使ったフリ」ができる（実際は発動しない）。<strong>敵の警戒を別方向に誘導／自分の本当の手の内を温存</strong>。</td></tr>
+<tr><td class="no">093</td><td class="ab">過大評価誘発</td><td class="trick">他人が自分の能力を「強い」と勘違いするオーラ（噂レベル）。<strong>抑止力／攻撃を躊躇わせる／同盟交渉で有利</strong>。</td></tr>
+<tr><td class="no">094</td><td class="ab">死期察知</td><td class="trick">自分が死ぬ24時間前に直感で気付く。<strong>遺言／反撃の準備／同盟者への引き継ぎ／決死の特攻判断</strong>。</td></tr>
+<tr><td class="no">095</td><td class="ab">ラッキーカラー</td><td class="trick">毎朝、その日のラッキーカラーが分かる（精度70%）。<strong>当日の服装・装備色／敵の色を避ける／勝負服</strong>。</td></tr>
+<tr><td class="no">096</td><td class="ab">好物自然発生</td><td class="trick">自分の好きな食べ物が1日1個ポケットに自然発生（種類は固定）。<strong>食料保証／好物が「特殊な薬草」なら最強</strong>／好物選びが戦略。</td></tr>
+<tr><td class="no">097</td><td class="ab">発言数カウンター</td><td class="trick">自分が今日何語喋ったか分かる。<strong>無口戦略の自己管理／喋りすぎてる人の特定（自分視点）／心理戦のセルフチェック</strong>。</td></tr>
+<tr><td class="no">098</td><td class="ab">能力チャージ</td><td class="trick">1日能力を使わない代わりに、翌日2回使える（最大3日溜め）。<strong>戦略的休止＝決戦日に3日分まとめて発動</strong>。</td></tr>
+<tr><td class="no">099</td><td class="ab">影分身（5秒）</td><td class="trick">1日1回、自分の影が5秒だけ独立行動できる（影自身は攻撃力なし）。<strong>偵察／敵の注意逸らし／罠の発動だけ任せる</strong>。</td></tr>
+<tr><td class="no">100</td><td class="ab">能力伝授</td><td class="trick">他人1人にだけ、自分の能力の「使い方」を口頭で完璧に伝えられる（能力は移らない）。<strong>同盟の絆強化／後継者育成／自分が死んでも知識は残る</strong>。</td></tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<!-- ============ シナジー ============ -->
+<div class="sec" id="synergy">
+<div class="sec-head">
+<h2><span class="num">04</span>強力シナジー組み合わせ例</h2>
+<div class="sec-sub">単体では弱いが、組めば化ける勢力テンプレ</div>
+</div>
+<div class="sec-body">
+
+<div class="synergy">
+<h4>▼ 完全犯罪トリオ</h4>
+<div class="combo">
+<strong>No.011 指紋消失</strong> ＋ <strong>No.013 呼吸消音</strong> ＋ <strong>No.045 無臭</strong>
+</div>
+<div class="effect">物理証拠ゼロ × 接近時の音ゼロ × 体臭ゼロ。3人で1人の暗殺者を「いなかった存在」にできる。誰がやったか永遠に不明＝勢力内の暗殺請負業として最強。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 情報独裁ペア</h4>
+<div class="combo">
+<strong>No.072 姓名表示</strong> ＋ <strong>No.079 嘘判定×3</strong>
+</div>
+<div class="effect">名前を完全把握 × 嘘を即時看破。会議に座っているだけで全員の素性と発言の真偽が分かる。勢力リーダーの諜報部長が成立。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 暗殺タイミング四重奏</h4>
+<div class="combo">
+<strong>No.003 音速ディレイ</strong> ＋ <strong>No.022 完全時計</strong> ＋ <strong>No.067 10文字予測</strong> ＋ <strong>No.024 3秒巻き戻し</strong>
+</div>
+<div class="effect">音消し × 完璧なタイミング × 相手の次の言葉先読み × ミスったら3秒戻る。1人を仕留めるための「絶対成功する暗殺チーム」が組める。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 物理介入アタッカー</h4>
+<div class="combo">
+<strong>No.001 微熱操作</strong> ＋ <strong>No.005 静電気生成</strong> ＋ <strong>No.008 微風操作</strong>
+</div>
+<div class="effect">温度＋静電気＋風＝<strong>火薬の自然発火</strong>。火薬庫を3人で見るだけで爆発させられる。「事故」として処理される完全犯罪兵器。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 食料インフラ三羽烏</h4>
+<div class="combo">
+<strong>No.035 蜂蜜生成</strong> ＋ <strong>No.037 促成栽培</strong> ＋ <strong>No.039 魚召集</strong>
+</div>
+<div class="effect">糖分・植物・タンパク質を全カバー。食料源を独占して勢力均衡の中心に立てる。武力なくても全勢力に必要不可欠な「中立国」を作れる。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 心理戦の頂点</h4>
+<div class="combo">
+<strong>No.015 感情リード</strong> ＋ <strong>No.017 説得ボイス</strong> ＋ <strong>No.081 初対面好印象</strong> ＋ <strong>No.090 真顔3倍</strong>
+</div>
+<div class="effect">相手の感情を読んで × 説得力5%増しの声で × 初対面好印象 × 真顔キメ。事実上の <strong>洗脳級交渉力</strong>。1人で勢力を作り上げるリーダー型。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 即席要塞シナジー</h4>
+<div class="combo">
+<strong>No.041 3秒石化</strong> ＋ <strong>No.051 紙鋼化</strong> ＋ <strong>No.057 高速結束</strong>
+</div>
+<div class="effect">3秒の絶対防御 × 紙が鉄に × ロープを瞬時に結ぶ。3人で <strong>30秒で要塞</strong> を組める。攻城戦の主役。</div>
+</div>
+
+<div class="synergy">
+<h4>▼ 「能力チート」ペア</h4>
+<div class="combo">
+<strong>No.092 フェイク発動</strong> ＋ <strong>No.093 過大評価誘発</strong>
+</div>
+<div class="effect">本当は何もしていないのに、敵は「強い能力を使われた」と思い込む。<strong>能力なしで能力者として扱われる</strong>＝最強の心理戦。実際の能力は最後の最後まで温存。</div>
+</div>
+
+<div class="box box-info" style="margin-top:24px">
+<p style="color:#aaa;font-size:13px;line-height:1.85">
+<strong style="color:#60a5fa">設計の意図：</strong><br>
+能力は単独では「弱い・微妙」でも、<strong>2〜4人の組み合わせで突如「最強」になる</strong> ように設計してある。<br>
+これが <strong>勢力結成の自然な動機</strong> を生み、群像劇の必然性を作る。<br>
+ただし強い組み合わせを持つチームほど、メンバーの1人が裏切ると <strong>連鎖崩壊する脆さ</strong> も持つ——これがバトロワとしての緊張感を生み続ける。<br><br>
+舞台がマイクラじゃなくても、現代日本でも、ファンタジーでも、学園でも——<br>
+このリストはそのまま使える。<strong>キャラ100人にIDと名前を割り振れば、即シリーズ化可能</strong>。</p>
+</div>
+
+</div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:40px 20px;color:#444;font-size:12px">
+ABILITY 100 — 汎用版 v1.0 / 2026-04-26<br>
+姉妹版: <a href="scripts-isekai-100.html" style="color:#666">クラフトワールド100（マイクラ版）</a>
+</div>
+
+</div>
+
+</body>
+</html>

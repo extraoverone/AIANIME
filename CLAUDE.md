@@ -148,6 +148,17 @@ ideas-thumbnail.html                  # サムネ・一枚絵150案
 
 ## 🔄 直近の決定事項（時系列、新しい順）
 
+### 2026-04-26
+- バズtrackerに **4つの取得経路** を完備
+  - 📡 **監視チャンネル(RSS)** — YouTube公式RSS、絶対落ちない（推奨15ch同梱）
+  - 📋 **一括URL追加** — 改行区切りで複数URL貼付→noembed並列取得
+  - 🔥 トレンド検索 — Piped/Invidious（既存、不安定）
+  - + 手動追加 — 1件ずつ
+- `resolveChannelId()`: @handle/URL → channelId 解決（YouTubeページHTMLからregex抽出）
+- `parseRSSFeed()`: yt:videoId名前空間対応のXMLパーサ
+- 進捗バー（チャンネル更新・一括追加）追加
+- 監視チャンネルは `localStorage('yofukashi-watched-channels-v1')` 保存
+
 ### 2026-04-20
 - バズtrackerをGitHub Contents APIで永続化（`data/weekly-shorts.json`）
 - Piped API → Invidious API → CORS Proxy の3段フェイルオーバー

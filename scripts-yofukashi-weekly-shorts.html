@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>よふかしくらぶ！今週のバズショート — Weekly Tracker</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -116,6 +119,52 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 .info{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:12.5px;color:#93c5fd;line-height:1.7}
 .info strong{color:#60a5fa}
 .info kbd{background:#1a1a2e;padding:2px 6px;border-radius:3px;font-size:11px;border:1px solid #2a2a3e;font-family:monospace}
+
+/* CHANNEL WATCHLIST */
+.ch-list{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto;background:#08080f;border:1px solid #1a1a2e;border-radius:8px;padding:8px;margin-bottom:10px}
+.ch-row{display:flex;align-items:center;gap:8px;padding:6px 10px;background:#10101c;border:1px solid #1a1a2e;border-radius:6px}
+.ch-row .ch-flag{font-size:12px;flex-shrink:0}
+.ch-row .ch-name{flex:1;font-size:12.5px;color:#eee;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ch-row .ch-id{font-size:10px;color:#666;font-family:monospace}
+.ch-row .ch-meta{font-size:10px;color:#888}
+.ch-row button{background:none;border:none;color:#888;cursor:pointer;padding:4px 6px;border-radius:3px;font-size:13px}
+.ch-row button:hover{color:#f87171;background:rgba(239,68,68,.1)}
+.ch-empty{text-align:center;padding:24px 12px;color:#666;font-size:12px}
+.ch-add{display:flex;gap:6px;margin-bottom:10px}
+.ch-add input{flex:1;background:#10101c;border:1px solid #1a1a2e;border-radius:6px;padding:8px 12px;color:#eee;font-size:12px;outline:none}
+.ch-add input:focus{border-color:#60a5fa}
+
+.recommended{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;margin-top:10px}
+.rec-btn{background:#10101c;border:1px solid #1a1a2e;border-radius:6px;padding:8px 10px;color:#ddd;font-size:11px;cursor:pointer;text-align:left;transition:.15s}
+.rec-btn:hover{border-color:#60a5fa;background:#1a1a2e}
+.rec-btn.added{opacity:.4;border-color:#22c55e;color:#22c55e}
+.rec-btn .rec-flag{margin-right:4px}
+
+.bulk-textarea{width:100%;min-height:160px;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:10px;color:#eee;font-size:12px;font-family:monospace;outline:none;resize:vertical;line-height:1.7}
+.bulk-textarea:focus{border-color:#60a5fa}
+
+.progress-bar{background:#1a1a2e;height:6px;border-radius:3px;overflow:hidden;margin:10px 0}
+.progress-bar .fill{background:linear-gradient(90deg,#60a5fa,#a78bfa);height:100%;width:0%;transition:width .2s}
+
+/* API KEYS UI */
+.api-key-row{display:flex;gap:6px;align-items:center;padding:8px 10px;background:#10101c;border:1px solid #1a1a2e;border-radius:6px;margin-bottom:6px}
+.api-key-badge{flex-shrink:0;width:54px;text-align:center;font-size:10px;font-weight:800;padding:3px 6px;border-radius:4px;letter-spacing:.04em}
+.akb-ok{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.4)}
+.akb-quota{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4)}
+.akb-invalid{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.4)}
+.akb-unknown{background:rgba(148,163,184,.15);color:#94a3b8;border:1px solid rgba(148,163,184,.4)}
+.api-key-text{flex:1;font-family:monospace;font-size:11px;color:#aaa;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.api-key-quota{font-size:10px;color:#888;flex-shrink:0;width:90px;text-align:right}
+.api-key-row button{background:none;border:none;color:#888;cursor:pointer;padding:3px 6px;border-radius:3px}
+.api-key-row button:hover{color:#f87171;background:rgba(239,68,68,.1)}
+
+.warn-box{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#fbbf24;line-height:1.7}
+.warn-box strong{color:#fbbf24}
+
+@keyframes pulse-warn {
+  0%,100% { box-shadow: 0 0 16px rgba(251,191,36,.4), 0 0 0 0 rgba(251,191,36,.6); }
+  50% { box-shadow: 0 0 24px rgba(251,191,36,.7), 0 0 0 8px rgba(251,191,36,0); }
+}
 </style>
 </head>
 <body>
@@ -162,7 +211,10 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <option value="views">再生数順</option>
 <option value="hot">🔥 HOT順</option>
 </select>
-<button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900" onclick="openFetchModal()">🔥 トレンド自動取得</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);font-weight:900;color:#0a0a14;border:2px solid #fbbf24;box-shadow:0 0 16px rgba(251,191,36,.4)" onclick="openApiKeysModal()" id="api-keys-btn">🔑 YouTube APIキー <span id="api-keys-badge" style="background:#0a0a14;color:#fbbf24;padding:1px 6px;border-radius:8px;font-size:10px;margin-left:4px">0</span></button>
+<button class="btn primary" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);font-weight:900" onclick="openChannelsModal()">📡 監視CH更新</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#a78bfa,#ec4899);font-weight:900" onclick="openBulkModal()">📋 一括URL追加</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900" onclick="openFetchModal()">🔥 トレンド検索</button>
 <button class="btn primary" onclick="openAddModal()">+ 手動追加</button>
 <button class="btn primary" style="background:linear-gradient(135deg,#22c55e,#10b981);font-weight:900" onclick="saveToRemote()">💾 GitHubに保存</button>
 <button class="btn" onclick="loadFromRemote().then(r=>{if(r){render();toast('リモートから再読込','ok')}})">🔄 再読込</button>
@@ -178,16 +230,23 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 
 <main>
 <div class="info">
-<strong>📌 使い方：</strong>
-動画カードをクリックでその場で再生。「+ 動画追加」でURL貼るだけで自動的にタイトル・チャンネル名・サムネイル取得（YouTube oEmbed経由）。
-データは自動的にブラウザに保存（localStorage）。<kbd>JSONエクスポート</kbd>でバックアップ／他端末への移行も可能。
+<strong>📌 4つの取得経路：</strong>
+<kbd>📡 監視CH更新</kbd>＝登録チャンネルの最新動画をRSSで一括取得（最強・確実）／
+<kbd>📋 一括URL追加</kbd>＝YouTubeのURLを改行区切りで貼るだけ／
+<kbd>🔥 トレンド検索</kbd>＝Piped/Invidious経由で発見（不安定）／
+<kbd>+ 手動追加</kbd>＝1件ずつ。
+データはブラウザ→GitHub の2層保存。
 </div>
 
 <div id="grid" class="grid"></div>
 <div id="empty" class="empty" style="display:none">
 <div class="icon">📭</div>
-<p style="margin-bottom:14px">動画がまだありません。<br>「🔥 トレンド自動取得」を押すとPiped API経由で人気動画を一括取得できます。</p>
-<button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900;padding:12px 24px" onclick="openFetchModal()">🔥 今すぐ取得</button>
+<p style="margin-bottom:14px">動画がまだありません。<br><strong>📡 監視CH更新</strong>から推奨チャンネルを追加→更新が一番早い。</p>
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px">
+<button class="btn primary" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);font-weight:900;padding:12px 22px" onclick="openChannelsModal()">📡 監視チャンネル設定</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#a78bfa,#ec4899);font-weight:900;padding:12px 22px" onclick="openBulkModal()">📋 URL一括追加</button>
+<button class="btn" style="padding:12px 22px" onclick="openFetchModal()">🔥 トレンド検索</button>
+</div>
 </div>
 </main>
 
@@ -290,35 +349,179 @@ Piped API（YouTube公開API、APIキー不要）経由でバズってるマイ�
 </div>
 </div>
 
+<!-- CHANNELS MODAL -->
+<div class="modal-bg" id="channels-modal-bg">
+<div class="modal" style="max-width:680px">
+<h3>📡 監視チャンネル <button class="close" onclick="closeChannelsModal()">&times;</button></h3>
+<p style="font-size:12.5px;color:#999;margin-bottom:12px;line-height:1.7">
+登録したチャンネルの<strong style="color:#22d3ee">RSSフィード</strong>から最新動画を一括取得（YouTube公式・絶対落ちない）。<br>
+<strong>📥 全チャンネル更新</strong>で全部の最新15本を取得→重複自動スキップ。
+</p>
+<div class="ch-add">
+<input type="text" id="ch-input" placeholder="@handle / チャンネルURL / UCxxxx を入力">
+<button class="btn primary" onclick="addChannelFromInput()">+ 追加</button>
+</div>
+<div id="ch-list" class="ch-list"></div>
+<div style="display:flex;gap:8px;margin-bottom:14px">
+<button class="btn primary" onclick="refreshAllChannels()" style="flex:1;background:linear-gradient(135deg,#22d3ee,#3b82f6);font-weight:900;padding:11px">📥 全チャンネル更新（最新15件×ch数）</button>
+</div>
+<div class="progress-bar" id="ch-progress" style="display:none"><div class="fill"></div></div>
+<details>
+<summary style="cursor:pointer;color:#60a5fa;font-size:12px;font-weight:700;margin:8px 0">📚 推奨チャンネルから一括追加（クリックで展開）</summary>
+<div class="recommended" id="recommended-list"></div>
+</details>
+<p style="font-size:11px;color:#666;margin-top:14px;line-height:1.6">
+※ <strong>RSS = YouTubeの公式フィード</strong>。Piped/Invidiousと違って絶対に落ちない。<br>
+※ 取得経路：CORS Proxy → YouTube RSS（直接アクセスはCORSで失敗するためProxy必須）。<br>
+※ 1チャンネルあたり最新15本まで。それ以上はYouTubeの仕様で取得不可。
+</p>
+</div>
+</div>
+
+<!-- BULK URL ADD MODAL -->
+<div class="modal-bg" id="bulk-modal-bg">
+<div class="modal" style="max-width:640px">
+<h3>📋 URL一括追加 <button class="close" onclick="closeBulkModal()">&times;</button></h3>
+<p style="font-size:12.5px;color:#999;margin-bottom:12px;line-height:1.7">
+YouTube URLを<strong>改行区切り</strong>で何個でも貼り付け。タイトル・チャンネル名はnoembed APIで自動取得。
+</p>
+<textarea id="bulk-input" class="bulk-textarea" placeholder="https://www.youtube.com/shorts/XXXXXXXXXXX
+https://www.youtube.com/watch?v=YYYYYYYYYYY
+https://youtu.be/ZZZZZZZZZZZ
+..."></textarea>
+<div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+<select id="bulk-region" class="search" style="flex:0 0 100px">
+<option value="auto">地域自動</option>
+<option value="jp">🇯🇵 国内</option>
+<option value="intl">🌐 海外</option>
+</select>
+<select id="bulk-category" class="search" style="flex:0 0 130px">
+<option value="auto">カテゴリ自動</option>
+<option value="アプデ便乗">アプデ便乗</option>
+<option value="チャレンジ">チャレンジ</option>
+<option value="アニメ">アニメ</option>
+<option value="ストーリー">ストーリー</option>
+<option value="検証">検証</option>
+<option value="ハック">ハック</option>
+<option value="メーム">メーム</option>
+<option value="その他">その他</option>
+</select>
+<button class="btn primary" onclick="processBulkUrls()" style="flex:1;background:linear-gradient(135deg,#a78bfa,#ec4899);font-weight:900">📥 一括追加実行</button>
+</div>
+<div class="progress-bar" id="bulk-progress" style="display:none"><div class="fill"></div></div>
+<p id="bulk-status" style="font-size:11px;color:#888;margin-top:10px;min-height:1.4em"></p>
+</div>
+</div>
+
+<!-- API KEYS MODAL（専用） -->
+<div class="modal-bg" id="api-keys-modal-bg">
+<div class="modal" style="max-width:680px">
+<h3>🔑 YouTube Data API キー管理 <button class="close" onclick="closeApiKeysModal()">&times;</button></h3>
+<p style="font-size:13px;color:#aaa;margin-bottom:12px;line-height:1.7">
+複数キーローテートで quota分散。1キー10,000units/日、3キーで30,000units/日。<br>
+trackerは <strong>YouTube API → Piped → Invidious → CORS Proxy → RSS</strong> の優先順で取得します。
+</p>
+
+<div class="warn-box">
+<strong>⚠️ セキュリティ重要：</strong><br>
+1. このリポジトリは<strong>public</strong>。コードに直書きすると GitHub Secret Scanning が検出 → Google が即無効化。<br>
+2. キーは<strong>このフォーム経由でlocalStorage保存のみ</strong>（GitHubに送信されない）。<br>
+3. 必ず <a href="https://console.cloud.google.com/apis/credentials" target="_blank" style="color:#fbbf24;text-decoration:underline">Cloud Console</a> で各キーに <strong>HTTP referrer制限</strong> を設定（許可: <code style="color:#fbbf24">https://extraoverone.github.io/*</code> + <code style="color:#fbbf24">file:///*</code>）。<br>
+4. <strong>API制限</strong> も「YouTube Data API v3 のみ」に絞る（他APIへの悪用防止）。
+</div>
+
+<!-- Key list -->
+<div style="margin-bottom:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+<strong style="font-size:13px;color:#eee">登録済みキー <span id="api-keys-count" style="color:#fbbf24">0件</span></strong>
+<span id="api-keys-quota-total" style="font-size:11px;color:#888">合計 0/0 units</span>
+</div>
+<div id="api-keys-list-modal"></div>
+</div>
+
+<!-- Bulk add -->
+<div class="field">
+<label>新規キー追加（1行1キー、複数同時OK）</label>
+<textarea id="api-keys-input-modal" rows="4" style="width:100%;background:#10101c;border:1px solid #1a1a2e;border-radius:8px;padding:10px;color:#eee;font-size:12px;font-family:monospace;outline:none;resize:vertical;line-height:1.7" placeholder="AIzaSy...
+AIzaSy...
+AIzaSy..."></textarea>
+</div>
+<div style="display:flex;gap:8px;margin-top:10px">
+<button class="btn" onclick="testAllApiKeysModal()" style="flex:1;font-size:12px">🩺 全キーテスト</button>
+<button class="btn primary" onclick="addApiKeysFromInputModal()" style="flex:2;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0a14;font-weight:900;font-size:13px;padding:10px">+ キー追加して保存</button>
+</div>
+
+<details style="margin-top:14px">
+<summary style="cursor:pointer;color:#60a5fa;font-size:12px;font-weight:700">📚 APIキー取得手順（クリックで展開）</summary>
+<div style="background:rgba(96,165,250,.05);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:12px 16px;margin-top:8px;font-size:12px;color:#aaa;line-height:1.8">
+<ol style="padding-left:20px">
+<li><a href="https://console.cloud.google.com/" target="_blank" style="color:#60a5fa">Google Cloud Console</a> にログイン</li>
+<li>上部「プロジェクト選択」→ <strong>新しいプロジェクト</strong>（名前は何でもOK、例: yofukashi-1）</li>
+<li>左メニュー <strong>APIとサービス</strong> → <strong>ライブラリ</strong></li>
+<li>検索: 「<strong>YouTube Data API v3</strong>」 → クリック → <strong>有効にする</strong></li>
+<li>左メニュー <strong>認証情報</strong> → <strong>+ 認証情報を作成</strong> → <strong>APIキー</strong></li>
+<li>表示されたキーをコピー → 上の入力欄に貼付</li>
+<li>追加でキー欲しければ、新プロジェクト作って同じ手順を繰り返す</li>
+</ol>
+</div>
+</details>
+</div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <!-- SETTINGS MODAL -->
 <div class="modal-bg" id="settings-modal-bg">
-<div class="modal" style="max-width:560px">
-<h3>⚙️ GitHub同期設定 <button class="close" onclick="closeSettingsModal()">&times;</button></h3>
-<p style="font-size:13px;color:#aaa;margin-bottom:12px;line-height:1.7">
-データを<strong>GitHubリポジトリに保存</strong>すると、他のデバイス・他のユーザーとも共有できます。<br>
-リポジトリ: <code style="color:#60a5fa">extraoverone/AIANIME</code> / ファイル: <code style="color:#60a5fa">data/weekly-shorts.json</code>
+<div class="modal" style="max-width:640px">
+<h3>⚙️ 設定 <button class="close" onclick="closeSettingsModal()">&times;</button></h3>
+
+<!-- ===== YouTube API Keys ===== -->
+<div style="border-bottom:1px solid #1a1a2e;padding-bottom:18px;margin-bottom:18px">
+<h4 style="font-size:14px;font-weight:800;color:#f87171;margin-bottom:10px">🔑 YouTube Data API Keys (複数キー対応)</h4>
+<div class="warn-box">
+<strong>⚠️ 重要：</strong>このリポジトリはpublicなので、APIキーをコードに直接書くと <strong>GitHub Secret Scanning</strong> で検出され、Googleに自動無効化されます。<br>
+キーは下のフォームからlocalStorageに保存（ブラウザ内のみ・GitHubに送信されない）。<br>
+🛡️ <a href="https://console.cloud.google.com/apis/credentials" target="_blank" style="color:#60a5fa;text-decoration:underline">Cloud Console</a> で各キーに <strong>HTTP referrer制限</strong>（許可:<code style="color:#60a5fa">https://extraoverone.github.io/*</code>）をかけることを強く推奨。
+</div>
+
+<!-- Key list -->
+<div id="api-keys-list" style="margin-bottom:10px"></div>
+
+<!-- Bulk add -->
+<div class="field">
+<label>新規キー追加（1行1キー）</label>
+<textarea id="api-keys-input" rows="3" style="width:100%;background:#10101c;border:1px solid #1a1a2e;border-radius:6px;padding:8px 12px;color:#eee;font-size:12px;font-family:monospace;outline:none;resize:vertical" placeholder="AIzaSy..."></textarea>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn" onclick="testAllApiKeys()" style="flex:1">🩺 全キーテスト</button>
+<button class="btn primary" onclick="addApiKeysFromInput()" style="flex:1;background:linear-gradient(135deg,#a78bfa,#f472b6)">+ キー追加</button>
+</div>
+<p style="font-size:11px;color:#888;margin-top:10px;line-height:1.6">
+取得手順：<a href="https://console.cloud.google.com/" target="_blank" style="color:#60a5fa">Cloud Console</a> → 新プロジェクト → APIライブラリ → "YouTube Data API v3" → 有効化 → 認証情報 → APIキー作成<br>
+Quota: 1キー = 10,000 units/日。検索100/call、チャンネル動画100/call、handle解決1/call、動画詳細1/call。
 </p>
-<div style="background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:12.5px;color:#93c5fd;line-height:1.8">
-<strong style="color:#60a5fa">📝 Personal Access Token (PAT) の作り方:</strong><br>
-1. <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Weekly+Shorts+Tracker" target="_blank" style="color:#60a5fa;text-decoration:underline">こちら</a>からToken発行ページへ<br>
-2. <strong>Scopes</strong>: <code>public_repo</code> にチェック<br>
-3. <strong>Expiration</strong>: 90 days など適当に<br>
-4. <strong>Generate token</strong> → コピーして下に貼り付け
+</div>
+
+<!-- ===== GitHub Token ===== -->
+<h4 style="font-size:14px;font-weight:800;color:#22c55e;margin-bottom:10px">💾 GitHub 同期</h4>
+<p style="font-size:12.5px;color:#aaa;margin-bottom:10px;line-height:1.7">
+データを<strong>GitHubに保存</strong>すれば他デバイスと共有可。リポ: <code style="color:#60a5fa">extraoverone/AIANIME</code>
+</p>
+<div style="background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#93c5fd;line-height:1.7">
+<strong style="color:#60a5fa">PAT の作り方:</strong>
+<a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Weekly+Shorts+Tracker" target="_blank" style="color:#60a5fa;text-decoration:underline">発行ページ</a> → Scope: <code>public_repo</code> → Generate
 </div>
 <div class="field">
 <label>GitHub Personal Access Token</label>
 <input type="text" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:monospace;font-size:12px">
 </div>
-<div style="display:flex;gap:8px;margin-top:14px">
+<div style="display:flex;gap:8px;margin-top:10px">
 <button class="btn" onclick="testToken()">🩺 Tokenテスト</button>
 <button class="btn primary" onclick="saveTokenFromModal()" style="flex:1">保存</button>
 </div>
-<p style="font-size:11px;color:#666;margin-top:12px;line-height:1.6">
-※ Tokenはこの端末のlocalStorageにのみ保存されます。GitHubには送信されません。<br>
-※ 紛失した場合はGitHub設定で削除して再発行してください。<br>
-※ Token空欄で保存すると削除されます（読込のみモード）。
+<p style="font-size:11px;color:#666;margin-top:10px;line-height:1.6">
+※ TokenはlocalStorageのみ。GitHub/外部に送信されない。<br>
+※ Token空欄で保存すると削除（読込のみモード）。
 </p>
 </div>
 </div>
@@ -339,15 +542,21 @@ Piped API（YouTube公開API、APIキー不要）経由でバズってるマイ�
 
 <script>
 const STORAGE_KEY = 'yofukashi-weekly-shorts-v3';
+const CHANNELS_KEY = 'yofukashi-watched-channels-v1';
 const TOKEN_KEY = 'gh-pat-weekly-shorts';
+const YT_KEYS_KEY = 'yofukashi-yt-api-keys-v1';
 const REPO = 'extraoverone/AIANIME';
 const DATA_PATH = 'data/weekly-shorts.json';
 const REMOTE_URL = `https://raw.githubusercontent.com/${REPO}/master/${DATA_PATH}`;
 let videos = [];
+let watchedChannels = []; // {id, name, region, handle}
+let apiKeys = []; // [{key, status:'unknown'|'ok'|'quota'|'invalid', quotaUsed, quotaDate, lastError}]
+let keyIdx = 0;
 let editIndex = -1;
 let remoteSha = null;
 let dirty = false; // 未保存フラグ
 let lastRemoteUpdate = null;
+const YT_QUOTA_DAILY = 10000;
 
 // ─── ローカルストレージ ───
 function loadLocal(){
@@ -378,6 +587,228 @@ function saveVideos(){
 function loadVideos(){
   loadLocal();
   if(videos.length === 0) videos = getInitialSeed();
+}
+
+// ─── 監視チャンネル ローカル保存 ───
+function loadChannels(){
+  try{
+    const raw = localStorage.getItem(CHANNELS_KEY);
+    if(raw) watchedChannels = JSON.parse(raw) || [];
+  } catch(e){ watchedChannels = []; }
+}
+function saveChannels(){
+  localStorage.setItem(CHANNELS_KEY, JSON.stringify(watchedChannels));
+}
+
+// ─── YouTube API キー管理 ───
+function loadApiKeys(){
+  try{
+    const raw = localStorage.getItem(YT_KEYS_KEY);
+    apiKeys = raw ? JSON.parse(raw) : [];
+    // 日付変わったらquotaリセット
+    const today = new Date().toISOString().slice(0,10);
+    apiKeys.forEach(k => {
+      if(k.quotaDate !== today){
+        k.quotaDate = today;
+        k.quotaUsed = 0;
+        if(k.status === 'quota') k.status = 'unknown';
+      }
+    });
+  } catch(e){ apiKeys = []; }
+}
+
+function saveApiKeys(){
+  localStorage.setItem(YT_KEYS_KEY, JSON.stringify(apiKeys));
+}
+
+function recordQuotaUse(k, units){
+  const today = new Date().toISOString().slice(0,10);
+  if(k.quotaDate !== today){ k.quotaUsed = 0; k.quotaDate = today; }
+  k.quotaUsed = (k.quotaUsed || 0) + units;
+}
+
+function pickAvailableKey(){
+  // status が 'invalid' or 'quota' を除外、ラウンドロビン
+  for(let i = 0; i < apiKeys.length; i++){
+    const idx = (keyIdx + i) % apiKeys.length;
+    const k = apiKeys[idx];
+    if(k.status === 'invalid' || k.status === 'quota') continue;
+    if((k.quotaUsed || 0) + 100 > YT_QUOTA_DAILY) continue; // ほぼ使い切ったら避ける
+    return { idx, k };
+  }
+  return null;
+}
+
+// 共通APIコール（quota 失敗時に自動切替）
+async function ytApi(endpoint, params, costEstimate = 1){
+  if(apiKeys.length === 0){
+    dlog('warn', 'YouTube API keys 未設定');
+    return null;
+  }
+  const tried = new Set();
+  while(tried.size < apiKeys.length){
+    const picked = pickAvailableKey();
+    if(!picked){ dlog('err', `全キーquota切れ`); return null; }
+    if(tried.has(picked.idx)){
+      keyIdx = (picked.idx + 1) % apiKeys.length;
+      continue;
+    }
+    tried.add(picked.idx);
+    const { idx, k } = picked;
+    const qs = new URLSearchParams({ ...params, key: k.key });
+    const url = `https://www.googleapis.com/youtube/v3/${endpoint}?${qs}`;
+    const start = Date.now();
+    dlog('try', `YT API ${endpoint} key#${idx+1} (${k.quotaUsed||0}/${YT_QUOTA_DAILY})`);
+    try{
+      const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+      const elapsed = Date.now() - start;
+      const data = await res.json().catch(() => ({}));
+      if(res.ok){
+        recordQuotaUse(k, costEstimate);
+        k.status = 'ok';
+        k.lastError = '';
+        keyIdx = (idx + 1) % apiKeys.length;
+        saveApiKeys();
+        dlog('ok', `YT ${endpoint} ${elapsed}ms items=${data.items?.length || 0} key#${idx+1}`);
+        return data;
+      }
+      const reason = data.error?.errors?.[0]?.reason || '';
+      const msg = data.error?.message || `HTTP ${res.status}`;
+      dlog('warn', `YT key#${idx+1} ${res.status} reason=${reason}: ${msg.slice(0,120)}`);
+      if(reason === 'quotaExceeded' || reason === 'rateLimitExceeded' || reason === 'dailyLimitExceeded'){
+        k.status = 'quota';
+        k.quotaUsed = YT_QUOTA_DAILY; // 使い切り扱い
+      } else if(reason === 'keyInvalid' || reason === 'badRequest' || reason === 'forbidden' || res.status === 400 || res.status === 403){
+        // referer制限やkey不正
+        k.status = 'invalid';
+        k.lastError = reason || msg;
+      } else {
+        k.lastError = reason || msg;
+      }
+      saveApiKeys();
+    } catch(e){
+      dlog('err', `YT API ${endpoint} key#${idx+1} exception: ${e.message}`);
+      k.lastError = e.message;
+      saveApiKeys();
+    }
+    keyIdx = (idx + 1) % apiKeys.length;
+  }
+  dlog('err', `YT ${endpoint} 全${apiKeys.length}キー失敗`);
+  return null;
+}
+
+// ─── YouTube API エンドポイント ───
+// PT1M30S → 90秒
+function parseISO8601Duration(iso){
+  if(!iso) return 0;
+  const m = iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if(!m) return 0;
+  return (+m[1]||0)*3600 + (+m[2]||0)*60 + (+m[3]||0);
+}
+
+// 検索（cost: 100）
+async function ytSearch(query, opts = {}){
+  const params = {
+    q: query,
+    part: 'snippet',
+    type: 'video',
+    maxResults: opts.maxResults || 25,
+    order: opts.order || 'viewCount',
+  };
+  if(opts.duration) params.videoDuration = opts.duration; // 'short'(<4min)/'medium'/'long'
+  if(opts.regionCode) params.regionCode = opts.regionCode;
+  if(opts.relevanceLanguage) params.relevanceLanguage = opts.relevanceLanguage;
+  if(opts.publishedAfter) params.publishedAfter = opts.publishedAfter;
+  const data = await ytApi('search', params, 100);
+  if(!data || !data.items) return null;
+  return data.items.filter(it => it.id?.videoId).map(it => ({
+    vid: it.id.videoId,
+    title: it.snippet.title,
+    channel: it.snippet.channelTitle,
+    channelId: it.snippet.channelId,
+    uploadedDate: (it.snippet.publishedAt || '').slice(0,10),
+    views: 0,
+    duration: 0,
+    thumbnail: it.snippet.thumbnails?.high?.url || ''
+  }));
+}
+
+// チャンネルの動画リスト（cost: 100）
+async function ytChannelVideos(channelId, maxResults = 25){
+  const data = await ytApi('search', {
+    channelId,
+    part: 'snippet',
+    type: 'video',
+    order: 'date',
+    maxResults
+  }, 100);
+  if(!data || !data.items) return null;
+  return data.items.filter(it => it.id?.videoId).map(it => ({
+    vid: it.id.videoId,
+    title: it.snippet.title,
+    channel: it.snippet.channelTitle,
+    channelId: it.snippet.channelId,
+    uploadedDate: (it.snippet.publishedAt || '').slice(0,10),
+    views: 0,
+    duration: 0
+  }));
+}
+
+// @handle → channelId（cost: 1）
+async function ytResolveHandle(handle){
+  if(!handle.startsWith('@')) handle = '@' + handle;
+  const data = await ytApi('channels', {
+    forHandle: handle,
+    part: 'id,snippet'
+  }, 1);
+  if(!data || !data.items?.length) return null;
+  const ch = data.items[0];
+  return {
+    id: ch.id,
+    name: ch.snippet.title,
+    description: ch.snippet.description?.slice(0,200) || ''
+  };
+}
+
+// 動画詳細（statisticsとduration、cost: 1 per call、最大50ID）
+async function ytVideoDetails(vids){
+  if(!vids || vids.length === 0) return [];
+  const all = [];
+  for(let i = 0; i < vids.length; i += 50){
+    const batch = vids.slice(i, i + 50);
+    const data = await ytApi('videos', {
+      id: batch.join(','),
+      part: 'statistics,contentDetails,snippet'
+    }, 1);
+    if(!data || !data.items) continue;
+    for(const it of data.items){
+      all.push({
+        vid: it.id,
+        views: parseInt(it.statistics?.viewCount || 0),
+        likes: parseInt(it.statistics?.likeCount || 0),
+        comments: parseInt(it.statistics?.commentCount || 0),
+        duration: parseISO8601Duration(it.contentDetails?.duration),
+        publishedAt: it.snippet?.publishedAt || ''
+      });
+    }
+  }
+  return all;
+}
+
+// 単一キーのテスト（cost: 1）
+async function testApiKey(key){
+  const url = `https://www.googleapis.com/youtube/v3/channels?id=UC_x5XG1OV2P6uZZ5FSM9Ttw&part=id&key=${encodeURIComponent(key)}`;
+  try{
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    const data = await res.json().catch(() => ({}));
+    if(res.ok && data.items) return { ok: true, status: 'ok' };
+    const reason = data.error?.errors?.[0]?.reason || '';
+    if(reason === 'quotaExceeded') return { ok: false, status: 'quota', error: reason };
+    if(reason === 'keyInvalid' || res.status === 400) return { ok: false, status: 'invalid', error: reason };
+    return { ok: false, status: 'invalid', error: data.error?.message || `HTTP ${res.status}` };
+  } catch(e){
+    return { ok: false, status: 'error', error: e.message };
+  }
 }
 
 // ─── GitHub 同期 ───
@@ -565,6 +996,7 @@ function openSettingsModal(){
   const t = getToken();
   if(t) tokenInput.value = t.slice(0,4) + '...' + t.slice(-4);
   else tokenInput.value = '';
+  renderApiKeysList();
 }
 function closeSettingsModal(){
   document.getElementById('settings-modal-bg').classList.remove('show');
@@ -587,6 +1019,231 @@ function saveTokenFromModal(){
 function getInitialSeed(){
   // 空からスタート。「🔥 自動取得」ボタンでAPI経由でバズ動画を取得
   return [];
+}
+
+// ─── API Keys UI ───
+function maskKey(k){
+  if(!k) return '';
+  return k.slice(0,8) + '...' + k.slice(-4);
+}
+
+function renderApiKeysList(){
+  const el = document.getElementById('api-keys-list');
+  if(!el) return;
+  if(apiKeys.length === 0){
+    el.innerHTML = '<div style="text-align:center;padding:14px;color:#666;font-size:12px">🔑 APIキー未登録</div>';
+    return;
+  }
+  el.innerHTML = apiKeys.map((k, i) => {
+    const status = k.status || 'unknown';
+    const used = k.quotaUsed || 0;
+    const pct = Math.round(used / YT_QUOTA_DAILY * 100);
+    return `
+      <div class="api-key-row">
+        <span class="api-key-badge akb-${status}">${status === 'ok' ? '✓ OK' : status === 'quota' ? '⚠️ QUOTA' : status === 'invalid' ? '✗ INVALID' : '? UNKNOWN'}</span>
+        <span class="api-key-text" title="${k.key}">#${i+1} ${maskKey(k.key)}</span>
+        <span class="api-key-quota">${used}/${YT_QUOTA_DAILY} (${pct}%)</span>
+        <button onclick="testSingleApiKey(${i})" title="テスト">🩺</button>
+        <button onclick="removeApiKey(${i})" title="削除">🗑</button>
+      </div>
+    `;
+  }).join('');
+}
+
+function addApiKeysFromInput(){
+  const text = document.getElementById('api-keys-input').value;
+  const lines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  if(lines.length === 0){ toast('キーを貼り付けてください', 'err'); return; }
+  let added = 0, dupe = 0, invalid = 0;
+  for(const line of lines){
+    if(!line.startsWith('AIza')){
+      invalid++;
+      continue;
+    }
+    if(apiKeys.some(k => k.key === line)){ dupe++; continue; }
+    apiKeys.push({
+      key: line,
+      status: 'unknown',
+      quotaUsed: 0,
+      quotaDate: new Date().toISOString().slice(0,10),
+      lastError: ''
+    });
+    added++;
+  }
+  saveApiKeys();
+  document.getElementById('api-keys-input').value = '';
+  renderApiKeysList();
+  toast(`+${added}件追加 / 重複${dupe} / 無効形式${invalid}`, added > 0 ? 'ok' : 'err');
+  // 追加直後に自動テスト
+  if(added > 0) testAllApiKeys();
+}
+
+function removeApiKey(idx){
+  if(!confirm(`Key #${idx+1} (${maskKey(apiKeys[idx].key)}) を削除？`)) return;
+  apiKeys.splice(idx, 1);
+  saveApiKeys();
+  renderApiKeysList();
+  toast('削除しました', 'ok');
+}
+
+async function testSingleApiKey(idx){
+  const k = apiKeys[idx];
+  dlog('try', `Key#${idx+1} テスト中...`);
+  const result = await testApiKey(k.key);
+  k.status = result.status;
+  if(result.error) k.lastError = result.error;
+  saveApiKeys();
+  renderApiKeysList();
+  if(result.ok){
+    dlog('ok', `Key#${idx+1} 有効`);
+    toast(`Key#${idx+1} ✓ 有効`, 'ok');
+  } else {
+    dlog('err', `Key#${idx+1} ${result.status}: ${result.error || ''}`);
+    toast(`Key#${idx+1} ✗ ${result.status}`, 'err');
+  }
+}
+
+async function testAllApiKeys(){
+  if(apiKeys.length === 0){ toast('キー未登録', 'err'); return; }
+  document.getElementById('debug-log').style.display = 'block';
+  dlog('info', `=== ${apiKeys.length}キー一括テスト ===`);
+  let ok = 0, ng = 0;
+  for(let i = 0; i < apiKeys.length; i++){
+    const result = await testApiKey(apiKeys[i].key);
+    apiKeys[i].status = result.status;
+    if(result.error) apiKeys[i].lastError = result.error;
+    if(result.ok) ok++; else ng++;
+    dlog(result.ok ? 'ok' : 'err', `Key#${i+1}: ${result.status}${result.error ? ' - '+result.error : ''}`);
+  }
+  saveApiKeys();
+  renderApiKeysList();
+  renderApiKeysListModal();
+  updateApiKeysBadge();
+  toast(`✓${ok}件有効 / ✗${ng}件無効`, ok > 0 ? 'ok' : 'err');
+}
+
+// ─── API Keys 専用モーダル ───
+function openApiKeysModal(){
+  document.getElementById('api-keys-modal-bg').classList.add('show');
+  renderApiKeysListModal();
+}
+function closeApiKeysModal(){
+  document.getElementById('api-keys-modal-bg').classList.remove('show');
+}
+
+function renderApiKeysListModal(){
+  const el = document.getElementById('api-keys-list-modal');
+  if(!el) return;
+  const cnt = document.getElementById('api-keys-count');
+  const qtot = document.getElementById('api-keys-quota-total');
+
+  if(apiKeys.length === 0){
+    el.innerHTML = '<div style="text-align:center;padding:24px 12px;color:#666;font-size:13px;background:#08080f;border:1px dashed #1a1a2e;border-radius:8px">🔑 キー未登録<br><span style="font-size:11px;color:#444;margin-top:4px;display:inline-block">下の入力欄に貼り付けて「+ キー追加して保存」をクリック</span></div>';
+    if(cnt) cnt.textContent = '0件';
+    if(qtot) qtot.textContent = '合計 0/0 units';
+    return;
+  }
+  el.innerHTML = apiKeys.map((k, i) => {
+    const status = k.status || 'unknown';
+    const used = k.quotaUsed || 0;
+    const pct = Math.round(used / YT_QUOTA_DAILY * 100);
+    const label = status === 'ok' ? '✓ OK' : status === 'quota' ? '⚠️ QUOTA' : status === 'invalid' ? '✗ INVALID' : '? UNKNOWN';
+    return `
+      <div class="api-key-row">
+        <span class="api-key-badge akb-${status}">${label}</span>
+        <span class="api-key-text" title="${k.key}">#${i+1} ${maskKey(k.key)}</span>
+        <span class="api-key-quota">${used}/${YT_QUOTA_DAILY} (${pct}%)</span>
+        <button onclick="testSingleApiKeyModal(${i})" title="テスト">🩺</button>
+        <button onclick="removeApiKeyModal(${i})" title="削除">🗑</button>
+      </div>
+    `;
+  }).join('');
+  if(cnt) cnt.textContent = `${apiKeys.length}件 (有効${apiKeys.filter(k=>k.status==='ok').length})`;
+  if(qtot){
+    const totalUsed = apiKeys.reduce((s,k) => s + (k.quotaUsed||0), 0);
+    const totalCap = apiKeys.length * YT_QUOTA_DAILY;
+    qtot.textContent = `合計 ${totalUsed}/${totalCap} units`;
+  }
+}
+
+function updateApiKeysBadge(){
+  const el = document.getElementById('api-keys-badge');
+  const btn = document.getElementById('api-keys-btn');
+  if(!el || !btn) return;
+  const okCount = apiKeys.filter(k => k.status === 'ok').length;
+  el.textContent = okCount;
+  if(apiKeys.length === 0){
+    el.style.background = '#0a0a14';
+    el.style.color = '#fbbf24';
+    btn.style.boxShadow = '0 0 16px rgba(251,191,36,.4), 0 0 0 0 rgba(251,191,36,.6)';
+    btn.style.animation = 'pulse-warn 1.5s infinite';
+  } else if(okCount > 0){
+    el.style.background = '#22c55e';
+    el.style.color = '#0a0a14';
+    btn.style.boxShadow = '0 0 8px rgba(34,197,94,.3)';
+    btn.style.animation = 'none';
+  } else {
+    el.style.background = '#ef4444';
+    el.style.color = '#fff';
+    btn.style.boxShadow = '0 0 12px rgba(239,68,68,.4)';
+    btn.style.animation = 'none';
+  }
+}
+
+function addApiKeysFromInputModal(){
+  const text = document.getElementById('api-keys-input-modal').value;
+  const lines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  if(lines.length === 0){ toast('キーを貼り付けてください', 'err'); return; }
+  let added = 0, dupe = 0, invalid = 0;
+  for(const line of lines){
+    if(!line.startsWith('AIza')){ invalid++; continue; }
+    if(apiKeys.some(k => k.key === line)){ dupe++; continue; }
+    apiKeys.push({
+      key: line,
+      status: 'unknown',
+      quotaUsed: 0,
+      quotaDate: new Date().toISOString().slice(0,10),
+      lastError: ''
+    });
+    added++;
+  }
+  saveApiKeys();
+  document.getElementById('api-keys-input-modal').value = '';
+  renderApiKeysListModal();
+  renderApiKeysList();
+  updateApiKeysBadge();
+  toast(`+${added}件追加 / 重複${dupe} / 無効形式${invalid}`, added > 0 ? 'ok' : 'err');
+  if(added > 0) testAllApiKeysModal();
+}
+
+function removeApiKeyModal(idx){
+  if(!confirm(`Key #${idx+1} (${maskKey(apiKeys[idx].key)}) を削除？`)) return;
+  apiKeys.splice(idx, 1);
+  saveApiKeys();
+  renderApiKeysListModal();
+  renderApiKeysList();
+  updateApiKeysBadge();
+  toast('削除しました', 'ok');
+}
+
+async function testSingleApiKeyModal(idx){
+  const k = apiKeys[idx];
+  dlog('try', `Key#${idx+1} テスト中...`);
+  const result = await testApiKey(k.key);
+  k.status = result.status;
+  if(result.error) k.lastError = result.error;
+  saveApiKeys();
+  renderApiKeysListModal();
+  renderApiKeysList();
+  updateApiKeysBadge();
+  if(result.ok){ dlog('ok', `Key#${idx+1} 有効`); toast(`Key#${idx+1} ✓ 有効`, 'ok'); }
+  else { dlog('err', `Key#${idx+1} ${result.status}: ${result.error || ''}`); toast(`Key#${idx+1} ✗ ${result.status}`, 'err'); }
+}
+
+async function testAllApiKeysModal(){
+  await testAllApiKeys();
+  renderApiKeysListModal();
+  updateApiKeysBadge();
 }
 
 // ─── デバッグログシステム ───
@@ -745,18 +1402,50 @@ async function corsProxySearch(query){
 
 async function searchAllBackends(query){
   dlog('info', `=== 検索開始: "${query}" ===`);
+
+  // ① YouTube Data API（複数キーローテート）
+  if(apiKeys.length > 0){
+    const isJP = /[ぁ-んァ-ヶー一-龯]/.test(query);
+    const items = await ytSearch(query, {
+      maxResults: 25,
+      order: 'viewCount',
+      duration: 'short',
+      regionCode: isJP ? 'JP' : 'US',
+      relevanceLanguage: isJP ? 'ja' : 'en',
+      // 過去30日以内
+      publishedAfter: (() => {
+        const d = new Date(); d.setDate(d.getDate() - 30); return d.toISOString();
+      })()
+    });
+    if(items && items.length > 0){
+      dlog('ok', `[YT API] 取得成功: ${items.length}件`);
+      // 統計を補完（cost: 1）
+      const details = await ytVideoDetails(items.map(i => i.vid));
+      const dmap = new Map(details.map(d => [d.vid, d]));
+      for(const it of items){
+        const d = dmap.get(it.vid);
+        if(d){ it.views = d.views; it.duration = d.duration; }
+      }
+      return items;
+    }
+    dlog('warn', 'YT API取得0件、Pipedフォールバック');
+  }
+
+  // ② Piped
   let items = await pipedSearch(query);
   if(items && items.length > 0){
     dlog('ok', `Pipedで取得成功: ${items.length}件`);
     return items;
   }
   dlog('warn', 'Piped全滅、Invidiousに切り替え');
+  // ③ Invidious
   items = await invidiousSearch(query);
   if(items && items.length > 0){
     dlog('ok', `Invidiousで取得成功: ${items.length}件`);
     return items;
   }
   dlog('warn', 'Invidiousも全滅、CORSプロキシ最終手段に');
+  // ④ CORS Proxy
   items = await corsProxySearch(query);
   if(items && items.length > 0){
     dlog('ok', `CORSプロキシ経由で取得成功: ${items.length}件`);
@@ -1255,6 +1944,395 @@ function copyLogs(){
   });
 }
 
+// ─── 推奨チャンネル（@handle） ───
+const RECOMMENDED_CHANNELS = [
+  // 国内
+  { handle: '@DGSSEVEN', name: 'DGSSEVEN / せぶーん', region: 'jp' },
+  { handle: '@nashiro_mc', name: 'なしろ', region: 'jp' },
+  { handle: '@HikakinGames', name: 'HikakinGames', region: 'jp' },
+  { handle: '@manmaru_mc', name: 'まんまる', region: 'jp' },
+  { handle: '@toritetuMC', name: 'とりてつ', region: 'jp' },
+  // 海外
+  { handle: '@camman18', name: 'camman18', region: 'intl' },
+  { handle: '@PrestonPlayz', name: 'PrestonPlayz', region: 'intl' },
+  { handle: '@aphmaugaming', name: 'Aphmau', region: 'intl' },
+  { handle: '@GeorgeNotFound', name: 'GeorgeNotFound', region: 'intl' },
+  { handle: '@Sandiction', name: 'Sandiction', region: 'intl' },
+  { handle: '@Wisp', name: 'Wisp', region: 'intl' },
+  { handle: '@MrBeastGaming', name: 'MrBeast Gaming', region: 'intl' },
+  { handle: '@Skeppy', name: 'Skeppy', region: 'intl' },
+  { handle: '@TommyVTOriginals', name: 'TommyVT', region: 'intl' },
+  { handle: '@DreamShorts', name: 'Dream Shorts', region: 'intl' }
+];
+
+// ─── ChannelID 解決（@handle / URL → UCxxxx） ───
+// 優先順序：YouTube API → CORS Proxy + ページHTML
+async function resolveChannelId(input){
+  if(!input) return null;
+  input = input.trim();
+
+  // 既にUC...ならそのまま
+  const ucDirect = input.match(/^(UC[a-zA-Z0-9_-]{22})$/);
+  if(ucDirect) return { id: ucDirect[1], name: '' };
+  const ucInUrl = input.match(/channel\/(UC[a-zA-Z0-9_-]{22})/);
+  if(ucInUrl) return { id: ucInUrl[1], name: '' };
+
+  // @handle抽出
+  let handle = null;
+  const handleMatch = input.match(/youtube\.com\/(@[\w\.\-]+)/) || input.match(/^(@[\w\.\-]+)$/) || input.match(/^([a-zA-Z][\w\.\-]+)$/);
+  if(handleMatch){
+    handle = handleMatch[1];
+    if(!handle.startsWith('@')) handle = '@' + handle;
+  }
+  if(!handle){
+    dlog('err', `チャンネル形式不明: ${input}`);
+    return null;
+  }
+
+  // ① YouTube Data API がある場合は最優先
+  if(apiKeys.length > 0){
+    const apiResult = await ytResolveHandle(handle);
+    if(apiResult){
+      dlog('ok', `[YT API] Resolved ${handle} → ${apiResult.id}`);
+      return apiResult;
+    }
+    dlog('warn', `YT API resolve失敗、CORS proxyへフォールバック`);
+  }
+
+  // ② CORS Proxyで YouTubeページHTML から抽出
+  const pageUrl = 'https://www.youtube.com/' + handle;
+  for(const proxyFn of CORS_PROXIES){
+    const proxyUrl = proxyFn(pageUrl);
+    try{
+      dlog('try', `Resolve ${handle} via proxy`);
+      const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(15000) });
+      if(!res.ok){ dlog('warn', `proxy HTTP ${res.status}`); continue; }
+      const html = await res.text();
+      const idMatch = html.match(/"channelId":"(UC[a-zA-Z0-9_-]{22})"/) ||
+                      html.match(/"externalId":"(UC[a-zA-Z0-9_-]{22})"/) ||
+                      html.match(/<meta itemprop="identifier" content="(UC[a-zA-Z0-9_-]{22})"/) ||
+                      html.match(/channel_id=(UC[a-zA-Z0-9_-]{22})/);
+      const nameMatch = html.match(/"channelMetadataRenderer":\{"title":"([^"]+)"/) ||
+                        html.match(/<meta property="og:title" content="([^"]+)"/) ||
+                        html.match(/<title>([^<]+) - YouTube<\/title>/);
+      if(idMatch){
+        dlog('ok', `Resolved ${handle} → ${idMatch[1]}`);
+        return { id: idMatch[1], name: (nameMatch ? nameMatch[1] : handle).slice(0, 60) };
+      }
+    } catch(e){
+      dlog('err', `Resolve error: ${e.message}`);
+    }
+  }
+  dlog('err', `${handle}: channelId取得失敗`);
+  return null;
+}
+
+// ─── RSSフィード取得＆パース ───
+async function fetchChannelRSS(channelId){
+  const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+  for(const proxyFn of CORS_PROXIES){
+    const proxyUrl = proxyFn(feedUrl);
+    try{
+      dlog('try', `RSS ${channelId.slice(0,12)}... via proxy`);
+      const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(12000) });
+      if(!res.ok){ dlog('warn', `RSS HTTP ${res.status}`); continue; }
+      const xml = await res.text();
+      if(!xml.includes('<entry')) { dlog('warn', `RSS空: ${channelId.slice(0,12)}`); continue; }
+      const items = parseRSSFeed(xml);
+      dlog('ok', `RSS取得: ${items.length}件 ${channelId.slice(0,12)}`);
+      return items;
+    } catch(e){
+      dlog('err', `RSS error: ${e.message}`);
+    }
+  }
+  return [];
+}
+
+function parseRSSFeed(xml){
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xml, 'text/xml');
+  const channelName = (doc.querySelector('feed > author > name')?.textContent || '').trim();
+  const entries = doc.querySelectorAll('entry');
+  const out = [];
+  entries.forEach(entry => {
+    // yt:videoId は名前空間付きなので getElementsByTagName('*') で拾う
+    let vid = '';
+    const allTags = entry.getElementsByTagName('*');
+    for(const t of allTags){
+      if(t.localName === 'videoId'){ vid = t.textContent; break; }
+    }
+    if(!vid){
+      // fallback: <link href="...?v=XXX">
+      const linkEl = entry.querySelector('link');
+      const href = linkEl?.getAttribute('href') || '';
+      const m = href.match(/v=([a-zA-Z0-9_-]{11})/);
+      if(m) vid = m[1];
+    }
+    if(!vid) return;
+    const title = entry.querySelector('title')?.textContent || '';
+    const published = entry.querySelector('published')?.textContent || '';
+    // <media:group><media:community><media:statistics views="..." />
+    let views = 0;
+    for(const t of allTags){
+      if(t.localName === 'statistics'){
+        views = +(t.getAttribute('views') || 0);
+        break;
+      }
+    }
+    out.push({ vid, title, channel: channelName, views, uploadedDate: published.slice(0,10) });
+  });
+  return out;
+}
+
+// ─── 監視チャンネル UI ───
+function openChannelsModal(){
+  document.getElementById('channels-modal-bg').classList.add('show');
+  renderChannelList();
+  renderRecommended();
+}
+function closeChannelsModal(){
+  document.getElementById('channels-modal-bg').classList.remove('show');
+}
+
+function renderChannelList(){
+  const el = document.getElementById('ch-list');
+  if(watchedChannels.length === 0){
+    el.innerHTML = '<div class="ch-empty">📡 監視チャンネル未登録。<br>下の入力欄から追加するか、推奨から選んでください。</div>';
+    return;
+  }
+  el.innerHTML = watchedChannels.map((ch, i) => `
+    <div class="ch-row">
+      <span class="ch-flag">${ch.region === 'jp' ? '🇯🇵' : '🌐'}</span>
+      <span class="ch-name">${escHtml(ch.name || ch.handle || ch.id)}</span>
+      <span class="ch-id" title="${ch.id}">${ch.id.slice(0,10)}...</span>
+      <button onclick="removeChannel(${i})" title="削除">🗑</button>
+    </div>
+  `).join('');
+}
+
+function renderRecommended(){
+  const el = document.getElementById('recommended-list');
+  const watchedHandles = new Set(watchedChannels.map(c => c.handle));
+  el.innerHTML = RECOMMENDED_CHANNELS.map(rc => {
+    const added = watchedHandles.has(rc.handle);
+    return `<button class="rec-btn ${added?'added':''}" onclick="addRecommended('${rc.handle}','${escHtml(rc.name)}','${rc.region}',this)" ${added?'disabled':''}>
+      <span class="rec-flag">${rc.region === 'jp' ? '🇯🇵' : '🌐'}</span>${escHtml(rc.name)}
+    </button>`;
+  }).join('');
+}
+
+async function addRecommended(handle, name, region, btn){
+  btn.disabled = true;
+  btn.textContent = '解決中...';
+  const result = await resolveChannelId(handle);
+  if(!result){
+    btn.disabled = false;
+    btn.textContent = '失敗 ' + name;
+    toast(`${handle} の解決失敗`, 'err');
+    return;
+  }
+  watchedChannels.push({ id: result.id, name: name || result.name, handle, region });
+  saveChannels();
+  renderChannelList();
+  renderRecommended();
+  toast(`✓ ${name} を追加`, 'ok');
+}
+
+async function addChannelFromInput(){
+  const input = document.getElementById('ch-input').value.trim();
+  if(!input){ toast('チャンネルURL/ハンドルを入力', 'err'); return; }
+  toast('チャンネル解決中...', 'ok');
+  const result = await resolveChannelId(input);
+  if(!result){ toast('チャンネル解決失敗。ログ確認', 'err'); return; }
+  // 重複チェック
+  if(watchedChannels.some(c => c.id === result.id)){
+    toast('既に登録済み', 'err');
+    return;
+  }
+  // 地域は名前から自動推定
+  const region = detectRegion(result.name) || 'intl';
+  watchedChannels.push({
+    id: result.id,
+    name: result.name || input,
+    handle: input.startsWith('@') ? input : '',
+    region
+  });
+  saveChannels();
+  renderChannelList();
+  renderRecommended();
+  document.getElementById('ch-input').value = '';
+  toast(`✓ ${result.name || result.id.slice(0,12)} を追加`, 'ok');
+}
+
+function removeChannel(idx){
+  if(!confirm(`「${watchedChannels[idx].name}」を監視リストから削除？`)) return;
+  watchedChannels.splice(idx, 1);
+  saveChannels();
+  renderChannelList();
+  renderRecommended();
+}
+
+async function refreshAllChannels(){
+  if(watchedChannels.length === 0){
+    toast('監視チャンネル未登録', 'err');
+    return;
+  }
+  document.getElementById('debug-log').style.display = 'block';
+  clearLog();
+  const useApi = apiKeys.length > 0;
+  dlog('info', `▼▼▼ 監視CH更新: ${watchedChannels.length}ch (経路: ${useApi ? 'YouTube Data API' : 'RSS+CORS Proxy'}) ▼▼▼`);
+
+  const progress = document.getElementById('ch-progress');
+  const fill = progress.querySelector('.fill');
+  progress.style.display = 'block';
+  fill.style.width = '0%';
+
+  const existingVids = new Set(videos.map(v => v.vid));
+  const newVids = []; // YouTube APIで詳細取得するため
+  let added = 0, skipped = 0, failed = 0;
+
+  for(let i = 0; i < watchedChannels.length; i++){
+    const ch = watchedChannels[i];
+    fill.style.width = ((i / watchedChannels.length) * 100) + '%';
+
+    let items = null;
+    // ① YouTube API 優先
+    if(useApi){
+      items = await ytChannelVideos(ch.id, 25);
+    }
+    // ② RSSフォールバック
+    if(!items || items.length === 0){
+      if(useApi) dlog('warn', `${ch.name}: YT API失敗、RSSフォールバック`);
+      items = await fetchChannelRSS(ch.id);
+    }
+    if(!items || items.length === 0){
+      failed++;
+      continue;
+    }
+
+    for(const item of items){
+      if(existingVids.has(item.vid)){ skipped++; continue; }
+      existingVids.add(item.vid);
+      const v = itemToVideo(item);
+      if(!v) continue;
+      v.region = ch.region;
+      v.channel = item.channel || ch.name;
+      v.comment = useApi ? `YT API / ${ch.name}` : `RSS / ${ch.name}`;
+      videos.unshift(v);
+      newVids.push(v);
+      added++;
+    }
+  }
+
+  // ③ 詳細(再生数・duration)を一括取得（YT API使える場合のみ）
+  if(useApi && newVids.length > 0){
+    dlog('info', `動画詳細取得: ${newVids.length}件`);
+    fill.style.width = '95%';
+    const details = await ytVideoDetails(newVids.map(v => v.vid));
+    const detailMap = new Map(details.map(d => [d.vid, d]));
+    for(const v of newVids){
+      const d = detailMap.get(v.vid);
+      if(!d) continue;
+      v.viewsK = Math.round(d.views / 1000);
+      v.duration = d.duration;
+      v.hot = v.viewsK >= 1000 ? 1 : 0;
+      // shortsかどうかで URL 修正
+      if(d.duration && d.duration <= 65){
+        v.url = 'https://www.youtube.com/shorts/' + v.vid;
+      } else {
+        v.url = 'https://www.youtube.com/watch?v=' + v.vid;
+      }
+    }
+  }
+
+  fill.style.width = '100%';
+  setTimeout(() => { progress.style.display = 'none'; }, 600);
+
+  saveVideos();
+  render();
+  dlog('info', `▲▲▲ 完了: 追加${added} / 重複${skipped} / 失敗ch${failed} ▲▲▲`);
+  toast(`✓ ${added}件追加 / ${skipped}件重複 / ${failed}ch失敗`, added > 0 ? 'ok' : 'err');
+}
+
+// ─── 一括URL追加 ───
+function openBulkModal(){
+  document.getElementById('bulk-modal-bg').classList.add('show');
+  document.getElementById('bulk-input').value = '';
+  document.getElementById('bulk-status').textContent = '';
+}
+function closeBulkModal(){
+  document.getElementById('bulk-modal-bg').classList.remove('show');
+}
+
+async function processBulkUrls(){
+  const text = document.getElementById('bulk-input').value;
+  const lines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  if(lines.length === 0){ toast('URLを貼り付けてください', 'err'); return; }
+
+  const region = document.getElementById('bulk-region').value;
+  const category = document.getElementById('bulk-category').value;
+  const progress = document.getElementById('bulk-progress');
+  const fill = progress.querySelector('.fill');
+  const statusEl = document.getElementById('bulk-status');
+  progress.style.display = 'block';
+  fill.style.width = '0%';
+
+  const existingVids = new Set(videos.map(v => v.vid));
+  let added = 0, skipped = 0, failed = 0;
+  const total = lines.length;
+
+  // 並列度を抑えて noembed を順次叩く（5個ずつ）
+  const BATCH = 5;
+  for(let i = 0; i < lines.length; i += BATCH){
+    const batch = lines.slice(i, i + BATCH);
+    statusEl.textContent = `処理中 ${Math.min(i + BATCH, total)}/${total}...`;
+    const results = await Promise.all(batch.map(async line => {
+      const vid = extractVideoId(line);
+      if(!vid) return { ok: false, reason: 'URL不正', line };
+      if(existingVids.has(vid)) return { ok: false, reason: '重複', line, vid };
+      try{
+        const info = await fetchVideoInfo('https://www.youtube.com/watch?v=' + vid);
+        return { ok: true, vid, info, line };
+      } catch(e){
+        // 取得失敗でも追加（タイトル空でvidだけ）
+        return { ok: true, vid, info: { title: '(取得失敗) ' + vid, channel: '', thumbnail: '' }, line, partial: true };
+      }
+    }));
+    for(const r of results){
+      if(!r.ok){
+        if(r.reason === '重複') skipped++; else failed++;
+        continue;
+      }
+      existingVids.add(r.vid);
+      const finalRegion = region === 'auto' ? detectRegion(r.info.title + ' ' + r.info.channel) : region;
+      const finalCategory = category === 'auto' ? guessCategory(r.info.title) : category;
+      videos.unshift({
+        id: 'bulk-' + r.vid + '-' + Date.now() + '-' + Math.random().toString(36).slice(2,5),
+        vid: r.vid,
+        url: 'https://www.youtube.com/shorts/' + r.vid,
+        title: r.info.title || '(無題)',
+        channel: r.info.channel || '',
+        region: finalRegion,
+        category: finalCategory,
+        viewsK: 0,
+        hot: 0,
+        comment: '一括追加' + (r.partial ? ' (oEmbed失敗)' : ''),
+        addedDate: new Date().toISOString().slice(0,10)
+      });
+      added++;
+    }
+    fill.style.width = (Math.min(i + BATCH, total) / total * 100) + '%';
+  }
+
+  saveVideos();
+  render();
+  fill.style.width = '100%';
+  setTimeout(() => { progress.style.display = 'none'; }, 600);
+  statusEl.textContent = `完了: 追加${added} / 重複${skipped} / 失敗${failed}`;
+  toast(`✓ ${added}件追加 / ${skipped}件重複 / ${failed}件失敗`, added > 0 ? 'ok' : 'err');
+  if(added > 0) closeBulkModal();
+}
+
 // 起動時にAPIインスタンスのヘルスチェック
 async function healthCheck(){
   dlog('info', '=== API インスタンス ヘルスチェック開始 ===');
@@ -1278,9 +2356,26 @@ async function healthCheck(){
 
 // ─── Init ───
 loadVideos();
+loadChannels();
+loadApiKeys();
 render();
 updateSyncStatus();
-dlog('info', `アプリ起動 / ローカル${videos.length}件`);
+updateApiKeysBadge();
+const okKeys = apiKeys.filter(k => k.status === 'ok').length;
+dlog('info', `アプリ起動 / 動画${videos.length}件 / 監視ch${watchedChannels.length}件 / APIキー${apiKeys.length}件(有効${okKeys})`);
+
+// モーダル背景クリックで閉じる
+['channels-modal-bg', 'bulk-modal-bg', 'fetch-modal-bg', 'settings-modal-bg', 'api-keys-modal-bg'].forEach(id => {
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('click', e => {
+    if(e.target.id === id) el.classList.remove('show');
+  });
+});
+
+// Enter で監視チャンネル追加
+document.getElementById('ch-input').addEventListener('keydown', e => {
+  if(e.key === 'Enter') addChannelFromInput();
+});
 
 // 起動時にリモートと同期
 (async () => {

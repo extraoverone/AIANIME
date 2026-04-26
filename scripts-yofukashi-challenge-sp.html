@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！チャレンジSP — 100人無人島サバイバル</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#ef4444,#fbbf24,#34d399,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(20px,4.5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:16px;line-height:1.3;background:linear-gradient(135deg,#ef4444,#fbbf24,#34d399,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:14px;max-width:680px;margin:0 auto 12px}
+.badge{display:inline-block;padding:4px 16px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:16px;margin-right:6px}
+.b-sp{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+.b-time{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
+.b-cast{background:rgba(167,139,250,.12);color:#a78bfa;border:1px solid rgba(167,139,250,.25)}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:20px;margin:32px 0;overflow:hidden}
+.sc-head{padding:28px 28px 18px}
+.sc-head h2{font-size:22px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:12px}
+.sc-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-sp{background:rgba(239,68,68,.15);color:#ef4444}
+.t-cast{background:rgba(167,139,250,.12);color:#a78bfa}
+.t-time{background:rgba(251,191,36,.12);color:#fbbf24}
+.t-mob{background:rgba(100,116,139,.12);color:#94a3b8}
+.t-twist{background:rgba(236,72,153,.12);color:#f472b6}
+.t-comedy{background:rgba(52,211,153,.12);color:#34d399}
+
+.hook{background:#12121e;border-left:4px solid #ef4444;padding:16px 24px;font-size:14px;color:#ccc;line-height:1.9;margin-bottom:0}
+.hook strong{color:#fca5a5;font-size:13px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px}
+
+.part{padding:10px 28px;background:#0b0b18;border-top:1px solid #151525;border-bottom:1px solid #151525;margin:0}
+.part-label{font-size:11px;font-weight:800;color:#444;letter-spacing:.12em;text-transform:uppercase}
+.part-title{font-size:15px;font-weight:800;color:#ccc;margin-top:2px}
+.part-time{font-size:11px;color:#333;margin-top:2px}
+
+.dial{padding:4px 28px 20px}
+.line{padding:9px 0;border-bottom:1px solid #0f0f1a;font-size:14.5px;line-height:1.9;display:flex;gap:12px}
+.line:last-child{border-bottom:none}
+.who{font-weight:800;flex-shrink:0;min-width:72px;font-size:13.5px}
+.txt{flex:1;color:#ddd}
+
+/* キャラカラー */
+.who-y{color:#a78bfa}        /* やとら  — 紫 */
+.who-m{color:#f472b6}        /* まひる  — ピンク */
+.who-h{color:#fbbf24}        /* ひぐれ  — 黄 */
+.who-a{color:#67e8f9}        /* あさめ  — シアン */
+.who-kuro{color:#e2e8f0}     /* くろねこ — 白 */
+.who-yuka{color:#86efac}     /* 由香    — 緑 */
+.who-ryo{color:#fdba74}      /* リョウ  — オレンジ */
+.who-n{color:#64748b}        /* ナレーション・SE */
+.who-mob{color:#555}         /* 一般参加者・モブ */
+
+.stage{padding:7px 28px 7px 36px;font-size:13px;color:#4a4a60;font-style:italic;border-left:3px solid #1e1e30;background:#0a0a16;margin:2px 0;line-height:1.7}
+.monitor{padding:10px 28px;background:rgba(16,185,129,.06);border-left:3px solid rgba(16,185,129,.35);font-size:12.5px;color:#6ee7b7;font-family:'Courier New',monospace;letter-spacing:.03em}
+
+.act-divider{text-align:center;padding:22px;color:#222;font-size:22px;letter-spacing:.2em;border-top:1px solid #111;border-bottom:1px solid #111;margin:0}
+
+.why{padding:18px 28px;font-size:13px;color:#444;background:#080810;border-top:1px solid #111;line-height:1.8}
+.why strong{color:#555}
+
+.cast-box{background:#0c0c1a;border:1px solid #1a1a2e;border-radius:12px;padding:20px 24px;margin:24px 0}
+.cast-box h3{font-size:13px;font-weight:800;color:#444;letter-spacing:.08em;margin-bottom:14px;text-transform:uppercase}
+.cast-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.cast-row{display:flex;align-items:center;gap:10px;padding:6px 10px;background:#0f0f18;border-radius:8px;font-size:13px}
+.cast-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.cast-name{font-weight:700}
+.cast-desc{color:#555;font-size:11px}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#opening">COLD OPEN</a>
+<a href="#p1">PART 1</a>
+<a href="#p2">PART 2</a>
+<a href="#p3">PART 3</a>
+<a href="#p4">PART 4</a>
+<a href="#p5">PART 5</a>
+<a href="#p6">PART 6</a>
+<a href="#p7">PART 7</a>
+<a href="#epilogue">EPILOGUE</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+<div>
+<span class="badge b-sp">SPECIAL EPISODE</span>
+<span class="badge b-time">想定尺 ▸ 15〜18分</span>
+<span class="badge b-cast">登場 ▸ 15名＋モブ多数</span>
+</div>
+<h1>100人を無人島マイクラサーバーに<br>閉じ込めた。最後に生き残った1人が<br>1,000,000円もらえる。<br>ただし主催者も中に入れた。</h1>
+<p>MrBeast式 無人島サバイバル完全版。よふかしくらぶが企画→自分たちも参加者にされる。大人数・モブ登場・情景描写あり。伏線回収型フル台本。</p>
+</div>
+
+<!-- キャスト一覧 -->
+<div class="cast-box">
+<h3>登場人物</h3>
+<div class="cast-grid">
+<div class="cast-row"><div class="cast-dot" style="background:#a78bfa"></div><span class="cast-name" style="color:#a78bfa">やとら</span><span class="cast-desc">主催者→参加者。策士。自分のトラップに入れた。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#f472b6"></div><span class="cast-name" style="color:#f472b6">まひる</span><span class="cast-desc">FPSマスター。静かに最強。人読みが異常。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#fbbf24"></div><span class="cast-name" style="color:#fbbf24">ひぐれ</span><span class="cast-desc">マイクラ初心者。逃げることだけ得意。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#67e8f9"></div><span class="cast-name" style="color:#67e8f9">あさめ</span><span class="cast-desc">外交の天才。即座に友達を作る。同盟崩壊しがち。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#e2e8f0"></div><span class="cast-name" style="color:#e2e8f0">くろねこ</span><span class="cast-desc">謎の強者。プレイヤーID「黒猫_玲」。口数少ない。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#86efac"></div><span class="cast-name" style="color:#86efac">由香</span><span class="cast-desc">あさめのクラスメート。ゲーム初心者だが生存本能が高い。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#fdba74"></div><span class="cast-name" style="color:#fdba74">リョウ</span><span class="cast-desc">同クラの男子。口だけ達者。裏切り速度日本一。</span></div>
+<div class="cast-row"><div class="cast-dot" style="background:#555"></div><span class="cast-name" style="color:#888">参加者多数</span><span class="cast-desc">名前なしモブ〜台詞持ちサブキャラ。</span></div>
+</div>
+</div>
+
+<!-- ==================== COLD OPEN ==================== -->
+<div class="sc" id="opening">
+<div class="sc-head">
+<h2>COLD OPEN</h2>
+<div class="sc-meta">
+<span class="tag t-sp">フック</span>
+<span class="tag t-time">00:00〜00:40</span>
+</div>
+</div>
+
+<div class="hook">
+<strong>オープニングフック</strong>
+暗転。水面の音。鳥の声。そして——空から人が降ってくる。100人。次々と島に落ちていく。やとらのナレーション「俺たちは今日、100人を無人島に閉じ込めた」。カット。4人のリアクション映像。全員パニック。タイトルドン。
+</div>
+
+<div class="dial">
+<div class="stage">【映像】暗転。SE:波の音、カモメの声。空から俯瞰ショット。碧い海に浮かぶ孤島。砂浜、鬱蒼とした森、中央に高い山。そこへ空から次々とスポーンするプレイヤーたち。1人、2人、10人、100人——島に降り立っていく。</div>
+
+<div class="line"><span class="who who-y">やとら<br><span style="color:#555;font-size:11px;font-weight:400">（ナレ）</span></span><span class="txt">今日、俺たちは100人をマイクラの無人島サーバーに閉じ込めた。食料は有限。武器は自作するしかない。降伏もリタイアもできない。最後に生き残った1人が100万円をもらえる。</span></div>
+
+<div class="stage">【映像】島全体が見えるロングショット。100個のライフゲージが画面端にずらりと並んでいる。</div>
+
+<div class="line"><span class="who who-y">やとら<br><span style="color:#555;font-size:11px;font-weight:400">（ナレ）</span></span><span class="txt">問題が、1つある。</span></div>
+
+<div class="stage">【映像カット】まひるの画面。「え？」。ひぐれの画面「は？」。あさめの画面「えっえっえっ」。やとらの画面「……なんでここにいる？」</div>
+
+<div class="line"><span class="who who-y">やとら<br><span style="color:#555;font-size:11px;font-weight:400">（ナレ）</span></span><span class="txt">俺たちも——入れられた。</span></div>
+
+<div class="stage">【タイトルドン】どどんっ と音が鳴り、タイトルテキストが全画面に。BGM: 緊張感のあるエレクトロ。</div>
+</div>
+</div>
+
+<!-- ==================== PART 1 ==================== -->
+<div class="sc" id="p1">
+<div class="sc-head">
+<h2>PART 1 — 閉じ込められた</h2>
+<div class="sc-meta">
+<span class="tag t-cast">4人登場</span>
+<span class="tag t-comedy">コメディ</span>
+<span class="tag t-time">00:40〜03:00</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 1</div>
+<div class="part-title">主催者、自分の罠に落ちる</div>
+<div class="part-time">00:40〜03:00（約2分20秒）</div>
+</div>
+
+<div class="dial">
+<div class="stage">島の砂浜。波の音。やとらのキャラクターが砂の上に立っている。周囲には見知らぬプレイヤーたちがばらばらと走り回っている。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……ここ、島だ。マイクラの島。俺が設計した島。……なんで俺がここにいる？</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらぁーーー！！どういうことーー！？</span></div>
+
+<div class="stage">あさめが砂浜を全力で走ってくる。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">あさめ。落ち着け。俺も今状況整理中だ。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">落ち着けないって！知らない人が100人いるじゃん！あと島から出れないし！ワープコマンド効かないし！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……コマンドが効かない？（試す）/tp……確かに弾かれてる。サーバーのオペレーター権限が——</span></div>
+
+<div class="stage">サーバーからシステムメッセージが届く。画面端に赤いテキスト。</div>
+
+<div class="line"><span class="who who-n">【サーバーメッセージ】</span><span class="txt">「このサーバーへようこそ。管理者権限は無効化されています。全プレイヤーは一般参加者として扱われます。ご健闘を。」</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……俺が書いたテキストだ。俺が自分に送ってる。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（走ってきながら）おいやとら！どういうことだこれ！俺どこ！？なんで島！？</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（静かに合流する）……ひと通り把握した。逃げ場なし、コマンド封鎖、ボーダーが島全体を囲ってる。完全に閉じ込められてる。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">まひる、どこで調べた？</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……来た瞬間にワールドボーダーの端まで走って確認した。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">早！！着いてすぐ調査してんじゃん！！</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">生存本能。</span></div>
+
+<div class="stage">サーバーから2本目のシステムメッセージ。今度は全員の画面に流れる。</div>
+
+<div class="line"><span class="who who-n">【サーバーアナウンス】</span><span class="txt">「参加者の皆さん、こんにちは。このサーバーには100人のプレイヤーが参加しています。参加者には本人の同意なく"主催者枠"として4名が追加されています。この4名も一般参加者として戦います。主催者枠のプレイヤーが優勝した場合、賞金は倍の200万円になります。なお、ゲームは今この瞬間から始まっています。」</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……主催者枠？それって俺ら？</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">200万円！？え、やとら勝ったら200万！？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……俺が設計して、俺の声で録音して、俺が自分を閉じ込めた。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">コマンドのミス？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……たぶん。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……「たぶん」。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">つーか今ゲーム始まってるじゃん！周りの奴ら走り出してるじゃん！俺たちのんきにしゃべってていいの！？</span></div>
+
+<div class="stage">ひぐれの言う通り、周囲では参加者たちが木を切り始め、石を掘り、あちこちに散っていく。遠くで誰かが叫ぶ声。</div>
+
+<div class="line"><span class="who who-mob">参加者A</span><span class="txt">木！木を先に確保しろ！ツルハシ作れば全部早くなる！</span></div>
+
+<div class="line"><span class="who who-mob">参加者B</span><span class="txt">山！山に登れ！高地が有利だ！</span></div>
+
+<div class="line"><span class="who who-mob">参加者C</span><span class="txt">誰か同盟組まない？3人以上なら序盤安全！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（素早く切り替わる）……状況整理完了。やることは1つだ。生き残る。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">いつものやとらに戻った！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">4人でバラバラに行動する。固まって動くな。もし誰かが俺たちの素性をバラしたら全員が狙われる。島の全員が敵になる前に装備を揃える。——走れ。</span></div>
+
+<div class="stage">4人が四方に散る。</div>
+</div>
+</div>
+
+<!-- ==================== PART 2 ==================== -->
+<div class="sc" id="p2">
+<div class="sc-head">
+<h2>PART 2 — 生存開始、それぞれの戦略</h2>
+<div class="sc-meta">
+<span class="tag t-cast">サブキャラ登場</span>
+<span class="tag t-mob">モブ初出</span>
+<span class="tag t-time">03:00〜06:30</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 2</div>
+<div class="part-title">4人それぞれの生存戦略。参加者たちが動き始める。</div>
+<div class="part-time">03:00〜06:30（約3分30秒）</div>
+</div>
+
+<div class="dial">
+<div class="stage">分割画面。4人の並行した行動を映す。</div>
+
+<div class="stage">【あさめ視点】砂浜近くの森。木を切りながら周りを見渡している。近くに一人の女の子が立っている。明らかに初心者っぽい動き。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ねえ、一人？同盟どう？</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">えっ、誰……あ、かわいい人だ。なんか安心した。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あさめって言います！一緒に動こ！</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">由香。……私ゲーム苦手なんだけど、いい？</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">全然いい！私は友達多いのが強みだから！さ、他にも誘おう！</span></div>
+
+<div class="stage">あさめが声をかけるたびに人が集まっていく。5人、8人、10人……。</div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">（ついていきながら）あさめって、こういうの得意なんだ……。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">友達作るのだけは得意！あとはぜんぜんダメだけど！</span></div>
+
+<div class="stage">【ひぐれ視点】森の中。ひぐれが木をパンチしている。何も起きない。ただ、素手で叩いている。</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……あれ、木切れない？いや、切れてる？え、アイテムになってる？どこ？どこ行った？</span></div>
+
+<div class="stage">木材が足元に落ちて拾われている。ひぐれは気づいていない。</div>
+
+<div class="line"><span class="who who-mob">参加者D</span><span class="txt">（通りすがり）お前、インベントリ見てないの？左下にあるよ。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">は！？あ、木材4個あった！……インベントリって何！？</span></div>
+
+<div class="line"><span class="who who-mob">参加者D</span><span class="txt">（去り際）……頑張れよ。</span></div>
+
+<div class="stage">ひぐれ一人で試行錯誤。石を拾おうとして手で地面を叩く。砂を掘ろうとしてすっぽ抜ける。転落しかける。</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……俺、絶対最初に死ぬな。（でも淡々と次の木に向かう）</span></div>
+
+<div class="stage">【まひる視点】山の方向へ静かに走っている。石のツルハシをすでに持っている。岩場で鉄鉱石を発掘している。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（独り言）……鉄6個。炉に入れれば20分で鉄の防具が揃う。問題は夜になる前に……（遠くを見る）あそこに2人、こっちを見てる。</span></div>
+
+<div class="stage">少し離れた場所でリョウともう一人の参加者がまひるの方を指さして何か話している。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">（遠くで）あいつ一人だし、女子だし、倒せばアイテム全部もらえる。行こ。</span></div>
+
+<div class="line"><span class="who who-mob">参加者E</span><span class="txt">でも装備……鉄持ってない？</span></div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">まだ石ツルハシだろ。楽勝。</span></div>
+
+<div class="stage">まひるは動きを止めずに採掘を続けている。しかし耳はリョウたちの方に向いている。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（独り言）……来るな。来るなら石の剣じゃなくて……（炉でアイテム完成）鉄の剣で迎える。</span></div>
+
+<div class="stage">まひるが炉から鉄の剣を取り出す。振り向き、リョウたちの方を静かに見る。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">（まひると目が合って）……え、鉄剣？いつの間に——</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（声だけ届く距離で）来る？</span></div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">……（踵を返して逃げる）やっぱいいです！！</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（独り言）……正解。</span></div>
+
+<div class="stage">【やとら視点】島の中央。見晴らしのいい高台。周囲の状況を観察している。手元には紙とペンの代わりに、チャット欄に素早くメモを打ち込んでいる。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……あさめが北東に10人集めてる。まひるが東の山で装備整えてる。ひぐれは……（南を見る）木をずっとパンチしてる。</span></div>
+
+<div class="stage">モニター表示が更新される。</div>
+
+<div class="monitor">残り97人 ▸ 00:08:00経過 ▸ 脱落: クリーパー爆発×2、落下死×1</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">8分で3人脱落か。予想より速い。夜になれば……（空を見る。太陽が傾き始めている）夜になる。</span></div>
+
+<div class="stage">空が橙色に染まってきた。不穏なBGMに切り替わる。遠くでゾンビの唸り声がし始める。</div>
+
+<div class="line"><span class="who who-mob">参加者F</span><span class="txt">（叫び声）ゾンビだ！夜来る！急いで家作れ！！</span></div>
+
+<div class="line"><span class="who who-mob">参加者G</span><span class="txt">もう作れない！木が足りない！！</span></div>
+
+<div class="line"><span class="who who-mob">参加者H</span><span class="txt">誰か助けて——（死亡音）</span></div>
+
+<div class="monitor">残り91人 ▸ 00:12:00経過 ▸ 夜開始</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）……100人が91人になった。ここからが本番だ。</span></div>
+</div>
+</div>
+
+<!-- ==================== PART 3 ==================== -->
+<div class="sc" id="p3">
+<div class="sc-head">
+<h2>PART 3 — 最初の夜、同盟と裏切り</h2>
+<div class="sc-meta">
+<span class="tag t-cast">くろねこ初登場</span>
+<span class="tag t-mob">モブ多数</span>
+<span class="tag t-time">06:30〜09:30</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 3</div>
+<div class="part-title">夜。生存組と脱落組が分かれ始める。謎の強者が現れる。</div>
+<div class="part-time">06:30〜09:30（約3分）</div>
+</div>
+
+<div class="dial">
+<div class="stage">夜。月光だけの島。あちこちから戦闘音と悲鳴が聞こえる。あさめが集めた10人のグループが丘の上に集まっている。焚き火を囲んでいる。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">みんな、今夜はここで一緒に過ごそ！力を合わせれば大丈夫！</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">あさめ、リーダーっぽい。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えへへ。——でもね、今10人いるから、ゾンビ来ても大丈夫だけど、人間の敵は怖いよ。</span></div>
+
+<div class="stage">その時、集団の後ろから足音。リョウが走ってくる。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">（息切れ）た、たすけて……ゾンビに追いかけられてて……仲間に入れて！！</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">いいよ！みんな、守ろ！</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">（小声で）あさめ、あの人さっきまひるさんに近づいてた怪しい人じゃ……</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小声）え！？……でも見捨てるのはなあ……。</span></div>
+
+<div class="stage">リョウが集団に合流する。しばらくして、リョウがこっそり別の参加者2人に耳打ちしている。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">（コソコソと）……あの子がリーダーだから、あの子のアイテム狙えばいい。寝たふりして——</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">（聞こえてて、あさめに小声で）ほら言ったじゃん。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（小声）えっ、えええ、どうしよ——</span></div>
+
+<div class="stage">遠くから静かに走ってくる1つのプレイヤー。プレイヤー名：「黒猫_玲」。足音がほとんどない。夜の中をすり抜けるように移動している。</div>
+
+<div class="line"><span class="who who-mob">参加者I</span><span class="txt">（叫び声）や——やばい！あいつ一人で8人倒した！！ダイヤ持ってる！！</span></div>
+
+<div class="monitor">残り78人 ▸ 00:18:00経過 ▸ 黒猫_玲: 9キル</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">9キル！？一人で！？</span></div>
+
+<div class="stage">やとらが遠くからくろねこの動きを観察している。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……速い。剣さばきがプロ級。ポジション取りも——（息をのむ）こいつ、本物だ。</span></div>
+
+<div class="stage">くろねこが一瞬立ち止まり、高台のやとらの方向を見る。</div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">（独り言）……よふかしくらぶか。思ったより早く見つけた。</span></div>
+
+<div class="stage">まひるが山の洞窟から出てくる。ダイヤモンドの剣を持っている。遠くの喧騒を眺める。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（独り言）……あそこで戦ってる人。動きがおかしい。素人じゃない。ていうか——（目を細める）Apexのセンス、ある。</span></div>
+
+<div class="stage">まひるとくろねこの視線がリモートで交差する。互いに気づいた瞬間。BGM一瞬無音。</div>
+
+<div class="stage">夜が明け始める。空がうっすら明るくなる。</div>
+
+<div class="monitor">残り65人 ▸ 00:25:00経過（夜終了）▸ 黒猫_玲: 14キル / まひる: 0キル（接触なし）/ やとら: 0キル / あさめ同盟: 9人残存 / ひぐれ: 生存（行方不明）</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（モニター端に映る。木の影に隠れながら）……俺、生きてる。なんで生きてんだろ。</span></div>
+</div>
+</div>
+
+<!-- ==================== PART 4 ==================== -->
+<div class="sc" id="p4">
+<div class="sc-head">
+<h2>PART 4 — まひる vs くろねこ</h2>
+<div class="sc-meta">
+<span class="tag t-cast">まひる覚醒</span>
+<span class="tag t-twist">強者対決</span>
+<span class="tag t-time">09:30〜12:00</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 4</div>
+<div class="part-title">最強と最強がぶつかる。やとらが見守る。あさめ同盟が崩壊する。</div>
+<div class="part-time">09:30〜12:00（約2分30秒）</div>
+</div>
+
+<div class="dial">
+<div class="stage">朝。森の開けた場所。まひるが静かに歩いている。後ろから足音。振り返るとくろねこが立っている。互いの装備を確認し合う。</div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">……お前がまひる。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……私のこと、知ってるの？</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">よふかしくらぶ、ちょうど見始めたとこだった。面白い動画作ってる。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……ありがとう。（剣を構える）だから何？</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">倒しに来た。お前が一番強そうだから。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……正直でいい。（笑わない）私も同じことを考えてた。</span></div>
+
+<div class="stage">2人が同時に動き出す。くろねこが先手で突撃。まひるがスウェーして回避。</div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">（攻撃しながら）お前、避け方がゲームじゃない。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（反撃しながら）FPSで3年鍛えた。あなたも——普通じゃない。</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">元プロ。半年で引退したけど。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……なんで引退したの。</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">飽きた。強すぎて。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……そう。（一瞬の隙をついて連撃）ならこれは飽きない？</span></div>
+
+<div class="stage">激しい攻防。くろねこのHPが削れていく。しかし向こうも粘る。同時にやとらが遠くで観戦している。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言、息が止まりそうな表情）……まひる、互角だ。あのくろねこが——押されてる。</span></div>
+
+<div class="stage">くろねこが後退。木の後ろに隠れる。まひるが距離を詰める。</div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">（隠れながら）……お前、強い。本当に素人か？</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">女子高生。趣味がゲームなだけ。</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">……（少し笑う）そうか。</span></div>
+
+<div class="stage">くろねこが急に立ち上がり、まひるの弓矢を受けながらも接近——直撃の1発。まひるのHPが3まで落ちる。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（HP確認）ちょっと待って、いま死にかけた。</span></div>
+
+<div class="stage">まひるが後退。一瞬の間。お互いに息を整える。</div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">……一旦やめる。お前とはまた最後にやりたい。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……逃げるの？</span></div>
+
+<div class="line"><span class="who who-kuro">くろねこ</span><span class="txt">温存してる。最後まで生き残ったら——続きをやろう。</span></div>
+
+<div class="stage">くろねこが木の影に消えていく。まひるがしばらく立ち尽くす。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（独り言、静かに）……面白い人だ。（ポーションを飲んでHP回復しながら歩き出す）絶対最後に倒す。</span></div>
+
+<div class="stage">【あさめ視点】同時刻。あさめの同盟10人が中央広場に集まっている。しかし……</div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">（小声で）あさめ……あのリョウって人、さっきから挙動が怪しい。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（見る）ほんとだ、ずっとインベントリ確認してる……あ。</span></div>
+
+<div class="stage">リョウがあさめの荷物を引っ張ろうとして——ゲームのシステム的にそれは無理なことに気づいて空振りしている。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">え、アイテム強制入手できないの!?</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……リョウ、出てって。</span></div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">え？いや、俺別に——</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（普段と違う真剣な顔）出てって。私、人が好きだけど。裏切る人は無理。</span></div>
+
+<div class="stage">リョウが渋々集団から抜ける。去り際に振り向く。</div>
+
+<div class="line"><span class="who who-ryo">リョウ</span><span class="txt">……後悔させてやる。</span></div>
+
+<div class="line"><span class="who who-yuka">由香</span><span class="txt">（ぼそっと）フラグ立てたよ。</span></div>
+
+<div class="monitor">残り52人 ▸ 00:35:00経過 ▸ あさめ同盟: 9人残存 / まひるVSくろねこ引き分け / やとら生存（位置不明）/ ひぐれ生存（謎）</div>
+</div>
+</div>
+
+<!-- ==================== PART 5 ==================== -->
+<div class="sc" id="p5">
+<div class="sc-head">
+<h2>PART 5 — 中盤崩壊、やとらが追い詰められる</h2>
+<div class="sc-meta">
+<span class="tag t-twist">逆転劇</span>
+<span class="tag t-cast">ひぐれ覚醒</span>
+<span class="tag t-time">12:00〜14:30</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 5</div>
+<div class="part-title">やとらが複数から狙われる。ひぐれが謎の生存力を発揮する。同盟が崩壊する。</div>
+<div class="part-time">12:00〜14:30（約2分30秒）</div>
+</div>
+
+<div class="dial">
+<div class="monitor">残り28人 ▸ 00:50:00経過 ▸ 黒猫_玲: 21キル / まひる: 14キル / あさめ同盟: 3人残存 / やとら: 2キル / ひぐれ: 0キル（謎の長生き）</div>
+
+<div class="stage">島の南西。やとらが隠れている。後ろから3人のプレイヤーが来ている。事前に察知しているが、逃げ場がない。崖の際。</div>
+
+<div class="line"><span class="who who-mob">参加者J</span><span class="txt">あいつだ！よふかしくらぶの主催者！倒せば有名になれる！</span></div>
+
+<div class="line"><span class="who who-mob">参加者K</span><span class="txt">囲め！逃げ場ない！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……3人に囲まれた。逃げ道は右だけ——でも右は崖。</span></div>
+
+<div class="stage">追い詰められながらも、やとらは素早くインベントリを確認している。エンダーパールが1個ある。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……エンダーパール、あった。</span></div>
+
+<div class="stage">3人が迫ってくる。やとらがエンダーパールを崖の向こうの木に向かって投げる。</div>
+
+<div class="line"><span class="who who-mob">参加者J</span><span class="txt">え——！？テレポートした！？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（崖の向こうに移動して、一呼吸）……7秒の命だったな。</span></div>
+
+<div class="stage">その直後、別の場所から——足音。ひぐれが走ってくる。息を切らして。</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">やとら！見つけた！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ひぐれ。……なんで生きてる？</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">それ俺も知りたい！ずっと逃げてたら誰も追ってこなくなった！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……戦闘ゼロで生き残ってるのか。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">戦い方わからんし！でも足は速い！あと木の上に登ったら敵が来なかった！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し感心する）……それは正しい立ち回りだ。ひぐれ、お前天然でサバイバルゲームが上手い。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">ほんとに？（少し嬉しそう）……でも残り28人のうち俺だけキル0なのはさすがにカッコ悪くね？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">生きてるのが一番強い。カッコ悪くない。</span></div>
+
+<div class="stage">そのとき、あさめが走ってくる。息が切れている。後ろを振り返りながら。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら！ひぐれ！——（息切れ）同盟、崩壊した……。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">何があった。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">リョウがくろねこと組んで、うちの同盟を後ろから奇襲してきた。由香……由香も一緒にやられた。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">由香、誰？</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">友達だったの……（小さくしゅんとする）私のせいかな。連れてきたから……。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間を置いて）あさめ。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……うん。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">由香がここまで生き残れたのはお前のおかげだ。お前が一人にしなかったから。それはお前の力だ。</span></div>
+
+<div class="stage">あさめが少しだけ顔を上げる。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……やとら、たまにそういう事言うよね。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">事実を言ってるだけだ。——で、まひるはどこだ。</span></div>
+
+<div class="monitor">残り20人 ▸ 01:00:00経過 ▸ くろねこ: 26キル / まひる: 17キル / やとら: 2キル / あさめ: 1キル / ひぐれ: 0キル</div>
+</div>
+</div>
+
+<!-- ==================== PART 6 ==================== -->
+<div class="sc" id="p6">
+<div class="sc-head">
+<h2>PART 6 — 最終盤、よふかしくらぶ会議</h2>
+<div class="sc-meta">
+<span class="tag t-cast">4人集結</span>
+<span class="tag t-twist">決断の時</span>
+<span class="tag t-time">14:30〜16:30</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 6</div>
+<div class="part-title">残り8人。よふかしくらぶ4人が集まる。内輪でどうするか——決断。</div>
+<div class="part-time">14:30〜16:30（約2分）</div>
+</div>
+
+<div class="dial">
+<div class="monitor">残り8人 ▸ 01:15:00経過 ▸ よふかしくらぶ（4）/ くろねこ（1）/ リョウ（1）/ 名前なし参加者（2）</div>
+
+<div class="stage">島の中心部、廃墟になった民家の影。よふかしくらぶ4人が初めて全員集合した。夕暮れの光。遠くで戦闘音が聞こえる。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">全員生きてた。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（少し誇らしそうに）俺、キル0でここまで来た。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……それはそれで才能だと思う。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">4人が最後の8人に残ってるって、すごくない？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">残り8人。俺たちが4人。くろねこ1人。リョウ1人。あとは知らない参加者2人。——問題がある。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">またその「問題」か。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺たちよふかしくらぶが4人残ってる。このまま4人で動いたら、残り4人を倒せる。でもその後——内輪でやり合うことになる。</span></div>
+
+<div class="stage">静寂。風の音。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……お互い戦うってこと？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最後の1人が100万円——いや200万円をもらえる。俺たちがここにいる以上、誰かが取るのはよふかしくらぶのメンバーだ。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……やとらは、どうしたい？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺は……（少し間を置く）視聴者が一番面白いと思う展開を選ぶ。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">それって、どっち？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">残り4人を全員で倒す。その後、よふかしくらぶの4人で正真正銘の決勝戦をやる。ガチで。手加減なしで。</span></div>
+
+<div class="stage">また静寂。今度はもう少し長い。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……了解。それの方が面白い。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">うん！やろう！最後だけどチームで行こ！</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">俺……よふかしくらぶの最後の4人に入ってるの、なんか嬉しい。（照れ隠しに咳払い）まあ、負けないけどな。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれ！</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">じゃあ行くぞ。目標：くろねこ、リョウ、あと2人を先に片付ける。まひるがくろねこを担当しろ。あさめとひぐれは分散させて混乱させる。俺はリョウを処理する。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……くろねこ、待ってたよ。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">——走れ。</span></div>
+
+<div class="stage">4人が散る。夕暮れの島に4つの影。</div>
+</div>
+</div>
+
+<!-- ==================== PART 7 ==================== -->
+<div class="sc" id="p7">
+<div class="sc-head">
+<h2>PART 7 — 決勝戦、よふかしくらぶ内戦</h2>
+<div class="sc-meta">
+<span class="tag t-sp">クライマックス</span>
+<span class="tag t-twist">まさかの結末</span>
+<span class="tag t-time">16:30〜18:30</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">PART 7</div>
+<div class="part-title">残り4人全員がよふかしくらぶに。島のど真ん中でラストバトル。</div>
+<div class="part-time">16:30〜18:30（約2分）</div>
+</div>
+
+<div class="dial">
+<div class="monitor">残り4人 ▸ よふかしくらぶ全員 ▸ 決勝戦開始</div>
+
+<div class="stage">島の中央、開けた広場。4人が四方から歩いてくる。全員が向き合う。静かな夜明け前の空。足元に影が長く伸びている。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">リョウ処理完了。くろねこは——</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">倒した。最後、一言だけ言ってた。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">何て？</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">「楽しかった」って。</span></div>
+
+<div class="stage">短い沈黙。4人が互いに向き合う。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ……始めるか。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（剣を構えながら）本気出していい？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">全力でこい。</span></div>
+
+<div class="stage">【ひぐれ vs あさめ】まず動いたのはひぐれ。真っ直ぐあさめに突進。あさめが後退しながら剣で受けるが、ひぐれの勢いが予想外に強い。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれっ！速い！！</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">逃げ続けてた分のスタミナ、全部ここで使う！</span></div>
+
+<div class="stage">ひぐれがあさめを追い詰める。しかしあさめが木の裏に回り込んで反撃。ひぐれの横を取る。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（一撃）ごめんひぐれ！また一緒に動こうね！！</span></div>
+
+<div class="stage">ひぐれが倒れる。</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（倒れながら）うそ、俺に0.5秒の出番！？！？</span></div>
+
+<div class="stage">画面が暗転→ひぐれが奈落の観戦画面に移動。</div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（観戦画面から）……まあ、よかった。負けたけど、戦えた。</span></div>
+
+<div class="stage">【まひる vs あさめ】次はまひるとあさめが向き合う。まひるが剣を構える。あさめがまひるをまっすぐ見る。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">まひるちゃん——！かかってきて！！</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……うん。（静かに接近）</span></div>
+
+<div class="stage">まひるが一瞬の隙をついて斬りかかる。あさめが何度か受けるが、まひるの連撃が速い。HPが削れていく。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">はや！はやいよまひるちゃん！！</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あさめ。友達になってくれてありがとう。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（涙目で戦いながら）私の方こそ！でもここでは容赦しない！！</span></div>
+
+<div class="stage">あさめが渾身の一撃を繰り出す。まひるが驚いてよける——が、一発かすって両者ともHPが低くなる。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（思わず）……えっ、当たった。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私だって戦えるもん！</span></div>
+
+<div class="stage">再度まひるが攻撃。あさめが後退しながらも剣を振る。しかし——まひるの一撃があさめのHPをゼロにする。あさめ脱落。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（倒れながら）ひぐれーーーー！！待っててーーー！！</span></div>
+
+<div class="stage">まひるが立ち止まる。HPが少ない。振り返るとやとらが静かに立っている。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">まひる。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとら。</span></div>
+
+<div class="stage">2人が向き合う。夜明け前の空。鳥の声。BGM が静かに高まっていく。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ここまで来た。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……最初からこうなる気がしてた。やとらが最後に残るって。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">なんで。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……お前が主催者だから。全体を見てた人間が一番強い。設計者はフィールドを知り尽くしてる。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（静かに）お前は戦闘が一番強い。俺は戦略が一番強い。どっちが上か——わからない。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……私の方が強い。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">試してみろ。</span></div>
+
+<div class="stage">2人が同時に動く。激しい攻防。まひるの剣さばきは速い。やとらが崖際まで追い詰められる。エンダーパールは使い切った。弓矢もない。</div>
+
+<div class="stage">やとらのHPが2まで落ちる。まひるのHPも3。お互いぎりぎりの状態。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（攻撃しながら）やとら。1つ聞いていい？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（受けながら）……何だ。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">コマンドミス、本当に？自分も入れたの、本当に偶然？</span></div>
+
+<div class="stage">一瞬、やとらの動きが止まる。まひるの一撃が入る。やとらのHPが1。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（HP1で崖際に立ちながら）……。</span></div>
+
+<div class="stage">長い沈黙。波の音が聞こえる。夜明けの光が差してくる。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（剣を下ろさずに、静かに）まひる。俺が主催者として観戦する動画より——俺が参加者として戦う動画の方が、100倍面白い。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……だから入ったんでしょ。</span></div>
+
+<div class="stage">やとらが答えない。それが答え。まひるが少し——本当に少しだけ笑う。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……そういう奴だって知ってた。（剣を構え直す）だから——最後まで本気で行く。</span></div>
+
+<div class="stage">まひるが踏み込む。やとらが最後の力で受け止めようとする——その瞬間。</div>
+
+<div class="stage">やとらが一歩横にずれる。まひるの剣が空を切る。慣性で前に出たまひるの横を、やとらが素早く抜けて——一撃。</div>
+
+<div class="stage">まひるが静止する。HPゼロ。</div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（倒れながら）……え。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（息切れ）……俺も驚いてる。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（倒れながら静かに）……やるじゃん。（消えていく）</span></div>
+
+<div class="monitor">【優勝】やとら ▸ 賞金 2,000,000円 ▸ 01:28:00経過</div>
+
+<div class="stage">やとりが一人、島の中心に立っている。朝日が昇ってくる。波の音。島全体が橙色に染まる。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……200万円か。</span></div>
+
+<div class="stage">長い沈黙。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（独り言）……一人で島に残されても。（周りを見る）……何もできないな。</span></div>
+</div>
+</div>
+
+<!-- ==================== EPILOGUE ==================== -->
+<div class="sc" id="epilogue">
+<div class="sc-head">
+<h2>EPILOGUE — 集合、そして種明かし</h2>
+<div class="sc-meta">
+<span class="tag t-comedy">伏線回収</span>
+<span class="tag t-twist">やとら種明かし</span>
+<span class="tag t-time">18:30〜20:00</span>
+</div>
+</div>
+
+<div class="part">
+<div class="part-label">EPILOGUE</div>
+<div class="part-title">全員復活。まひるが問い詰める。やとらの嘘が剥がれる。</div>
+<div class="part-time">18:30〜20:00（約1分30秒）</div>
+</div>
+
+<div class="dial">
+<div class="stage">全員が島にリスポーンして中央に集まってくる。夜明けの光の中。</div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらーーー！！おめでとーーー！！</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……主催者が優勝するのは出来レースじゃね？</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">出来レースじゃない。本気で戦った。HP1で勝ったのはわかるだろ。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">まあ、そりゃそうか。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（静かに近づいて）やとら。さっきの質問、まだ答えてない。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……何の話だ。</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">コマンドミスで自分を閉じ込めた、って。本当に？</span></div>
+
+<div class="stage">全員がやとらを見る。あさめ、ひぐれも。</div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……。</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（感づいて）やとら……もしかして。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（少し間を置いて）俺が観戦する動画より——俺が中に入って戦う動画の方が、面白い。自分でも確信があった。主催者が優勝したら、その構造が最高のコンテンツになる。だから——</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">コマンドミスは嘘だったんかい！！！</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ！最初から入るつもりだったの！？ずるい！！でもかっこいい！！</span></div>
+
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（静かに）……やっぱり。（少し笑う）まあ、面白かったから許す。</span></div>
+
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（珍しく少し表情が緩む）……全員の計算通りだ。</span></div>
+
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">「全員」じゃなくて「俺の」だろ！！</span></div>
+
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら笑ってる！珍しい！！</span></div>
+
+<div class="stage">4人が笑う。島に朝日。波の音。</div>
+
+<div class="stage">エンドカード。やとらのナレーション。</div>
+
+<div class="line"><span class="who who-y">やとら<br><span style="color:#555;font-size:11px;font-weight:400">（ナレ）</span></span><span class="txt">よふかしくらぶ。——名前通りじゃない奴しか、いらない。</span></div>
+
+<div class="stage">【BGMアウト。暗転。エンドスクリーン。チャンネル登録・高評価ボタン映像。】</div>
+</div>
+
+<div class="why">
+<strong>【構成メモ】</strong><br>
+MrBeast的「大人数クローズド・サバイバル」を軸に、よふかしくらぶのキャラ性を全員分見せる設計。<br><br>
+<strong>各キャラの見せ場：</strong><br>
+・やとら→主催者が自らリスクを取る「計算された自作自演」の種明かし。信頼できない語り手の快感。<br>
+・まひる→100人の中で最も強い戦闘力。くろねこ（元プロ）と互角。FPS技術がマイクラでも通用する説得力。<br>
+・ひぐれ→戦闘ゼロで4位。「逃げ続ける」という天然のサバイバル戦術。ラストの0.5秒での脱落がコメディ。<br>
+・あさめ→友達を作る力が武器。由香との絆で視聴者の感情を引っ張る。まひるに敗れるがHPを削った。<br><br>
+<strong>サブキャラクターの役割：</strong><br>
+・くろねこ→まひるの引き立て役かつ最強ライバル。「楽しかった」の一言でキャラが立つ。<br>
+・由香→あさめの外交の成果を体現。脱落することで感情コストを生む。<br>
+・リョウ→コメディ的裏切り要員。フラグを立てて退場。<br><br>
+<strong>伏線：</strong>「コマンドミス」は全編通じた偽情報。まひるが問い詰めることで回収。やとらが「視聴者が面白いと思う展開を選ぶ」という台詞を中盤に置いておくことで、最後の種明かしに繋がる。<br><br>
+<strong>テーマ回収：</strong>「名前通りじゃない奴しか、いらない」——やとらは主催者のくせに参加者として戦った。それが「名前通りじゃない」の体現。
+</div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

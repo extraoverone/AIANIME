@@ -56,7 +56,9 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 .card.playing .embed{display:block}
 .card .embed iframe{width:100%;height:100%;border:none}
 .card-body{padding:10px 12px}
-.card-title{font-size:12px;font-weight:700;color:#eee;line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px}
+.card-title{font-size:12px;font-weight:700;color:#eee;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px}
+.card-title-ja{font-size:11px;font-weight:600;color:#fbbf24;line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(251,191,36,.02));border-left:2px solid rgba(251,191,36,.5);padding:3px 6px;border-radius:0 4px 4px 0}
+.card-title-ja::before{content:'🌐 ';font-size:9px;opacity:.7}
 .card-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
 .tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.03em}
 .tg-jp{background:rgba(248,113,113,.18);color:#f87171}
@@ -69,6 +71,14 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 .card:hover .card-actions{display:flex}
 .card-actions button{background:none;border:none;color:#ccc;padding:4px;cursor:pointer;font-size:13px;border-radius:3px}
 .card-actions button:hover{background:rgba(255,255,255,.1);color:#fff}
+
+.card-fav{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.5);border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;border-radius:50%;backdrop-filter:blur(4px);z-index:10;transition:.15s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.card-fav:hover{color:#fbbf24;transform:scale(1.15);background:rgba(0,0,0,.8)}
+.card-fav.on{color:#fbbf24;background:rgba(251,191,36,.2);border:1px solid rgba(251,191,36,.4);text-shadow:0 0 8px rgba(251,191,36,.6)}
+.card.favorited{border-color:rgba(251,191,36,.4)}
+.card.favorited:hover{border-color:rgba(251,191,36,.7);box-shadow:0 6px 20px rgba(251,191,36,.15)}
+
+.hotness-badge{font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:.02em;border:1px solid;display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
 
 /* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
@@ -176,7 +186,9 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <span><strong id="st-total">0</strong>動画</span>
 <span><strong id="st-jp">0</strong>国内</span>
 <span><strong id="st-intl">0</strong>海外</span>
-<span><strong id="st-week">0</strong>今週追加</span>
+<span><strong id="st-week">0</strong>今週</span>
+<span><strong id="st-fav" style="color:#fbbf24">0</strong>⭐</span>
+<span><strong id="st-hot" style="color:#f87171">0</strong>🔥</span>
 </div>
 </div>
 </div>
@@ -192,6 +204,8 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 <button class="active" data-t="all">全期間</button>
 <button data-t="week">今週</button>
 <button data-t="month">今月</button>
+<button data-t="fav" style="color:#fbbf24" title="お気に入りのみ">⭐ お気に入り</button>
+<button data-t="hot" style="color:#f87171" title="🔥 熱い動画のみ">🔥 急上昇</button>
 </div>
 <div class="tg" id="filter-cat">
 <button class="active" data-c="all">全カテゴリ</button>
@@ -206,16 +220,20 @@ main{max-width:1320px;margin:0 auto;padding:18px 24px 80px}
 </div>
 <input type="text" class="search" id="search" placeholder="🔎 検索（タイトル・チャンネル）">
 <select id="sort" class="search" style="flex:none;width:auto;font-size:12px">
+<option value="hotness">🚀 急上昇順</option>
 <option value="new">新しい順</option>
 <option value="old">古い順</option>
 <option value="views">再生数順</option>
 <option value="hot">🔥 HOT順</option>
+<option value="fav">⭐ お気に入り順</option>
 </select>
 <button class="btn primary" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);font-weight:900;color:#0a0a14;border:2px solid #fbbf24;box-shadow:0 0 16px rgba(251,191,36,.4)" onclick="openApiKeysModal()" id="api-keys-btn">🔑 YouTube APIキー <span id="api-keys-badge" style="background:#0a0a14;color:#fbbf24;padding:1px 6px;border-radius:8px;font-size:10px;margin-left:4px">0</span></button>
 <button class="btn primary" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);font-weight:900" onclick="openChannelsModal()">📡 監視CH更新</button>
 <button class="btn primary" style="background:linear-gradient(135deg,#a78bfa,#ec4899);font-weight:900" onclick="openBulkModal()">📋 一括URL追加</button>
 <button class="btn primary" style="background:linear-gradient(135deg,#f87171,#fbbf24);font-weight:900" onclick="openFetchModal()">🔥 トレンド検索</button>
 <button class="btn primary" onclick="openAddModal()">+ 手動追加</button>
+<button class="btn primary" style="background:linear-gradient(135deg,#ef4444,#f97316);font-weight:900" onclick="refreshAllStats()" title="既存動画の再生数を更新→Hotness再計算">📊 統計更新</button>
+<button class="btn" onclick="translateAllIntlTitles()" title="海外動画タイトルを日本語訳">🌐 一括翻訳</button>
 <button class="btn primary" style="background:linear-gradient(135deg,#22c55e,#10b981);font-weight:900" onclick="saveToRemote()">💾 GitHubに保存</button>
 <button class="btn" onclick="loadFromRemote().then(r=>{if(r){render();toast('リモートから再読込','ok')}})">🔄 再読込</button>
 <button class="btn" onclick="openSettingsModal()" title="GitHub Token設定">⚙️</button>
@@ -809,6 +827,256 @@ async function testApiKey(key){
   } catch(e){
     return { ok: false, status: 'error', error: e.message };
   }
+}
+
+// ─── タイトル翻訳（無料API、APIキー不要） ───
+// 翻訳キャッシュ（同じテキストは1回だけ翻訳）
+const translationCache = new Map();
+const TRANSLATION_CACHE_KEY = 'yofukashi-translation-cache-v1';
+
+function loadTranslationCache(){
+  try{
+    const raw = localStorage.getItem(TRANSLATION_CACHE_KEY);
+    if(raw){
+      const obj = JSON.parse(raw);
+      Object.entries(obj).forEach(([k,v]) => translationCache.set(k, v));
+    }
+  } catch(e){}
+}
+function saveTranslationCache(){
+  // 最大3000件に制限（古いのから削る）
+  const entries = [...translationCache.entries()];
+  const keep = entries.slice(-3000);
+  const obj = Object.fromEntries(keep);
+  try{ localStorage.setItem(TRANSLATION_CACHE_KEY, JSON.stringify(obj)); } catch(e){}
+}
+
+function isJapanese(text){
+  return /[ぁ-んァ-ヶー一-龯]/.test(text || '');
+}
+
+// 単発翻訳（複数バックエンドフェイルオーバー）
+async function translateText(text, targetLang = 'ja'){
+  if(!text) return '';
+  if(isJapanese(text)) return text; // 既に日本語ならスキップ
+
+  // キャッシュヒット
+  const cacheKey = targetLang + '::' + text;
+  if(translationCache.has(cacheKey)) return translationCache.get(cacheKey);
+
+  // ① MyMemory API（無料・APIキー不要・CORSヘッダー付き）
+  try{
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=auto|${targetLang}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if(res.ok){
+      const data = await res.json();
+      const translated = data.responseData?.translatedText;
+      if(translated && data.responseStatus === 200 && translated.toLowerCase() !== text.toLowerCase()){
+        translationCache.set(cacheKey, translated);
+        return translated;
+      }
+    }
+  } catch(e){
+    dlog('warn', `MyMemory翻訳失敗: ${e.message}`);
+  }
+
+  // ② Google Translate Web API (非公式・CORS proxy経由)
+  for(const proxyFn of CORS_PROXIES){
+    try{
+      const target = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+      const res = await fetch(proxyFn(target), { signal: AbortSignal.timeout(8000) });
+      if(!res.ok) continue;
+      const data = await res.json();
+      // 形式: [[["訳","原文",null,null,...]],null,"en"]
+      if(Array.isArray(data) && data[0]){
+        const translated = data[0].map(seg => seg[0] || '').join('');
+        if(translated){
+          translationCache.set(cacheKey, translated);
+          return translated;
+        }
+      }
+    } catch(e){
+      continue;
+    }
+  }
+
+  return null; // 翻訳失敗
+}
+
+// バッチ翻訳（並列度を制御、進捗コールバック）
+async function translateBatch(texts, onProgress){
+  const results = new Array(texts.length);
+  const BATCH = 3; // MyMemoryは秒間レート制限あるので控えめ
+  for(let i = 0; i < texts.length; i += BATCH){
+    const slice = texts.slice(i, i + BATCH);
+    const translated = await Promise.all(slice.map(t => translateText(t).catch(() => null)));
+    for(let j = 0; j < slice.length; j++){
+      results[i + j] = translated[j];
+    }
+    if(onProgress) onProgress(Math.min(i + BATCH, texts.length), texts.length);
+  }
+  saveTranslationCache();
+  return results;
+}
+
+// ─── Hotness 評価（再生数履歴×上昇レート） ───
+// 動画オブジェクトに viewsHistory: [{date, views}, ...] を保持
+function pushViewsHistory(v, views){
+  if(!v.viewsHistory) v.viewsHistory = [];
+  const today = new Date().toISOString().slice(0,10);
+  // 同日の更新は最新値で上書き
+  const existing = v.viewsHistory.find(h => h.date === today);
+  if(existing){
+    existing.views = views;
+  } else {
+    v.viewsHistory.push({ date: today, views });
+  }
+  // 履歴は最大30日分まで
+  if(v.viewsHistory.length > 30){
+    v.viewsHistory = v.viewsHistory.slice(-30);
+  }
+  v.viewsK = Math.round(views / 1000);
+}
+
+// Hotness 計算：直近24h-7dの上昇レートから熱さを評価
+function calcHotness(v){
+  if(!v.viewsHistory || v.viewsHistory.length < 2){
+    // 履歴なし → 絶対値で簡易判定
+    if(v.viewsK >= 1000) return { level: 3, label: '🔥 HOT', rate: 0, color: '#f87171', dailyRate: 0 };
+    if(v.viewsK >= 100) return { level: 1, label: '👀 注目', rate: 0, color: '#94a3b8', dailyRate: 0 };
+    return { level: 0, label: '', rate: 0, color: '#666', dailyRate: 0 };
+  }
+  const sorted = v.viewsHistory.slice().sort((a,b) => a.date.localeCompare(b.date));
+  const latest = sorted[sorted.length - 1];
+  const earlier = sorted[0];
+  const daysDiff = Math.max((new Date(latest.date) - new Date(earlier.date)) / 86400000, 0.5);
+  const totalRate = earlier.views > 0 ? (latest.views - earlier.views) / earlier.views : 0;
+  const dailyRate = totalRate / daysDiff; // 1日あたりの増加率
+
+  // 既存の絶対値ボーナス（再生数 高い = 元々強い）
+  const absBonus = latest.views >= 1000000 ? 0.05 : latest.views >= 100000 ? 0.02 : 0;
+  const score = dailyRate + absBonus;
+
+  let level, label, color;
+  if(score >= 0.5){ level = 5; label = '🚀 急上昇'; color = '#ef4444'; }
+  else if(score >= 0.2){ level = 4; label = '🔥🔥 爆熱'; color = '#f87171'; }
+  else if(score >= 0.08){ level = 3; label = '🔥 熱い'; color = '#fb923c'; }
+  else if(score >= 0.03){ level = 2; label = '↗️ 上昇'; color = '#fbbf24'; }
+  else if(score >= 0.005){ level = 1; label = '→ 安定'; color = '#94a3b8'; }
+  else { level = 0; label = '↓ 低下'; color = '#64748b'; }
+
+  return {
+    level, label, color,
+    rate: totalRate,           // 累計増加率
+    dailyRate,                  // 日次増加率
+    days: Math.round(daysDiff * 10) / 10,
+    delta: latest.views - earlier.views
+  };
+}
+
+// 全動画のhotnessを再計算してキャッシュ
+function recalcAllHotness(){
+  for(const v of videos){
+    v.hotness = calcHotness(v);
+    // hotness レベル 3 以上は HOT バッジ
+    v.hot = (v.hotness?.level || 0) >= 3 ? 1 : 0;
+  }
+}
+
+// 既存動画の統計を一括更新（履歴に新エントリ追加）
+async function refreshAllStats(){
+  if(videos.length === 0){ toast('動画が登録されていない', 'err'); return; }
+  if(apiKeys.length === 0){
+    toast('YouTube APIキー必要。⚙️設定から登録してください', 'err');
+    return;
+  }
+  const targets = videos.filter(v => v.vid);
+  if(!confirm(`${targets.length}件の再生数を更新します。実行？\n（YouTube API 約${Math.ceil(targets.length / 50)}units 消費）`)) return;
+
+  document.getElementById('debug-log').style.display = 'block';
+  dlog('info', `▼▼▼ 既存動画の統計更新: ${targets.length}件 ▼▼▼`);
+
+  const progress = document.getElementById('ch-progress');
+  if(progress){
+    progress.style.display = 'block';
+    progress.querySelector('.fill').style.width = '0%';
+  }
+
+  // 50件ずつ詳細取得
+  let updated = 0, missing = 0;
+  for(let i = 0; i < targets.length; i += 50){
+    const batch = targets.slice(i, i + 50);
+    const details = await ytVideoDetails(batch.map(v => v.vid));
+    const dmap = new Map(details.map(d => [d.vid, d]));
+    for(const v of batch){
+      const d = dmap.get(v.vid);
+      if(d){
+        pushViewsHistory(v, d.views);
+        v.duration = d.duration || v.duration;
+        updated++;
+      } else {
+        missing++;
+      }
+    }
+    if(progress) progress.querySelector('.fill').style.width = ((i + batch.length) / targets.length * 100) + '%';
+  }
+
+  recalcAllHotness();
+  saveVideos();
+  render();
+  if(progress) setTimeout(() => { progress.style.display = 'none'; }, 600);
+  dlog('info', `▲▲▲ 統計更新完了: ${updated}件更新 / ${missing}件不明 ▲▲▲`);
+  toast(`✓ ${updated}件更新（${missing}件失敗）`, updated > 0 ? 'ok' : 'err');
+}
+
+// ─── お気に入り機能 ───
+function toggleFavorite(idx){
+  if(!videos[idx]) return;
+  videos[idx].favorite = !videos[idx].favorite;
+  saveVideos();
+  render();
+  toast(videos[idx].favorite ? '⭐ お気に入り追加' : 'お気に入り解除', 'ok');
+}
+
+// 既存の海外動画タイトルを一括翻訳
+async function translateAllIntlTitles(){
+  const targets = videos.filter(v => v.region === 'intl' && !v.titleJa && !isJapanese(v.title || ''));
+  if(targets.length === 0){
+    toast('翻訳が必要な海外動画なし', 'ok');
+    return;
+  }
+  if(!confirm(`${targets.length}件の海外タイトルを翻訳します。実行？`)) return;
+
+  document.getElementById('debug-log').style.display = 'block';
+  dlog('info', `▼▼▼ 海外タイトル一括翻訳: ${targets.length}件 ▼▼▼`);
+
+  const progress = document.getElementById('ch-progress');
+  if(progress){
+    progress.style.display = 'block';
+    progress.querySelector('.fill').style.width = '0%';
+  }
+
+  let done = 0, ok = 0, ng = 0;
+  const titles = targets.map(v => v.title);
+  const translations = await translateBatch(titles, (n, total) => {
+    done = n;
+    if(progress) progress.querySelector('.fill').style.width = (n / total * 100) + '%';
+  });
+
+  for(let i = 0; i < targets.length; i++){
+    if(translations[i]){
+      targets[i].titleJa = translations[i];
+      ok++;
+    } else {
+      ng++;
+    }
+  }
+
+  saveVideos();
+  render();
+  if(progress) setTimeout(() => { progress.style.display = 'none'; }, 600);
+  dlog('info', `▲▲▲ 翻訳完了: 成功${ok} / 失敗${ng} ▲▲▲`);
+  toast(`✓ ${ok}件翻訳 / ${ng}件失敗`, ok > 0 ? 'ok' : 'err');
 }
 
 // ─── GitHub 同期 ───
@@ -1544,6 +1812,7 @@ async function fetchTrending(presetKey){
 
   let added = 0, skipped = 0, totalQueries = preset.queries.length, doneQueries = 0;
   const existingVids = new Set(videos.map(v => v.vid));
+  const newIntlVids = []; // 翻訳対象を集める
 
   for(const q of preset.queries){
     doneQueries++;
@@ -1566,11 +1835,26 @@ async function fetchTrending(presetKey){
       }
       existingVids.add(v.vid);
       videos.unshift(v);
+      if(v.region === 'intl' && !isJapanese(v.title)) newIntlVids.push(v);
       queryAdded++;
     }
     added += queryAdded;
     skipped += querySkipped;
     dlog('info', `クエリ "${q}": +${queryAdded}件追加, ${querySkipped}件重複スキップ`);
+  }
+
+  // 海外タイトル自動翻訳
+  if(newIntlVids.length > 0){
+    if(btn) btn.textContent = `翻訳中 0/${newIntlVids.length}...`;
+    dlog('info', `海外タイトル翻訳: ${newIntlVids.length}件`);
+    const titles = newIntlVids.map(v => v.title);
+    const translations = await translateBatch(titles, (n, total) => {
+      if(btn) btn.textContent = `翻訳中 ${n}/${total}...`;
+    });
+    for(let i = 0; i < newIntlVids.length; i++){
+      if(translations[i]) newIntlVids[i].titleJa = translations[i];
+    }
+    dlog('ok', `翻訳完了: ${translations.filter(Boolean).length}/${newIntlVids.length}`);
   }
 
   saveVideos();
@@ -1777,7 +2061,11 @@ function render(){
   let filtered = videos.slice();
   if(region !== 'all') filtered = filtered.filter(v => v.region === region);
   if(cat !== 'all') filtered = filtered.filter(v => v.category === cat);
-  if(time !== 'all'){
+  if(time === 'fav'){
+    filtered = filtered.filter(v => v.favorite);
+  } else if(time === 'hot'){
+    filtered = filtered.filter(v => (v.hotness?.level || 0) >= 3);
+  } else if(time !== 'all'){
     const now = new Date();
     const cutoff = new Date(now);
     if(time === 'week') cutoff.setDate(now.getDate() - 7);
@@ -1796,6 +2084,8 @@ function render(){
   if(sort === 'old') filtered.sort((a,b) => (a.addedDate || '').localeCompare(b.addedDate || ''));
   if(sort === 'views') filtered.sort((a,b) => (b.viewsK || 0) - (a.viewsK || 0));
   if(sort === 'hot') filtered.sort((a,b) => (b.hot || 0) - (a.hot || 0) || (b.viewsK || 0) - (a.viewsK || 0));
+  if(sort === 'hotness') filtered.sort((a,b) => (b.hotness?.dailyRate || 0) - (a.hotness?.dailyRate || 0) || (b.viewsK || 0) - (a.viewsK || 0));
+  if(sort === 'fav') filtered.sort((a,b) => (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0) || (b.viewsK || 0) - (a.viewsK || 0));
 
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
@@ -1810,8 +2100,12 @@ function render(){
       const realIdx = videos.indexOf(v);
       const thumbUrl = v.vid ? `https://i.ytimg.com/vi/${v.vid}/hqdefault.jpg` :
         'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="320" viewBox="0 0 180 320"><rect width="180" height="320" fill="%231a1a2e"/><text x="90" y="160" text-anchor="middle" fill="%23666" font-size="14">No URL</text></svg>';
+      const h = v.hotness;
+      const hotnessHtml = h && h.level >= 1 ? `<span class="hotness-badge" style="color:${h.color};border-color:${h.color}40;background:${h.color}15" title="${h.dailyRate ? '日次 +'+(h.dailyRate*100).toFixed(1)+'%' : ''}${h.delta ? ' / +'+(h.delta>=1000 ? (h.delta/1000).toFixed(1)+'K' : h.delta) : ''}">${h.label}${h.dailyRate >= 0.03 ? ' +' + (h.dailyRate*100).toFixed(0) + '%/d' : ''}</span>` : '';
+      const favClass = v.favorite ? 'favorited' : '';
       return `
-        <div class="card" data-vid="${v.vid}" onclick="playCard(this)">
+        <div class="card ${favClass}" data-vid="${v.vid}" onclick="playCard(this)">
+          <button class="card-fav ${v.favorite ? 'on' : ''}" onclick="event.stopPropagation();toggleFavorite(${realIdx})" title="${v.favorite ? 'お気に入り解除' : 'お気に入りに追加'}">${v.favorite ? '⭐' : '☆'}</button>
           <div class="card-actions">
             <button onclick="event.stopPropagation();openEditModal(${realIdx})" title="編集">✎</button>
             <button onclick="event.stopPropagation();deleteVideo(${realIdx})" title="削除">🗑</button>
@@ -1825,10 +2119,11 @@ function render(){
           </div>
           <div class="card-body">
             <div class="card-title">${escHtml(v.title)}</div>
+            ${v.titleJa ? `<div class="card-title-ja" title="自動翻訳">${escHtml(v.titleJa)}</div>` : ''}
             <div class="card-meta">
               <span class="tag tg-${v.region === 'jp' ? 'jp' : 'intl'}">${v.region === 'jp' ? '🇯🇵' : '🌐'}</span>
               <span class="tag tg-cat">${escHtml(v.category)}</span>
-              ${v.hot ? '<span class="tag tg-hot">🔥</span>' : ''}
+              ${hotnessHtml}
             </div>
             <div class="card-footer">
               <span class="card-channel">${escHtml(v.channel || '—')}</span>
@@ -1857,6 +2152,10 @@ function updateStats(){
   const weekAgo = new Date();
   weekAgo.setDate(weekAgo.getDate() - 7);
   document.getElementById('st-week').textContent = videos.filter(v => new Date(v.addedDate) >= weekAgo).length;
+  const favEl = document.getElementById('st-fav');
+  const hotEl = document.getElementById('st-hot');
+  if(favEl) favEl.textContent = videos.filter(v => v.favorite).length;
+  if(hotEl) hotEl.textContent = videos.filter(v => (v.hotness?.level || 0) >= 3).length;
 }
 
 function escHtml(s){
@@ -2227,15 +2526,14 @@ async function refreshAllChannels(){
   // ③ 詳細(再生数・duration)を一括取得（YT API使える場合のみ）
   if(useApi && newVids.length > 0){
     dlog('info', `動画詳細取得: ${newVids.length}件`);
-    fill.style.width = '95%';
+    fill.style.width = '90%';
     const details = await ytVideoDetails(newVids.map(v => v.vid));
     const detailMap = new Map(details.map(d => [d.vid, d]));
     for(const v of newVids){
       const d = detailMap.get(v.vid);
       if(!d) continue;
-      v.viewsK = Math.round(d.views / 1000);
+      pushViewsHistory(v, d.views);
       v.duration = d.duration;
-      v.hot = v.viewsK >= 1000 ? 1 : 0;
       // shortsかどうかで URL 修正
       if(d.duration && d.duration <= 65){
         v.url = 'https://www.youtube.com/shorts/' + v.vid;
@@ -2245,9 +2543,24 @@ async function refreshAllChannels(){
     }
   }
 
+  // ④ 海外タイトル自動翻訳
+  const intlNew = newVids.filter(v => v.region === 'intl' && !isJapanese(v.title));
+  if(intlNew.length > 0){
+    dlog('info', `海外タイトル翻訳: ${intlNew.length}件`);
+    const titles = intlNew.map(v => v.title);
+    const translations = await translateBatch(titles, (n, total) => {
+      fill.style.width = (90 + (n / total) * 10) + '%';
+    });
+    for(let i = 0; i < intlNew.length; i++){
+      if(translations[i]) intlNew[i].titleJa = translations[i];
+    }
+    dlog('ok', `翻訳完了: ${translations.filter(Boolean).length}/${intlNew.length}`);
+  }
+
   fill.style.width = '100%';
   setTimeout(() => { progress.style.display = 'none'; }, 600);
 
+  recalcAllHotness();
   saveVideos();
   render();
   dlog('info', `▲▲▲ 完了: 追加${added} / 重複${skipped} / 失敗ch${failed} ▲▲▲`);
@@ -2280,6 +2593,7 @@ async function processBulkUrls(){
   const existingVids = new Set(videos.map(v => v.vid));
   let added = 0, skipped = 0, failed = 0;
   const total = lines.length;
+  const newIntlVids = [];
 
   // 並列度を抑えて noembed を順次叩く（5個ずつ）
   const BATCH = 5;
@@ -2306,7 +2620,7 @@ async function processBulkUrls(){
       existingVids.add(r.vid);
       const finalRegion = region === 'auto' ? detectRegion(r.info.title + ' ' + r.info.channel) : region;
       const finalCategory = category === 'auto' ? guessCategory(r.info.title) : category;
-      videos.unshift({
+      const newVideo = {
         id: 'bulk-' + r.vid + '-' + Date.now() + '-' + Math.random().toString(36).slice(2,5),
         vid: r.vid,
         url: 'https://www.youtube.com/shorts/' + r.vid,
@@ -2318,10 +2632,25 @@ async function processBulkUrls(){
         hot: 0,
         comment: '一括追加' + (r.partial ? ' (oEmbed失敗)' : ''),
         addedDate: new Date().toISOString().slice(0,10)
-      });
+      };
+      videos.unshift(newVideo);
+      if(finalRegion === 'intl' && !isJapanese(newVideo.title)) newIntlVids.push(newVideo);
       added++;
     }
-    fill.style.width = (Math.min(i + BATCH, total) / total * 100) + '%';
+    fill.style.width = (Math.min(i + BATCH, total) / total * 80) + '%';
+  }
+
+  // 海外タイトル自動翻訳
+  if(newIntlVids.length > 0){
+    statusEl.textContent = `海外タイトル翻訳中... 0/${newIntlVids.length}`;
+    const titles = newIntlVids.map(v => v.title);
+    const translations = await translateBatch(titles, (n, t) => {
+      statusEl.textContent = `海外タイトル翻訳中... ${n}/${t}`;
+      fill.style.width = (80 + (n / t) * 20) + '%';
+    });
+    for(let i = 0; i < newIntlVids.length; i++){
+      if(translations[i]) newIntlVids[i].titleJa = translations[i];
+    }
   }
 
   saveVideos();
@@ -2358,11 +2687,13 @@ async function healthCheck(){
 loadVideos();
 loadChannels();
 loadApiKeys();
+loadTranslationCache();
+recalcAllHotness();
 render();
 updateSyncStatus();
 updateApiKeysBadge();
 const okKeys = apiKeys.filter(k => k.status === 'ok').length;
-dlog('info', `アプリ起動 / 動画${videos.length}件 / 監視ch${watchedChannels.length}件 / APIキー${apiKeys.length}件(有効${okKeys})`);
+dlog('info', `アプリ起動 / 動画${videos.length}件 / 監視ch${watchedChannels.length}件 / APIキー${apiKeys.length}件(有効${okKeys}) / 翻訳キャッシュ${translationCache.size}件`);
 
 // モーダル背景クリックで閉じる
 ['channels-modal-bg', 'bulk-modal-bg', 'fetch-modal-bg', 'settings-modal-bg', 'api-keys-modal-bg'].forEach(id => {

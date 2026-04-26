@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABILITY 100 — 汎用版・100人ハズレ能力アイデア集</title>
+<title>ABILITY 100 — 異世界転生・成長型ハズレスキル100</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -14,7 +14,7 @@ nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6
 nav a:hover{color:#fff;background:#1a1a28}
 .logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#f59e0b,#ef4444,#a855f7,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-.wrap{max-width:980px;margin:0 auto;padding:0 24px 80px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px 80px}
 .hero{text-align:center;padding:60px 24px 36px}
 .hero h1{font-size:clamp(22px,4.5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;line-height:1.3;background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899,#a855f7,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero .sub{color:#888;font-size:15px;font-weight:600;margin-bottom:20px}
@@ -48,13 +48,15 @@ ul.bullets li::before{content:"▸";color:#fbbf24;position:absolute;left:6px;fon
 .tbl-wrap{overflow-x:auto;margin:14px 0;border-radius:10px;border:1px solid #1a1a2e}
 table{width:100%;border-collapse:collapse;font-size:13px;background:#0a0a14}
 th{background:#12121e;color:#888;font-weight:800;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1a1a2e;white-space:nowrap}
-td{padding:10px 12px;border-bottom:1px solid #14141e;color:#bbb;line-height:1.7;vertical-align:top}
+td{padding:11px 12px;border-bottom:1px solid #14141e;color:#bbb;line-height:1.7;vertical-align:top}
 tr:hover td{background:#10101a}
 td.no{color:#555;font-weight:800;font-family:'Courier New',monospace;width:42px}
-td.name{color:#e2e8f0;font-weight:700;white-space:nowrap;width:120px}
-td.ab{color:#fbbf24;font-weight:700;width:240px}
-td.trick{color:#94a3b8;font-size:12.5px}
-td.trick strong{color:#fcd34d}
+td.skill{color:#fbbf24;font-weight:800;white-space:nowrap;width:130px;font-size:13.5px}
+td.init{color:#94a3b8;font-size:12.5px;width:30%}
+td.awake{color:#86efac;font-size:12.5px;width:30%}
+td.story{color:#c084fc;font-size:12px}
+td.awake strong{color:#34d399}
+td.story strong{color:#a78bfa}
 
 .cat-band{display:inline-block;padding:4px 14px;border-radius:6px;font-size:12px;font-weight:800;margin-right:8px;letter-spacing:.04em}
 
@@ -73,9 +75,15 @@ td.trick strong{color:#fcd34d}
 .setting.s3{border-left-color:#ef4444}
 .setting.s4{border-left-color:#10b981}
 
+.growth-stages{display:flex;align-items:center;gap:8px;font-size:11px;color:#666;margin-top:10px;flex-wrap:wrap}
+.stage{padding:3px 9px;border-radius:5px;font-weight:700}
+.s-init{background:rgba(148,163,184,.12);color:#94a3b8}
+.s-mid{background:rgba(52,211,153,.12);color:#34d399}
+.s-final{background:rgba(192,132,252,.15);color:#c084fc}
+.s-arrow{color:#444;font-weight:900}
+
 @media (max-width:640px){
-td.name{width:auto}
-td.ab{width:auto}
+td.skill,td.init,td.awake{width:auto}
 }
 </style>
 </head>
@@ -84,6 +92,7 @@ td.ab{width:auto}
 <nav>
 <span class="logo">ABILITY 100</span>
 <a href="#overview">概要</a>
+<a href="#growth">成長システム</a>
 <a href="#settings">想定世界観</a>
 <a href="#abilities">能力一覧</a>
 <a href="#synergy">シナジー</a>
@@ -93,12 +102,12 @@ td.ab{width:auto}
 
 <div class="hero">
 <div>
-<span class="badge b-genre">汎用 / 世界観非依存</span>
-<span class="badge b-format">能力アイデア集</span>
-<span class="badge b-cast">100名分</span>
+<span class="badge b-genre">異世界転生 / 成長型スキル</span>
+<span class="badge b-format">100名分の能力</span>
+<span class="badge b-cast">物語映え重視</span>
 </div>
-<h1>ABILITY 100<br><span style="font-size:.55em;color:#888;font-weight:700;background:none;-webkit-text-fill-color:#888">〜100人の地味スキル者、生存ゲーム〜</span></h1>
-<p class="sub">マイクラ依存ナシ。現代・学園・異世界・ポストアポカリプス、どんな舞台でも刺さる「ハズレ能力」100個。</p>
+<h1>ABILITY 100<br><span style="font-size:.55em;color:#888;font-weight:700;background:none;-webkit-text-fill-color:#888">〜異世界転生で「ハズレ」と判定された100人の覚醒譚〜</span></h1>
+<p class="sub">最初は地味でも、修行で <strong style="color:#fbbf24">覚醒</strong> して化ける。異世界転生ラノベ系のスキル100連発。</p>
 </div>
 
 <!-- ============ 概要 ============ -->
@@ -110,27 +119,59 @@ td.ab{width:auto}
 <div class="sec-body">
 
 <div class="box box-em">
-<p class="lead"><strong style="color:#fbbf24">姉妹版「クラフトワールド100」</strong> のマイクラ仕様依存を取り除き、<br>
-<strong>どんな舞台でもそのまま使える</strong> 形で再設計した汎用能力プール。</p>
+<p class="lead">100人の異世界転生者。神に「ハズレ判定」されて辺境に放られた——が、<br>
+スキルには <strong style="color:#fbbf24">隠された成長性</strong> がある。<br>
+「弱いまま終わる奴」と「鍛え抜いて化ける奴」、その差が物語を作る。</p>
 </div>
 
-<h3>設計ルール</h3>
+<h3>姉妹版との違い</h3>
 <ul class="bullets">
-<li>全能力に <strong>「え、それ弱くない？」</strong> 感がある（パッと見ハズレ）</li>
-<li>使い方を考えれば <strong>必ず化ける</strong> ように設計（発想・知識・組み合わせ）</li>
-<li>マイクラ仕様（クラフト/MOB/レッドストーン等）を <strong>一切前提にしない</strong></li>
-<li>現代日本/中世ファンタジー/学園/SF、舞台不問で機能する物理・心理・社会ベース</li>
-<li>能力同士の <strong>シナジー</strong> が成立しやすく、勢力結成の動機が自然に生まれる</li>
+<li><strong>クラフトワールド100</strong> はマイクラ仕様前提で「使い方の発想」が肝</li>
+<li>こちらは <strong>純粋な成長型異世界スキル</strong>。「初期形態」と「覚醒後」がある</li>
+<li>「1日◯回」系の制限はほぼ撤廃。代わりに <strong>初期は出力が弱い</strong></li>
+<li>修行・経験・必要な転機 で <strong>段階的に強くなる</strong></li>
+<li>各能力は <strong>キャラクター1人の物語</strong> として成立する設計</li>
 </ul>
 
-<h3>こんな作品に使える</h3>
-<ul class="bullets">
-<li>異世界転生バトロワ（マイクラ以外の舞台で）</li>
-<li>現代能力者バトル（学園・都市・潜入）</li>
-<li>「ハズレ能力で成り上がる」テンプレ系小説のスキル設計</li>
-<li>TRPGのキャラビルド素材</li>
-<li>キャラ作りの発想刺激（地味だがクセのあるキャラに即変換可能）</li>
-</ul>
+</div>
+</div>
+
+<!-- ============ 成長システム ============ -->
+<div class="sec" id="growth">
+<div class="sec-head">
+<h2><span class="num">02</span>成長システム</h2>
+<div class="sec-sub">3段階の覚醒</div>
+</div>
+<div class="sec-body">
+
+<div class="growth-stages" style="font-size:14px;justify-content:center;padding:14px 0">
+<span class="stage s-init">初期形態</span>
+<span class="s-arrow">▶</span>
+<span class="stage s-mid">中位覚醒</span>
+<span class="s-arrow">▶</span>
+<span class="stage s-final">最終形態</span>
+</div>
+
+<h3>各段階の解説</h3>
+
+<h4 style="color:#94a3b8">▸ 初期形態（転生直後）</h4>
+<p>誰が見ても「弱い」「ハズレ」と判定される段階。出力が小さい・範囲が狭い・効果が地味。<br>
+この段階で死ぬ転生者が大半。<strong>逆に「使い方が上手い奴」はここですでに化ける</strong>。</p>
+
+<h4 style="color:#34d399">▸ 中位覚醒（経験値・修行・転機）</h4>
+<p>戦闘経験／命の危機／極限状態／師匠との出会い／恋愛／喪失——いずれかの転機を超えると <strong>覚醒</strong> する。<br>
+出力・範囲・自由度が大きく拡張。一般兵士よりは確実に強い段階。</p>
+
+<h4 style="color:#c084fc">▸ 最終形態（極致 / 本懐）</h4>
+<p>そのスキルが本来持っていた <strong>真の姿</strong>。神が「ハズレ」と判定したのが間違いだったとわかる段階。<br>
+ここまで到達するのは100人中せいぜい5〜10人。物語の主役級・最終決戦級。</p>
+
+<div class="box box-info">
+<p style="color:#aaa;font-size:13px;line-height:1.85">
+<strong style="color:#60a5fa">物語的な使い方:</strong><br>
+全100人が均等に成長する必要はない。むしろ <strong>「初期で死ぬ→中位で散る→最終形態に至るのは僅か」</strong> という階層こそが、群像劇のドラマを生む。<br>
+「使い方が上手いだけで初期形態のまま最終形態の敵に勝つ」キャラ（≒主人公）の輝きは、この階層構造の上に成り立つ。</p>
+</div>
 
 </div>
 </div>
@@ -138,27 +179,27 @@ td.ab{width:auto}
 <!-- ============ 想定世界観 ============ -->
 <div class="sec" id="settings">
 <div class="sec-head">
-<h2><span class="num">02</span>想定できる舞台 4パターン</h2>
-<div class="sec-sub">同じ能力リストをこう使い回せる</div>
+<h2><span class="num">03</span>想定できる舞台</h2>
+<div class="sec-sub">同じスキルリストをこう使い回せる</div>
 </div>
 <div class="sec-body">
 
 <div class="setting-grid">
 <div class="setting s1">
-<h4 style="color:#60a5fa">A. 現代都市バトロワ</h4>
-<p>東京の地下サーバーに閉じ込められた100人。能力は全員ハズレ。地下鉄・コンビニ・廃ビルが舞台。<strong>「電気・電子機器・スマホ」</strong> がある現代だからこそ化ける能力（静電気/影/影響力系）が映える。</p>
+<h4 style="color:#60a5fa">A. 王道 中世異世界</h4>
+<p>剣と魔法のテンプレ世界。100人の転生者が辺境ギルドに振り分けられる。冒険者・魔王軍・国家陰謀。スキル覚醒は「Lv50」「ジョブチェンジ」のような表現で。</p>
 </div>
 <div class="setting s2">
-<h4 style="color:#c084fc">B. 中世ファンタジー</h4>
-<p>異世界転生で100人召喚。剣と魔法の世界に「微妙な特殊能力」を持って降臨。<strong>「鋼鉄文明・人力中心」</strong> の世界では物理介入系（落下速度/重力/温度）が破格に強くなる。</p>
+<h4 style="color:#c084fc">B. 異世界バトロワ</h4>
+<p>神が暇つぶしに召喚した100人の生存ゲーム。最後の1人だけが帰れる。覚醒は「殺し合いの中での極限突破」として描かれる。</p>
 </div>
 <div class="setting s3">
-<h4 style="color:#f87171">C. ポストアポカリプス</h4>
-<p>滅亡後の地球で100人が目覚める。文明壊滅後の世界では <strong>「食料・水・情報」</strong> が金。植物会話・蜂蜜生成・指紋消失などサバイバル系が突如チート級に化ける。</p>
+<h4 style="color:#f87171">C. 滅亡寸前ファンタジー</h4>
+<p>魔王の支配下にある世界に転生。100人は人類復活の最後の希望。覚醒は「国を救う使命」「仲間の死」がトリガー。</p>
 </div>
 <div class="setting s4">
-<h4 style="color:#34d399">D. 学園能力者バトル</h4>
-<p>能力に目覚めた100人の高校生。校内・部活・SNSが戦場。<strong>「人間関係と心理戦」</strong> が中心の場では、影響力・嘘判定・好印象系が異常な威力を発揮。</p>
+<h4 style="color:#34d399">D. 学園異能 + 神</h4>
+<p>現代日本の高校に転生スキルを持つ100人が集まる学園バトル系。覚醒は「文化祭」「選挙」「告白」「友情」がトリガー。</p>
 </div>
 </div>
 
@@ -168,189 +209,199 @@ td.ab{width:auto}
 <!-- ============ 能力一覧 ============ -->
 <div class="sec" id="abilities">
 <div class="sec-head">
-<h2><span class="num">03</span>全100能力アイデア</h2>
-<div class="sec-sub">No. / 能力名 / 効果＋化けるポイント</div>
+<h2><span class="num">04</span>全100スキル — 初期形態 / 覚醒後 / 物語映え</h2>
+<div class="sec-sub">10カテゴリ × 10名 = 100名分</div>
 </div>
 <div class="sec-body">
 
-<!-- 物理現象操作 -->
-<h3><span class="cat-band" style="background:rgba(59,130,246,.15);color:#60a5fa">A</span>物理現象操作系（小規模・地味）</h3>
+<!-- A. 元素操作 -->
+<h3><span class="cat-band" style="background:rgba(239,68,68,.15);color:#f87171">A</span>元素操作系（弱い炎/水/風etc → 大魔法へ）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">001</td><td class="ab">微熱操作</td><td class="trick">半径30cmの空気の温度を ±1℃ 動かせる。<strong>火薬の自然発火点を一瞬で超えさせて爆発させる</strong>／冷蔵食品をピンポイントで腐らせる／相手のスマホをCPU高温警告で落とす。</td></tr>
-<tr><td class="no">002</td><td class="ab">落下速度減衰</td><td class="trick">落下中の物体の速度を10%遅くできる（1日3回）。<strong>暗殺の凶器を一瞬遅らせて回避</strong>／屋上から飛び降りた仲間の救命／落とした重要書類のキャッチ。</td></tr>
-<tr><td class="no">003</td><td class="ab">音速ディレイ</td><td class="trick">自分中心半径3mの音を0.5秒だけ遅延させる。<strong>銃声・爆発音が0.5秒遅れて届く＝奇襲が成立</strong>／殴った瞬間の音だけ消えて「一瞬で気絶」演出／会議で発言タイミングをずらして主導権を奪う。</td></tr>
-<tr><td class="no">004</td><td class="ab">摩擦減少</td><td class="trick">触れた面の摩擦係数を10%下げる（5分持続）。<strong>階段を走る追っ手を転倒させる</strong>／ドアノブを掴めなくする／敵の剣を握れなくして武装解除。</td></tr>
-<tr><td class="no">005</td><td class="ab">静電気生成</td><td class="trick">任意の場所に1日10回、軽い静電気を起こせる。<strong>電子ロックの誤作動／監視カメラのノイズ／火薬への引火</strong>／PCのデータ破損で証拠隠滅。</td></tr>
-<tr><td class="no">006</td><td class="ab">影濃度調整</td><td class="trick">自分の影だけ5%濃くor薄くできる。<strong>濃くして相手の視界を遮る</strong>／薄くして潜伏／影の長さで時刻を偽装。</td></tr>
-<tr><td class="no">007</td><td class="ab">微重力</td><td class="trick">5秒だけ自分の体重を10%軽減（1日5回）。<strong>跳躍力＋10%＝ビル間を飛び越える</strong>／薄い氷の上を渡れる／吊り橋の重量制限を超えて渡る。</td></tr>
-<tr><td class="no">008</td><td class="ab">微風操作</td><td class="trick">半径1mの風向きを変えられる（風速は変えられない）。<strong>矢/銃弾の軌道を数mmずらして急所外し</strong>／毒ガス・煙幕の方向を逆転／タバコの煙で相手を炙り出し。</td></tr>
-<tr><td class="no">009</td><td class="ab">体温自在</td><td class="trick">自分の体温を ±2℃ 動かせる。<strong>サーマル探知の回避</strong>／死体偽装（体温を下げる）／低体温症の患者として救急車を呼ぶ偽装。</td></tr>
-<tr><td class="no">010</td><td class="ab">屈折</td><td class="trick">自分を通る光を1度だけ曲げられる。<strong>狙撃の照準が常にズレる</strong>／監視カメラに映る位置が実位置と違う／鏡像が成立しない＝吸血鬼偽装。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">001</td><td class="skill">微炎（びえん）</td><td class="init">指先から豆粒大の火種。タバコに火を点ける程度。</td><td class="awake">中位:火炎放射 → <strong>最終:大火球・地獄業火</strong></td><td class="story">最初は「料理人扱い」、後に <strong>炎の大魔導士</strong> として魔王軍を焼く。</td></tr>
+<tr><td class="no">002</td><td class="skill">微水（びすい）</td><td class="init">手のひらにコップ1杯の水を作れる。</td><td class="awake">中位:噴水・水流 → <strong>最終:海洋を呼ぶ術</strong></td><td class="story">辺境の <strong>水売り</strong> から始まり、最後は <strong>大津波で要塞を沈める</strong>。</td></tr>
+<tr><td class="no">003</td><td class="skill">微風（びふう）</td><td class="init">手で扇ぐより少し強い風を起こせる。</td><td class="awake">中位:突風・斬撃 → <strong>最終:台風・真空波</strong></td><td class="story">最初は「埃を払う係」、後に <strong>風刃で一軍を薙ぎ払う剣風士</strong>。</td></tr>
+<tr><td class="no">004</td><td class="skill">微雷（びらい）</td><td class="init">静電気程度の電撃。指先がパチッと光る。</td><td class="awake">中位:感電・麻痺 → <strong>最終:落雷・雷神化</strong></td><td class="story">「電池係」から、<strong>雷を纏う最強剣士</strong> へ。</td></tr>
+<tr><td class="no">005</td><td class="skill">微土（びど）</td><td class="init">土を握り固めて石のように。投擲用つぶて。</td><td class="awake">中位:岩石生成・土壁 → <strong>最終:山脈創造・地震</strong></td><td class="story">石工としてスタート、終盤は <strong>大地から城を生やす創造神</strong>。</td></tr>
+<tr><td class="no">006</td><td class="skill">微氷（びひょう）</td><td class="init">触れた水を一瞬だけ凍らせる。氷キューブサイズ。</td><td class="awake">中位:氷壁・氷剣 → <strong>最終:永久凍土化</strong></td><td class="story">冷蔵係から、<strong>戦場全体を凍結させる氷の女王</strong>。</td></tr>
+<tr><td class="no">007</td><td class="skill">微毒（びどく）</td><td class="init">唾液に微弱な毒（吐き気程度）。</td><td class="awake">中位:神経毒・麻痺毒 → <strong>最終:即死毒・呪詛</strong></td><td class="story">病弱と侮られていた少女が、<strong>一国の宮廷を毒で滅ぼす暗殺者</strong> に。</td></tr>
+<tr><td class="no">008</td><td class="skill">微光（びこう）</td><td class="init">手のひらにロウソク程度の光球。</td><td class="awake">中位:閃光・聖光 → <strong>最終:太陽光召喚・浄化光</strong></td><td class="story">初期は「ランタン代わり」、最終形態は <strong>魔王の闇を浄化する聖女</strong>。</td></tr>
+<tr><td class="no">009</td><td class="skill">微闇（びあん）</td><td class="init">手のひらの影を濃くできる。隠し物程度。</td><td class="awake">中位:暗闇生成・視覚封じ → <strong>最終:空間遮蔽・闇の眷属召喚</strong></td><td class="story">陰キャ少年の自虐スキル → <strong>世界を闇に包む暗黒卿</strong>。</td></tr>
+<tr><td class="no">010</td><td class="skill">微音（びおん）</td><td class="init">小さな音を遠くに飛ばせる伝令スキル。</td><td class="awake">中位:音波攻撃・声真似 → <strong>最終:音による空間破壊</strong></td><td class="story">伝令係から <strong>声だけで敵を粉砕する音響破壊神</strong> へ。</td></tr>
 </table>
 </div>
 
-<!-- 感覚・知覚 -->
-<h3><span class="cat-band" style="background:rgba(168,85,247,.15);color:#c084fc">B</span>感覚・知覚系</h3>
+<!-- B. 身体強化 -->
+<h3><span class="cat-band" style="background:rgba(251,146,60,.15);color:#fb923c">B</span>身体強化系（小さな身体的優位 → 人外領域へ）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">011</td><td class="ab">指紋消失</td><td class="trick">自分の指紋が一切残らない。<strong>完全犯罪</strong>／契約書を握っても証拠ゼロ／犯人偽装で他人の指紋を残す側に。</td></tr>
-<tr><td class="no">012</td><td class="ab">嘘判定（精度70%）</td><td class="trick">1日1回、相手の発言が嘘か本当か直感で判定。<strong>取り調べ／交渉／裏切り検知</strong>／ガセ情報の選別で勢力の頭脳に。</td></tr>
-<tr><td class="no">013</td><td class="ab">呼吸消音</td><td class="trick">自分の呼吸音を完全に消せる。<strong>暗殺の最後の一押し</strong>／隠れんぼ無敵／睡眠中に殺されても「呼吸が止まったことに気付かれない」事故偽装。</td></tr>
-<tr><td class="no">014</td><td class="ab">植物の声</td><td class="trick">半径5mの植物と簡単な意思疎通。<strong>毒草の警告（食えるか聞ける）</strong>／敵が森を通った痕跡を聞き出す／観葉植物を諜報員にできる。</td></tr>
-<tr><td class="no">015</td><td class="ab">感情リード（10秒）</td><td class="trick">1日1回、誰か1人の感情が10秒だけ流れ込む。<strong>嘘発見の決定打</strong>／好意・敵意の判別／告白の成功率100%化。</td></tr>
-<tr><td class="no">016</td><td class="ab">彩度操作</td><td class="trick">自分の視界の彩度を上げ下げできる。<strong>暗闇で目を慣らす速度2倍</strong>／フラッシュ無効／色覚情報の整理で監視業務に最適。</td></tr>
-<tr><td class="no">017</td><td class="ab">説得ボイス（+5%）</td><td class="trick">自分の声に説得力ボーナス +5%。<strong>営業・交渉・演説で僅差を覆す</strong>／勢力リーダー候補／ラジオ放送で集団扇動。</td></tr>
-<tr><td class="no">018</td><td class="ab">痛覚遮断</td><td class="trick">10秒間、痛覚を完全カット（1日3回）。<strong>致命傷でも10秒は動ける＝最後の一撃</strong>／応急処置／拷問耐性。</td></tr>
-<tr><td class="no">019</td><td class="ab">心拍可視</td><td class="trick">半径2mの相手の心拍数が見える。<strong>嘘発見・興奮検知・健康チェック</strong>／戦闘で「いつ攻撃しようとしているか」読みやすい。</td></tr>
-<tr><td class="no">020</td><td class="ab">体重操作（±5kg）</td><td class="trick">自分の体重を ±5kg 動かせる。<strong>体重計詐欺、足跡偽装、シーソー型罠の操作</strong>／吊り橋の重量制限／「軽い」と思わせて投げ飛ばし戦術。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">011</td><td class="skill">怪力の片鱗</td><td class="init">常人の1.2倍程度の力。米俵が軽く持てる。</td><td class="awake">中位:重機級の力 → <strong>最終:山を砕く神腕</strong></td><td class="story">最初は荷運び、後に <strong>素手で巨竜を引き裂く戦士</strong>。</td></tr>
+<tr><td class="no">012</td><td class="skill">俊足の片鱗</td><td class="init">常人の1.3倍速で走れる。</td><td class="awake">中位:馬より速い → <strong>最終:音速の韋駄天</strong></td><td class="story">伝令役から、<strong>戦場を一瞬で駆け抜ける疾風の暗殺者</strong>。</td></tr>
+<tr><td class="no">013</td><td class="skill">鋼皮の片鱗</td><td class="init">肌が革程度に硬い。小刀程度なら傷つかない。</td><td class="awake">中位:剣も弾く鋼の肌 → <strong>最終:ミスリル並みの不壊体</strong></td><td class="story">素手戦闘も平気な <strong>無敵の盾兵</strong> に。</td></tr>
+<tr><td class="no">014</td><td class="skill">再生の片鱗</td><td class="init">切り傷が10倍速で治る。</td><td class="awake">中位:骨折も日内回復 → <strong>最終:失った腕も再生・不死性</strong></td><td class="story">辺境の医療係 → <strong>死んでも蘇る伝説の不死戦士</strong>。</td></tr>
+<tr><td class="no">015</td><td class="skill">跳躍の片鱗</td><td class="init">常人の1.5倍ジャンプ。屋根に乗れる程度。</td><td class="awake">中位:ビル間を飛ぶ → <strong>最終:空を駆ける飛翔者</strong></td><td class="story">天井裏の隠密が、<strong>空中戦の覇者</strong> へ。</td></tr>
+<tr><td class="no">016</td><td class="skill">視力強化</td><td class="init">通常の3倍の視力。遠くの看板が読める。</td><td class="awake">中位:鷹の千里眼 → <strong>最終:壁の向こうも視る千里眼・透視</strong></td><td class="story">狙撃手から <strong>世界を見通す賢者</strong> へ。</td></tr>
+<tr><td class="no">017</td><td class="skill">聴力強化</td><td class="init">通常の3倍の聴力。隣室の会話が聞こえる。</td><td class="awake">中位:数百m先の囁き → <strong>最終:大陸単位の音を聴く</strong></td><td class="story">諜報員から、<strong>世界の悲鳴を聴く神官</strong>。</td></tr>
+<tr><td class="no">018</td><td class="skill">嗅覚強化</td><td class="init">犬並みの嗅覚。匂いで人を識別。</td><td class="awake">中位:感情まで嗅げる → <strong>最終:過去の出来事の残り香まで読む</strong></td><td class="story">追跡者から、<strong>嗅ぐだけで真実を見抜く神探</strong>。</td></tr>
+<tr><td class="no">019</td><td class="skill">触覚強化</td><td class="init">触れただけで物の素材・温度を完全把握。</td><td class="awake">中位:相手の体調・感情を読む → <strong>最終:触れた相手の記憶を読む</strong></td><td class="story">鑑定士から <strong>触れるだけで全てを暴く尋問官</strong>。</td></tr>
+<tr><td class="no">020</td><td class="skill">不眠の体</td><td class="init">疲れにくい体質。睡眠4時間で十分。</td><td class="awake">中位:数日不眠で動ける → <strong>最終:不眠不休・眠り不要</strong></td><td class="story">夜警から、<strong>千年眠らない不死の番人</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 時間・記憶 -->
-<h3><span class="cat-band" style="background:rgba(16,185,129,.15);color:#34d399">C</span>時間・記憶系</h3>
+<!-- C. 動植物・自然 -->
+<h3><span class="cat-band" style="background:rgba(34,197,94,.15);color:#86efac">C</span>動植物・自然系（小動物の友 → 自然そのものを支配）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">021</td><td class="ab">5分前再生</td><td class="trick">5分前の自分の行動を完全再生できる。<strong>記憶喪失偽装の暴き／戦闘パターンの分析</strong>／「俺、5分前にあいつ見たな」で証言。</td></tr>
-<tr><td class="no">022</td><td class="ab">完全時計</td><td class="trick">体内時計の誤差0秒。<strong>爆破タイミング、待ち合わせ、暗殺、罠起動——全てに微細な優位</strong>／タイムロックを秒単位で攻略。</td></tr>
-<tr><td class="no">023</td><td class="ab">発言再生（1日1回）</td><td class="trick">24時間以内に聞いた誰かの発言を1つだけ正確に再生。<strong>裁判で決定的な証拠音声</strong>／恫喝＝「お前、昨日こう言ったよな」。</td></tr>
-<tr><td class="no">024</td><td class="ab">3秒巻き戻し</td><td class="trick">1日1回、自分の認識を3秒だけ過去に戻す（世界は戻らない）。<strong>致命的ミスを回避</strong>／敵の動きを「もう1回見せて」予測。</td></tr>
-<tr><td class="no">025</td><td class="ab">短眠</td><td class="trick">睡眠時間が半分でいい。<strong>活動時間が他人の1.5倍</strong>／夜の見張り／長期遠征の常勤者。</td></tr>
-<tr><td class="no">026</td><td class="ab">高速計算</td><td class="trick">頭の中で日付・距離・確率を10倍速で計算できる。<strong>ギャンブル・戦略・暗号</strong>／勢力の参謀ポジ。</td></tr>
-<tr><td class="no">027</td><td class="ab">脳内スクショ</td><td class="trick">1日1回、見ている景色を脳内に永久保存。<strong>地図・暗号・敵の顔・施設の構造</strong>を完全記憶。</td></tr>
-<tr><td class="no">028</td><td class="ab">速読</td><td class="trick">1秒で1ページ読める。<strong>図書館を1日で消化＝知識量で他者を圧倒</strong>／契約書の罠を即見抜く。</td></tr>
-<tr><td class="no">029</td><td class="ab">完全顔記憶</td><td class="trick">1度見た顔を絶対忘れない。<strong>変装看破／群衆から特定人物を瞬時発見</strong>／勢力の諜報部長。</td></tr>
-<tr><td class="no">030</td><td class="ab">音声反復</td><td class="trick">1度聞いた音を3秒だけ正確に再生できる（声・楽音・SE）。<strong>暗証番号の音／鍵開け（解錠音の再現）／声マネで電話詐欺</strong>。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">021</td><td class="skill">獣の言葉</td><td class="init">小動物（鳥・鼠）と話せる。</td><td class="awake">中位:全動物と対話・指示 → <strong>最終:幻獣・神獣との契約</strong></td><td class="story">街の鼠取りから、<strong>聖獣を率いる獣王</strong>。</td></tr>
+<tr><td class="no">022</td><td class="skill">植物の声</td><td class="init">草花と簡単な意思疎通。</td><td class="awake">中位:植物を成長・操作 → <strong>最終:森を瞬時に呼び、世界樹と契約</strong></td><td class="story">花屋の少女が、<strong>森を兵団に変える緑の女王</strong>。</td></tr>
+<tr><td class="no">023</td><td class="skill">虫の使役</td><td class="init">虫1匹を意のままに動かせる。</td><td class="awake">中位:虫の群れを統率 → <strong>最終:百万の蜂・蟻を従える虫の王</strong></td><td class="story">気持ち悪がられていた少年が、<strong>虫の津波で軍を呑む虫王</strong>。</td></tr>
+<tr><td class="no">024</td><td class="skill">雨呼び</td><td class="init">5分間、半径5mに小雨を降らせる。</td><td class="awake">中位:豪雨・嵐を呼ぶ → <strong>最終:大陸単位の天候支配</strong></td><td class="story">干ばつの村を救う始まりから、<strong>気象を支配する天界の神官</strong>。</td></tr>
+<tr><td class="no">025</td><td class="skill">風読み</td><td class="init">風の向きと強さが完全に分かる。</td><td class="awake">中位:数時間先の天候予測 → <strong>最終:風そのものを支配・自由操作</strong></td><td class="story">航海士から、<strong>戦場の風を味方につける戦術家</strong>。</td></tr>
+<tr><td class="no">026</td><td class="skill">大地の脈動</td><td class="init">地面の振動から半径50mの人数を把握。</td><td class="awake">中位:地震感知・地脈読み → <strong>最終:地震を起こす・大地を割る</strong></td><td class="story">炭鉱夫から、<strong>大地そのものを揺らす破壊神</strong>。</td></tr>
+<tr><td class="no">027</td><td class="skill">水脈探知</td><td class="init">地下水・井戸の位置がわかる。</td><td class="awake">中位:鉱脈・魔石脈の探知 → <strong>最終:魔力の流れすら視る霊脈視</strong></td><td class="story">井戸掘りから、<strong>世界の魔力ネットワークを操る賢者</strong>。</td></tr>
+<tr><td class="no">028</td><td class="skill">樹木育成</td><td class="init">苗木の成長を3倍に加速。</td><td class="awake">中位:瞬時に大木へ → <strong>最終:森を1日で生やす創世級</strong></td><td class="story">林業の少女から、<strong>森を武器に戦う森の母</strong>。</td></tr>
+<tr><td class="no">029</td><td class="skill">花咲かせ</td><td class="init">触れた蕾が一気に満開になる。</td><td class="awake">中位:広範囲を花で覆う → <strong>最終:花から強力な毒・薬・幻覚を抽出</strong></td><td class="story">花売り娘から、<strong>花弁の津波で敵を狂わせる魅了の女王</strong>。</td></tr>
+<tr><td class="no">030</td><td class="skill">空の使い</td><td class="init">鳥（特に鳩・烏）を使役して伝令。</td><td class="awake">中位:鷹・隼を従え偵察 → <strong>最終:鳳凰・神鳥との契約</strong></td><td class="story">伝書鳩係が、<strong>空を支配する天空の王</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 動植物 -->
-<h3><span class="cat-band" style="background:rgba(34,197,94,.15);color:#86efac">D</span>動植物・自然系</h3>
+<!-- D. 時空・記憶 -->
+<h3><span class="cat-band" style="background:rgba(168,85,247,.15);color:#c084fc">D</span>時空・記憶系（地味な記憶力 → 時を操る）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">031</td><td class="ab">蚊不可侵</td><td class="trick">蚊に絶対刺されない。<strong>マラリア・デング熱の流行地で唯一の生存者</strong>／夏の見張り／ジャングル探索の専属。</td></tr>
-<tr><td class="no">032</td><td class="ab">鳩使い</td><td class="trick">鳩に簡単な指示ができる（「あの建物の窓に行け」程度）。<strong>伝書、偵察、街中の偵察ネットワーク構築</strong>。</td></tr>
-<tr><td class="no">033</td><td class="ab">犬無音化</td><td class="trick">犬に絶対吠えられない。<strong>侵入・潜入・警備突破の専門</strong>／番犬を全員無効化。</td></tr>
-<tr><td class="no">034</td><td class="ab">猫吸引</td><td class="trick">半径10mの猫が必ず自分に寄ってくる。<strong>猫だらけにして混乱・癒し・心理操作</strong>／猫アレルギーの敵を無力化。</td></tr>
-<tr><td class="no">035</td><td class="ab">蜂蜜生成</td><td class="trick">手から1日100gの蜂蜜が出る。<strong>食料・薬・粘着罠・燃料</strong>／殺菌作用で傷の治療。</td></tr>
-<tr><td class="no">036</td><td class="ab">虫よけオーラ</td><td class="trick">半径1mに虫が寄らない。<strong>ジャングル戦闘で頭がクリア／衛生／盗聴用の虫型ドローンも寄せ付けない</strong>。</td></tr>
-<tr><td class="no">037</td><td class="ab">促成栽培</td><td class="trick">1日1株だけ植物の成長を3倍にできる。<strong>食料・薬草・隠蔽（壁を蔦で覆う）／敵の足元を刺草で塞ぐ</strong>。</td></tr>
-<tr><td class="no">038</td><td class="ab">産卵察知</td><td class="trick">鶏や鳥が卵を産む直前を察知できる。<strong>サバイバルで朝食確保</strong>／養鶏場の効率化／野鳥の巣を見つけて食料源に。</td></tr>
-<tr><td class="no">039</td><td class="ab">魚召集</td><td class="trick">水中の魚が自分の手元に集まる。<strong>食料無限</strong>／敵の船底に魚を集めて転覆／水中潜伏中の偽装（魚が群れる場所）。</td></tr>
-<tr><td class="no">040</td><td class="ab">G操作</td><td class="trick">ゴキブリに簡単な指示ができる。<strong>偵察・心理攻撃・配電盤への誘導でショート</strong>／会議室に突入させて場を破壊。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">031</td><td class="skill">残像視</td><td class="init">5分前の景色がうっすら見える。</td><td class="awake">中位:数日前を視る過去視 → <strong>最終:百年前の出来事を再生・時間遡行</strong></td><td class="story">事件現場の証言者から、<strong>歴史そのものを視る時の番人</strong>。</td></tr>
+<tr><td class="no">032</td><td class="skill">完璧記憶</td><td class="init">一度見たことを忘れない。</td><td class="awake">中位:他人の記憶も覗ける → <strong>最終:世界の記憶（アカシック）にアクセス</strong></td><td class="story">学者見習いから、<strong>世界の真実を知る記録者</strong>。</td></tr>
+<tr><td class="no">033</td><td class="skill">完全時計</td><td class="init">体内時計の誤差0秒。タイミングが完璧。</td><td class="awake">中位:他人の寿命が見える → <strong>最終:時間の流れを局所操作</strong></td><td class="story">時計職人から、<strong>時間を止める時の魔導士</strong>。</td></tr>
+<tr><td class="no">034</td><td class="skill">未来の予感</td><td class="init">直感で「危ない」と感じる。1分先の予兆。</td><td class="awake">中位:数時間先のビジョン → <strong>最終:確定未来を視る預言者</strong></td><td class="story">「勘がいい奴」から <strong>運命を読み変える預言者</strong>。</td></tr>
+<tr><td class="no">035</td><td class="skill">速読・速思考</td><td class="init">思考速度が常人の2倍。1秒1ページ読める。</td><td class="awake">中位:10倍速の思考 → <strong>最終:時間停止級の思考速度</strong></td><td class="story">学者から、<strong>戦闘中に何百手も先を読む大将</strong>。</td></tr>
+<tr><td class="no">036</td><td class="skill">夢渡り</td><td class="init">寝てる間に他人の夢を半日体験。</td><td class="awake">中位:他人の夢を操作 → <strong>最終:夢の中で殺す悪夢の支配者</strong></td><td class="story">夢占い師から、<strong>夢の中で王を暗殺する悪夢の主</strong>。</td></tr>
+<tr><td class="no">037</td><td class="skill">既視感（デジャヴ）</td><td class="init">似た状況で「正解」が直感でわかる。</td><td class="awake">中位:数手先の予知 → <strong>最終:全分岐の未来を同時に視る</strong></td><td class="story">勘の鋭い博打打ちから、<strong>運命の全選択肢を見渡す賢者</strong>。</td></tr>
+<tr><td class="no">038</td><td class="skill">残響聴取</td><td class="init">その場で過去にあった会話を1つ聞ける。</td><td class="awake">中位:数日前の会話を再現 → <strong>最終:数百年の歴史を音で再生</strong></td><td class="story">捜査官から、<strong>古城の悲劇を解き明かす歴史探偵</strong>。</td></tr>
+<tr><td class="no">039</td><td class="skill">物の歴史</td><td class="init">触れた物の所有者の感情が薄く流れ込む。</td><td class="awake">中位:詳細な過去視 → <strong>最終:武器・遺物の魂と対話</strong></td><td class="story">古道具屋から、<strong>伝説の遺物を覚醒させる遺物使い</strong>。</td></tr>
+<tr><td class="no">040</td><td class="skill">先読み直感</td><td class="init">相手の次の行動を漠然と感じる（精度60%）。</td><td class="awake">中位:剣戟の太刀筋を読む → <strong>最終:相手の数手先を完全予知</strong></td><td class="story">街道の用心棒から、<strong>絶対回避の不敗剣士</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 身体・生理 -->
-<h3><span class="cat-band" style="background:rgba(236,72,153,.15);color:#f472b6">E</span>身体・生理系</h3>
+<!-- E. 感覚・知覚 -->
+<h3><span class="cat-band" style="background:rgba(96,165,250,.15);color:#60a5fa">E</span>感覚・知覚系（嘘がわかる → 真実そのものを視る）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">041</td><td class="ab">3秒石化</td><td class="trick">1日1回、3秒間「絶対に動かない壁」になれる（HP無敵）。<strong>致命の一撃を3秒だけ完全防御＝盾</strong>／誰かを背に庇って一発受け止め。</td></tr>
-<tr><td class="no">042</td><td class="ab">速髪</td><td class="trick">髪が一夜で30cm伸びる。<strong>変装、ロープ素材、罠の縛り紐／DNA証拠の操作</strong>。</td></tr>
-<tr><td class="no">043</td><td class="ab">涙完全制御</td><td class="trick">涙を出すか出さないか完全制御。<strong>嘘泣き＝裁判・交渉・ハニートラップ</strong>／拷問で涙を出さない＝精神的優位。</td></tr>
-<tr><td class="no">044</td><td class="ab">粘着唾液</td><td class="trick">自分の唾液に弱い接着剤の効果。<strong>応急修理・封筒の封・小型物の固定</strong>／指輪・宝石を即時隠蔽。</td></tr>
-<tr><td class="no">045</td><td class="ab">無臭</td><td class="trick">汗・体臭・口臭ゼロ。<strong>探知犬・センサー回避／潜入のプロ</strong>／死体偽装で「腐敗が始まらない」演出。</td></tr>
-<tr><td class="no">046</td><td class="ab">5分透明</td><td class="trick">1日1回、5分間体が透明になる（服は透明にならない）。<strong>裸で動けば真の透明＝偵察・脱出</strong>／服を脱いだ瞬間、敵は混乱で隙だらけ。</td></tr>
-<tr><td class="no">047</td><td class="ab">片目鷹視</td><td class="trick">5秒だけ片目の視力が10倍になる。<strong>狙撃・観察・遠距離の文字読み</strong>／看板・地図の遠隔情報取得。</td></tr>
-<tr><td class="no">048</td><td class="ab">心拍自在</td><td class="trick">自分の心拍数を任意に変えられる。<strong>嘘発見器を完全突破</strong>／心臓発作偽装で警戒を解く／メディカルチェックで合否操作。</td></tr>
-<tr><td class="no">049</td><td class="ab">解毒胃</td><td class="trick">致死量未満の毒を分解できる。<strong>暗殺対策・毒見役</strong>／毒キノコや汚水でも生存／毒入り料理を平気で食べて相手を疑わせる。</td></tr>
-<tr><td class="no">050</td><td class="ab">高速爪</td><td class="trick">爪が0.5秒で5cm伸ばせる（自分の意思で）。<strong>即席武器、開錠、つっかえ棒外し</strong>／顔面に伸ばせば威嚇兵器。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">041</td><td class="skill">嘘判定</td><td class="init">相手の発言が嘘か直感で7割わかる。</td><td class="awake">中位:常時自動・100% → <strong>最終:言葉以前の意図まで読む真実視</strong></td><td class="story">取り調べ官から、<strong>嘘の通じない究極の裁判官</strong>。</td></tr>
+<tr><td class="no">042</td><td class="skill">感情リード</td><td class="init">触れた相手の感情がわかる。</td><td class="awake">中位:視線だけで読める → <strong>最終:思考そのものを読む読心術</strong></td><td class="story">相談役から、<strong>王の心を読む宮廷顧問</strong>。</td></tr>
+<tr><td class="no">043</td><td class="skill">殺気感知</td><td class="init">自分への殺意を瞬時に察知。</td><td class="awake">中位:周囲の殺意を全方位察知 → <strong>最終:数km範囲の悪意を全把握</strong></td><td class="story">護衛から、<strong>城下町すべての陰謀を察知する守護者</strong>。</td></tr>
+<tr><td class="no">044</td><td class="skill">隠形（おんぎょう）</td><td class="init">集中すると存在感が薄れる。気付かれにくい。</td><td class="awake">中位:視認不可・気配ゼロ → <strong>最終:概念存在化・神からも視えない</strong></td><td class="story">隠密から、<strong>神の目すら欺く影の暗殺者</strong>。</td></tr>
+<tr><td class="no">045</td><td class="skill">無痛体質</td><td class="init">痛覚を任意でシャットダウン。</td><td class="awake">中位:恐怖心も消去 → <strong>最終:不死身の感覚・神経超越</strong></td><td class="story">傷だらけの戦士が、<strong>痛みなき不死の鬼</strong> に。</td></tr>
+<tr><td class="no">046</td><td class="skill">真贋判定</td><td class="init">触れた物の本物/偽物がわかる。</td><td class="awake">中位:素材・製作者・歴史を看破 → <strong>最終:神器・呪物まで識別</strong></td><td class="story">鑑定士から、<strong>世界の宝物を選別する目利き</strong>。</td></tr>
+<tr><td class="no">047</td><td class="skill">危険察知</td><td class="init">周囲の危険を直感で5段階評価。</td><td class="awake">中位:罠・暗殺者の位置特定 → <strong>最終:死の予兆・運命の分岐視</strong></td><td class="story">冒険者から、<strong>パーティを生かし続ける伝説の斥候</strong>。</td></tr>
+<tr><td class="no">048</td><td class="skill">距離感覚</td><td class="init">視覚なしで距離を完全に測れる。</td><td class="awake">中位:目隠しで戦える音波探知 → <strong>最終:三次元の完全把握・空間視</strong></td><td class="story">盲目の戦士が、<strong>視覚を超えた剣聖</strong> へ。</td></tr>
+<tr><td class="no">049</td><td class="skill">方向感覚</td><td class="init">どこにいても北がわかる。迷子にならない。</td><td class="awake">中位:目的地への最短路自動把握 → <strong>最終:異次元への道も視る空間操作</strong></td><td class="story">旅人から、<strong>異界へ道を開く次元渡り</strong>。</td></tr>
+<tr><td class="no">050</td><td class="skill">共感増幅</td><td class="init">相手の感情が自分にも流れ込む（弱）。</td><td class="awake">中位:感情を相手にも流せる → <strong>最終:集団意識化・千人を一つの心に</strong></td><td class="story">癒し手から、<strong>群衆の心を一つにするカリスマ</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 物質・素材 -->
-<h3><span class="cat-band" style="background:rgba(251,146,60,.15);color:#fb923c">F</span>物質・素材操作系</h3>
+<!-- F. 精神・心理 -->
+<h3><span class="cat-band" style="background:rgba(167,139,250,.15);color:#a78bfa">F</span>精神・心理系（ちょっと好かれる → 国家を動かす）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">051</td><td class="ab">紙鋼化</td><td class="trick">紙1枚を3秒間「鉄の硬さ」にできる（1日10回）。<strong>即席装甲・盾・刃物</strong>／新聞紙を盾に銃弾防御／本のページを刃にして暗殺。</td></tr>
-<tr><td class="no">052</td><td class="ab">瞬間冷凍</td><td class="trick">コップ1杯分の水を3秒で凍らせる。<strong>飲み物に氷の罠／鍵穴を凍らせて開かなくする／液体を即時凍結で投擲</strong>。</td></tr>
-<tr><td class="no">053</td><td class="ab">甘香放出</td><td class="trick">砂糖の香りを1秒だけ広範囲に発散できる。<strong>動物・虫の誘引／敵犬の嗅覚撹乱</strong>／菓子店で全顧客を引き寄せる宣伝兵器。</td></tr>
-<tr><td class="no">054</td><td class="ab">錆除去</td><td class="trick">自分の唾液で錆を1秒で除去。<strong>古道具を蘇らせる</strong>／鍵・銃・武器の整備独占／敵の銃を「整備済み」と騙して提供。</td></tr>
-<tr><td class="no">055</td><td class="ab">超剥離</td><td class="trick">木の皮・壁紙・ラベルを剥がす速度が10倍。<strong>痕跡消去・素材調達／ラベル偽装で毒物を「水」と思わせる</strong>。</td></tr>
-<tr><td class="no">056</td><td class="ab">蝋細工</td><td class="trick">ロウソクの蝋を素手で自在に成形できる。<strong>鍵の型取り→複製鍵／罠の引き金カバー／指紋取り型</strong>。</td></tr>
-<tr><td class="no">057</td><td class="ab">高速結束</td><td class="trick">ロープを結ぶ速度が10倍。<strong>3秒で人を縛り上げる</strong>／罠設置、ボーリング、登攀。</td></tr>
-<tr><td class="no">058</td><td class="ab">微小製鉄</td><td class="trick">鉄屑から1日10gだけ純鉄を取り出せる。<strong>長期で武器・道具の素材独占</strong>／針・釘・刃を量産。</td></tr>
-<tr><td class="no">059</td><td class="ab">常時清潔</td><td class="trick">自分の服が常にシミ・汚れゼロ。<strong>潜入・印象操作の絶対王者</strong>／殺害現場でも返り血ゼロ＝犯人と思われない。</td></tr>
-<tr><td class="no">060</td><td class="ab">革柔軟化</td><td class="trick">革を素手で1分で柔らかくできる。<strong>装備の即席フィッティング／拘束革の解除／武器の柄の調整</strong>。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">051</td><td class="skill">説得の声</td><td class="init">自分の話に+10%の説得力。地味な営業効果。</td><td class="awake">中位:話せば大抵の相手が頷く → <strong>最終:声だけで国を動かす魅了</strong></td><td class="story">街の商人から、<strong>大陸を統一する弁舌の王</strong>。</td></tr>
+<tr><td class="no">052</td><td class="skill">第一印象オーラ</td><td class="init">初対面の相手から+15%好印象。</td><td class="awake">中位:即座に信頼を勝ち取る → <strong>最終:見ただけで崇拝される神性オーラ</strong></td><td class="story">人脈ゼロから、<strong>会う相手すべてを味方にする救世主</strong>。</td></tr>
+<tr><td class="no">053</td><td class="skill">威圧</td><td class="init">怒気を放つと弱い者が怯む。</td><td class="awake">中位:強者も気で押さえつける → <strong>最終:存在で気絶させる魔王の覇気</strong></td><td class="story">ヤクザのチンピラが、<strong>視線一つで国を屈服させる覇者</strong>。</td></tr>
+<tr><td class="no">054</td><td class="skill">カリスマ演説</td><td class="init">集団の前で話すと注目を集める。</td><td class="awake">中位:数千人を熱狂させる → <strong>最終:大陸規模の革命を起こす演説力</strong></td><td class="story">弁士から、<strong>歴史を書き換える革命家</strong>。</td></tr>
+<tr><td class="no">055</td><td class="skill">沈黙の声</td><td class="init">相手を3秒間言葉に詰まらせる。</td><td class="awake">中位:数分間沈黙させる → <strong>最終:永遠に喋れなくする呪詛</strong></td><td class="story">議論で勝てなかった少女が、<strong>言葉を奪う沈黙の魔女</strong>。</td></tr>
+<tr><td class="no">056</td><td class="skill">集中誘導</td><td class="init">自分の話に相手が10秒長く集中。</td><td class="awake">中位:1時間でも飽きさせない講義 → <strong>最終:聞いた者を洗脳する魔声</strong></td><td class="story">教師から、<strong>言葉で人心を縛る大予言者</strong>。</td></tr>
+<tr><td class="no">057</td><td class="skill">魅惑の笑顔</td><td class="init">笑顔の効果が倍増。場が和む。</td><td class="awake">中位:笑顔だけで敵意を解く → <strong>最終:国王すら屈服させる微笑み</strong></td><td class="story">娼婦見習いから、<strong>笑顔一つで戦争を止める和平の女神</strong>。</td></tr>
+<tr><td class="no">058</td><td class="skill">涙の支配</td><td class="init">涙を自由に出し止めできる。演技自在。</td><td class="awake">中位:相手の涙腺を刺激 → <strong>最終:集団号泣・水攻め級</strong></td><td class="story">道化師から、<strong>大群衆を泣かせる悲劇の女王</strong>。</td></tr>
+<tr><td class="no">059</td><td class="skill">真顔の重み</td><td class="init">真剣な顔の説得力が3倍。</td><td class="awake">中位:沈黙のまま命令成立 → <strong>最終:無言で従わせる絶対君主の風格</strong></td><td class="story">無口な剣士が、<strong>視線だけで軍団を動かす将軍</strong>。</td></tr>
+<tr><td class="no">060</td><td class="skill">弱者の友</td><td class="init">子供・老人・動物から好かれる。</td><td class="awake">中位:弱者の連帯を呼ぶ → <strong>最終:全民衆の支持を得る民の救世主</strong></td><td class="story">孤児院の世話係から、<strong>民衆の希望となる聖人</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 確率・運 -->
-<h3><span class="cat-band" style="background:rgba(245,158,11,.15);color:#fbbf24">G</span>確率・運命系</h3>
+<!-- G. 物質・素材 -->
+<h3><span class="cat-band" style="background:rgba(251,191,36,.15);color:#fbbf24">G</span>物質・素材系（ちょっと作れる → 創造主クラス）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">061</td><td class="ab">5連コイン</td><td class="trick">コイントスを5回連続当てられる（その後10回外れる）。<strong>重要な選択を5回だけ完璧</strong>／敵に「ハズレ用ターン」を仕向ける詐欺術。</td></tr>
-<tr><td class="no">062</td><td class="ab">微ダイス補正</td><td class="trick">サイコロの目を1日1回 +1 できる。<strong>ギャンブル・TRPG的決断</strong>／罠の発動率／クリティカル判定。</td></tr>
-<tr><td class="no">063</td><td class="ab">じゃんけん必勝</td><td class="trick">1日1回じゃんけんで必ず勝てる（読み発動）。<strong>地味だが、揉め事の解決権を毎日取れる</strong>／ネタかと思いきや勢力内政治の鍵。</td></tr>
-<tr><td class="no">064</td><td class="ab">クジ回避</td><td class="trick">ハズレを1日1回だけ避けられる。<strong>毒入りグラスの選別／敵が用意したシナリオから外れる</strong>／命がけのロシアンルーレットで生存。</td></tr>
-<tr><td class="no">065</td><td class="ab">過去確認</td><td class="trick">自分が今いる場所に「3秒前まで誰がいたか」が分かる。<strong>暗殺後の現場検証／敵の足取り追跡／罠の設置者特定</strong>。</td></tr>
-<tr><td class="no">066</td><td class="ab">遺失物探知</td><td class="trick">落とし物を見つける確率が3倍。<strong>戦場の死体漁り・装備回収の効率化</strong>／鍵・財布・USBの拾得で情報資源化。</td></tr>
-<tr><td class="no">067</td><td class="ab">10文字予測</td><td class="trick">1日1回、相手の次の発言を10文字だけ予測。<strong>会議の論破／告白の先回り／脅迫文の一手先</strong>。</td></tr>
-<tr><td class="no">068</td><td class="ab">雨除けバリア</td><td class="trick">自分の周囲50cmに雨が当たらない。<strong>潜入時の足跡管理／傘いらずで両手フリー／雨中でも書類が濡れない</strong>。</td></tr>
-<tr><td class="no">069</td><td class="ab">避雷</td><td class="trick">雷が自分に絶対落ちない。<strong>雷攻撃の能力者対策／嵐の中の唯一の伝令／鉄塔の上で安全</strong>。</td></tr>
-<tr><td class="no">070</td><td class="ab">盲撃</td><td class="trick">1日1回、目を閉じて投擲・射撃すると必中。<strong>覚醒した瞬間の一撃必殺</strong>／視界を奪われた状態を逆手に取る。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">061</td><td class="skill">紙の鋼化</td><td class="init">紙1枚を3秒だけ鉄並みの硬さに。</td><td class="awake">中位:紙を永続鋼化 → <strong>最終:紙だけで城・剣・砲弾を作る</strong></td><td class="story">本屋の少年が、<strong>紙の城に籠る紙の魔導士</strong>。</td></tr>
+<tr><td class="no">062</td><td class="skill">金属軟化</td><td class="init">触れた金属を3秒だけ粘土のように。</td><td class="awake">中位:鉄を布のように切り裂く → <strong>最終:神の武器すら溶かす</strong></td><td class="story">鍛冶見習いから、<strong>敵の剣を素手で解体する破壊者</strong>。</td></tr>
+<tr><td class="no">063</td><td class="skill">蜂蜜生成</td><td class="init">手から1日100gの蜂蜜が湧く。</td><td class="awake">中位:無限生成 → <strong>最終:蜜の湖を創る・蜂の女王と契約</strong></td><td class="story">養蜂家の娘が、<strong>蜜と蜂の津波で軍を呑む蜜の女王</strong>。</td></tr>
+<tr><td class="no">064</td><td class="skill">水の創造</td><td class="init">手のひらに水を1L作れる。</td><td class="awake">中位:池・川を作る → <strong>最終:海を創造する大水の主</strong></td><td class="story">井戸守りから、<strong>砂漠を緑化する大地の母</strong>。</td></tr>
+<tr><td class="no">065</td><td class="skill">食の変換</td><td class="init">草を栄養食に変えられる（味は不味い）。</td><td class="awake">中位:豪華料理に変換 → <strong>最終:万能薬・賢者の石を作る錬金術</strong></td><td class="story">炊事係から、<strong>賢者の石を作る錬金術師</strong>。</td></tr>
+<tr><td class="no">066</td><td class="skill">解毒の体</td><td class="init">微毒を分解。普通に毒物耐性。</td><td class="awake">中位:致死毒も無効 → <strong>最終:呪い・魔毒すら浄化する聖体</strong></td><td class="story">毒見役から、<strong>あらゆる毒を浄化する聖女</strong>。</td></tr>
+<tr><td class="no">067</td><td class="skill">腐敗操作</td><td class="init">触れた物の腐敗を遅くor早くできる。</td><td class="awake">中位:死体を永久保存 → <strong>最終:不死者を作る・呪術師化</strong></td><td class="story">墓守から、<strong>死者の軍団を率いる屍術士</strong>。</td></tr>
+<tr><td class="no">068</td><td class="skill">血の結晶</td><td class="init">自分の血液を結晶化できる（武器にはならない）。</td><td class="awake">中位:血で剣・盾を作る → <strong>最終:血を糧に大魔法を放つ血の魔導士</strong></td><td class="story">病弱な少女が、<strong>己の血で戦う血の聖女</strong>。</td></tr>
+<tr><td class="no">069</td><td class="skill">凍結</td><td class="init">コップ1杯の水を凍らせる。</td><td class="awake">中位:氷の壁・氷剣 → <strong>最終:氷河を呼ぶ・絶対零度</strong></td><td class="story">氷売りから、<strong>戦場を氷河に変える女王</strong>。</td></tr>
+<tr><td class="no">070</td><td class="skill">塵の操作</td><td class="init">床の埃を舞わせる。視界を曇らせる程度。</td><td class="awake">中位:砂嵐を起こす → <strong>最終:都市を埋める砂塵の支配者</strong></td><td class="story">掃除係から、<strong>砂塵で都市を一夜で埋める砂塵帝</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 情報・通信 -->
-<h3><span class="cat-band" style="background:rgba(96,165,250,.15);color:#60a5fa">H</span>情報・通信系</h3>
+<!-- H. 戦闘・防御 -->
+<h3><span class="cat-band" style="background:rgba(239,68,68,.15);color:#f87171">H</span>戦闘・防御系（地味な軽装備 → 不敗の戦神）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">071</td><td class="ab">消える文字</td><td class="trick">自分が書いた文字が10分後に消える。<strong>機密通信／罠サインの一時設置／犯行声明の証拠隠滅</strong>。</td></tr>
-<tr><td class="no">072</td><td class="ab">姓名表示</td><td class="trick">半径10m以内の人の名前が頭上に見える（本人にだけ）。<strong>諜報・潜入・偽名看破</strong>／敵の組織図を一瞬で把握。</td></tr>
-<tr><td class="no">073</td><td class="ab">キーワードアラート</td><td class="trick">事前登録した言葉を誰かが言うと脳内アラーム（半径50m）。<strong>暗号通信／敵の合言葉キャッチ／自分の名前を呼ばれた瞬間に察知</strong>。</td></tr>
-<tr><td class="no">074</td><td class="ab">正確地図</td><td class="trick">自分が手書きする地図が常に正確。<strong>勢力の地理担当／敵に偽地図を渡しても自分のは正確</strong>。</td></tr>
-<tr><td class="no">075</td><td class="ab">敵味方識別</td><td class="trick">半径20mの人物が「自分にとって敵か味方か」を1日3回判定可能。<strong>裏切り検知／会談時の警戒／勢力分裂前の予兆把握</strong>。</td></tr>
-<tr><td class="no">076</td><td class="ab">折り紙暗号</td><td class="trick">紙の折り目で自分にしか読めない暗号を作れる。<strong>受け渡し時に「ただの折り紙」に偽装した秘密通信</strong>。</td></tr>
-<tr><td class="no">077</td><td class="ab">声偽装（1分）</td><td class="trick">1日1回、自分の声を別の人の声に1分だけ変えられる。<strong>電話詐欺・指示偽装・録音工作</strong>。</td></tr>
-<tr><td class="no">078</td><td class="ab">影への筆記</td><td class="trick">自分の影の中に短いメッセージを書ける（他人にも見える）。<strong>遺言・脅迫・指示</strong>を消えない形で残す／死後も犯人を告発。</td></tr>
-<tr><td class="no">079</td><td class="ab">嘘判定×3</td><td class="trick">半径5mで誰がいま嘘をついたかを1日3回判定。<strong>取り調べ・尋問・取引の鬼</strong>／勢力の司法担当ポジ。</td></tr>
-<tr><td class="no">080</td><td class="ab">鏡像転送</td><td class="trick">鏡に映る自分の像を、1分だけ別の鏡に表示できる（音は出ない）。<strong>監視・偵察・偽装出現</strong>／敵に「ここにいる」と思わせて別所で襲撃。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">071</td><td class="skill">微結界</td><td class="init">自分周囲30cmに薄い障壁。矢1本を防ぐ。</td><td class="awake">中位:剣戟も弾く完全防御 → <strong>最終:砲撃級・神の一撃も防ぐ</strong></td><td class="story">守備兵から、<strong>絶対防壁の不落の盾</strong>。</td></tr>
+<tr><td class="no">072</td><td class="skill">反射の鎧</td><td class="init">受けた攻撃の力を10%相手に返す。</td><td class="awake">中位:100%反射 → <strong>最終:倍返し・神撃すら跳ね返す</strong></td><td class="story">弱小騎士から、<strong>触れた者を自滅させる反射の魔人</strong>。</td></tr>
+<tr><td class="no">073</td><td class="skill">武器強化</td><td class="init">触れた武器の威力+10%。一時的。</td><td class="awake">中位:武器を倍化 → <strong>最終:伝説の聖剣・神器を作り出す</strong></td><td class="story">武器商人から、<strong>勇者の武器を鍛える鍛冶神</strong>。</td></tr>
+<tr><td class="no">074</td><td class="skill">服の鎧化</td><td class="init">自分の服が革鎧並みの防御に。</td><td class="awake">中位:鋼鉄並みの防御 → <strong>最終:ミスリル・神鋼に匹敵</strong></td><td class="story">服飾職人が、<strong>布一枚で剣を弾く神衣の戦士</strong>。</td></tr>
+<tr><td class="no">075</td><td class="skill">即席武器</td><td class="init">手の中の小石が刃物の硬さになる。</td><td class="awake">中位:石が剣 → <strong>最終:空気そのものを剣にする無形剣士</strong></td><td class="story">武器を持てない奴隷が、<strong>空気を斬る無形の剣聖</strong>。</td></tr>
+<tr><td class="no">076</td><td class="skill">投擲補正</td><td class="init">投げた物の命中率+30%。</td><td class="awake">中位:百発百中 → <strong>最終:音速の投擲・大陸を超える射程</strong></td><td class="story">石投げの少年が、<strong>必中の弓神</strong>。</td></tr>
+<tr><td class="no">077</td><td class="skill">攻撃見切り</td><td class="init">攻撃の予兆が薄く見える。回避率UP。</td><td class="awake">中位:全攻撃を見切る → <strong>最終:時間が止まって見える絶対回避</strong></td><td class="story">逃げ足の速い盗賊が、<strong>全ての攻撃を躱す不敗剣士</strong>。</td></tr>
+<tr><td class="no">078</td><td class="skill">痛みの返還</td><td class="init">受けた痛みを相手にも与える（同等）。</td><td class="awake">中位:倍の痛みを返す → <strong>最終:相手を即死させる呪い</strong></td><td class="story">いじめられっ子が、<strong>痛みを呪いに変える復讐者</strong>。</td></tr>
+<tr><td class="no">079</td><td class="skill">自己治癒</td><td class="init">自分の傷が10倍速で治る。</td><td class="awake">中位:他人も治癒 → <strong>最終:死者復活・蘇生術</strong></td><td class="story">薬師見習いから、<strong>死者を蘇らせる聖女</strong>。</td></tr>
+<tr><td class="no">080</td><td class="skill">怒りの覚醒</td><td class="init">怒ると一時的に身体能力UP（30秒）。</td><td class="awake">中位:常時パワーアップ状態 → <strong>最終:怒り続ければ神化する</strong></td><td class="story">怒りっぽい少年が、<strong>怒りで神に至る修羅</strong>。</td></tr>
 </table>
 </div>
 
-<!-- 心理・社会 -->
-<h3><span class="cat-band" style="background:rgba(167,139,250,.15);color:#a78bfa">I</span>心理・社会系</h3>
+<!-- I. 神秘・魔法 -->
+<h3><span class="cat-band" style="background:rgba(192,132,252,.15);color:#c084fc">I</span>神秘・魔法系（魔力を感じるだけ → 神域の術師）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">081</td><td class="ab">初対面好印象</td><td class="trick">初対面の相手から +10% 好印象を得る。<strong>勢力リーダー候補／営業／情報源の確保</strong>／99人の中で人脈構築の最速ランナー。</td></tr>
-<tr><td class="no">082</td><td class="ab">集中持続</td><td class="trick">自分が話すと相手の集中が10秒長続き。<strong>説明・説得・命令の浸透率を底上げ</strong>／教師・指揮官として圧倒的。</td></tr>
-<tr><td class="no">083</td><td class="ab">存在感ゼロ</td><td class="trick">自分の存在感を消せる（視界に入っても気付かれにくい）。<strong>会議に紛れて情報収集／暗殺の前段階</strong>／忘れられたフリで罠を仕掛ける。</td></tr>
-<tr><td class="no">084</td><td class="ab">3秒沈黙</td><td class="trick">1日1回、相手を3秒間沈黙させられる。<strong>議論の決着／戦闘前の警告封じ／告発を遮る</strong>。</td></tr>
-<tr><td class="no">085</td><td class="ab">名前威圧</td><td class="trick">自分の名前を聞いた相手が一瞬警戒する（0.5秒）。<strong>地味だが、敵の初動を毎回0.5秒遅らせる＝累積で生存率激変</strong>。</td></tr>
-<tr><td class="no">086</td><td class="ab">子供無敵</td><td class="trick">子供から絶対に好かれる。<strong>避難所・施設での情報源／子供を盾にする倫理観なき作戦</strong>／誘拐対策。</td></tr>
-<tr><td class="no">087</td><td class="ab">老人信頼</td><td class="trick">老人から絶対に信頼される。<strong>地域コミュニティの情報網独占／古い記録・口承の入手</strong>。</td></tr>
-<tr><td class="no">088</td><td class="ab">スマイルブースト</td><td class="trick">自分の笑顔の効果が2倍。<strong>営業・写真・SNSのバズ／敵を油断させる</strong>／笑顔のまま殺すサイコパス演出。</td></tr>
-<tr><td class="no">089</td><td class="ab">怒気冷却</td><td class="trick">自分が怒ると周囲の温度が1℃下がる。<strong>無言の威圧／相手に「ヤバい奴だ」と直感させる／真夏の冷房代わり</strong>。</td></tr>
-<tr><td class="no">090</td><td class="ab">真顔3倍</td><td class="trick">5秒だけ「真剣な顔」が3倍説得力を持つ。<strong>スピーチのキメ／嘘の念押し／告白</strong>。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">081</td><td class="skill">魔力感知</td><td class="init">魔力の存在をかすかに感じられる。</td><td class="awake">中位:魔力の流れが視える → <strong>最終:魔力を直接操作する魔導神</strong></td><td class="story">無能扱いの少年が、<strong>世界の魔力脈を支配する大賢者</strong>。</td></tr>
+<tr><td class="no">082</td><td class="skill">魔具親和</td><td class="init">魔導具の起動が楽。10%早く動く。</td><td class="awake">中位:魔導具を素手感覚で操る → <strong>最終:全魔導具を不要にする魔法体</strong></td><td class="story">道具屋から、<strong>素手で全ての魔法を発動する達人</strong>。</td></tr>
+<tr><td class="no">083</td><td class="skill">詠唱省略</td><td class="init">詠唱時間が10%短縮される。</td><td class="awake">中位:無詠唱で発動 → <strong>最終:思考即発動・魔法即時化</strong></td><td class="story">魔法の落ちこぼれが、<strong>思考と同時に発動する宮廷魔導士</strong>。</td></tr>
+<tr><td class="no">084</td><td class="skill">魔力回復</td><td class="init">魔力の自然回復が10%早い。</td><td class="awake">中位:倍速回復・無尽蔵感 → <strong>最終:無限魔力・大魔法連発可能</strong></td><td class="story">体力なしの魔法使いが、<strong>無限魔力で連発する大魔導神</strong>。</td></tr>
+<tr><td class="no">085</td><td class="skill">魔法吸収</td><td class="init">弱い魔法を10%だけ吸収できる。</td><td class="awake">中位:完全吸収 → <strong>最終:吸収して逆流・魔法返し</strong></td><td class="story">魔法に弱かった少年が、<strong>魔法使いの天敵となる対魔の盾</strong>。</td></tr>
+<tr><td class="no">086</td><td class="skill">結界視</td><td class="init">結界の存在が視える。</td><td class="awake">中位:結界の解除 → <strong>最終:神の結界すら破壊する破界の士</strong></td><td class="story">封印解除士から、<strong>神域の封印を破る禁忌の術師</strong>。</td></tr>
+<tr><td class="no">087</td><td class="skill">召喚士の素質</td><td class="init">スライム1体を召喚できる。</td><td class="awake">中位:複数体・上位種召喚 → <strong>最終:幻獣・神獣すら召喚</strong></td><td class="story">スライム使いと馬鹿にされた少年が、<strong>幻獣を召喚する英雄</strong>。</td></tr>
+<tr><td class="no">088</td><td class="skill">契約の言葉</td><td class="init">小動物と簡単な契約ができる。</td><td class="awake">中位:人間と魂の契約 → <strong>最終:神との契約締結</strong></td><td class="story">獣使いから、<strong>神と契約を結ぶ大神官</strong>。</td></tr>
+<tr><td class="no">089</td><td class="skill">加護</td><td class="init">自分にだけ運+5%。地味なバフ。</td><td class="awake">中位:周囲の仲間にも加護 → <strong>最終:勢力全体・国家規模の加護</strong></td><td class="story">幸運の少女が、<strong>国を守る加護の聖女</strong>。</td></tr>
+<tr><td class="no">090</td><td class="skill">神託</td><td class="init">月に1度、神からの簡単な助言が降りる。</td><td class="awake">中位:週1で詳細な神託 → <strong>最終:神の声を直接聞く神の代弁者</strong></td><td class="story">辺境の巫女から、<strong>神の声を世界に伝える教皇</strong>。</td></tr>
 </table>
 </div>
 
-<!-- メタ・特殊 -->
-<h3><span class="cat-band" style="background:rgba(239,68,68,.15);color:#f87171">J</span>メタ・特殊系</h3>
+<!-- J. メタ・運命 -->
+<h3><span class="cat-band" style="background:rgba(52,211,153,.15);color:#34d399">J</span>メタ・運命系（地味な直感 → 神を欺く）</h3>
 <div class="tbl-wrap">
 <table>
-<tr><th>No.</th><th>能力名</th><th>効果と化けるポイント</th></tr>
-<tr><td class="no">091</td><td class="ab">能力名偽装</td><td class="trick">他人に自分の能力名を偽って伝えられる（システム的にも偽装される）。<strong>真の能力を最後まで隠す／フェイク能力で敵を誘導</strong>。</td></tr>
-<tr><td class="no">092</td><td class="ab">フェイク発動</td><td class="trick">1日1回、自分の能力を「使ったフリ」ができる（実際は発動しない）。<strong>敵の警戒を別方向に誘導／自分の本当の手の内を温存</strong>。</td></tr>
-<tr><td class="no">093</td><td class="ab">過大評価誘発</td><td class="trick">他人が自分の能力を「強い」と勘違いするオーラ（噂レベル）。<strong>抑止力／攻撃を躊躇わせる／同盟交渉で有利</strong>。</td></tr>
-<tr><td class="no">094</td><td class="ab">死期察知</td><td class="trick">自分が死ぬ24時間前に直感で気付く。<strong>遺言／反撃の準備／同盟者への引き継ぎ／決死の特攻判断</strong>。</td></tr>
-<tr><td class="no">095</td><td class="ab">ラッキーカラー</td><td class="trick">毎朝、その日のラッキーカラーが分かる（精度70%）。<strong>当日の服装・装備色／敵の色を避ける／勝負服</strong>。</td></tr>
-<tr><td class="no">096</td><td class="ab">好物自然発生</td><td class="trick">自分の好きな食べ物が1日1個ポケットに自然発生（種類は固定）。<strong>食料保証／好物が「特殊な薬草」なら最強</strong>／好物選びが戦略。</td></tr>
-<tr><td class="no">097</td><td class="ab">発言数カウンター</td><td class="trick">自分が今日何語喋ったか分かる。<strong>無口戦略の自己管理／喋りすぎてる人の特定（自分視点）／心理戦のセルフチェック</strong>。</td></tr>
-<tr><td class="no">098</td><td class="ab">能力チャージ</td><td class="trick">1日能力を使わない代わりに、翌日2回使える（最大3日溜め）。<strong>戦略的休止＝決戦日に3日分まとめて発動</strong>。</td></tr>
-<tr><td class="no">099</td><td class="ab">影分身（5秒）</td><td class="trick">1日1回、自分の影が5秒だけ独立行動できる（影自身は攻撃力なし）。<strong>偵察／敵の注意逸らし／罠の発動だけ任せる</strong>。</td></tr>
-<tr><td class="no">100</td><td class="ab">能力伝授</td><td class="trick">他人1人にだけ、自分の能力の「使い方」を口頭で完璧に伝えられる（能力は移らない）。<strong>同盟の絆強化／後継者育成／自分が死んでも知識は残る</strong>。</td></tr>
+<tr><th>No.</th><th>スキル名</th><th>初期形態</th><th>覚醒後</th><th>物語映え</th></tr>
+<tr><td class="no">091</td><td class="skill">直感</td><td class="init">重要な選択で「正しい方」が60%でわかる。</td><td class="awake">中位:選択の正解率100% → <strong>最終:未来を確定させる運命操作</strong></td><td class="story">勘の鋭い旅人が、<strong>選択そのものを神々に強要する運命の王</strong>。</td></tr>
+<tr><td class="no">092</td><td class="skill">縁結び</td><td class="init">人との出会いの確率が+10%。</td><td class="awake">中位:運命の人を引き寄せる → <strong>最終:運命そのものを編み替える縁の神</strong></td><td class="story">街の世話焼きが、<strong>勇者と聖女を結ぶ縁の神官</strong>。</td></tr>
+<tr><td class="no">093</td><td class="skill">悪意感知</td><td class="init">自分への悪意がうっすら見える。</td><td class="awake">中位:周囲の陰謀を察知 → <strong>最終:過去の因縁・呪いまで看破</strong></td><td class="story">疑り深い商人が、<strong>大陸の陰謀を全て暴く影の王</strong>。</td></tr>
+<tr><td class="no">094</td><td class="skill">死期察知</td><td class="init">自分が死ぬ24時間前に直感で気付く。</td><td class="awake">中位:他人の死期が見える → <strong>最終:死神と契約・死を操る</strong></td><td class="story">看取り人から、<strong>死を支配する死の神官</strong>。</td></tr>
+<tr><td class="no">095</td><td class="skill">適応の体</td><td class="init">環境変化に体が3倍速で慣れる。</td><td class="awake">中位:即時適応 → <strong>最終:異界・魔界・神界でも生存</strong></td><td class="story">流浪の旅人が、<strong>あらゆる次元を踏破する次元渡り</strong>。</td></tr>
+<tr><td class="no">096</td><td class="skill">言語理解</td><td class="init">知らない言語の意味がうっすら掴める。</td><td class="awake">中位:全言語を完全翻訳 → <strong>最終:概念そのものを伝達する言葉の神</strong></td><td class="story">通訳から、<strong>異種族すら和解させる言葉の使徒</strong>。</td></tr>
+<tr><td class="no">097</td><td class="skill">技の模倣</td><td class="init">1度見た技を10%再現できる。</td><td class="awake">中位:100%コピー → <strong>最終:模倣を超えて上位技に昇華</strong></td><td class="story">器用貧乏の少年が、<strong>全技を吸収する万能剣士</strong>。</td></tr>
+<tr><td class="no">098</td><td class="skill">知識ダウンロード</td><td class="init">触れた本の内容が断片的に頭に入る。</td><td class="awake">中位:完全暗記 → <strong>最終:世界の全知識にアクセス</strong></td><td class="story">図書館員から、<strong>世界の真理を知る賢者</strong>。</td></tr>
+<tr><td class="no">099</td><td class="skill">経験値倍化</td><td class="init">他人より1.2倍速で成長する。</td><td class="awake">中位:5倍速成長 → <strong>最終:瞬間的に技を覚醒させる</strong></td><td class="story">凡人が、<strong>1年で英雄に至る成長の天才</strong>。</td></tr>
+<tr><td class="no">100</td><td class="skill">神の見落とし</td><td class="init">神の管理リストから「ハズレ」と記録され見落とされる。</td><td class="awake">中位:神の監視外で動ける → <strong>最終:神そのものを欺き、神を超える</strong></td><td class="story">主人公格。<strong>神に「捨てられた者」が、神を超える存在になる</strong>物語の中核。</td></tr>
 </table>
+</div>
+
+<div class="box box-info" style="margin-top:24px">
+<p style="color:#aaa;font-size:13px;line-height:1.85">
+<strong style="color:#60a5fa">設計の意図:</strong><br>
+全100スキルが <strong>「初期は本当に弱い → 修行/覚醒で化ける」</strong> 三段階成長モデルで統一。<br>
+これによりキャラ1人ひとりが <strong>1本のラノベ・1人の主人公</strong> になり得る。<br>
+姉妹版 <a href="scripts-isekai-100.html" style="color:#60a5fa">クラフトワールド100</a>（マイクラ仕様前提）との違いは、<strong>世界観非依存・成長型</strong>であること。<br><br>
+群像劇として作る場合、<strong>覚醒に至れない者の悲哀</strong>と<strong>覚醒した者の輝き</strong>の対比が物語の核になる。<br>
+神に「ハズレ」と判定された100人——<strong>それでも、何人かは神を超える</strong>。</p>
 </div>
 
 </div>
@@ -359,83 +410,81 @@ td.ab{width:auto}
 <!-- ============ シナジー ============ -->
 <div class="sec" id="synergy">
 <div class="sec-head">
-<h2><span class="num">04</span>強力シナジー組み合わせ例</h2>
+<h2><span class="num">05</span>強力シナジー組み合わせ例</h2>
 <div class="sec-sub">単体では弱いが、組めば化ける勢力テンプレ</div>
 </div>
 <div class="sec-body">
 
 <div class="synergy">
-<h4>▼ 完全犯罪トリオ</h4>
+<h4>▼ 元素四天王</h4>
 <div class="combo">
-<strong>No.011 指紋消失</strong> ＋ <strong>No.013 呼吸消音</strong> ＋ <strong>No.045 無臭</strong>
+<strong>No.001 微炎</strong> ＋ <strong>No.002 微水</strong> ＋ <strong>No.003 微風</strong> ＋ <strong>No.005 微土</strong>
 </div>
-<div class="effect">物理証拠ゼロ × 接近時の音ゼロ × 体臭ゼロ。3人で1人の暗殺者を「いなかった存在」にできる。誰がやったか永遠に不明＝勢力内の暗殺請負業として最強。</div>
+<div class="effect">4人が <strong>覚醒</strong> すれば、自然界の四元素を支配する大魔導団が成立。中位段階でも「火 × 水蒸気の煙幕 × 風で運搬 × 土で要塞」と組み合わせるだけで一軍を相手にできる。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 情報独裁ペア</h4>
+<h4>▼ 不敗の戦士団</h4>
 <div class="combo">
-<strong>No.072 姓名表示</strong> ＋ <strong>No.079 嘘判定×3</strong>
+<strong>No.013 鋼皮</strong> ＋ <strong>No.014 再生</strong> ＋ <strong>No.071 微結界</strong> ＋ <strong>No.077 攻撃見切り</strong>
 </div>
-<div class="effect">名前を完全把握 × 嘘を即時看破。会議に座っているだけで全員の素性と発言の真偽が分かる。勢力リーダーの諜報部長が成立。</div>
+<div class="effect">硬い × 治る × 結界 × 回避。<strong>4枚の防御を全て掻い潜らないと殺せない</strong> 不死身の前衛。1人でも欠けると瞬殺されるが、4人揃えば伝説級。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 暗殺タイミング四重奏</h4>
+<h4>▼ 真実の宮廷</h4>
 <div class="combo">
-<strong>No.003 音速ディレイ</strong> ＋ <strong>No.022 完全時計</strong> ＋ <strong>No.067 10文字予測</strong> ＋ <strong>No.024 3秒巻き戻し</strong>
+<strong>No.041 嘘判定</strong> ＋ <strong>No.042 感情リード</strong> ＋ <strong>No.046 真贋判定</strong> ＋ <strong>No.043 殺気感知</strong>
 </div>
-<div class="effect">音消し × 完璧なタイミング × 相手の次の言葉先読み × ミスったら3秒戻る。1人を仕留めるための「絶対成功する暗殺チーム」が組める。</div>
+<div class="effect">嘘 × 感情 × 物の真贋 × 殺意。会議室に座っているだけで <strong>全ての裏切り・贋作・暗殺計画</strong> が暴かれる。王宮の中枢に置けば永久に陰謀が成立しない。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 物理介入アタッカー</h4>
+<h4>▼ 自然支配連合</h4>
 <div class="combo">
-<strong>No.001 微熱操作</strong> ＋ <strong>No.005 静電気生成</strong> ＋ <strong>No.008 微風操作</strong>
+<strong>No.022 植物の声</strong> ＋ <strong>No.023 虫の使役</strong> ＋ <strong>No.024 雨呼び</strong> ＋ <strong>No.028 樹木育成</strong>
 </div>
-<div class="effect">温度＋静電気＋風＝<strong>火薬の自然発火</strong>。火薬庫を3人で見るだけで爆発させられる。「事故」として処理される完全犯罪兵器。</div>
+<div class="effect">森を一夜で生やし、虫を兵団化し、雨で守り、植物で動かす。<strong>自然そのものを兵器化</strong>する勢力。文明側からは詠唱もないのに城が森に飲まれて滅びる。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 食料インフラ三羽烏</h4>
+<h4>▼ 言葉の覇権</h4>
 <div class="combo">
-<strong>No.035 蜂蜜生成</strong> ＋ <strong>No.037 促成栽培</strong> ＋ <strong>No.039 魚召集</strong>
+<strong>No.051 説得の声</strong> ＋ <strong>No.054 カリスマ演説</strong> ＋ <strong>No.057 魅惑の笑顔</strong> ＋ <strong>No.090 神託</strong>
 </div>
-<div class="effect">糖分・植物・タンパク質を全カバー。食料源を独占して勢力均衡の中心に立てる。武力なくても全勢力に必要不可欠な「中立国」を作れる。</div>
+<div class="effect">口だけで国を動かす集団。武力ゼロでも、<strong>説教 → 演説 → 笑顔 → 神託</strong> の四段攻撃で大衆心理を完全掌握。最終的に大陸統一が言葉だけで成立する。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 心理戦の頂点</h4>
+<h4>▼ 時の編纂者</h4>
 <div class="combo">
-<strong>No.015 感情リード</strong> ＋ <strong>No.017 説得ボイス</strong> ＋ <strong>No.081 初対面好印象</strong> ＋ <strong>No.090 真顔3倍</strong>
+<strong>No.031 残像視</strong> ＋ <strong>No.032 完璧記憶</strong> ＋ <strong>No.034 未来の予感</strong> ＋ <strong>No.038 残響聴取</strong>
 </div>
-<div class="effect">相手の感情を読んで × 説得力5%増しの声で × 初対面好印象 × 真顔キメ。事実上の <strong>洗脳級交渉力</strong>。1人で勢力を作り上げるリーダー型。</div>
+<div class="effect">過去視 × 完全記憶 × 未来予感 × 過去会話再現。事実上の <strong>「歴史と未来の全把握」</strong>。覚醒すれば神に近い情報優位を得る。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 即席要塞シナジー</h4>
+<h4>▼ 死の四重奏</h4>
 <div class="combo">
-<strong>No.041 3秒石化</strong> ＋ <strong>No.051 紙鋼化</strong> ＋ <strong>No.057 高速結束</strong>
+<strong>No.044 隠形</strong> ＋ <strong>No.007 微毒</strong> ＋ <strong>No.067 腐敗操作</strong> ＋ <strong>No.094 死期察知</strong>
 </div>
-<div class="effect">3秒の絶対防御 × 紙が鉄に × ロープを瞬時に結ぶ。3人で <strong>30秒で要塞</strong> を組める。攻城戦の主役。</div>
+<div class="effect">気配ゼロで近づき、毒を盛り、死体を腐敗加速で証拠隠滅、相手の死期を見越して動く。<strong>暗殺ギルドの最高峰</strong> が成立。</div>
 </div>
 
 <div class="synergy">
-<h4>▼ 「能力チート」ペア</h4>
+<h4>▼ 主人公連合（ラスボス級）</h4>
 <div class="combo">
-<strong>No.092 フェイク発動</strong> ＋ <strong>No.093 過大評価誘発</strong>
+<strong>No.097 技の模倣</strong> ＋ <strong>No.099 経験値倍化</strong> ＋ <strong>No.100 神の見落とし</strong>
 </div>
-<div class="effect">本当は何もしていないのに、敵は「強い能力を使われた」と思い込む。<strong>能力なしで能力者として扱われる</strong>＝最強の心理戦。実際の能力は最後の最後まで温存。</div>
+<div class="effect">他人の技を吸収 × 5倍成長 × 神の監視外。神に <strong>「ハズレ」と判定された3人</strong> が、神に挑む物語の中核。<strong>神を超える3人</strong> として最終局面を担う。</div>
 </div>
 
-<div class="box box-info" style="margin-top:24px">
-<p style="color:#aaa;font-size:13px;line-height:1.85">
-<strong style="color:#60a5fa">設計の意図：</strong><br>
-能力は単独では「弱い・微妙」でも、<strong>2〜4人の組み合わせで突如「最強」になる</strong> ように設計してある。<br>
-これが <strong>勢力結成の自然な動機</strong> を生み、群像劇の必然性を作る。<br>
-ただし強い組み合わせを持つチームほど、メンバーの1人が裏切ると <strong>連鎖崩壊する脆さ</strong> も持つ——これがバトロワとしての緊張感を生み続ける。<br><br>
-舞台がマイクラじゃなくても、現代日本でも、ファンタジーでも、学園でも——<br>
-このリストはそのまま使える。<strong>キャラ100人にIDと名前を割り振れば、即シリーズ化可能</strong>。</p>
+<div class="box box-em" style="margin-top:24px">
+<p style="color:#fbbf24;font-size:13px;line-height:1.85">
+<strong>シナジーの楽しみ方:</strong><br>
+覚醒スキルは <strong>「揃わないと真価を発揮しない」</strong> 設計。<br>
+シーズン序盤で「組んだメンバーが死亡」すると、シナジーが崩壊し主人公がピンチに——<br>
+このリスクこそが、群像劇の <strong>緊張感と感動</strong> を生む。</p>
 </div>
 
 </div>
@@ -443,7 +492,7 @@ td.ab{width:auto}
 
 <!-- Footer -->
 <div style="text-align:center;padding:40px 20px;color:#444;font-size:12px">
-ABILITY 100 — 汎用版 v1.0 / 2026-04-26<br>
+ABILITY 100 — 異世界転生・成長型 v2.0 / 2026-04-26<br>
 姉妹版: <a href="scripts-isekai-100.html" style="color:#666">クラフトワールド100（マイクラ版）</a>
 </div>
 

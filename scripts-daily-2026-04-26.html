@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！日刊台本 2026年04月26日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(249,115,22,.15);color:#f97316;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-music{background:rgba(168,85,247,.15);color:#c084fc}
+.t-mrbeast{background:rgba(239,68,68,.12);color:#f87171}
+.t-original{background:rgba(34,211,153,.12);color:#34d399}
+.t-story{background:rgba(56,189,248,.12);color:#7dd3fc}
+.t-comedy{background:rgba(251,146,60,.12);color:#fb923c}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-short{background:rgba(249,115,22,.12);color:#f97316}
+.t-long{background:rgba(52,211,153,.12);color:#34d399}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-meta{background:rgba(244,114,182,.12);color:#f9a8d4}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+.concept{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 0;font-size:13px;color:#93c5fd}
+.concept strong{color:#60a5fa}
+
+.dial{padding:0 24px 20px}
+.dial-head{font-size:12px;font-weight:700;color:#555;padding:16px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:52px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.who-se{color:#444;font-style:italic;font-size:13px}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.music{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#e9d5ff}
+.music strong{color:#c084fc}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+.viral{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fca5a5}
+.viral strong{color:#f87171}
+.thumb{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.thumb strong{color:#fbbf24}
+
+.long-section{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden}
+.long-head{padding:22px 24px 14px}
+.long-head h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.long-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.long-body{padding:0 24px 24px}
+.long-block{margin-bottom:20px}
+.long-block h4{font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;padding-top:14px}
+.long-block p{font-size:14px;color:#999;line-height:1.8}
+.long-block .txt-box{background:#111;border-radius:8px;padding:14px 18px;font-size:14px;color:#bbb;line-height:1.9}
+.scene-label{font-size:12px;font-weight:700;color:#f97316;margin-bottom:6px}
+
+.name-serif{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14px;color:#fde68a;font-style:italic}
+.name-serif strong{color:#fbbf24;font-style:normal}
+
+.research{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;padding:24px;margin-top:32px}
+.research h3{font-size:16px;font-weight:800;color:#888;margin-bottom:16px;text-transform:uppercase;letter-spacing:.04em}
+.research h4{font-size:14px;font-weight:700;color:#60a5fa;margin:16px 0 8px}
+.research p{font-size:13px;color:#666;line-height:1.8}
+.research ul{padding-left:18px;font-size:13px;color:#666;line-height:2}
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#shorts">ショート</a>
+<a href="#D0426-S01">S01</a>
+<a href="#D0426-S02">S02</a>
+<a href="#D0426-S03">S03</a>
+<a href="#D0426-S04">S04</a>
+<a href="#D0426-S05">S05</a>
+<a href="#longs">横動画</a>
+<a href="#D0426-L01">L01</a>
+<a href="#D0426-L02">L02</a>
+<a href="#D0426-L03">L03</a>
+<a href="#research">リサーチ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">日刊台本 2026.04.26</div>
+<h1>よふかしくらぶ！日刊台本<br>2026年04月26日</h1>
+<p>金のタンポポbrainrot×ひぐれ世界連動ダンス×100日後やとら×まひる人格出荷×タイポしか許されない24時間。<br>48時間バトロワ「最後の一人になるの怖い」×視聴者0だと思っていた配信×消えたMinecraftの葬式。<br>ショート5本＋横動画3本。推敲2エージェント全改善反映版。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="shorts">ショート台本（5本）</h2>
+<p class="sec-desc">7〜8秒ループ設計。冒頭3秒の結末提示／コールドオープンを全本に統一。まひるのテンション変動を全本で最低2回確保。各本に名セリフ候補とリプレイ性のある伏線を埋め込み。</p>
+<!-- ============================================================ -->
+
+<!-- S01 -->
+<div class="sc" id="D0426-S01">
+<div class="sc-head">
+<h3>S01「やとらが壊れた ─ 金のタンポポ事件」</h3>
+<div class="sc-meta">
+<span class="tag t-trend">トレンド乗り</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">brainrot構文</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>真っ黒画面、1秒沈黙→やとらの声だけ「諸君。これは——金のタンポポなんだ」→画面が明けるとあさめが既に泣きそうな顔で「3回目だが？」（既に同じ会話が繰り返されていた示唆）。「金のタンポポ」発言は1本に正確に4回配置、ズーム倍率を1x→1.5x→3x→画面破壊レベルに段階強化。</div>
+
+<div class="concept"><strong>コンセプト：</strong>camman18発「Then we got the golden dandelion, which is a golden dandelion」brainrot構文への直撃乗り。同語反復の冗長さを4人組に分散させて受け止める。実は「金のタンポポ」はやとらが勝手に命名した普通の黄色い花だったオチで、ひぐれが図鑑で淡々と論破するメタ落ち。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君。これは——金のタンポポなんだ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（既に泣きそうな顔）3回目だが？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">補足する。これは——金の、タンポポだ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（隅で爆笑、録画中）ループしてる！ループしてる！最高！スクショ！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無表情、淡々と）……それ、3回目</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急降下）待って、本気のやつだ。本気のやつ私が一番苦手</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（やとらに向けて）いや知ってるって！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（無視して真顔で再提示）そして、これは——金のタンポポだ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（微回復、自分で持ち直す）……でもループって芸術じゃない？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">時間とは——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ひぐれと同時に）やめろ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（あさめと同時に）やめろ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（図鑑を開いて）……これ、ただのタンポポだぞ</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（無言で同じ花を植え直す）これは、金の——</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（爆発）もういい！それ金のタンポポ！金！の！タンポポ！</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>「補足する。これは——金の、タンポポだ」（厨二の冗長言い換え）／ ひぐれ「……それ、3回目」（無表情で淡々と刺すツッコミ）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「これは、金の——」のブツ切りから冒頭の真っ黒画面「諸君。これは——金のタンポポなんだ」へ自然接続。ループのたびにあさめの泣きそうな顔の度合いが強くなっていく（1周目：苦笑／2周目：涙目／3周目：本泣き）。</div>
+
+<div class="music"><strong>BGM設計：</strong>終始無音が基本。「タンポポだ」と言う瞬間だけ1フレームのキラン音（FF風）。まひるの爆笑だけ生音MAX。ひぐれのツッコミ「3回目」で急に荘厳なオルガンが0.5秒鳴って消える。最後の「もういいって！」でアニメED風ピアノ1音「ポーン」で締める。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>背景に金のタンポポが画面の隅で計7本自生している（コメ欄が数え始める）。ひぐれが開いた図鑑のタイトルが「同語反復論」と読める。やとらの目が一瞬だけ画面外（台本）を見る。次回ショートのサムネにまひるが今撮ったスクショが流用されているメタ落ち（次回予告風）。</div>
+
+<div class="viral"><strong>バズ設計：</strong>brainrot構文の即直撃。「3回目だが？」「補足する。これは——金の、タンポポだ」が単独で切り抜きバズ。あさめとひぐれが同時に「やめろ」シンクロするカットが0.4秒で記憶に残る。背景タンポポ7本の数え合戦コメントで滞在時間UP。</div>
+
+<div class="why">2026年TikTok最大級brainrotミーム「Golden Dandelion」を、4人の温度差で分解吸収。トレンド乗りでありながら、やとらの厨二＋ひぐれの淡々ツッコミ＋まひるの情緒乱高下＋あさめの常識人爆発、4人全員の見せ場が30秒以内に詰まる構造。</div>
+</div>
+
+<!-- S02 -->
+<div class="sc" id="D0426-S02">
+<div class="sc-head">
+<h3>S02「ひぐれが3秒だけ感情を持った」</h3>
+<div class="sc-meta">
+<span class="tag t-music">音楽・音ハメ</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">キャラ深掘り</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>ビート爆音MAXのTikTokダンス3人カット→0.5秒で完全停止→ひぐれの目だけアップ→（覚悟の声）「……仕方ない」。ここで音声トラックが本当に削除される（YouTubeの音量バーが完全フラット＝コメ欄が「音バグった？」と書く演出）。</div>
+
+<div class="concept"><strong>コンセプト：</strong>無音3秒、ひぐれは踊らない。ただ歩くだけ。マグマ落下音「ぽちゃん」がビートのキック1拍目に音ハメして再開→実はひぐれが事前に仕込んだレッドストーン回路で背景の溶岩・ピストン・ノートブロックが完璧に同期→世界そのものが踊る。3人は呆然、ひぐれだけ無表情で去る。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（覚悟の声、目だけアップ）……仕方ない</span></div>
+<div class="line"><span class="who who-n">（無音3秒）</span><span class="txt">ひぐれ無表情で歩く。音声トラック完全削除。</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">マグマ「ぽちゃん」（ビートのキック1拍目に完全音ハメ）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ビート再開。背景の溶岩・ピストン・ノートブロックが完璧に同期して動き出す。世界そのものが踊る。3人が背景から登場、シンクロダンス。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えぇ……ひぐれ、踊れたん！？体ある！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）待って、これ私映ってないやつだ……無理、消す、全部消す</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（拝みポーズ）これぞ——無音の、儀式</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ひぐれに）ひぐれ今の何拍子？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（即答）……4拍子</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">答えるんだ……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（再ハイ、復活）ガチ勢じゃん！？スクショ！ひぐれ単体でいくか、私はカメラマンに徹する</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（声がわずかに揺れる）やめろ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（聞かれてもないのに弁解）……練習してない</span></div>
+<div class="line"><span class="who who-n">（ED）</span><span class="txt">ひぐれの部屋カット、ノートブロック散乱。看板に「Rehearsal Day 47」。</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>ひぐれ「……練習してない」（聞かれてもないのに先回りして弁解する照れ）／ まひる「無理、消す、全部消す」（自分が映ってないと耐えられない実況者の業）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>ひぐれの「やめろ」（声が揺れる）から冒頭のビートMAXダンスへ。ループ2周目に背景看板「Rehearsal Day 47」が0.3秒だけ拡大表示される。</div>
+
+<div class="music"><strong>BGM設計：</strong>ビート＝Phonk系160BPM。3秒無音は本当に音声トラック削除（YouTubeの音量バー完全フラットでコメ欄が「音バグった？」と錯覚）。マグマ「ぽちゃん」をビートのキック1拍目に完全音ハメ→そこから世界連動ダンス。ひぐれ退場時、ノートブロックが「ド」のワン音だけ残って消える。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>無音シーン中、ひぐれの足音が踊りのリズムで歩いてる（よく聞くと8ビート）。背景看板に「Rehearsal Day 47」と小さく記載。ED部屋カットの机に「練習ノート vol.47」が積んである。スケール感強化テロップ「48時間で組んだ1200ブロックの自動演奏装置」を1秒挿入。</div>
+
+<div class="viral"><strong>バズ設計：</strong>無音3秒で音バグ疑惑→世界連動ダンスで一気にカタルシス、TikTok上限の音ハメ＋スクロール停止フック両立。ひぐれの「練習してない」セリフが切り抜き専用素材。47日練習という伏線がコメ欄解読合戦化。</div>
+
+<div class="why">「クールキャラの照れ隠し」というアニメ伝統技を、レッドストーン×音MAD×無音演出に落とし込んだ。Number_i「LAVALAVA」型のクール・ドロップ構造を、ひぐれという無表情キャラと合体させた稀少フォーマット。</div>
+</div>
+
+<!-- S03 -->
+<div class="sc" id="D0426-S03">
+<div class="sc-head">
+<h3>S03「100日間まともに喋らなかった男の最終日」</h3>
+<div class="sc-meta">
+<span class="tag t-mrbeast">MrBeast系</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">感動</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜55秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>Day100の漆黒の城ドーン（ネタバレ）→3人絶句カット→「100日前、こいつは草原で泣いていた」→Day1巻き戻し（結末提示型MrBeast構文）。</div>
+
+<div class="concept"><strong>コンセプト：</strong>やとらの100日チャレンジ。Day1の宣言、Day30〜90の進捗ゼロ風、Day100の巨大城お披露目。実は城の最深部に3人の名前を刻んだ像があり、Day60にまひるが置いていったパンが100日間ずっと祭壇に供えられている。「我は支配したかったのではなく、4人の世界を守る城が欲しかった」二重構造。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（Day100）</span><span class="txt">巨大漆黒の城ドーン。3人絶句。テロップ「100日前、こいつは草原で泣いていた」。</span></div>
+<div class="line"><span class="who who-n">（Day1巻き戻し）</span><span class="txt">草原に1人のやとら。所持アイテム：2個。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（カメラ目線）100日後、我はこの世界の王となる。記録せよ</span></div>
+<div class="line"><span class="who who-n">（Day30）</span><span class="txt">あさめが訪れる。やとらの拠点はまだ土。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（淡々ナレ）Day30。やとらの家、まだ土</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（泥だらけ）我は……闇の準備中だ</span></div>
+<div class="line"><span class="who who-n">（Day60）</span><span class="txt">まひる訪問。やとらほぼ動かない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">やとらーー！？　……これもう配信切っていい？</span></div>
+<div class="line"><span class="who who-n">（Day60夜）</span><span class="txt">まひる、パンを置いて去る。</span></div>
+<div class="line"><span class="who who-n">（Day90）</span><span class="txt">ひぐれ訪問。クールな指摘。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">Day90で土台がない。設計から間違ってる</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（小声）……もう少しだけ</span></div>
+<div class="line"><span class="who who-n">（Day100）</span><span class="txt">巨大漆黒の城。3人到着。最深部へ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（絶句）土から、これ……？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（テンション最高値）待って泣く、私何も作ってない、フォロワーしか減らしてない</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（しれっと）それぞれの100日があった</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（即刺す）お前は黙ってろ</span></div>
+<div class="line"><span class="who who-n">（最深部）</span><span class="txt">3人の名前を刻んだ像。Day60のまひるのパンが祭壇に供えてある。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小さく）……認める。設計、間違ってなかった</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（微回復）……でもこの城の前で写真撮ったら盛れる</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>ひぐれ「……認める。設計、間違ってなかった」（完璧主義者が他人を認める瞬間）／ まひる「フォロワーしか減らしてない」（自虐ピーク）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「写真撮ったら盛れる」からDay100の城ドーン→Day1の「100日後、我はこの世界の王となる」へ。ループのたびに右下のやとら所持アイテム数カウンタが見える（Day1=2 → Day100=14,000）。</div>
+
+<div class="music"><strong>BGM設計：</strong>Day1〜30＝環境音のみ。Day60で初めてピアノ単音が追加。Day90でストリングスが重なる。Day100の城お披露目で全楽器爆発→0.5秒無音→3人の息を呑む音だけ→静かなピアノで「お前、本気だったんだな」。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>各Dayの右下にやとらの所持アイテム数カウンタ（Day1=2、Day100=14,000）。Day30であさめが落としたヘアピンが城の祭壇に飾ってある。最深部に3人の名前を刻んだ像。Day60のまひるのパンが100日間ずっと供えられている。設計図にひぐれのサインが薄く入っている＝裏で2人だけ通信してた伏線。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「総ブロック数487,000個／徒歩距離312km／睡眠時間累計19時間／城の高さ256ブロック＝高度限界」のデータテロップでMrBeast構文の労力可視化。「100日前は草原で泣いてた」結末提示型でスクロール停止。像とパンの伏線で2周目視聴を誘発。</div>
+
+<div class="why">MrBeastフォーマットを4人組キャラに圧縮。やとらの厨二宣言→3人のツッコミ→最終日の像で全員が報われる二重構造。50秒のショートで感動と笑いを両立。</div>
+</div>
+
+<!-- S04 -->
+<div class="sc" id="D0426-S04">
+<div class="sc-head">
+<h3>S04「まひる、人格が出荷された」</h3>
+<div class="sc-meta">
+<span class="tag t-original">完全オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">キャラ崩壊</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜55秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>過去のまひる絶叫カット（過去映像風）→ブツッと切れて→「みなさん、おはようございます。今日は良い天気ですね」（声優が完全に別人レベルで演技変える、教育番組トーン）。</div>
+
+<div class="concept"><strong>コンセプト：</strong>「まひるが情緒不安定」を逆照射するキャラ崩壊回。情緒安定演技でキャラを失ったまひるに3人が逆に不安になる逆転劇。常識人モード継続14時間27分（自己最長）。夜、1人で「ふざけてないと、息できないんだった」と気づく自己発見トーン。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（過去映像）</span><span class="txt">いつものまひるの絶叫「あ゛ーー！！！スクショ！！」がブツッと切れる。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（フラット、教育番組トーン）みなさん、おはようございます。今日は良い天気ですね</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えぇ……えぇ……？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">これは——擬態だ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言で額に手）……熱は？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……平熱。じゃあ病気じゃない</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ならば憑依だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">どっちも嫌だよ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（しれっと）私が、本来のまひるです</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あらあら、皆さん心配性ですね（ニコッ）</span></div>
+<div class="line"><span class="who who-n">（3人ゾッとする）</span><span class="txt">BGMはパッヘルベルのカノン（結婚式）が真顔で流れている。</span></div>
+<div class="line"><span class="who who-n">（夜）</span><span class="txt">3人が窓の外からこっそり様子見に来ている（3つの影）。まひるが1人になった瞬間。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ゛ーーー！！普通の人間ーー！！無理！！1日が限界！！</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">カノンがレコードスクラッチで止まる→いつものまひるテーマ（高速ノイジーEDM）爆音復帰</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（沈静、しんみり）……でも常識人だと誰も笑わせてくれない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（自己発見）ふざけてないと、息できないんだった</span></div>
+<div class="line"><span class="who who-n">（翌朝）</span><span class="txt">いつものまひるが戻っている。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（明るく）あ、昨日のあれ、夢だよね？</span></div>
+<div class="line"><span class="who who-n">（カット）</span><span class="txt">3人の画面端に録画ファイル「mahiru_normal.mp4」が映っている＝3人とも保存してた。</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>まひる「ふざけてないと、息できないんだった」（自虐の極北、エモ）／ ひぐれ「……熱は？」（無言で額に手をやる優しさ）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「夢だよね？」から冒頭の絶叫＋ブツ切り→「みなさん、おはようございます」へ。ループのたびにまひるの「〜ですね」発言回数カウンタが画面端で増えていく（最終的に正確に7回）。</div>
+
+<div class="music"><strong>BGM設計：</strong>常識人モード中＝結婚式BGM（パッヘルベルのカノン）を真顔で流す違和感。夜の崩壊「あ゛ーー！」でカノンがレコードスクラッチで止まる→いつものまひるテーマ（高速ノイジーEDM）爆音復帰→「ふざけてないと〜」でまた静かなピアノ1音。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>常識人まひるの「〜ですね」が正確に7回。背景の額縁が普段より1cm傾いてる＝世界もズレてる演出。3人の画面端に「mahiru_normal.mp4」録画ファイル保存。崩壊後のチャットに1分間で1,847件の絵文字スパム。常識人モード継続時間14時間27分（テロップ）。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「ふざけてないと息できない」名セリフ単独切り抜き、ひぐれの「熱は？」優しさカット、「mahiru_normal.mp4」3人共謀の伏線。常識人演技と素のまひるのギャップが何度も視聴を促す。</div>
+
+<div class="why">情緒不安定キャラに「常識人を演じさせる」逆転構造。まひるの本質を逆照射する設計で、キャラを深掘りしながらコメディとして完結。3人の保存ファイルでシリーズ全体の関係性が一段深まる。</div>
+</div>
+
+<!-- S05 -->
+<div class="sc" id="D0426-S05">
+<div class="sc-head">
+<h3>S05「タイポしか許されない24時間」</h3>
+<div class="sc-meta">
+<span class="tag t-original">完全オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">言語遊び</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜55秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>画面いっぱいの誤字チャットが流れる→1つだけ正しい日本語「助けて」が混じる→「これ、誰が打った？」（緊張）→真相は「ひぐれの猫が踏んだ」でズッコケ。</div>
+
+<div class="concept"><strong>コンセプト：</strong>チャット縛り＝打ち間違えたまま送信、修正禁止。タイポが偶然詩になる言語遊び。まひるの誤字が病みっぽくなり、繋げると本人のSNSプロフ文と一致するメタ仕掛け。やとらの誤字をAI翻訳にかけたら「闇のものよ、集え」になっててガチ厨二だった、というオチ。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（フック）</span><span class="txt">画面に大量の誤字。「助けて」だけ1つ正しい。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">これ、誰が打った？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うちの猫</span></div>
+<div class="line"><span class="who who-n">（ズッコケ）</span><span class="txt">テロップ「縛り：チャットは打ち間違えたまま送信、修正禁止」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">おはおう</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">闇nomono yoツドエ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとら何語！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（直そうとして）やみのもよなツドエ（さらに悪化）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">効率的にやろ。……効率的にやろ。……効率痛喰い夜露</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ひぐれ受験生？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">もういい</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（連投）最高！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">う゛ぁ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">すきしゅき</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">もうらめ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あ、それ私らん</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前のチャット、誤字なのに意味通ってる。怖い</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（再ハイ）やとら壊れてる！最高！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（次の瞬間、急降下）あ、私も壊れてた</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（自分で笑いに変える）誤字の私、本物っぽくない？</span></div>
+<div class="line"><span class="who who-n">（ED）</span><span class="txt">4人とも誤字のまま「おやしゅみ」で終わる（誰も直さない優しさ）</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>ひぐれ「お前のチャット、誤字なのに意味通ってる。怖い」／ まひる「あ、それ私らん」（誤字なのに自虐として完成してる）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「おやしゅみ」から冒頭の誤字チャット流し→「これ、誰が打った？」へ。ループのたびにまひるの誤字詩が長くなっていく（2周目に新しい1行が追加される）。</div>
+
+<div class="music"><strong>BGM設計：</strong>チャット送信音をファミコンの「テッテレー」に統一。まひるの詩パートだけピアノBGMに切替＝視聴者が「え、感動シーン…？」と困惑する違和感演出。最後の絶叫は無音→1拍→爆音。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>まひるのタイポ詩「最高！！う゛ぁすきしゅきもうらめあ、それ私らん」を全部繋げると本人のSNSプロフ文と一致（コメ欄で解読合戦）。あさめの「おはおう」が動画内で3回別シーンに登場（口癖化伏線）。やとらの「闇nomono yoツドエ」をAI翻訳すると「闇のものよ、集え」になっててガチ厨二。総タイポ数342件／修正禁止違反0件／意味通じた率12%エンドカード。</div>
+
+<div class="viral"><strong>バズ設計：</strong>誤字スレ・タイポミーム文化への直撃。「誤字なのに意味通ってる、怖い」名セリフ切り抜き。まひるの詩がプロフ文一致でコメ欄ガチ解読化。AI翻訳ネタが二次創作素材に。</div>
+
+<div class="why">「打ち間違いを修正しない」という単純縛りで4人のキャラがチャット欄に直結する仕組み。まひるの情緒の波がそのまま誤字の質に乗る独特の演出。誰も直さない「おやしゅみ」が4人の関係性を象徴する優しい締め。</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<h2 id="longs">横動画台本（3本）</h2>
+<p class="sec-desc">フック→裏切り→加速→余韻のリズムを18-20分尺で構築。スケール感の数字、無音演出、伏線、複数感情の切替を全本に確保。</p>
+<!-- ============================================================ -->
+
+<!-- L01 -->
+<div class="long-section" id="D0426-L01">
+<div class="long-head">
+<h3>L01「【最後の1人が1億円】よふかしくらぶ、最後の夜 ─ 48時間耐久バトロワ」</h3>
+<div class="long-meta">
+<span class="tag t-mrbeast">MrBeast系</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-emo">感動</span>
+<span class="tag t-time">18〜20分</span>
+</div>
+</div>
+
+<div class="long-body">
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>4人で作ったバトロワ専用ワールド。リスポなし、48時間以内に最後まで残った1人が「100万エメラルド分（実際の塔）」独占。寝てもOKだが寝てる間に殺されたら終了。賞品塔の総ブロック数999,996個＝最初から「4人足りない」設計の伏線あり。</p>
+</div>
+
+<div class="long-block">
+<h4>コールドオープン（0:00〜1:00）</h4>
+<div class="txt-box">塔の爆発映像（結末ネタバレ）→「48時間後、私たちは賞品を捨てた」→「なぜか、を話します」→Day0スタート。MrBeast型の結末提示でスクロール停止。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション1：序盤（1:30〜4:00）— 4人の拠点紹介、別ジャンルBGM</h4>
+<p class="scene-label">SCENE 1-A：あさめ（ポップBGM）</p>
+<div class="txt-box">罠だらけの可愛い基地。ピンクのカーペット、ハート型の壁。あさめ「私、勝つ気ないから〜！」（言いながら本気の罠を仕込んでる）</div>
+<p class="scene-label">SCENE 1-B：まひる（ローファイBGM）</p>
+<div class="txt-box">SNS実況、戦略ゼロ。まひる「リスナー！見て見て！私の拠点ピンクなの！」（戦闘準備ゼロのまま2時間も配信）</div>
+<p class="scene-label">SCENE 1-C：ひぐれ（オーケストラBGM）</p>
+<div class="txt-box">地下要塞。完全防御。緊急脱出口があさめの基地に直結している（伏線）。ひぐれ独白「……静かすぎる。集中できない」（一人が苦手と気づく瞬間）</div>
+<p class="scene-label">SCENE 1-D：やとら（アンビエントBGM）</p>
+<div class="txt-box">山頂に闇の祭壇。やとら「孤独とは——……いや、寒い」（厨二の鎧が落ちる瞬間）</div>
+</div>
+
+<div class="long-block">
+<h4>セクション2：12時間目（4:00〜8:00）— 初戦闘</h4>
+<div class="txt-box">やとらvsひぐれ初戦闘。激しい剣劇、3人もリアタイで盛り上がる。【裏切り：実は2人で示し合わせた演出戦闘＝視聴者数稼ぎのため】あさめとまひるは知らない。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション3：24時間目（8:00〜11:00）— まひる情緒崩壊</h4>
+<div class="txt-box">眠気の限界。まひる「全員、殺す。私が最後まで残る。だってそれが、私が選ばれる唯一の方法だから」（病みの理屈化）→沈黙の自問「……勝ったあと、誰もいないの、怖い」<br><br>BGM完全消失、息遣いとキー入力音だけ3分。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション4：36時間目（11:00〜14:00）— 毛布の夜</h4>
+<div class="txt-box">あさめが寝落ち→まひるが目の前まで来る→殺さずに毛布を置いて去る（雪の音だけ、無音演出）<br><br>翌朝あさめ「誰、毛布……」→3人沈黙→やとら「闇の妖精だ」→ひぐれ「お前じゃない」→あさめ「……まひるでしょ」→まひる画面外「違うし！！」（バレてる）<br><br>【裏で：実はあさめは寝たフリで全部聞いてた→翌朝何も言わない優しさ】</div>
+</div>
+
+<div class="long-block">
+<h4>セクション5：48時間目クライマックス（14:00〜17:00）</h4>
+<div class="txt-box">残り3人。緊張のクライマックス。まひる、泣き混じりに——<br><br>「勝ちたかったんじゃない。……最後の一人になるの、私だけは耐えられないって、知ってたんだ」<br><br>【裏で：まひるは12時間目から自爆スイッチを準備していた】3人で塔を爆破。爆発音→完全無音12秒→焚火パチパチで戻る。<br><br>賞品塔の中身、実は100万エメラルドではなく「4人の初日のスクショアルバム」だった（運営の仕掛け）→引き分け宣言が運営からの卒業ギフト受領になる二重構造。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション6：エンディング（17:00〜20:00）</h4>
+<div class="txt-box">4人で焚火。ひぐれが何も言わずマシュマロを4本焼いてる。<br><br>まひる微笑「……で、明日も普通にマイクラする？」<br><br>4人それぞれのテーマBGMが順に重なって、最後に1曲のメインテーマになる構成（伏線回収）。</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>まひる「勝ったあと、誰もいないの、怖い」／ やとら「孤独とは——……いや、寒い」（厨二の鎧が落ちる瞬間）／ まひる「最後の一人になるの、私だけは耐えられないって、知ってたんだ」</div>
+
+<div class="visual"><strong>サムネ案：</strong>4人がそれぞれ違う方向見てる＋中央に爆発する塔＋キャッチ「結末、誰も予想できない」「48時間 / 100万エメラルド / 1億円」</div>
+
+<div class="music"><strong>音楽演出：</strong>拠点紹介＝4人別ジャンル（ポップ／ローファイ／オーケストラ／アンビエント）。24時間目まひる崩壊＝BGM完全消失、息遣いとキー入力音だけ3分。36時間目毛布＝音楽なし、雪の音だけ。塔爆破＝爆発音→完全無音12秒→焚火パチパチで戻る。ED＝4人それぞれのテーマが順に重なって最後に1曲のメインテーマに統合（伏線回収）。</div>
+
+<div class="easter"><strong>伏線/イースターエッグ：</strong>各拠点に他3人の名前がこっそり刻まれている（バレないよう描いてる＝最初から1人になりたくなかった）／ まひるのSNS投稿のタイムスタンプを追うと24時間目の崩壊予告を朝の時点でしてた／ ひぐれの地下要塞、緊急脱出口があさめの基地に直結／ 賞品塔のブロック数が999,996個＝最初から「4人足りない」設計／ ひぐれが地下からわざと足音立ててまひるに位置教えてた／ やとら祭壇から毎時間「生存確認」のサイン花火（厨二の体で見守り）</div>
+
+<div class="viral"><strong>スケール感（エンドロール完全データ）：</strong>総プレイ時間 48:00:00／総歩行距離 89km／総チャット数 12,847件／睡眠時間平均 2時間37分／賞品塔 高度256・幅64・総ブロック999,996個／予算 100万エメラルド＝現実換算約1億円相当</div>
+
+<div class="why">MrBeast型バトロワを4人組キャラドラマに転化。「優勝＝1人」というルール自体を「4人で塔を爆破する」反逆で書き換え、視聴者の予想を最後の3秒で破壊する設計。まひるの病みが「勝ちたい欲求」ではなく「失う恐怖」に転倒する瞬間が物語のピーク。</div>
+</div>
+</div>
+
+<!-- L02 -->
+<div class="long-section" id="D0426-L02">
+<div class="long-head">
+<h3>L02「視聴者0だと思っていた配信に、3人いた」</h3>
+<div class="long-meta">
+<span class="tag t-story">ストーリー</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-emo">感動</span>
+<span class="tag t-time">12〜14分</span>
+</div>
+</div>
+
+<div class="long-body">
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>深夜2時、まひるが「最近何も楽しくない」と泣きながら配信。視聴者0人と思い込んでいるが、実は3人が同時接続していて、画面の向こうで聞いている。実はまひるは途中で気づいてる、気づかないフリで本音を全部喋りきる入れ子構造。</p>
+</div>
+
+<div class="long-block">
+<h4>コールドオープン（0:00〜1:00）</h4>
+<div class="txt-box">配信画面「視聴者：0」ドアップ→チャットに「お」だけ送信される→まひる「え？」凍る→タイトルがここで初めて出る。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション1：配信開始（1:00〜3:00）</h4>
+<div class="txt-box">まひる「視聴者0かぁ、まあいつも通り」自虐。マイクラの夜の村を歩きながら独白：<br><br>「現実の私、誰も覚えてない。でもチャット欄なら、私の名前、流れていくんだよね。流れて消えるけど、一瞬だけ、いた」</div>
+</div>
+
+<div class="long-block">
+<h4>セクション2：あさめの画面（3:00〜5:00）</h4>
+<div class="txt-box">あさめが視聴者として接続。コメントしようとして手を止める。「今コメントしたらバレちゃう」涙。配信中ずっと既読つけずに見てる＝騒がない優しさ。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション3：やとらの画面（5:00〜6:30）</h4>
+<div class="txt-box">やとらPCの前で「我は……どうすればいい」と1人で取り乱す。厨二ノートに「闇の友、救済」と書きかけて消す。「闇の中にこそ光がある」と打ちかけて消す。厨二のままじゃ届かないと自覚してる。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション4：ひぐれの画面（6:30〜8:00）</h4>
+<div class="txt-box">ひぐれ無表情のままチャット欄をずっとスクロール。涙ぐむ。「言葉が見つからない」最初から最後まで2時間ずっと接続している（誰よりも長い）。</div>
+</div>
+
+<div class="long-block">
+<h4>セクション5：まひるの情緒乱高下（8:00〜10:00）</h4>
+<div class="txt-box">まひる急ハイ「でもさ！マイクラあるじゃん！？昨日ひぐれが作ってくれた家、まだあるじゃん！？それで十分じゃない！？十分じゃない？……ねえ十分って言って」<br><br>急降下「……あ、誰もいないんだった」</div>
+</div>
+
+<div class="long-block">
+<h4>セクション6：4文字のメッセージ（10:00〜12:00）</h4>
+<div class="txt-box">4人とも気づかれないようにコメ欄に1文字ずつ送る。意味のある順序：<br><br>ひぐれ「お」（最初、迷わず）<br>やとら「は」（厨二で何か書きかけて消して、シンプルに）<br>あさめ「よ」（明るく）<br>まひる自身が最後の「う」を打つ（自分宛にメッセージ完成、号泣）<br><br>1文字ごとにピアノの1音ずつ重なって、最後に和音になる音演出。<br><br>まひる気づき、涙ぐむ「……視聴者4人もいた……」</div>
+</div>
+
+<div class="long-block">
+<h4>セクション7：ウザいコメント（12:00〜13:00）</h4>
+<div class="txt-box">やとらが匿名で送ったコメント「闇の中にこそ光がある」が完全にウザい厨二コメントで、まひるが配信中に「うわキモいの来た」と言ってしまう→画面外のやとら涙。<br><br>でもまひるは続ける「……でも今のコメントで、ちょっと笑えたかも」</div>
+</div>
+
+<div class="long-block">
+<h4>セクション8：翌朝（13:00〜14:00）</h4>
+<div class="txt-box">翌朝、4人でマイクラ。誰も昨夜の話をしない。でもひぐれだけが「……今日、家、増築する」（昨夜の家の話をさりげなく拾う、まひるにだけわかる形で返す）。<br><br>まひる、画面外で泣きそうな笑顔「……うん」<br><br>エンドカード：まひるは配信のアーカイブを翌日削除→3人がそれぞれ各自録画してた（「忘れない」表現）。</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>まひる「流れて消えるけど、一瞬だけ、いた」／ まひる「ねえ十分って言って」（返事が来ないハイ→急降下のトリガー）／ ひぐれ「……今日、家、増築する」（無言の優しさ）</div>
+
+<div class="visual"><strong>サムネ案：</strong>暗い部屋のまひる＋画面下に4つの匿名アイコン＋キャッチ「気づかれたら、終わり」</div>
+
+<div class="music"><strong>音楽演出：</strong>配信中＝環境音とPC稼働音だけ、BGMゼロ。3人視点切替時のみそれぞれの心音が聞こえる演出。「お」「は」「よ」「う」送信時、1文字ごとにピアノの1音ずつ重なって最後に和音＝音で気づきを表現。翌朝マイクラ＝いつものBGMだが音量が普段より20%小さい＝「触れない」の音表現。</div>
+
+<div class="easter"><strong>伏線/イースターエッグ：</strong>配信のチャット欄、よく見ると3人の入室時刻が画面端に。ひぐれが最初から最後まで2時間ずっといた（誰よりも長い）／ まひるの机に映ってるお守りは3人からの誕生日プレゼント／ 翌朝のマイクラで4人が立つ位置、配信のサムネと完全に同じ配置／ アーカイブ削除後、3人それぞれの録画ファイルが画面端に並ぶエンドカード</div>
+
+<div class="viral"><strong>スケール感：</strong>配信時間 2:47:13／視聴者ピーク 4／チャット総数 4／まひるの本音 推定3年分／3人が泣いた回数 計17回／まひるのフォロワー数 12.4万人、でも本当の理解者 3人</div>
+
+<div class="why">情緒不安定キャラの「病み配信」を、視聴者0と本人が思い込んでいる入れ子構造で救済する設計。まひるが途中で気づいているという裏設定が「本当に届けたい言葉は、聞かれていないと思った時しか出てこない」というテーマを成立させる。配信の入退室時刻と4文字のチャットだけで関係性を語る稀少フォーマット。</div>
+</div>
+</div>
+
+<!-- L03 -->
+<div class="long-section" id="D0426-L03">
+<div class="long-head">
+<h3>L03「【追悼】Minecraftが殺してきた、すべてのもの ─ マイクラ博物館葬式」</h3>
+<div class="long-meta">
+<span class="tag t-comedy">コメディ</span>
+<span class="tag t-long">横動画</span>
+<span class="tag t-meta">メタ</span>
+<span class="tag t-emo">感動</span>
+<span class="tag t-time">15〜18分</span>
+</div>
+</div>
+
+<div class="long-body">
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>アプデで消えた／変更されたマイクラの過去要素（ヒロブライン噂、Far Lands、消えたMOB、旧ベビーゾンビ等）を、博物館形式で展示し、4人で「葬式」を執り行う。コメディ×感動×メタの三層混合。Minecraftアップデート287回／削除された機能推定142個／本動画で弔った機能23個のスケール。</p>
+</div>
+
+<div class="long-block">
+<h4>コールドオープン（0:00〜2:00）</h4>
+<div class="txt-box">真っ黒画面→ろうそくが1本ずつ点く（4本）→やとら（喪服スキン）「失われたものは、どこへ行く？」→博物館の扉ギィィ。葬儀映画の開幕構文。<br><br>やとら「諸君。本日は——失われたものたちの、葬儀である」博物館入場。</div>
+</div>
+
+<div class="long-block">
+<h4>第一展示：旧ベビーゾンビ（2:00〜5:00）</h4>
+<div class="txt-box">Tiny Takeoverで姿を変えた旧ベビーゾンビの墓石。<br>あさめ「えっこの子……いた、いた！！」泣<br>まひる「ベビーゾンビ……消えたんだ……フォロワーが減るのと同じ顔してる」（急降下）<br>まひる急ハイ「あ゛ー泣くわ！ベビーゾンビで泣くとは思わなかった！」（情緒乱高下）<br><br>BGMはオルゴール基調。</div>
+</div>
+
+<div class="long-block">
+<h4>第二展示：Far Lands（5:00〜8:00）</h4>
+<div class="txt-box">座標バグで生まれた地形「世界の果て」の展示。<br>やとら「数学的限界に殺された場所だ」<br>ひぐれ「……ここ、座標バグで生まれた地形。仕様の隙間」<br>あさめ「ひぐれ詳しっ」<br>ひぐれ「……調べた」（小声）<br>やとら「効率厨が、なぜ消えた地形を調べる」<br>ひぐれ沈黙<br>まひる「ひぐれもセンチメンタルじゃん！」<br>ひぐれ「……うるさい」<br><br>BGMはアンビエント。</div>
+</div>
+
+<div class="long-block">
+<h4>第三展示：消えたヒロブライン噂（8:00〜11:00）</h4>
+<div class="txt-box">「Removed Herobrine」の墓石。<br>ひぐれが墓石を撫でる時、画面の端に1フレームだけ赤目が映る（ガチで怖い1コマ）。<br>ひぐれ「噂が消えた時、何かが終わった」<br><br>BGMは完全無音＋ノイズ。</div>
+</div>
+
+<div class="long-block">
+<h4>第四展示：自分たちの過去のスキン（11:00〜13:00）</h4>
+<div class="txt-box">展示品の中に4人の「過去のスキン」がこっそり混ざってる。<br>あさめ「えっこれ……私の最初のスキン……？」<br>やとら「私たちもいつか、展示される側だ」<br>まひる（しんみり）「……私、覚えてた」</div>
+</div>
+
+<div class="long-block">
+<h4>第五展示：自分たちのワールド初日のスクショ（13:00〜15:00）</h4>
+<div class="txt-box">最終展示：自分たちのワールド初日のスクショ。<br>「これも、いつか消える」全員無言3秒。<br><br>あさめが初日スクショをずっと保存してた事実が判明＝この子が記録係だった。<br>あさめ「……ずっと、撮ってた」<br>3人「……」<br><br>まひる、今日フォロワーが10人増えてた通知が画面隅に＝失うだけじゃない希望。</div>
+</div>
+
+<div class="long-block">
+<h4>葬式の最後の試練（15:00〜17:00）</h4>
+<div class="txt-box">やとら「もう一つ、消えるものがある」と言って自分のワールドを削除しようとする→3人本気で止める→「冗談だ」（厨二の照れ隠し）→でもカーソルは本当にdeleteの上だった（ガチだった伏線）。<br><br>あさめ（涙混じり）「やとら……お前は、消すなよ」<br>やとら（小声）「……うん」</div>
+</div>
+
+<div class="long-block">
+<h4>エンディング（17:00〜18:00）</h4>
+<div class="txt-box">EDで全員ろうそくを灯す。1本ずつ吹き消していく音×4で完全暗転。<br><br>やとら「ありがとう、消えてくれて」<br>ひぐれ（クールが言うエモ）「失われたから、覚えていられる」<br><br>最後に「あなたが失った機能をコメ欄へ」で参加型。</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>ひぐれ「失われたから、覚えていられる」（クールキャラが言うから刺さるエモ）／ まひる「フォロワーが減るのと同じ顔してる」（業の深い比喩）／ やとら「私たちもいつか、展示される側だ」（メタ哲学）</div>
+
+<div class="visual"><strong>サムネ案：</strong>ろうそく4本＋4人喪服スキン＋キャッチ「今夜、ゲームに弔いを」「23個の機能を、葬る」</div>
+
+<div class="music"><strong>音楽演出：</strong>全編パイプオルガン基調＋風の音。各展示でジャンル切替（ベビーゾンビ＝オルゴール／Far Lands＝アンビエント／ヒロブライン＝完全無音＋ノイズ）。まひるの哲学化「あ゛ーー泣くわ！」でオルガンがレコードスクラッチで止まる→いつもの陽気BGM3秒→また葬送BGMに戻る（情緒乱高下を音で表現）。ED＝4人の足音だけ、ろうそく吹き消す音×4で完全暗転。</div>
+
+<div class="easter"><strong>伏線/イースターエッグ：</strong>博物館の壁の年表に「2026.04.26 よふかしくらぶ結成」＝この動画の公開日（コメ欄が気づく）／ 展示品リストに「未定」の空棚が1つ＝「次は何が消えるか分からない」／ やとらの台詞「失われたから、覚えていられる」をEP01でも言ってた（シリーズ伏線）／ 4人の喪服スキン、よく見るとそれぞれ過去の自分のスキンの色違い／ ヒロブライン墓石の赤目1フレーム</div>
+
+<div class="viral"><strong>スケール感：</strong>Minecraft総アップデート回数 287／削除された機能 推定142個／復活した機能 17個／本動画で弔った機能 23個／博物館の総建設ブロック 64,000個／ろうそく 4本＝4人分。最後に「あなたが失った機能をコメ欄へ」で参加型コメント爆発。</div>
+
+<div class="why">マイクラ史×葬式映画フォーマットの混合という稀少構造。コメディ（やとらの厨二）×ホラー（赤目1フレ）×感動（ED）×メタ（自分たちのスキン展示）の4層を15分で並走。「失う」というネガティブを「覚えている」に転倒する設計が、シリーズ全体の哲学を体現する1本。</div>
+</div>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<div class="research" id="research">
+<h3>本日のリサーチメモ（2026.04.26）</h3>
+
+<h4>マイクラトレンド調査</h4>
+<ul>
+<li><strong>Tiny Takeover</strong>：30種超のベビーMOBがリデザイン。「敵対MOBの赤ちゃんもかわいい」というかわいさ×脅威ギャップ。Mojang公式SNSアイコンまでヒヨコ侵食。</li>
+<li><strong>Chaos Cubed / サルファーキューブ</strong>：ブロック吸収進化MOB。「次は何を食わせる？」というオープンループで検証系ショート量産可能。硫黄洞窟の毒霧で画面歪む視覚パターン中断。</li>
+<li><strong>Golden Dandelion brainrot構文</strong>：camman18発「Then we got the golden dandelion, which is a golden dandelion」。1月末投稿で5日380万再生、4月時点で派生継続。冗長トートロジーの中毒性。→ S01で直撃乗り。</li>
+<li><strong>Herdcraft（4月エイプリル）</strong>：インベントリ廃止＝全アイテムをリードで引きずる公式ジョークアプデ。期間限定の希少感。</li>
+<li><strong>MrBeast 17時間Skyblock</strong>：「100日生存」型ロングフォーム由来のショート切り抜きが王道。結果だけ切り出す curiosity gap最大化。→ S03とL01で構文流用。</li>
+<li><strong>Pale Garden / Herobrine seed</strong>：「本物かもしれない」恐怖の余白＋暗い画面→ジャンプスケアの音響パターン中断。→ L03で活用。</li>
+<li><strong>Cinematic Nostalgia編集</strong>：「Remember who you are」音源＋初期マイクラ画面の郷愁編集。低解像度→高解像度の視覚パターン中断。→ L02と相性◎。</li>
+</ul>
+
+<h4>音楽・カルチャートレンド調査</h4>
+<ul>
+<li><strong>TikTokチャート上位</strong>：きゃりーぱみゅぱみゅ／モナキ（4/8デビュー）／M!LK「好きすぎて滅！」／CHiCO with HoneyWorks。覚えやすい振付チェーン文化。</li>
+<li><strong>Spotifyバイラル日本</strong>：Number_i「LAVALAVA」、ROIROM「My Princess」継続。クール系×低音ビート。→ S02のひぐれソロドロップで活用。</li>
+<li><strong>「エッホエッホ」</strong>：2025年流行語大賞トップ10、2026年も継続中。短い擬音の万能フォーマット。</li>
+<li><strong>「スピキ（SPIKI）」</strong>：ゲーム発キャラ系ミーム、日韓英で国際拡散。声優招いた授賞式まで派生。</li>
+<li><strong>音MAD構造（ブルアカ5周年祭）</strong>：既存セリフを音階化して再構成。ニコニコ月例投稿祭継続。→ S05のタイポ詩構造に応用。</li>
+<li><strong>AI読み上げ×ASMR重ね</strong>：手作業映像＋AI音声＋環境音ASMR。長時間視聴を稼ぐ新フォーマット。</li>
+<li><strong>「タップ・長押し」物理アクション</strong>：Xで滞在時間バズの新潮流。視聴者参加型誘発。</li>
+</ul>
+
+<h4>既存台本ギャップ分析（Agent 3）</h4>
+<p>これまでの「よふかしくらぶ！」は本編／バイラル／ラテラル／トレンド／横動画／バイブル／オリジン／ディープダーク＋4本の日刊で計100本超を蓄積済。今回は<strong>「まだやってない領域」から特に4枠を採用</strong>：</p>
+<ul>
+<li>S04「人格出荷」＝まひるが1日だけ常識人になる（情緒不安定の逆照射、未開拓領域 #14）</li>
+<li>S05「タイポしか許されない」＝IME打ち間違い縛り（言語遊び、未開拓領域 #8）</li>
+<li>L02「視聴者0だと思っていた配信」＝病み配信入れ子構造（未開拓領域 #6）</li>
+<li>L03「マイクラ博物館葬式」＝消えたmodの追悼（未開拓領域 #13）</li>
+</ul>
+
+<h4>制作上の総括メモ（次回以降の参考）</h4>
+<ul>
+<li><strong>冒頭3秒の統一フォーマット</strong>：全本「結末提示」or「コールドオープン」で離脱防止。次回も継続。</li>
+<li><strong>無音演出を1本に最低1回</strong>：音量バーが動かない瞬間でコメ欄が「音バグ？」と書く＝エンゲージ向上。</li>
+<li><strong>エンドカードに数値データ</strong>：MrBeast構文で労力の可視化。</li>
+<li><strong>シリーズ伏線</strong>：やとらの口癖「失われたから、覚えていられる」をEP01とL03に重複配置。まひるのタイポ詩、ひぐれの設計図署名、4人の名前刻みを継続的に埋め込む。</li>
+<li><strong>まひる波形ルール厳守</strong>：1台本最低2回テンション変動（ハイ↔病み↔自己回復の3点）を必ず踏ませる。「ずっと暗い」「ずっとハイ」はNG。</li>
+<li><strong>ひぐれの照れ表現</strong>：「……別に」「効率的に」だけでなく「……練習してない」「……熱は？」など、聞かれてもないのに先回り＆無言の優しさパターンを開発済。</li>
+<li><strong>やとらの厨二崩壊瞬間</strong>：「孤独とは——……いや、寒い」のような厨二の鎧が落ちる1秒を各話に1個埋め込む。</li>
+</ul>
+</div>
+
+<div class="footer">
+よふかしくらぶ！日刊台本 2026.04.26<br>
+ショート 5本＋横動画 3本／全推敲反映版／本日のキーワード：金のタンポポ・無音3秒・100日後の城・人格出荷・タイポ詩・1億円塔・視聴者4人・消えた機能の葬式
+</div>
+
+</div>
+
+</body>
+</html>

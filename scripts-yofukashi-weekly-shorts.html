@@ -855,102 +855,157 @@ function isJapanese(text){
   return /[ぁ-んァ-ヶー一-龯]/.test(text || '');
 }
 
-// 単発翻訳（複数バックエンドフェイルオーバー）
-// 改善：Google Translate Web を最優先（精度＋quota無制限）、MyMemoryをfallback
-async function translateText(text, targetLang = 'ja'){
-  if(!text) return '';
-  // 「ほぼ日本語」ならスキップ（30%以上が日本語文字）
-  const jpChars = (text.match(/[ぁ-んァ-ヶー一-龯]/g) || []).length;
-  if(jpChars / text.length >= 0.3){
-    return text;
-  }
+// 翻訳用CORS proxy リスト（搭載されたCORS_PROXIESより多く・別経路）
+const TRANSLATION_PROXIES = [
+  url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+  url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+  url => `https://proxy.cors.sh/${url}`,
+  url => `https://thingproxy.freeboard.io/fetch/${url}`
+];
 
-  // キャッシュヒット
-  const cacheKey = targetLang + '::' + text;
-  if(translationCache.has(cacheKey)){
-    return translationCache.get(cacheKey);
-  }
-
-  const start = Date.now();
-
-  // ① Google Translate web (CORS proxy経由) — 精度最高・無制限
-  for(const proxyFn of CORS_PROXIES){
+// Google Translate web - パターン1: /translate_a/single
+async function tryGoogleSingle(text, targetLang){
+  const target = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+  for(const proxyFn of TRANSLATION_PROXIES){
     try{
-      const target = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
-      const proxyUrl = proxyFn(target);
-      const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(10000) });
-      if(!res.ok){
-        dlog('warn', `[Google] HTTP ${res.status}`);
-        continue;
-      }
+      const res = await fetch(proxyFn(target), { signal: AbortSignal.timeout(8000) });
+      if(!res.ok) continue;
       const txt = await res.text();
       let data;
-      try{ data = JSON.parse(txt); } catch(e){
-        dlog('warn', `[Google] JSON parse失敗: ${txt.slice(0,80)}`);
-        continue;
-      }
+      try{ data = JSON.parse(txt); } catch(e){ continue; }
       if(Array.isArray(data) && data[0]){
         const translated = data[0].map(seg => (seg && seg[0]) || '').join('').trim();
         if(translated && translated.toLowerCase() !== text.toLowerCase()){
-          translationCache.set(cacheKey, translated);
-          dlog('ok', `[Google ${Date.now()-start}ms] "${text.slice(0,30)}" → "${translated.slice(0,30)}"`);
-          return translated;
+          return { translated, proxy: proxyFn.toString().slice(20,40) };
         }
       }
-    } catch(e){
-      dlog('warn', `[Google] error: ${e.message}`);
-      continue;
-    }
+    } catch(e){ continue; }
   }
-
-  // ② MyMemory API（CORS direct、無料、500語/日制限）
-  // 英語想定（auto は効かない）
-  try{
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    if(res.ok){
-      const data = await res.json();
-      const translated = data.responseData?.translatedText;
-      const status = data.responseStatus;
-      if(translated && (status == 200 || status === '200') && translated.toLowerCase() !== text.toLowerCase()){
-        translationCache.set(cacheKey, translated);
-        dlog('ok', `[MyMemory ${Date.now()-start}ms] "${text.slice(0,30)}" → "${translated.slice(0,30)}"`);
-        return translated;
-      }
-      if(data.quotaFinished){
-        dlog('err', `[MyMemory] quota切れ（500語/日）`);
-      } else {
-        dlog('warn', `[MyMemory] status=${status} translated="${(translated||'').slice(0,30)}"`);
-      }
-    } else {
-      dlog('warn', `[MyMemory] HTTP ${res.status}`);
-    }
-  } catch(e){
-    dlog('warn', `[MyMemory] error: ${e.message}`);
-  }
-
-  dlog('err', `翻訳失敗: "${text.slice(0,40)}"`);
   return null;
 }
 
-// バッチ翻訳（並列2、進捗コールバック）
+// Google Translate web - パターン2: gtx-pa（直接CORSが通る場合あり）
+async function tryGoogleDirect(text, targetLang){
+  try{
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(6000) });
+    if(!res.ok) return null;
+    const data = await res.json();
+    if(Array.isArray(data) && data[0]){
+      const translated = data[0].map(seg => (seg && seg[0]) || '').join('').trim();
+      if(translated && translated.toLowerCase() !== text.toLowerCase()){
+        return { translated, proxy: 'direct' };
+      }
+    }
+  } catch(e){}
+  return null;
+}
+
+// MyMemory（直接CORS、APIキー不要）
+async function tryMyMemory(text, targetLang){
+  try{
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(7000) });
+    if(!res.ok) return null;
+    const data = await res.json();
+    const translated = data.responseData?.translatedText;
+    const status = data.responseStatus;
+    if(translated && (status == 200 || status === '200') && translated.toLowerCase() !== text.toLowerCase()){
+      return { translated, proxy: 'mymemory' };
+    }
+    if(data.quotaFinished) dlog('err', `[MyMemory] quota切れ`);
+  } catch(e){}
+  return null;
+}
+
+// 単発翻訳（複数バックエンドフェイルオーバー＋リトライ）
+async function translateText(text, targetLang = 'ja', retryCount = 0){
+  if(!text) return '';
+  // 「ほぼ日本語」ならスキップ（30%以上が日本語文字）
+  const jpChars = (text.match(/[ぁ-んァ-ヶー一-龯]/g) || []).length;
+  if(jpChars / text.length >= 0.3) return text;
+
+  // キャッシュヒット
+  const cacheKey = targetLang + '::' + text;
+  if(translationCache.has(cacheKey)) return translationCache.get(cacheKey);
+
+  const start = Date.now();
+
+  // ① Google Translate 直接（CORS通れば最速）
+  let result = await tryGoogleDirect(text, targetLang);
+  if(result){
+    translationCache.set(cacheKey, result.translated);
+    dlog('ok', `[GT-direct ${Date.now()-start}ms] "${text.slice(0,28)}" → "${result.translated.slice(0,28)}"`);
+    return result.translated;
+  }
+
+  // ② Google Translate via proxy
+  result = await tryGoogleSingle(text, targetLang);
+  if(result){
+    translationCache.set(cacheKey, result.translated);
+    dlog('ok', `[GT-${result.proxy} ${Date.now()-start}ms] "${text.slice(0,28)}" → "${result.translated.slice(0,28)}"`);
+    return result.translated;
+  }
+
+  // ③ MyMemory（500語/日制限あり）
+  result = await tryMyMemory(text, targetLang);
+  if(result){
+    translationCache.set(cacheKey, result.translated);
+    dlog('ok', `[MyMemory ${Date.now()-start}ms] "${text.slice(0,28)}" → "${result.translated.slice(0,28)}"`);
+    return result.translated;
+  }
+
+  // リトライ（最大2回、バックオフ500ms→1500ms）
+  if(retryCount < 2){
+    const wait = 500 + retryCount * 1000;
+    dlog('warn', `翻訳失敗、${wait}ms後リトライ (${retryCount+1}/2): "${text.slice(0,30)}"`);
+    await new Promise(r => setTimeout(r, wait));
+    return translateText(text, targetLang, retryCount + 1);
+  }
+
+  dlog('err', `翻訳全失敗: "${text.slice(0,40)}"`);
+  return null;
+}
+
+// バッチ翻訳（直列＋wait、進捗コールバック、CORS proxyレート制限回避）
 async function translateBatch(texts, onProgress){
   const results = new Array(texts.length);
-  const BATCH = 2; // CORS proxyに優しく、レート制限回避
   let okCount = 0, ngCount = 0;
-  for(let i = 0; i < texts.length; i += BATCH){
-    const slice = texts.slice(i, i + BATCH);
-    const translated = await Promise.all(slice.map(t => translateText(t).catch(e => {
+  let consecutiveFails = 0;
+
+  for(let i = 0; i < texts.length; i++){
+    // キャッシュヒットなら即時
+    const cacheKey = 'ja::' + texts[i];
+    if(translationCache.has(cacheKey)){
+      results[i] = translationCache.get(cacheKey);
+      okCount++;
+      consecutiveFails = 0;
+      if(onProgress) onProgress(i + 1, texts.length, okCount, ngCount);
+      continue;
+    }
+
+    const t = await translateText(texts[i]).catch(e => {
       dlog('err', `translateText exception: ${e.message}`);
       return null;
-    })));
-    for(let j = 0; j < slice.length; j++){
-      results[i + j] = translated[j];
-      if(translated[j]) okCount++; else ngCount++;
+    });
+    results[i] = t;
+    if(t){ okCount++; consecutiveFails = 0; }
+    else { ngCount++; consecutiveFails++; }
+
+    // 5件連続失敗ならproxyが死んでる、wait長めに
+    if(consecutiveFails >= 5){
+      dlog('warn', `${consecutiveFails}件連続失敗、3秒待機`);
+      await new Promise(r => setTimeout(r, 3000));
+      consecutiveFails = 0;
+    } else if(i < texts.length - 1){
+      // 通常時の間隔（CORS proxyに優しく）
+      await new Promise(r => setTimeout(r, 250));
     }
-    // 中間保存（クラッシュ対策）
-    if((i + BATCH) % 10 === 0) saveTranslationCache();
-    if(onProgress) onProgress(Math.min(i + BATCH, texts.length), texts.length, okCount, ngCount);
+
+    // 中間保存（10件ごと）
+    if((i + 1) % 10 === 0) saveTranslationCache();
+    if(onProgress) onProgress(i + 1, texts.length, okCount, ngCount);
   }
   saveTranslationCache();
   dlog('info', `バッチ翻訳完了: ${okCount}成功 / ${ngCount}失敗`);

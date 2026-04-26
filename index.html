@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>AI ANIME — 台本ポータル</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -415,7 +418,8 @@ function loadFile(el){
 
   hideAll();
   document.getElementById('viewer').style.display = 'flex';
-  document.getElementById('frame').src = file;
+  // キャッシュバスター付きで読み込み（特にtracker系は最新HTMLを保証）
+  document.getElementById('frame').src = file + '?v=' + Date.now();
 }
 
 // inject fav stars into iframe after load
@@ -477,7 +481,7 @@ function injectFavStars(iframe){
 }
 
 // ─── Open in new tab ───
-function openInNewTab(){ if(currentFile) window.open(currentFile,'_blank') }
+function openInNewTab(){ if(currentFile) window.open(currentFile + '?v=' + Date.now(), '_blank') }
 
 // ─── Navigate to a fav card inside its file ───
 function goToFav(file, id){

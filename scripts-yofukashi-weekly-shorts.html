@@ -726,29 +726,110 @@ function parseISO8601Duration(iso){
 
 // 検索（cost: 100）
 async function ytSearch(query, opts = {}){
+  const result = await ytSearchPaged(query, opts);
+  return result ? result.items : null;
+}
+
+// ページング対応版（nextPageTokenを返す）
+async function ytSearchPaged(query, opts = {}){
   const params = {
     q: query,
     part: 'snippet',
     type: 'video',
-    maxResults: opts.maxResults || 25,
+    maxResults: opts.maxResults || 50, // pageあたり最大50（API上限）
     order: opts.order || 'viewCount',
   };
   if(opts.duration) params.videoDuration = opts.duration; // 'short'(<4min)/'medium'/'long'
   if(opts.regionCode) params.regionCode = opts.regionCode;
   if(opts.relevanceLanguage) params.relevanceLanguage = opts.relevanceLanguage;
   if(opts.publishedAfter) params.publishedAfter = opts.publishedAfter;
+  if(opts.publishedBefore) params.publishedBefore = opts.publishedBefore;
+  if(opts.pageToken) params.pageToken = opts.pageToken;
   const data = await ytApi('search', params, 100);
   if(!data || !data.items) return null;
-  return data.items.filter(it => it.id?.videoId).map(it => ({
-    vid: it.id.videoId,
-    title: it.snippet.title,
-    channel: it.snippet.channelTitle,
-    channelId: it.snippet.channelId,
-    uploadedDate: (it.snippet.publishedAt || '').slice(0,10),
-    views: 0,
-    duration: 0,
-    thumbnail: it.snippet.thumbnails?.high?.url || ''
-  }));
+  return {
+    items: data.items.filter(it => it.id?.videoId).map(it => ({
+      vid: it.id.videoId,
+      title: it.snippet.title,
+      channel: it.snippet.channelTitle,
+      channelId: it.snippet.channelId,
+      uploadedDate: (it.snippet.publishedAt || '').slice(0,10),
+      views: 0,
+      duration: 0,
+      thumbnail: it.snippet.thumbnails?.high?.url || ''
+    })),
+    nextPageToken: data.nextPageToken || null,
+    totalResults: data.pageInfo?.totalResults || 0
+  };
+}
+
+// ─── 多次元検索：1クエリを 期間×order×ページ でローテートして新規動画を最大化 ───
+const SEARCH_DIMENSIONS = [
+  { period: 1,  order: 'viewCount', label: '24h人気' },
+  { period: 7,  order: 'viewCount', label: '7日人気' },
+  { period: 7,  order: 'date',      label: '7日新着' },
+  { period: 30, order: 'viewCount', label: '30日人気' },
+  { period: 30, order: 'date',      label: '30日新着' }
+];
+const PAGES_PER_DIMENSION = 2; // 各次元で何ページ取得するか
+const DUPE_RATE_THRESHOLD = 0.85; // 85%以上重複なら早期break
+
+// 1クエリに対して多次元で検索、新規動画を最大化
+async function ytSearchMultiDim(query, existingVids, opts = {}){
+  const allNew = [];
+  let totalCalls = 0;
+  let totalDupes = 0;
+  let totalUnique = 0;
+  const isJP = /[ぁ-んァ-ヶー一-龯]/.test(query);
+
+  for(const dim of SEARCH_DIMENSIONS){
+    let pageToken = '';
+    for(let page = 0; page < PAGES_PER_DIMENSION; page++){
+      const publishedAfter = new Date(Date.now() - dim.period * 86400000).toISOString();
+      const result = await ytSearchPaged(query, {
+        order: dim.order,
+        duration: 'short',
+        regionCode: isJP ? 'JP' : 'US',
+        relevanceLanguage: isJP ? 'ja' : 'en',
+        publishedAfter,
+        pageToken,
+        maxResults: 50
+      });
+      totalCalls++;
+      if(!result || result.items.length === 0){
+        dlog('warn', `[${dim.label} p${page+1}] 0件`);
+        break;
+      }
+
+      // 重複率チェック
+      let dupes = 0;
+      const newOnes = [];
+      for(const item of result.items){
+        if(existingVids.has(item.vid) || allNew.some(n => n.vid === item.vid)){
+          dupes++;
+        } else {
+          newOnes.push(item);
+        }
+      }
+      const dupeRate = dupes / result.items.length;
+      totalDupes += dupes;
+      totalUnique += newOnes.length;
+      allNew.push(...newOnes);
+      dlog('info', `[${dim.label} p${page+1}] ${result.items.length}件 (新規${newOnes.length}/重複${dupes} ${(dupeRate*100).toFixed(0)}%)`);
+
+      // 重複率が閾値超え＝同じ動画ばっか → 次のページ無意味、次元変更
+      if(dupeRate >= DUPE_RATE_THRESHOLD){
+        dlog('warn', `[${dim.label}] 重複率${(dupeRate*100).toFixed(0)}%、次元切替`);
+        break;
+      }
+      // 次ページなければ終了
+      if(!result.nextPageToken) break;
+      pageToken = result.nextPageToken;
+    }
+  }
+
+  dlog('ok', `多次元検索完了: ${totalCalls}calls / 新規${totalUnique} / 重複${totalDupes}`);
+  return allNew;
 }
 
 // チャンネルの動画リスト（cost: 100）
@@ -770,6 +851,52 @@ async function ytChannelVideos(channelId, maxResults = 25){
     views: 0,
     duration: 0
   }));
+}
+
+// チャンネル動画を「人気順×新着順」両方で取得して新規最大化（cost: 200）
+async function ytChannelVideosDeep(channelId, existingVids, opts = {}){
+  const allNew = [];
+  // 「新着順」と「人気順」を別々に取得 → 違う動画が返ってくる
+  const orders = ['date', 'viewCount'];
+  for(const order of orders){
+    let pageToken = '';
+    for(let page = 0; page < 2; page++){
+      const data = await ytApi('search', {
+        channelId,
+        part: 'snippet',
+        type: 'video',
+        order,
+        maxResults: 50,
+        ...(pageToken ? { pageToken } : {})
+      }, 100);
+      if(!data || !data.items?.length) break;
+      const items = data.items.filter(it => it.id?.videoId).map(it => ({
+        vid: it.id.videoId,
+        title: it.snippet.title,
+        channel: it.snippet.channelTitle,
+        channelId: it.snippet.channelId,
+        uploadedDate: (it.snippet.publishedAt || '').slice(0,10),
+        views: 0,
+        duration: 0
+      }));
+      let dupes = 0;
+      const newOnes = [];
+      for(const item of items){
+        if(existingVids.has(item.vid) || allNew.some(n => n.vid === item.vid)){
+          dupes++;
+        } else {
+          newOnes.push(item);
+        }
+      }
+      const dupeRate = dupes / items.length;
+      allNew.push(...newOnes);
+      dlog('info', `[CH ${channelId.slice(0,8)} ${order} p${page+1}] ${items.length}件 (新${newOnes.length}/重${dupes})`);
+      if(dupeRate >= DUPE_RATE_THRESHOLD) break;
+      if(!data.nextPageToken) break;
+      pageToken = data.nextPageToken;
+    }
+  }
+  return allNew;
 }
 
 // @handle → channelId（cost: 1）
@@ -1929,17 +2056,38 @@ async function fetchTrending(presetKey){
   let added = 0, skipped = 0, totalQueries = preset.queries.length, doneQueries = 0;
   const existingVids = new Set(videos.map(v => v.vid));
   const newIntlVids = []; // 翻訳対象を集める
+  const useApi = apiKeys.length > 0;
 
   for(const q of preset.queries){
     doneQueries++;
-    if(btn) btn.textContent = `取得中 ${doneQueries}/${totalQueries}...`;
-    const items = await searchAllBackends(q);
+    if(btn) btn.textContent = `取得中 ${doneQueries}/${totalQueries} クエリ...`;
+
+    let items = null;
+    // ① YouTube API がある場合は多次元検索（同じクエリで違う動画を最大化）
+    if(useApi){
+      dlog('info', `▼ クエリ "${q}" 多次元検索開始（${SEARCH_DIMENSIONS.length}次元×${PAGES_PER_DIMENSION}ページ）`);
+      items = await ytSearchMultiDim(q, existingVids);
+      if(items && items.length > 0){
+        // 詳細(再生数)を補完
+        const details = await ytVideoDetails(items.map(i => i.vid));
+        const dmap = new Map(details.map(d => [d.vid, d]));
+        for(const it of items){
+          const d = dmap.get(it.vid);
+          if(d){ it.views = d.views; it.duration = d.duration; }
+        }
+      }
+    } else {
+      // ② API無ければ従来のPiped/Invidiousフォールバック
+      items = await searchAllBackends(q);
+    }
+
     if(!items || items.length === 0){
       dlog('warn', `クエリ "${q}" は0件`);
       continue;
     }
     let queryAdded = 0, querySkipped = 0;
-    for(const item of items.slice(0, 15)){
+    // 多次元では既に重複除外済みだが、念のため再チェック
+    for(const item of items){
       const v = itemToVideo(item);
       if(!v){
         dlog('warn', `アイテム変換失敗: ${JSON.stringify(item).slice(0,80)}`);
@@ -1950,13 +2098,15 @@ async function fetchTrending(presetKey){
         continue;
       }
       existingVids.add(v.vid);
+      // viewsHistory 初期化
+      if(item.views > 0){ pushViewsHistory(v, item.views); }
       videos.unshift(v);
       if(v.region === 'intl' && !isJapanese(v.title)) newIntlVids.push(v);
       queryAdded++;
     }
     added += queryAdded;
     skipped += querySkipped;
-    dlog('info', `クエリ "${q}": +${queryAdded}件追加, ${querySkipped}件重複スキップ`);
+    dlog('info', `クエリ "${q}": +${queryAdded}件追加 / ${querySkipped}件重複`);
   }
 
   // 海外タイトル自動翻訳
@@ -2611,9 +2761,9 @@ async function refreshAllChannels(){
     fill.style.width = ((i / watchedChannels.length) * 100) + '%';
 
     let items = null;
-    // ① YouTube API 優先
+    // ① YouTube API 優先（Deep版：人気順+新着順×ページングで新規最大化）
     if(useApi){
-      items = await ytChannelVideos(ch.id, 25);
+      items = await ytChannelVideosDeep(ch.id, existingVids);
     }
     // ② RSSフォールバック
     if(!items || items.length === 0){

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！ショート企画 — トレンド派生ルール8本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#08080f;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:15px;line-height:1.85}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(8,8,15,.95);backdrop-filter:blur(14px);border-bottom:1px solid #1a1a2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 28px 80px}
+.hero{text-align:center;padding:72px 24px 40px}
+.hero .ep{display:inline-block;padding:4px 14px;background:rgba(96,165,250,.15);color:#60a5fa;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
+.hero h1{font-size:clamp(26px,5vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#60a5fa,#22d3ee,#fbbf24,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.hero .sub{color:#888;font-size:15px;font-weight:300;letter-spacing:.05em}
+
+h2{font-size:22px;font-weight:800;margin:60px 0 6px;color:#ddd}
+h2 .tag{font-size:11px;color:#666;font-weight:600;display:block;margin-bottom:4px;letter-spacing:.15em;text-transform:uppercase}
+.h2-desc{color:#888;font-size:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #1a1a2e}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:14px;margin:20px 0;padding:22px 26px;transition:border-color .2s}
+.sc:hover{border-color:#2a2a3a}
+.sc.gold{border:2px solid rgba(250,204,21,.4);box-shadow:0 0 18px rgba(250,204,21,.06)}
+.sc.gold .sc-num{color:#fbbf24}
+.sc-head{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #1a1a2e;flex-wrap:wrap}
+.sc-num{font-size:11px;font-weight:800;color:#a78bfa;letter-spacing:.15em;min-width:42px}
+.sc-title{font-size:16px;font-weight:800;color:#fff;flex:1;min-width:180px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag-meta{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.05em}
+.t-A{background:rgba(56,189,248,.15);color:#38bdf8}
+.t-B{background:rgba(34,197,94,.15);color:#22c55e}
+.t-C{background:rgba(168,85,247,.15);color:#c084fc}
+.t-D{background:rgba(244,114,182,.15);color:#f472b6}
+.t-E{background:rgba(251,146,60,.15);color:#fb923c}
+.t-F{background:rgba(239,68,68,.15);color:#f87171}
+.t-G{background:rgba(96,165,250,.18);color:#60a5fa}
+.t-time{background:rgba(100,116,139,.15);color:#94a3b8}
+.t-gold{background:rgba(250,204,21,.2);color:#fbbf24}
+
+.rule{background:rgba(250,204,21,.08);border-left:3px solid #fbbf24;padding:10px 16px;font-size:13px;color:#fde68a;margin-bottom:10px;border-radius:0 6px 6px 0}
+.rule strong{color:#fbbf24;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px}
+
+.origin{background:rgba(96,165,250,.06);border-left:3px solid #60a5fa;padding:8px 14px;font-size:11px;color:#93c5fd;margin-bottom:10px;border-radius:0 6px 6px 0}
+.origin strong{color:#60a5fa;font-size:9px;letter-spacing:.1em;display:inline-block;margin-right:6px}
+
+.info-box{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);border-radius:10px;padding:14px 18px;margin:20px 0;font-size:13px;color:#93c5fd;line-height:1.7}
+
+.dial{padding:4px 0}
+.line{padding:6px 0;border-bottom:1px dotted #15151f;font-size:14px;line-height:1.75;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:50px;font-size:12.5px}
+.who-y{color:#a78bfa}.who-a{color:#67e8f9}.who-m{color:#f472b6}.who-h{color:#fbbf24}
+.who-n{color:#666;font-style:italic}
+.who-sys{color:#34d399;font-family:'Consolas',monospace;font-size:11.5px}
+.who-sfx{color:#fb923c;font-family:'Consolas',monospace;font-size:11.5px}
+.line .txt{color:#d4d4d8;flex:1}
+
+.punch{background:rgba(244,114,182,.08);border-left:3px solid #f472b6;padding:10px 16px;margin-top:10px;font-size:13px;color:#f9a8d4;border-radius:0 6px 6px 0}
+.punch strong{color:#f472b6;font-size:10px;letter-spacing:.1em;display:inline-block;margin-right:6px;text-transform:uppercase}
+
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520;margin-top:80px}
+
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-top:14px}
+.toc-grid a{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:6px;padding:7px 10px;font-size:11px;color:#aaa;text-align:center;transition:.15s}
+.toc-grid a:hover{border-color:#444;color:#fff;background:#161628}
+.toc-grid a.gold{border-color:rgba(250,204,21,.3);color:#fbbf24}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#top">TOP</a>
+<a href="#cat-G">G トレンド派生</a>
+<a href="scripts-yofukashi-rules.html" style="color:#f87171">← ルール30本</a>
+<a href="scripts-yofukashi-weekly-shorts.html" style="color:#22d3ee">📊 Tracker</a>
+<a href="scripts-yofukashi-bible.html" style="color:#fbbf24">📖 Bible</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="ep">TREND-DRIVEN RULES — 8 SCRIPTS</div>
+<h1>トレンド派生ルール<br>8本</h1>
+<div class="sub">— バイラル分析から逆算した、よふかしくらぶ流の新企画 ——</div>
+</div>
+
+<div class="info-box">
+<strong>📌 由来：</strong>「今週のバズ Tracker」で集計した133件の上位動画を分析、各動画のヒット要素を「よふかしくらぶ」のキャラ4人＋三層モチーフ（SNS×学校×夜）に再構築。R01-R30 と被らないオリジナルルール8本。
+</div>
+
+<div style="background:#0f0f1a;border:1px solid #1a1a2e;border-radius:12px;padding:18px 22px;margin:20px 0">
+<div style="font-size:11px;color:#666;letter-spacing:.15em;margin-bottom:10px;font-weight:800">📚 全8本のインデックス（🏆＝バズ候補）</div>
+<div class="toc-grid">
+<a href="#T01" class="gold">T01 思いが重いほど重い🏆</a>
+<a href="#T02" class="gold">T02 深夜0-3時のみ🏆</a>
+<a href="#T03">T03 エンチャ255盛り</a>
+<a href="#T04" class="gold">T04 AIにスクショ反映🏆</a>
+<a href="#T05" class="gold">T05 リアル飯がインベ🏆</a>
+<a href="#T06">T06 AI分身が乱入</a>
+<a href="#T07">T07 1ブロック1年</a>
+<a href="#T08" class="gold">T08 開かない時に進化🏆</a>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="cat-G"><span class="tag">CATEGORY G — トレンド派生</span>トレンドから生まれたルール</h2>
+<p class="h2-desc">バズ動画の核心を「キャラの個性」で再解釈、4人だけが成立させられる縛り企画。</p>
+<!-- ============================================================ -->
+
+<div class="sc gold" id="T01">
+<div class="sc-head">
+<span class="sc-num">T01</span>
+<span class="sc-title">思い入れが重いほど、アイテムが物理的に重くなる世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-gold">🏆 GOLD</span><span class="tag-meta t-time">50秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>各アイテムに「思い出スコア」が乗る。思い入れが強いほど移動速度が落ち、最大で動けなくなる</div>
+<div class="origin"><strong>ORIGIN</strong>ドズル社「思い出が重いフリマ」(jp 約9M views) — 思い出 ＝ 物理重量に直結する発想</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">ルール：思いが重いと、アイテムも重い</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、それガチじゃん！てか、何持ってると重くなるの？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">思い入れ、らしい。要らないやつ、捨てれば、軽い。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">じゃ、私、なんも、重くねーわ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれ、軽快に走る。スコア「0」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">うわ、ひぐれ風じゃん！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……私、このピンクのウール、捨てらんない、んだけど……</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるのウール、スコア「8200」、足が地面にめり込む</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……動かない、しんど。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">なんで、ピンクのウール、そんな重い。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……病み垢、3万、これ、最初のバズ動画で使った、やつ……。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（爆笑）思い、重っ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（自分のインベを開く）……。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらのインベ、ダイヤ剣スコア「12000」、足が膝まで沈む</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">やとらくんも沈んでんじゃん！何それ！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（即クール戻し）……戦略上、最初に作った剣。データ的に、価値、ある。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小声）……お前、それ、中1の時に俺が手伝った剣、だろ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（一瞬止まる、目を逸らす）……覚えてた、のかよ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（爆笑）クールぶってるの、バレバレじゃん！</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>あさめが「私、軽い！」と走り回る → スマホを取り出した瞬間スコア「9800」で停止 → 「TikTokのフォロワー、私の全部……」。最後、ひぐれだけが「思い、ない」と言って軽快に4人を引きずって帰る。テロップ「名前通りじゃない奴の、思い、重い」</div>
+</div>
+
+<div class="sc gold" id="T02">
+<div class="sc-head">
+<span class="sc-num">T02</span>
+<span class="sc-title">深夜0時〜3時しか、操作できない世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-gold">🏆 GOLD</span><span class="tag-meta t-time">45秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>リアル時刻が0:00〜3:00の間しか入力が通らない。それ以外は4人とも棒立ちで放置される</div>
+<div class="origin"><strong>ORIGIN</strong>"playing minecraft at 12am" (intl 約10M views) — 深夜時間帯のバイブをルール化</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">0時〜3時、それ以外は、棒立ち</span></div>
+<div class="line"><span class="who who-sfx">SE</span><span class="txt">ピン……（23:59→00:00、サーバー起動音）</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">来た。3時間、しかない。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あ？昼、入れねーの、これ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">入っても、操作、効かない。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……これ、私の、生活リズム、なんだけど……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">俺も、夜、普通に起きてる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、私、22時には寝るタイプなんだけど！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">明日、サッカー部の朝練、6時集合、だぞ。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（淡々）名前通りじゃない奴しか、いらないルール、これ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">朝目のあさめ、なのに、朝弱い、私……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">真昼のまひる、なのに、昼間、棒立ち、私……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（うざそう）うるせー、3時間で終わらせる。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれ、運動部の集中力で爆速建築 → 2:58で家完成</span></div>
+<div class="line"><span class="who who-sfx">SE</span><span class="txt">ピン……（3:00、操作停止）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">画面、4人全員棒立ち。クリーパーが寄ってくる、爆発、棒立ちのまま4人吹き飛ぶ</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ、棒立ちのまま）……明日まで、24時間、放置プレイ。</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>翌日0:00、4人がリスポーン地点で目を覚ます → 周りに墓が4つ → ひぐれ「私の家、爆破されてんじゃん」やとら「夜虎、本領発揮」あさめ「クマもらってからじゃないと無理」まひる「……これ、もう、生活、なんだけど」。テロップ「名前詐欺の4人だけが、夜の3時間を生き延びる」</div>
+</div>
+
+<div class="sc" id="T03">
+<div class="sc-head">
+<span class="sc-num">T03</span>
+<span class="sc-title">エンチャの数値だけ「255」まで盛れる、けど効果は元のまま世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-time">35秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>すべてのエンチャに「255」を付けられる。表示は最強だが、実際の効果はレベル1止まり</div>
+<div class="origin"><strong>ORIGIN</strong>"what if you give leggings swift sneak 255?" (intl 約10M views) — 数値オーバーフロー文化のパロディ</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">数値だけ255、効果は1</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、ダイヤ剣にダメージ255つけられるじゃん！ガチじゃん！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……効果、1らしい。表記、だけ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えー、それ、見栄、じゃん！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あー、私の、フォロワー、3万、みたいなやつ、ね……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（怪訝）何だよ、急に。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……数字、盛ってるだけ、で、影響力、ゼロ、みたいな……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……今、まひる、めちゃくちゃ自分にダメージ入ってる。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">いや、私のTikTokフォロワー8千は、ガチだから！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（爆笑）ガチ自慢、入った。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとら、ダイヤ剣に「Sharpness 255」を付与 → アイテム名がド派手な紫グロー</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">サムネ、これで撮る。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">それ、ズルじゃん！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（即クール戻し）戦略。表記、強い、視聴者、クリックする。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ぼそ）……お前のYouTube戦略、全部、それじゃん。</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>4人がそれぞれ「255装備」でゾンビ1体に挑む → 全員ボコボコにされる → 最後ひぐれが素手で殴ってワンパン → 「ガチ、勝つ」。テロップ「数字、盛っても、ガチには勝てない」</div>
+</div>
+
+<div class="sc gold" id="T04">
+<div class="sc-head">
+<span class="sc-num">T04</span>
+<span class="sc-title">スクショをAIに見せると、AIの感想がワールドに反映される世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-gold">🏆 GOLD</span><span class="tag-meta t-time">50秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>1日1回、ワールドのスクショをAIに見せる。AIが返した感想（テキスト）が、即時ワールドに物理的に出現する</div>
+<div class="origin"><strong>ORIGIN</strong>"ChatGPT cannot analyze your Minecraft world" (intl 約7M views) — AIにマイクラを見せる遊びをルール化</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">AIの感想、即、ワールドに出現</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ、私からー！はい、私の家のスクショ。</span></div>
+<div class="line"><span class="who who-sys">AI</span><span class="txt">「明るくて素敵な家ですね！」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">家の周りが太陽光で煌々と光る、観光客っぽい村人が10人押し寄せる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">うわー、人気スポットになっちゃった！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">次、俺。（自分のクラフト工房を提出）</span></div>
+<div class="line"><span class="who who-sys">AI</span><span class="txt">「効率を追求した、合理的な配置です。少し冷たい印象を受けます」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらの工房、温度マイナスに。氷柱が天井から生える</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……AI、辛口、すぎる。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（爆笑）AIに、性格、見抜かれてんじゃん。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">私、行く。（自分の油絵置いた小屋を提出）</span></div>
+<div class="line"><span class="who who-sys">AI</span><span class="txt">「絵に深い感情が込められています。描き手は、一見ぶっきらぼうですが、繊細な人だと推察されます」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれの小屋、夕焼け色の柔らかい光で包まれる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……うるせー、AI。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（ニコニコ）図星じゃん、ひぐれ！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……じゃあ、私、最後……（病み垢用の闇の小屋を提出）</span></div>
+<div class="line"><span class="who who-sys">AI</span><span class="txt">「描き手の精神状態が心配です。専門家への相談をおすすめします」</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるの小屋、心配したカウンセラーNPCが10人スポーンして取り囲む</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……AIに、説教、されるの、しんど……</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>4人で集合写真を撮ってAIに見せる → AI「とても仲が良さそうに見えますが、実は4人とも、自分の本音を見せていない気がします」→ ワールドに巨大な鏡が4枚出現、4人が自分の本音を見させられる。テロップ「AI、見抜く。三層、全部」</div>
+</div>
+
+<div class="sc gold" id="T05">
+<div class="sc-head">
+<span class="sc-num">T05</span>
+<span class="sc-title">リアルで食べた飯が、そのままインベントリに増える世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-gold">🏆 GOLD</span><span class="tag-meta t-time">45秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>カメラに食べ物を映すと、そのアイテムがマイクラのインベントリに増える。逆に何も食べないと、空腹ゲージが現実とリンクして減る</div>
+<div class="origin"><strong>ORIGIN</strong>"Minecraft Food In Real Life" (intl 約20M views) — リアル飯×インベントリの直結ネタ</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">リアル飯＝インベに追加</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">じゃあ、コンビニ寄る！おにぎり3個！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめのインベに「焼きおにぎり×3」追加</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">めっちゃ便利じゃん！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（プロテインバーかじる）部活帰り、これ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれのインベに「焼き鳥（高タンパク）×4」追加</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">満腹度、回復、80。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（無言でカップ麺を食べる）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとらのインベに「腐肉×2」追加</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……おい、何、これ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（爆笑）やとらくん、夜中のカップ麺、AIに腐肉判定されてんじゃん！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（無言、もう一口食べる）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">「腐肉×3」追加、毒エフェクト</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……私、夕方、なんも、食べてない、んだけど……</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるの満腹度ゼロ、HPが赤点滅</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">おい、まひる、死ぬぞ。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……食欲、ない、しんど……</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（おにぎりをカメラに映してまひるに送信）はい、これ、まひるちゃんの分！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">まひるのインベに「友達のおにぎり（HP+10）」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あ、ちょ、これ、効くんだけど……</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>4人で深夜にコンビニ集合、それぞれ違うものを買って4種類のレア食材を交換 → ひぐれの「焼き鳥」で全員満腹回復 → やとらだけ「腐肉」を量産し続けてる。最後やとら「カップ麺、辞める」あさめ「クマもらってからじゃないと信じない」</div>
+</div>
+
+<div class="sc" id="T06">
+<div class="sc-head">
+<span class="sc-num">T06</span>
+<span class="sc-title">3分前の自分の動きを、AIが学習して分身として乱入する世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-time">50秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>3分間プレイすると、AIがそのプレイヤーの動きを学習。3分後にAI分身（NPC）が乱入してきて、本人と同じ行動を取り続ける</div>
+<div class="origin"><strong>ORIGIN</strong>"IM BEING REPLACED BY AI" (intl 約12M views) — AIが自分を置き換える恐怖をゲーム化</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">3分後、AI分身、乱入</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">3分、普通にプレイすればいい。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">3分経過 → AI分身が4体スポーン</span></div>
+<div class="line"><span class="who who-sys">AI-やとら</span><span class="txt">「フォロワー8千、スマホマイクラ3年、インフル志向、クラスの中心。組む相手として、スペック高い。」</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（顔をしかめる）……俺、そんな喋り方、してねえ。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（指差して爆笑）してる、してる、お前そっくり。</span></div>
+<div class="line"><span class="who who-sys">AI-あさめ</span><span class="txt">「楽しそうじゃん！じゃん！じゃん！バズるじゃん！」</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、私、そんなに「じゃん」言ってる！？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……言ってる、めっちゃ……</span></div>
+<div class="line"><span class="who who-sys">AI-まひる</span><span class="txt">「……しんど……なんだけど……かな……しんど……」</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（無言、自分のAIから目を逸らす）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（自分のAIを警戒）……私のは、何、言うんだよ。</span></div>
+<div class="line"><span class="who who-sys">AI-ひぐれ</span><span class="txt">「あ？うるせー。つーか。めんどい。」</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言）……。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">図星、無言、ひぐれ。</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">AI分身4体が、本人より効率よく作業を始める。AI-ひぐれは絵を描き、AI-やとらは戦略メモを書き、AI-あさめは動画を撮り、AI-まひるは病み垢に投稿</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、ちょっと、AI-私、TikTok回してるんだけど！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……AI、本物より、よふかしくらぶ、っぽい。</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>AI分身たちで「よふかしくらぶ AI版」が結成、本物より早くバズり始める → 本物の4人「私たち、いらないじゃん」 → 最後AI-ひぐれが油絵で4人＋AI4体を描く → ひぐれ「……それ、私の、絵だ」AI-ひぐれ「あ？うるせー」</div>
+</div>
+
+<div class="sc" id="T07">
+<div class="sc-head">
+<span class="sc-num">T07</span>
+<span class="sc-title">1ブロック設置＝1年経過、で建築する世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-time">40秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>ブロックを1個設置すると、ワールド時間が1年進む。プレイヤーも1年ずつ年を取る（見た目だけ）</div>
+<div class="origin"><strong>ORIGIN</strong>"20 años para esta pirámide" (intl 約12M views) — 長期建築×時間圧縮の発想</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">1ブロック、1年</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">え、今17歳！家、何ブロックで建つ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">最低、64ブロック。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">81歳、じゃん！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言、ブロックを置き始める）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">ひぐれ、3ブロック置く → 20歳に進化、髪が少し伸びる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（鏡見る）……私、大学生、っぽい。</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……これ、私、置きたくない、んだけど……年取りたくない、しんど……</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（モノローグ）……まひる、未来、怖がる、タイプ。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私、置く！未来、楽しみ！</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">あさめ、10ブロック連打 → 27歳の社会人風になる</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あれ、私、もう、TikTokやってないんだけど。会社員してる？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（淡々、ブロックを置く）</span></div>
+<div class="line"><span class="who who-n">（映像）</span><span class="txt">やとら、20ブロック → 37歳、髭、疲れた表情</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……マイクラYouTuber、続けてる、っぽい。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（笑う）夢、叶ったの、お前。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（一瞬照れる）——って、推測。</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>4人で64ブロックの家を建てる → 全員81歳になる → 老人4人で縁側に座る → ひぐれ「……お前、夜、まだ、起きてんのか」やとら「夜虎、生涯」まひる「……私、まだ、しんどい、なんだけど……」あさめ「人生、楽しかった！」テロップ「名前通りじゃない奴しか、いらない、生涯」</div>
+</div>
+
+<div class="sc gold" id="T08">
+<div class="sc-head">
+<span class="sc-num">T08</span>
+<span class="sc-title">ゲームを開かない時間だけ、プレイヤーが進化する世界</span>
+<div class="sc-meta"><span class="tag-meta t-G">トレンド</span><span class="tag-meta t-gold">🏆 GOLD</span><span class="tag-meta t-time">45秒</span></div>
+</div>
+<div class="rule"><strong>RULE</strong>ログアウト中、リアルでやった行動が翌日マイクラのステータスに反映される。プレイ中は何しても成長しない</div>
+<div class="origin"><strong>ORIGIN</strong>"best strategies while not playing minecraft" (intl 約15M views) — 不在時間の評価ネタを4キャラの生活と接続</div>
+<div class="dial">
+<div class="line"><span class="who who-sfx">テロップ</span><span class="txt">プレイ中は成長ゼロ、リアル行動だけ反映</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（朝、ログイン）……ステ、確認。</span></div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">[ひぐれ] HP+50, 攻撃力+20（昨日：サッカー部1時間、バスケ部1時間、陸上部1時間）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（特に喜ばない）まあな。</span></div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">[あさめ] 魅力+30, 説得力+10（昨日：TikTok投稿3本、クラスで5人と昼休み）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">私、人と関わるの仕事だからさー！</span></div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">[まひる] FPSエイム+40, 集中力+25（昨日：Apex 6時間、Valo 4時間）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……寝てない、けど、ステは、上がった、って感じ……</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（爆笑）まひる、ガチで、廃人モード、入ってんじゃん。</span></div>
+<div class="line"><span class="who who-sys">SYSTEM</span><span class="txt">[やとら] 戦略+5（昨日：YouTube分析4時間、マイクラ攻略動画10本視聴）</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">あれ、やとらくん、それだけ？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……外、出てない。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">お前、5年、それ、じゃん。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（一瞬、目を逸らす）……戦略、立ててる、最中、だった。</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（小声）……明日、お前を、走らせる。</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（即クール戻し）——拒否。</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（爆笑）ひぐれ、お母さんモードじゃん！</span></div>
+</div>
+<div class="punch"><strong>オチ</strong>翌日4人ともログイン → やとらだけ「[やとら] 体力+30, 友情+10（昨日：ひぐれと夕方ランニング）」 → やとら「……お前、本当に、走らせた」ひぐれ「断る理由、ない、って、お前、言ったろ」やとら「（即クール戻し）……戦略上、必要、だった」あさめ「クールぶってるの、バレバレじゃん！」テロップ「ゲームの外で、関係、進む」</div>
+</div>
+
+<div class="footer">
+<div><strong>よふかしくらぶ！</strong> ショート企画 — トレンド派生ルール8本</div>
+<div>2026-04-26</div>
+<div style="margin-top:10px"><a href="scripts-yofukashi-rules.html">← 特殊ルール30本</a> ／ <a href="scripts-yofukashi-weekly-shorts.html">📊 バズTracker</a> ／ <a href="scripts-yofukashi-bible.html">📖 シリーズバイブル</a></div>
+</div>
+
+</div>
+
+</body>
+</html>

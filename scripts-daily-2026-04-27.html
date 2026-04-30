@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よふかしくらぶ！日刊台本 2026年04月27日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a12;color:#eee;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;font-size:17px;line-height:1.9}
+a{color:#60a5fa;text-decoration:none}
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e2e;padding:10px 20px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center}
+nav a{color:#666;font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;transition:.15s}
+nav a:hover{color:#fff;background:#1a1a28}
+.logo{font-size:16px;font-weight:900;margin-right:12px;background:linear-gradient(135deg,#67e8f9,#f472b6,#fbbf24,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{text-align:center;padding:60px 24px 36px}
+.hero h1{font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,#f87171,#fbbf24,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#777;font-size:15px;max-width:640px;margin:0 auto}
+.hero .badge{display:inline-block;background:rgba(249,115,22,.15);color:#f97316;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px}
+h2{font-size:20px;font-weight:800;margin:52px 0 12px;padding-bottom:12px;border-bottom:2px solid #1e1e2e}
+p.sec-desc{color:#777;font-size:14px;margin-bottom:8px}
+hr{border:none;height:1px;background:#1e1e2e;margin:48px 0}
+
+.sc{background:#0f0f1a;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden;transition:border-color .2s}
+.sc:hover{border-color:#333}
+.sc-head{padding:22px 24px 16px}
+.sc-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+.sc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-trend{background:rgba(250,204,21,.15);color:#fbbf24}
+.t-music{background:rgba(168,85,247,.15);color:#c084fc}
+.t-mrbeast{background:rgba(239,68,68,.12);color:#f87171}
+.t-original{background:rgba(34,211,153,.12);color:#34d399}
+.t-story{background:rgba(56,189,248,.12);color:#7dd3fc}
+.t-comedy{background:rgba(251,146,60,.12);color:#fb923c}
+.t-emo{background:rgba(139,92,246,.12);color:#a78bfa}
+.t-loop{background:rgba(168,85,247,.12);color:#c084fc}
+.t-time{background:rgba(100,116,139,.1);color:#94a3b8}
+.t-short{background:rgba(249,115,22,.12);color:#f97316}
+.t-long{background:rgba(52,211,153,.12);color:#34d399}
+.t-horror{background:rgba(100,116,139,.15);color:#cbd5e1}
+.t-meta{background:rgba(244,114,182,.12);color:#f9a8d4}
+.t-court{background:rgba(217,119,6,.15);color:#fbbf24}
+.t-romance{background:rgba(244,63,94,.12);color:#fb7185}
+
+.hook{background:#12121e;border-left:4px solid #fbbf24;padding:14px 20px;font-size:14px;color:#ccc;line-height:1.8}
+.hook strong{color:#fde68a}
+.concept{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 0;font-size:13px;color:#93c5fd}
+.concept strong{color:#60a5fa}
+
+.dial{padding:0 24px 20px}
+.dial-head{font-size:12px;font-weight:700;color:#555;padding:16px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+.line{padding:8px 0;border-bottom:1px solid #111;font-size:14.5px;line-height:1.85;display:flex;gap:10px}
+.line:last-child{border-bottom:none}
+.line .who{font-weight:800;flex-shrink:0;min-width:52px}
+.who-a{color:#67e8f9}
+.who-m{color:#f472b6}
+.who-h{color:#fbbf24}
+.who-y{color:#a78bfa}
+.who-n{color:#666;font-style:italic}
+.who-se{color:#444;font-style:italic;font-size:13px}
+.line .txt{color:#bbb}
+
+.loop{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 18px;margin:10px 24px 20px;font-size:13px;color:#c084fc}
+.loop strong{color:#d8b4fe}
+.why{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#86efac}
+.visual{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#7dd3fc}
+.visual strong{color:#38bdf8}
+.music{background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#e9d5ff}
+.music strong{color:#c084fc}
+.easter{background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.15);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#f9a8d4}
+.easter strong{color:#f472b6}
+.viral{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fca5a5}
+.viral strong{color:#f87171}
+.thumb{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.2);border-radius:10px;padding:14px 18px;margin:0 24px 20px;font-size:13px;color:#fde68a}
+.thumb strong{color:#fbbf24}
+
+.long-section{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;margin:24px 0;overflow:hidden}
+.long-head{padding:22px 24px 14px}
+.long-head h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.long-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.long-body{padding:0 24px 24px}
+.long-block{margin-bottom:20px}
+.long-block h4{font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;padding-top:14px}
+.long-block p{font-size:14px;color:#999;line-height:1.8}
+.long-block .txt-box{background:#111;border-radius:8px;padding:14px 18px;font-size:14px;color:#bbb;line-height:1.9}
+.scene-label{font-size:12px;font-weight:700;color:#f97316;margin-bottom:6px}
+
+.name-serif{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14px;color:#fde68a;font-style:italic}
+.name-serif strong{color:#fbbf24;font-style:normal}
+
+.research{background:#0c0c18;border:1px solid #1a1a2e;border-radius:16px;padding:24px;margin-top:32px}
+.research h3{font-size:16px;font-weight:800;color:#888;margin-bottom:16px;text-transform:uppercase;letter-spacing:.04em}
+.research h4{font-size:14px;font-weight:700;color:#60a5fa;margin:16px 0 8px}
+.research p{font-size:13px;color:#666;line-height:1.8}
+.research ul{padding-left:18px;font-size:13px;color:#666;line-height:2}
+.footer{text-align:center;padding:48px 0;color:#444;font-size:13px;border-top:1px solid #151520}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">よふかしくらぶ！</span>
+<a href="#shorts">ショート</a>
+<a href="#D0427-S01">S01</a>
+<a href="#D0427-S02">S02</a>
+<a href="#D0427-S03">S03</a>
+<a href="#D0427-S04">S04</a>
+<a href="#D0427-S05">S05</a>
+<a href="#longs">横動画</a>
+<a href="#D0427-L01">L01</a>
+<a href="#D0427-L02">L02</a>
+<a href="#D0427-L03">L03</a>
+<a href="#research">リサーチ</a>
+</nav>
+
+<div class="hero" id="top">
+<div class="badge">日刊台本 2026.04.27</div>
+<h1>よふかしくらぶ！日刊台本<br>2026年04月27日</h1>
+<p>サルファーキューブが家を食う×PASSO 3:47病み垢消去×普通禁止24時間×同じブロックで画面が赤くなる病×コメント欄が降ってきた。<br>100時間ネザー消去カウントダウン×ひぐれが「ありがとう」と言うまでの365日×マイクラ村人轢殺事件・第一回公判。<br>ショート5本＋横動画3本。トレンド+音楽+メタ+恋愛サブテキスト+法廷コメディ全観点投入。</p>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<h2 id="shorts">ショート台本（5本）</h2>
+<p class="sec-desc">7〜8秒ループ設計。冒頭3秒の結末提示／コールドオープンを全本に統一。まひるのテンション変動を全本で最低2回確保。各本に名セリフ候補とリプレイ性のある伏線を埋め込み。</p>
+<!-- ============================================================ -->
+
+<!-- S01 -->
+<div class="sc" id="D0427-S01">
+<div class="sc-head">
+<h3>S01「サルファーキューブが、まひるのベッドを、食った」</h3>
+<div class="sc-meta">
+<span class="tag t-trend">トレンド乗り</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">アプデ便乗</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>真っ暗な部屋、やとらが箱を抱えて入る「諸君。新しい仲間だ」→蓋が開く前にカット→（SE: ぽよん）→ベッドが球状に変形して画面端を転がる→まひる無表情「……寝るとこ、ない、しんど」（既に絶望済み）。視聴者は「何が起きた」と巻き戻し確定。</div>
+
+<div class="concept"><strong>コンセプト：</strong>26.2 Sulfur Cube（ブロックを吸って性質変化）便乗。ありがちな「検証フォーマット」の罠を避けて、〈4人の私物を順番に食わせる→各キャラの本性が出る〉構造に変換。最後にやとらが大事にしてた写真集を吸わせて感情漏れ→即クール戻し（CH10-14の「動物に揺らぐ」テーマ派生で「物に揺らぐ」初回）。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君。新しい仲間だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">なにこれ、四角いダンゴムシ？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……可愛い、と思った瞬間に、私のベッド、吸ってる</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">（ぽよん、ベッドが球体化、コロコロ転がる）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前の夜、終わったな</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……寝るとこ、ない、しんど</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急ハイ）でも、なんか、可愛いから許す。スクショ。「私のベッドが球になった日」って投稿する</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">次、TNT、食わせるか</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">死ぬじゃん！普通に死ぬ！</span></div>
+<div class="line"><span class="who who-n">（やとら、無言で何かを取り出す。本のような形）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前、それ、写真集</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">……（無言でキューブに近づける）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっ、写真集？誰の？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（小声）……母の、若い頃</span></div>
+<div class="line"><span class="who who-n">（4人沈黙、3秒）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（即クール戻し）——って、言うと、エモいかな、と思って。普通の、ガチャ景品</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">クールぶってるの、バレバレじゃん！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（猛烈にスクショ）「やとらの本音漏れ4月27日」、保存、永久保存</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前ら、ベッドの話、忘れてないか</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あ、私、寝るとこ、ない</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>「お前の夜、終わったな」（ひぐれ淡々ツッコミ）／ 「（小声）……母の、若い頃」→「普通の、ガチャ景品」（やとらの本音漏れ→即クール戻しの2連）／ 「やとらの本音漏れ4月27日」（まひるの保存癖）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「諸君。新しい仲間だ」に戻る。毎周キューブが食ったブロックの形が違う（1周目=ベッド球、2周目=チェスト円柱、3周目=やとらの椅子三角錐）。まひるの「寝るとこ、ない、しんど」セリフは固定、後ろの部屋の状態だけ変わる（だんだん家具が球体だらけに）。</div>
+
+<div class="music"><strong>BGM設計：</strong>phonk「MONTAGEM NATTO GAKKO 2」のキックを「ぽよん」と完全音ハメ。やとらの「母の、若い頃」発言だけ「キミワズライ」サビ頭0.8秒インサート→即クール戻しの瞬間にビートが戻る。最後の「私、寝るとこ、ない」で全音停止＋字幕「次回、ベッド購入編」。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>キューブが食ったブロックの形状リスト（ベッド→球、TNT→棘、ダイヤ→ピラミッド）をコメ欄が解読し始める。やとらの「写真集」の表紙、左下に「ガチャ景品」のシールが貼ってある（後付けで見える）。背景の本棚に「同語反復論」（前作S01伏線）と並んで「クール論」がある。</div>
+
+<div class="viral"><strong>バズ設計：</strong>26.2最新アプデ便乗の鮮度＋やとらの本音漏れシーン（CH10-14ファン直撃）の二段構え。「クールぶってるの、バレバレじゃん！」があさめ口調集の決定版で再ループ素材化。</div>
+
+<div class="why">最新アプデ（Sulfur Cube）の旬を逃さず、既存テーマ「動物に揺らぐやとら」を「物に揺らぐ」に進化。情緒乱高下まひる確保（病み→急ハイ→現実復帰）。検証フォーマットの飽和を避けて感情ドラマに変換。</div>
+</div>
+
+<!-- S02 -->
+<div class="sc" id="D0427-S02">
+<div class="sc-head">
+<h3>S02「PASSO 3:47 ─ まひるが、病み垢を、消そうとした夜」</h3>
+<div class="sc-meta">
+<span class="tag t-music">音楽・PASSO</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-emo">まひる単独</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>真っ暗、スマホ画面のみ点灯。「アカウントを削除しますか？」のダイアログ。指がボタンの真上で震えている。BGMはPASSO（27AM）冒頭の低音だけ。時刻表示、3:47。「3:47」だけ赤い字幕で残る。</div>
+
+<div class="concept"><strong>コンセプト：</strong>「ずっと暗いまひる」NGテストへの対策回。〈削除直前→急ハイ→現実復帰→自虐戻し〉のテンション4変化を45秒で。最後あさめからのDM「明日コンビニ寄ろー！🍙」通知音で全部リセット。「3万フォロワーの孤独×JKコンビニDMの非対称」が共感ポイント。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（モノローグ、PASSOチル系BGM）……今日、学校で、誰とも、目、合わなかった</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……このアカウント、3万、フォロワー、いる、けど、誰も、私の、こと、知らない</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……消そう</span></div>
+<div class="line"><span class="who who-n">（画面ダイアログ「本当に削除しますか？」、指、震える）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（5秒、無音、BGMフェード）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……でも、「私が、消えました」って、最後の、ストーリー、あげたら、バズる、かも</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急ハイ、ニヤッ）あ、それ、最高、じゃん</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（急に病む、声潰れ）……いや、最後、まで、計算してる、私、終わってる</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">（通知音「ピロン」）</span></div>
+<div class="line"><span class="who who-n">（画面、あさめのDM「明日コンビニ寄ろー！🍙」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（フッ、と、息、ほどける）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……あさめ、知らないでしょ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あんたの、その、絵文字、ひとつで、私、生きた</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（即、自虐戻し、口元に手）……重い、引かれる、消そ</span></div>
+<div class="line"><span class="who who-n">（画面、再び「アカウントを削除しますか？」、指、また震える）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">（PASSOサビ頭、止まる）</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>「あんたの、その、絵文字、ひとつで、私、生きた」（エモ単独切り抜き決定版）／ 「最後、まで、計算してる、私、終わってる」（自虐ハイブリッド）／ 「重い、引かれる、消そ」（自分でツッコむ自虐落ち）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>冒頭「アカウントを削除しますか？」へ戻る。毎周通知のサムネが変わる（1周目=あさめ🍙、2周目=ひぐれ「来るな」、3周目=やとら「諸君、寝ろ」）。3:47の時刻表示は固定（タイトル化）。</div>
+
+<div class="music"><strong>BGM設計：</strong>PASSO（27AM）主軸。冒頭〜中盤チル系継続。通知音の瞬間にBGMが0.3秒消える＝感情の風穴演出。「あんたの絵文字ひとつで生きた」の瞬間にキミワズライ（まるり）サビ頭1.2秒被せ→即PASSOに戻して〈エモを照れで切る〉技。最後「重い、引かれる、消そ」で全停止。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>スマホ画面の時刻3:47で固定（タイトルと連動）。ストーリー下書きが12個ある（中身チラ見せで「死にたい」「やっぱ生きる」交互に並ぶ）。あさめのDM絵文字が🍙だけど、よく見ると毎周ちょっと変わる（次は🍡、次は🥟）。背景の壁に「やとらに送らなかったDM」の下書きが小さく映る。</div>
+
+<div class="viral"><strong>バズ設計：</strong>PASSOバイラル便乗の鮮度。「あんたの絵文字ひとつで生きた」が単独30秒切り抜きでエモバズ。「重い、引かれる、消そ」の0.4秒落差で笑い→泣き→笑いの感情3転。コメ欄「絵文字一つで救う側になりたい」が量産。</div>
+
+<div class="why">既存にない「まひる単独30秒モノローグ」初。「情緒不安定ネット女子」の名前通りでない=実は誰よりも友達想い、を絵文字一つで証明。3万フォロワーの孤独 vs JKコンビニDMの非対称＝Z世代直撃の共感構造。</div>
+</div>
+
+<!-- S03 -->
+<div class="sc" id="D0427-S03">
+<div class="sc-head">
+<h3>S03「最後に『普通』って言った奴が、負け ─ 24時間チャレンジ」</h3>
+<div class="sc-meta">
+<span class="tag t-mrbeast">MrBeast系ショート</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-comedy">縛りプレイ</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>赤い字幕ドーン「24時間、『普通』禁止チャレンジ。最後に言った人が、ベッド爆破刑」→あさめが既に膝抱えてうずくまる→「えっ、それ私だけ詰むやつ！？」。視聴者「あさめ口癖だろ即終了じゃん」→続きを見たくなる。</div>
+
+<div class="concept"><strong>コンセプト：</strong>あさめの口癖「普通に普通」を縛りに使う。MrBeastの「最後の一人」フォーマットを24時間に圧縮。シンプルなルール→各キャラの言い換えが個性で爆笑→盲点でクールキャラ陥落の定番落ち。「クールキャラ最後にミス」テンプレ完成形。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（赤字幕「24時間、『普通』禁止」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、それ私だけ詰むやつ！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、ルールは、絶対だ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">言ったら、ベッド、爆破。簡単だろ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……これ、私、勝てる、まじで一回も使わない、その語彙</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ……えっ、じゃあ……「ノーマルに、ノーマル」？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">それは、英語だが、本質は、同じだ。アウト</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えええっ、まだ何も言ってないが！</span></div>
+<div class="line"><span class="who who-n">（字幕「5時間後」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（汗だく、無言）……</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">あさめ、3時間、無口</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">話したら出る！絶対出る！語彙の、根っこに、「普通」入ってる！</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……お前、語彙の、根っこ、見えてんのかよ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（爆笑）「語彙の根っこ」、新しい比喩、保存</span></div>
+<div class="line"><span class="who who-n">（字幕「23時間55分」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、勝者は——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（何気なく）……お前ら、こういうの、普通に、楽しいな</span></div>
+<div class="line"><span class="who who-n">（4秒、4人、沈黙、画面停止）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……あ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">言ったぁぁぁぁぁ！！！！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（猛烈スクショ）「クールキャラ最後にミス」、史上最高、保存</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、これは——油断、ではなく、必然だった</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">うるせー、爆破しろ</span></div>
+<div class="line"><span class="who who-se">SE</span><span class="txt">（ベッド爆発、ひぐれの寝床、四散）</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>「語彙の、根っこに、『普通』入ってる！」（あさめの自己分析悲鳴）／ ひぐれ「……お前、語彙の、根っこ、見えてんのかよ」（クール淡々）／ ひぐれ「（4秒沈黙の後）……あ」（5,000万再生候補）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>冒頭「24時間、『普通』禁止」字幕に戻る。毎周「23時間55分」のひぐれの陥落セリフが微妙に違う（「普通に楽しい」→「普通に強い」→「普通に眠い」）。陥落シーンが視聴者に「次はどう言う？」予想ゲーム化。</div>
+
+<div class="music"><strong>BGM設計：</strong>MrBeast風ドキュメンタリー風BGM、要所で時計の秒針SE。あさめの汗だくシーンで音量MAXのドキドキBGM。ひぐれの「あ」の瞬間、北斗の拳「お前はもう、死んでいる」のジングル0.6秒で確定演出。爆発で「ほんまやでなんでやねん」（モナキ）の関西弁サビ頭インサート。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>4人の現在のアウト回数カウンタが画面隅にずっと出てる（あさめ：3、まひる：0、やとら：0、ひぐれ：0→最後に1）。あさめが汗かきながら言いそうになる「ふ……ふ……」が毎回違う言い換え（ふだん通りに、ふつうじゃない、ふだんなら、ふぁ、ふんわり、ふつ……）。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「クールキャラ最後にミス」テンプレ。コメ欄「ひぐれの『あ』だけで1日中笑える」量産。あさめの言い換え地獄が音MAD素材化。「語彙の根っこ」が新ネット用語化候補。</div>
+
+<div class="why">「最後の一人」MrBeast定型をマイクラ短編に圧縮。あさめ口癖「普通に普通」縛り＝キャラ理解度最大投入。盲点でひぐれ陥落=「クール」の脱構築で4人全員に見せ場。</div>
+</div>
+
+<!-- S04 -->
+<div class="sc" id="D0427-S04">
+<div class="sc-head">
+<h3>S04「同じブロックに、触ると、画面が、赤くなる、病」</h3>
+<div class="sc-meta">
+<span class="tag t-original">完全オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-romance">恋愛サブテキスト初</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜45秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>ひぐれとまひるの手が、たまたま同じ石ブロックに伸びる→画面が真っ赤に染まる→ひぐれ「……は？」→まひる「えっ、なに、これ、バグ？？？病気？？」（パニックハイ）。3秒で「これは恋愛コメディなのか？事故なのか？」と二択を迫られる引き。</div>
+
+<div class="concept"><strong>コンセプト：</strong>既存150+本に恋愛サブテキストゼロ＝最大の空白。「赤くなる病気」というファンタジー設定で〈照れの直接表現を回避→キャラ崩れない〉。4人で原因究明→実はあさめが仕込んだmodだったオチ。「恋愛じゃない」と全員言いながら全員意識する温度感がツボ。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（ひぐれとまひる、同じ石ブロックに同時タッチ→画面真っ赤）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……は？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">えっえっえっバグ！？病！？感染！？うつる！？</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、これは——感染症の、新型だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（目をそらす、口笛）……ふー</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">あさめ、お前、何かしたな</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、私、なにも！普通に普通！</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……でも、これ、ちょっと、嬉しい、かも</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（即取り消し）いや、ごめん、何でもない、消した、聞かなかったことに、して</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言、まひるをじっと見る）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……なんで見るの、消えたい、しんど、でも、消えたくない、しんど</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、興味深いことに——同じブロックに、触れた瞬間に、画面が、赤くなる。これは、心拍の、物理表現だ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（顔面真っ赤、口を押さえる）</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">……あさめ、お前のmodだろ</span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">ち、違うって！これは、その、ええっと——ファンサ！</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">ファンサが、modとして、配布される時代——</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">やめろ</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……っていうか、誰の、心拍？私？ひぐれ？</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（ブロックから手を離す。画面の赤、消える）</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（赤、消えた）……しんど</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、もう一度、触れると、また、赤くなる、はずだ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（無言で再度ブロックに手を伸ばす）</span></div>
+<div class="line"><span class="who who-n">（画面、再び真っ赤）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……（黙ってブロックに手を伸ばす）</span></div>
+<div class="line"><span class="who who-n">（画面、真紅+1段階濃度UP）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">えっ、これ、何見せられてるの私……</span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>やとら「ファンサが、modとして、配布される時代——」（哲学風名セリフ）／ まひる「消えたい、しんど、でも、消えたくない、しんど」（情緒乱高下名作）／ あさめ「えっ、これ、何見せられてるの私……」（視聴者代弁オチ）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>冒頭「同時タッチ→赤」へ戻る。毎周触れる組み合わせが変わる（1周目=ひぐれ×まひる→2周目=やとら×あさめ→3周目=4人同時タッチ）。視聴者に「次は誰？」予想ゲーム化。</div>
+
+<div class="music"><strong>BGM設計：</strong>PASSOチル系を冒頭、画面赤化の瞬間に「キミワズライ」サビ頭1秒被せ→即無音→次のカットへ。最後の「再び赤」で曲のサビ全開→ファンサmodの種明かし瞬間に「All 4 U」（INI）の高揚アンセム0.5秒で陽転。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>画面の赤味が「触れる人の組み合わせ」によって微妙に色味が違う（ひぐれ×まひる=深紅、やとら×あさめ=朱色、4人同時=画面消失）。あさめのチェスト中身に「fansa.mod」のファイルがチラ見え。背景に「#fansamod」のTikTokハッシュタグが小さく映る（メタ）。</div>
+
+<div class="viral"><strong>バズ設計：</strong>恋愛サブテキスト初登場で新規層開拓。「ファンサが、modとして、配布される時代——」哲学風名セリフが再ループ素材。「黙って再度触れる」シンクロ動作0.6秒が記憶確定。「シッパー」（カップリング推し）コメ欄が即発生して滞在時間UP。</div>
+
+<div class="why">既存に恋愛サブテキストゼロ→新規層大開拓。「病気」というメタファーで照れの直接表現を回避→キャラ崩れない。あさめの「ファンサ」発言で視聴者代弁=メタ笑い。シッパー文化への目配せでコメ欄論争化＝伸び確保。</div>
+</div>
+
+<!-- S05 -->
+<div class="sc" id="D0427-S05">
+<div class="sc-head">
+<h3>S05「コメント欄が、画面の中に、降ってきた」</h3>
+<div class="sc-meta">
+<span class="tag t-original">完全オリジナル</span>
+<span class="tag t-short">ショート</span>
+<span class="tag t-meta">メタ4次元</span>
+<span class="tag t-loop">ループ設計</span>
+<span class="tag t-time">〜50秒</span>
+</div>
+</div>
+
+<div class="hook"><strong>フック（0〜3秒）：</strong>まひるの自撮りショート再生中→突然、YouTubeコメント欄の文字列がブロックとして上から降ってくる→「まひる病みすぎ」「やとらの厨二ｱﾝﾁ」「ひぐれかわいい」が物理的に積み上がる→まひる潰される→「……物理、しんど」（無表情）。3秒で世界観破壊。</div>
+
+<div class="concept"><strong>コンセプト：</strong>メタ4次元壁突破。視聴者コメントがゲーム世界に物理侵入する設定。各キャラが自分宛のコメントに違う反応→キャラ性の逆照射。あさめは「コメントを拾う」、ひぐれは「殴り倒す」、やとらは「読み上げる」、まひるは「埋もれる」。あさめが「普通って何？」と問い始める瞬間に世界終わるサインの仕掛け。</div>
+
+<div class="dial">
+<div class="dial-head">台本</div>
+<div class="line"><span class="who who-n">（まひるの自撮りショート、TikTok画面風UI）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……今日も、配信、するね</span></div>
+<div class="line"><span class="who who-n">（画面上部からコメントブロック降下、SE: ピロン×3）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（ブロック1: 「まひる病みすぎ」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（ブロック2: 「もっと笑え」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（ブロック3: 「やとらの厨二ｱﾝﾁ」）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……物理、しんど、これ、新しい、しんどい、形</span></div>
+<div class="line"><span class="who who-n">（まひる、コメントブロックに埋もれる）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">（ブロックを片手で持ち上げる）「やとらの厨二ｱﾝﾁ」——ふむ、興味深い</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、これは、視聴者の、心の、可視化だ</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">（コメントブロックを剣で粉砕）「ひぐれかわいい」？うるせー、消える</span></div>
+<div class="line"><span class="who who-n">（粉砕、消滅、SE: phonkキック1音）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">（コメントブロックを次々キャッチ、リフティング）私のコメント、どこ、私のコメント！</span></div>
+<div class="line"><span class="who who-n">（ブロック「あさめ普通すぎ」、降下）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">……えっ</span></div>
+<div class="line"><span class="who who-n">（4秒沈黙）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-a">あさめ</span><span class="txt">普通……普通って、何？私の、何が、普通？</span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">（ブロックの下から、半分埋もれて）……あさめが、それ、考え始めるの、世界終わるサイン</span></div>
+<div class="line"><span class="who who-y">やとら</span><span class="txt">諸君、これは、メタの、極致だ</span></div>
+<div class="line"><span class="who who-n">（画面にさらに大量のコメントブロック降下、SE: ピロン地獄）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（ブロック「3:47」、降下、まひる注目）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……今、何時？</span></div>
+<div class="line"><span class="who who-n">（画面隅、3:47）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-m">まひる</span><span class="txt">……コメント欄、未来予知してる</span></div>
+<div class="line"><span class="who who-h">ひぐれ</span><span class="txt">もう、画面、消すぞ</span></div>
+<div class="line"><span class="who who-n">（画面、ガチで黒くなる、3秒）</span><span class="txt"></span></div>
+<div class="line"><span class="who who-n">（画面復帰、コメントブロック、まひるの自撮り画面の中に、また、降ってきている）</span><span class="txt"></span></div>
+</div>
+
+<div class="name-serif"><strong>名セリフ候補：</strong>まひる「物理、しんど、これ、新しい、しんどい、形」（しんど語彙の進化形）／ まひる「あさめが、それ、考え始めるの、世界終わるサイン」（4人関係性の核ジョーク）／ まひる「コメント欄、未来予知してる」（メタ恐怖オチ）</div>
+
+<div class="loop"><strong>7〜8秒ループ設計：</strong>「今日も、配信、するね」に戻る。毎周降ってくるコメント内容が変わる（前周の名セリフがコメントになる螺旋構造）。例：1周目「まひる病みすぎ」→2周目「物理しんど超分かる」→3周目「世界終わるサイン来た」と視聴者の反応がそのまま降下。</div>
+
+<div class="music"><strong>BGM設計：</strong>全編「ピロン」「ピロン」のYouTubeコメ通知音だけ、BGMはなし。ひぐれの剣粉砕の瞬間だけphonkキック1音。「コメント欄、未来予知してる」で全音停止＋画面ノイズ。</div>
+
+<div class="easter"><strong>イースターエッグ：</strong>コメントブロックの中に、本物の視聴者の名前風が混ざってる（@yofukashi_fan_xx 系の細工）。「3:47」コメントは前作S02と完全連動（ファンが連結発見）。あさめの「普通って、何？」を視聴者がリプライしてくる螺旋構造（コメ欄が荒れる→さらに伸びる）。</div>
+
+<div class="viral"><strong>バズ設計：</strong>メタ視点を物理ゲーム化＝MC独自の表現、競合不在。コメント文化への自己言及で滞在時間UP（コメ欄が荒れる→コメ欄が増える→さらに伸びる）。あさめの「普通」アイデンティティ崩壊が新キャラ展開＝二次創作即拡散。</div>
+
+<div class="why">既存「視聴者コメント読み上げメタ」未開拓ゾーン。MC固有の物理表現で他チャンネル真似不可。あさめの口癖「普通」を逆手に取った哲学崩壊で、軽いコメディから一瞬重みへの転調。S02と「3:47」連動で日刊シリーズ通しての伏線設計。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="longs">横動画台本（3本）</h2>
+<p class="sec-desc">12〜18分尺。極限スケール×感情多層×音楽連動。サムネ案・名セリフ・展開構成を全本に明記。</p>
+<!-- ============================================================ -->
+
+<!-- L01 -->
+<div class="long-section" id="D0427-L01">
+<div class="long-head">
+<h3>L01「ネザー消去カウントダウン ─ 100時間以内に攻略しないと、4人のワールドが、永遠に消える」</h3>
+<div class="long-meta">
+<span class="tag t-mrbeast">MrBeast極限</span>
+<span class="tag t-long">横動画18分</span>
+<span class="tag t-emo">感情二層</span>
+</div>
+</div>
+
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>あさめが古いストレージから「セーブ消去ウイルス」を踏んだ→4人のメインワールド全データが100時間後に削除される。ネザーゲートを通過してエンドラを倒さないと解除されない（ウイルスの起動条件）。3日4夜のリアルタイム緊張感×友情×4キャラの普段見えない側面を引き出す極限挑戦。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<div class="thumb"><strong>主案：</strong>赤い数字「100時間後、ワールドが消える」+4人の絶望顔（あさめ涙、まひる無表情、ひぐれ歯食いしばり、やとら目伏せ）+背景にカウントダウンタイマー99:59:59。<br><strong>副案：</strong>エンドラ空中戦カット+「最後の朝」の文字。</div>
+</div>
+
+<div class="long-block">
+<h4>OP（30秒）</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 1 ─ 警告画面</div>
+あさめが古いダンジョンの宝箱を開ける→赤いウイルス警告画面が全員のスマホに表示。<br><br>
+<strong>あさめ：</strong>えっ、ちょっと、なに、これ、なに、なに、なに<br>
+<strong>やとら：</strong>諸君、画面を、読め<br>
+<strong>ひぐれ：</strong>「100時間後、すべてのデータを削除します」？<br>
+<strong>まひる：</strong>……あ、知ってる、これ、私、TikTokで、見た、エンドラ倒さないと、解除されない、やつ<br>
+<strong>あさめ：</strong>えっ、TikTokで！？こんなウイルス、TikTokで！？<br>
+<strong>まひる：</strong>……うん、3万フォロワー、伊達じゃない<br>
+<strong>やとら：</strong>諸君、時間が、ない。100時間。3日と、4時間<br>
+<strong>ひぐれ：</strong>うるせー、行くぞ
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 1（DAY 1, 0〜25時間）─ 計画立案＆ネザー突入準備</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 2 ─ 役割分担</div>
+4人で会議。やとらが哲学的に分担提案、ひぐれが現実主義で却下、まひるが意外なネザー知識を披露、あさめが補給担当に決まる流れ。<br><br>
+<strong>まひる：</strong>……あの、私、Apexしか、やってないけど、勝率の出し方なら、わかる、から<br>
+<strong>ひぐれ：</strong>……お前、それ、戦略なんだな<br>
+<strong>まひる：</strong>……（小さく頷く）……勝率63%、ある、3日で、エンドラまで<br>
+<strong>あさめ：</strong>えっ、まひる、ガチで頭いいやつ！？<br>
+<strong>まひる：</strong>（即自虐）……いや、計算機、たたいた、だけ、別に、何もしてない、しんど<br>
+<strong>やとら：</strong>諸君、まひるの、勝率を、信じる<br>
+<strong>ひぐれ：</strong>俺、前衛。やとら、囮。あさめ、運搬。まひる、地形読み<br>
+<strong>あさめ：</strong>運搬って何！？私だけ盾なし！？<br>
+<strong>ひぐれ：</strong>うるせー、お前が、ウイルス、踏んだんだろ<br>
+<strong>あさめ：</strong>……それは、確かに……
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 2（DAY 1夜〜DAY 2朝, 25〜50時間）─ ネザー突入</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 3 ─ ネザーゲート発火</div>
+4人がネザーゲートを発火、突入。ピグリンブルートに襲われる、ストライダーで溶岩湖横断。<br><br>
+<strong>やとら：</strong>諸君、ネザーは、燃える、世界だ<br>
+<strong>ひぐれ：</strong>知ってるよ。盾、構えろ<br>
+<strong>あさめ：</strong>ピグリンブルート！3体！右！<br>
+<strong>まひる：</strong>……（淡々と）右3体、左1体、上、ガスト、来る、3秒後<br>
+<strong>ひぐれ：</strong>（驚き隠せず）……お前、本当に、Apexか<br>
+<strong>まひる：</strong>……Valoも、イモータル、だから<br>
+<strong>あさめ：</strong>女子FPS強すぎて、こわい！<br>
+</div>
+
+<div class="scene-label" style="margin-top:18px">SCENE 3.5 ─ やとらマグマ落下事件（PART 2.5乱入）</div>
+<div class="txt-box">
+ストライダー横転事故でやとらがマグマに落下。装備耐火だったが、トラウマ級の怖さ。<br><br>
+<strong>やとら：</strong>（マグマから這い上がる）……死、初めて、怖い<br>
+<strong>あさめ：</strong>えっ、やとら、本音漏れた！？<br>
+<strong>やとら：</strong>（即クール戻し）——と、言うと、共感されるかな、と思って。普通の、パフォーマンスだ<br>
+<strong>ひぐれ：</strong>……お前、最近、本音、漏れすぎだろ<br>
+<strong>まひる：</strong>（猛烈スクショ）「やとらの本音漏れ4月28日」、保存、今月、3回目
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 3（DAY 2夜〜DAY 3朝, 50〜75時間）─ 要塞探索＆ブレイズ大量討伐</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 4 ─ ブレイズトラップ</div>
+要塞でブレイズスポナーを発見。罠化作業中、5体同時湧きでパニック。<br><br>
+<strong>あさめ：</strong>5体！5体来た！囲まれた！<br>
+<strong>ひぐれ：</strong>うるせー、まとめて来い<br>
+<strong>（ひぐれ、剣で5体瞬殺、phonk音ハメ演出）</strong><br>
+<strong>まひる：</strong>……（ぽかん）……あの、ひぐれ、強すぎ、しんど<br>
+<strong>やとら：</strong>諸君、ひぐれの、キレ芸は、戦闘の、舞踏だ<br>
+<strong>ひぐれ：</strong>言うな
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 4（DAY 3夜〜DAY 4朝, 75〜99時間）─ エンド攻略本番</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 5 ─ エンドラ空中戦</div>
+エンドポータル起動。エンドクリスタル破壊分担→エンドラとの空中戦→残り1時間でエンドラHP1。<br><br>
+<strong>あさめ：</strong>残り、1時間！HP、1ミリ！<br>
+<strong>まひる：</strong>……エンドラ、上昇、3秒後、降下、来る、矢、構えて<br>
+<strong>ひぐれ：</strong>（弓を構える）<br>
+<strong>やとら：</strong>諸君、これは——終わりに、向かう、矢だ<br>
+<strong>ひぐれ：</strong>（矢を放つ）<br>
+<strong>（エンドラ、撃破、SE: ウイルス停止メッセージ「データ削除を解除しました」）</strong>
+</div>
+</div>
+
+<div class="long-block">
+<h4>ラスト3分（END） ─ 沈黙と約束</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 6 ─ エンディング</div>
+4人、エンドの島で、沈黙。あさめが小さく口を開く。<br><br>
+<strong>あさめ：</strong>（小声）……私たちのワールド、消えなくて、よかった<br>
+<strong>（4秒、沈黙）</strong><br>
+<strong>まひる：</strong>……でも<br>
+<strong>まひる：</strong>……もし、消えてたら、4人で、また、最初から、作り直せたよね<br>
+<strong>（4人、また沈黙）</strong><br>
+<strong>ひぐれ：</strong>……それも、悪く、ねぇな<br>
+<strong>やとら：</strong>諸君、これは——記録、ではなく、約束だった<br>
+<strong>あさめ：</strong>……今度、わざと、ウイルス、踏んでみる？<br>
+<strong>ひぐれ：</strong>やめろ<br>
+<strong>まひる：</strong>（爆笑）あさめ、今、一番、こわい<br>
+<strong>（END、エンドポータルから帰還、画面、夜明け）</strong>
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ集：</strong><br>
+あさめ「私たちのワールド、消えなくて、よかった」（小声、震える声）<br>
+まひる「もし、消えてたら、4人で、また、最初から、作り直せたよね」（核セリフ、エモバズ確定）<br>
+やとら「諸君、これは——記録、ではなく、約束だった」（厨二の到達点）<br>
+ひぐれ「うるせー、まとめて来い」（戦闘ハイライト）</div>
+
+<div class="visual"><strong>音楽連動設計：</strong>OP=phonk「MONTAGEM NATTO GAKKO 2」高揚編成。PART 2やとら本音漏れ瞬間=「キミワズライ」サビ頭1.5秒。PART 3ひぐれ5体撃破=phonkキック完全音ハメ。エンドラ撃破=全音停止3秒→ED「Holiday∞Holiday」（ハスノソラ女学院）で4人の夜明け帰還。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「100時間で消える」MrBeast型タイトルでサムネCTR最大化。「もし消えてたら作り直せたよね」が単独切り抜きエモバズ。やとらの本音漏れ→クール戻しシーンが30秒切り出しで二次拡散。Apexまひるの戦略パートが「実はガチ勢」リビール回として独立して機能。</div>
+
+<div class="why"><strong>スケール感：</strong>「永遠に消える」「100時間」「全員のメインワールド」=極限規模3要素を冒頭で提示。「最後の絶望」感情→「最後の絆」感情への二段転調。最後のあさめ「わざと踏んでみる？」が緊張をコメディで解放するMrBeast式エンド王道。</div>
+
+</div></div>
+
+<!-- L02 -->
+<div class="long-section" id="D0427-L02">
+<div class="long-head">
+<h3>L02「ひぐれが、『ありがとう』、と、言うまでの、365日」</h3>
+<div class="long-meta">
+<span class="tag t-story">ストーリー感動</span>
+<span class="tag t-long">横動画12分</span>
+<span class="tag t-emo">キャラ深掘り</span>
+</div>
+</div>
+
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>監視カメラ風1年圧縮ドキュメンタリー。ひぐれは結成から1年間、1度も「ありがとう」と言わなかった。EP01から数えて365日目、ある事件で初めて口にする。3人がどれだけ機会を与えてきたか、ひぐれが言わなかった理由（油絵モノローグで明かす）、最後に言った瞬間の沈黙。「キャラが言わなかった一言」をテーマ化＝5文字のスケール。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<div class="thumb"><strong>主案：</strong>ひぐれの後ろ姿（金髪、夕焼け）+「365日、ずっと、言えなかった、たった、5文字」+涙のカウンタ「000日 → 365日」。<br><strong>副案：</strong>4人の集合写真+ひぐれだけ口元に手を当てている+「最終話、ひぐれが、初めて、言う」。</div>
+</div>
+
+<div class="long-block">
+<h4>OP（45秒）</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 1 ─ 提示</div>
+監視カメラ風の暗い画面に「これは、365日の、記録」白字幕。EP01結成エピの早送り回想3秒。<br><br>
+<strong>ナレーション（やとら声）：</strong>諸君、これは——よふかしくらぶ結成から、365日。ひぐれが、一度も「ありがとう」と、言わなかった、その軌跡だ<br>
+<strong>カウンタ：</strong>「Day 0」<br>
+<strong>あさめ（回想）：</strong>ひぐれ、よろしくね！<br>
+<strong>ひぐれ（回想）：</strong>……ああ
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 1（DAY 1〜90）─ 何度ものチャンス、3人諦めかける</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 2 ─ ケーキ事件、武器事件、ベッド事件</div>
+3つの「ありがとう」のチャンスが流れていく。<br><br>
+<strong>Day 12：</strong>あさめがひぐれの誕生日にケーキを作る。<br>
+　あさめ：「ひぐれ、誕生日、おめでとう！手作りケーキ！」<br>
+　ひぐれ：「……うん」<br>
+　（あさめ、笑顔、目線だけ落ちる）<br><br>
+<strong>Day 47：</strong>やとらがひぐれにエンチャント剣をプレゼント。<br>
+　やとら：「諸君、これは、お前の、戦闘スタイルに、最適化した剣だ」<br>
+　ひぐれ：「……いる」<br>
+　（やとら、頷く、目を伏せる）<br><br>
+<strong>Day 88：</strong>まひるが自分のベッドをひぐれに譲る。<br>
+　まひる：「……ひぐれ、私の、ベッド、使って、私、サブ、寝る」<br>
+　ひぐれ：「……寝る」<br>
+　（まひる、しんど、と小声、画面外でベッドが球体化←Sulfur Cube事件と連動）<br><br>
+<strong>Day 90 ─ 3人会議：</strong><br>
+　あさめ：「ひぐれ、絶対、ありがとう、言わない説、ある」<br>
+　まひる：「……それ、私も、思った」<br>
+　やとら：「諸君、ひぐれは、感謝の、概念を、外している」<br>
+　あさめ：「諦めようか……」
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 2（DAY 90〜200）─ コメ欄スレッド化、ひぐれ自覚</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 3 ─ メタ侵食</div>
+視聴者コメント欄が「ひぐれは絶対言わない説」スレッド化。S05のコメント物理化と同じ仕掛けで、コメントブロックがひぐれの周りに積み上がる。<br><br>
+<strong>コメントブロック：</strong>「ひぐれ、絶対言わない」「言ったら課金」「永遠に来ない」<br>
+<strong>ひぐれ（コメントブロックを剣で粉砕）：</strong>うるせー、消える<br>
+<strong>（ブロック、消滅、しかし1つだけ残る）</strong><br>
+<strong>残ったブロック：</strong>「ひぐれが、一番、優しい」<br>
+<strong>ひぐれ：</strong>（無言、剣を下ろす）<br>
+<strong>ひぐれ：</strong>（小声、独白）……俺、優しい、わけ、ねぇだろ
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 2.5（DAY 200〜300）─ ひぐれ油絵モノローグ</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 4 ─ 真実の独白</div>
+ひぐれが夕方、一人で油絵を描いている。BGM=PASSO（27AM）。<br><br>
+<strong>ひぐれ（独白）：</strong>「ありがとう」って、言ったら、終わる気がする<br>
+<strong>ひぐれ：</strong>この4人で、いられる、理由が<br>
+<strong>ひぐれ：</strong>……俺、3人に、何も、返せてない<br>
+<strong>ひぐれ：</strong>「ありがとう」って、5文字、軽すぎて、申し訳ない<br>
+<strong>ひぐれ：</strong>だから、行動で、返す<br>
+<strong>ひぐれ：</strong>でも、3人、それを、知らない<br>
+<strong>ひぐれ：</strong>……知らないまま、で、いい<br>
+<strong>（油絵に、3人の後ろ姿、描かれていく）</strong>
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 3（DAY 300〜364）─ 油絵展示会回</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 5 ─ バズと逃走</div>
+ひぐれが描いた「4人の絵」が、ひぐれの知らぬ間にまひるに見つかる→TikTokに無断投稿→バズる→3人が見つけて泣く→ひぐれ照れて逃げる。<br><br>
+<strong>まひる：</strong>……これ、私たちの、絵<br>
+<strong>あさめ：</strong>えっ、ひぐれ、こんなの、描いてたの！？<br>
+<strong>やとら：</strong>諸君、これは——365日の、記録だ<br>
+<strong>ひぐれ：</strong>（顔真っ赤、背を向ける）見るな<br>
+<strong>あさめ：</strong>（涙）ひぐれ、ありがとう、ありがとうって、ずっと、言いたかった、私たちが<br>
+<strong>ひぐれ：</strong>（無言、走り去る）<br>
+<strong>まひる：</strong>……あの背中、絶対、泣いてる
+</div>
+</div>
+
+<div class="long-block">
+<h4>ラスト4分（DAY 365）─ 5文字の到達</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 6 ─ 爆発と一言</div>
+ひぐれが鉱山で採掘中、クリーパーが背後から突進→まひるが身を投げて庇う→爆発→まひるダウン。<br><br>
+<strong>（爆発SE、画面ホワイトアウト）</strong><br>
+<strong>ひぐれ：</strong>（声、震える）……ま、まひる<br>
+<strong>ひぐれ：</strong>……お前、馬鹿か<br>
+<strong>（まひる、HP1で意識朦朧）</strong><br>
+<strong>ひぐれ：</strong>（小声、聞き取れないレベル）……ありがとう<br>
+<strong>（4秒、沈黙、BGM=PASSOから無音へ）</strong><br>
+<strong>まひる：</strong>（目を開ける、半笑い）……今、なんか、言った？<br>
+<strong>ひぐれ：</strong>うるせー、聞いてねえくせに<br>
+<strong>まひる：</strong>（笑いながら、小声）……うん、聞いてた、5文字<br>
+<strong>ひぐれ：</strong>（顔をそむける）<br>
+<strong>カウンタ：</strong>「Day 365 ─ ひぐれ、ありがとう、を、言った」<br>
+<strong>（END、油絵に「365日」と日付）</strong>
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ集：</strong><br>
+ひぐれ（油絵独白）「『ありがとう』って、言ったら、終わる気がする」（コアメッセージ）<br>
+ひぐれ（油絵独白）「5文字、軽すぎて、申し訳ない」（ひぐれの感謝観）<br>
+ひぐれ（最後）「うるせー、聞いてねえくせに」（5文字を言った後の照れ隠し）<br>
+まひる（最後）「うん、聞いてた、5文字」（核セリフ、ED確定）<br>
+あさめ「ひぐれ、ありがとうって、ずっと、言いたかった、私たちが」（涙シーン）</div>
+
+<div class="visual"><strong>音楽連動設計：</strong>OP=PASSO（27AM）チル系。PART 2.5油絵モノローグ全編=PASSO継続。PART 3バズシーン=「All 4 U」（INI）高揚アンセム。ラスト4分爆発前=phonk緊張。爆発後=全音停止→「キミワズライ」（まるり）サビ頭1.2秒。ED=「Holiday∞Holiday」（ハスノソラ女学院）で4人の通常風景に帰還。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「ひぐれが言うまでの365日」タイトル単体でCTR特大。コメ欄が物語の予告（「言うのか言わないのか」）で滞在時間最大化。最後の「うん、聞いてた、5文字」が単独30秒切り抜きエモ確定バズ。S05のコメント物理化と連動した中盤メタ仕掛けで「日刊シリーズ通しの伏線」感を強化＝シリーズファン化。</div>
+
+<div class="why"><strong>スケール感：</strong>365日タイムスケール+「言葉を言うこと」のドラマ化。「キャラが言わなかった一言」をテーマ化＝5文字のスケール。「言わない理由」を油絵モノローグで丁寧に描き、視聴者がひぐれを「クール」ではなく「優しい人見知り」として再評価する構造的転調。最後の「うん、聞いてた」で全部回収。</div>
+
+</div></div>
+
+<!-- L03 -->
+<div class="long-section" id="D0427-L03">
+<div class="long-head">
+<h3>L03「マイクラ村人轢殺事件・第一回公判」</h3>
+<div class="long-meta">
+<span class="tag t-comedy">法廷コメディ</span>
+<span class="tag t-long">横動画14分</span>
+<span class="tag t-court">未開拓ジャンル</span>
+</div>
+</div>
+
+<div class="long-body">
+
+<div class="long-block">
+<h4>コンセプト</h4>
+<p>あさめが牛を運搬中、誤ってトロッコで村人を轢いてしまう→世界に裁判所がスポーン→4人が呼び出される→やとら=弁護人、ひぐれ=検察、まひる=陪審員（情緒不安定）、あさめ=被告。マイクラの不条理ルールが法廷ロジックで暴走するコメディ。「マイクラ世界に法廷が立つ」設定スケール×言語的笑い。既存にスポット的な裁判ネタ（Y29）はあるが本格法廷モノは初。</p>
+</div>
+
+<div class="long-block">
+<h4>サムネ案</h4>
+<div class="thumb"><strong>主案：</strong>4人法廷コスプレ（やとら・ひぐれ=黒スーツ、まひる=陪審員席で半分隠れる、あさめ=被告席）+巨大なガベル+「マイクラ初！本格法廷ｺﾒﾃﾞｨ」+村人の魂が黒煙で漂う。<br><strong>副案：</strong>裁判官オウム+「ｵｳﾑ」字幕+「判決：無罪」赤いハンコ。</div>
+</div>
+
+<div class="long-block">
+<h4>OP（30秒）</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 1 ─ 事件発生</div>
+あさめがトロッコで牛を運搬中、村人がレールに飛び出す→轢く→村人の魂が黒煙で漂う→世界に巨大な裁判所建物がスポーン。<br><br>
+<strong>あさめ：</strong>えっ、えっ、なに、なに、なにこれ、村人、いま、轢いた、私<br>
+<strong>（村人の魂、黒煙）：</strong>ﾌﾌﾝ……ﾌﾌﾝ……<br>
+<strong>（裁判所、スポーン、SE: 神妙な鐘）</strong><br>
+<strong>あさめ：</strong>えっ、裁判所、湧いた、わいた！？<br>
+<strong>（タイトル：マイクラ村人轢殺事件・第一回公判）</strong>
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 1 ─ 開廷</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 2 ─ 配役判明</div>
+4人が法廷服に着替えさせられる。それぞれの役職が画面に表示。<br><br>
+<strong>やとら（黒服+メガネ、弁護人）：</strong>諸君、被告は——本当に、有罪だろうか<br>
+<strong>ひぐれ（黒服、検察）：</strong>あ？簡単だろ。轢いた、つまり、有罪<br>
+<strong>まひる（陪審員席、隠れ気味）：</strong>……陪審員、私、向いてない、しんど<br>
+<strong>あさめ（被告席、頭抱える）：</strong>えっ、私、弁護してくれるのが、やとら、なの？厨二弁護士、なの？<br>
+<strong>やとら：</strong>諸君、私の、弁護術を、信じろ<br>
+<strong>あさめ：</strong>不安しかない！
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 2 ─ 証人尋問</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 3 ─ 村人の魂、証言</div>
+被害者の村人の魂（実体ない、黒煙）が証言台に。村人は「ﾌﾌﾝ」しか言えない。<br><br>
+<strong>裁判官（あさめのオウム）：</strong>ｵｳﾑ<br>
+<strong>やとら：</strong>諸君、被害者証言を、求める<br>
+<strong>村人の魂：</strong>ﾌﾌﾝ……ﾌﾌﾝ……<br>
+<strong>やとら：</strong>諸君、これは、被害者が、生前と、変わらず、ﾌﾌﾝ、しているという、証拠だ。つまり、彼は、死んでいない<br>
+<strong>ひぐれ：</strong>異議あり！魂、漂ってるだろ、目の前で！<br>
+<strong>やとら：</strong>諸君、漂うのと、死ぬのは、別の概念だ<br>
+<strong>裁判官オウム：</strong>ｵｳﾑ<br>
+<strong>まひる：</strong>……（陪審員席で）……これ、真面目に、聞いてる、私、しんど<br>
+<strong>あさめ：</strong>裁判官、オウム、なんですけど！？！？
+</div>
+
+<div class="scene-label" style="margin-top:18px">SCENE 3.5 ─ クリーパー検察補佐乱入（PART 2.5）</div>
+<div class="txt-box">
+クリーパーが「ｼｭｰ」と入廷。検察補佐として座る→爆発→法廷半壊。<br><br>
+<strong>クリーパー：</strong>ｼｭｰ……<br>
+<strong>ひぐれ：</strong>あ？お前、検察、補佐か？<br>
+<strong>クリーパー：</strong>（爆発、ドカーン）<br>
+<strong>（法廷、半壊、4人、無傷）</strong><br>
+<strong>やとら：</strong>諸君、続行する<br>
+<strong>あさめ：</strong>続行、するんだ！？
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 3 ─ あさめ被告証言</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 4 ─ 「ｲﾅｲﾅｲﾊﾞｱ」</div>
+あさめが事件当時の状況を証言。<br><br>
+<strong>あさめ：</strong>私、轢いたつもり、なくて、トロッコ、動かしたら、村人が、急に、ｲﾅｲﾅｲﾊﾞｱ、してきて<br>
+<strong>ひぐれ：</strong>……ｲﾅｲﾅｲﾊﾞｱ、って、何だ<br>
+<strong>あさめ：</strong>こう、レールの陰から、わっ、って、出てくる、こと<br>
+<strong>やとら：</strong>諸君、これは、被害者の、過失だ。ｲﾅｲﾅｲﾊﾞｱは、自殺行為に、等しい<br>
+<strong>ひぐれ：</strong>異議あり、ｲﾅｲﾅｲﾊﾞｱ、辞書に、載ってない<br>
+<strong>裁判官オウム：</strong>ｵｳﾑ<br>
+<strong>まひる：</strong>……（陪審員席で）……あさめの語彙、強すぎ、しんど
+</div>
+</div>
+
+<div class="long-block">
+<h4>PART 4 ─ 判決、まひるの一票</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 5 ─ 揺れる陪審員</div>
+陪審員席で多数決→3対3で同点→まひるの一票で決まる。<br><br>
+<strong>まひる：</strong>……えっ、私、決めるの？<br>
+<strong>やとら：</strong>諸君、まひるの、判断を、待つ<br>
+<strong>まひる：</strong>……有罪、いや、無罪、いや、有罪、いや、無罪、いや<br>
+<strong>（5秒、まひる悩む、頭抱える）</strong><br>
+<strong>まひる：</strong>……これ、決められない、しんど、無理、誰か、決めて<br>
+<strong>裁判官オウム：</strong>ｵｳﾑ<br>
+<strong>やとら：</strong>諸君、裁判官の、判決が、出た。「ｵｳﾑ」は、「無罪」の、古語だ<br>
+<strong>ひぐれ：</strong>古語じゃねえだろ！<br>
+<strong>あさめ：</strong>無罪！？無罪なの！？<br>
+<strong>裁判官オウム：</strong>ｵｳﾑ<br>
+<strong>（判決：無罪、ハンコ）</strong>
+</div>
+</div>
+
+<div class="long-block">
+<h4>ラスト3分 ─ 償いと昇天</h4>
+<div class="txt-box">
+<div class="scene-label">SCENE 6 ─ 言葉、大事じゃん</div>
+法廷退出後、村人の魂がまだ漂っている。あさめが歩み寄る。<br><br>
+<strong>あさめ：</strong>……無罪、出たけど<br>
+<strong>あさめ：</strong>……ごめんね、本当に、ごめん<br>
+<strong>あさめ：</strong>レール、見てなかった、私の、過失、です<br>
+<strong>（村人の魂、ﾌﾌﾝ、満足げに、空へ昇天）</strong><br>
+<strong>村人の魂：</strong>ﾌﾌﾝ……（消える）<br>
+<strong>（4人、沈黙、3秒）</strong><br>
+<strong>まひる：</strong>……無罪、なのに、償ってる<br>
+<strong>ひぐれ：</strong>……判決と、関係ねえな、これ<br>
+<strong>やとら：</strong>諸君、これは——制度では、解けない、何か、だ<br>
+<strong>あさめ：</strong>……言葉、大事じゃん<br>
+<strong>（あさめ口癖「じゃん」、しかし、初めて、しんみり、トーン）</strong><br>
+<strong>まひる：</strong>……あさめ、今の「じゃん」、保存、する<br>
+<strong>あさめ：</strong>えっ、保存しないで！！！！<br>
+<strong>（END、4人、笑いながら裁判所を出る、空に村人の魂、星になる）</strong>
+</div>
+</div>
+
+<div class="name-serif"><strong>名セリフ集：</strong><br>
+やとら「諸君、これは、被害者が、生前と、変わらず、ﾌﾌﾝ、しているという、証拠だ」（厨二弁護術の極致）<br>
+やとら「『ｵｳﾑ』は、『無罪』の、古語だ」（爆笑名セリフ）<br>
+まひる「これ、決められない、しんど、無理、誰か、決めて」（陪審員崩壊）<br>
+あさめ「言葉、大事じゃん」（口癖が、初めて、しんみり）<br>
+やとら「諸君、これは——制度では、解けない、何か、だ」（哲学の到達点）</div>
+
+<div class="visual"><strong>音楽連動設計：</strong>OP=神妙なオルガン（法廷感）。証人尋問パート=「ほんまやでなんでやねん」（モナキ）関西弁早口でクリーパー乱入とリンク。判決パート=北斗の拳ジングルでオウム判決決定演出。ED=「Holiday∞Holiday」（ハスノソラ女学院）で4人帰還、村人魂昇天は無音処理＋星音1音「キラン」。</div>
+
+<div class="viral"><strong>バズ設計：</strong>「マイクラで本格法廷」既存類似ゼロ＝完全ブルーオーシャン。「ｵｳﾑ古語説」「ｲﾅｲﾅｲﾊﾞｱ自殺行為説」が単独切り抜きで二次拡散。あさめ「言葉、大事じゃん」のしんみりトーン口癖変奏が単独エモ切り抜き。判決オウム1票決定がコメ欄「司法制度大丈夫？」議論化＝滞在時間UP。</div>
+
+<div class="why"><strong>スケール感：</strong>「マイクラ世界に法廷が立つ」設定スケール×「ｲﾅｲﾅｲﾊﾞｱ」「ﾌﾌﾝ」など村人語の法廷化が言語的笑い。コメディから最後のしんみり「無罪なのに償ってる」への感情転調で、ただのバカ法廷から「言葉と償いの作品」へ昇華。あさめの口癖「じゃん」のトーン変奏は、L02のひぐれ「ありがとう」と並ぶ、口癖の再定義テーマ。</div>
+
+</div></div>
+
+<!-- ============================================================ -->
+<!-- リサーチメモ -->
+<!-- ============================================================ -->
+
+<div class="research" id="research">
+<h3>本日のリサーチメモ（2026年04月27日）</h3>
+
+<h4>マイクラ最新トレンド（Agent 1）</h4>
+<ul>
+<li><strong>サルファーキューブ（26.2 Chaos Cubed）</strong>: ブロック吸引で形状変化。snapshot showcase動画群で爆発中。「4人それぞれが違うブロックを食わせる検証」鉄板フォーマット。</li>
+<li><strong>硫黄の洞窟バイオーム</strong>: 赤・黄温泉地モチーフ、サルファー水で画面歪む。三層詐欺コンセプトとの噛み合い濃厚（夜部屋メンヘラ語りに適合）。</li>
+<li><strong>Tiny Takeover（26.10、配信済）</strong>: ヒヨコ実装、赤ちゃんモブ専用モーション、名札クラフト解禁。「動物に揺らぐやとら」CH10-14テーマと完全合致。</li>
+<li><strong>Chicken Jockey叫び</strong>: 海外勢のミーム、国内未浸透。「外国ミームに乗る陽キャあさめ vs クールやとら」の温度差ネタとして料理可。</li>
+<li>避けるべき: エンドアプデ予想、既存ウォーデン恐怖、最強MOBランキング、Herdcraft（4/1ネタ、旬切れ）</li>
+</ul>
+
+<h4>音楽・カルチャートレンド（Agent 2）</h4>
+<ul>
+<li><strong>「PASSO」/27AM</strong>: Spotifyバイラル2位、低BPMラテン寄りチル系。まひる単独夜部屋シーン直結（→S02、L02 PART 2.5採用）。</li>
+<li><strong>「キミワズライ」/まるり</strong>: TikTok 1億再生近接エモ恋愛。やとらクール崩壊→クール戻しループの音被せに最適（→S01、S04、L01採用）。</li>
+<li><strong>「MONTAGEM NATTO GAKKO 2」/BMFUNK2341</strong>: Brazilian phonk×学園系。ひぐれ戦闘＋Sulfur Cube吸引音ハメに（→S01、L01採用）。</li>
+<li><strong>「ほんまやでなんでやねんしらんけど」/モナキ</strong>: 関西弁早口ダンス曲。失敗系コメディ用（→L03採用）。</li>
+<li><strong>「All 4 U」/INI、「Holiday∞Holiday」/ハスノソラ女学院</strong>: アンセム系/ED系で各長編エンディング採用。</li>
+<li><strong>春アニメネタ</strong>: あかね噺（落語）→ひぐれ高座スタイルのギャグ案、Re:ゼロ4thシーズン→死に戻りパロ案、北斗の拳リバイバル→「お前はもう、死んでいる」音ハメ（→S03、L03採用）。</li>
+<li><strong>音MAD構造</strong>: 1秒2-3カット、語尾サンプリング（「しんど」「あ？」「じゃん！」「クール…」を音素分解→演奏化）、8の字ループ着地。</li>
+</ul>
+
+<h4>既存スクリプト分析・未開拓ゾーン（Agent 3）</h4>
+<ul>
+<li>採用した未開拓: <strong>恋愛サブテキスト</strong>（→S04「画面が赤くなる病」）、<strong>視聴者コメントメタ</strong>（→S05「コメント欄が降ってきた」、L02連動）、<strong>法廷モノ</strong>（→L03「マイクラ村人轢殺事件」）、<strong>365日タイムスケール感動</strong>（→L02「ありがとうの365日」）</li>
+<li>次回以降採用候補: 時間逆行ミステリー、料理番組パロディ、実写混在AR境界破壊、語り部主体、スポーツ化（サッカー/ボクシング）、循環ループ悪夢、建築芸術評論</li>
+<li>既存150+本の傾向: 「モブ・ルール・時間軸」の物理的変数に強い。未開拓は「感情・社会・メディア表現」の人間的次元。</li>
+</ul>
+
+<h4>本日の方針総括</h4>
+<p>4月末のSulfur Cube/Tiny Takeover鮮度を即収益化（S01）、PASSO/キミワズライバイラル波の頂点直撃（S02・S04・L02）、「最後の一人」MrBeast型を24時間×普通禁止に圧縮（S03）、未開拓「メタ・恋愛・法廷・365日」4ジャンル同時開拓（S04・S05・L02・L03）。S02-S05の3:47タイムスタンプ、L02のコメントブロック物理化（S05連動）でシリーズ通しの伏線設計を強化。日刊シリーズの「シリーズ化」フェーズへ移行。</p>
+
+</div>
+
+<div class="footer">
+よふかしくらぶ！日刊台本 2026.04.27 ─ ショート5本＋横動画3本
+</div>
+
+</div>
+</body>
+</html>
